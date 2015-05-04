@@ -6,143 +6,143 @@ Introduction vii
 
 2 Conformance 1
 
-3 Normative references 1
+3 _Normative references_ 1
 
 4 Overview 1
 
-4.1 Web Scripting 2
+4.1 _Web Scripting_ 2
 
-4.2 Language Overview 2
+4.2 _Language Overview_ 2
 
 4.2.1 Objects 3
 
-4.2.2 The Strict Variant of ECMAScript 4
+4.2.2 _The Strict Variant of ECMAScript_ 4
 
-4.3 Terms and definitions 4
+4.3 _Terms and definitions_ 4
 
-5 Notational Conventions 7
+5 _Notational Conventions_ 7
 
-5.1 Syntactic and Lexical Grammars 7
+5.1 _Syntactic and Lexical Grammars_ 7
 
-5.1.1 Context-Free Grammars 7
+5.1.1 _Context-Free Grammars_ 7
 
-5.1.2 The Lexical and RegExp Grammars 8
+5.1.2 _The Lexical and RegExp Grammars_ 8
 
-5.1.3 The Numeric String Grammar 8
+5.1.3 _The Numeric String Grammar_ 8
 
-5.1.4 The Syntactic Grammar 8
+5.1.4 _The Syntactic Grammar_ 8
 
-5.1.5 The JSON Grammar 9
+5.1.5 _The JSON Grammar_ 9
 
-5.1.6 Grammar Notation 9
+5.1.6 _Grammar Notation_ 9
 
-5.2 Algorithm Conventions 12
+5.2 _Algorithm Conventions_ 12
 
-5.3 Static Semantic Rules 13
+_5.3 Static Semantic Rules_ 13
 
-6 Source Text 13
+6 _Source Text_ 13
 
-7 Lexical Conventions 14
+7 _Lexical Conventions_ 14
 
-7.1 Unicode Format-Control Characters 14
+7.1 _Unicode Format-Control Characters_ 14
 
-7.2 White Space 15
+7.2 _White Space_ 15
 
-7.3 Line Terminators 15
+7.3 _Line Terminators_ 15
 
 7.4 Comments 16
 
 7.5 Tokens 17
 
-7.6 Identifier Names and Identifiers 17
+7.6 _Identifier Names and Identifiers_ 17
 
-7.6.1 Reserved Words 19
+7.6.1 _Reserved Words_ 19
 
 7.7 Punctuators 20
 
 7.8 Literals 20
 
-7.8.1 Null Literals 20
+7.8.1 _Null Literals_ 20
 
-7.8.2 Boolean Literals 20
+7.8.2 _Boolean Literals_ 20
 
-7.8.3 Numeric Literals 21
+7.8.3 _Numeric Literals_ 21
 
-7.8.4 String Literals 23
+7.8.4 _String Literals_ 23
 
-7.8.5 Regular Expression Literals 25
+7.8.5 _Regular Expression Literals_ 25
 
-7.9 Automatic Semicolon Insertion 26
+7.9 _Automatic Semicolon Insertion_ 26
 
-7.9.1 Rules of Automatic Semicolon Insertion 26
+7.9.1 _Rules of Automatic Semicolon Insertion_ 26
 
-7.9.2 Examples of Automatic Semicolon Insertion 27
+7.9.2 _Examples of Automatic Semicolon Insertion_ 27
 
 8 Types 29
 
-8.1 The Undefined Type 29
+8.1 _The Undefined Type_ 29
 
-8.2 The Null Type 29
+8.2 _The Null Type_ 29
 
-8.3 The Boolean Type 29
+8.3 _The Boolean Type_ 29
 
-8.4 The String Type 29
+8.4 _The String Type_ 29
 
-8.5 The Number Type 30
+8.5 _The Number Type_ 30
 
-8.6 The Object Type 31
+8.6 _The Object Type_ 31
 
-8.6.1 Property Attributes 31
+8.6.1 _Property Attributes_ 31
 
-8.6.2 Object Internal Properties and Methods 32
+8.6.2 _Object Internal Properties and Methods_ 32
 
-8.7 The Reference Specification Type 36
+8.7 _The Reference Specification Type_ 36
 
-8.7.1 GetValue (V) 36
+8.7.1 _GetValue (V)_ 36
 
-8.7.2 PutValue (V, W) 37
+8.7.2 _PutValue (V, W)_ 37
 
-8.8 The List Specification Type 38
+8.8 _The List Specification Type_ 38
 
-8.9 The Completion Specification Type 38
+8.9 _The Completion Specification Type_ 38
 
-8.10 The Property Descriptor and Property Identifier Specification Types
-38
+8.10 _The Property Descriptor and Property Identifier Specification
+Types_ 38
 
-8.10.1 IsAccessorDescriptor ( Desc ) 39
+8.10.1 _IsAccessorDescriptor ( Desc )_ 39
 
-8.10.2 IsDataDescriptor ( Desc ) 39
+8.10.2 _IsDataDescriptor ( Desc )_ 39
 
-8.10.3 IsGenericDescriptor ( Desc ) 39
+8.10.3 _IsGenericDescriptor ( Desc )_ 39
 
-8.10.4 FromPropertyDescriptor ( Desc ) 39
+8.10.4 _FromPropertyDescriptor ( Desc )_ 39
 
-8.10.5 ToPropertyDescriptor ( Obj ) 39
+8.10.5 _ToPropertyDescriptor ( Obj )_ 39
 
-8.11 The Lexical Environment and Environment Record Specification Types
-40
+8.11 _The Lexical Environment and Environment Record Specification
+Types_ 40
 
-8.12 Algorithms for Object Internal Methods 40
+8.12 _Algorithms for Object Internal Methods_ 40
 
-8.12.1 [[GetOwnProperty]] (P) 40
+8.12.1 _[[GetOwnProperty]] (P)_ 40
 
-8.12.2 [[GetProperty]] (P) 41
+8.12.2 _[[GetProperty]] (P)_ 41
 
-8.12.3 [[Get]] (P) 41
+8.12.3 _[[Get]] (P)_ 41
 
-8.12.4 [[CanPut]] (P) 41
+8.12.4 _[[CanPut]] (P)_ 41
 
-8.12.5 [[Put]] ( P, V, Throw ) 41
+8.12.5 _[[Put]] ( P, V, Throw )_ 41
 
-8.12.6 [[HasProperty]] (P) 42
+8.12.6 _[[HasProperty]] (P)_ 42
 
-8.12.7 [[Delete]] (P, Throw) 42
+8.12.7 _[[Delete]] (P, Throw)_ 42
 
-8.12.8 [[DefaultValue]] (hint) 42
+8.12.8 _[[DefaultValue]] (hint)_ 42
 
-8.12.9 [[DefineOwnProperty]] (P, Desc, Throw) 43
+8.12.9 _[[DefineOwnProperty]] (P, Desc, Throw)_ 43
 
-9 Type Conversion and Testing 44
+9 _Type Conversion and Testing_ 44
 
 9.1 ToPrimitive 44
 
@@ -150,19 +150,19 @@ Introduction vii
 
 9.3 ToNumber 45
 
-9.3.1 ToNumber Applied to the String Type 45
+9.3.1 _ToNumber Applied to the String Type_ 45
 
 9.4 ToInteger 48
 
-9.5 ToInt32: (Signed 32 Bit Integer) 48
+9.5 _ToInt32: (Signed 32 Bit Integer)_ 48
 
-9.6 ToUint32: (Unsigned 32 Bit Integer) 48
+9.6 _ToUint32: (Unsigned 32 Bit Integer)_ 48
 
-9.7 ToUint16: (Unsigned 16 Bit Integer) 49
+9.7 _ToUint16: (Unsigned 16 Bit Integer)_ 49
 
 9.8 ToString 49
 
-9.8.1 ToString Applied to the Number Type 49
+9.8.1 _ToString Applied to the Number Type_ 49
 
 9.9 ToObject 50
 
@@ -170,429 +170,416 @@ Introduction vii
 
 9.11 IsCallable 51
 
-9.12 The SameValue Algorithm 51
+9.12 _The SameValue Algorithm_ 51
 
-10 Executable Code and Execution Contexts 51
+10 _Executable Code and Execution Contexts_ 51
 
-10.1 Types of Executable Code 51
+10.1 _Types of Executable Code_ 51
 
-10.1.1 Strict Mode Code 52
+10.1.1 _Strict Mode Code_ 52
 
-10.1.2 Extended Code 52
+10.1.2 _Extended Code_ 52
 
-10.2 Lexical Environments 53
+10.2 _Lexical Environments_ 53
 
-10.2.1 Environment Records 53
+10.2.1 _Environment Records_ 53
 
-10.2.2 Lexical Environment Operations 57
+10.2.2 _Lexical Environment Operations_ 57
 
-10.2.3 The Global Environment 58
+10.2.3 _The Global Environment_ 58
 
-10.3 Execution Contexts 58
+10.3 _Execution Contexts_ 58
 
-10.3.1 Identifier Resolution 59
+10.3.1 _Identifier Resolution_ 59
 
-10.4 Establishing an Execution Context 59
+10.4 _Establishing an Execution Context_ 59
 
-10.4.1 Entering Global Code 59
+10.4.1 _Entering Global Code_ 59
 
-10.4.2 Entering Eval Code 60
+10.4.2 _Entering Eval Code_ 60
 
-10.4.3 Entering Function Code 60
+10.4.3 _Entering Function Code_ 60
 
-10.5 Declaration Binding Instantiation 60
+10.5 _Declaration Binding Instantiation_ 61
 
-10.5.XXX Block Declaration Instantiation 62
+10.5.1 _Base Code Top-Level Declaration Instantiation_ 61
 
-10.6 Arguments Object 62
+10.5.2 _Exrtended Code Top-Level Declaration Instantiation_ 62
 
-11 Expressions 65
+10.5.3 _Function Declaration Instantiation_ 62
 
-11.1 Primary Expressions 65
+10.5.4 _Block Declaration Instantiation_ 63
 
-11.1.1 The this Keyword 65
+10.6 _Arguments Object_ 63
 
-11.1.2 Identifier Reference 65
+11 Expressions 66
 
-11.1.3 Literal Reference 65
+11.1 _Primary Expressions_ 66
 
-11.1.4 Array Initialiser 65
+11.1.1 _The this Keyword_ 66
 
-11.1.5 Object Initialiser 68
+11.1.2 _Identifier Reference_ 67
 
-11.1.6 The Grouping Operator 71
+11.1.3 _Literal Reference_ 67
 
-11.2 Left-Hand-Side Expressions 71
+11.1.4 _Array Initialiser_ 67
 
-11.2.1 Property Accessors 72
+11.1.5 _Object Initialiser_ 69
 
-11.2.2 The new Operator 72
+11.1.6 _Function Expressions_ 73
 
-11.2.3 Function Calls 73
+11.1.7 _The Grouping Operator_ 73
 
-11.2.4 Argument Lists 73
+11.2 _Left-Hand-Side Expressions_ 74
 
-11.2.5 Function Expressions 74
+11.2.1 _Property Accessors_ 74
 
-11.3 Postfix Expressions 75
+11.2.2 _The new Operator_ 75
 
-11.3.1 Postfix Increment Operator 75
+11.2.3 _Function Calls_ 75
 
-11.3.2 Postfix Decrement Operator 75
+11.2.4 _Argument Lists_ 76
 
-11.4 Unary Operators 75
+11.3 _Postfix Expressions_ 77
 
-11.4.1 The delete Operator 76
+11.3.1 _Postfix Increment Operator_ 77
 
-11.4.2 The void Operator 76
+11.3.2 _Postfix Decrement Operator_ 78
 
-11.4.3 The typeof Operator 76
+11.4 _Unary Operators_ 78
 
-11.4.4 Prefix Increment Operator 77
+11.4.1 _The delete Operator_ 78
 
-11.4.5 Prefix Decrement Operator 77
+11.4.2 _The void Operator_ 79
 
-11.4.6 Unary + Operator 77
+11.4.3 _The typeof Operator_ 79
 
-11.4.7 Unary - Operator 77
+11.4.4 _Prefix Increment Operator_ 79
 
-11.4.8 Bitwise NOT Operator ( ~ ) 78
+11.4.5 _Prefix Decrement Operator_ 80
 
-11.4.9 Logical NOT Operator ( ! ) 78
+11.4.6 _Unary + Operator_ 80
 
-11.5 Multiplicative Operators 78
+11.4.7 _Unary - Operator_ 80
 
-11.5.1 Applying the * Operator 78
+11.4.8 _Bitwise NOT Operator ( ~ )_ 81
 
-11.5.2 Applying the / Operator 79
+11.4.9 _Logical NOT Operator ( ! )_ 81
 
-11.5.3 Applying the % Operator 79
+11.5 _Multiplicative Operators_ 81
 
-11.6 Additive Operators 80
+11.5.1 _Applying the * Operator_ 81
 
-11.6.1 The Addition operator ( + ) 80
+11.5.2 _Applying the / Operator_ 82
 
-11.6.2 The Subtraction Operator ( - ) 80
+11.5.3 _Applying the % Operator_ 82
 
-11.6.3 Applying the Additive Operators to Numbers 80
+11.6 _Additive Operators_ 83
 
-11.7 Bitwise Shift Operators 81
+11.6.1 _The Addition operator ( + )_ 83
 
-11.7.1 The Left Shift Operator ( << ) 81
+11.6.2 _The Subtraction Operator ( - )_ 83
 
-11.7.2 The Signed Right Shift Operator ( >> ) 81
+11.6.3 _Applying the Additive Operators to Numbers_ 84
 
-11.7.3 The Unsigned Right Shift Operator ( >>> ) 82
+11.7 _Bitwise Shift Operators_ 84
 
-11.8 Relational Operators 82
+11.7.1 _The Left Shift Operator ( << )_ 84
 
-11.8.1 The Less-than Operator ( < ) 83
+11.7.2 _The Signed Right Shift Operator ( >> )_ 85
 
-11.8.2 The Greater-than Operator ( > ) 83
+11.7.3 _The Unsigned Right Shift Operator ( >>> )_ 85
 
-11.8.3 The Less-than-or-equal Operator ( <= ) 83
+11.8 _Relational Operators_ 85
 
-11.8.4 The Greater-than-or-equal Operator ( >= ) 83
+_11.8.1 Runtime Semantics_ 86
 
-11.8.5 The Abstract Relational Comparison Algorithm 83
+11.9 _Equality Operators_ 88
 
-11.8.6 The instanceof operator 84
+_11.1.1 Runtime Semantics_ 88
 
-11.8.7 The in operator 84
+11.10 _Binary Bitwise Operators_ 90
 
-11.9 Equality Operators 85
+11.11 _Binary Logical Operators_ 91
 
-11.9.1 The Equals Operator ( == ) 85
+11.12 _Conditional Operator ( ? : )_ 92
 
-11.9.2 The Does-not-equals Operator ( != ) 85
+11.13 _Assignment Operators_ 92
 
-11.9.3 The Abstract Equality Comparison Algorithm 85
+_Static Semantics_ 92
 
-11.9.4 The Strict Equals Operator ( === ) 86
+_Runtime Semantics_ 93
 
-11.9.5 The Strict Does-not-equal Operator ( !== ) 87
+_11.13.1 Destructuring Assignment_ 94
 
-11.9.6 The Strict Equality Comparison Algorithm 87
+11.14 _Comma Operator ( , )_ 97
 
-11.10 Binary Bitwise Operators 87
+12 _Statements and Declarations_ 98
 
-11.11 Binary Logical Operators 88
+12.1 Block 99
 
-11.12 Conditional Operator ( ? : ) 89
+12.2 _Declarations and the Variable Statement_ 102
 
-11.13 Assignment Operators 89
+12.2.1 _Let Declaration_ 102
 
-11.13.1 Simple Assignment ( = ) 90
+12.2.2 _Const Declaration_ 105
 
-11.13.2 Compound Assignment ( op= ) 94
+12.2.3 _Variable Statement_ 106
 
-11.14 Comma Operator ( , ) 94
+12.2.4 _Destructuring Binding Patterns_ 108
 
-12 Statements and Declarations 95
+12.3 _Empty Statement_ 113
 
-12.1 Block 96
+12.4 _Expression Statement_ 113
 
-12.2 Declarations and the Variable Statement 99
+12.5 _The if Statement_ 114
 
-12.2.1 Let Declaration 99
+12.6 _Iteration Statements_ 114
 
-12.2.2 Const Declaration 101
+12.6.1 _The do-while Statement_ 115
 
-12.2.3 Variable Statement 102
+12.6.2 _The while Statement_ 115
 
-12.2.4 Destructuring Binding Patterns 104
+12.6.3 _The for Statement_ 115
 
-12.3 Empty Statement 109
+12.6.4 _The for-in Statement_ 116
 
-12.4 Expression Statement 109
+12.7 _The continue Statement_ 117
 
-12.5 The if Statement 110
+12.8 _The break Statement_ 118
 
-12.6 Iteration Statements 110
+12.9 _The return Statement_ 118
 
-12.6.1 The do-while Statement 110
+12.10 _The with Statement_ 119
 
-12.6.2 The while Statement 111
+12.11 _The switch Statement_ 119
 
-12.6.3 The for Statement 111
+12.12 _Labelled Statements_ 123
 
-12.6.4 The for-in Statement 112
+12.13 _The throw Statement_ 124
 
-12.7 The continue Statement 113
+12.14 _The try Statement_ 124
 
-12.8 The break Statement 114
+12.15 _The debugger statement_ 127
 
-12.9 The return Statement 114
+13 _Function Definition_ 127
 
-12.10 The with Statement 114
+13.2 _Creating Function Objects_ 132
 
-12.11 The switch Statement 115
+13.2.1 [[Call]] 133
 
-12.12 Labelled Statements 119
+13.2.2 [[Construct]] 133
 
-12.13 The throw Statement 120
+13.2.3 _The [[ThrowTypeError]] Function Object_ 133
 
-12.14 The try Statement 120
+14 Program 134
 
-12.15 The debugger statement 122
+14.1 _Directive Prologues and the Use Strict Directive_ 134
 
-13 Function Definition 122
+15 _Standard Built-in ECMAScript Objects_ 135
 
-13.2 Creating Function Objects 125
+15.1 _The Global Object_ 136
 
-13.2.1 [[Call]] 126
+15.1.1 _Value Properties of the Global Object_ 136
 
-13.2.2 [[Construct]] 126
+15.1.2 _Function Properties of the Global Object_ 136
 
-13.2.3 The [[ThrowTypeError]] Function Object 126
+15.1.3 _URI Handling Function Properties_ 138
 
-14 Program 127
+15.1.4 _Constructor Properties of the Global Object_ 143
 
-14.1 Directive Prologues and the Use Strict Directive 127
+15.1.5 _Other Properties of the Global Object_ 144
 
-15 Standard Built-in ECMAScript Objects 128
+15.2 _Object Objects_ 144
 
-15.1 The Global Object 129
+15.2.1 _The Object Constructor Called as a Function_ 144
 
-15.1.1 Value Properties of the Global Object 129
+15.2.2 _The Object Constructor_ 144
 
-15.1.2 Function Properties of the Global Object 130
+15.2.3 _Properties of the Object Constructor_ 145
 
-15.1.3 URI Handling Function Properties 131
+15.2.4 _Properties of the Object Prototype Object_ 148
 
-15.1.4 Constructor Properties of the Global Object 136
+15.2.5 _Properties of Object Instances_ 149
 
-15.1.5 Other Properties of the Global Object 137
+15.3 _Function Objects_ 150
 
-15.2 Object Objects 137
+15.3.1 _The Function Constructor Called as a Function_ 150
 
-15.2.1 The Object Constructor Called as a Function 137
+15.3.2 _The Function Constructor_ 150
 
-15.2.2 The Object Constructor 137
+15.3.3 _Properties of the Function Constructor_ 151
 
-15.2.3 Properties of the Object Constructor 138
+15.3.4 _Properties of the Function Prototype Object_ 151
 
-15.2.4 Properties of the Object Prototype Object 141
+15.3.5 _Properties of Function Instances_ 154
 
-15.2.5 Properties of Object Instances 143
+15.4 _Array Objects_ 155
 
-15.3 Function Objects 143
+15.4.1 _The Array Constructor Called as a Function_ 155
 
-15.3.1 The Function Constructor Called as a Function 143
+15.4.2 _The Array Constructor_ 155
 
-15.3.2 The Function Constructor 143
+15.4.3 _Properties of the Array Constructor_ 156
 
-15.3.3 Properties of the Function Constructor 144
+15.4.4 _Properties of the Array Prototype Object_ 156
 
-15.3.4 Properties of the Function Prototype Object 144
+15.4.5 _Properties of Array Instances_ 173
 
-15.3.5 Properties of Function Instances 147
+15.5 _String Objects_ 174
 
-15.4 Array Objects 148
+15.5.1 _The String Constructor Called as a Function_ 174
 
-15.4.1 The Array Constructor Called as a Function 148
+15.5.2 _The String Constructor_ 174
 
-15.4.2 The Array Constructor 148
+15.5.3 _Properties of the String Constructor_ 175
 
-15.4.3 Properties of the Array Constructor 149
+15.5.4 _Properties of the String Prototype Object_ 175
 
-15.4.4 Properties of the Array Prototype Object 149
+15.5.5 _Properties of String Instances_ 184
 
-15.4.5 Properties of Array Instances 166
+15.6 _Boolean Objects_ 185
 
-15.5 String Objects 167
+15.6.1 _The Boolean Constructor Called as a Function_ 185
 
-15.5.1 The String Constructor Called as a Function 167
+15.6.2 _The Boolean Constructor_ 185
 
-15.5.2 The String Constructor 168
+15.6.3 _Properties of the Boolean Constructor_ 185
 
-15.5.3 Properties of the String Constructor 168
+15.6.4 _Properties of the Boolean Prototype Object_ 186
 
-15.5.4 Properties of the String Prototype Object 168
+15.6.5 _Properties of Boolean Instances_ 186
 
-15.5.5 Properties of String Instances 177
+15.7 _Number Objects_ 186
 
-15.6 Boolean Objects 178
+15.7.1 _The Number Constructor Called as a Function_ 186
 
-15.6.1 The Boolean Constructor Called as a Function 178
+15.7.2 _The Number Constructor_ 186
 
-15.6.2 The Boolean Constructor 178
+15.7.3 _Properties of the Number Constructor_ 187
 
-15.6.3 Properties of the Boolean Constructor 179
+15.7.4 _Properties of the Number Prototype Object_ 188
 
-15.6.4 Properties of the Boolean Prototype Object 179
+15.7.5 _Properties of Number Instances_ 191
 
-15.6.5 Properties of Boolean Instances 179
+15.8 _The Math Object_ 192
 
-15.7 Number Objects 180
+15.8.1 _Value Properties of the Math Object_ 192
 
-15.7.1 The Number Constructor Called as a Function 180
+15.8.2 _Function Properties of the Math Object_ 193
 
-15.7.2 The Number Constructor 180
+15.9 _Date Objects_ 198
 
-15.7.3 Properties of the Number Constructor 180
+15.9.1 _Overview of Date Objects and Definitions of Abstract
+Operators_ 198
 
-15.7.4 Properties of the Number Prototype Object 181
+15.9.2 _The Date Constructor Called as a Function_ 203
 
-15.7.5 Properties of Number Instances 185
+15.9.3 _The Date Constructor_ 203
 
-15.8 The Math Object 185
+15.9.4 _Properties of the Date Constructor_ 204
 
-15.8.1 Value Properties of the Math Object 185
+15.9.5 _Properties of the Date Prototype Object_ 205
 
-15.8.2 Function Properties of the Math Object 186
+15.9.6 _Properties of Date Instances_ 213
 
-15.9 Date Objects 191
+15.10 _RegExp (Regular Expression) Objects_ 213
 
-15.9.1 Overview of Date Objects and Definitions of Abstract Operators
-191
+15.10.1 Patterns 213
 
-15.9.2 The Date Constructor Called as a Function 196
+15.10.2 _Pattern Semantics_ 215
 
-15.9.3 The Date Constructor 196
+15.10.3 _The RegExp Constructor Called as a Function_ 227
 
-15.9.4 Properties of the Date Constructor 197
+15.10.4 _The RegExp Constructor_ 227
 
-15.9.5 Properties of the Date Prototype Object 198
+15.10.5 _Properties of the RegExp Constructor_ 228
 
-15.9.6 Properties of Date Instances 206
+15.10.6 _Properties of the RegExp Prototype Object_ 228
 
-15.10 RegExp (Regular Expression) Objects 206
+15.10.7 _Properties of RegExp Instances_ 230
 
-15.10.1 Patterns 206
+15.11 _Error Objects_ 230
 
-15.10.2 Pattern Semantics 208
+15.11.1 _The Error Constructor Called as a Function_ 230
 
-15.10.3 The RegExp Constructor Called as a Function 220
+15.11.2 _The Error Constructor_ 231
 
-15.10.4 The RegExp Constructor 220
+15.11.3 _Properties of the Error Constructor_ 231
 
-15.10.5 Properties of the RegExp Constructor 221
+15.11.4 _Properties of the Error Prototype Object_ 231
 
-15.10.6 Properties of the RegExp Prototype Object 221
+15.11.5 _Properties of Error Instances_ 232
 
-15.10.7 Properties of RegExp Instances 223
+15.11.6 _Native Error Types Used in This Standard_ 232
 
-15.11 Error Objects 223
+15.11.7 NativeError Object Structure 233
 
-15.11.1 The Error Constructor Called as a Function 224
+15.12 _The JSON Object_ 234
 
-15.11.2 The Error Constructor 224
+15.12.1 _The JSON Grammar_ 235
 
-15.11.3 Properties of the Error Constructor 224
+15.12.2 _parse ( text [ , reviver ] )_ 236
 
-15.11.4 Properties of the Error Prototype Object 224
+15.12.3 _stringify ( value [ , replacer [ , space ] ] )_ 237
 
-15.11.5 Properties of Error Instances 225
+16 Errors 241
 
-15.11.6 Native Error Types Used in This Standard 225
+_Annex A (informative) Grammar Summary_ 244
 
-15.11.7 NativeError Object Structure 226
+A.1 _Lexical Grammar_ 244
 
-15.12 The JSON Object 227
+A.2 _Number Conversions_ 250
 
-15.12.1 The JSON Grammar 228
+A.3 Expressions 251
 
-15.12.2 parse ( text [ , reviver ] ) 229
+A.4 Statements 255
 
-15.12.3 stringify ( value [ , replacer [ , space ] ] ) 231
+A.5 _Functions and Programs_ 257
 
-16 Errors 234
+A.6 _Universal Resource Identifier Character Classes_ 258
 
-Annex A (informative) Grammar Summary 237
+A.7 _Regular Expressions_ 258
 
-A.1 Lexical Grammar 237
+A.8 JSON 261
 
-A.2 Number Conversions 243
+A.8.1 _JSON Lexical Grammar_ 261
 
-A.3 Expressions 244
+A.8.2 _JSON Syntactic Grammar_ 261
 
-A.4 Statements 248
+_Annex B (normative) Additional ECMAScript Features for Web Browsers_
+264
 
-A.5 Functions and Programs 250
+B.1 _Additional Syntax_ 264
 
-A.6 Universal Resource Identifier Character Classes 251
+B.1.1 _Numeric Literals_ 264
 
-A.7 Regular Expressions 251
+B.1.2 _String Literals_ 264
 
-A.8 JSON 254
+B.2 _Additional Properties_ 265
 
-A.8.1 JSON Lexical Grammar 254
+B.2.1 _escape (string)_ 265
 
-A.8.2 JSON Syntactic Grammar 254
+B.2.2 _unescape (string)_ 266
 
-Annex B (normative) Additional ECMAScript Features for Web Browsers 257
+B.2.3 _String.prototype.substr (start, length)_ 267
 
-B.1 Additional Syntax 257
+B.2.4 _Date.prototype.getYear ( )_ 267
 
-B.1.1 Numeric Literals 257
+B.2.5 _Date.prototype.setYear (year)_ 267
 
-B.1.2 String Literals 257
+B.2.6 _Date.prototype.toGMTString ( )_ 267
 
-B.2 Additional Properties 258
+_Annex C (informative) The Strict Mode of ECMAScript_ 268
 
-B.2.1 escape (string) 258
+_Annex D (informative) Corrections and Clarifications in the 5^th^
+Edition with Possible 3^rd^ Edition Compatibility Impact_ 270
 
-B.2.2 unescape (string) 259
+_Annex E (informative) Additions and Changes in the 5^th^ Edition that
+Introduce Incompatibilities with the 3^rd^ Edition_ 272
 
-B.2.3 String.prototype.substr (start, length) 260
-
-B.2.4 Date.prototype.getYear ( ) 260
-
-B.2.5 Date.prototype.setYear (year) 260
-
-B.2.6 Date.prototype.toGMTString ( ) 260
-
-Annex C (informative) The Strict Mode of ECMAScript 261
-
-Annex D (informative) Corrections and Clarifications in the 5^th^
-Edition with Possible 3^rd^ Edition Compatibility Impact 263
-
-Annex E (informative) Additions and Changes in the 5^th^ Edition that
-Introduce Incompatibilities with the 3^rd^ Edition 265
-
-Annex F (informative) Technically Significant Corrections and
-Clarifications in the 5.1 Edition 269
+_Annex F (informative) Technically Significant Corrections and
+Clarifications in the 5.1 Edition_ 276
 
 Introduction
 
@@ -2003,14 +1990,16 @@ any character in the Unicode category “Connector punctuation (Pc)”
 The definitions of the nonterminal UnicodeEscapeSequence is given in
 7.8.4
 
-Semantics
+STATIC SEMANTICS: STRING VALUE
 
-The String value of the production Identifier :: IdentifierName BUT
-NOT ReservedWord is determined as follows:
+Identifier :: IdentifierName BUT NOT ReservedWord
 
-1.  Return the String value consisting of IdentifierName.
+1.  Return the String Value of IdentifierName.
 
-The String value of IdentifierName is determined as follows:
+IdentifierName ::
+
+IdentifierStart
+IdentifierName IdentifierPart
 
 1.  Return the String value consisting of the sequence of characters
     corresponding to IdentifierName.
@@ -2080,7 +2069,7 @@ Punctuator :: ONE OF
   <<    >>     >>>   &     |     ^
   !     ~      &&    ||    ?     :
   =     +=     -=    *=    %=    <<=
-  >>=   >>>=   &=    |=    ^=    
+  >>=   >>>=   &=    |=    ^=    <|
   ----- ------ ----- ----- ----- -----
 
 DivPunctuator :: ONE OF
@@ -2094,6 +2083,10 @@ Syntax
 Literal ::
 
 NullLiteral
+ValueLiteral
+
+ValueLiteral ::
+
 BooleanLiteral
 NumericLiteral
 StringLiteral
@@ -3152,14 +3145,15 @@ Table 9 — Internal Properties Only Defined for Some Objects
   [[Construct]]          SpecOp(a List of any) → Object                      Creates an object. Invoked via the NEW operator. The arguments to the SpecOp are the arguments passed to the NEW operator. Objects that implement this internal method are called constructors.
   [[Call]]               SpecOp(any, a List of any) → any or Reference   Executes code associated with the object. Invoked via a function call expression. The arguments to the SpecOp are this object and a list containing the arguments passed to the function call expression. Objects that implement this internal method are callable. Only callable objects that are host objects may return Reference values.
   [[HasInstance]]        SpecOp(any) → Boolean                               Returns a Boolean value indicating whether the argument is likely an Object that was constructed by this object. Of the standard built-in ECMAScript objects, only Function objects implement [[HasInstance]].
-  [[Scope]]              Lexical Environment                                     A lexical environment that defines the environment in which a Function object is executed. Of the standard built-in ECMAScript objects, only Function objects implement [[Scope]].
-  [[FormalParameters]]   List of Strings                                         A possibly empty List containing the identifier Strings of a Function’s FormalParameterList. Of the standard built-in ECMAScript objects, only Function objects implement [[FormalParameterList]].
-  [[Code]]               ECMAScript code                                         The ECMAScript code of a function. Of the standard built-in ECMAScript objects, only Function objects implement [[Code]].
+  [[Scope]]              Lexical Environment                                     A lexical environment that is the environment in which a Function object is executed. Of the standard built-in ECMAScript objects, only Function objects implement [[Scope]].
+  [[FormalParameters]]   Parse Tree                                              A parse tree for ECMAScript code parsed with FormalParameterList as the goal symbol. Of the standard built-in ECMAScript objects, only Function objects implement [[FormalParameters]].
+  [[Code]]               Parse Tree                                              A parse tree for ECMAScript code parsed with FunctionBody as the goal symbol. Of the standard built-in ECMAScript objects, only Function objects implement [[Code]].
+  [[Strict]]             Boolean                                                 True if a Function object is a strict mode function. Of the standard built-in ECMAScript objects, only Function objects implement [[Strict]].
   [[TargetFunction]]     Object                                                  The target function of a function object created using the standard built-in Function.prototype.bind method. Only ECMAScript objects created using Function.prototype.bind have a [[TargetFunction]] internal property.
   [[BoundThis]]          any                                                   The pre-bound this value of a function Object created using the standard built-in Function.prototype.bind method. Only ECMAScript objects created using Function.prototype.bind have a [[BoundThis]] internal property.
-  [[BoundArguments]]     List of any                                           The pre-bound argument values of a function Object created using the standard built-in Function.prototype.bind method. Only ECMAScript objects created using Function.prototype.bind have a [[BoundArguments]] internal property.
+  [[BoundArguments]]     List of any                                           The pre-bound argument values of a function Object created by the standard built-in Function.prototype.bind method. Only objects created by Function.prototype.bind have a [[BoundArguments]] internal property.
   [[Match]]              SpecOp(String, index) → MatchResult             Tests for a regular expression match and returns a MatchResult value (see 15.10.2.1). Of the standard built-in ECMAScript objects, only RegExp objects implement [[Match]].
-  [[ParameterMap]]       Object                                                  Provides a mapping between the properties of an arguments object (see 10.6) and the formal parameters of the associated function. Only ECMAScript objects that are arguments objects have a [[ParameterMap]] internal property.
+  [[ParameterMap]]       Object                                                  Provides a mapping between the properties of an arguments object (see 10.6) and the formal parameters of the associated function. Only objects that are arguments objects have a [[ParameterMap]] internal property.
 
 The [[NativeBrand]] internal property is used to identify native
 ECMASCript objects as objects that conform to specific parts of this
@@ -3980,7 +3974,8 @@ situations:
 
 The term “strict code” is used to designate both actual strict mode code
 and extended code while the term “extended code” only designates actual
-extended code.
+extended code. The term “base code” is used to designate code that is
+not extended code.
 
 A _Lexical Environment_ is a specification type used to define the
 association of Identifiers to specific variables and functions based
@@ -4264,85 +4259,295 @@ context for ECMAScript code C:
 The following steps are performed when control enters the execution
 context for eval code:
 
-The eval code cannot instantiate variable or function bindings in the
-variable environment of the calling context that invoked the eval if
+NOTE The eval code cannot instantiate variable or function bindings in
+the variable environment of the calling context that invoked the eval if
 either the code of the calling context or the eval code is strict code.
 Instead such bindings are instantiated in a new VariableEnvironment that
 is only accessible to the eval code.
 
 The following steps are performed when control enters the execution
 context for function code contained in function object F, a caller
-provided thisArg, and a caller provided argumentsList:
+provided argumentsList , and a caller provided thisArg:
 
-Every execution context has an associated VariableEnvironment. Variables
-and functions declared in ECMAScript code evaluated in an execution
-context are added as bindings in that VariableEnvironment’s Environment
-Record. For function code, parameters are also added as bindings to that
-Environment Record.
+NOTE When an execution context is established for evaluating
+non-function code that is base code declarations are instantiated in the
+current VariableEnvironment. Each top-level level variable, constant, or
+function declarated in the code is instantiated.
 
-Which Environment Record is used to bind a declaration and its kind
-depends upon the type of ECMAScript code executed by the execution
-context, but the remainder of the behaviour is generic. On entering an
-execution context, bindings are created in the VariableEnvironment as
-follows using the caller provided code and, if it is function code,
-argument List args:
+Top-level Declaration Instantiation for base code is performed as
+follows:
 
-When a Block or CaseBlock production is evaluated a new Declarative
-Environment Record is created and bindings for each block scoped
-variable, constant, or function declarated in the block are instantiated
-in the environment record.
+NOTE When an execution context is established for evaluating function
+code a new Declarative Environment Record is created and bindings for
+each formal parameter, and each function level variable, constant, or
+function declarated in the function are instantiated in the environment
+record.
+
+Function Declaration Instantiation is performed as follows using
+arguments func and env. func is the function object that for which
+the execution context is being established. env is the declarative
+environment record in which bindings are to be created.
+
+1.  Let code be the value of the [[Code]] internal property of func.
+
+2.  Let strict be be the value of the [[Strict]] internal property of
+    func.
+
+3.  Let FormalParameterList be the value of the
+    [[FormalParameterList]] internal property of func.
+
+4.  Let parameterNames be the BoundNames of FormalParameterList.
+
+5.  For each String argName in parameterNames, in list order do
+
+    a.  Let alreadyDeclared be the result of calling env’s
+        HasBinding concrete method passing argName as the argument.
+
+    b.  NOTE Duplicate parameter names can only occur in non-strict
+        code.
+
+    c.  If alreadyDeclared is FALSE, then
+
+        i.  Call env’s CreateMutableBinding concrete method passing
+            argName as the argument.
+
+    d.  If strict is FALSE, then
+
+        i.  Call env’s InitializeBinding concrete method passing
+            argName, and UNDEFINED as the arguments.
+
+6.  Let declarations be the LexicalDeclarations of code.
+
+7.  For each element d in declarations do
+
+    a.  For each element dn of the BoundNames of d do
+
+        i.  Let alreadyDeclared be the result of calling env’s
+            HasBinding concrete method passing dn as the argument.
+
+        ii. If alreadyDeclared is FALSE, then
+
+            1.  If d is a ConstDeclaration, then
+
+                a.  Call env’s CreateImmutableBinding concrete method
+                    passing dn as the argument.
+
+            2.  Else,
+
+                a.  Call env’s CreateMutableBinding concrete method
+                    passing dn and FALSE as the arguments.
+
+8.  Let argumentsAlreadyDeclared be the result of calling env’s
+    HasBinding concrete method passing "ARGUMENTS" as the argument.
+
+9.  Let hasArgumentsObject be the Boolean negation of
+    argumentsAlreadyDeclared.
+
+10. If argumentsAlreadyDeclared is FALSE, then
+
+    a.  If strict is TRUE, then
+
+        i.  Call env’s CreateImmutableBinding concrete method passing
+            the String "ARGUMENTS" as the argument.
+
+    b.  Else,
+
+        i.  Call env’s CreateMutableBinding concrete method passing
+            the String "ARGUMENTS" as the argument.
+
+11. Let varNames be the VarDeclaredNames of code.
+
+12. For each String varName in varNames, in list order do
+
+    a.  Let alreadyDeclared be the result of calling env’s
+        HasBinding concrete method passing varName as the argument.
+
+    b.  NOTE A VarDeclaredNames is only instantiated and initialied here
+        if it is not also the name of a formal parameter or a
+        FunctionDeclarations. Such duplicate declarations may only
+        occur in non-extended code.
+
+    c.  If alreadyDeclared is FALSE, then
+
+        i.  Call env’s CreateMutableBinding concrete method passing
+            varName as the argument.
+
+        ii. Call env’s InitializeBinding concrete method passing fn,
+            and UNDEFINED as the arguments.
+
+13. Let initializedFunctions be an emptyList.
+
+14. For each FunctionDeclaration f in declarations, in reverse
+    list order do
+
+    a.  NOTE If there are multiple FunctionDeclarations for the same
+        name, the last declaration is used. Multiple
+        FunctionDeclarations for the same name is only valid in
+        non-extended code.
+
+    b.  Let fn be the sole element of the BoundNames of f.
+
+    c.  If fn is not an element of initializedFunctions, then
+
+        i.  Append fn to initializedFunctions.
+
+        ii. Let fo be the result of instantiating _FunctionDeclaration
+            f_ as described in Clause 13.
+
+        iii. Call env’s InitializeBinding concrete method passing
+            fn, and fo as the arguments.
+
+15. Return hasArgumentsObject.
+
+NOTE When a Block or CaseBlock production contained in extended code
+is evaluated a new Declarative Environment Record is created and
+bindings for each block scoped variable, constant, or function
+declarated in the block are instantiated in the environment record.
 
 Block Declaration Instantiation is performed as follows using arguments
 code and env. code is the grammar production corresponding to the
 body of the block. env is the declarative environment record in which
 bindings are to be.
 
-1.  Assert: parameterNames has no duplicate entries.
+1.  2.  Let declarations be the LexicalDeclarations of code.
 
-2.  Let declarations be the LexicalDeclarations of code.
-
-3.  For each FunctionDeclaration f in declarations, in list order
-    do
-
-    a.  Let fn be the Identifier in FunctionDeclaration f.
-
-    b.  Let fo be the result of instantiating _FunctionDeclaration f_
-        as described in Clause 13.
-
-    c.  Call env’s CreateMutableBinding concrete method passing fn
-        and configurableBindings as the arguments.
-
-    d.  Call env’s InitializeBinding concrete method passing fn, and
-        fo as the arguments.
-
-4.  For each LetDeclaration and ConstDeclaration d in code do
+3.  For each element d in declarations do
 
     a.  For each element dn of the BoundNames of d do
 
-        i.  If d is a LetDeclaration, then
-
-            1.  Call env’s CreateMutableBinding concrete method
-                passing dn and FALSE as the arguments.
-
-        ii. Else,
+        i.  If d is a ConstDeclaration, then
 
             1.  Call env’s CreateImmutableBinding concrete method
                 passing dn as the argument.
 
+        ii. Else,
+
+            1.  Call env’s CreateMutableBinding concrete method
+                passing dn and FALSE as the arguments.
+
+4.  For each FunctionDeclaration f in declarations, in list order
+    do
+
+    a.  Let fn be the sole element of the BoundNames of f.
+
+    b.  Let fo be the result of instantiating _FunctionDeclaration f_
+        as described in Clause 13.
+
+    c.  d.  Call env’s InitializeBinding concrete method passing fn,
+        and fo as the arguments.
+
+5.  a.  i.  1.  
+
+        ii. 1.  
+
 When control enters an execution context for function code, an arguments
 object is created unless (as specified in 10.5) the identifier ARGUMENTS
 occurs as an Identifier in the function’s FormalParameterList or
-occurs as the Identifier of a FunctionDeclaration contained in the
+occurs as the BindingIdentifier of a Declaration contained in the
 function code.
 
-The arguments object is created by calling the abstract operation
-CreateArgumentsObject with arguments func the function object whose
-code is to be evaluated_, names_ a List containing the function’s formal
-parameter names_, args_ the actual arguments passed to the [[Call]]
-internal method, env the variable environment for the function code,
-and strict a Boolean that indicates whether or not the function code
-is strict code. When CreateArgumentsObject is called the following steps
-are performed:
+The abstract operation CreateStrictArgumentsObject called with
+argument list args performs the following steps:
+
+1.  Let len be the number of elements in args.
+
+2.  Let obj be the result of the abstraction operation
+    InstantiateArgumentsObject with argument len.
+
+3.  Let indx = len - 1.
+
+4.  Repeat while indx >= 0,
+
+    a.  Let val be the element of args at 0-origined list position
+          indx.
+
+    b.  Call the [[DefineOwnProperty]] internal method on obj passing
+          ToString(indx), the property descriptor {[[Value]]: val,
+          [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]:
+          TRUE}, and FALSE as arguments.
+
+    c.  Let indx = indx - 1
+
+5.  Let thrower be the [[ThrowTypeError]] function Object (13.2.3).
+
+6.  Call the [[DefineOwnProperty]] internal method of obj with
+    arguments "CALLER", PropertyDescriptor {[[Get]]: thrower, [[Set]]:
+    thrower, [[Enumerable]]: FALSE, [[Configurable]]: FALSE}, and
+    FALSE.
+
+7.  Call the [[DefineOwnProperty]] internal method of obj with
+    arguments "CALLEE", PropertyDescriptor {[[Get]]: thrower, [[Set]]:
+    thrower, [[Enumerable]]: FALSE, [[Configurable]]: FALSE}, and
+    FALSE.
+
+8.  Return obj
+
+The abstract operation CreateMappedArgumentsObject called with List
+names, environment record env, and argument list args performs the
+following steps:
+
+1.  Let len be the number of elements in args.
+
+2.  Let obj be the result of the abstraction operation
+    InstantiateArgumentsObject with argument len.
+
+3.  Let map be the result of creating a new ECMAScript object.
+
+4.  Set all the internal methods of map as specified in 8.12.
+
+5.  Let mappedNames be an empty List.
+
+6.  Let indx = len - 1.
+
+7.  Repeat while indx >= 0,
+
+    a.  Let val be the element of args at 0-origined list position
+        indx.
+
+    b.  Call the [[DefineOwnProperty]] internal method on obj passing
+        ToString(indx), the property descriptor {[[Value]]: val,
+        [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]:
+        TRUE}, and FALSE as arguments.
+
+    c.  If indx is less than the number of elements in names, then
+
+        i.  Let name be the element of names at 0-origined list
+            position indx.
+
+        ii. If name is not an element of mappedNames, then
+
+            1.  Add name as an element of the list mappedNames.
+
+            2.  Let g be the result of calling the MakeArgGetter
+                abstract operation with arguments name and env.
+
+            3.  Let p be the result of calling the MakeArgSetter
+                abstract operation with arguments name and env.
+
+            4.  Call the [[DefineOwnProperty]] internal method of map
+                passing ToString(indx), the Property Descriptor
+                {[[Set]]: p, [[Get]]: g, [[Configurable]]: TRUE},
+                and FALSE as arguments.
+
+    d.  Let indx = indx - 1
+
+8.  If mappedNames is not empty, then
+
+    a.  Set the [[ParameterMap]] internal property of obj to map.
+
+    b.  Set the [[Get]], [[GetOwnProperty]], [[DefineOwnProperty]], and
+        [[Delete]] internal methods of obj to the definitions provided
+        below.
+
+9.  Call the [[DefineOwnProperty]] internal method on obj passing
+    "CALLEE", the property descriptor {[[Value]]: func, [[Writable]]:
+    TRUE, [[Enumerable]]: FALSE, [[Configurable]]: TRUE}, and FALSE as
+    arguments.
+
+10. Return obj
+
+The abstract operation InstantiateArgumentsObject called with an
+argument len performs the following steps:
 
 The abstract operation MakeArgGetter called with String name and
 environment record env creates a function object that when executed
@@ -4407,12 +4612,17 @@ PrimaryExpression :
 THIS
 Identifier
 Literal
-ArrayLiteral
-ObjectLiteral
+SealedArrayLiteral
+SealedObjectLiteral
+FunctionExpression
 ( Expression )
 
-The THIS keyword evaluates to the value of the ThisBinding of the
-current execution context.
+RUNTIME SEMANTICS: EVALUATION
+
+PrimaryExpression : THIS
+
+1.  Return the value of the ThisBinding of the current execution
+    context.
 
 An Identifier is evaluated by performing Identifier Resolution as
 specified in 10.3.1 using the IdentifierName corresponding to
@@ -4421,11 +4631,11 @@ of type Reference.
 
 A Literal is evaluated as described in 7.8.
 
-An array initialiser is an expression describing the initialisation of
-an Array object, written in a form of a literal. It is a list of zero or
-more expressions, each of which represents an array element, enclosed in
-square brackets. The elements need not be literals; they are evaluated
-each time the array initialiser is evaluated.
+NOTE An array initialiser is an expression describing the initialisation
+of an Array object, written in a form of a literal. It is a list of zero
+or more expressions, each of which represents an array element, enclosed
+in square brackets. The elements need not be literals; they are
+evaluated each time the array initialiser is evaluated.
 
 Array elements may be elided at the beginning, middle or end of the
 element list. Whenever a comma in the element list is not preceded by an
@@ -4436,6 +4646,11 @@ are not defined. If an element is elided at the end of an array, that
 element does not contribute to the length of the Array.
 
 Syntax
+
+SealedArrayLiteral :
+
+ArrayLiteral
+# ArrayLiteral
 
 ArrayLiteral :
 
@@ -4455,10 +4670,21 @@ Elision :
 ,
 Elision ,
 
-Semantics
+EARLY ERRORS
 
-The production ArrayLiteral : [ Elision~opt~ ] is evaluated as
-follows:
+ElementList : Elision~opt~ _… AssignmentExpression_
+
+-   It is a Syntax Error if the source code parsed with this production
+    is not extended code.
+
+ElementList : ElementList , Elision~opt~ _… AssignmentExpression_
+
+-   It is a Syntax Error if the source code parsed with this production
+    is not extended code.
+
+RUNTIME SEMANTICS: EVALUATION
+
+ArrayLiteral : [ Elision~opt~ ]
 
 1.  Let array be the result of creating a new object as if by the
     expression NEW ARRAY() where ARRAY is the standard built-in
@@ -4472,13 +4698,11 @@ follows:
 
 4.  Return array.
 
-The production ArrayLiteral : [ ElementList ] is evaluated as
-follows:
+ArrayLiteral : [ ElementList ]
 
 1.  Return the result of evaluating ElementList.
 
-The production ArrayLiteral : [ ElementList , Elision~opt~ ] is
-evaluated as follows:
+ArrayLiteral : [ ElementList , Elision~opt~ ]
 
 1.  Let array be the result of evaluating ElementList.
 
@@ -4493,8 +4717,7 @@ evaluated as follows:
 
 5.  Return array.
 
-The production ElementList : Elision~opt~ AssignmentExpression is
-evaluated as follows:
+ElementList : Elision~opt~ AssignmentExpression
 
 1.  Let array be the result of creating a new object as if by the
     expression NEW ARRAY() where ARRAY is the standard built-in
@@ -4514,14 +4737,7 @@ evaluated as follows:
 
 6.  Return array.
 
-The static semantics of the production ElementList : Elision~opt~ _…
-AssignmentExpression_ are:
-
--   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
-
-The production ElementList : Elision~opt~ _… AssignmentExpression_
-is evaluated as follows:
+ElementList : Elision~opt~ _… AssignmentExpression_
 
 1.  Let array be the result of creating a new object as if by the
     expression NEW ARRAY() where ARRAY is the standard built-in
@@ -4564,8 +4780,7 @@ is evaluated as follows:
 
 10. Return array.
 
-The production ElementList : ElementList , Elision~opt~
-AssignmentExpression is evaluated as follows:
+ElementList : ElementList , Elision~opt~ AssignmentExpression
 
 1.  Let array be the result of evaluating ElementList.
 
@@ -4586,14 +4801,9 @@ AssignmentExpression is evaluated as follows:
 
 7.  Return array.
 
-The static semantics of the production ElementList : ElementList ,
-Elision~opt~ _… AssignmentExpression_ are:
+-   
 
--   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
-
-The production ElementList : ElementList , Elision~opt~ _…
-AssignmentExpression_ is evaluated as follows:
+ElementList : ElementList , Elision~opt~ _… AssignmentExpression_
 
 1.  Let array be the result of evaluating ElementList.
 
@@ -4637,11 +4847,11 @@ AssignmentExpression_ is evaluated as follows:
 
 11. Return array.
 
-The production Elision : , is evaluated as follows:
+Elision : ,
 
 1.  Return the numeric value 1.
 
-The production Elision : Elision , is evaluated as follows:
+Elision : Elision ,
 
 1.  Let preceding be the result of evaluating Elision.
 
@@ -4652,13 +4862,18 @@ defined for the array even if the standard built-in Array prototype
 object has been modified in a manner that would preclude the creation of
 new own properties using [[Put]].
 
-An object initialiser is an expression describing the initialisation of
-an Object, written in a form resembling a literal. It is a list of zero
-or more pairs of property names and associated values, enclosed in curly
-braces. The values need not be literals; they are evaluated each time
-the object initialiser is evaluated.
+NOTE An object initialiser is an expression describing the
+initialisation of an Object, written in a form resembling a literal. It
+is a list of zero or more pairs of property names and associated values,
+enclosed in curly braces. The values need not be literals; they are
+evaluated each time the object initialiser is evaluated.
 
 Syntax
+
+SealedObjectLiteral :
+
+ObjectLiteral
+# ObjectLiteral
 
 ObjectLiteral :
 
@@ -4675,6 +4890,7 @@ PropertyAssignment :
 
 IdentifierName
 PropertyName : AssignmentExpression
+PropertyName ( FormalParameterList ) { FunctionBody }
 GET PropertyName ( ) { FunctionBody }
 SET PropertyName ( PropertySetParameterList ) { FunctionBody }
 
@@ -4686,60 +4902,13 @@ NumericLiteral
 
 PropertySetParameterList :
 
-Identifier
+BindingIdentifier
+BindingPattern
 
-Semantics
+EARLY ERRORS
 
-The production ObjectLiteral : { } is evaluated as follows:
-
-1.  Return a new object created as if by the expression NEW OBJECT()
-    where OBJECT is the standard built-in constructor with that name.
-
-The productions ObjectLiteral : { PropertyNameAndValueList } and
-ObjectLiteral : { PropertyNameAndValueList ,} are evaluated as
-follows:
-
-1.  Return the result of evaluating PropertyNameAndValueList.
-
-The PropertyDefinitionList(name) of the production
- PropertyAssignment : PropertyName : AssignmentExpression
-is determined as follows:
-
-1.  If PropName of PropertyAssignment is not name return the empty
-    List.
-
-2.  Return a List containing PropertyAssignment.
-
-The production PropertyNameAndValueList : PropertyAssignment is
-evaluated as follows:
-
-1.  Let obj be the result of creating a new object as if by the
-    expression NEW OBJECT() where OBJECT is the standard built-in
-    constructor with that name.
-
-2.  Let propId be the result of evaluating PropertyAssignment.
-
-3.  Call the [[DefineOwnProperty]] internal method of obj with
-    arguments propId.name, propId.descriptor, and FALSE.
-
-4.  Return obj.
-
-The PropertyDefinitionList(name) of the production
- PropertyNameAndValueList : PropertyNameAndValueList ,
+PropertyNameAndValueList : PropertyNameAndValueList ,
 PropertyAssignment
-is determined as follows:
-
-1.  Let previous be PropertyDefinitionList(name) of
-    PropertyNameAndValueList.
-
-2.  If PropName of PropertyAssignment is name then,
-
-    a.  Append PropertyAssignment to the end of previous.
-
-3.  Return previous.
-
-The static semantics of the production PropertyNameAndValueList :
-PropertyNameAndValueList , PropertyAssignment are:
 
 -   It is a Syntax Error if this production is contained in strict code,
     PropertyAssignment is the production PropertyAssignment :
@@ -4774,21 +4943,151 @@ PropertyNameAndValueList , PropertyAssignment are:
      PropertyAssignment : SET PropertyName (
     PropertySetParameterList ) { FunctionBody }.
 
-The production
- PropertyNameAndValueList : PropertyNameAndValueList ,
+PropertyAssignment : SET PropertyName ( PropertySetParameterList )
+{ FunctionBody }
+
+-   It is a Syntax Error if the source code matching this production is
+    extended code and the PropName of PropertyName also occurs in the
+    VarDeclaredNames of FunctionBody.
+
+-   It is a Syntax Error if the source code matching this production is
+    extended code and the PropName of PropertyName also occurs in the
+    LexicallyDeclaredNames of FunctionBody.
+
+-   It is a Syntax Error if the source code matching this production is
+    extended code and any element of the LexicallyDeclaredNames of
+    PropertySetParameterList also occurs in the VarDeclaredNames of
+    FunctionBody.
+
+-   It is a Syntax Error if the source code matching this production is
+    extended code and any element of the BoundNames of
+    PropertySetParameterList also occurs in the LexicallyDeclaredNames
+    of FunctionBody.
+
+PropertySetParameterList : BindingPattern
+
+-   It is a Syntax Error if the source code parsed with this production
+    is not extended code.
+
+-   It is a Syntax Error if BoundNames of BindingPattern contains any
+    duplicate elements.
+
+STATIC SEMANTICS: BOUNDNAMES
+
+PropertySetParameterList : _BindingIdentifier _
+
+1.  Return BoundNames of BindingIdentifier.
+
+PropertySetParameterList: _BindingPattern _
+
+1.  Return BoundNames of BindingPattern.
+
+STATIC SEMANTICS: EXPECTEDARGUMENTCOUNT
+
+PropertySetParameterList : _BindingIdentifier _
+
+1.  Return 1.
+
+PropertySetParameterList : _BindingPattern _
+
+1.  Return 1.
+
+STATIC SEMANTICS: HASINITIALISER
+
+PropertySetParameterList : _BindingIdentifier _
+
+1.  Return FALSE.
+
+PropertySetParameterList : _BindingPattern _
+
+1.  Return FALSE.
+
+STATIC SEMANTICS: PROPERTYDEFINITIONLIST(NAME)
+
+PropertyAssignment : PropertyName : AssignmentExpression
+
+1.  If PropName of PropertyAssignment is not name return the empty
+    List.
+
+2.  Return a List containing PropertyAssignment.
+
+PropertyNameAndValueList : PropertyNameAndValueList ,
 PropertyAssignment
-is evaluated as follows:
 
-If the above steps would throw a SYNTAXERROR then an implementation must
-treat the error as an early error (Clause 16).
+1.  Let previous be PropertyDefinitionList(name) of
+    PropertyNameAndValueList.
 
-The PropName of the production PropertyAssignment : IdentifierName
-is determined as follows:
+2.  If PropName of PropertyAssignment is name then,
 
-1.  2.  Return PropName(IdentifierName).
+    a.  Append PropertyAssignment to the end of previous.
 
-The production PropertyAssignment : IdentifierName is evaluated as
-follows:
+3.  Return previous.
+
+STATIC SEMANTICS: PROPNAME
+
+PropertyAssignment : IdentifierName
+
+1.  Return String Value of IdentifierName.
+
+PropertyAssignment : PropertyName : AssignmentExpression
+
+1.  Return PropName of PropertyName.
+
+PropertyAssignment : GET PropertyName ( ) { FunctionBody }
+
+1.  Return PropName(PropertyName).
+
+PropertyAssignment : SET PropertyName ( PropertySetParameterList )
+{ FunctionBody }
+
+1.  Return PropName(PropertyName).
+
+PropertyName : IdentifierName
+
+1.  Return PropName(IdentifierName).
+
+PropertyName : StringLiteral
+
+1.  Return the SV of the StringLiteral.
+
+PropertyName : NumericLiteral
+
+1.  Let nbr be the result of forming the value of the
+    NumericLiteral.
+
+2.  Return ToString(nbr).
+
+RUNTIME SEMANTICS: EVALUATION
+
+ObjectLiteral : { }
+
+1.  Return a new object created as if by the expression NEW OBJECT()
+    where OBJECT is the standard built-in constructor with that name.
+
+ObjectLiteral :
+
+  { PropertyNameAndValueList }_
+  _{ PropertyNameAndValueList , }
+
+1.  Return the result of evaluating PropertyNameAndValueList.
+
+PropertyNameAndValueList : PropertyAssignment
+
+1.  Let obj be the result of creating a new object as if by the
+    expression NEW OBJECT() where OBJECT is the standard built-in
+    constructor with that name.
+
+2.  Let propId be the result of evaluating PropertyAssignment.
+
+3.  Call the [[DefineOwnProperty]] internal method of obj with
+    arguments propId.name, propId.descriptor, and FALSE.
+
+4.  Return obj.
+
+PropertyNameAndValueList : PropertyNameAndValueList ,
+PropertyAssignment
+
+PropertyAssignment : IdentifierName
 
 1.  Let propName be PropName(IdentifierName).
 
@@ -4802,13 +5101,7 @@ follows:
 
 5.  Return Property Identifier (propName, desc).
 
-The PropName of the production PropertyAssignment : PropertyName :
-AssignmentExpression is determined as follows:
-
-1.  Return PropName(PropertyName).
-
-The production PropertyAssignment : PropertyName :
-AssignmentExpression is evaluated as follows:
+PropertyAssignment : PropertyName : AssignmentExpression
 
 1.  Let propName be PropName(PropertyName).
 
@@ -4821,21 +5114,16 @@ AssignmentExpression is evaluated as follows:
 
 5.  Return Property Identifier (propName, desc).
 
-The PropName of the production PropertyAssignment : GET PropertyName
-( ) { FunctionBody } is determined as follows:
-
-1.  2.  Return PropName(PropertyName).
-
-The production PropertyAssignment : GET PropertyName ( ) {
-FunctionBody } is evaluated as follows:
+PropertyAssignment : GET PropertyName ( ) { FunctionBody }
 
 1.  Let propName be PropName(PropertyName).
 
 2.  Let closure be the result of creating a new Function object as
-    specified in 13.2 with an empty parameter list and body specified by
-    FunctionBody. Pass in the LexicalEnvironment of the running
-    execution context as the Scope. Pass in TRUE as the Strict flag
-    if the PropertyAssignment is contained in strict code or if its
+    specified in 13.2 using a FormalParameterList : [empty] production
+    as the parameter list and body specified by FunctionBody. Pass in
+    the LexicalEnvironment of the running execution context as the
+    Scope. Pass in TRUE as the Strict flag if the
+    PropertyAssignment is contained in strict code or if its
     FunctionBody is strict code.
 
 3.  Let desc be the Property Descriptor{[[Get]]: closure,
@@ -4843,14 +5131,8 @@ FunctionBody } is evaluated as follows:
 
 4.  Return Property Identifier (propName, desc).
 
-The PropName of the production PropertyAssignment : SET PropertyName
-( PropertySetParameterList ) { FunctionBody } is determined as
-follows:
-
-1.  2.  Return the result of PropName(PropertyName).
-
-The production PropertyAssignment : SET PropertyName (
-PropertySetParameterList ) { FunctionBody } is evaluated as follows:
+PropertyAssignment : SET PropertyName ( PropertySetParameterList )
+{ FunctionBody }
 
 1.  Let propName be PropName(PropertyName).
 
@@ -4867,39 +5149,23 @@ PropertySetParameterList ) { FunctionBody } is evaluated as follows:
 
 4.  Return Property Identifier (propName, desc).
 
-The static semantics of the production PropertyAssignment : SET
-PropertyName ( PropertySetParameterList ) { FunctionBody } are:
+5.  
 
--   It is a Syntax Error if the Identifier "EVAL" or the Identifier
-    "ARGUMENTS" occurs as the Identifier in a
-    PropertySetParameterList of a PropertyAssignment that is either
-    contained in strict code or whose FunctionBody is strict code.
+RUNTIME SEMANTICS: EVALUATION
 
-The PropName of the production PropertyName : IdentifierName is
-evaluated as follows:
+PrimaryExpression : FunctionExpression
 
-1.  Return PropName(IdentifierName).
+1.  Return the result of evaluating FunctionExpression.
 
-The PropName of the production PropertyName : StringLiteral is
-evaluated as follows:
+1.  
 
-1.  Return the SV of the StringLiteral.
+1.  
 
-The PropName of the production PropertyName : NumericLiteral is
-evaluated as follows:
+1.  2.  
 
-1.  Let nbr be the result of forming the value of the
-    NumericLiteral.
+RUNTIME SEMANTICS: EVALUATION
 
-2.  Return ToString(nbr).
-
-The PropName of the token IdentifierName is determined as follows:
-
-1.  Return the String value containing the same sequence of characters
-    as IdentifierName.
-
-The production PrimaryExpression : ( Expression ) is evaluated as
-follows:
+PrimaryExpression : ( Expression )
 
 1.  Return the result of evaluating Expression. This may be of type
     Reference.
@@ -4913,9 +5179,14 @@ Syntax
 MemberExpression :
 
 PrimaryExpression
-FunctionExpression
 MemberExpression [ Expression ]
 MemberExpression . IdentifierName
+SUPER [ Expression ]
+SUPER . IdentifierName
+MemberExpression <| SealedArrayLiteral
+MemberExpression <| SealedObjectLiteral
+MemberExpression <| FunctionExpression
+MemberExpression <| ValueLiteral
 NEW MemberExpression Arguments
 
 NewExpression :
@@ -4977,15 +5248,19 @@ where <identifier-name-string> is a string literal containing the same
 sequence of characters after processing of Unicode escape sequences as
 the IdentifierName.
 
-The production MemberExpression : MemberExpression [ Expression ]
-is evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
 
-The production CallExpression : CallExpression [ Expression ] is
-evaluated in exactly the same manner, except that the contained
+MemberExpression : MemberExpression [ Expression ]
+
+CallExpression : CallExpression [ Expression ]
+
+Is evaluated in exactly the same manner as MemberExpression :
+MemberExpression [ Expression ] except that the contained
 CallExpression is evaluated in step 1.
 
-The production NewExpression : NEW NewExpression is evaluated as
-follows:
+RUNTIME SEMANTICS: EVALUATION
+
+NEW NewExpression
 
 1.  Let ref be the result of evaluating NewExpression.
 
@@ -5000,8 +5275,7 @@ follows:
     constructor, providing no arguments (that is, an empty list of
     arguments).
 
-The production MemberExpression : NEW MemberExpression Arguments
-is evaluated as follows:
+MemberExpression : NEW MemberExpression Arguments
 
 1.  Let ref be the result of evaluating MemberExpression.
 
@@ -5018,8 +5292,9 @@ is evaluated as follows:
 6.  Return the result of calling the [[Construct]] internal method on
     constructor, providing the list argList as the argument values.
 
-The production CallExpression : MemberExpression Arguments is
-evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
+
+CallExpression : MemberExpression Arguments
 
 1.  Let ref be the result of evaluating MemberExpression.
 
@@ -5051,8 +5326,10 @@ evaluated as follows:
     providing thisValue as the THIS value and providing the list
     argList as the argument values.
 
-The production CallExpression : CallExpression Arguments is
-evaluated in exactly the same manner, except that the contained
+CallExpression : CallExpression Arguments
+
+This is evaluated in exactly the same manner as CallExpression :
+MemberExpression Arguments except that the contained
 CallExpression is evaluated in step 1.
 
 NOTE The returned result will never be of type Reference if func is a
@@ -5062,16 +5339,35 @@ Reference is returned, it must be a non-strict Property Reference.
 
 The evaluation of an argument list produces a List of values (see 8.8).
 
-The production Arguments : ( ) is evaluated as follows:
+EARLY ERRORS
+
+1.  
+
+1.  
+
+1.  2.  3.  
+
+ArgumentList : _… AssignmentExpression_:
+
+-   It is a Syntax Error if the source code parsed with this production
+    is not extended code.
+
+ArgumentList : ArgumentList , _… _AssignmentExpression
+
+-   It is a Syntax Error if the source code parsed with this production
+    is not extended code.
+
+RUNTIME SEMANTICS: EVALUATION
+
+Arguments : ( )
 
 1.  Return an empty List.
 
-The production Arguments : ( ArgumentList ) is evaluated as follows:
+Arguments : ( ArgumentList )
 
 1.  Return the result of evaluating ArgumentList.
 
-The production ArgumentList : AssignmentExpression is evaluated as
-follows:
+ArgumentList : AssignmentExpression
 
 1.  Let ref be the result of evaluating AssignmentExpression.
 
@@ -5079,14 +5375,7 @@ follows:
 
 3.  Return a List whose sole item is arg.
 
-The static semantics of the production ArgumentList : _…
-AssignmentExpression_ are:
-
--   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
-
-The production ArgumentList : _… AssignmentExpression_ is evaluated as
-follows:
+ArgumentList : _… AssignmentExpression_
 
 1.  Let list be an empty List.
 
@@ -5114,8 +5403,7 @@ follows:
 
 9.  Return list.
 
-The production ArgumentList : ArgumentList , AssignmentExpression
-is evaluated as follows:
+ArgumentList : ArgumentList , AssignmentExpression
 
 1.  Let precedingArgs be the result of evaluating ArgumentList.
 
@@ -5128,14 +5416,7 @@ is evaluated as follows:
     order, followed at the end by arg which is the last item of the
     new list.
 
-The static semantics of the production ArgumentList : ArgumentList ,
-_… _AssignmentExpression are:
-
--   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
-
-The production ArgumentList : ArgumentList , _…
-_AssignmentExpression is evaluated as follows:
+ArgumentList : ArgumentList , _… _AssignmentExpression
 
 1.  Let precedingArgs be an empty List.
 
@@ -5163,10 +5444,7 @@ _AssignmentExpression is evaluated as follows:
 
 9.  Return precedingArgs.
 
-The production MemberExpression : FunctionExpression is evaluated as
-follows:
-
-1.  Return the result of evaluating FunctionExpression.
+1.  
 
 Syntax
 
@@ -5176,8 +5454,10 @@ LeftHandSideExpression
 LeftHandSideExpression [no LineTerminator here] ++
 LeftHandSideExpression [no LineTerminator here] --
 
-The production PostfixExpression : LeftHandSideExpression [no
-LineTerminator here] ++ is evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
+
+PostfixExpression : LeftHandSideExpression [no LineTerminator
+here] ++
 
 1.  Let lhs be the result of evaluating LeftHandSideExpression.
 
@@ -5201,8 +5481,10 @@ LineTerminator here] ++ is evaluated as follows:
 
 4.  Return oldValue.
 
-The production PostfixExpression : LeftHandSideExpression [no
-LineTerminator here] -- is evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
+
+PostfixExpression : LeftHandSideExpression [no LineTerminator
+here] --
 
 1.  Let lhs be the result of evaluating LeftHandSideExpression.
 
@@ -5241,8 +5523,9 @@ TYPEOF UnaryExpression
 ~ UnaryExpression
 ! UnaryExpression
 
-The production UnaryExpression : DELETE UnaryExpression is evaluated
-as follows:
+RUNTIME SEMANTICS: EVALUATION
+
+UnaryExpression : DELETE UnaryExpression
 
 1.  Let ref be the result of evaluating UnaryExpression.
 
@@ -5279,8 +5562,9 @@ addition, if a DELETE operator occurs within strict mode code and the
 property to be deleted has the attribute { [[Configurable]]: FALSE }, a
 TYPEERROR exception is thrown.
 
-The production UnaryExpression : VOID UnaryExpression is evaluated
-as follows:
+RUNTIME SEMANTICS: EVALUATION
+
+UnaryExpression : VOID UnaryExpression
 
 1.  Let expr be the result of evaluating UnaryExpression.
 
@@ -5291,8 +5575,9 @@ as follows:
 NOTE GetValue must be called even though its value is not used because
 it may have observable side-effects.
 
-The production UnaryExpression : TYPEOF UnaryExpression is evaluated
-as follows:
+RUNTIME SEMANTICS: EVALUATION
+
+UnaryExpression : TYPEOF UnaryExpression
 
 1.  Let val be the result of evaluating UnaryExpression.
 
@@ -5318,8 +5603,9 @@ Table 21 — typeof Operator Results
   Object (host and does not implement [[Call]])         Implementation-defined except may not be "UNDEFINED", "BOOLEAN", "NUMBER", or "STRING".
   ----------------------------------------------------- -----------------------------------------------------------------------------------------
 
-The production UnaryExpression : ++ UnaryExpression is evaluated as
-follows:
+RUNTIME SEMANTICS: EVALUATION
+
+UnaryExpression : ++ UnaryExpression
 
 1.  Let expr be the result of evaluating UnaryExpression.
 
@@ -5343,8 +5629,9 @@ follows:
 
 4.  Return newValue.
 
-The production UnaryExpression : -- UnaryExpression is evaluated as
-follows:
+RUNTIME SEMANTICS: EVALUATION
+
+UnaryExpression : -- UnaryExpression
 
 1.  Let expr be the result of evaluating UnaryExpression.
 
@@ -5368,21 +5655,22 @@ follows:
 
 4.  Return newValue.
 
-The unary + operator converts its operand to Number type.
+NOTE The unary + operator converts its operand to Number type.
 
-The production UnaryExpression : + UnaryExpression is evaluated as
-follows:
+RUNTIME SEMANTICS: EVALUATION
+
+UnaryExpression : + UnaryExpression
 
 1.  Let expr be the result of evaluating UnaryExpression.
 
 2.  Return ToNumber(GetValue(expr)).
 
-The unary - operator converts its operand to Number type and then
-negates it. Note that negating +0 produces −0, and negating −0 produces
-+0.
+NOTE The unary - operator converts its operand to Number type and then
+negates it. Negating +0 produces −0, and negating −0 produces +0.
 
-The production UnaryExpression : - UnaryExpression is evaluated as
-follows:
+RUNTIME SEMANTICS: EVALUATION
+
+UnaryExpression : - UnaryExpression
 
 1.  Let expr be the result of evaluating UnaryExpression.
 
@@ -5393,8 +5681,9 @@ follows:
 4.  Return the result of negating oldValue; that is, compute a Number
     with the same magnitude but opposite sign.
 
-The production UnaryExpression : ~ UnaryExpression is evaluated as
-follows:
+RUNTIME SEMANTICS: EVALUATION
+
+UnaryExpression : ~ UnaryExpression
 
 1.  Let expr be the result of evaluating UnaryExpression.
 
@@ -5403,8 +5692,9 @@ follows:
 3.  Return the result of applying bitwise complement to oldValue. The
     result is a signed 32-bit integer.
 
-The production UnaryExpression : ! UnaryExpression is evaluated as
-follows:
+RUNTIME SEMANTICS: EVALUATION
+
+UnaryExpression : ! UnaryExpression
 
 1.  Let expr be the result of evaluating UnaryExpression.
 
@@ -5423,7 +5713,7 @@ MultiplicativeExpression * UnaryExpression
 MultiplicativeExpression / UnaryExpression
 MultiplicativeExpression % UnaryExpression
 
-Semantics
+RUNTIME SEMANTICS: EVALUATION
 
 The production MultiplicativeExpression : _MultiplicativeExpression @
 UnaryExpression_, where @ stands for one of the operators in the above
@@ -5566,11 +5856,12 @@ MultiplicativeExpression
 AdditiveExpression + MultiplicativeExpression
 AdditiveExpression - MultiplicativeExpression
 
-The addition operator either performs string concatenation or numeric
-addition.
+NOTE The addition operator either performs string concatenation or
+numeric addition.
 
-The production AdditiveExpression : AdditiveExpression +
-MultiplicativeExpression is evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
+
+AdditiveExpression : AdditiveExpression + MultiplicativeExpression
 
 NOTE 1 No hint is provided in the calls to ToPrimitive in steps 5 and 6.
 All native ECMAScript objects except Date objects handle the absence of
@@ -5579,11 +5870,12 @@ of a hint as if the hint String were given. Host objects may handle the
 absence of a hint in some other manner.
 
 NOTE 2 Step 7 differs from step 3 of the comparison algorithm for the
-relational operators (11.8.5), by using the logical-or operation instead
+relational operators (11.8.1), by using the logical-or operation instead
 of the logical-and operation.
 
-The production AdditiveExpression : AdditiveExpression -
-MultiplicativeExpression is evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
+
+AdditiveExpression : AdditiveExpression - MultiplicativeExpression
 
 The + operator performs addition when applied to two operands of numeric
 type, producing the sum of the operands. The - operator performs
@@ -5637,23 +5929,30 @@ ShiftExpression << AdditiveExpression
 ShiftExpression >> AdditiveExpression
 ShiftExpression >>> AdditiveExpression
 
-Performs a bitwise left shift operation on the left operand by the
+NOTE Performs a bitwise left shift operation on the left operand by the
 amount specified by the right operand.
 
-The production ShiftExpression : ShiftExpression <<
-AdditiveExpression is evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
 
-Performs a sign-filling bitwise right shift operation on the left
+ShiftExpression : ShiftExpression << AdditiveExpression
+
+NOTE Performs a sign-filling bitwise right shift operation on the left
 operand by the amount specified by the right operand.
 
-The production ShiftExpression : ShiftExpression >>
-AdditiveExpression is evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
 
-Performs a zero-filling bitwise right shift operation on the left
+ShiftExpression : ShiftExpression >> AdditiveExpression
+
+NOTE Performs a zero-filling bitwise right shift operation on the left
 operand by the amount specified by the right operand.
 
-The production ShiftExpression : ShiftExpression >>>
-AdditiveExpression is evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
+
+ShiftExpression : ShiftExpression >>> AdditiveExpression
+
+NOTE The result of evaluating a relational operator is always of type
+Boolean, reflecting whether the relationship named by the operator holds
+between its two operands.
 
 Syntax
 
@@ -5676,31 +5975,15 @@ RelationalExpressionNoIn <= ShiftExpression
 RelationalExpressionNoIn >= ShiftExpression
 RelationalExpressionNoIn INSTANCEOF ShiftExpression
 
+The semantics of the RelationalExpressionNoIn productions are the same
+as the RelationalExpression productions except that the contained
+RelationalExpressionNoIn is used in place of the contained
+RelationalExpression.
+
 NOTE The “NoIn” variants are needed to avoid confusing the in operator
 in a relational expression with the in operator in a for statement.
 
-Semantics
-
-The result of evaluating a relational operator is always of type
-Boolean, reflecting whether the relationship named by the operator holds
-between its two operands.
-
-The RelationalExpressionNoIn productions are evaluated in the same
-manner as the RelationalExpression productions except that the
-contained RelationalExpressionNoIn is evaluated instead of the
-contained RelationalExpression.
-
-The production RelationalExpression : RelationalExpression <
-ShiftExpression is evaluated as follows:
-
-The production RelationalExpression : RelationalExpression >
-ShiftExpression is evaluated as follows:
-
-The production RelationalExpression : RelationalExpression <=
-ShiftExpression is evaluated as follows:
-
-The production RelationalExpression : RelationalExpression >=
-ShiftExpression is evaluated as follows:
+RUNTIME SEMANTICS: THE ABSTRACT RELATIONAL COMPARISON ALGORITHM
 
 The comparison x < y, where x and y are values, produces TRUE,
 FALSE, or UNDEFINED (which indicates that at least one operand is NAN).
@@ -5729,11 +6012,25 @@ strings containing supplementary characters, lexicographic ordering on
 sequences of UTF-16 code unit values differs from that on sequences of
 code point values.
 
-The production RelationalExpression: RelationalExpression INSTANCEOF
-ShiftExpression is evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
 
-The production RelationalExpression : RelationalExpression IN
-ShiftExpression is evaluated as follows:
+RelationalExpression : RelationalExpression < ShiftExpression
+
+RelationalExpression : RelationalExpression > ShiftExpression is
+evaluated as follows:
+
+RelationalExpression : RelationalExpression <= ShiftExpression
+
+RelationalExpression : RelationalExpression >= ShiftExpression
+
+RelationalExpression: RelationalExpression INSTANCEOF
+ShiftExpression
+
+RelationalExpression : RelationalExpression IN ShiftExpression
+
+NOTE The result of evaluating an equality operator is always of type
+Boolean, reflecting whether the relationship named by the operator holds
+between its two operands.
 
 Syntax
 
@@ -5753,23 +6050,13 @@ EqualityExpressionNoIn != RelationalExpressionNoIn
 EqualityExpressionNoIn === RelationalExpressionNoIn
 EqualityExpressionNoIn !== RelationalExpressionNoIn
 
-Semantics
+The semantics of the EqualityExpressionNoIn productions are the same
+as the EqualityExpression productions except that the contained
+EqualityExpressionNoIn and RelationalExpressionNoIn are used in
+place of the contained EqualityExpression and RelationalExpression,
+respectively.
 
-The result of evaluating an equality operator is always of type Boolean,
-reflecting whether the relationship named by the operator holds between
-its two operands.
-
-The EqualityExpressionNoIn productions are evaluated in the same
-manner as the EqualityExpression productions except that the contained
-EqualityExpressionNoIn and RelationalExpressionNoIn are evaluated
-instead of the contained EqualityExpression and
-RelationalExpression, respectively.
-
-The production EqualityExpression : EqualityExpression ==
-RelationalExpression is evaluated as follows:
-
-The production EqualityExpression : EqualityExpression !=
-RelationalExpression is evaluated as follows:
+RUNTIME SEMANTICS: THE ABSTRACT EQUALITY COMPARISON ALGORITHM
 
 The comparison x == y, where x and y are values, produces TRUE
 or FALSE. Such a comparison is performed as follows:
@@ -5807,17 +6094,23 @@ values that are canonically equal according to the Unicode standard
 could test as unequal. In effect this algorithm assumes that both
 Strings are already in normalised form.
 
-The production EqualityExpression : EqualityExpression ===
-RelationalExpression is evaluated as follows:
-
-The production EqualityExpression : EqualityExpression !==
-RelationalExpression is evaluated as follows:
+RUNTIME SEMANTICS: THE STRICT EQUALITY COMPARISON ALGORITHM
 
 The comparison x === y, where x and y are values, produces TRUE
 or FALSE. Such a comparison is performed as follows:
 
 NOTE This algorithm differs from the SameValue Algorithm (9.12) in its
 treatment of signed zeroes and NaNs.
+
+RUNTIME SEMANTICS: EVALUATION
+
+EqualityExpression : EqualityExpression == RelationalExpression
+
+EqualityExpression : EqualityExpression != RelationalExpression
+
+EqualityExpression : EqualityExpression === RelationalExpression
+
+EqualityExpression : EqualityExpression !== RelationalExpression
 
 Syntax
 
@@ -5851,7 +6144,7 @@ BitwiseORExpressionNoIn :
 BitwiseXORExpressionNoIn
 BitwiseORExpressionNoIn | BitwiseXORExpressionNoIn
 
-Semantics
+RUNTIME SEMANTICS: EVALUATION
 
 The production A : _A @ B_, where @ is one of the bitwise operators in
 the productions above, is evaluated as follows:
@@ -5878,25 +6171,23 @@ LogicalORExpressionNoIn :
 LogicalANDExpressionNoIn
 LogicalORExpressionNoIn || LogicalANDExpressionNoIn
 
-Semantics
-
-The production LogicalANDExpression : LogicalANDExpression &&
-BitwiseORExpression is evaluated as follows:
-
-The production LogicalORExpression : LogicalORExpression ||
-LogicalANDExpression is evaluated as follows:
-
-The LogicalANDExpressionNoIn and LogicalORExpressionNoIn productions
-are evaluated in the same manner as the LogicalANDExpression and
-LogicalORExpression productions except that the contained
-LogicalANDExpressionNoIn, BitwiseORExpressionNoIn and
-LogicalORExpressionNoIn are evaluated instead of the contained
+The semantics of the LogicalANDExpressionNoIn and
+LogicalORExpressionNoIn productions are the same manner as the
+LogicalANDExpression and LogicalORExpression productions except that
+the contained LogicalANDExpressionNoIn, BitwiseORExpressionNoIn and
+LogicalORExpressionNoIn are used in place of the contained
 LogicalANDExpression, BitwiseORExpression and LogicalORExpression,
 respectively.
 
 NOTE The value produced by a && or || operator is not necessarily of
 type Boolean. The value produced will always be the value of one of the
 two operand expressions.
+
+RUNTIME SEMANTICS: EVALUATION
+
+LogicalANDExpression : LogicalANDExpression && BitwiseORExpression
+
+LogicalORExpression : LogicalORExpression || LogicalANDExpression
 
 Syntax
 
@@ -5911,15 +6202,10 @@ LogicalORExpressionNoIn
 LogicalORExpressionNoIn ? AssignmentExpression :
 AssignmentExpressionNoIn
 
-Semantics
-
-The production ConditionalExpression : LogicalORExpression ?
-AssignmentExpression : AssignmentExpression is evaluated as follows:
-
-The ConditionalExpressionNoIn production is evaluated in the same
-manner as the ConditionalExpression production except that the
-contained LogicalORExpressionNoIn, AssignmentExpression and
-AssignmentExpressionNoIn are evaluated instead of the contained
+The semantics of the ConditionalExpressionNoIn production is the same
+as the ConditionalExpression production except that the contained
+LogicalORExpressionNoIn, AssignmentExpression and
+AssignmentExpressionNoIn are used in place of the contained
 LogicalORExpression, first AssignmentExpression and second
 AssignmentExpression, respectively.
 
@@ -5930,6 +6216,11 @@ be a ConditionalExpression. The motivation for this difference in
 ECMAScript is to allow an assignment expression to be governed by either
 arm of a conditional and to eliminate the confusing and fairly useless
 case of a comma expression as the centre expression.
+
+RUNTIME SEMANTICS: EVALUATION
+
+ConditionalExpression : LogicalORExpression ? AssignmentExpression
+: AssignmentExpression
 
 Syntax
 
@@ -5950,6 +6241,64 @@ AssignmentOperator : ONE OF
   ---- ---- ---- ---- ---- ----- ----- ------ ---- ---- ----
   *=   /=   %=   +=   -=   <<=   >>=   >>>=   &=   ^=   |=
   ---- ---- ---- ---- ---- ----- ----- ------ ---- ---- ----
+
+The semantics of the AssignmentExpressionNoIn productions are the same
+manner as the AssignmentExpression productions except that the
+contained ConditionalExpressionNoIn and AssignmentExpressionNoIn are
+used in place of the contained ConditionalExpression and
+AssignmentExpression, respectively.
+
+STATIC SEMANTICS: EARLY ERRORS
+
+AssignmentExpression :
+
+LeftHandSideExpression = AssignmentExpression
+LeftHandSideExpression AssignmentOperator AssignmentExpression
+
+-   It is a Syntax Error if the AssignmentExpression is contained in
+    strict code and LeftHandSideExpression is the Identifier EVAL or
+    the Identifier ARGUMENTS.
+
+-   -   It is a Syntax Error if the AssignmentExpression is contained
+    in extended code and the LeftHandSideExpression is a Literal or
+    a FunctionExpression.
+
+-   It is a Syntax Error if the AssignmentExpression is contained in
+    extended code and the LeftHandSideExpression is an Identifier
+    that does not statically resolve to a declarative environment record
+    binding or if the resolved binding is an immutable binding.
+
+-   It is a Syntax Error if the LeftHandSideExpression is
+    PrimaryExpression : ( Expression ) and Expression derived a
+    production that would produce a Syntax Error according to these
+    rules. This rule is recursively applied.
+
+AssignmentExpression : LeftHandSideExpression = AssignmentExpression
+
+-   It is a Syntax Error if the AssignmentExpression is contained in
+    extended code and the LeftHandSideExpression is an ObjectLiteral
+    or an ArrayLiteral and the source code corresponding to
+    LeftHandSideExpression cannot be parsed using AssignmentPattern
+    as the goal symbol.
+
+RUNTIME SEMANTICS: EVALUATION
+
+AssignmentExpression : LeftHandSideExpression =
+AssignmentExpression
+
+AssignmentExpression : _LeftHandSideExpression AssignmentOperator
+AssignmentExpression_
+
+-   -   -   -   
+
+NOTE When an assignment occurs within strict mode code, lref in step
+1.d of the first must not be an unresolvable reference. If it is, a
+REFERENCEERROR exception is thrown upon assignment. The LeftHandSide
+also may not be a reference to a data property with the attribute value
+{[[Writable]]:FALSE}, to an accessor property with the attribute value
+{[[Set]]:UNDEFINED}, nor to a non-existent property of an object whose
+[[Extensible]] internal property has the value FALSE. In these cases a
+TYPEERROR exception is thrown.
 
 Supplemental Syntax
 
@@ -5997,109 +6346,11 @@ AssignmentRestElement :
 
 … LeftHandSideExpression
 
-Semantics
+STATIC SEMANTICS: EARLY ERRORS
 
-The AssignmentExpressionNoIn productions are evaluated in the same
-manner as the AssignmentExpression productions except that the
-contained ConditionalExpressionNoIn and AssignmentExpressionNoIn are
-evaluated instead of the contained ConditionalExpression and
-AssignmentExpression, respectively.
+AssignmentProperty : PropertyName : LeftHandSideExpression
 
-The static semantics of AssignmentExpression :
-LeftHandSideExpression = AssignmentExpression are:
-
--   It is a Syntax Error if the AssignmentExpression is contained in
-    strict code and LeftHandSideExpression is the Identifier EVAL or
-    the Identifier ARGUMENTS.
-
--   -   It is a Syntax Error if the AssignmentExpression is contained
-    in extended code and the LeftHandSideExpression is a Literal or
-    a FunctionExpression.
-
--   It is a Syntax Error if the AssignmentExpression is contained in
-    extended code and the LeftHandSideExpression is an Identifier
-    that does not statically resolve to a declarative environment record
-    binding or if the resolved binding an immutable binding.
-
--   It is a Syntax Error if the LeftHandSideExpression is
-    PrimaryExpression : ( Expression ) and Expression derived a
-    production that would produce a Syntax Error according to these
-    rules. This rule is recursively applied.
-
--   It is a Syntax Error if the AssignmentExpression is contained in
-    extended code and the LeftHandSideExpression is an ObjectLiteral
-    or an ArrayLiteral and the source code corresponding to
-    LeftHandSideExpression cannot be parsed using AssignmentPattern
-    as the goal symbol.
-
-The production AssignmentExpression : LeftHandSideExpression =
-AssignmentExpression is evaluated as follows:
-
-NOTE When an assignment occurs within strict mode code, lref in step
-1.d must not be an unresolvable reference. If it is, a REFERENCEERROR
-exception is thrown upon assignment. The LeftHandSide also may not be
-a reference to a data property with the attribute value
-{[[Writable]]:FALSE}, to an accessor property with the attribute value
-{[[Set]]:UNDEFINED}, nor to a non-existent property of an object whose
-[[Extensible]] internal property has the value FALSE. In these cases a
-TYPEERROR exception is thrown.
-
-The supplemental production AssignmentPattern :
-ObjectAssignmentPattern is evaluated with the parameter obj as
-follows:
-
-1.  Evaluate ObjectAssignmentPattern using obj as the obj
-    parameter.
-
-The supplemental production AssignmentPattern :
-ArrayAssignmentPattern is evaluated with the parameter obj as
-follows:
-
-1.  Evaluate ArrayAssignmentPattern using obj as the obj
-    parameter.
-
-The supplemental production ObjectAssignmentPattern : { } ,the
-production ArrayAssignmentPattern : [ ] and the production
-ArrayAssignmentPattern : [ Elision ] when evaluated with the
-parameter obj do nothing.
-
-The supplemental productions ObjectAssignmentPattern : {
-AssignmentPropertyList } and ObjectAssignmentPattern : {
-AssignmentPropertyList , } are evaluated with the parameter obj as
-follows:
-
-1.  Evaluate AssignmentPropertyList using obj as the obj
-    parameter.
-
-The supplemental production AssignmentPropertyList :
-AssignmentProperty is evaluated with the parameter obj as follows:
-
-1.  Evaluate AssignmentProperty using obj as the obj parameter.
-
-The supplemental production AssignmentPropertyList :
-AssignmentPropertyList , AssignmentProperty is evaluated with the
-parameter obj as follows:
-
-1.  Evaluate AssignmentPropertyList using obj as the obj
-    parameter.
-
-2.  Evaluate AssignmentProperty using obj as the obj parameter.
-
-The supplemental production AssignmentProperty : Identifier is
-evaluated with the parameter obj as follows:
-
-1.  Let v be the result of calling the [[Get]] internal method of
-    obj passing the Identifier string as the argument.
-
-2.  Let lref be the result of performing Identifier Resolution(10.3.1)
-    using the IdentifierName corresponding to Identifier.
-
-3.  Call PutValue(lref_,_v).
-
-The static semantics of the supplemental production
-AssignmentProperty : PropertyName : LeftHandSideExpression and the
-supplemental production
-AssignmentElement : LeftHandSideExpression are:
+AssignmentElement : LeftHandSideExpression
 
 -   It is a Syntax Error if LeftHandSideExpression is the Identifier
     EVAL or the Identifier ARGUMENTS.
@@ -6125,115 +6376,7 @@ AssignmentElement : LeftHandSideExpression are:
     production that would produce a Syntax Error according to these
     rules. This rule is recursively applied.
 
-The supplemental production AssignmentProperty : PropertyName :
-LeftHandSideExpression is evaluated with the parameter obj as
-follows:
-
-1.  Let name be the result of evaluating PropertyName.
-
-2.  Let v be the result of calling the [[Get]] internal method of
-    obj passing name as the argument.
-
-3.  If LeftHandSideExpression is an ObjectLiteral or an
-    ArrayLiteral then
-
-    a.  Let AssignmentPattern be the parse of the source code
-        corresponding to LeftHandSideExpression using
-        AssignmentPattern as the goal symbol
-
-    b.  Let vObj be ToObject(v).
-
-    c.  Evaluate AssignmentPattern using vObj as the obj
-        parameter.
-
-    d.  Return.
-
-4.  Let lref be the result of evaluating LeftHandSideExpression.
-
-5.  Call PutValue(lref_,_v).
-
-The supplemental production ArrayAssignmentPattern : [ Elision~opt~
-AssignmentRestElement ] is evaluated with the parameter obj as
-follows:
-
-1.  If Elision is present, then let skip be the result of evaluating
-    Elision, otherwise let skip be 0.
-
-2.  Evaluate AssignmentRestElement using obj as the obj parameter
-    and skip as the index parameter.
-
-The supplemental production
- ArrayAssignmentPattern : [ AssignmentElementList , Elision~opt~
-AssignmentRestElement~opt~ ]
-is evaluated with the parameter obj as follows:
-
-1.  Let lastIndex be the result of evaluating AssignmentElementList
-    using obj as the obj parameter and 0 as the index parameter.
-
-2.  If Elision is present, then let skip be the result of evaluating
-    Elision, otherwise let skip be 0.
-
-3.  If AssignmentRestElement is present, then evaluate
-    AssignmentRestElement using obj as the obj parameter and
-    lastIndex_+_skip as the index parameter.
-
-The supplemental production AssignmentElementList : Elision~opt~
-AssignmentElement is evaluated with the parameters obj and index
-as follows:
-
-1.  If Elision is present, then let skip be the result of evaluating
-    Elision, otherwise let skip be 0.
-
-2.  Evaluate AssignmentElement using obj as the obj parameter and
-    index_+_skip as the index parameter.
-
-3.  Return index_+_skip+1.
-
-The supplemental production AssignmentElementList :
-AssignmentElementList , Elision~opt~ AssignmentElement is
-evaluated with the parameters obj and index as follows:
-
-1.  Let listNext be the result of evaluating AssignmentElementList
-    using obj as the obj parameter and index as the index
-    parameter
-
-2.  If Elision is present, then let skip be the result of evaluating
-    Elision, otherwise let skip be 0.
-
-3.  Evaluate AssignmentElement using obj as the obj parameter and
-    listNext_+_skip as the index parameter.
-
-4.  Return listNext_+_skip+1.
-
-The supplemental production AssignmentElement :
-LeftHandSideExpression is evaluated with the parameters obj and
-index as follows:
-
-1.  Let name be ToString(index).
-
-2.  Let v be the result of calling the [[Get]] internal method of
-    obj passing name as the argument.
-
-3.  If LeftHandSideExpression is an ObjectLiteral or an
-    ArrayLiteral then
-
-    a.  Let AssignmentPattern be the parse of the source code
-        corresponding to LeftHandSideExpression using
-        AssignmentPattern as the goal symbol
-
-    b.  Let vObj be ToObject(v).
-
-    c.  Evaluate AssignmentPattern using vObj as the obj
-        parameter.
-
-    d.  Return.
-
-4.  Let lref be the result of evaluating LeftHandSideExpression.
-
-5.  Call PutValue(lref_,_v).
-
-The static semantics of the supplemental production
-AssignmentRestElement : … LeftHandSideExpression are:
+AssignmentRestElement : … LeftHandSideExpression
 
 -   It is a Syntax Error if LeftHandSideExpression is the Identifier
     EVAL or the Identifier ARGUMENTS.
@@ -6255,9 +6398,196 @@ AssignmentRestElement : … LeftHandSideExpression are:
     production that would produce a Syntax Error according to these
     rules. This rule is recursively applied.
 
-The supplemental production AssignmentRestElement : …
-LeftHandSideExpression is evaluated with the parameters obj and
-index as follows:
+RUNTIME SEMANTICS: DESTRUCTURING ASSIGNMENT EVALUATION
+
+  with parameter obj
+
+AssignmentPattern : ObjectAssignmentPattern
+
+1.  Perform Destructuring Assignment Evaluation of
+    ObjectAssignmentPattern with obj as the argument.
+
+2.  
+
+AssignmentPattern : ArrayAssignmentPattern
+
+1.  Perform Destructuring Assignment Evaluation of
+    ArrayAssignmentPattern with obj as the argument.
+
+2.  
+
+ObjectAssignmentPattern : { }
+
+and
+
+ArrayAssignmentPattern :
+
+[]
+[Elision]
+
+1.  Return.
+
+ObjectAssignmentPattern :
+
+{ AssignmentPropertyList }
+{ AssignmentPropertyList , }
+
+1.  Perform Destructuring Assignment Evaluation of
+    AssignmentPropertyList with obj as the argument.
+
+2.  
+
+AssignmentPropertyList : AssignmentProperty
+
+1.  Perform Destructuring Assignment Evaluation of AssignmentProperty
+    with obj as the argument.
+
+2.  
+
+AssignmentPropertyList : AssignmentPropertyList ,
+AssignmentProperty
+
+1.  Perform Destructuring Assignment Evaluation of
+    AssignmentPropertyList with obj as the argument.
+
+2.  Perform Destructuring Assignment Evaluation of AssignmentProperty
+    with obj as the argument.
+
+AssignmentProperty : Identifier
+
+1.  Let v be the result of calling the [[Get]] internal method of
+    obj with the Identifier string as the argument.
+
+2.  Let lref be the result of performing Identifier Resolution(10.3.1)
+    with the IdentifierName corresponding to Identifier.
+
+3.  Call PutValue(lref_,_v).
+
+4.  
+
+-   -   -   -   -   -   
+
+AssignmentProperty : PropertyName : LeftHandSideExpression
+
+1.  Let name be the result of evaluating PropertyName.
+
+2.  Let v be the result of calling the [[Get]] internal method of
+    obj with name as the argument.
+
+3.  If LeftHandSideExpression is an ObjectLiteral or an
+    ArrayLiteral then
+
+    a.  Let AssignmentPattern be the parse of the source code
+        corresponding to LeftHandSideExpression using
+        AssignmentPattern as the goal symbol
+
+    b.  Let vObj be ToObject(v).
+
+    c.  Evaluate AssignmentPattern using vObj as the obj
+        parameter.
+
+    d.  Return.
+
+4.  Let lref be the result of evaluating LeftHandSideExpression.
+
+5.  Call PutValue(lref_,_v).
+
+6.  
+
+ArrayAssignmentPattern : [ Elision~opt~ AssignmentRestElement ]
+
+1.  If Elision is present, then let skip be the result of evaluating
+    Elision, otherwise let skip be 0.
+
+2.  Perform Indexed Destructuring Assignment Evaluation of
+    AssignmentRestElement with and skip as the arguments.
+
+3.  
+
+ArrayAssignmentPattern : [ AssignmentElementList , Elision~opt~
+AssignmentRestElement~opt~ ]
+
+1.  Let lastIndex be the result of performing Indexed Destructuring
+    Assignment Evaluation of AssignmentElementList using obj and 0
+    as the arguments.
+
+2.  If Elision is present, then let skip be the result of evaluating
+    Elision, otherwise let skip be 0.
+
+3.  If AssignmentRestElement is present, then perform Indexed
+    Destructuring Assignment Evaluation of AssignmentRestElement with
+    obj and lastIndex_+_skip as the arguments.
+
+4.  
+
+RUNTIME SEMANTICS: INDEXED DESTRUCTURING ASSIGNMENT EVALUATION
+
+  with parameters obj and index
+
+AssignmentElementList : Elision~opt~ _AssignmentElement _
+
+1.  If Elision is present, then let skip be the result of evaluating
+    Elision, otherwise let skip be 0.
+
+2.  Perform Indexed Destructuring Assignment Evaluation of
+    AssignmentElement with obj and index_+_skip as the arguments.
+
+3.  Return index_+_skip+1.
+
+4.  
+
+AssignmentElementList : AssignmentElementList , Elision~opt~
+_AssignmentElement _
+
+  with parameters obj and index
+
+1.  Let listNext be the result of performing Indexed Destructuring
+    Assignment Evaluation of AssignmentElementList using obj as the
+    obj parameter and index as the index parameter
+
+2.  If Elision is present, then let skip be the result of evaluating
+    Elision, otherwise let skip be 0.
+
+3.  Perform Indexed Destructuring Assignment Evaluation of
+    AssignmentElement with obj and listNext_+_skip as the
+    arguments.
+
+4.  Return listNext_+_skip+1.
+
+5.  
+
+AssignmentElement : LeftHandSideExpression
+
+  with parameters obj and index
+
+1.  Let name be ToString(index).
+
+2.  Let v be the result of calling the [[Get]] internal method of
+    obj with name as the argument.
+
+3.  If LeftHandSideExpression is an ObjectLiteral or an
+    ArrayLiteral then
+
+    a.  Let AssignmentPattern be the parse of the source code
+        corresponding to LeftHandSideExpression using
+        AssignmentPattern as the goal symbol
+
+    b.  Let vObj be ToObject(v).
+
+    c.  Performing Destructuring Assignment Evaluation of
+        AssignmentPattern with vObj as the argument.
+
+    d.  Return.
+
+4.  Let lref be the result of evaluating LeftHandSideExpression.
+
+5.  Call PutValue(lref_,_v).
+
+6.  
+
+AssignmentRestElement : … LeftHandSideExpression
+
+  with parameters obj and index
 
 1.  Let lref be the result of evaluating LeftHandSideExpression.
 
@@ -6295,20 +6625,7 @@ index as follows:
 
 7.  Call PutValue(lref_,_A).
 
-The production AssignmentExpression : _LeftHandSideExpression
-AssignmentOperator AssignmentExpression_, where AssignmentOperator is
-@= and @ represents one of the operators indicated above, is evaluated
-as follows:
-
--   Type(lref) is Reference is TRUE
-
--   IsStrictReference(lref) is TRUE
-
--   Type(GetBase(lref)) is Environment Record
-
--   GetReferencedName(lref) is either "EVAL" or "ARGUMENTS"
-
-NOTE See NOTE 11.13.1.
+8.  
 
 Syntax
 
@@ -6322,15 +6639,14 @@ ExpressionNoIn :
 AssignmentExpressionNoIn
 ExpressionNoIn , AssignmentExpressionNoIn
 
-Semantics
-
-The production Expression : Expression , AssignmentExpression is
-evaluated as follows:
-
-The ExpressionNoIn production is evaluated in the same manner as the
-Expression production except that the contained ExpressionNoIn and
-AssignmentExpressionNoIn are evaluated instead of the contained
+The semantics of the ExpressionNoIn production is the same manner as
+the Expression production except that the contained ExpressionNoIn
+and AssignmentExpressionNoIn are used in place of the contained
 Expression and AssignmentExpression, respectively.
+
+RUNTIME SEMANTICS: EVALUATION
+
+Expression : Expression , AssignmentExpression
 
 NOTE GetValue must be called even though its value is not used because
 it may have observable side-effects.
@@ -6361,7 +6677,7 @@ FunctionDeclaration
 LetDeclaration
 ConstDeclaration
 
-Semantics
+Static Semantics
 
 A Statement can be part of a LabelledStatement, which itself can be
 part of a LabelledStatement, and so on. The labels introduced this way
@@ -6372,43 +6688,7 @@ set_. The label set of an IterationStatement or a SwitchStatement
 initially contains the single element EMPTY. The label set of any other
 statement is initially empty.
 
-The VarDeclaredNames of the productions:
- Statement : _EmptyStatement
-_ Statement : _ExpressionStatement
-_ Statement : _ContinueStatement
-_ Statement : _BreakStatement
-_ Statement : _ReturnStatement
-_ Statement : _ThrowStatement
- Statement_ : _DebuggerStatement
-_is determined as follows:
-
-1.  Return a new empty List.
-
-The VarDeclaredNames of the productions:
- Statement : _BlockStatement
- Statement_ : _IfStatement
- Statement_ : _IterationStatement
- Statement_ : _WithStatement
- Statement_ : _LabelledStatement
- Statement_ : _SwitchStatement
- Statement_ : _TryStatement
-_is determined as follows:
-
-1.  Return the VarDeclaredNames of the single non-terminal symbol that
-    is the right hand side of the production.
-
-The VarDeclaredNames of the production Statement : VariableStatement
-is determined as follows:
-
-1.  Return the BoundNames of VariableStatement.
-
-The Statement productions are all evaluated as as follows
-
-1.  Return the result of evaluating the single non-terminal symbol that
-    is the right hand side of the production.
-
-NOTE The result of evaluating a Statement or Declaration is always a
-Completion value.
+STATIC SEMANTICS: BOUNDNAMES
 
 The BoundNames of the Declaration productions are determined as
 follows:
@@ -6416,10 +6696,55 @@ follows:
 1.  Return the BoundNames of the single non-terminal symbol that is the
     right hand side of the production.
 
+STATIC SEMANTICS: VARDECLAREDNAMES
+
+Statement :
+
+EmptyStatement
+ExpressionStatement
+ContinueStatement
+BreakStatement
+ReturnStatement
+ThrowStatement
+DebuggerStatement
+
+1.  Return a new empty List.
+
+Statement :
+
+BlockStatement
+VariableStatement
+IterationStatement
+WithStatement
+LabelledStatement
+SwitchStatement
+TryStatement
+
+1.  Return the VarDeclaredNames of the single non-terminal symbol that
+    is the right hand side of the production.
+
+Statement : VariableStatement
+
+1.  Return the BoundNames of VariableStatement.
+
+RUNTIME SEMANTICS: EVALUATION
+
+The Statement productions are all evaluated as as follows
+
+1.  Return the result of evaluating the single non-terminal symbol that
+    is the right hand side of the production.
+
 The Declaration productions are all evaluated as as follows
 
 1.  Return the result of evaluating the single non-terminal symbol that
     is the right hand side of the production.
+
+NOTE The result of evaluating a Statement or Declaration is always a
+Completion value.
+
+1.  
+
+1.  
 
 Syntax
 
@@ -6441,33 +6766,9 @@ StatementListItem :
 Statement
 Declaration
 
-Semantics
+STATIC SEMANTICS: EARLY ERRORS
 
-The VarDeclaredNames of the production BlockStatement : Block is
-determined as follows:
-
-1.  Return the VarDeclaredNames of Block.
-
-The production BlockStatement : Block is evaluated as follows:
-
-1.  Return the result of evaluating Block.
-
-The LexicallyDeclaredNames of the production Block : { } is determined
-as follows:
-
-1.  Return a new empty List.
-
-The VarDeclaredNames of the production Block : { } is determined as
-follows:
-
-1.  Return a new empty List.
-
-The production Block : { } is evaluated as follows:
-
-1.  Return (NORMAL, EMPTY, EMPTY).
-
-The static semantics of the production Block : { StatementList }
-are:
+Block : { StatementList }
 
 -   It is a Syntax Error if StatementList includes a
     StatementListItem : Declaration production whose Declaration
@@ -6482,51 +6783,13 @@ are:
     StatementList also occurs in the VarDeclaredNames of
     StatementList.
 
-The LexicallyDeclaredNames of the production Block : { StatementList
-}is determined as follows:
+STATIC SEMANTICS: LEXICALDECLARATIONS
 
-1.  Return the LexicallyDeclaredNames of StatementListItem.
-
-The VarDeclaredNames of the production Block : { StatementList } is
-determined as follows:
-
-1.  Return the VarDeclaredNames of StatementList.
-
-The production Block : { StatementList }is evaluated as follows:
-
-NOTE No matter how control leaves the Block the LexicalEnvironment is
-always restored to its former state.
-
-The LexicallyDeclaredNames of the production StatementList :
-StatementListItem is determined as follows:
-
-1.  Return the LexicallyDeclaredNames of StatementListItem.
-
-The LexicalDeclarations of the production StatementList :
-StatementListItem is determined as follows:
+StatementList : StatementListItem
 
 1.  Return the LexicalDeclarations of StatementListItem.
 
-The VarDeclaredNames of the production StatementList :
-StatementListItem is determined as follows:
-
-1.  Return the VarDeclaredNames of StatementListItem.
-
-The production StatementList : StatementListItem is evaluated as
-follows:
-
-The LexicallyDeclaredNames of the production StatementList :
-_StatementList StatementListItem_ is determined as follows:
-
-1.  Let names be LexicallyDeclaredNames of StatementList.
-
-2.  Append to names the elements of the LexicallyDeclaredNames of
-    StatementListItem.
-
-3.  Return names.
-
-The LexicalDeclarations of the production StatementList :
-_StatementList StatementListItem_ is determined as follows:
+StatementList : _StatementList StatementListItem_
 
 1.  Let declarations be LexicalDeclarations of StatementList.
 
@@ -6535,8 +6798,68 @@ _StatementList StatementListItem_ is determined as follows:
 
 3.  Return declarations.
 
-The VarDeclaredNames of the production StatementList : _StatementList
-StatementListItem_ is determined as follows:
+StatementListItem : Statement
+
+1.  Return a new empty List.
+
+StatementListItem : Declaration
+
+1.  Return return a new List containing Declaration.
+
+1.  
+
+1.  
+
+STATIC SEMANTICS: LEXICALLYDECLAREDNAMES
+
+Block : { }
+
+1.  Return a new empty List.
+
+Block : { StatementList }
+
+1.  Return the LexicallyDeclaredNames of StatementListItem.
+
+StatementList : StatementListItem
+
+1.  Return the LexicallyDeclaredNames of StatementListItem.
+
+StatementList : _StatementList StatementListItem_
+
+1.  Let names be LexicallyDeclaredNames of StatementList.
+
+2.  Append to names the elements of the LexicallyDeclaredNames of
+    StatementListItem.
+
+3.  Return names.
+
+StatementListItem : Statement
+
+1.  Return a new empty List.
+
+StatementListItem : Declaration
+
+1.  Return the BoundNames of Declaration.
+
+STATIC SEMANTICS: VARDECLAREDNAMES
+
+BlockStatement : Block
+
+1.  Return the VarDeclaredNames of Block.
+
+Block : { }
+
+1.  Return a new empty List.
+
+Block : { StatementList }
+
+1.  Return the VarDeclaredNames of StatementList.
+
+StatementList : StatementListItem
+
+1.  Return the VarDeclaredNames of StatementListItem.
+
+StatementList : _StatementList StatementListItem_
 
 1.  Let names be VarDeclaredNames of StatementList.
 
@@ -6545,8 +6868,50 @@ StatementListItem_ is determined as follows:
 
 3.  Return names.
 
-The production StatementList : _StatementList StatementListItem_ is
-evaluated as follows:
+StatementListItem : Statement
+
+1.  Return the VarDeclaredNames of Statement.
+
+StatementListItem : Declaration
+
+1.  Return a new empty List.
+
+RUNTIME SEMANTICS: EVALUATION
+
+BlockStatement : Block
+
+1.  Return the result of evaluating Block.
+
+Block : { }
+
+1.  Return (NORMAL, EMPTY, EMPTY).
+
+-   -   -   
+
+1.  
+
+1.  
+
+Block : { StatementList }
+
+NOTE No matter how control leaves the Block the LexicalEnvironment is
+always restored to its former state.
+
+1.  
+
+1.  
+
+1.  
+
+StatementList : StatementListItem
+
+1.  2.  3.  
+
+1.  2.  3.  
+
+1.  2.  3.  
+
+StatementList : _StatementList StatementListItem_
 
 NOTE Steps 5 and 6 of the above algoritm ensure that the value of a
 StatementList is the value of the last value producing Statement in
@@ -6559,40 +6924,33 @@ function all return the value 1:
 
   EVAL("1;VAR A;")
 
-The LexicallyDeclaredNames and the LexicalDeclarations of the production
-StatementListItem : Statement are determined as follows:
+1.  
 
-1.  Return a new empty List.
+1.  
 
-The VarDeclaredNames of the production StatementListItem : Statement
-is determined as follows:
-
-1.  Return the VarDeclaredNames of Statement.
-
-The production StatementListItem : Statement is evaluated as
-follows:
+StatementListItem : Statement
 
 1.  Return the result of evaluating Statement.
 
-The LexicallyDeclaredNames of the production StatementListItem :
-Declaration is determined as follows:
+1.  
 
-1.  Return the BoundNames of Declaration.
+1.  
 
-The LexicalDeclarations of the production StatementListItem :
-Declaration is determined as follows:
+1.  
 
-1.  Return return a new List containing Declaration.
-
-The VarDeclaredNames of the production StatementListItem :
-Declaration is determined as follows:
-
-1.  Return a new empty List.
-
-The production StatementListItem : Declaration is evaluated as
-follows:
+StatementListItem : Declaration
 
 1.  Return the result of evaluating Declaration.
+
+NOTE A LET declaration defines variables that are scoped to the current
+execution context’s LexicalEnvironment. Let variables are created when
+their containing Lexical Environment is instantiated but may not be
+accssed in any way until the variable’s LetBinding is executed. A
+variable defined by a LetBinding with an Initialiser is assigned the
+value of its Initialiser’s AssignmentExpression when the
+LetBinding is executed, not when the variable is created. If a
+LetBinding does not have an an Initialiser the variable is assigned
+the value UNDEFINED when the LetBinding is executed.
 
 Syntax
 
@@ -6632,47 +6990,37 @@ InitialiserNoIn :
 
 = AssignmentExpressionNoIn
 
-NOTE A LET declaration defines variables that are scoped to the current
-execution context’s LexicalEnvironment. Let variables are created when
-their containing Lexical Environment is instantiated but may not be
-accssed in any way until the variable’s LetBinding is executed. A
-variable defined by a LetBinding with an Initialiser is assigned the
-value of its Initialiser’s AssignmentExpression when the
-LetBinding is executed, not when the variable is created. If a
-LetBinding does not have an an Initialiser the variable is assigned
-the value UNDEFINED when the LetBinding is executed.
+The semantics of the LetBindingListNoIn, LetBindingNoIn and
+InitialiserNoIn productions are the same as the LetBindingList,
+LetBinding and Initialiser productions except that the contained
+LetBindingListNoIn, LetBindingNoIn, InitialiserNoIn and
+AssignmentExpressionNoIn are used in place of the contained
+LetBindingList, LetBinding, Initialiser and
+AssignmentExpression, respectively.
 
-Semantics
+STATIC SEMANTICS: EARLY ERRORS
 
-The static semantics of the production LetDeclaration : LET
-LetBindingList ; are:
+LetDeclaration : LET LetBindingList ;
 
 -   It is a Syntax Error if the code that matches this production is not
     contained in extended code.
 
-The BoundNames of the production LetDeclaration : LET LetBindingList
-; is determined as follows:
+BindingIdentifier : Identifier
+
+-   It is a Syntax Error if the BindingIdentifier is contained in
+    strict code and if the Identifier is EVAL or ARGUMENTS.
+
+STATIC SEMANTICS: BOUNDNAMES
+
+LetDeclaration : LET LetBindingList ;
 
 1.  Return BoundNames of LetBindingList.
 
-The production LetDeclaration : LET LetBindingList ; is evaluated as
-follows:
-
-1.  Evaluate LetBindingList.
-
-2.  Return (normal, empty, empty).
-
-The BoundNames of the production LetBindingList : LetBinding is
-determined as follows:
+LetBindingList : LetBinding
 
 1.  Return BoundNames of LetBinding.
 
-The production LetBindingList : LetBinding is evaluated as follows:
-
-1.  Evaluate LetBinding.
-
-The BoundNames of the production LetBindingList : LetBindingList ,
-LetBinding is determined as follows:
+LetBindingList : LetBindingList , LetBinding
 
 1.  Let names be BoundNames of LetBindingList.
 
@@ -6680,65 +7028,40 @@ LetBinding is determined as follows:
 
 3.  Return names.
 
-The production LetBindingList : LetBindingList , LetBinding is
-evaluated as follows:
-
-1.  Evaluate LetBindingList.
-
-2.  Evaluate LetBinding.
-
-The BoundNames of the production LetBinding : _BindingIdentifier
-Initialiser_~opt~ is determined as follows:
+LetBinding : _BindingIdentifier Initialiser_~opt~
 
 1.  Return the BoundNames of BindingIdentifier.
 
-The production LetBinding : BindingIdentifier is evaluated as
-follows:
-
-The production LetBinding : _BindingIdentifier Initialiser_ is
-evaluated as follows:
-
-1.  Let rhs be the result of evaluating Initialiser.
-
-2.  Let value be GetValue(rhs).
-
-3.  Let env be the running execution context’s LexicalEnvironment.
-
-4.  Perform Binding Initialization for BindingIdentifier passing
-    value and env as the arguments.
-
-The BoundNames of the production LetBinding: _BindingPattern
-Initialiser_ is determined as follows:
+LetBinding: _BindingPattern Initialiser_
 
 1.  Return the BoundNames of BindingPattern.
 
-The production LetBinding: _BindingPattern Initialiser_ is evaluated
-as follows:
+BindingIdentifier : Identifier
 
-1.  Let rhs be the result of evaluating Initialiser.
+1.  Return a new List containing the String Value of Identifier.
 
-2.  Let rval be GetValue(rhs).
+RUNTIME SEMANTICS: STRING VALUE
 
-3.  Let env be the running execution context’s LexicalEnvironment.
+BindingIdentifier : Identifier
 
-4.  Evaluate BindingPattern using rval as the obj parameter and
-    env as the environment parameter.
+1.  Return the String Value of Identifier.
 
-The BoundNames of the production BindingIdentifier : Identifier is
-determined as follows:
+RUNTIME SEMANTICS: BINDING INITIALIZATION
 
-1.  Return a new List containing the IdentifierName corresponding to
-    Identifier.
+  With arguments value and enviornment.
 
-The String value of the production BindingIdentifier : Identifier is
-determined as follows:
+NOTE UNDEFINED is passed for environment to indicate that a PutValue
+operation should be used to assign the initialization value. This is the
+the case for VAR statements formal parameter lists of non-strict
+functions. In those cases a lexical binding is hosted and preinitialized
+prior to evaluation of its initializer.
 
-1.  Return a String value consisting of the same sequence of characters
-    as the IdentifierName corresponding to Identifier.
+BindingIdentifier : Identifier
 
-Binding Initialization of the production BindingIdentifier :
-Identifier with arguments value and enviornment is performed as
-follows:
+1.  Perform Binding Initialization for Identifier passing value and
+    env as the arguments.
+
+Token Identifier
 
 1.  If enviornment is not UNDEFINED, then
 
@@ -6752,33 +7075,59 @@ follows:
 
     b.  Call PutValue(lhs, value).
 
-NOTE UNDEFINED is passed for environment to indicate that a PutValue
-operation should be used to assign the initialization value. This is the
-the case for VAR statements and similar situations where a lexical
-binding is hosted and preinitialized prior to evaluation of its
-initializer.
+RUNTIME SEMANTICS: EVALUATION
 
-The static semantics of the production BindingIdentifier :
-Identifier are:
+LetDeclaration : LET LetBindingList ;
 
--   It is a Syntax Error if the BindingIdentifier is contained in
-    strict code and if the Identifier is EVAL or ARGUMENTS.
+1.  Evaluate LetBindingList.
 
-The production BindingIdentifier : Identifier is evaluated as
-follows:
+2.  Return (normal, empty, empty).
 
-1.  Return the result of evaluating Identifier as described in 11.1.2.
+LetBindingList : LetBinding
 
-The production Initialiser : = AssignmentExpression is evaluated as
-follows:
+1.  Evaluate LetBinding.
 
-The LetBindingListNoIn, LetBindingNoIn and InitialiserNoIn
-productions are evaluated in the same manner as the LetBindingList,
-LetBinding and Initialiser productions except that the contained
-LetBindingListNoIn, LetBindingNoIn, InitialiserNoIn and
-AssignmentExpressionNoIn are evaluated instead of the contained
-LetBindingList, LetBinding, Initialiser and
-AssignmentExpression, respectively.
+LetBindingList : LetBindingList , LetBinding
+
+1.  Evaluate LetBindingList.
+
+2.  Evaluate LetBinding.
+
+LetBinding : _BindingIdentifier _
+
+LetBinding : _BindingIdentifier Initialiser_
+
+1.  Let rhs be the result of evaluating Initialiser.
+
+2.  Let value be GetValue(rhs).
+
+3.  Let env be the running execution context’s LexicalEnvironment.
+
+4.  Perform Binding Initialization for BindingIdentifier passing
+    value and env as the arguments.
+
+LetBinding: _BindingPattern Initialiser_
+
+1.  Let rhs be the result of evaluating Initialiser.
+
+2.  Let rval be GetValue(rhs).
+
+3.  Let env be the running execution context’s LexicalEnvironment.
+
+4.  Perform Binding Initialization for BindingPattern using rval as
+    the obj parameter and env as the environment parameter.
+
+1.  
+
+Initialiser : = AssignmentExpression
+
+NOTE A CONST declaration defines read-only variables that are scoped to
+the current execution context’s LexicalEnvironment. Constant variables
+are created when their containing Lexical Environment is instantiated
+but may not be accssed in any way until the variable’s ConstBinding is
+executed. A variable defined by a ConstBinding is assigned the value
+of its Initialiser’s AssignmentExpression when the ConstBinding is
+executed, not when the variable is created.
 
 Syntax
 
@@ -6796,46 +7145,24 @@ ConstBinding :
 BindingIdentifier Initialiser~
 ~BindingPattern Initialiser
 
-NOTE A CONST declaration defines read-only variables that are scoped to
-the current execution context’s LexicalEnvironment. Constant variables
-are created when their containing Lexical Environment is instantiated
-but may not be accssed in any way until the variable’s ConstBinding is
-executed. A variable defined by a ConstBinding is assigned the value
-of its Initialiser’s AssignmentExpression when the ConstBinding is
-executed, not when the variable is created.
+STATIC SEMANTICS: EARLY ERRORS
 
-Semantics
-
-The static semantics of the production ConstDeclaration : CONST
-ConstBindingList ; are:
+ConstDeclaration : CONST ConstBindingList ;
 
 -   It is a Syntax Error if the code that matches this production is not
     contained in extended code.
 
-The BoundNames of the production ConstDeclaration : CONST
-ConstBindingList ; is determined as follows:
+STATIC SEMANTICS: BOUNDNAMES
+
+ConstDeclaration : CONST ConstBindingList ;
 
 1.  Return BoundNames of ConstBindingList.
 
-The production ConstDeclaration : CONST ConstBindingList ; is
-evaluated as follows:
-
-1.  Evaluate ConstBindingList.
-
-2.  Return (normal, empty, empty).
-
-The BoundNames of the production ConstBindingList: ConstBinding is
-determined as follows:
+ConstBindingList : ConstBinding
 
 1.  Return BoundNames of ConstBinding.
 
-The production ConstBindingList : ConstBinding is evaluated as
-follows:
-
-1.  Evaluate ConstBinding.
-
-The BoundNames of the production ConstBindingList : ConstBindingList
-, ConstBinding is determined as follows:
+ConstBindingList : ConstBindingList , ConstBinding
 
 1.  Let names be BoundNames of ConstBindingList.
 
@@ -6843,20 +7170,39 @@ The BoundNames of the production ConstBindingList : ConstBindingList
 
 3.  Return names.
 
-The production ConstBindingList : ConstBindingList , ConstBinding
-is evaluated as follows:
+ConstBinding : _BindingIdentifier Initialiser_
+
+1.  Return the BoundNames of BindingIdentifier.
+
+ConstBinding: _BindingPattern Initialiser_
+
+1.  Return the BoundNames of BindingPattern.
+
+RUNTIME SEMANTICS: EVALUATION
+
+ConstDeclaration : CONST ConstBindingList ;
+
+1.  Evaluate ConstBindingList.
+
+2.  Return (normal, empty, empty).
+
+1.  
+
+ConstBindingList : ConstBinding
+
+1.  Evaluate ConstBinding.
+
+1.  2.  3.  
+
+ConstBindingList : ConstBindingList , ConstBinding
 
 1.  Evaluate ConstBindingList.
 
 2.  Evaluate ConstBinding.
 
-The BoundNames of the production ConstBinding : _BindingIdentifier
-Initialiser_ is determined as follows:
+1.  
 
-1.  Return the BoundNames of BindingIdentifier.
-
-The production ConstBinding : _BindingIdentifier Initialiser_ is
-evaluated as follows:
+ConstBinding : _BindingIdentifier Initialiser_
 
 1.  Let rhs be the result of evaluating Initialiser.
 
@@ -6867,13 +7213,9 @@ evaluated as follows:
 4.  Perform Binding Initialization for BindingIdentifier passing
     value and env as the arguments.
 
-The BoundNames of the production ConstBinding: _BindingPattern
-Initialiser_ is determined as follows:
+1.  
 
-1.  Return the BoundNames of BindingPattern.
-
-The production ConstBinding: _BindingPattern Initialiser_ is evaluated
-as follows:
+ConstBinding: _BindingPattern Initialiser_
 
 1.  Let rhs be the result of evaluating Initialiser.
 
@@ -6881,8 +7223,18 @@ as follows:
 
 3.  Let env be the running execution context’s LexicalEnvironment.
 
-4.  Evaluate BindingPattern using rval as the obj parameter and
-    env as the environment parameter.
+4.  Perform Binding Initialization for BindingPattern using rval as
+    the obj parameter and env as the environment parameter.
+
+NOTE A VAR statement declares variables that are scoped to the current
+execution context’s VariableEnvironment. Var variables are created when
+their containing Lexical Environment is instantiated and are initialised
+to UNDEFINED when created. Within the scope of any VariableEnvironemnt a
+common Identifier may appear in more than one VariableDeclaration
+but those declarations collective define only one variable. A variable
+defined by a VariableDeclaration with an Initialiser is assigned the
+value of its Initialiser’s AssignmentExpression when the
+VariableDeclaration is executed, not when the variable is created.
 
 Syntax
 
@@ -6910,43 +7262,34 @@ VariableDeclarationNoIn :
 BindingIdentifier InitialiserNoIn~opt
 ~BindingPattern InitialiserNoIn
 
-NOTE A VAR statement declares variables that are scoped to the current
-execution context’s VariableEnvironment. Var variables are created when
-their containing Lexical Environment is instantiated and are initialised
-to UNDEFINED when created. Within the scope of any VariableEnvironemnt a
-common Identifier may appear in more than one VariableDeclaration
-but those declarations collective define only one variable. A variable
-defined by a VariableDeclaration with an Initialiser is assigned the
-value of its Initialiser’s AssignmentExpression when the
-VariableDeclaration is executed, not when the variable is created.
+The semantics of the VariableDeclarationListNoIn,
+VariableDeclarationNoIn and InitialiserNoIn productions are the same
+as the VariableDeclarationList, VariableDeclaration and
+Initialiser productions except that the contained
+VariableDeclarationListNoIn, VariableDeclarationNoIn,
+InitialiserNoIn and AssignmentExpressionNoIn are used in of the
+contained VariableDeclarationList, VariableDeclaration,
+Initialiser and AssignmentExpression, respectively.
 
-Semantics
+STATIC SEMANTICS: EARLY ERRORS
 
-The BoundNames of the production VariableStatement : VAR
-VariableDeclarationList ; is determined as follows:
+VariableDeclaration : _BindingPattern Initialiser_
+
+-   It is a Syntax Error if the source code matching this production is
+    not contained in extended code.
+
+STATIC SEMANTICS: BOUNDNAMES
+
+VariableStatement : VAR VariableDeclarationList ;
 
 1.  Return BoundNames of VariableDeclarationList.
 
-The production VariableStatement : VAR VariableDeclarationList ; is
-evaluated as follows:
-
-1.  Evaluate VariableDeclarationList.
-
-2.  Return (normal, empty, empty).
-
-The BoundNames of the production VariableDeclarationList
-:VariableDeclaration is determined as follows:
+VariableDeclarationList :VariableDeclaration
 
 1.  Return BoundNames of VariableDeclaration.
 
-The production VariableDeclarationList :VariableDeclaration is
-evaluated as follows:
-
-1.  Evaluate VariableDeclaration.
-
-The BoundNames of the production VariableDeclarationList :
-VariableDeclarationList , VariableDeclaration is determined as
-follows:
+VariableDeclarationList : VariableDeclarationList ,
+VariableDeclaration
 
 1.  Let names be BoundNames of VariableDeclarationList.
 
@@ -6955,23 +7298,42 @@ follows:
 
 3.  Return names.
 
-The production VariableDeclarationList : VariableDeclarationList ,
-VariableDeclaration is evaluated as follows:
+VariableDeclaration : _BindingIdentifier Initialiser_~opt~
+
+1.  Return the BoundNames of BindingIdentifier.
+
+VariableDeclaration : _BindingPattern Initialiser_
+
+1.  Return the BoundNames of BindingPattern.
+
+RUNTIME SEMANTICS: EVALUATION
+
+VariableStatement : VAR VariableDeclarationList ;
+
+1.  Evaluate VariableDeclarationList.
+
+2.  Return (normal, empty, empty).
+
+1.  
+
+VariableDeclarationList :VariableDeclaration
+
+1.  Evaluate VariableDeclaration.
+
+1.  2.  3.  
+
+VariableDeclarationList : VariableDeclarationList ,
+VariableDeclaration
 
 1.  Evaluate VariableDeclarationList.
 
 2.  Evaluate VariableDeclaration.
 
-The BoundNames of the production VariableDeclaration :
-_BindingIdentifier Initialiser_~opt~ is determined as follows:
+1.  
 
-1.  Return the BoundNames of BindingIdentifier.
+VariableDeclaration : BindingIdentifier
 
-The production VariableDeclaration : BindingIdentifier is evaluated
-as follows:
-
-The production VariableDeclaration : _BindingIdentifier Initialiser_
-is evaluated as follows:
+VariableDeclaration : _BindingIdentifier Initialiser_
 
 1.  Let rhs be the result of evaluating Initialiser.
 
@@ -6986,38 +7348,21 @@ evaluation of for-in statements (12.6.4).
 NOTE 2 If a VariableDeclaration is nested within a with statement and
 the Identifier in the VariableDeclaration is the same as a property
 name of the binding object of the with statement’s object environment
-record, then step 4 will assign value to the property instead of to the
+record, then step 3 will assign value to the property instead of to the
 VariableEnvironment binding of the Identifier.
 
-The static semantics of the production VariableDeclaration :
-_BindingPattern Initialiser_ are:
+-   
 
--   It is a Syntax Error if the source code matching this production is
-    not contained in extended code.
+1.  
 
-The BoundNames of the production VariableDeclaration : _BindingPattern
-Initialiser_ is determined as follows:
-
-1.  Return the BoundNames of BindingPattern.
-
-The production VariableDeclaration : _BindingPattern Initialiser_ is
-evaluated as follows:
+VariableDeclaration : _BindingPattern Initialiser_
 
 1.  Let rhs be the result of evaluating Initialiser.
 
 2.  Let rval be ToObject(GetValue(rhs)).
 
-3.  Evaluate BindingPattern using rval as the obj parameter and
-    UNDEFINED as the environment parameter.
-
-The VariableDeclarationListNoIn, VariableDeclarationNoIn and
-InitialiserNoIn productions are evaluated in the same manner as the
-VariableDeclarationList, VariableDeclaration and Initialiser
-productions except that the contained VariableDeclarationListNoIn,
-VariableDeclarationNoIn, InitialiserNoIn and
-AssignmentExpressionNoIn are evaluated instead of the contained
-VariableDeclarationList, VariableDeclaration, Initialiser and
-AssignmentExpression, respectively.
+3.  Perform Binding Initialization for BindingPattern using rval as
+    the obj parameter and UNDEFINED as the environment parameter.
 
 Syntax
 
@@ -7050,8 +7395,7 @@ BindingElementList , Elision~opt~ BindingElement
 BindingProperty :
 
 SingleNameBinding ~
-~PropertyName : SingleNameBinding
-PropertyName : BindingPattern Initialiser~opt~
+~ PropertyName : BindingElement
 
 BindingElement :
 
@@ -7066,117 +7410,41 @@ BindingRestElement :
 
 … BindingIdentifier
 
-Semantics
+STATIC SEMANTICS: BOUNDNAMES
 
-The BoundNames of the production BindingPattern :
-ObjectBindingPattern is determined as follows:
+BindingPattern : ObjectBindingPattern
 
 1.  Return BoundNames of ObjectBindingPattern.
 
-The production BindingPattern : ObjectBindingPattern is evaluated
-with parameters value and env as follows:
-
-1.  Evaluate ObjectBindingPattern using value as the obj parameter
-    and env as the environment parameter.
-
-The BoundNames of the production BindingPattern :
-ArrayBindingPattern is determined as follows:
+BindingPattern : ArrayBindingPattern
 
 1.  Return BoundNames of ArrayBindingPattern.
 
-The production BindingPattern : ArrayBindingPattern is evaluated
-with parameters value and env as follows:
-
-1.  Evaluate ArrayBindingPattern using value as the obj parameter
-    and env as the environment parameter.
-
-The BoundNames of the production ObjectBindingPattern: { } is
-determined as follows:
+ObjectBindingPattern: { }
 
 1.  Return an empty List.
 
-The production ObjectBindingPattern: { } is evaluated with parameters
-value and env as follows:
+ObjectBindingPattern :
 
-1.  If value is neither of NULL or UNDEFINED, then perform
-    ToObject(value) and discard the result.
-
-The BoundNames of the productions ObjectBindingPattern: {
-BindingPropertyList } and ObjectBindingPattern : {
-BindingPropertyList , } is determined as follows:
+{ BindingPropertyList }
+{ BindingPropertyList , }
 
 1.  Return the BoundNames of BindingPropertyList.
 
-The productions ObjectBindingPattern: { BindingPropertyList } and
-ObjectBindingPattern : { BindingPropertyList , } are evaluated with
-parameters value and env as follows:
-
-1.  If value is neither of NULL or UNDEFINED, then
-
-    a.  Let obj be ToObject(value).
-
-2.  Else, let obj be UNDEFINED.
-
-3.  Evaluate BindingPropertyList using obj as the obj parameter
-    and env as the environment parameter..
-
-The BoundNames of the production ArrayBindingPattern : [
-Elision~opt~ ] is determined as follows:
+ArrayBindingPattern : [ Elision~opt~ ]
 
 1.  Return an empty List.
 
-The production ArrayBindingPattern : [ Elision~opt~ ] is evaluated
-with parameters value and env as follows:
-
-1.  If value is neither of NULL or UNDEFINED, then perform
-    ToObject(value) and discard the result.
-
-The BoundNames of the production ArrayBindingPattern : [
-Elision~opt~ BindingRestElement ] is determined as follows:
+ArrayBindingPattern : [ Elision~opt~ BindingRestElement ]
 
 1.  Return the BoundNames of BindingElementList.
 
-The production ArrayBindingPattern: [ Elision~opt~
-BindingRestElement ] is evaluated with parameters value and env as
-follows:
-
-1.  If Elision is present, then let skip be the result of evaluating
-    Elision, otherwise let skip be 0.
-
-2.  If value is neither of NULL or UNDEFINED, then
-
-    a.  Let obj be ToObject(value).
-
-3.  Else, let obj be UNDEFINED.
-
-4.  Evaluate BindingRestElement using obj as the obj parameter,
-    env as the environment, and skip as the index parameter.
-
-The BoundNames of the production ArrayBindingPattern :
-[BindingElementList , Elision~opt~ ] is determined as follows:
+ArrayBindingPattern : [BindingElementList , Elision~opt~ ]
 
 1.  Return the BoundNames of BindingElementList.
 
-The production ArrayBindingPattern: [ BindingElementList ,
-Elision~opt~] is evaluated with parameters value and env as
-follows:
-
-1.  If value is neither of NULL or UNDEFINED, then
-
-    a.  Let obj be ToObject(value).
-
-2.  Else, let obj be UNDEFINED.
-
-3.  Let index be the result of evaluating BindingElementList using
-    obj as the obj parameter, env as the environment, and 0 as
-    the index parameter.
-
-4.  If Elision is present, then let skip be the result of evaluating
-    Elision, otherwise let skip be 0.
-
-The BoundNames of the production ArrayBindingPattern : [
-BindingElementList , Elision~opt~ BindingRestElement ] is
-determined as follows:
+ArrayBindingPattern : [ BindingElementList , Elision~opt~
+BindingRestElement ]
 
 1.  Let names be BoundNames of BindingElementList.
 
@@ -7185,40 +7453,11 @@ determined as follows:
 
 3.  Return names.
 
-The production ArrayBindingPattern: [ BindingElementList ,
-Elision~opt~ BindingRestElement ] is evaluated with parameters
-value and env as follows:
-
-1.  If value is neither of NULL or UNDEFINED, then
-
-    a.  Let obj be ToObject(value).
-
-2.  Else, let obj be UNDEFINED.
-
-3.  Let index be the result of evaluating BindingElementList using
-    obj as the obj parameter, env as the environment, and 0 as
-    the index parameter.
-
-4.  If Elision is present, then let skip be the result of evaluating
-    Elision, otherwise let skip be 0.
-
-5.  Evaluate BindingRestElement using obj as the obj parameter,
-    env as the environment, and index_+_skip as the index
-    parameter.
-
-The BoundNames of the production BindingPropertyList :
-BindingProperty is determined as follows:
+BindingPropertyList : BindingProperty
 
 1.  Return BoundNames of BindingProperty.
 
-The production BindingPropertyList : BindingProperty is evaluated
-with parameters obj and env as follows:
-
-1.  Evaluate BindingProperty using obj as the obj parameter and
-    env as the environment parameter.
-
-The BoundNames of the production BindingPropertyList :
-BindingPropertyList , BindingProperty is determined as follows:
+BindingPropertyList : BindingPropertyList , BindingProperty
 
 1.  Let names be BoundNames of BindingPropertyList.
 
@@ -7226,35 +7465,12 @@ BindingPropertyList , BindingProperty is determined as follows:
 
 3.  Return names.
 
-The production BindingPropertyList : BindingPropertyList ,
-BindingProperty is evaluated with parameters obj and env as
-follows:
-
-1.  Evaluate BindingPropertyList using obj as the obj parameter
-    and env as the environment parameter.
-
-2.  Evaluate BindingProperty using obj as the obj parameter and
-    env as the environment parameter.
-
-The BoundNames of the production BindingElementList : Elision~opt~
-BindingElement is determined as follows:
+BindingElementList : Elision~opt~ BindingElement
 
 1.  Return BoundNames of BindingElement.
 
-The production BindingElementList : Elision~opt~ BindingElement is
-evaluated with the parameters obj, env, and index as follows:
-
-1.  If Elision is present, then let skip be the result of evaluating
-    Elision, otherwise let skip be 0.
-
-2.  Evaluate BindingElement using obj as the obj parameter, env
-    as the env parameter, and index_+_skip as the index parameter.
-
-3.  Return index_+_skip+1.
-
-The BoundNames of the production BindingElementList :
-BindingElementList , Elision~opt~ BindingElement is determined as
-follows:
+BindingElementList : BindingElementList , Elision~opt~
+BindingElement
 
 1.  Let names be BoundNames of BindingElementList.
 
@@ -7262,68 +7478,306 @@ follows:
 
 3.  Return names.
 
-The production BindingElementList : BindingElementList ,
-Elision~opt~ BindingElement is evaluated with the parameters obj,
-env, and index as follows:
+BindingProperty : _SingleNameBinding _
 
-1.  Let listNext be the result of evaluating BindingElementList
-    using obj as the obj parameter, env as the env parameter,
-    and index as the index parameter
+1.  Return the BoundNames of SingleNameBinding .
+
+BindingProperty : PropertyName : _BindingElement _
+
+1.  Return the BoundNames of BindingElement.
+
+SingleNameBinding : _BindingIdentifier Initialiser_~opt~
+
+1.  Return the BoundNames of BindingIdentifier.
+
+BindingElement : _SingleNameBinding _
+
+1.  Return the BoundNames of SingleNameBinding .
+
+BindingElement : _BindingPattern Initialiser_~opt~
+
+1.  Return the BoundNames of BindingPattern.
+
+BindingRestElement : ... BindingIdentifier
+
+1.  Return the BoundNames of BindingIdentifier.
+
+STATIC SEMANTICS: HASINITIALISER
+
+BindingElement : _SingleNameBinding _
+
+1.  Return HasInitializer of SingleNameBinding .
+
+BindingElement : _BindingPattern _
+
+1.  Return FALSE.
+
+BindingElement : _BindingPattern Initialiser_
+
+1.  Return TRUE.
+
+SingleNameBinding : _BindingIdentifier _
+
+1.  Return FALSE.
+
+SingleNameBinding : _BindingIdentifier Initialiser_
+
+1.  Return TRUE.
+
+RUNTIME SEMANTICS: BINDING INITIALIZATION
+
+  With parameters value and enviornment.
+
+NOTE When UNDEFINED is passed for environment it indicates that a
+PutValue operation should be used to assign the initialization value.
+This is the the case for formal parameter lists of non-strict functions.
+In that case the formal parameter bindings are preinitialized in order
+to deal with the possibility of multiple parameters with the same name.
+
+BindingPattern : ObjectBindingPattern
+
+1.  If value is neither of NULL or UNDEFINED, then
+
+    a.  Let obj be ToObject(value).
+
+2.  Else, let obj be UNDEFINED.
+
+3.  Perform Binding Initialization for ObjectBindingPattern using
+    obj and environment as arguments.
+
+4.  Note, as currently written destructuring array assignment doesn’t
+    take into account the length property of the source object but
+    destructuring binding does. We need to decide which semantic we want
+    to consistently apply to both.
+
+1.  
+
+BindingPattern : ArrayBindingPattern
+
+1.  If value is neither of NULL or UNDEFINED, then
+
+    a.  Let array be ToObject(value).
+
+    b.  Let lenValue be the result of calling the [[Get]] internal
+        method of array with argument "length".
+
+    c.  Let arrayLength be ToUint32(lenValue).
+
+2.  Else,
+
+    a.  Let array be UNDEFINED.
+
+    b.  Let arrayLength be 0.
+
+3.  Perform Indexed Binding Initialization for ArrayBindingPattern
+    using array, arrayLength, UNDEFINED, and environment as
+    arguments.
+
+1.  
+
+ObjectBindingPattern: { }
+
+1.  Return.
+
+ObjectBindingPattern :
+
+{ BindingPropertyList }
+{ BindingPropertyList , }
+
+1.  
+
+1.  a.  
+
+2.  3.  Perform Binding Initialization for BindingPropertyList using
+    value and environment as arguments.
+
+1.  
+
+1.  
+
+1.  
+
+1.  2.  a.  
+
+3.  4.  
+
+1.  
+
+1.  a.  
+
+2.  3.  4.  
+
+1.  2.  3.  
+
+1.  a.  
+
+2.  3.  4.  5.  
+
+1.  
+
+BindingPropertyList : BindingProperty
+
+1.  Perform Binding Initialization for BindingProperty using value
+    and environment as arguments.
+
+1.  2.  3.  
+
+BindingPropertyList : BindingPropertyList , BindingProperty
+
+1.  Perform Binding Initialization for BindingPropertyList using
+    value and environment as arguments.
+
+2.  Perform Binding Initialization for BindingProperty using value
+    and environment as arguments.
+
+BindingProperty : SingleNameBinding
+
+1.  Let name be the string that is the only element of BoundNames of
+    SingleNameBinding.
+
+2.  Perform Keyed Binding Initialization for SingleNameBinding using
+    value, environment, and name as the arguments.
+
+BindingProperty : PropertyName : _BindingElement _
+
+1.  Let P be the PropName of PropertyName
+
+2.  Evaluate BindingElement using value, envirnment, and P as
+    arguments.
+
+RUNTIME SEMANTICS: INDEXED BINDING INITIALIZATION
+
+  With parameters array, _arrayLength, nextIndex,_ and environment.
+
+NOTE When UNDEFINED is passed for environment it indicates that a
+PutValue operation should be used to assign the initialization value.
+This is the the case for formal parameter lists of non-strict functions.
+In that case the formal parameter bindings are preinitialized in order
+to deal with the possibility of multiple parameters with the same name.
+
+ArrayBindingPattern : [ Elision~opt~ ]
+
+1.  Return.
+
+ArrayBindingPattern: [ Elision~opt~ BindingRestElement ]
+
+1.  If Elision is present, then let nextIndex be the result of
+    evaluating Elision, otherwise let nextIndex be 0.
+
+2.  Perform Indexed Binding Initialization for BindingRestElement
+    using _array, arrayLength, nextIndex_, and environment as
+    arguments.
+
+ArrayBindingPattern: [ BindingElementList , Elision~opt~]
+
+1.  Perform Indexed Binding Initialization for BindingElementList
+    using array, 0_, nextIndex_, and environment as arguments.
+
+ArrayBindingPattern: [ BindingElementList , Elision~opt~
+BindingRestElement ]
+
+1.  Let index be the result of performing Indexed Binding
+    Initialization for BindingElementList using array, 0_,
+    nextIndex_, and environment as arguments.
 
 2.  If Elision is present, then let skip be the result of evaluating
     Elision, otherwise let skip be 0.
 
-3.  Evaluate BindingElement using obj as the obj parameter, env
-    as the env parameter, and listNext_+_skip as the index
-    parameter.
+3.  Perform Indexed Binding Initialization for BindingRestElement
+    using _array, arrayLength, index+_skip , and environment as
+    arguments.
+
+1.  
+
+BindingElementList : Elision~opt~ BindingElement
+
+1.  If Elision is present, then let skip be the result of evaluating
+    Elision, otherwise let skip be 0.
+
+2.  Perform Indexed Binding Initialization for BindingElement using
+    array, _arrayLength, nextIndex_ +skip , and environment as
+    arguments.
+
+3.  Return index_+_skip+1.
+
+1.  2.  3.  
+
+BindingElementList : BindingElementList , Elision~opt~
+_BindingElement _
+
+1.  Let listNext be the result of performing Indexed Binding
+    Initialization for BindingElementList using _array, arrayLength,
+    nextIndex_, and environment as arguments.
+
+2.  If Elision is present, then let skip be the result of evaluating
+    Elision, otherwise let skip be 0.
+
+3.  Perform Indexed Binding Initialization for BindingElement using
+    array, arrayLength, , listNext_+_skip , and environment as
+    arguments.
 
 4.  Return listNext_+_skip+1.
 
-The BoundNames of the productions BindingProperty :
-SingleNameBinding and BindingProperty : PropertyName :
-SingleNameBinding is determined as follows:
+5.  
 
-1.  Return the BoundNames of SingleNameBinding .
+1.  
 
-The production BindingProperty : SingleNameBinding is evaluated with
-the parameters obj and env as follows:
+1.  2.  3.  
 
-1.  Let name be the IdentifierName that is the only element of
-    BoundNames of SingleNameBinding.
+1.  2.  
 
-2.  Let P be the PropName of name.
+1.  
 
-3.  Evaluate SingleNameBinding using P, obj, and env as the
-    arguments.
+1.  2.  3.  a.  
 
-The production BindingProperty : PropertyName : SingleNameBinding
-is evaluated with the parameters obj and env as follows:
+4.  a.  i.  
 
-1.  Let P be the PropName of PropertyName
+    b.  i.  
 
-2.  Evaluate SingleNameBinding using P, obj, and env as the
-    arguments.
+5.  
 
-The BoundNames of the production BindingProperty : PropertyName :
-BindingPattern Initialiser~opt~ is determined as follows:
+1.  
 
-1.  Return the BoundNames of BindingPattern.
+1.  2.  a.  
 
-The production BindingProperty : PropertyName : _BindingPattern
-Initialiser_~opt~ is evaluated with the parameters obj and env as
-follows:
+3.  a.  i.  
 
-1.  Let P be the PropName of PropertyName.
+    b.  i.  
 
-2.  Let exists be the result of calling the [[HasProperty]] internal
-    method of obj with argument P.
+4.  
 
-3.  If exists is TRUE, then
+1.  
+
+BindingElement: SingleNameBinding
+
+1.  If nextIndex ≥ arrayLength, then
+
+    a.  Let array be UNDEFINED.
+
+2.  3.  Evaluate SingleNameBinding using array, environment, and
+    ToString(nextIndex) as the arguments.
+
+1.  
+
+BindingElement: _BindingPattern Initialiser_~opt~
+
+1.  Let P be ToString(nextIndex).
+
+2.  If nextIndex ≥ arrayLength, then
+
+    a.  Let exists be FALSE.
+
+3.  Else
+
+    a.  Let exists be the result of calling the [[HasProperty]]
+        internal method of array with argument P.
+
+4.  5.  6.  If exists is TRUE, then
 
     a.  Let v be the result of calling the [[Get]] internal method of
-        obj passing P as the argument.
+        array with argument P.
 
-4.  Else
+7.  Else
 
     a.  If Initialiser~opt~ is present, then
 
@@ -7333,24 +7787,62 @@ follows:
 
         i.  Let v be UNDEFINED.
 
-5.  Evaluate BindingPattern passing v and env as arguments.
+8.  Perform Binding Initialization for BindingPattern passing v and
+    environment as arguments.
 
-The BoundNames of the production SingleNameBinding :
-BindingIdentifier Initialiser~opt~ is determined as follows:
+BindingRestElement : … BindingIdentifier
 
-1.  Return the BoundNames of BindingIdentifier.
+1.  Let A be a new array object created as if by the expression NEW
+    ARRAY() where ARRAY is the standard built-in constructor with that
+    name.
 
-The production SingleNameBinding : _BindingIdentifier
-Initialiser_~opt~ is evaluated with the parameters _propertyName, obj_,
-and env as follows:
+2.  Let n=0.
+
+3.  Let index = nextIndex.
+
+4.  Repeat, while index < arrayLength
+
+    a.  Let P be ToString(index).
+
+    b.  Let exists be the result of calling the [[HasProperty]]
+          internal method of array with argument P.
+
+    c.  If exists is TRUE, then
+
+        i.  Let v be the result of calling the [[Get]] internal method
+              of array passing P as the argument.
+
+        ii. Call the [[DefineOwnProperty]] internal method of A with
+              arguments ToString(n), Property Descriptor {[[Value]]:
+              v, [[Writable]]: TRUE, [[Enumerable]]: TRUE,
+              [[Configurable]]: TRUE}, and FALSE.
+
+    d.  Let n = n+1.
+
+    e.  Let index = index+1.
+
+5.  Perform Binding Initialization for BindingIdentifer using array
+    and environment as arguments.
+
+RUNTIME SEMANTICS: KEYED BINDING INITIALIZATION
+
+  With parameters obj, environment, and propertyName.
+
+NOTE When UNDEFINED is passed for environment it indicates that a
+PutValue operation should be used to assign the initialization value.
+This is the the case for formal parameter lists of non-strict functions.
+In that case the formal parameter bindings are preinitialized in order
+to deal with the possibility of multiple parameters with the same name.
+
+SingleNameBinding : _BindingIdentifier Initialiser_~opt~
 
 1.  Let exists be the result of calling the [[HasProperty]] internal
-    method of obj with argument P.
+    method of obj with argument propertyName.
 
 2.  If exists is TRUE, then
 
     a.  Let v be the result of calling the [[Get]] internal method of
-        obj passing P as the argument.
+        obj passing propertyName as the argument.
 
 3.  Else
 
@@ -7362,96 +7854,18 @@ and env as follows:
 
         i.  Let v be UNDEFINED.
 
-4.  Perform Binding Initialization for BindingIdentifer using A as
-    the value and env as the enviornment.
-
-The BoundNames of the production BindingElement : SingleNameBinding
-is determined as follows:
-
-1.  Return the BoundNames of SingleNameBinding .
-
-The production BindingElement: SingleNameBinding is evaluated with
-the parameters obj, env and index as follows:
-
-1.  Let P be ToString(index).
-
-2.  Evaluate SingleNameBinding using P, obj, and env as the
-    arguments.
-
-The BoundNames of the production BindingElement : _BindingPattern
-Initialiser_~opt~ is determined as follows:
-
-1.  Return the BoundNames of BindingPattern.
-
-The production BindingElement: _BindingPattern Initialiser_~opt~ is
-evaluated with the parameters obj, env and index as follows:
-
-1.  Let P be ToString(index).
-
-2.  Let exists be the result of calling the [[HasProperty]] internal
-    method of obj with argument P.
-
-3.  If exists is TRUE, then
-
-    a.  Let v be the result of calling the [[Get]] internal method of
-        obj passing P as the argument.
-
-4.  Else
-
-    a.  If Initialiser~opt~ is present, then
-
-        i.  Let v be the result of evaluating Initialiser.
-
-    b.  Else,
-
-        i.  Let v be UNDEFINED.
-
-5.  Evaluate BindingPattern passing v and env as arguments.
-
-The BoundNames of the production BindingRestElement : ...
-BindingIdentifier is determined as follows:
-
-1.  Return the BoundNames of BindingIdentifier.
+4.  Perform Binding Initialization for BindingIdentifer passing v
+    and enviornment as arguments.
 
 1.  
 
-The production BindingRestElement : … BindingIdentifier is evaluated
-with the parameters obj, env, and index as follows:
+1.  
 
-1.  Let lenVal be the result of calling the [[Get]] internal method of
-    obj with argument “LENGTH”.
+1.  2.  3.  4.  5.  a.  b.  c.  i.  ii. 
 
-2.  Let len be ToUint32(lenVal).
+    d.  e.  
 
-3.  Let A be a new array object created as if by the expression NEW
-    ARRAY() where ARRAY is the standard built-in constructor with that
-    name.
-
-4.  Let n=0;
-
-5.  Repeat, while index < len
-
-    a.  Let P be ToString(index).
-
-    b.  Let exists be the result of calling the [[HasProperty]]
-          internal method of obj with argument P.
-
-    c.  If exists is TRUE, then
-
-        i.  Let v be the result of calling the [[Get]] internal method
-              of obj passing P as the argument.
-
-        ii. Call the [[DefineOwnProperty]] internal method of A with
-              arguments ToString(n), Property Descriptor {[[Value]]:
-              v, [[Writable]]: TRUE, [[Enumerable]]: TRUE,
-              [[Configurable]]: TRUE}, and FALSE.
-
-    d.  Let n = n+1.
-
-    e.  Let index = index+1.
-
-6.  Perform Binding Initialization for BindingIdentifer using A as
-    the value and env as the enviornment.
+6.  
 
 Syntax
 
@@ -7459,9 +7873,9 @@ EmptyStatement :
 
 ;
 
-Semantics
+RUNTIME SEMANTICS: EVALUATION
 
-The production EmptyStatement : ; is evaluated as follows:
+EmptyStatement : ;
 
 Syntax
 
@@ -7474,10 +7888,9 @@ because that might make it ambiguous with a Block. Also, an
 ExpressionStatement cannot start with the FUNCTION keyword because
 that might make it ambiguous with a FunctionDeclaration.
 
-Semantics
+RUNTIME SEMANTICS: EVALUATION
 
-The production ExpressionStatement : [lookahead ∉ {{, FUNCTION}]
-Expression; is evaluated as follows:
+ExpressionStatement : [lookahead ∉ {{, FUNCTION}] Expression;
 
 Syntax
 
@@ -7490,10 +7903,9 @@ Each ELSE for which the choice of associated IF is ambiguous shall be
 associated with the nearest possible IF that would otherwise have no
 corresponding ELSE.
 
-Semantics
+STATIC SEMANTICS: VARDECLAREDNAMES
 
-The VarDeclaredNames of the production IfStatement : IF ( Expression
-) Statement ELSE Statement is determined as follows:
+IfStatement : IF ( Expression ) Statement ELSE Statement
 
 1.  Let names be VarDeclaredNames of the first Statement.
 
@@ -7502,16 +7914,17 @@ The VarDeclaredNames of the production IfStatement : IF ( Expression
 
 3.  Return names.
 
-The production IfStatement : IF ( Expression ) Statement ELSE
-Statement is evaluated as follows:
-
-The VarDeclaredNames of the production IfStatement : IF ( Expression
-) Statement is determined as follows:
+IfStatement : IF ( Expression ) _Statement _
 
 1.  Return the VarDeclaredNames of Statement.
 
-The production IfStatement : IF ( Expression ) Statement is
-evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
+
+IfStatement : IF ( Expression ) Statement ELSE Statement
+
+1.  
+
+IfStatement : IF ( Expression ) Statement
 
 Syntax
 
@@ -7525,37 +7938,35 @@ FOR ( VAR VariableDeclarationListNoIn; Expression~opt~ ; Expression~opt~
 FOR ( LeftHandSideExpression IN Expression ) Statement
 FOR ( VAR VariableDeclarationNoIn IN Expression ) Statement
 
-The VarDeclaredNames of the production DO Statement WHILE (
-Expression ); is determined as follows:
+STATIC SEMANTICS: VARDECLAREDNAMES
+
+DO Statement WHILE ( Expression );
 
 1.  Return the VarDeclaredNames of Statement.
 
-The production DO Statement WHILE ( Expression ); is evaluated as
-follows:
+RUNTIME SEMANTICS: EVALUATION
 
-The VarDeclaredNames of the production IterationStatement : WHILE (
-Expression ) Statement is determined as follows:
+DO Statement WHILE ( Expression );
 
-1.  Return the VarDeclaredNames of Statement.
+STATIC SEMANTICS: VARDECLAREDNAMES
 
-The production IterationStatement : WHILE ( Expression ) Statement
-is evaluated as follows:
-
-The VarDeclaredNames of the production FOR (ExpressionNoIn~opt~ ;
-Expression~opt~ ; Expression~opt~) Statement is determined as
-follows:
+IterationStatement : WHILE ( Expression )
 
 1.  Return the VarDeclaredNames of Statement.
 
-The production
- IterationStatement : FOR (ExpressionNoIn~opt~ ; Expression~opt~ ;
-Expression~opt~) Statement
-is evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
 
-The VarDeclaredNames of the production
- FOR ( VAR VariableDeclarationListNoIn ; Expression~opt~ ;
-Expression~opt~ ) Statement
-is determined as follows:
+IterationStatement : WHILE ( Expression ) Statement
+
+STATIC SEMANTICS: VARDECLAREDNAMES
+
+FOR (ExpressionNoIn~opt~ ; Expression~opt~ ; Expression~opt~)
+Statement
+
+1.  Return the VarDeclaredNames of Statement.
+
+IterationStatement : FOR ( VAR VariableDeclarationListNoIn ;
+Expression~opt~ ; Expression~opt~ ) Statement
 
 1.  Let names be BoundNames of VariableDeclarationListNoIn.
 
@@ -7564,34 +7975,41 @@ is determined as follows:
 
 3.  Return names.
 
-The production
- IterationStatement : FOR ( VAR VariableDeclarationListNoIn ;
-Expression~opt~ ; Expression~opt~ ) Statement
-is evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
 
-The VarDeclaredNames of the production FOR ( LeftHandSideExpression IN
-Expression ) Statement is determined as follows:
+IterationStatement : FOR (ExpressionNoIn~opt~ ; Expression~opt~ ;
+Expression~opt~) Statement
+
+1.  2.  3.  
+
+IterationStatement : FOR ( VAR VariableDeclarationListNoIn ;
+Expression~opt~ ; Expression~opt~ ) Statement
+
+STATIC SEMANTICS: VARDECLAREDNAMES
+
+FOR ( LeftHandSideExpression IN Expression ) Statement
 
 1.  Return the VarDeclaredNames of Statement.
 
-The production IterationStatement : FOR ( LeftHandSideExpression IN
-Expression ) Statement is evaluated as follows:
-
-The VarDeclaredNames of the production
- FOR ( VAR VariableDeclarationNoIn IN Expression ) Statement
-is determined as follows:
+IterationStatement : FOR ( VAR VariableDeclarationNoIn IN
+Expression ) Statement
 
 1.  Let names be BoundNames of VariableDeclarationNoIn.
 
 2.  Append to names the elements of the VarDeclaredNames of
     Statement.
 
-3.  Return names.
+3.  Return names
 
-The production
- IterationStatement : FOR ( VAR VariableDeclarationNoIn IN
+RUNTIME SEMANTICS: EVALUATION
+
+IterationStatement : FOR ( LeftHandSideExpression IN Expression )
+Statement
+
+1.  2.  3.  
+
+IterationStatement : FOR ( VAR VariableDeclarationNoIn IN
 Expression ) Statement
-is evaluated as follows:
 
 The mechanics and order of enumerating the properties (step 6.a in the
 first algorithm, step 7.a in the second) is not specified. Properties of
@@ -7736,21 +8154,9 @@ DefaultClause :
 
 DEFAULT : StatementList~opt~
 
-Semantics
+STATIC SEMANTICS: EARLY ERRORS
 
-The VarDeclaredNames of the production SwitchStatement : SWITCH (
-Expression ) CaseBlock is determined as follows:
-
-1.  Return the VarDeclaredNames of CaseBlock.
-
-The production SwitchStatement : SWITCH ( Expression ) CaseBlock
-is evaluated as follows:
-
-NOTE No matter how control leaves the SwitchStatement the
-LexicalEnvironment is always restored to its former state.
-
-The static semantics of the production CaseBlock : { CaseClauses }
-are:
+CaseBlock : { CaseClauses } are:
 
 -   It is a Syntax Error if the LexicallyDeclaredNames of CaseClauses
     contains any duplicate entires.
@@ -7758,50 +8164,24 @@ are:
 -   It is a Syntax Error if any element of the LexicallyDeclaredNames of
     CaseClauses also occurs in the VarDeclaredNames of CaseClauses.
 
-The LexicallyDeclaredNames ,the LexicalDeclarations, and the
-VarDeclaredNames of the production CaseBlock : { } is determined as
-follows:
+CaseClause : CASE Expression : StatementList
+
+-   It is a Syntax Error if StatementList includes a
+    StatementListItem : FunctionDeclaration production and the
+    source code matching this CaseClause production is not contained
+    in extended code.
+
+STATIC SEMANTICS: LEXICALDECLARATIONS
+
+CaseBlock : { }
 
 1.  Return a new empty List.
 
-The LexicallyDeclaredNames of the production CaseBlock : {
-CaseClauses } is determined as follows:
-
-1.  Return the LexicallyDeclaredNames of CaseClauses.
-
-The LexicalDeclarations of the production CaseBlock : { CaseClauses
-} is determined as follows:
+CaseBlock : { CaseClauses }
 
 1.  Return the LexicalDeclarations of CaseClauses.
 
-The VarDeclaredNames of the production CaseBlock : { CaseClauses }
-is determined as follows:
-
-1.  Return the VarDeclaredNames of CaseClauses.
-
-The production CaseBlock : { CaseClauses~opt~ } is given an input
-parameter, input, and is evaluated as follows:
-
-The LexicallyDeclaredNames of the production CaseBlock : {
-CaseClauses~opt~ _DefaultClause CaseClauses_~opt~ } is determined as
-follows:
-
-1.  If the first CaseClauses is present, let names be the
-    LexicallyDeclaredNames of the first CaseClauses.
-
-2.  Else let names be a new empty List.
-
-3.  Append to names the elements of the LexicallyDeclaredNames of the
-    DefaultClause.
-
-4.  If the second CaseClauses is not present, return names.
-
-5.  Else return the result of append to names the elements of the the
-    LexicallyDeclaredNames of the second CaseClauses.
-
-The LexicalDeclarations of the production CaseBlock : {
-CaseClauses~opt~ _DefaultClause CaseClauses_~opt~ } is determined as
-follows:
+CaseBlock : { CaseClauses~opt~ _DefaultClause CaseClauses_~opt~ }
 
 1.  If the first CaseClauses is present, let declarations be the
     LexicalDeclarations of the first CaseClauses.
@@ -7816,9 +8196,100 @@ follows:
 5.  Else return the result of append to names the elements of the the
     LexicallyDeclaredNames of the second CaseClauses.
 
-The VarDeclaredNames of the production CaseBlock : {
-CaseClauses~opt~ _DefaultClause CaseClauses_~opt~ } is determined as
-follows:
+CaseClauses : CaseClause
+
+1.  Return the LexicalDeclarations of CaseClause.
+
+CaseClauses : _CaseClauses CaseClause_
+
+1.  Let declarations be LexicalDeclarations of CaseClauses.
+
+2.  Append to names the elements of the LexicalDeclarations of
+    CaseClause.
+
+3.  Return declarations.
+
+CaseClause : CASE Expression : StatementList~opt~
+
+1.  If the StatementList is present, return the LexicalDeclarations of
+    StatementList.
+
+2.  Else return a new empty List.
+
+DefaultClause : DEFAULT : StatementList~opt~
+
+1.  If the StatementList is present, return the LexicalDeclarations of
+    StatementList.
+
+2.  Else return a new empty List.
+
+STATIC SEMANTICS: LEXICALLYDECLAREDNAMES
+
+CaseBlock : { }
+
+1.  Return a new empty List.
+
+CaseBlock : { CaseClauses }
+
+1.  Return the LexicallyDeclaredNames of CaseClauses.
+
+CaseBlock : { CaseClauses~opt~ _DefaultClause CaseClauses_~opt~ }
+
+1.  If the first CaseClauses is present, let names be the
+    LexicallyDeclaredNames of the first CaseClauses.
+
+2.  Else let names be a new empty List.
+
+3.  Append to names the elements of the LexicallyDeclaredNames of the
+    DefaultClause.
+
+4.  If the second CaseClauses is not present, return names.
+
+5.  Else return the result of append to names the elements of the the
+    LexicallyDeclaredNames of the second CaseClauses.
+
+CaseClauses : CaseClause
+
+1.  Return the LexicallyDeclaredNames of CaseClause.
+
+CaseClauses : _CaseClauses CaseClause_
+
+1.  Let names be LexicallyDeclaredNames of CaseClauses.
+
+2.  Append to names the elements of the LexicallyDeclaredNames of
+    CaseClause.
+
+3.  Return names.
+
+CaseClause : CASE Expression : StatementList~opt~
+
+1.  If the StatementList is present, return the LexicallyDeclaredNames
+    of StatementList.
+
+2.  Else return a new empty List.
+
+DefaultClause : DEFAULT : StatementList~opt~
+
+1.  If the StatementList is present, return the LexicallyDeclaredNames
+    of StatementList.
+
+2.  Else return a new empty List.
+
+STATIC SEMANTICS: VARDECLAREDNAMES
+
+SwitchStatement : SWITCH ( Expression ) CaseBlock
+
+1.  Return the VarDeclaredNames of CaseBlock.
+
+CaseBlock : { }
+
+1.  Return a new empty List.
+
+CaseBlock : { CaseClauses }
+
+1.  Return the VarDeclaredNames of CaseClauses.
+
+CaseBlock : { CaseClauses~opt~ _DefaultClause CaseClauses_~opt~ }
 
 1.  If the first CaseClauses is present, let names be the
     VarDeclaredNames of the first CaseClauses.
@@ -7833,47 +8304,11 @@ follows:
 5.  Else return the result of append to names the elements of the the
     VarDeclaredNames of the second CaseClauses.
 
-The production CaseBlock : { CaseClauses~opt~ _DefaultClause
-CaseClauses_~opt~ } is given an input parameter, input, and is
-evaluated as follows:
-
-The LexicallyDeclaredNames of the production CaseClauses :
-CaseClause is determined as follows:
-
-1.  Return the LexicallyDeclaredNames of CaseClause.
-
-The LexicalDeclarations of the production CaseClauses : CaseClause
-is determined as follows:
-
-1.  Return the LexicalDeclarations of CaseClause.
-
-The VarDeclaredNames of the production CaseClauses : CaseClause is
-determined as follows:
+CaseClauses : CaseClause
 
 1.  Return the VarDeclaredNames of CaseClause.
 
-The LexicallyDeclaredNames of the production CaseClauses :
-_CaseClauses CaseClause_ is determined as follows:
-
-1.  Let names be LexicallyDeclaredNames of CaseClauses.
-
-2.  Append to names the elements of the LexicallyDeclaredNames of
-    CaseClause.
-
-3.  Return names.
-
-The LexicalDeclarations of the production CaseClauses : _CaseClauses
-CaseClause_ is determined as follows:
-
-1.  Let declarations be LexicalDeclarations of CaseClauses.
-
-2.  Append to names the elements of the LexicalDeclarations of
-    CaseClause.
-
-3.  Return declarations.
-
-The VarDeclaredNames of the production CaseClauses : _CaseClauses
-CaseClause_ is determined as follows:
+CaseClauses : _CaseClauses CaseClause_
 
 1.  Let names be VarDeclaredNames of CaseClauses.
 
@@ -7882,37 +8317,34 @@ CaseClause_ is determined as follows:
 
 3.  Return names.
 
-The static semantics of the production CaseClause : CASE Expression
-: StatementList are:
-
--   It is a Syntax Error if StatementList includes a
-    StatementListItem : FunctionDeclaration production and the
-    source code matching this CaseClause production is not contained
-    in extended code.
-
-The LexicallyDeclaredNames of the production CaseClause : CASE
-Expression : StatementList~opt~ is determined as follows:
-
-1.  If the StatementList is present, return the LexicallyDeclaredNames
-    of StatementList.
-
-2.  Else return a new empty List.
-
-The LexicalDeclarations of the production CaseClause : CASE
-Expression : StatementList~opt~ is determined as follows:
-
-1.  If the StatementList is present, return the LexicalDeclarations of
-    StatementList.
-
-2.  Else return a new empty List.
-
-The VarDeclaredNames of the production CaseClause : CASE Expression
-: StatementList~opt~ is determined as follows:
+CaseClause : CASE Expression : StatementList~opt~
 
 1.  If the StatementList is present, return the VarDeclaredNames of
     StatementList.
 
 2.  Else return a new empty List.
+
+DefaultClause : DEFAULT : StatementList~opt~
+
+1.  If the StatementList is present, return the VarDeclaredNames of
+    StatementList.
+
+2.  Else return a new empty List.
+
+RUNTIME SEMANTICS: EVALUATION
+
+The production SwitchStatement : SWITCH ( Expression ) CaseBlock
+is evaluated as follows:
+
+NOTE No matter how control leaves the SwitchStatement the
+LexicalEnvironment is always restored to its former state.
+
+The production CaseBlock : { CaseClauses~opt~ } is given an input
+parameter, input, and is evaluated as follows:
+
+The production CaseBlock : { CaseClauses~opt~ _DefaultClause
+CaseClauses_~opt~ } is given an input parameter, input, and is
+evaluated as follows:
 
 The production CaseClause : CASE Expression : StatementList~opt~
 is evaluated as follows:
@@ -7921,30 +8353,6 @@ NOTE Evaluating CaseClause does not execute the associated
 StatementList. It simply evaluates the Expression and returns the
 value, which the CaseBlock algorithm uses to determine which
 StatementList to start executing.
-
-The LexicallyDeclaredNames of the production DefaultClause : DEFAULT :
-StatementList~opt~ is determined as follows:
-
-1.  If the StatementList is present, return the LexicallyDeclaredNames
-    of StatementList.
-
-2.  Else return a new empty List.
-
-The LexicalDeclarations of the production DefaultClause : DEFAULT :
-StatementList~opt~ is determined as follows:
-
-1.  If the StatementList is present, return the LexicalDeclarations of
-    StatementList.
-
-2.  Else return a new empty List.
-
-The VarDeclaredNames of the production DefaultClause : DEFAULT :
-StatementList~opt~ is determined as follows:
-
-1.  If the StatementList is present, return the VarDeclaredNames of
-    StatementList.
-
-2.  Else return a new empty List.
 
 Syntax
 
@@ -8020,53 +8428,9 @@ condition can occur, such as a runtime error or a THROW statement. The
 CATCH clause provides the exception-handling code. When a catch clause
 catches an exception, its Identifier is bound to that exception.
 
-Semantics
+STATIC SEMANTICS: EARLY ERRORS
 
-The VarDeclaredNames of the production TryStatement : TRY Block
-Catch is determined as follows:
-
-1.  Let names be VarDeclaredNames of Block.
-
-2.  Append to names the elements of the VarDeclaredNames of Catch.
-
-3.  Return names.
-
-The production TryStatement : TRY Block Catch is evaluated as
-follows:
-
-The VarDeclaredNames of the production TryStatement : TRY Block
-Finally is determined as follows:
-
-1.  Let names be VarDeclaredNames of Block.
-
-2.  Append to names the elements of the VarDeclaredNames of Finally.
-
-3.  Return names.
-
-The production TryStatement : TRY Block Finally is evaluated as
-follows:
-
-The VarDeclaredNames of the production TryStatement : TRY Block
-Catch Finally is determined as follows:
-
-1.  Let names be VarDeclaredNames of Block.
-
-2.  Append to names the elements of the VarDeclaredNames of Catch.
-
-3.  Append to names the elements of the VarDeclaredNames of Finally.
-
-4.  Return names.
-
-The production TryStatement : TRY Block Catch Finally is
-evaluated as follows:
-
-The VarDeclaredNames of the production Catch : CATCH (
-CatchParameter ) Block is determined as follows:
-
-1.  Return the VarDeclaredNames of Block.
-
-The static semantics of the production Catch : CATCH (
-CatchParameter ) Block are:
+Catch : CATCH ( CatchParameter ) Block
 
 -   It is a Syntax Error if any element of the BoundNames of
     CatchParameter also occurs in the LexicallyDeclaredNames of
@@ -8076,49 +8440,102 @@ CatchParameter ) Block are:
     contained in extended code and any element of the BoundNames of
     CatchParameter also occurs in the VarDeclaredNames of Block.
 
-The production Catch : CATCH ( CatchParameter ) Block is evaluated
-with parameter C as follows:
+STATIC SEMANTICS: BOUNDNAMES
+
+CatchParameter: BindingIdentifier
+
+1.  Return the BoundNames of BindingIdentifier.
+
+CatchParameter: BindingPattern
+
+1.  Return the BoundNames of BindingPattern.
+
+STATIC SEMANTICS: VARDECLAREDNAMES
+
+TryStatement : TRY Block Catch
+
+1.  Let names be VarDeclaredNames of Block.
+
+2.  Append to names the elements of the VarDeclaredNames of Catch.
+
+3.  Return names.
+
+TryStatement : TRY Block Finally
+
+1.  Let names be VarDeclaredNames of Block.
+
+2.  Append to names the elements of the VarDeclaredNames of Finally.
+
+3.  Return names.
+
+TryStatement : TRY Block Catch Finally
+
+1.  Let names be VarDeclaredNames of Block.
+
+2.  Append to names the elements of the VarDeclaredNames of Catch.
+
+3.  Append to names the elements of the VarDeclaredNames of Finally.
+
+4.  Return names.
+
+Catch : CATCH ( CatchParameter ) Block
+
+1.  Return the VarDeclaredNames of Block.
+
+Finally : FINALLY Block
+
+1.  Return the VarDeclaredNames of Block.
+
+RUNTIME SEMANTICS: BINDING INITIALIZATION
+
+  With arguments value and enviornment.
+
+NOTE UNDEFINED is passed for environment to indicate that a PutValue
+operation should be used to assign the initialization value. This is the
+the case for VAR statements formal parameter lists of non-strict
+functions. In those cases a lexical binding is hosted and preinitialized
+prior to evaluation of its initializer.
+
+CatchParameter: BindingIdentifier
+
+1.  Perform Binding Initialization for BindingIdentifier passing
+    value and enviornment as the arguments.
+
+CatchParameter: BindingPattern
+
+1.  Let exceptionObj be ToObject(value).
+
+2.  Perform Binding Initialization for BindingPattern passing
+    exceptionObj and enviornment as the arguments.
+
+RUNTIME SEMANTICS: CATCH CLAUSE EVALUATION
+
+with parameter thrownValue
+
+Catch : CATCH ( CatchParameter ) Block
 
 NOTE No matter how control leaves the Block the LexicalEnvironment is
 always restored to its former state.
 
-The VarDeclaredNames of the production Finally : FINALLY Block is
-determined as follows:
+RUNTIME SEMANTICS: EVALUATION
 
-1.  Return the VarDeclaredNames of Block.
+TryStatement : TRY Block Catch
 
-The production Finally : FINALLY Block is evaluated as follows:
+TryStatement : TRY Block Finally
 
-The BoundNames of the production CatchParameter: BindingIdentifier
-is determined as follows:
+TryStatement : TRY Block Catch Finally
 
-1.  Return the BoundNames of BindingIdentifier.
+1.  
 
-The production CatchParameter: BindingIdentifier is evaluated with
-parameters exception and env as follows:
+Finally : FINALLY Block
 
-1.  Let name be the sole element of the BoundNames of
-    BindingIdentifier
+1.  
 
-2.  Call the InitializeBinding concrete method of env passing name
-    and exception as the argument..
+1.  2.  
 
-The BoundNames of the production CatchParameter: BindingPattern is
-determined as follows:
+1.  
 
-1.  Return the BoundNames of BindingPattern.
-
-The production CatchParameter: _BindingPattern BindingIdentifier_ is
-evaluated with parameters exception and env as follows:
-
-1.  Let rhs be the result of evaluating Initialiser.
-
-2.  Let rval be ToObject(GetValue(rhs)).
-
-3.  Let env be the running execution context’s LexicalEnvironment.
-
-4.  Evaluate BindingPattern using rval as the obj parameter and
-    env as the environment parameter.
+1.  2.  3.  4.  
 
 Syntax
 
@@ -8128,10 +8545,12 @@ DEBUGGER ;
 
 Semantics
 
-Evaluating the DebuggerStatement production may allow an
+NOTE Evaluating the DebuggerStatement production may allow an
 implementation to cause a breakpoint when run under a debugger. If a
 debugger is not present or active this statement has no observable
 effect.
+
+RUNTIME SEMANTICS: EVALUATION
 
 The production DebuggerStatement : DEBUGGER ; is evaluated as follows:
 
@@ -8139,125 +8558,164 @@ Syntax
 
 FunctionDeclaration :
 
-FUNCTION BindingIdentifier ( FormalParameterList~opt~ ) { FunctionBody }
+FUNCTION BindingIdentifier ( FormalParameterList ) { FunctionBody }
 
 FunctionExpression :
 
-FUNCTION BindingIdentifier~opt~ ( FormalParameterList~opt~ ) {
-FunctionBody }
+FUNCTION BindingIdentifier~opt~ ( FormalParameterList ) { FunctionBody }
 
 FormalParameterList :
 
-... Identifier
+[empty]
+FunctionRestParameter
 FormalsList
-FormalsList, ... Identifier
+FormalsList, FunctionRestParameter
 
 FormalsList :
 
 FormalParameter
 FormalsList , FormalParameter
 
+FunctionRestParameter :
+
+... Identifier
+
 FormalParameter :
 
-BindingIdentifier Initialiser~opt~
-BindingPattern Initialiser~opt~
+BindingElement
 
 FunctionBody :
 
-SourceElements~opt~
+StatementList~opt~
 
 NOTE The identifier of a rest parameter is specified as an Identifier
 rather than a BindingIdentifier because it may be the the identifier
 ARGUMENTS..
 
-Semantics
+STATIC SEMANTICS: EARLY ERRORS
 
-The production
- FunctionDeclaration : FUNCTION BindingIdentifier (
-FormalParameterList~opt~ ) { FunctionBody }
-is instantiated as follows during Declaration Binding instantiation
-(10.5):
+FunctionDeclaration : FUNCTION BindingIdentifier (
+FormalParameterList ) { FunctionBody }
+and
+FunctionExpression : FUNCTION BindingIdentifier~opt~ (
+FormalParameterList ) { FunctionBody }
 
-The production
- FunctionExpression : FUNCTION ( FormalParameterList~opt~ ) {
-FunctionBody }
-is evaluated as follows:
+-   It is a Syntax Error if the source code matching this production is
+    extended code and the BoundNames of BindingIdentifier also occurs
+    in the VarDeclaredNames of FunctionBody.
 
-The BoundNames of the production
- FunctionExpression : FUNCTION BindingIdentifier (
-FormalParameterList~opt~ ) { FunctionBody }
-is determined as follows:
+-   It is a Syntax Error if the source code matching this production is
+    extended code and the BoundNames of BindingIdentifier also occurs
+    in the LexicallyDeclaredNames of FunctionBody.
 
-1.  Return the BoundNames of BindingIdentifier.
+-   It is a Syntax Error if the source code matching this production is
+    extended code and any element of the LexicallyDeclaredNames of
+    FormalParameterList also occurs in the VarDeclaredNames of
+    FunctionBody.
 
--   
+-   It is a Syntax Error if the source code matching this production is
+    extended code and any element of the BoundNames of
+    FormalParameterList also occurs in the LexicallyDeclaredNames of
+    FunctionBody.
 
-The production
- FunctionExpression : FUNCTION BindingIdentifier (
-FormalParameterList~opt~ ) { FunctionBody }
-is evaluated as follows:
+FunctionBody : _StatementList _
 
-NOTE The BindingIdentifier in a FunctionExpression can be referenced
-from inside the FunctionExpression's FunctionBody to allow the
-function to call itself recursively. However, unlike in a
-FunctionDeclaration, the BindingIdentifier in a FunctionExpression
-cannot be referenced from and does not affect the scope enclosing the
-FunctionExpression.
+-   It is a Syntax Error if the source code matching this production is
+    extended code and the LexicallyDeclaredNamesBoundNames of
+    StatementList contains any duplicate entires.
 
-The production FunctionBody : SourceElements~opt~ is evaluated as
-follows:
+-   It is a Syntax Error if the source code matching this production is
+    extended code and any element of the LexicallyDeclaredNames of
+    StatementList also occurs in the VarDeclaredNames of
+    StatementList.
 
-The static semantics of the productions FormalParameterList : …
-Identifier and FormalParameterList : FormalsList , …
-Identifier are:
+FormalParameterList : FormalsList, FunctionRestParameter
+
+-   It is a Syntax Error if BoundNames of FormalsList contains the
+    String Value of Identifier.
+
+FormalsList : FormalsList, FormalParameter
+
+-   It is a Syntax Error if the source code matching this production is
+    strict code and BoundNames of FormalsList contains an element
+    which is also contained in BoundNames of FormalParameter.
+
+FunctionRestParameter : ... Identifier
 
 -   It is a Syntax Error if the source code parsed with this production
     is not extended code.
 
 -   It is a Syntax Error if Identifier is "EVAL"
 
-The static semantics of the production FormalParameterList :
-FormalsList, … Identifier are:
+FormalParameter : BindingElement
 
--   It is a Syntax Error if BoundNames of FormalsList contains the
-    value of Identifier.
+-   It is a Syntax Error if the derivation of BindingElement is
+    _BindingIdentifier Initialiser_ and the source code matching this
+    production is not extended code.
 
-The static semantics of the production FormalsList : FormalsList,
-FormalParameter are:
+-   It is a Syntax Error if the derivation of BindingElement is
+    _BindingPattern Initialiser_~opt~ and the source code parsed with
+    this production is not extended code.
 
--   It is a Syntax Error if BoundNames of FormalsList contains an
-    element which is also contained in BoundNames of FormalParameter.
-
--   
-
-The static semantics of the production FormalParameter :
-_BindingIdentifier Initialiser_ are:
-
--   It is a Syntax Error if the source code matching this production is
-    not extended code.
-
--   
-
-The static semantics of the production FormalParameter :
-_BindingPattern Initialiser_~opt~ are:
-
--   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
-
--   It is a Syntax Error if BoundNames of BindingPattern contains any
+-   It is a Syntax Error if BoundNames of BindingElement contains any
     duplicate elements.
 
--   It is a Syntax Error if BoundNames of BindingPattern contains
-    "EVAL" or "ARGUMENTS".
+STATIC SEMANTICS: BOUNDNAMES
 
-The ExpectedArgumentCount of the production FormalParameterList : …
-Identifier is determined as follows:
+FunctionDeclaration : FUNCTION BindingIdentifier (
+FormalParameterList ) { FunctionBody }
+
+1.  Return the BoundNames of BindingIdentifier.
+
+FormalParameterList : [empty]
+
+1.  Return an empty List.
+
+FormalParameterList : FunctionRestParameter
+
+1.  Return the BoundNames of FunctionRestParameter.
+
+FormalParameterList : FormalsList
+
+1.  Return the BoundNames of FormalsList.
+
+FormalParameterList : FormalsList , FunctionRestParameter
+
+1.  Let names be BoundNames of FormalsList.
+
+2.  Append to names the BoundNames of FunctionRestParameter.
+
+3.  Return names.
+
+FormalsList : _FormalsList ,_ FormalParameter
+
+1.  Let names be BoundNames of FormalsList.
+
+2.  Append to names the elements of BoundNames of FormalParameter.
+
+3.  Return names.
+
+FormalParameterList : ... Identifier
+
+1.  Return the String Value of Identifier.
+
+FormalParameter : BindingElement
+
+1.  Return the BoundNames of BindingElement .
+
+STATIC SEMANTICS: EXPECTEDARGUMENTCOUNT
+
+FormalParameterList :
+
+[empty]
+FunctionRestParameter
 
 1.  Return 0.
 
-The ExpectedArgumentCount of the productions FormalParameterList :
-FormalsList and FormalParameterList : _FormalsList ,_ … Identifier
-is determined as follows:
+FormalParameterList :
+
+FormalsList
+FormalsList , FunctionRestParameter
 
 1.  Return the ExpectedArgumentCount of FormalsList.
 
@@ -8265,20 +8723,13 @@ NOTE The ExpectedArgumentCount of a FormalParameterList is the number
 of FormalParameters to the left of either the rest parameter or the
 first FormalParameter with an Initialiser.
 
-The ExpectedArgumentCount of the production FormalsList :
-FormalParameter is determined as follows:
+FormalsList : FormalParameter
 
 1.  If HasInitialiser of FormalParameter is FALSE return 0
 
 2.  Return 1.
 
-HasInitialiser of the production FormalsList : FormalParameter is
-determined as follows:
-
-1.  Return HasInitialiser of FormalParameter.
-
-The ExpectedArgumentCount of the production FormalsList :
-FormalsList, FormalParameter is determined as follows:
+FormalsList : FormalsList, FormalParameter
 
 1.  Let count be the ExpectedArgumentCount of FormalsList.
 
@@ -8287,50 +8738,177 @@ FormalsList, FormalParameter is determined as follows:
 
 3.  Return count+1.
 
-HasInitialiser of the production FormalsList : _FormalsList ,_
-FormalParameter is determined as follows:
+STATIC SEMANTICS: HASINITIALISER
+
+FormalsList : FormalParameter
+
+1.  Return HasInitialiser of FormalParameter.
+
+FormalsList : _FormalsList ,_ FormalParameter
 
 1.  If HasInitialiser of FormalsList is TRUE, then return TRUE.
 
 2.  Return HasInitialiser of FormalParameter.
 
-HasInitialiser of the productions FormalParameter :
-BindingIdentifier and FormalParameter : BindingPattern is
-determined as follows:
+FormalParameter : _BindingElement _
 
-1.  Return FALSE.
+1.  Return HasInitialiser of BindingElement.
 
-HasInitialiser of the production FormalParameter : BindingIdentifier
-Initialiser and FormalParameter : _BindingPattern Initialiser_ is
-determined as follows:
+STATIC SEMANTICS: LEXICALLYDECLAREDNAMES
 
-1.  Return TRUE.
+FunctionBody : [empty]
 
-The BoundNames of the production FormalsList : _FormalsList ,_
-FormalParameter is determined as follows:
+1.  Return an empty List.
 
-1.  Let names be BoundNames of PropertyName.
+FunctionBody : StatementList
 
-2.  Append to names the elements of BoundNames of FormalParameter.
+1.  Return the LexicllyDeclaredNames of StatementList.
 
-3.  Return names.
+STATIC SEMANTICS: VARDECLAREDNAMES
 
-The BoundNames of the production FormalParameter : _BindingIdentifier
-Initialiser_~opt~ is determined as follows:
+FunctionDeclaration : FUNCTION BindingIdentifier (
+FormalParameterList ) { FunctionBody }
 
-1.  Let names be a List containing the text of the Identifier .
+1.  Return an empty List.
 
-2.  Return names.
+FunctionBody : [empty]
 
-The BoundNames of the production FormalParameter : _BindingPattern
-Initialiser_~opt~ is determined as follows:
+1.  Return an empty List.
 
-1.  Return BoundNames of BindingPattern.
+FunctionBody : StatementList
 
-Given an optional parameter list specified by FormalParameterList, a
-body specified by FunctionBody, a Lexical Environment specified by
-Scope, and a Boolean flag Strict, a Function object is constructed
-as follows:
+1.  Return the VarDeclaredNames of StatementList.
+
+RUNTIME SEMANTICS: BINDING INITIALIZATION
+
+  With parameters value and enviornment and optional parameter
+  index.
+
+NOTE When UNDEFINED is passed for environment it indicates that a
+PutValue operation should be used to assign the initialization value.
+This is the the case for formal parameter lists of non-strict functions.
+In that case the formal parameter bindings are preinitialized in order
+to deal with the possibility of multiple parameters with the same name.
+
+FormalParameterList : [empty]
+
+1.  Return.
+
+FormalParameterList : FunctionRestParameter
+
+1.  Perform Indexed Binding Initialization for FunctionRestParameter
+    using value, lenValue, 0, and environment as the arguments.
+
+2.  Return.
+
+FormalParameterList : FormalsList
+
+1.  Asset: value is a new created arguments object and hence it has a
+    valid integer valued "length" property.
+
+2.  Let lenValue be the result of calling the [[Get]] internal method
+    of value with argument "length".
+
+3.  Perform Indexed Binding Initialization for FormalsList using
+    value, lenValue, 0, and environment as the arguments.
+
+4.  Return.
+
+FormalParameterList : FormalsList , FunctionRestParameter
+
+1.  Let restIndex be the result of performing Indexed Binding
+    Initialization for FormalsList using value, lenValue, 0, and
+    environment as the arguments.
+
+2.  Perform Indexed Binding Initialization for FunctionRestParameter
+    using value, lenValue, restIndex, and environment as the
+    arguments.
+
+3.  Return.
+
+RUNTIME SEMANTICS: INDEXED BINDING INITIALIZATION
+
+  With parameters array, _arrayLength, nextIndex,_ and environment.
+
+FormalList : FormalParameter
+
+1.  Perform Binding Initialization for FormalParameter using value,
+    env, and index as the arguments.
+
+2.  Return index + 1.
+
+FormalList : FormalsList , FormalParameter
+
+1.  Let lastIndex be the result of performing Indexed Binding
+    Initialization for FormalsList using value, lenValue,
+    nextIndex, and environment as the arguments.
+
+2.  Perform Indexed Binding Initialization for FormalParameter using
+    value, lenValue, lastIndex, and environment as the
+    arguments.
+
+3.  Return lastIndex + 1.
+
+FunctionRestParameter : ... Identifier
+
+1.  Let A be a new array object created as if by the expression NEW
+    ARRAY() where ARRAY is the standard built-in constructor with that
+    name.
+
+2.  Let n=0;
+
+3.  Repeat, while nextIndex < arrayLength
+
+    a.  Let P be ToString(nextIndex).
+
+    b.  Assert: array is a well formed arguments object, hence it must
+          have a property _P_.
+
+    c.  Let v be the result of calling the [[Get]] internal method of
+        array passing P as the argument.
+
+    d.  Call the [[DefineOwnProperty]] internal method of A with
+          arguments ToString(n), Property Descriptor {[[Value]]: v,
+          [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]:
+          TRUE}, and FALSE.
+
+    e.  Let n = n+1.
+
+    f.  Let nextIndex = nextIndex +1.
+
+4.  Perform Binding Initialization for Identifer using A and
+    environment as arguments.
+
+FormalParameter : BindingElement
+
+1.  Perform Indexed Binding Initialization for BindingElement using
+    array, arrayLength, nextIndex, and environment as the
+    arguments.
+
+RUNTIME SEMANTICS: EVALUATION
+
+FunctionDeclaration : FUNCTION BindingIdentifier (
+FormalParameterList ) { FunctionBody }
+
+FunctionExpression : FUNCTION ( FormalParameterList ) {
+FunctionBody }
+
+FunctionExpression : FUNCTION BindingIdentifier (
+FormalParameterList ) { FunctionBody }
+
+NOTE The BindingIdentifier in a FunctionExpression can be referenced
+from inside the FunctionExpression's FunctionBody to allow the
+function to call itself recursively. However, unlike in a
+FunctionDeclaration, the BindingIdentifier in a FunctionExpression
+cannot be referenced from and does not affect the scope enclosing the
+FunctionExpression.
+
+FunctionBody : StatementList~opt~
+
+Given an parameter list specified by FormalParameterList, a body
+specified by FunctionBody, a Lexical Environment specified by Scope,
+and a Boolean flag Strict, a Function object is constructed as
+follows:
 
 NOTE A PROTOTYPE property is automatically created for every function,
 to allow for the possibility that the function will be used as a
@@ -8382,11 +8960,11 @@ follows:
 
 A Directive Prologue is the longest sequence of ExpressionStatement
 productions occurring as the initial SourceElement productions of a
-Program or FunctionBody and where each ExpressionStatement in the
-sequence consists entirely of a StringLiteral token followed a
-semicolon. The semicolon may appear explicitly or may be inserted by
-automatic semicolon insertion. A Directive Prologue may be an empty
-sequence.
+Program or as the initial StatementListItem productions of a
+FunctionBody and where each ExpressionStatement in the sequence
+consists entirely of a StringLiteral token followed a semicolon. The
+semicolon may appear explicitly or may be inserted by automatic
+semicolon insertion. A Directive Prologue may be an empty sequence.
 
 A Use Strict Directive is an ExpressionStatement in a Directive
 Prologue whose StringLiteral is either the exact character sequences
@@ -8397,14 +8975,14 @@ A Directive Prologue may contain more than one Use Strict Directive.
 However, an implementation may issue a warning if this occurs.
 
 NOTE The ExpressionStatement productions of a Directive Prologue are
-evaluated normally during evaluation of the containing SourceElements
-production. Implementations may define implementation specific meanings
-for ExpressionStatement productions which are not a Use Strict
-Directive and which occur in a Directive Prologue. If an appropriate
-notification mechanism exists, an implementation should issue a warning
-if it encounters in a Directive Prologue an ExpressionStatement that
-is not a Use Strict Directive or which does not have a meaning defined
-by the implementation.
+evaluated normally during evaluation of the containing production.
+Implementations may define implementation specific meanings for
+ExpressionStatement productions which are not a Use Strict Directive
+and which occur in a Directive Prologue. If an appropriate notification
+mechanism exists, an implementation should issue a warning if it
+encounters in a Directive Prologue an ExpressionStatement that is not
+a Use Strict Directive or which does not have a meaning defined by the
+implementation.
 
 There are certain built-in objects available whenever an ECMAScript
 program begins execution. One, the global object, is part of the lexical
@@ -9476,7 +10054,7 @@ implementation-dependent.
 
 INDEXOF compares searchElement to the elements of the array, in
 ascending order, using the internal Strict Equality Comparison Algorithm
-(11.9.6), and if found at one or more positions, returns the index of
+(11.9.1), and if found at one or more positions, returns the index of
 the first such position; otherwise, -1 is returned.
 
 The optional second argument fromIndex defaults to 0 (i.e. the whole
@@ -9499,7 +10077,7 @@ implementation-dependent.
 
 LASTINDEXOF compares searchElement to the elements of the array in
 descending order using the internal Strict Equality Comparison Algorithm
-(11.9.6), and if found at one or more positions, returns the index of
+(11.9.1), and if found at one or more positions, returns the index of
 the last such position; otherwise, -1 is returned.
 
 The optional second argument fromIndex defaults to the array's length
@@ -10804,8 +11382,9 @@ and returns the largest of the resulting values.
 
 -   If any value is NaN, the result is NaN.
 
--   The comparison of values to determine the largest value is done as
-      in 11.8.5 except that +0 is considered to be larger than −0.
+-   The comparison of values to determine the largest value is done
+      using the Abstract Relational Comparision Alogrithm ( 11.8.1)
+      except that +0 is considered to be larger than −0.
 
 The LENGTH property of the MAX method is 2.
 
@@ -10816,8 +11395,9 @@ and returns the smallest of the resulting values.
 
 -   If any value is NaN, the result is NaN.
 
--   The comparison of values to determine the smallest value is done as
-      in 11.8.5 except that +0 is considered to be larger than −0.
+-   The comparison of values to determine the smallest value is done
+      using the Abstract Relational Comparision Alogrithm (11.8.1)
+      except that +0 is considered to be larger than −0.
 
 The LENGTH property of the MIN method is 2.
 
@@ -14413,13 +14993,12 @@ been clarified by making it explicit that the intent is that the actual
 built-in object is to be used rather than the current dynamic value of
 the correspondingly named property.
 
-11.8.2, 11.8.3, 11.8.5: ECMAScript generally uses a left to right
-evaluation order, however the Edition 3 specification language for the >
-and <= operators resulted in a partial right to left order. The
-specification has been corrected for these operators such that it now
-specifies a full left to right evaluation order. However, this change of
-order is potentially observable if side-effects occur during the
-evaluation process.
+11.8.1: ECMAScript generally uses a left to right evaluation order,
+however the Edition 3 specification language for the > and <= operators
+resulted in a partial right to left order. The specification has been
+corrected for these operators such that it now specifies a full left to
+right evaluation order. However, this change of order is potentially
+observable if side-effects occur during the evaluation process.
 
 11.1.4: Edition 5 clarifies the fact that a trailing comma at the end of
 an ArrayInitialiser does not add to the length of the array. This is
