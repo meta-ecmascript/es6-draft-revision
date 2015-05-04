@@ -46,7 +46,7 @@ _5.3 Static Semantic Rules_ 13
 
 7.1 _Unicode Format-Control Characters_ 15
 
-7.2 _White Space_ 15
+7.2 _White Space_ 16
 
 7.3 _Line Terminators_ 16
 
@@ -58,13 +58,11 @@ _5.3 Static Semantic Rules_ 13
 
 7.6.1 _Reserved Words_ 19
 
-7.7 Punctuators 20
+7.7 Punctuators 21
 
 7.8 Literals 21
 
 7.8.1 _Null Literals_ 21
-
-7.8.2 _Boolean Literals_ 21
 
 7.8.3 _Numeric Literals_ 21
 
@@ -72,549 +70,561 @@ _5.3 Static Semantic Rules_ 13
 
 7.8.5 _Regular Expression Literals_ 26
 
-7.9 _Automatic Semicolon Insertion_ 27
+7.8.6 _Quasi Literal Lexical Components_ 28
 
-7.9.1 _Rules of Automatic Semicolon Insertion_ 27
+7.8.2 _Boolean Literals_ 29
 
-7.9.2 _Examples of Automatic Semicolon Insertion_ 28
+7.9 _Automatic Semicolon Insertion_ 30
 
-8 Types 29
+7.9.1 _Rules of Automatic Semicolon Insertion_ 30
 
-8.1 _The Undefined Type_ 30
+7.9.2 _Examples of Automatic Semicolon Insertion_ 31
 
-8.2 _The Null Type_ 30
+8 Types 32
 
-8.3 _The Boolean Type_ 30
+8.1 _The Undefined Type_ 32
 
-8.4 _The String Type_ 30
+8.2 _The Null Type_ 32
 
-8.5 _The Number Type_ 30
+8.3 _The Boolean Type_ 32
 
-8.6 _The Object Type_ 31
+8.4 _The String Type_ 32
 
-8.6.1 _Property Attributes_ 32
+8.5 _The Number Type_ 33
 
-8.6.2 _Object Internal Properties and Methods_ 33
+8.6 _The Object Type_ 34
 
-8.7 _The List and Record Specification Type_ 37
+8.6.1 _Property Attributes_ 34
 
-8.8 _The Completion Record Specification Type_ 37
+8.6.2 _Object Internal Properties and Methods_ 35
 
-3.1.1 _Impliclty Completion Values_ 38
+8.7 _The List and Record Specification Type_ 39
 
-3.1.2 NormalCompletion 38
+8.8 _The Completion Record Specification Type_ 39
 
-3.1.3 _Throw an Exception_ 38
+_8.8.1 Implicit Completion Values_ 40
 
-3.1.4 ReturnIfAbrupt 38
+_8.8.2 NormalCompletion_ 40
 
-8.9 _The Reference Specification Type_ 39
+_8.8.3 Throw an Exception_ 40
 
-8.9.1 _GetValue (V)_ 39
+_8.8.4 ReturnIfAbrupt_ 40
 
-8.9.2 _PutValue (V, W)_ 40
+8.9 _The Reference Specification Type_ 41
 
-8.9.3 _GetThisValue (V)_ 41
+8.9.1 _GetValue (V)_ 41
+
+8.9.2 _PutValue (V, W)_ 42
+
+8.9.3 _GetThisValue (V)_ 43
 
 8.10 _The Property Descriptor and Property Identifier Specification
-Types_ 41
-
-8.10.1 _IsAccessorDescriptor ( Desc )_ 41
-
-8.10.2 _IsDataDescriptor ( Desc )_ 41
-
-8.10.3 _IsGenericDescriptor ( Desc )_ 42
-
-8.10.4 _FromPropertyDescriptor ( Desc )_ 42
-
-8.10.5 _ToPropertyDescriptor ( Obj )_ 42
-
-8.11 _The Lexical Environment and Environment Record Specification
 Types_ 43
 
-8.12 _Algorithms for Object Internal Methods_ 43
+8.10.1 _IsAccessorDescriptor ( Desc )_ 43
 
-8.12.1 _[[GetOwnProperty]] (P)_ 43
+8.10.2 _IsDataDescriptor ( Desc )_ 43
 
-8.12.2 _[[GetProperty]] (P)_ 43
+8.10.3 _IsGenericDescriptor ( Desc )_ 44
 
-8.12.3 _[[Get]] (P [, accessorThisValue] )_ 44
+8.10.4 _FromPropertyDescriptor ( Desc )_ 44
 
-8.12.4 _[[CanPut]] (P)_ 44
+8.10.5 _ToPropertyDescriptor ( Obj )_ 44
 
-8.12.5 _[[Put]] ( P, V, Throw[, accessorThisValue] )_ 44
+8.11 _The Lexical Environment and Environment Record Specification
+Types_ 45
 
-8.12.6 _[[HasProperty]] (P)_ 45
+8.12 _Algorithms for Object Internal Methods_ 45
 
-8.12.7 _[[Delete]] (P, Throw)_ 45
+8.12.1 _[[GetOwnProperty]] (P)_ 45
 
-8.12.8 _[[DefaultValue]] (hint)_ 45
+8.12.2 _[[GetProperty]] (P)_ 45
 
-8.12.9 _[[DefineOwnProperty]] (P, Desc, Throw)_ 46
+8.12.3 _[[Get]] (P [, accessorThisValue] )_ 45
 
-8.12.10 _[[Enumerate]] (includePrototype, onlyEnumerable )_ 47
+8.12.4 _[[CanPut]] (P)_ 46
 
-8.12.11 _[[Iterate]] ( )_ 47
+8.12.5 _[[Put]] ( P, V, Throw[, accessorThisValue] )_ 46
 
-_9 Abstract Operations_ 48
+8.12.6 _[[HasProperty]] (P)_ 46
 
-9.1 _Type Conversion and Testing_ 48
+8.12.7 _[[Delete]] (P, Throw)_ 47
 
-9.1.1 ToPrimitive 48
+8.12.8 _[[DefaultValue]] (hint)_ 47
 
-9.1.2 ToBoolean 48
+8.12.9 _[[DefineOwnProperty]] (P, Desc, Throw)_ 48
 
-9.1.3 ToNumber 49
+8.12.10 _[[Enumerate]] (includePrototype, onlyEnumerable )_ 49
 
-9.1.4 ToInteger 51
+8.12.11 _[[Iterate]] ( )_ 49
 
-9.1.5 _ToInt32: (Signed 32 Bit Integer)_ 52
+_9 Abstract Operations_ 49
 
-9.1.6 _ToUint32: (Unsigned 32 Bit Integer)_ 52
+9.1 _Type Conversion and Testing_ 50
 
-9.1.7 _ToUint16: (Unsigned 16 Bit Integer)_ 52
+9.1.1 ToPrimitive 50
 
-9.1.8 ToString 53
+9.1.2 ToBoolean 50
 
-9.1.9 ToObject 54
+9.1.3 ToNumber 51
 
-9.1.10 ToPropertyKey 54
+9.1.4 ToInteger 53
 
-9.2 _Testing and Comparision Operations_ 54
+9.1.5 _ToInt32: (Signed 32 Bit Integer)_ 54
 
-9.2.1 CheckObjectCoercible 54
+9.1.6 _ToUint32: (Unsigned 32 Bit Integer)_ 54
 
-9.2.2 IsCallable 55
+9.1.7 _ToUint16: (Unsigned 16 Bit Integer)_ 54
 
-9.2.3 _The SameValue Algorithm_ 55
+9.1.8 ToString 55
 
-9.3 _Property Access Operations_ 55
+9.1.9 ToObject 56
 
-9.3.1 Invoke 55
+9.1.10 ToPropertyKey 56
 
-10 _Executable Code and Execution Contexts_ 56
+9.2 _Testing and Comparision Operations_ 56
 
-10.1 _Types of Executable Code_ 56
+9.2.1 CheckObjectCoercible 56
 
-10.1.1 _Strict Mode Code_ 56
+9.2.2 IsCallable 57
 
-10.1.2 _Non-ECMAScript Functions_ 57
+9.2.3 _The SameValue Algorithm_ 57
 
-10.2 _Lexical Environments_ 57
+9.3 _Operations on Objects_ 57
 
-10.2.1 _Environment Records_ 57
+9.3.1 Invoke 57
 
-10.2.2 _Lexical Environment Operations_ 63
+10 _Executable Code and Execution Contexts_ 58
 
-10.3 _Code Realms_ 64
+10.1 _Types of Executable Code_ 58
 
-10.4 _Execution Contexts_ 65
+10.1.1 _Strict Mode Code_ 58
 
-10.4.1 _Identifier Resolution_ 66
+10.1.2 _Non-ECMAScript Functions_ 59
 
-10.4.3 GetThisEnvironment 66
+10.2 _Lexical Environments_ 59
 
-10.4.4 _This Resolution_ 66
+10.2.1 _Environment Records_ 59
 
-10.5 _Declaration Binding Instantiation_ 67
+10.2.2 _Lexical Environment Operations_ 66
 
-10.5.1 _Top-Level Declaration Instantiation_ 67
+10.3 _Code Realms_ 67
 
-10.5.2 _Module Declaration Instantiation_ 67
+10.4 _Execution Contexts_ 67
 
-10.5.3 _Function Declaration Instantiation_ 67
+10.4.1 _Identifier Resolution_ 68
 
-10.5.4 _Block Declaration Instantiation_ 69
+10.4.3 GetThisEnvironment 68
 
-10.6 _Arguments Object_ 69
+10.4.4 _This Resolution_ 68
 
-11 Expressions 72
+10.5 _Declaration Binding Instantiation_ 69
 
-11.1 _Primary Expressions_ 72
+10.5.1 _Top-Level Declaration Instantiation_ 69
 
-11.1.1 _The this Keyword_ 72
+10.5.2 _Module Declaration Instantiation_ 70
 
-11.1.2 _Identifier Reference_ 73
+10.5.3 _Function Declaration Instantiation_ 70
 
-11.1.3 Literals 73
+10.5.4 _Block Declaration Instantiation_ 71
 
-11.1.4 _Array Initialiser_ 74
+10.6 _Arguments Object_ 72
 
-11.1.5 _Object Initialiser_ 77
+11 Expressions 75
 
-11.1.6 _Function Expressions_ 79
+11.1 _Primary Expressions_ 75
 
-11.1.7 _Generator Comprehensions_ 79
+11.1.1 _The this Keyword_ 75
 
-11.1.8 _The Grouping Operator_ 80
+11.1.2 _Identifier Reference_ 75
 
-11.2 _Left-Hand-Side Expressions_ 80
+11.1.3 Literals 75
 
-11.2.1 _Property Accessors_ 81
+11.1.4 _Array Initialiser_ 76
 
-11.2.2 _The new Operator_ 82
+11.1.5 _Object Initialiser_ 79
 
-11.2.3 _Function Calls_ 82
+11.1.6 _Function Defining Expressions_ 82
 
-11.2.4 _The super Keyword_ 83
+11.1.7 _Generator Comprehensions_ 82
 
-11.2.5 _Argument Lists_ 84
+11.1.8 _Regular Expression Literals_ 82
 
-11.3 _Postfix Expressions_ 85
+11.1.9 _Quasi Literals_ 83
 
-11.3.1 _Postfix Increment Operator_ 86
+11.1.10 _The Grouping Operator_ 86
 
-11.3.2 _Postfix Decrement Operator_ 86
+11.2 _Left-Hand-Side Expressions_ 86
 
-11.4 _Unary Operators_ 86
+11.2.1 _Property Accessors_ 87
 
-11.4.1 _The delete Operator_ 87
+11.2.2 _The new Operator_ 88
 
-11.4.2 _The void Operator_ 87
+11.2.3 _Function Calls_ 89
 
-11.4.3 _The typeof Operator_ 88
+11.2.4 _The super Keyword_ 90
 
-11.4.4 _Prefix Increment Operator_ 88
+11.2.5 _Argument Lists_ 91
 
-11.4.5 _Prefix Decrement Operator_ 88
+11.2.6 _Tagged Quasis_ 92
 
-11.4.6 _Unary + Operator_ 89
+11.3 _Postfix Expressions_ 92
 
-11.4.7 _Unary - Operator_ 89
+11.3.1 _Postfix Increment Operator_ 93
 
-11.4.8 _Bitwise NOT Operator ( ~ )_ 89
+11.3.2 _Postfix Decrement Operator_ 93
 
-11.4.9 _Logical NOT Operator ( ! )_ 89
+11.4 _Unary Operators_ 93
 
-11.5 _Multiplicative Operators_ 90
+11.4.1 _The delete Operator_ 94
 
-11.5.1 _Applying the * Operator_ 90
+11.4.2 _The void Operator_ 94
 
-11.5.2 _Applying the / Operator_ 90
+11.4.3 _The typeof Operator_ 94
 
-11.5.3 _Applying the % Operator_ 91
+11.4.4 _Prefix Increment Operator_ 95
 
-11.6 _Additive Operators_ 91
+11.4.5 _Prefix Decrement Operator_ 95
 
-11.6.1 _The Addition operator ( + )_ 92
+11.4.6 _Unary + Operator_ 95
 
-11.6.2 _The Subtraction Operator ( - )_ 92
+11.4.7 _Unary - Operator_ 96
 
-11.6.3 _Applying the Additive Operators to Numbers_ 92
+11.4.8 _Bitwise NOT Operator ( ~ )_ 96
 
-11.7 _Bitwise Shift Operators_ 93
+11.4.9 _Logical NOT Operator ( ! )_ 96
 
-11.7.1 _The Left Shift Operator ( << )_ 93
+11.5 _Multiplicative Operators_ 96
 
-11.7.2 _The Signed Right Shift Operator ( >> )_ 93
+11.5.1 _Applying the * Operator_ 97
 
-11.7.3 _The Unsigned Right Shift Operator ( >>> )_ 94
+11.5.2 _Applying the / Operator_ 97
 
-11.8 _Relational Operators_ 94
+11.5.3 _Applying the % Operator_ 98
 
-_11.8.1 Runtime Semantics_ 95
+11.6 _Additive Operators_ 98
 
-11.9 _Equality Operators_ 97
+11.6.1 _The Addition operator ( + )_ 98
 
-_11.9.1 Runtime Semantics_ 98
+11.6.2 _The Subtraction Operator ( - )_ 99
 
-11.10 _Binary Bitwise Operators_ 100
+11.6.3 _Applying the Additive Operators to Numbers_ 99
 
-11.11 _Binary Logical Operators_ 101
+11.7 _Bitwise Shift Operators_ 100
 
-11.12 _Conditional Operator ( ? : )_ 102
+11.7.1 _The Left Shift Operator ( << )_ 100
 
-11.13 _Assignment Operators_ 102
+11.7.2 _The Signed Right Shift Operator ( >> )_ 100
 
-_Static Semantics_ 103
+11.7.3 _The Unsigned Right Shift Operator ( >>> )_ 101
 
-_Runtime Semantics_ 103
+11.8 _Relational Operators_ 101
 
-_11.13.1 Destructuring Assignment_ 104
+_11.8.1 Runtime Semantics_ 102
 
-11.14 _Comma Operator ( , )_ 107
+11.9 _Equality Operators_ 104
 
-12 _Statements and Declarations_ 108
+_11.9.1 Runtime Semantics_ 104
 
-_Static Semantics_ 108
+11.10 _Binary Bitwise Operators_ 107
 
-_Runtime Semantics_ 108
+11.11 _Binary Logical Operators_ 107
 
-12.1 Block 109
+11.12 _Conditional Operator ( ? : )_ 108
 
-12.2 _Declarations and the Variable Statement_ 111
+11.13 _Assignment Operators_ 109
 
-12.2.1 _Let and Const Declarations_ 111
+_Static Semantics_ 109
 
-12.2.2 _Variable Statement_ 114
+_Runtime Semantics_ 110
 
-12.2.4 _Destructuring Binding Patterns_ 116
+_11.13.1 Destructuring Assignment_ 110
 
-12.3 _Empty Statement_ 121
+11.14 _Comma Operator ( , )_ 114
 
-12.4 _Expression Statement_ 121
+12 _Statements and Declarations_ 115
 
-12.5 _The if Statement_ 121
+_Static Semantics_ 115
 
-12.6 _Iteration Statements_ 122
+_Runtime Semantics_ 115
 
-12.6.1 _The do-while Statement_ 123
+12.1 Block 116
 
-12.6.2 _The while Statement_ 123
+12.2 _Declarations and the Variable Statement_ 118
 
-12.6.3 _The for Statement_ 124
+12.2.1 _Let and Const Declarations_ 118
 
-12.6.4 _The for-in and for-of Statements_ 125
+12.2.2 _Variable Statement_ 121
 
-12.7 _The continue Statement_ 129
+12.2.4 _Destructuring Binding Patterns_ 123
 
-12.8 _The break Statement_ 129
+12.3 _Empty Statement_ 128
 
-12.9 _The return Statement_ 130
+12.4 _Expression Statement_ 128
 
-12.10 _The with Statement_ 130
+12.5 _The if Statement_ 128
 
-12.11 _The switch Statement_ 131
+12.6 _Iteration Statements_ 129
 
-12.12 _Labelled Statements_ 135
+12.6.1 _The do-while Statement_ 130
 
-12.13 _The throw Statement_ 136
+12.6.2 _The while Statement_ 130
 
-12.14 _The try Statement_ 136
+12.6.3 _The for Statement_ 131
 
-12.15 _The debugger statement_ 138
+12.6.4 _The for-in and for-of Statements_ 132
 
-13 _Functions and Generators_ 139
+12.7 _The continue Statement_ 136
 
-13.1 _Function Definitions_ 139
+12.8 _The break Statement_ 136
 
-13.2 _Arrow Function Definitions_ 144
+12.9 _The return Statement_ 137
 
-13.3 _Method Definitions_ 147
+12.10 _The with Statement_ 137
 
-13.4 _Generator Definitions_ 150
+12.11 _The switch Statement_ 138
 
-13.5 _Class Definitions_ 151
+12.12 _Labelled Statements_ 142
 
-13.6 _Creating Function Objects and Constructors_ 155
+12.13 _The throw Statement_ 143
 
-14 Program 157
+12.14 _The try Statement_ 143
 
-14.1 _Directive Prologues and the Use Strict Directive_ 158
+12.15 _The debugger statement_ 145
 
-15 _Standard Built-in ECMAScript Objects_ 158
+13 _Functions and Generators_ 146
 
-15.1 _The Global Object_ 159
+13.1 _Function Definitions_ 146
 
-15.1.1 _Value Properties of the Global Object_ 160
+13.2 _Arrow Function Definitions_ 151
 
-15.1.2 _Function Properties of the Global Object_ 160
+13.3 _Method Definitions_ 154
 
-15.1.3 _URI Handling Function Properties_ 162
+13.4 _Generator Definitions_ 157
 
-15.1.4 _Constructor Properties of the Global Object_ 167
+13.5 _Class Definitions_ 158
 
-15.1.5 _Other Properties of the Global Object_ 168
+13.6 _Creating Function Objects and Constructors_ 162
 
-15.2 _Object Objects_ 168
+_13.7 Tail Position Calls_ 164
 
-15.2.1 _The Object Constructor Called as a Function_ 168
+14 Program 164
 
-15.2.2 _The Object Constructor_ 168
+14.1 _Directive Prologues and the Use Strict Directive_ 165
 
-15.2.3 _Properties of the Object Constructor_ 169
+15 _Standard Built-in ECMAScript Objects_ 165
 
-15.2.4 _Properties of the Object Prototype Object_ 172
+15.1 _The Global Object_ 166
 
-15.2.5 _Properties of Object Instances_ 174
+15.1.1 _Value Properties of the Global Object_ 167
 
-15.3 _Function Objects_ 174
+15.1.2 _Function Properties of the Global Object_ 167
 
-15.3.1 _The Function Constructor Called as a Function_ 174
+15.1.3 _URI Handling Function Properties_ 169
 
-15.3.2 _The Function Constructor_ 174
+15.1.4 _Constructor Properties of the Global Object_ 174
 
-15.3.3 _Properties of the Function Constructor_ 175
+15.1.5 _Other Properties of the Global Object_ 175
 
-15.3.4 _Properties of the Function Prototype Object_ 175
+15.2 _Object Objects_ 175
 
-15.3.5 _Properties of Function Instances_ 178
+15.2.1 _The Object Constructor Called as a Function_ 175
 
-15.4 _Array Objects_ 179
+15.2.2 _The Object Constructor_ 175
 
-15.4.1 _The Array Constructor Called as a Function_ 179
+15.2.3 _Properties of the Object Constructor_ 176
 
-15.4.2 _The Array Constructor_ 180
+15.2.4 _Properties of the Object Prototype Object_ 179
 
-15.4.3 _Properties of the Array Constructor_ 180
+15.2.5 _Properties of Object Instances_ 180
 
-15.4.4 _Properties of the Array Prototype Object_ 182
+15.3 _Function Objects_ 181
 
-15.4.5 _Properties of Array Instances_ 201
+15.3.1 _The Function Constructor Called as a Function_ 181
 
-15.5 _String Objects_ 202
+15.3.2 _The Function Constructor_ 181
 
-15.5.1 _The String Constructor Called as a Function_ 202
+15.3.3 _Properties of the Function Constructor_ 182
 
-15.5.2 _The String Constructor_ 202
+15.3.4 _Properties of the Function Prototype Object_ 182
 
-15.5.3 _Properties of the String Constructor_ 202
+15.3.5 _Properties of Function Instances_ 185
 
-15.5.4 _Properties of the String Prototype Object_ 203
+15.4 _Array Objects_ 186
 
-15.5.5 _Properties of String Instances_ 214
+15.4.1 _The Array Constructor Called as a Function_ 186
 
-15.6 _Boolean Objects_ 215
+15.4.2 _The Array Constructor_ 186
 
-15.6.1 _The Boolean Constructor Called as a Function_ 215
+15.4.3 _Properties of the Array Constructor_ 187
 
-15.6.2 _The Boolean Constructor_ 215
+15.4.4 _Properties of the Array Prototype Object_ 189
 
-15.6.3 _Properties of the Boolean Constructor_ 215
+15.4.5 _Properties of Array Instances_ 208
 
-15.6.4 _Properties of the Boolean Prototype Object_ 216
+15.5 _String Objects_ 209
 
-15.6.5 _Properties of Boolean Instances_ 216
+15.5.1 _The String Constructor Called as a Function_ 209
 
-15.7 _Number Objects_ 216
+15.5.2 _The String Constructor_ 209
 
-15.7.1 _The Number Constructor Called as a Function_ 216
+15.5.3 _Properties of the String Constructor_ 209
 
-15.7.2 _The Number Constructor_ 217
+15.5.4 _Properties of the String Prototype Object_ 211
 
-15.7.3 _Properties of the Number Constructor_ 217
+15.5.5 _Properties of String Instances_ 223
 
-15.7.4 _Properties of the Number Prototype Object_ 219
+15.6 _Boolean Objects_ 224
 
-15.7.5 _Properties of Number Instances_ 223
+15.6.1 _The Boolean Constructor Called as a Function_ 224
 
-15.8 _The Math Object_ 223
+15.6.2 _The Boolean Constructor_ 224
 
-15.8.1 _Value Properties of the Math Object_ 223
+15.6.3 _Properties of the Boolean Constructor_ 224
 
-15.8.2 _Function Properties of the Math Object_ 224
+15.6.4 _Properties of the Boolean Prototype Object_ 225
 
-15.9 _Date Objects_ 232
+15.6.5 _Properties of Boolean Instances_ 225
+
+15.7 _Number Objects_ 225
+
+15.7.1 _The Number Constructor Called as a Function_ 225
+
+15.7.2 _The Number Constructor_ 225
+
+15.7.3 _Properties of the Number Constructor_ 226
+
+15.7.4 _Properties of the Number Prototype Object_ 228
+
+15.7.5 _Properties of Number Instances_ 232
+
+15.8 _The Math Object_ 232
+
+15.8.1 _Value Properties of the Math Object_ 232
+
+15.8.2 _Function Properties of the Math Object_ 233
+
+15.9 _Date Objects_ 241
 
 15.9.1 _Overview of Date Objects and Definitions of Abstract
-Operators_ 232
+Operators_ 241
 
-15.9.2 _The Date Constructor Called as a Function_ 236
+15.9.2 _The Date Constructor Called as a Function_ 245
 
-15.9.3 _The Date Constructor_ 237
+15.9.3 _The Date Constructor_ 246
 
-15.9.4 _Properties of the Date Constructor_ 238
+15.9.4 _Properties of the Date Constructor_ 247
 
-15.9.5 _Properties of the Date Prototype Object_ 239
+15.9.5 _Properties of the Date Prototype Object_ 248
 
-15.9.6 _Properties of Date Instances_ 247
+15.9.6 _Properties of Date Instances_ 256
 
-15.10 _RegExp (Regular Expression) Objects_ 247
+15.10 _RegExp (Regular Expression) Objects_ 256
 
-15.10.1 Patterns 247
+15.10.1 Patterns 256
 
-15.10.2 _Pattern Semantics_ 249
+15.10.2 _Pattern Semantics_ 258
 
-15.10.3 _The RegExp Constructor Called as a Function_ 261
+15.10.3 _The RegExp Constructor Called as a Function_ 270
 
-15.10.4 _The RegExp Constructor_ 261
+15.10.4 _The RegExp Constructor_ 270
 
-15.10.5 _Properties of the RegExp Constructor_ 262
+15.10.5 _Properties of the RegExp Constructor_ 271
 
-15.10.6 _Properties of the RegExp Prototype Object_ 262
+15.10.6 _Properties of the RegExp Prototype Object_ 271
 
-15.10.7 _Properties of RegExp Instances_ 264
+15.10.7 _Properties of RegExp Instances_ 273
 
-15.11 _Error Objects_ 265
+15.11 _Error Objects_ 274
 
-15.11.1 _The Error Constructor Called as a Function_ 265
+15.11.1 _The Error Constructor Called as a Function_ 274
 
-15.11.2 _The Error Constructor_ 265
+15.11.2 _The Error Constructor_ 274
 
-15.11.3 _Properties of the Error Constructor_ 265
+15.11.3 _Properties of the Error Constructor_ 274
 
-15.11.4 _Properties of the Error Prototype Object_ 266
+15.11.4 _Properties of the Error Prototype Object_ 275
 
-15.11.5 _Properties of Error Instances_ 266
+15.11.5 _Properties of Error Instances_ 275
 
-15.11.6 _Native Error Types Used in This Standard_ 266
+15.11.6 _Native Error Types Used in This Standard_ 275
 
-15.11.7 NativeError Object Structure 267
+15.11.7 NativeError Object Structure 276
 
-15.12 _The JSON Object_ 269
+15.12 _The JSON Object_ 278
 
-15.12.1 _The JSON Grammar_ 269
+15.12.1 _The JSON Grammar_ 278
 
-15.12.2 _parse ( text [ , reviver ] )_ 270
+15.12.2 _parse ( text [ , reviver ] )_ 279
 
-15.12.3 _stringify ( value [ , replacer [ , space ] ] )_ 272
+15.12.3 _stringify ( value [ , replacer [ , space ] ] )_ 281
 
-16 Errors 276
+16 Errors 285
 
-_Annex A (informative) Grammar Summary_ 278
+_Annex A (informative) Grammar Summary_ 287
 
-A.1 _Lexical Grammar_ 278
+A.1 _Lexical Grammar_ 287
 
-A.2 _Number Conversions_ 284
+A.2 _Number Conversions_ 293
 
-A.3 Expressions 285
+A.3 Expressions 294
 
-A.4 Statements 289
+A.4 Statements 298
 
-A.5 _Functions and Programs_ 291
+A.5 _Functions and Programs_ 300
 
-A.6 _Universal Resource Identifier Character Classes_ 292
+A.6 _Universal Resource Identifier Character Classes_ 301
 
-A.7 _Regular Expressions_ 292
+A.7 _Regular Expressions_ 301
 
-A.8 JSON 294
+A.8 JSON 303
 
-A.8.1 _JSON Lexical Grammar_ 294
+A.8.1 _JSON Lexical Grammar_ 303
 
-A.8.2 _JSON Syntactic Grammar_ 295
+A.8.2 _JSON Syntactic Grammar_ 304
 
 _Annex B (normative) Additional ECMAScript Features for Web Browsers_
-298
+307
 
-B.1 _Additional Syntax_ 298
+B.1 _Additional Syntax_ 307
 
-B.1.1 _Numeric Literals_ 298
+B.1.1 _Numeric Literals_ 307
 
-B.1.2 _String Literals_ 298
+B.1.2 _String Literals_ 307
 
-B.2 _Additional Properties_ 299
+B.2 _Additional Properties_ 308
 
-B.2.1 _Additional Properties of the Global Object_ 299
+B.2.1 _Additional Properties of the Global Object_ 308
 
-B.2.2 _Additional Properties of the String.prototype Object_ 300
+B.2.2 _Additional Properties of the String.prototype Object_ 309
 
-B.2.3 _Additional Properties of the Date.prototype Object_ 303
+B.2.3 _Additional Properties of the Date.prototype Object_ 312
 
-B.3 _Other Additional Features_ 304
+B.3 _Other Additional Features_ 313
 
-B.3.1 _The _proto_ pseudo property._ 304
+B.3.1 _The _proto_ pseudo property._ 313
 
-_Annex C (informative) The Strict Mode of ECMAScript_ 306
+_Annex C (informative) The Strict Mode of ECMAScript_ 315
 
 _Annex D (informative) Corrections and Clarifications with Possible
-Compatibility Impact_ 308
+Compatibility Impact_ 317
 
-_In Edition 6_ 308
+_In Edition 6_ 317
 
-_In 5.1 Edition 5.1_ 308
+_In 5.1 Edition 5.1_ 317
 
-_In 5^th^ Edition 5_ 309
+_In 5^th^ Edition 5_ 318
 
 _Annex E (informative) Additions and Changes that Introduce
-Incompatibilities with Prior Editions_ 312
+Incompatibilities with Prior Editions_ 321
 
-_In the 6^th^ Edition_ 312
+_In the 6^th^ Edition_ 321
 
-_In the 5^th^ Edition_ 312
+_In the 5^th^ Edition_ 321
 
-_Annex F (informative) Static Semantic Rule Cross Reference_ 316
+_Annex F (informative) Static Semantic Rule Cross Reference_ 325
 
-_Scrap Heap_ 318
+_Scrap Heap_ 327
 
 Introduction
 
@@ -719,12 +729,9 @@ the types, values, objects, properties, functions, and program syntax
 and semantics described in this specification.
 
 A conforming implementation of this Standard shall interpret characters
-in conformance with the Unicode Standard, Version 3.0 or later and
-ISO/IEC 10646-1 with either UCS-2 or UTF-16 as the adopted encoding
-form, implementation level 3. If the adopted ISO/IEC 10646-1 subset is
-not otherwise specified, it is presumed to be the BMP subset, collection
-300. If the adopted encoding form is not otherwise specified, it
-presumed to be the UTF-16 encoding form.
+in conformance with the Unicode Standard, Version 5.1.0 or later and
+ISO/IEC 10646. If the adopted ISO/IEC 10646-1 subset is not otherwise
+specified, it is presumed to be the Unicode set, collection 10646.
 
 A conforming implementation of ECMAScript is permitted to provide
 additional types, values, objects, properties, and functions beyond
@@ -752,8 +759,19 @@ For undated references, the latest edition of the referenced document
 ISO/IEC 9899:1996_, Programming Languages – C, including amendment 1 and
 technical corrigenda 1 and 2_
 
-ISO/IEC 10646-1:1993_, Information Technology – Universal Multiple-Octet
-Coded Character Set (UCS) plus its amendments and corrigenda_
+ISO/IEC 10646:2003: _Information Technology – Universal Multiple-Octet
+Coded Character Set (UCS) plus Amendment 1:2005, Amendment 2:2006,
+Amendment 3:2008, and Amendment 4:2008_, plus additional amendments and
+corrigenda, or successor
+
+_The Unicode Standard, Version 5.0_, as amended by Unicode 5.1.0, or
+successor
+
+_Unicode Standard Annex #15, Unicode Normalization Forms, version
+Unicode 5.1.0_, or successor
+
+_Unicode Standard Annex #31, Unicode Identifiers and Pattern Syntax,
+version Unicode 5.1.0_, or successor.
 
 This section contains a non-normative overview of the ECMAScript
 language.
@@ -766,10 +784,10 @@ specification for input of external data or output of computed results.
 Instead, it is expected that the computational environment of an
 ECMAScript program will provide not only the objects and other
 facilities described in this specification but also certain
-environment-specific host objects, whose description and behaviour are
-beyond the scope of this specification except to indicate that they may
-provide certain properties that can be accessed and certain functions
-that can be called from an ECMAScript program.
+environment-specific objects, whose description and behaviour are beyond
+the scope of this specification except to indicate that they may provide
+certain properties that can be accessed and certain functions that can
+be called from an ECMAScript program.
 
 A _SCRIPTING LANGUAGE_ is a programming language that is used to
 manipulate, customise, and automate the facilities of an existing
@@ -1002,14 +1020,10 @@ the OBJECT.CREATE built-in function.
 
 4.3.6
 
-native object
+ordinary object
 
-object in an ECMAScript implementation whose semantics are fully defined
-by this specification rather than by the host environment
-
-NOTE Standard native objects are defined in this specification. Some
-native objects are built-in; others may be constructed during the course
-of execution of an ECMAScript program.
+object that has the default behaviour for the internal methods that must
+be supported by all ECMAScript objects.
 
 4.3.7
 
@@ -1020,18 +1034,17 @@ environment, that is present at the start of the execution of an
 ECMAScript program
 
 NOTE Standard built-in objects are defined in this specification, and an
-ECMAScript implementation may specify and define others. Every built-in
-object is a native object. A _built-in constructor_ is a built-in object
-that is also a constructor.
+ECMAScript implementation may specify and define others. A _built-in
+constructor_ is a built-in object that is also a constructor.
 
 4.3.8
 
-host object
+exotic object
 
-object supplied by the host environment to complete the execution
-environment of ECMAScript
+object that has some alternative behaviour for one or more of the
+internal methods that must be supported by all ECMAScript objects.
 
-NOTE Any object that is not native is a host object.
+NOTE Any object that is not an ordinary object is an exotic object.
 
 4.3.9
 
@@ -1505,6 +1518,13 @@ production, any number of occurrences of LineTerminator may appear
 between any two consecutive tokens in the stream of input elements
 without affecting the syntactic acceptability of the program.
 
+The lexical grammar has multiple goal symbols and the appropriate goal
+symbol to use depends upon the syntactic grammar context. If a phrase of
+the form “[Lexical goal LexicalGoalSymbol]” appears on the
+right-hand-side of a syntactic production then the next token must be
+lexically recognized using the indicated goal symbol. In the absence of
+such a phrase the default lexical goal symbol is used.
+
 When an alternative in a production of the lexical grammar or the
 numeric string grammar appears to be a multi-character token, it
 represents the sequence of characters that would make up such a token.
@@ -1677,68 +1697,80 @@ evaluation of a Program, validate all of the early error rules of the
 productions used to parse that Program. If any of the early error
 rules are violated the Program is invalid and can not be evaluated.
 
-ECMAScript source text is represented as a sequence of characters in the
-Unicode character encoding, version 3.0 or later. The text is expected
-to have been normalised to Unicode Normalization Form C (canonical
-composition), as described in Unicode Technical Report #15. Conforming
-ECMAScript implementations are not required to perform any normalisation
-of text, or behave as though they were performing normalisation of text,
-themselves. ECMAScript source text is assumed to be a sequence of 16-bit
-code units for the purposes of this specification. Such a source text
-may include sequences of 16-bit code units that are not valid UTF-16
-character encodings. If an actual source text is encoded in a form other
-than 16-bit code units it must be processed as if it was first converted
-to UTF-16.
-
 Syntax
 
 SourceCharacter ::
 
-any Unicode code unit
+any Unicode character
 
-Throughout the rest of this document, the phrase “code unit” and the
-word “character” will be used to refer to a 16-bit unsigned value used
-to represent a single 16-bit unit of text. The phrase “Unicode
-character” will be used to refer to the abstract linguistic or
-typographical unit represented by a single Unicode scalar value (which
-may be longer than 16 bits and thus may be represented by more than one
-code unit). The phrase “code point” refers to such a Unicode scalar
-value. “Unicode character” only refers to entities represented by single
-Unicode scalar values: the components of a combining character sequence
-are still individual “Unicode characters,” even though a user might
-think of the whole sequence as a single character.
+The ECMAScript code is expressed using Unicode, version 5.1 or later.
+ECMAScript source text is a sequence of Unicode characters. The phrase
+“Unicode character” refer to the abstract linguistic or typographical
+unit represented by a single Unicode scalar value. The actual encodings
+used to store and interchange ECMAScript source text is not relevant to
+this specification. Any well defined encoding such as UTF-32 or UTF-16
+may be used. Source text might even be externally represented using a
+non-Unicode character encoding. Regardless of the external source text
+encoding, a conforming ECMAScript implementation processes the source
+text as if it was an equivalent sequence of SourceCharacter values.
+Each source character being an abstract Unicode characters with a
+corresponding Unicode scalar value. Conforming ECMAScript
+implementations are not required to perform any normalisation of text,
+or behave as though they were performing normalisation of text.
 
-In string literals, regular expression literals, and identifiers, any
-character (code unit) may also be expressed as a Unicode escape sequence
-consisting of six characters, namely \U plus four hexadecimal digits.
+The phrase “code point” refers to such a Unicode scalar value. “Unicode
+character” only refers to entities represented by single Unicode scalar
+values: the components of a combining character sequence are still
+individual “Unicode characters,” even though a user might think of the
+whole sequence as a single character.
+
+In string literals, regular expression literals,quasi literals and
+identifiers, any Unicode characters may also be expressed as a Unicode
+escape sequence that explicitly express a code point’s numeric value.
 Within a comment, such an escape sequence is effectively ignored as part
-of the comment. Within a string literal or regular expression literal,
-the Unicode escape sequence contributes one character to the value of
-the literal. Within an identifier, the escape sequence contributes one
-character to the identifier.
+of the comment. Within other contexts, such an escape sequence
+contextually contributes one Unicode character.
 
-NOTE Although this document sometimes refers to a “transformation”
-between a “character” within a “string” and the 16-bit unsigned integer
-that is the code unit of that character, there is actually no
-transformation because a “character” within a “string” is actually
-represented using that 16-bit unsigned value.
+NOTE
 
 ECMAScript differs from the Java programming language in the behaviour
 of Unicode escape sequences. In a Java program, if the Unicode escape
 sequence \U000A, for example, occurs within a single-line comment, it is
 interpreted as a line terminator (Unicode character 000A is line feed)
-and therefore the next character is not part of the comment. Similarly,
-if the Unicode escape sequence \U000A occurs within a string literal in
-a Java program, it is likewise interpreted as a line terminator, which
-is not allowed within a string literal—one must write \N instead of
-\U000A to cause a line feed to be part of the string value of a string
-literal. In an ECMAScript program, a Unicode escape sequence occurring
-within a comment is never interpreted and therefore cannot contribute to
-termination of the comment. Similarly, a Unicode escape sequence
-occurring within a string literal in an ECMAScript program always
-contributes a character to the String value of the literal and is never
+and therefore the next Unicode character is not part of the comment.
+Similarly, if the Unicode escape sequence \U000A occurs within a string
+literal in a Java program, it is likewise interpreted as a line
+terminator, which is not allowed within a string literal—one must write
+\N instead of \U000A to cause a line feed to be part of the string value
+of a string literal. In an ECMAScript program, a Unicode escape sequence
+occurring within a comment is never interpreted and therefore cannot
+contribute to termination of the comment. Similarly, a Unicode escape
+sequence occurring within a string literal in an ECMAScript program
+always contributes a Unicode character to the literal and is never
 interpreted as a line terminator or as a quote mark that might terminate
 the string literal.
+
+ECMAScript String values (8.4) are computational sequences of 16-bit
+integer values called “code units”. ECMAScript language constructs that
+generate string values from SourceCharacter sequences use UTF-16
+encoding to generate the code unit values.
+
+STATIC SEMANTICS: UTF-16 ENCODING
+
+The UTF-16 Encoding of a numeric code point value, cp, is deterimined
+as follows:
+
+1.  Assert: 0 ≤ cp ≤ 0x10FFFF
+
+2.  If cp ≤ 65535, then return cp.
+
+3.  Let cu1 be floor((cp – 65536) / 1024) + 55296. NOTE 55296 is
+    0xD800.
+
+4.  Let cu2 be ((cp – 65536) modulo 1024) + 56320. NOTE 56320 is
+    0xDC00.
+
+5.  Return the code unit sequence consisting of cu1 followed by cu2.
 
 The source text of an ECMAScript program is first converted into a
 sequence of input elements, which are tokens, line terminators,
@@ -1746,11 +1778,16 @@ comments, or white space. The source text is scanned from left to right,
 repeatedly taking the longest possible sequence of characters as the
 next input element.
 
-There are two goal symbols for the lexical grammar. The
-InputElementDiv symbol is used in those syntactic grammar contexts
-where a leading division (/) or division-assignment (/=) operator is
-permitted. The InputElementRegExp symbol is used in other syntactic
-grammar contexts.
+There are several situations where the identification of lexical input
+elements is sensitive to the syntactic grammar context that is consuming
+the inpout elements. This requires multiple goal symbols for the lexical
+grammar. The InputElementDiv goal symbol is the default goal symbol
+and is used in those syntactic grammar contexts where a leading division
+(/) or division-assignment (/=) operator is permitted. The
+InputElementRegExp goal symbol is used in all syntactic grammar
+contexts where a RegularExpressionLiteral is permitted. The
+InputElementQuasiTail goal is used in syntactic grammar contexts where
+a QuasiLiteral logically continues after a substitution element.
 
 NOTE There are no syntactic grammar contexts where both a leading
 division or division-assignment, and a leading
@@ -1777,6 +1814,7 @@ LineTerminator
 Comment
 Token
 DivPunctuator
+RightBracePunctuator
 
 InputElementRegExp ::
 
@@ -1784,7 +1822,17 @@ WhiteSpace
 LineTerminator
 Comment
 Token
+RightBracePunctuator
 RegularExpressionLiteral
+
+InputElementQuasiTail ::
+
+WhiteSpace
+LineTerminator
+Comment
+Token
+DivPunctuator
+QuasiSubstitutionTail
 
 The Unicode format-control characters (i.e., the characters in category
 “Cf” in the Unicode Character Database such as left-to-right mark or
@@ -1794,8 +1842,8 @@ as mark-up languages).
 
 It is useful to allow format-control characters in source text to
 facilitate editing and display. All format control characters may be
-used within comments, and within string literals and regular expression
-literals.
+used within comments, and within string literals, quasis, and regular
+expression literals.
 
 <ZWNJ> and <ZWJ> are format-control characters that are used to make
 necessary distinctions when forming words or phrases in certain
@@ -1815,46 +1863,46 @@ in Table 1.
 
 Table 1 — Format-Control Character Usage
 
-  ------------------- ----------------------- --------------- ------------------
-  _CODE UNIT VALUE_   NAME                  _FORMAL NAME_   USAGE
-  \U200C              Zero width non-joiner   <ZWNJ>          IdentifierPart
-  \U200D              Zero width joiner       <ZWJ>           IdentifierPart
-  \UFEFF              Byte Order Mark         <BOM>           Whitespace
-  ------------------- ----------------------- --------------- ------------------
+  ---------------- ----------------------- --------------- ------------------
+  CODE POINT   NAME                  _FORMAL NAME_   USAGE
+  U+200C           Zero width non-joiner   <ZWNJ>          IdentifierPart
+  U+200D           Zero width joiner       <ZWJ>           IdentifierPart
+  U+FEFF           Byte Order Mark         <BOM>           Whitespace
+  ---------------- ----------------------- --------------- ------------------
 
 White space characters are used to improve source text readability and
 to separate tokens (indivisible lexical units) from each other, but are
 otherwise insignificant. White space characters may occur between any
 two tokens and at the start or end of input. White space characters may
-also occur within a StringLiteral or a RegularExpressionLiteral
-(where they are considered significant characters forming part of the
-literal value) or within a Comment, but cannot appear within any other
-kind of token.
+also occur within a StringLiteral, a RegularExpressionLiteral, a
+Quasi, or a QuasiSubstitutionTail (where they are considered
+significant characters forming part of the literal value) or within a
+Comment, but cannot appear within any other kind of token.
 
 The ECMAScript white space characters are listed in Table 2.
 
 Table 2 — Whitespace Characters
 
   --------------------- ------------------------------------- ---------------
-  _CODE UNIT VALUE_     NAME                                _FORMAL NAME_
+  CODE POINT        NAME                                _FORMAL NAME_
 
-  \U0009                Tab                                   <TAB>
+  U+0009                Tab                                   <TAB>
 
-  \U000B                Vertical Tab                          <VT>
+  U+000B                Vertical Tab                          <VT>
 
-  \U000C                Form Feed                             <FF>
+  U+000C                Form Feed                             <FF>
 
-  \U0020                Space                                 <SP>
+  U+0020                Space                                 <SP>
 
-  \U00A0                No-break space                        <NBSP>
+  U+00A0                No-break space                        <NBSP>
 
-  \UFEFF                Byte Order Mark                       <BOM>
+  U+FEFF                Byte Order Mark                       <BOM>
                                                               
   Other category “Zs”   Any other Unicode “space separator”   <USP>
   --------------------- ------------------------------------- ---------------
 
 ECMAScript implementations must recognise all of the white space
-characters defined in Unicode 3.0. Later editions of the Unicode
+characters defined in Unicode 5.1. Later editions of the Unicode
 Standard may define other white space characters. ECMAScript
 implementations may recognise white space characters from later editions
 of the Unicode Standard.
@@ -1879,8 +1927,9 @@ grammar. In general, line terminators may occur between any two tokens,
 but there are a few places where they are forbidden by the syntactic
 grammar. Line terminators also affect the process of automatic semicolon
 insertion (7.9). A line terminator cannot occur within any token except
-a StringLiteral. Line terminators may only occur within a
-StringLiteral token as part of a LineContinuation.
+a StringLiteral, Quasi, or QuasiSubstitutionTail. Line terminators
+may only occur within a StringLiteral token as part of a
+LineContinuation.
 
 A line terminator can occur within a MultiLineComment (7.4) but cannot
 occur within a SingleLineComment.
@@ -1892,19 +1941,19 @@ The ECMAScript line terminator characters are listed in Table 3.
 
 Table 3 — Line Terminator Characters
 
-  ------------------- --------------------- ---------------
-  _CODE UNIT VALUE_   NAME                _FORMAL NAME_
-  \U000A              Line Feed             <LF>
-  \U000D              Carriage Return       <CR>
-  \U2028              Line separator        <LS>
-  \U2029              Paragraph separator   <PS>
-  ------------------- --------------------- ---------------
+  ---------------- --------------------- ---------------
+  CODE POINT   NAME                _FORMAL NAME_
+  U+000A           Line Feed             <LF>
+  U+000D           Carriage Return       <CR>
+  U+2028           Line separator        <LS>
+  U+2029           Paragraph separator   <PS>
+  ---------------- --------------------- ---------------
 
-Only the characters in Table 3 are treated as line terminators. Other
-new line or line breaking characters are treated as white space but not
-as line terminators. The character sequence <CR><LF> is commonly used as
-a line terminator. It should be considered a single character for the
-purpose of reporting line numbers.
+Only the Unicode characters in Table 3 are treated as line terminators.
+Other new line or line breaking Unicode characters are treated as white
+space but not as line terminators. The sequence <CR><LF> is commonly
+used as a line terminator. It should be considered a single
+SourceCharacter for the purpose of reporting line numbers.
 
 Syntax
 
@@ -1926,7 +1975,7 @@ LineTerminatorSequence ::
 Comments can be either single or multi-line. Multi-line comments cannot
 nest.
 
-Because a single-line comment can contain any character except a
+Because a single-line comment can contain any Unicode character except a
 LineTerminator character, and because of the general rule that a token
 is always as long as possible, a single-line comment always consists of
 all characters from the // marker to the end of the line. However, the
@@ -1991,44 +2040,50 @@ IdentifierName
 Punctuator
 NumericLiteral
 StringLiteral
+Quasi
 
-NOTE The DivPunctuator and RegularExpressionLiteral productions
-define tokens, but are not included in the Token production.
+NOTE The DivPunctuator, RegularExpressionLiteral and
+QuasiSubstitutionTail productions define tokens, but are not included
+in the Token production.
 
-Identifer, IdentifierName, and ReservedWord are tokens that are
-interpreted according to the grammar given in the “Identifiers” section
-of chapter 5 of the Unicode standard, with some small modifications. An
-Identifier is an IdentifierName that is not a ReservedWord (see
-7.6.1). The Unicode identifier grammar is based on both normative and
-informative character categories specified by the Unicode Standard. The
-characters in the specified categories in version 3.0 of the Unicode
+IdentifierName, Identifer, and ReservedWord are tokens that are
+interpreted according to the DefaultIdentifier Syntax given in Unicode
+Standard Annex #31, Identifier and Pattern Syntax, with some small
+modifications. ReservedWord is is an enumerated subset of
+IdentifierName and Identifier is an IdentifierName that is not a
+ReservedWord (see 7.6.1). The Unicode identifier grammar is based on
+character properties specified by the Unicode Standard. The Unicode
+characters in the specified categories in version 5.1.0 of the Unicode
 standard must be treated as in those categories by all conforming
 ECMAScript implementations.
 
-This standard specifies specific character additions: The dollar sign
-($) and the underscore (_) are permitted anywhere in an
-IdentifierName.
+NOTE This standard specifies specific character additions: The dollar
+sign (U+0024) and the underscore (U+005F) are permitted anywhere in an
+IdentifierName, and the characters zero width non-joiner (U+200C) and
+zero width joiner (U+200D) are permitted anywhere after the first
+character of an IdentifierName.
 
-Unicode escape sequences are also permitted in an IdentifierName,
-where they contribute a single character to the IdentifierName, as
-computed by the CV of the UnicodeEscapeSequence (see 7.8.4). The \
-preceding the UnicodeEscapeSequence does not contribute a character to
-the IdentifierName. A UnicodeEscapeSequence cannot be used to put a
-character into an IdentifierName that would otherwise be illegal. In
-other words, if a \ UnicodeEscapeSequence sequence were replaced by
-its UnicodeEscapeSequence's CV, the result must still be a valid
-IdentifierName that has the exact same sequence of characters as the
-original IdentifierName. All interpretations of IdentifierName
-within this specification are based upon their actual characters
-regardless of whether or not an escape sequence was used to contribute
-any particular characters.
+Unicode escape sequences are permitted in an IdentifierName, where
+they contribute a single Unicode character to the IdentifierName. The
+code point of the contributed character is expressed by the HexDigits
+of the UnicodeEscapeSequence (see 7.8.4). The \ preceding the
+UnicodeEscapeSequence and the U and { } characters, if they appear, do
+not contribute characters to the IdentifierName. A
+UnicodeEscapeSequence cannot be used to put a character into an
+IdentifierName that would otherwise be illegal. In other words, if a \
+UnicodeEscapeSequence sequence were replaced by the Unicode character
+it constributes, the result must still be a valid IdentifierName that
+has the exact same sequence of characters as the original
+IdentifierName. All interpretations of IdentifierName within this
+specification are based upon their actual characters regardless of
+whether or not an escape sequence was used to contribute any particular
+characters.
 
 Two IdentifierName that are canonically equivalent according to the
 Unicode standard are not equal unless they are represented by the
 exact same sequence of code units (in other words, conforming ECMAScript
 implementations are only required to do bitwise comparison on
-IdentifierName values). The intent is that the incoming source text has
-been converted to normalised form C before it reaches the compiler.
+IdentifierName values).
 
 ECMAScript implementations may recognise identifier characters defined
 in later editions of the Unicode Standard. If portability is a concern,
@@ -2048,55 +2103,45 @@ IdentifierName IdentifierPart
 
 IdentifierStart ::
 
-UnicodeLetter
+UnicodeIDStart
 $
 _
 \ UnicodeEscapeSequence
 
 IdentifierPart ::
 
-IdentifierStart
-UnicodeCombiningMark
-UnicodeDigit
-UnicodeConnectorPunctuation
+IdentifierIDContinue
 <ZWNJ>
 <ZWJ>
 
-UnicodeLetter ::
+UnicodeIDStart ::
 
-any character in the Unicode categories “Uppercase letter (Lu)”,
-“Lowercase letter (Ll)”, “Titlecase letter (Lt)”, “Modifier letter
-(Lm)”, “Other letter (Lo)”, or “Letter number (Nl)”.
+any Unicode character with the Unicode property “ID_Start”.
 
-UnicodeCombiningMark ::
+UnicodeIDStart ::
 
-any character in the Unicode categories “Non-spacing mark (Mn)” or
-“Combining spacing mark (Mc)”
-
-UnicodeDigit ::
-
-any character in the Unicode category “Decimal number (Nd)”
-
-UnicodeConnectorPunctuation ::
-
-any character in the Unicode category “Connector punctuation (Pc)”
+any Unicode character with the Unicode property “ID_Continue”
 
 The definitions of the nonterminal UnicodeEscapeSequence is given in
 7.8.4
 
-STATIC SEMANTICS: STRING VALUE
+STATIC SEMANTICS: STRINGVALUE
 
 Identifier :: IdentifierName BUT NOT ReservedWord
 
-1.  Return the String Value of IdentifierName.
+1.  Return the StringValue of IdentifierName.
 
 IdentifierName ::
 
 IdentifierStart
 IdentifierName IdentifierPart
 
-1.  Return the String value consisting of the sequence of characters
-    corresponding to IdentifierName.
+1.  Return the String value consisting of the sequence of code units
+    corresponding to IdentifierName. In determining the sequence any
+    occurances of \ UnicodeEscapeSequence are first replaced with the
+    code point represented by the UnicodeEscapeSequence and and then
+    the code points of the entire IdentifierName are converted to code
+    units by UTF-16 Encoding each code point.
 
 A reserved word is an IdentifierName that cannot be used as an
 Identifier.
@@ -2109,6 +2154,12 @@ Keyword
 FutureReservedWord
 NullLiteral
 BooleanLiteral
+
+The ReservedWord definitions are specified as literal sequences of
+Unicode characters. However, any Unicode character in a ReservedWord
+can also be expressed by a \ UnicodeEscapeSequence that expresses that
+same Unicode character’s code point. Use of such escape sequences does
+not change the meaning of the ReservedWord.
 
 The following tokens are ECMAScript keywords and may not be used as
 Identifiers in ECMAScript programs.
@@ -2157,14 +2208,14 @@ Syntax
 Punctuator :: ONE OF
 
   ----- ------ ----- ----- ----- -----
-  {     }      (     )     [     ]
+  {     (      )     [     ]     
   .     ;      ,     <     >     <=
   >=    ==     !=    ===   !==   
   +     -      *     %     ++    --
   <<    >>     >>>   &     |     ^
   !     ~      &&    ||    ?     :
   =     +=     -=    *=    %=    <<=
-  >>=   >>>=   &=    |=    ^=    <|
+  >>=   >>>=   &=    |=    ^=    
   ----- ------ ----- ----- ----- -----
 
 DivPunctuator :: ONE OF
@@ -2173,18 +2224,17 @@ DivPunctuator :: ONE OF
   /   /=            
   --- ---- -- -- -- --
 
+RightBracePunctuator ::
+
+  --- -- -- -- -- --
+  }               
+  --- -- -- -- -- --
+
 Syntax
 
 NullLiteral ::
 
 NULL
-
-Syntax
-
-BooleanLiteral ::
-
-TRUE
-FALSE
 
 Syntax
 
@@ -2255,15 +2305,19 @@ OctalDigit :: ONE OF
 
 HexIntegerLiteral ::
 
-0X HexDigit
-0X HexDigit
-HexIntegerLiteral HexDigit
+0X HexDigits
+0X HexDigits
+
+HexDigits ::
+
+HexDigit
+HexDigits HexDigit
 
 HexDigit :: one of
 
 0 1 2 3 4 5 6 7 8 9 A B C D E F A B C D E F
 
-The source character immediately following a NumericLiteral must not
+The SourceCharacter immediately following a NumericLiteral must not
 be an IdentifierStart or DecimalDigit.
 
 NOTE For example:
@@ -2285,6 +2339,12 @@ described below.
 
 -   The MV of NumericLiteral :: DecimalLiteral is the MV of
     DecimalLiteral.
+
+-   The MV of NumericLiteral :: BinaryIntegerLiteral is the MV of
+    BinaryIntegerLiteral.
+
+-   The MV of NumericLiteral :: OctalIntegerLiteral is the MV of
+    OctalIntegerLiteral.
 
 -   The MV of NumericLiteral :: HexIntegerLiteral is the MV of
     HexIntegerLiteral.
@@ -2350,28 +2410,30 @@ described below.
 -   The MV of SignedInteger :: - DecimalDigits is the negative of
     the MV of DecimalDigits.
 
--   The MV of DecimalDigit :: 0 or of HexDigit :: 0 is 0.
+-   The MV of DecimalDigit :: 0 or of HexDigit :: 0 or of
+    OctalDigit :: 0 or of BinaryDigit :: 0 is 0.
 
 -   The MV of DecimalDigit :: 1 or of NonZeroDigit :: 1 or of
-    HexDigit :: 1 is 1.
+    HexDigit :: 1 or of OctalDigit :: 1 or
+    of BinaryDigit :: 1 is 1.
 
 -   The MV of DecimalDigit :: 2 or of NonZeroDigit :: 2 or of
-    HexDigit :: 2 is 2.
+    HexDigit :: 2 or of OctalDigit :: 2 is 2.
 
 -   The MV of DecimalDigit :: 3 or of NonZeroDigit :: 3 or of
-    HexDigit :: 3 is 3.
+    HexDigit :: 3 or of OctalDigit :: 3 is 3.
 
 -   The MV of DecimalDigit :: 4 or of NonZeroDigit :: 4 or of
-    HexDigit :: 4 is 4.
+    HexDigit :: 4 or of OctalDigit :: 4 is 4.
 
 -   The MV of DecimalDigit :: 5 or of NonZeroDigit :: 5 or of
-    HexDigit :: 5 is 5.
+    HexDigit :: 5 or of OctalDigit :: 5 is 5.
 
 -   The MV of DecimalDigit :: 6 or of NonZeroDigit :: 6 or of
-    HexDigit :: 6 is 6.
+    HexDigit :: 6 or of OctalDigit :: 6 is 6.
 
 -   The MV of DecimalDigit :: 7 or of NonZeroDigit :: 7 or of
-    HexDigit :: 7 is 7.
+    HexDigit :: 7 or of OctalDigit :: 7 is 7.
 
 -   The MV of DecimalDigit :: 8 or of NonZeroDigit :: 8 or of
     HexDigit :: 8 is 8.
@@ -2379,53 +2441,8 @@ described below.
 -   The MV of DecimalDigit :: 9 or of NonZeroDigit :: 9 or of
     HexDigit :: 9 is 9.
 
--   The MV of NumericLiteral :: BinaryIntegerLiteral is the MV of
-    BinaryIntegerLiteral.
-
--   The MV of BinaryDigit :: 0 is 0.
-
--   The MV of BinaryDigit :: 1 is 1.
-
--   The MV of BinaryIntegerLiteral :: 0B BinaryDigit is the MV of
-    BinaryDigit.
-
--   The MV of BinaryIntegerLiteral :: 0B BinaryDigit is the MV of
-    BinaryDigit.
-
--   The MV of BinaryIntegerLiteral :: BinaryIntegerLiteral
-    BinaryDigit is (the MV of BinaryIntegerLiteral times 2) plus the
-    MV of BinaryDigit.
-
--   The MV of NumericLiteral :: OctalIntegerLiteral is the MV of
-    OctalIntegerLiteral.
-
--   The MV of OctalDigit :: 0 is 0.
-
--   The MV of OctalDigit :: 1 is 1.
-
--   The MV of OctalDigit :: 2 is 2.
-
--   The MV of OctalDigit :: 3 is 3.
-
--   The MV of OctalDigit :: 4 is 4.
-
--   The MV of OctalDigit :: 5 is 5.
-
--   The MV of OctalDigit :: 6 is 6.
-
--   The MV of OctalDigit :: 7 is 7.
-
--   The MV of OctalIntegerLiteral :: 0O OctalDigit is the MV of
-    OctalDigit.
-
--   The MV of OctalIntegerLiteral :: 0O OctalDigit is the MV of
-    OctalDigit.
-
--   The MV of OctalIntegerLiteral :: OctalIntegerLiteral
-    OctalDigit is (the MV of OctalIntegerLiteral times 8) plus the
-    MV of OctalDigit.
-
--   The MV of HexDigit :: A or of HexDigit :: A is 10.
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   The
+    MV of HexDigit :: A or of HexDigit :: A is 10.
 
 -   The MV of HexDigit :: B or of HexDigit :: B is 11.
 
@@ -2437,14 +2454,36 @@ described below.
 
 -   The MV of HexDigit :: F or of HexDigit :: F is 15.
 
--   The MV of HexIntegerLiteral :: 0X HexDigit is the MV of
-    HexDigit.
+-   The MV of BinaryIntegerLiteral :: 0B BinaryDigit is the MV of
+    BinaryDigit.
 
--   The MV of HexIntegerLiteral :: 0X HexDigit is the MV of
-    HexDigit.
+-   The MV of BinaryIntegerLiteral :: 0B BinaryDigit is the MV of
+    BinaryDigit.
 
--   The MV of HexIntegerLiteral :: HexIntegerLiteral HexDigit is
-    (the MV of HexIntegerLiteral times 16) plus the MV of HexDigit.
+-   The MV of BinaryIntegerLiteral :: BinaryIntegerLiteral
+    BinaryDigit is (the MV of BinaryIntegerLiteral times 2) plus the
+    MV of BinaryDigit.
+
+-   The MV of OctalIntegerLiteral :: 0O OctalDigit is the MV of
+    OctalDigit.
+
+-   The MV of OctalIntegerLiteral :: 0O OctalDigit is the MV of
+    OctalDigit.
+
+-   The MV of OctalIntegerLiteral :: OctalIntegerLiteral
+    OctalDigit is (the MV of OctalIntegerLiteral times 8) plus the
+    MV of OctalDigit.
+
+-   The MV of HexIntegerLiteral :: 0X HexDigits is the MV of
+    HexDigits.
+
+-   The MV of HexIntegerLiteral :: 0X HexDigits is the MV of
+    HexDigits.
+
+-   The MV of HexDigits :: HexDigit is the MV of HexDigit.
+
+-   The MV of HexDigits :: HexDigits HexDigit is (the MV of
+    HexDigits times 16) plus the MV of HexDigit.
 
 Once the exact MV for a numeric literal has been determined, it is then
 rounded to a value of the Number type. If the MV is 0, then the rounded
@@ -2463,12 +2502,17 @@ is significant if it is not part of an ExponentPart and
 -   there is a nonzero digit to its left and there is a nonzero digit,
     not in the ExponentPart, to its right.
 
-NOTE A string literal is zero or more characters enclosed in single or
-double quotes. Each character may be represented by an escape sequence.
-All characters may appear literally in a string literal except for the
-closing quote character, backslash, carriage return, line separator,
-paragraph separator, and line feed. Any character may appear in the form
-of an escape sequence.
+NOTE A string literal is zero or more Unicode characters enclosed in
+single or double quotes. Unicode characters may also be be represented
+by an escape sequence. All characters may appear literally in a string
+literal except for the closing quote character, backslash, carriage
+return, line separator, paragraph separator, and line feed. Any
+character may appear in the form of an escape sequence. String literals
+evaluate to ECAMScript String values. When generating these string
+values Unicode characters belonging to Basic MultilingualPlane are
+encoded as a single code unit element of the string. All other Unicode
+characters are encoded using UTF-16 as two code unit elements of the
+string.
 
 Syntax
 
@@ -2539,6 +2583,7 @@ X HexDigit HexDigit
 UnicodeEscapeSequence ::
 
 U HexDigit HexDigit HexDigit HexDigit
+U{ HexDigits }
 
 The definition of the nonterminal HexDigit is given in 7.8.3.
 SourceCharacter is defined in clause 6.
@@ -2549,17 +2594,26 @@ sequence. The correct way to cause a line terminator character to be
 part of the String value of a string literal is to use an escape
 sequence such as \N or \U000A.
 
+STATIC SEMANTICS
+
+STATIC SEMANTICS: EARLY ERRORS
+
+UnicodeEscapeSequence :: U{ HexDigits }
+
+-   It is a Syntax Error if the MV of HexDigits > 1114111.
+
 STATIC SEMANTICS: SV’S AND CV’S
 
 A string literal stands for a value of the String type. The String value
-(SV) of the literal is described in terms of character values (CV)
+(SV) of the literal is described in terms of code unit values (CV)
 contributed by the various parts of the string literal. As part of this
-process, some characters within the string literal are interpreted as
-having a mathematical value (MV), as described below or in 7.8.3.
+process, some Unicode characters within the string literal are
+interpreted as having a mathematical value (MV), as described below or
+in 7.8.3.
 
--   The SV of StringLiteral :: "" is the empty character sequence.
+-   The SV of StringLiteral :: "" is the empty code unit sequence.
 
--   The SV of StringLiteral :: '' is the empty character sequence.
+-   The SV of StringLiteral :: '' is the empty code unit sequence.
 
 -   The SV of StringLiteral :: " DoubleStringCharacters " is the SV
     of DoubleStringCharacters.
@@ -2568,27 +2622,29 @@ having a mathematical value (MV), as described below or in 7.8.3.
     of SingleStringCharacters.
 
 -   The SV of DoubleStringCharacters :: DoubleStringCharacter is a
-    sequence of one character, the CV of DoubleStringCharacter.
+    sequence of one or two code units that is the CV of
+    DoubleStringCharacter.
 
 -   The SV of DoubleStringCharacters :: DoubleStringCharacter
-    DoubleStringCharacters is a sequence of the CV of
-    DoubleStringCharacter followed by all the characters in the SV of
-    DoubleStringCharacters in order.
+    DoubleStringCharacters is a sequence of one or two code units that
+    is the CV of DoubleStringCharacter followed by all the code units
+    in the SV of DoubleStringCharacters in order.
 
 -   The SV of SingleStringCharacters :: SingleStringCharacter is a
-    sequence of one character, the CV of SingleStringCharacter.
+    sequence of one or two code units that is the CV of
+    SingleStringCharacter.
 
 -   The SV of SingleStringCharacters :: SingleStringCharacter
-    SingleStringCharacters is a sequence of the CV of
-    SingleStringCharacter followed by all the characters in the SV of
-    SingleStringCharacters in order.
+    SingleStringCharacters is a sequence of one or two code units that
+    is the CV of SingleStringCharacter followed by all the code units
+    in the SV of SingleStringCharacters in order.
 
 -   The SV of LineContinuation :: \ LineTerminatorSequence is the
-    empty character sequence.
+    empty code unit sequence.
 
 -   The CV of DoubleStringCharacter :: SourceCharacter BUT NOT ONE
-    OF " OR \ OR LineTerminator is the SourceCharacter character
-    itself.
+    OF " OR \ OR LineTerminator is the UTF-16 Encoding (clause 6) of
+    the code point value of SourceCharacter.
 
 -   The CV of DoubleStringCharacter :: \ EscapeSequence is the CV of
     the EscapeSequence.
@@ -2597,8 +2653,8 @@ having a mathematical value (MV), as described below or in 7.8.3.
     character sequence.
 
 -   The CV of SingleStringCharacter :: SourceCharacter BUT NOT ONE
-    OF ' OR \ OR LineTerminator is the SourceCharacter character
-    itself.
+    OF ' OR \ OR LineTerminator is the UTF-16 Encoding (clause 6) of
+    the code point value of SourceCharacter .
 
 -   The CV of SingleStringCharacter :: \ EscapeSequence is the CV of
     the EscapeSequence.
@@ -2609,8 +2665,8 @@ having a mathematical value (MV), as described below or in 7.8.3.
 -   The CV of EscapeSequence :: CharacterEscapeSequence is the CV of
     the CharacterEscapeSequence.
 
--   The CV of EscapeSequence :: 0 [lookahead ∉ DecimalDigit] is a
-    <NUL> character (Unicode value 0000).
+-   The CV of EscapeSequence :: 0 [lookahead ∉ DecimalDigit] is the
+    code unit value 0.
 
 -   The CV of EscapeSequence :: HexEscapeSequence is the CV of the
     HexEscapeSequence.
@@ -2626,33 +2682,38 @@ Table 4 — String Single Character Escape Sequences
 
   ------------------- ------------------- ---------------------- ----------
   _ESCAPE SEQUENCE_   _CODE UNIT VALUE_   NAME                 SYMBOL
-  \B                  \U0008              backspace              <BS>
-  \T                  \U0009              horizontal tab         <HT>
-  \N                  \U000A              line feed (new line)   <LF>
-  \V                  \U000B              vertical tab           <VT>
-  \F                  \U000C              form feed              <FF>
-  \R                  \U000D              carriage return        <CR>
-  \"                  \U0022              double quote           "
-  \'                  \U0027              single quote           '
-  \\                  \U005C              backslash              \
+  \B                  0X8                 backspace              <BS>
+  \T                  0X9                 horizontal tab         <HT>
+  \N                  0XA                 line feed (new line)   <LF>
+  \V                  0XB                 vertical tab           <VT>
+  \F                  0XC                 form feed              <FF>
+  \R                  0XD                 carriage return        <CR>
+  \"                  0X22                double quote           "
+  \'                  0X27                single quote           '
+  \\                  0X5C                backslash              \
   ------------------- ------------------- ---------------------- ----------
 
 -   The CV of CharacterEscapeSequence :: NonEscapeCharacter is the
     CV of the NonEscapeCharacter.
 
 -   The CV of NonEscapeCharacter :: SourceCharacter BUT NOT ONE OF
-    EscapeCharacter OR LineTerminator is the SourceCharacter
-    character itself.
+    EscapeCharacter OR LineTerminator is the UTF-16 Encoding (clause
+    6) of the code point value of SourceCharacter .
 
--   The CV of HexEscapeSequence :: X HexDigit HexDigit is the
-    character whose code unit value is (16 times the MV of the first
-    HexDigit) plus the MV of the second HexDigit.
+-   The CV of HexEscapeSequence :: X HexDigit HexDigit is the code
+    unit value that is (16 times the MV of the first HexDigit) plus
+    the MV of the second HexDigit.
 
 -   The CV of UnicodeEscapeSequence :: U HexDigit HexDigit
-    HexDigit HexDigit is the character whose code unit value is
-    (4096 times the MV of the first HexDigit) plus (256 times the MV
-    of the second HexDigit) plus (16 times the MV of the third
-    HexDigit) plus the MV of the fourth HexDigit.
+    HexDigit HexDigit is the code unit value that is (4096 times the
+    MV of the first HexDigit) plus (256 times the MV of the second
+    HexDigit) plus (16 times the MV of the third HexDigit) plus the
+    MV of the fourth HexDigit.
+
+-   The CV of UnicodeEscapeSequence :: U{ HexDigits }is the is the
+    UTF-16 Encoding (clause 6) of the MV of HexDigits.
+
+-   
 
 NOTE A regular expression literal is an input element that is converted
 to a RegExp object (see 15.10) each time the literal is evaluated. Two
@@ -2664,13 +2725,15 @@ a function (15.10.3).
 
 The productions below describe the syntax for a regular expression
 literal and are used by the input element scanner to find the end of the
-regular expression literal. The Strings of characters comprising the
-RegularExpressionBody and the RegularExpressionFlags are passed
-uninterpreted to the regular expression constructor, which interprets
-them according to its own, more stringent grammar. An implementation may
-extend the regular expression constructor's grammar, but it must not
-extend the RegularExpressionBody and RegularExpressionFlags
-productions or the productions used by these productions.
+regular expression literal. The source code comprising the
+RegularExpressionBody and the RegularExpressionFlags are
+subsequently parsed using the more stringent ECMAScript Regular
+Expression grammar (15.10.1).
+
+An implementation may extend the ECMAScript Regular Expression grammar
+defined in 15.10.1, but it must not extend the RegularExpressionBody
+and RegularExpressionFlags productions defined below or the
+productions used by these productions.
 
 Syntax
 
@@ -2730,6 +2793,229 @@ NOTE Regular expression literals may not be empty; instead of
 representing an empty regular expression literal, the characters //
 start a single-line comment. To specify an empty regular expression,
 use: /(?:)/.
+
+STATIC SEMANTICS: BODYTEXT
+
+RegularExpressionLiteral :: / RegularExpressionBody /
+RegularExpressionFlags
+
+1.  Return the source code that was recognized as
+    RegularExpressionBody.
+
+STATIC SEMANTICS: FLAGTEXT
+
+RegularExpressionLiteral :: / RegularExpressionBody /
+RegularExpressionFlags
+
+1.  Return the source code that was recognized as
+    RegularExpressionFlags.
+
+7.9 Syntax
+
+Quasi ::
+
+FullQuasi
+QuasiHead
+
+FullQuasi ::
+
+` QuasiCharacters~opt~ `
+
+QuasiHead ::
+
+` QuasiCharacters~opt~ ${
+
+QuasiSubstitutionTail ::
+
+QuasiMiddle
+QuasiTail
+
+QuasiMiddle ::
+
+} QuasiCharacters~opt~ ${
+
+QuasiTail ::
+
+} QuasiCharacters~opt~ `
+
+QuasiCharacters ::
+
+QuasiCharacter QuasiCharacters~opt~
+
+QuasiCharacter ::
+
+SourceCharacter BUT NOT ONE OF ` OR \ OR $
+$ [lookahead ∉ { ]
+\ EscapeSequence
+LineContinuation
+
+STATIC SEMANTICS: QV’S AND RQV’S
+
+A quasi literal component is interpreted as a sequence of Unicode
+characters. The Quasi Value (QV) of a literal component is described in
+terms of code unit values (CV, 7.8.4) contributed by the various parts
+of the quasi literal cmponent. As part of this process, some Unicode
+characters within the quasi component are interpreted as having a
+mathematical value (MV, 7.8.3). In determining a QV, escape sequences
+are replaced by the code unit of the Unicode characters represented by
+the escape sequence. The Quasi Raw Value (QRV) is similar to a Quasi
+Value with the difference that in QRVs escape sequences are interpreted
+literally.
+
+-   The QV and QRV of FullQuasi :: `` is the empty code unit sequence.
+
+-   The QV and QRV of QuasiHead :: `${ is the empty code unit
+    sequence.
+
+-   The QV and QRV of QuasiMiddle :: }${ is the empty code unit
+    sequence.
+
+-   The QV and QRV of QuasiTail :: }` is the empty code unit sequence.
+
+-   The QV of FullQuasi :: ` QuasiCharacters ` is the QV of
+    QuasiCharacters.
+
+-   The QV of QuasiHead :: ` QuasiCharacters ${ is the QV of
+    QuasiCharacters.
+
+-   The QV of QuasiMiddle :: } QuasiCharacters ${ is the QV of
+    QuasiCharacters.
+
+-   The QV of QuasiTail :: } QuasiCharacters ` is the QV of
+    QuasiCharacters.
+
+-   The QV of QuasiCharacters:: QuasiCharacter is the QV of
+    QuasiCharacter.
+
+-   The QV of QuasiCharacters :: QuasiCharacter QuasiCharacters is
+    a sequence consisting of the code units in the QV of
+    QuasiCharacter followed by all the code units in the QV of
+    QuasiCharacters in order.
+
+-   The QV of QuasiCharacter :: SourceCharacter BUT NOT ONE OF ` OR
+    \ OR $ is the UTF-16 Encoding (clause 6) of the code point value of
+    SourceCharacter.
+
+-   The QV of QuasiCharacter :: $ [lookahead ∉ { ] is the code unit
+    value 0x0024.
+
+-   The QV of QuasiCharacter :: \ EscapeSequence is the CV of
+    EscapeSequence.
+
+-   The QV of QuasiCharacter :: LineContinuation is the QV of
+    LineContinuation.
+
+-   The QV of LineContinuation :: \ LineTerminatorSequence is the
+    empty code unit sequence.
+
+-   The QRV of FullQuasi :: ` QuasiCharacters ` is the QRV of
+    QuasiCharacters.
+
+-   The QRV of QuasiHead :: ` QuasiCharacters ${ is the QRV of
+    QuasiCharacters.
+
+-   The QRV of QuasiMiddle :: } QuasiCharacters ${ is the QRV of
+    QuasiCharacters.
+
+-   The QRV of QuasiTail :: } QuasiCharacters ` is the QRV of
+    QuasiCharacters.
+
+-   The QRV of QuasiCharacters:: QuasiCharacter is the QRV of
+    QuasiCharacter.
+
+-   The QRV of QuasiCharacters:: QuasiCharacter QuasiCharacters is
+    a sequence consisting of the code units in the QRV of
+    QuasiCharacter followed by all the code units in the QRV of
+    QuasiCharacters, in order.
+
+-   The QRV of QuasiCharacter :: SourceCharacter BUT NOT ONE OF ` OR
+    \ OR $ is the UTF-16 Encoding (clause 6) of the code point value of
+    SourceCharacter.
+
+-   The QRV of QuasiCharacter :: $ [lookahead ∉ { ] is the code unit
+    value 0x0024.
+
+-   The QRV of QuasiCharacter :: \ EscapeSequence is the sequence
+    consisting of the code unit value 0x005C followed by the code units
+    of QRV of EscapeSequence.
+
+-   The QRV of QuasiCharacter:: LineContinuation is the QRV of
+    LineContinuation.
+
+-   The QRV of EscapeSequence :: CharacterEscapeSequence is the QRV
+    of the CharacterEscapeSequence.
+
+-   The QRV of EscapeSequence :: 0 [lookahead ∉ DecimalDigit] is the
+    code unit value 0x0030.
+
+-   The QRV of EscapeSequence :: HexEscapeSequence is the QRV of the
+    HexEscapeSequence.
+
+-   The CRV of EscapeSequence :: UnicodeEscapeSequence is the CRV of
+    the UnicodeEscapeSequence.
+
+-   The QRV of CharacterEscapeSequence :: SingleEscapeCharacter is
+    the QRV of the SingleEscapeCharacter.
+
+-   The QRV of CharacterEscapeSequence :: NonEscapeCharacter is the
+    CV of the NonEscapeCharacter.
+
+-   The QRV of SingleEscapeCharacter :: ONE OF ' " \ B F N R T V is
+    the CV of the SourceCharacter that is that single character.
+
+-   The QRV of HexEscapeSequence :: X _HexDigit HexDigit_ is the
+    sequence consisting of the code units consisting of code unit value
+    0x078 followed by QRV of the first HexDigit followed by the QRV of
+    the second HexDigit.
+
+-   The QRV of UnicodeEscapeSequence :: U HexDigit HexDigit
+    HexDigit HexDigit is the sequence consisting of code unit value
+    0x0075 followed by QRV of the first HexDigit followed by the QRV
+    of the second HexDigit followed by QRV of the third HexDigit
+    followed by the QRV of the fourth HexDigit.
+
+-   The QRV of UnicodeEscapeSequence :: U{ HexDigits }is the
+    sequence consisting of the code units consisting of code unit value
+    0x0075 followed by code unit value 0x007B followed by QRV of
+    HexDigit followed by code unit value 0x007D.
+
+-   The QRV of HexDigits :: HexDigit is the QRV of HexDigit.
+
+-   The QRV of HexDigits :: HexDigits HexDigit is the sequence
+    consisting of QRV of HexDigits followed by QRV of HexDigit.
+
+-   The QRV of a HexDigit is CV of the SourceCharacter that is that
+    HexDigit.
+
+-   The QRV of LineContinuation :: \ LineTerminatorSequence is the
+    sequence consisting of the code unit value 0x005C followed by the
+    code units of QRV of LineTerminatorSequence.
+
+-   The QRV of LineTerminatorSequence :: <LF> is the code unit value
+    0x000A.
+
+-   The QRV of LineTerminatorSequence :: <CR> [lookahead ∉ <LF> ] is
+    the code unit value 0x000D.
+
+-   The QRV of LineTerminatorSequence :: <LS> is the code unit value
+    0x2028.
+
+-   The QRV of LineTerminatorSequence :: <PS> is the code unit value
+    0x2029.
+
+-   The QRV of LineTerminatorSequence :: <CR><LF> is the sequence
+    consisting of the code unit value 0x000D followed by the code unit
+    value 0x000A.
+
+NOTE QV excludes the code units of LineContinuation while QRV includes
+them.
+
+Syntax
+
+BooleanLiteral ::
+
+TRUE
+FALSE
 
 Certain ECMAScript statements (empty statement, variable statement,
 expression statement, DO-WHILE statement, CONTINUE statement, BREAK
@@ -2939,34 +3225,46 @@ TRUE and FALSE.
 The String type is the set of all finite ordered sequences of zero or
 more 16-bit unsigned integer values (“elements”). The String type is
 generally used to represent textual data in a running ECMAScript
-program, in which case each element in the String is treated as a code
-unit value (see Clause 6). Each element is regarded as occupying a
+program, in which case each element in the String is treated as a
+Unicode code unit value. Each element is regarded as occupying a
 position within the sequence. These positions are indexed with
 nonnegative integers. The first element (if any) is at position 0, the
 next element (if any) at position 1, and so on. The length of a String
 is the number of elements (i.e., 16-bit values) within it. The empty
 String has length zero and therefore contains no elements.
 
-When a String contains actual textual data, each element is considered
-to be a single UTF-16 code unit. Whether or not this is the actual
-storage format of a String, the characters within a String are numbered
-by their initial code unit element position as though they were
-represented using UTF-16. All operations on Strings (except as otherwise
-stated) treat them as sequences of undifferentiated 16-bit unsigned
-integers; they do not ensure the resulting String is in normalised form,
-nor do they ensure language-sensitive results.
+Where ECMAScript operations interpret String values, each element is
+interpreted as a single UTF-16 code unit. However, ECMAScript does not
+place any restrictions or requirements on the sequence of code units in
+a String value, so they may be ill-formed when interpreted as UTF-16
+code unit sequences. Operations that do not interpret String contents
+treat them as sequences of undifferentiated 16-bit unsigned integers. No
+operations ensure that Strings are in a normalized form. Only operations
+that are explicitly specified to be language or locale sensitive produce
+language-sensitive results
+
+-   
 
 NOTE The rationale behind this design was to keep the implementation of
-Strings as simple and high-performing as possible. The intent is that
-textual data coming into the execution environment from outside (e.g.,
-user input, text read from a file or received over the network, etc.) be
-converted to Unicode Normalised Form C before the running program sees
-it. Usually this would occur at the same time incoming text is converted
-from its original character encoding to Unicode (and would impose no
-additional overhead). Since it is recommended that ECMAScript source
-code be in Normalised Form C, string literals are guaranteed to be
-normalised (if source text is guaranteed to be normalised), as long as
-they do not contain any Unicode escape sequences.
+Strings as simple and high-performing as possible. If ECMAScript source
+code is in Normalised Form C, string literals are guaranteed to also be
+normalised, as long as they do not contain any Unicode escape sequences.
+
+Some operations interpret String contents as UTF-16 encoded Unicode code
+points. In that case the interpretation is:
+
+-   A code unit in the range 0 to 0xD7FF or in the range 0xE000 to
+    0xFFFF is interpreted as a code point with the same value.
+
+-   A sequence of two code units, where the first code unit c1 is in
+    the range 0xD800 to 0xDBFF and the second code unit c2 is in the
+    range 0xDC00 to 0xDFFF, is a surrogate pair and is interpreted as a
+    code point with the value (c1 - 0xD800) × 0x400 + (c2 –
+    0xDC00) + 0x10000.
+
+-   A code unit that is in the range 0xD800 to 0xDFFF, but is not part
+    of a surrogate pair, is interpreted as a code point with the same
+    value.
 
 The Number type has exactly 18437736874454810627 (that is,
 2^64^−2^53^+3) values, representing the double-precision 64-bit format
@@ -3117,15 +3415,16 @@ square brackets [[ ]]. When an algorithm uses an internal property of an
 object and the object does not implement the indicated internal
 property, a TYPEERROR exception is thrown.
 
-The Table 8 summarises the internal properties used by this
-specification that are applicable to all ECMAScript objects. The Table 9
-summarises the internal properties used by this specification that are
-only applicable to some ECMAScript objects. The descriptions in these
-tables indicate their behaviour for native ECMAScript objects, unless
-stated otherwise in this document for particular kinds of native
-ECMAScript objects. Host objects may support these internal properties
-with any implementation-dependent behaviour as long as it is consistent
-with the specific host object restrictions stated in this document.
+Table 8 summarises the internal properties used by this specification
+that are applicable to all ECMAScript objects. Table 9 summarises the
+internal properties used by this specification that are only applicable
+to some ECMAScript objects.
+
+Clause 8.12 provides the algorithms that defined the default behaviour
+for the internal methods in Table 8. An _ordinary object_ is an object
+that uses all of these default algorithms. An _exotic object_ is an
+object that uses some other algorithm to provide alternative behaviour
+for one or more of these internal methods.
 
 The “Value Type Domain” columns of the following tables define the types
 of values associated with internal properties. The type names refer to
@@ -3178,14 +3477,14 @@ Table 8 — Internal Properties Common to All Objects
   [[Iterate]]             SpecOp()→Object                                                  Returns an object that can enumerate the logical component values of the object. The returned object is an Iterator object.
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Every object (including host objects) must implement all of the internal
-properties listed in Table 8. However, the [[DefaultValue]] internal
-method may, for some objects, simply throw a TYPEERROR exception.
+Every object must implement all of the internal properties listed in
+Table 8. However, the [[DefaultValue]] internal method may, for some
+objects, simply throw a TYPEERROR exception.
 
 All objects have an internal property called [[Prototype]]. The value of
 this property is either NULL or an object and is used for implementing
-inheritance. Whether or not a native object can have a host object as
-its [[Prototype]] depends on the implementation. Every [[Prototype]]
+inheritance. Whether or not an ordinary object can have an exotic object
+as its [[Prototype]] depends on the implementation. Every [[Prototype]]
 chain must have finite length (that is, starting from any object,
 recursively accessing the [[Prototype]] internal property must
 eventually lead to a NULL value). Named data properties of the
@@ -3219,16 +3518,16 @@ Arguments objects (10.6) have different implementations of [[Get]],
 [[GetOwnProperty]], [[DefineOwnProperty]], and [[Delete]]. Function
 objects (15.3) have a different implementation of [[Get]].
 
-Host objects may implement these internal methods in any manner unless
+Exotic objects may implement these internal methods in any manner unless
 specified otherwise; for example, one possibility is that [[Get]] and
-[[Put]] for a particular host object indeed fetch and store property
+[[Put]] for a particular exotic object indeed fetch and store property
 values but [[HasProperty]] always generates FALSE. However, if any
-specified manipulation of a host object's internal properties is not
+specified manipulation of an exotic object's internal properties is not
 supported by an implementation, that manipulation must throw a TYPEERROR
 exception when attempted.
 
-The [[GetOwnProperty]] internal method of a host object must conform to
-the following invariants for each property of the host object:
+The [[GetOwnProperty]] internal method of all objects must conform to
+the following invariants for each property of the object:
 
 -   If a property is described as a data property and it may return
     different values over time, then either or both of the [[Writable]]
@@ -3247,19 +3546,19 @@ the following invariants for each property of the host object:
 -   If the [[Writable]] attribute may change from FALSE to TRUE, then
     the [[Configurable]] attribute must be TRUE.
 
--   If the value of the host object’s [[Extensible]] internal property
-    has been observed by ECMAScript code to be FALSE, then if a call to
+-   If the value of the object’s [[Extensible]] internal property has
+    been observed by ECMAScript code to be FALSE, then if a call to
     [[GetOwnProperty]] describes a property as non-existent all
     subsequent calls must also describe that property as non-existent.
 
-The [[DefineOwnProperty]] internal method of a host object must not
-permit the addition of a new property to a host object if the
-[[Extensible]] internal property of that host object has been observed
-by ECMAScript code to be FALSE.
+The [[DefineOwnProperty]] internal method of all objects must not permit
+the addition of a new property to a that object if the [[Extensible]]
+internal property of that object has been observed by ECMAScript code to
+be FALSE.
 
-If the [[Extensible]] internal property of that host object has been
-observed by ECMAScript code to be FALSE then it must not subsequently
-become TRUE.
+If the [[Extensible]] internal property of an object has been observed
+by ECMAScript code to be FALSE then it must not subsequently become
+TRUE.
 
 Table 9 — Internal Properties Only Defined for Some Objects
 
@@ -3358,8 +3657,6 @@ Table 11 — Completion Record Fields
 The term “abrupt completion” refers to any completion with a [[type]]
 value other than NORMAL.
 
-Impliclty Completion Values
-
 The algorithms of this specification often implicitly return Completion
 Records whose [[type]] is NORMAL. Unless it is otherwise obvious from
 the context, an algorithm statement that returns a value that is not a
@@ -3376,30 +3673,24 @@ value is equivalent to an explicit reference to the [[value]] field of
 the Completion Record value unless the Completion Record is an abrupt
 completion.
 
-NormalCompletion
-
 The abstract operation NormalCompletion with a single argument, such
 as:
 
 1.  Return NormalCompletion(argument).
 
-is a short hand that is defined as follows:
+Is a short hand that is defined as follows:
 
 1.  Return Completion {[[type]]: normal, [[value]]: argument,
     [[target]]:empty}.
-
-Throw an Exception
 
 Algorithms steps that say to throw an exception, such as
 
 1.  Throw a TYPEERROR exception.
 
-mean the same things as:
+Mean the same things as:
 
 1.  Return Completion {[[type]]: throw, [[value]]: a newly created
     TYPEERROR object, [[target]]:empty}.
-
-ReturnIfAbrupt
 
 Algorithms steps that say
 
@@ -3415,17 +3706,9 @@ mean the same things as:
 3.  
 
 NOTE The Reference type is used to explain the behaviour of such
-operators as DELETE, TYPEOF, and the assignment operators. For example,
-the left-hand operand of an assignment is expected to produce a
-reference. The behaviour of assignment could, instead, be explained
-entirely in terms of a case analysis on the syntactic form of the
-left-hand operand of an assignment operator, but for one difficulty:
-function calls are permitted to return references. This possibility is
-admitted purely for the sake of host objects. No built-in ECMAScript
-function defined by this specification returns a reference and there is
-no provision for a user-defined function to return a reference. (Another
-reason not to use a syntactic case analysis is that it would be lengthy
-and awkward, affecting many parts of the specification.)
+operators as DELETE, TYPEOF, the assignment operators, the SUPER keyword
+and other lanauge features.. For example, the left-hand operand of an
+assignment is expected to produce a reference.
 
 A REFERENCE is a resolved name binding. A Reference consists of three
 components, the base value, the _referenced name_ and the Boolean
@@ -3435,7 +3718,7 @@ Object, a Boolean, a String, a Number, or an environment record
 not be resolved to a binding. The _referenced name_ is a String.
 
 A Super Reference is a Reference that is used to represents a name
-binding that was expressed using the SUPER keyword. A Super Reference
+binding that was expressed using the super keyword. A Super Reference
 has an additional thisValue component and its base value will never
 be an environment record.
 
@@ -3461,9 +3744,6 @@ access the components of references:
 
 -   IsSuperReference(V). Returns TRUE if this reference has a
     thisValue component.
-
--   GetThisValue(V). Returns the value of the thisValue component of
-    the reference V. May only be used when IsSuperReference(V) is true.
 
 The following abstract operations are used in this specification to
 operate on references:
@@ -3619,9 +3899,10 @@ P, the following steps are taken:
 When the [[CanPut]] internal method of O is called with property name
 P, the following steps are taken:
 
-Host objects may define additional constraints upon [[Put]] operations.
-If possible, host objects should not allow [[Put]] operations in
-situations where this definition of [[CanPut]] returns false.
+Exotic objects may define additional constraints upon [[Put]]
+operations. If possible, exotic objects should not allow [[Put]]
+operations in situations where this definition of [[CanPut]] returns
+false.
 
 When the [[Put]] internal method of O is called with property P,
 value V, and Boolean flag Throw, the following steps are taken:
@@ -3642,8 +3923,8 @@ When the [[DefaultValue]] internal method of O is called with no hint,
 then it behaves as if the hint were Number, unless O is a Date object
 (see 15.9.6), in which case it behaves as if the hint were String.
 
-The above specification of [[DefaultValue]] for native objects can
-return only primitive values. If a host object implements its own
+The above specification of [[DefaultValue]] for ordinary objects can
+return only primitive values. If an exotic object implements its own
 [[DefaultValue]] internal method, it must ensure that its
 [[DefaultValue]] internal method can return only primitive values.
 
@@ -4243,7 +4524,7 @@ Table 16 — ToObject
   Object              Return argument (no conversion).
   ------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-The abstract operation ToProperty converts its argument to a value
+The abstract operation ToPropertyKey converts its argument to a value
 that can be used as aproperty key by performing the following steps:
 
 1.  ReturnIfAbrupt(argument).
@@ -4294,12 +4575,12 @@ The internal comparison abstract operation SameValue(x, y), where
 x and y are ECMAScript language values, produces TRUE or FALSE. Such
 a comparison is performed as follows:
 
-The Invoke abstract abstract operation is used to call a method property
-of an object. The operation is called with arguments P, O, and
-args where P is the property key, O serves as both the lookup
-point for the property and the this value of the call, and args is the
-list of arguments values passed to the method. This abstract operation
-perform, the following steps:
+The abstract operation Invoke is used to call a method property of an
+object. The operation is called with arguments P, O, and args
+where P is the property key, O serves as both the lookup point for
+the property and the this value of the call, and args is the list of
+arguments values passed to the method. This abstract operation perform,
+the following steps:
 
 There are three types of ECMAScript executable code:
 
@@ -4622,9 +4903,9 @@ records support the methods listed in Table 21:
 Table 21 — Additional Methods of Method Environment Records
 
   METHOD           PURPOSE
-  ------------------ ------------------------------------------------------------------------------------------------------------
+  ------------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   GetThisBinding()   Return the value of this environment record’s THIS binding.
-  GetHomeObject()    Return the value of this environment record’s HomeObject binding. If the value is Empty, return UNDEFINED.
+  GetSuperBase()     Return the object that is the base for SUPER property accesses bound in this environment record. The object is derived from this environment record’s HomeObject binding. If the value is Empty, return UNDEFINED.
   GetMethodName()    Return the value of this environment record’s MethodName binding.
 
 The behaviour of the additional concrete specification methods for
@@ -4639,8 +4920,13 @@ Regular Method Environment Records always provide a THIS binding.
 
 1.  Return the value of this environment record’s thisValue.
 
-1.  If this environment record’s HomeObject has the value Empty, then
-    return UNDEFINED. Otherwise, return the HomeObject value.
+1.  Let home be the value of this environment record’s HomeObject.
+
+2.  If home has the value Empty, then return UNDEFINED.
+
+3.  Assert Type(home) is Object.
+
+4.  Return the value of home’s [[Prototype]] internal property..
 
 1.  Return the value of this environment record’s MethodName.
 
@@ -4725,7 +5011,7 @@ executing code. This is known as the running execution context. A new
 execution context is created whenever control is transferred from the
 executable code associated with the currently running execution context
 to executable code that is not associated with that execution context.
-The newly created execution context records the identify of the current
+The newly created execution context records the identity of the current
 running execution context and then becomes the running execution
 context.
 
@@ -4865,10 +5151,13 @@ created.
 
     c.  If alreadyDeclared is FALSE, then
 
-        i.  Call env’s CreateMutableBinding concrete method passing
-            argName as the argument.
+        i.  Let status be the result of calling env’s
+            CreateMutableBinding concrete method passing argName as
+            the argument.
 
-        ii. If strict is FALSE, then
+        ii. ReturnIfAbrupt(status).
+
+        iii. If strict is FALSE, then
 
             1.  Call env’s InitializeBinding concrete method passing
                 argName, and UNDEFINED as the arguments.
@@ -5039,8 +5328,8 @@ When function code is evaluated, an arguments object is created unless
 Identifier in the function’s FormalParameterList or occurs as the
 BindingIdentifier of a Declaration contained in the function code.
 
-The abstract operation CreateStrictArgumentsObject called with
-argument list args performs the following steps:
+The abstract operation CreateStrictArgumentsObject called with argument
+list args performs the following steps:
 
 1.  Let len be the number of elements in args.
 
@@ -5211,6 +5500,8 @@ FunctionExpression
 ClassExpression
 GeneratorExpression
 GeneratorComprehension
+[Lexical goal InputElementRegExp] RegularExpressionLiteral
+QuasiLiteral
 ( Expression )
 
 RUNTIME SEMANTICS: EVALUATION
@@ -5250,7 +5541,6 @@ ValueLiteral :
 BooleanLiteral
 NumericLiteral
 StringLiteral
-RegularExpressionLiteral
 
 RUNTIME SEMANTICS
 
@@ -5277,21 +5567,6 @@ ValueLiteral : StringLiteral
 
 1.  Return the string whose character are the SV of StringLiteral as
     defined in 7.8.4.
-
-ValueLiteral : RegularExpressionLiteral
-
-1.  A regular expression literal evaluates to a value of the Object type
-    that is an instance of the standard built-in constructor RegExp.
-    This value is determined in two steps: first, the characters
-    comprising the regular expression's RegularExpressionBody and
-    RegularExpressionFlags production expansions are collected
-    uninterpreted into two Strings Pattern and Flags, respectively. Then
-    each time the literal is evaluated, a new object is created as if by
-    the expression NEW REGEXP(Pattern, Flags) where RegExp is the
-    standard built-in constructor with that name. The newly constructed
-    object becomes the value of the RegularExpressionLiteral. If the
-    call to NEW REGEXP would generate an error as specified in
-    15.10.4.1, the error must be treated as an early error (Clause 16).
 
 Syntax
 
@@ -5619,7 +5894,7 @@ NumericLiteral
 
 NOTE MethodDefinition is defined in 13.3.
 
-EARLY ERRORS
+STATIC SEMANTICS: EARLY ERRORS
 
 ObjectLiteral : { PropertyDefinitionList }
 
@@ -5641,11 +5916,12 @@ ObjectLiteral : { PropertyDefinitionList , }
         and the other occurrence was obtained from a SET accessor
         MethodDefinition.
 
-PropertyDefinitioin : MethodDefinition
+PropertyDefinition : MethodDefinition
 
--   It is a Syntax Error if ReferencesSuper MethodDefinition is TRUE.
+-   It is a Syntax Error if ReferencesSuper of MethodDefinition is
+    TRUE.
 
-PropertyDefinitioin : IdentifierName
+PropertyDefinition : IdentifierName
 
 -   It is a Syntax Error if IdentifierName is a ReservedWord.
 
@@ -5676,8 +5952,8 @@ PropertyName : IdentifierName
 
 1.  If symbol is a ReservedWord, return FALSE.
 
-2.  If symbol is an Identifier and String Value of symbol is the
-    same value as the String Value of IdentifierName, return TRUE;
+2.  If symbol is an Identifier and StringValue of symbol is the
+    same value as the StringValue of IdentifierName, return TRUE;
 
 3.  Return FALSE.
 
@@ -5699,7 +5975,7 @@ STATIC SEMANTICS: PROPNAME
 
 PropertyDefinition : IdentifierName
 
-1.  Return String Value of IdentifierName.
+1.  Return StringValue of IdentifierName.
 
 PropertyDefinition : PropertyName : AssignmentExpression
 
@@ -5776,7 +6052,7 @@ PropertyDefinition
 
 PropertyDefinition : IdentifierName
 
-1.  Let propName be PropName(IdentifierName).
+1.  Let propName be PropName of IdentifierName.
 
 2.  Let exprValue be the result of performing Identifier Resolution as
     specified in 10.3.1 using IdentifierName.
@@ -5795,7 +6071,7 @@ PropertyDefinition : IdentifierName
 
 PropertyDefinition : PropertyName : AssignmentExpression
 
-1.  Let propName be PropName(PropertyName).
+1.  Let propName be PropName of PropertyName.
 
 2.  Let exprValue be the result of evaluating AssignmentExpression.
 
@@ -5819,7 +6095,11 @@ PropertyDefinition : PropertyName : AssignmentExpression
 
 1.  2.  3.  4.  5.  
 
-See 13.1.
+See 13.1 for PrimaryExpression : FunctionExpression.
+
+See 13.4 for PrimaryExpression : GeneratorExpression.
+
+See 13.5 for PrimaryExpression : ClassExpression.
 
 1.  
 
@@ -5829,6 +6109,362 @@ GeneratorComprehension :
 
 ( Expression ComprehensionForList )
 ( Expression ComprehensionForList IF Expression )
+
+Syntax
+
+See 7.8.5.
+
+STATIC SEMANTICS
+
+STATIC SEMANTICS: EARLY ERRORS
+
+PrimaryExpression : RegularExpressionLiteral
+
+-   It is a Syntax Error if BodyText of RegularExpressionLiteral can
+    not be recognized using the goal symbol Pattern of the ECMAScript
+    RegExp grammar specified in 15.10.
+
+-   It is a Syntax Error if FlagText of RegularExpressionLiteral
+    contains any character other than "G", "I", "M", "U", or "Y", or if
+    it contains the same character more than once.
+
+RUNTIME SEMANTICS
+
+RUNTIME SEMANTICS: EVALUATION
+
+PrimaryExpression : RegularExpressionLiteral
+
+1.  A regular expression literal evaluates to a value of the Object type
+    that is an instance of the standard built-in constructor RegExp.
+    This value is determined in two steps: first, the characters
+    comprising the regular expression's RegularExpressionBody and
+    RegularExpressionFlags production expansions are collected
+    uninterpreted into two Strings Pattern and Flags, respectively. Then
+    each time the literal is evaluated, a new object is created as if by
+    the expression NEW REGEXP(Pattern, Flags) where RegExp is the
+    standard built-in constructor with that name. The newly constructed
+    object becomes the value of the RegularExpressionLiteral.
+
+Syntax
+
+QuasiLiteral :
+
+FullQuasi
+QuasiHead Expression QuasiMiddleList~opt~ [Lexical goal
+InputElementQuasiTail] QuasiTail
+
+QuasiMiddleList:
+
+[Lexical goal InputElementQuasiTail] QuasiMiddle Expression
+QuasiMiddleList [Lexical goal InputElementQuasiTail] QuasiMiddle
+Expression
+
+STATIC SEMANTICS
+
+STATIC SEMANTICS: QUASISTRINGS
+
+  With parameter raw.
+
+QuasiLiteral : FullQuasi
+
+1.  If raw is false, then
+
+    a.  Let string be the QV of FullQuasi.
+
+2.  Else, Let string be the QRV of FullQuasi.
+
+3.  Return a List containing the single element, string.
+
+QuasiLiteral : _QuasiHead Expression_ [Lexical goal
+InputElementQuasiTail] QuasiTail
+
+1.  If raw is false, then
+
+    a.  Let head be the QV of QuasiHead.
+
+    b.  Let tail be the QV of QuasiTail.
+
+2.  Else,
+
+    a.  Let head be the QRV of QuasiHead.
+
+    b.  Let tail be the QRV of QuasiTail.
+
+3.  Return a List containing head followed by tail.
+
+QuasiLiteral : _QuasiHead Expression QuasiMiddleList_ [Lexical goal
+InputElementQuasiTail] QuasiTail
+
+1.  If raw is false, then
+
+    a.  Let head be the QV of QuasiHead.
+
+    b.  Let tail be the QV of QuasiTail.
+
+2.  Else,
+
+    a.  Let head be the QRV of QuasiHead.
+
+    b.  Let tail be the QRV of QuasiTail.
+
+3.  Let middle be QuasiStrings of QuasiMiddleList with argument
+    raw.
+
+4.  Return a List containing head followed by the element, in order,
+    of middle followed by tail.
+
+QuasiMiddleList : [Lexical goal InputElementQuasiTail] _QuasiMiddle
+Expression_
+
+1.  If raw is false, then
+
+    a.  Let string be the QV of QuasiMiddle.
+
+2.  Else,
+
+    a.  Let string be the QRV of QuasiMiddle.
+
+3.  Return a List containing the single element, string.
+
+QuasiMiddleList : QuasiMiddleList [Lexical goal
+InputElementQuasiTail] _QuasiMiddle Expression_
+
+1.  Let front be QuasiStrings of QuasiMiddleList with argument
+    raw.
+
+2.  If raw is false, then
+
+    a.  Let last be the QV of QuasiMiddle.
+
+3.  Else,
+
+    a.  Let last be the QRV of QuasiMiddle.
+
+4.  Append last as the last elemnt of the List front.
+
+5.  Return front.
+
+RUNTIME SEMANTICS
+
+RUNTIME SEMANTICS: ARGUMENTLISTEVALUATION
+
+QuasiLiteral : FullQuasi
+
+1.  Let siteObj be the the result of the abstraction operation
+    GetQuasiCallSite passing this QuasiLiteral production as the
+    argument.
+
+2.  Return a List containing the one element which is siteObj.
+
+QuasiLiteral : _QuasiHead Expression_ [Lexical goal
+InputElementQuasiTail] QuasiTail
+
+1.  Let siteObj be the the result of the abstraction operation
+    GetQuasiCallSite passing this QuasiLiteral production as the
+    argument.
+
+2.  Let firstSub be the result of evaluating Expression.
+
+3.  ReturnIfAbrupt(sub).
+
+4.  Return a List whose first element is siteObj, whose second
+    elements sub.
+
+QuasiLiteral : _QuasiHead Expression QuasiMiddleList_ [Lexical goal
+InputElementQuasiTail] QuasiTail
+
+1.  Let siteObj be the the result of the abstraction operation
+    GetQuasiCallSite passing this QuasiLiteral production as the
+    argument.
+
+2.  Let firstSub be the result of evaluating Expression.
+
+3.  ReturnIfAbrupt(firstSub).
+
+4.  Let restSub be SubstitutionEvaluation of QuasiMiddleList.
+
+5.  ReturnIfAbrupt(restSub).
+
+6.  Assert, restSub is a List.
+
+7.  Return a List whose first element is siteObj, whose second
+    elements is firstSub, and whose subsequent elements are the
+    elements of restSub, in order. restSub may contain no elements.
+
+The abstract operation GetQuasiCallSite is called with a grammar
+production, quasiLiteral, as an argument. It performs the following
+steps:
+
+1.  If a call site object for the source code corresponding to
+    quasiLiteral has already been created by a previous call to this
+    abstract operation, then return that call site object.
+
+2.  Let cookedStrings be QuasiStrings of quasiLiteral with argument
+    FALSE.
+
+3.  Let rawStrings be QuasiStrings of quasiLiteral with argument
+    TRUE.
+
+4.  Let count be the number of elements in the List cookedStrings.
+
+5.  Let siteObj be the result of the abstraction operation ArrayCreate
+    with argument count.
+
+6.  Let rawObj be the result of the abstraction operation ArrayCreate
+    with argument count.
+
+7.  Let index be 0.
+
+8.  Repeat while index < count
+
+    a.  Let prop be ToString(index).
+
+    b.  Let cookedValue be the string value at 0-based position
+        index of the List cookedStrings.
+
+    c.  Call the [[DefineOwnProperty]] internal method of siteObj with
+        arguments prop, {[[Value]]: cookedValue, [[Writable]]:
+        FALSE, [[Configurable]]: FALSE}}, and FALSE.
+
+    d.  Let rawValue be the string value value at 0-based position
+        index of the List rawStrings.
+
+    e.  Call the [[DefineOwnProperty]] internal method of rawObj with
+        arguments prop, {[[Value]]: rawValue, [[Writable]]: FALSE,
+        [[Configurable]]: FALSE}}, and FALSE.
+
+    f.  Let index be index+1.
+
+9.  Call the FreezeObject abstract operation with argument rawObj.
+
+10. Call the [[DefineOwnProperty]] internal method of siteObj with
+    arguments "RAW", Property Descriptor {[[Value]]: rawObj,
+    [[Writable]]: FALSE, [[Enumerable]]: FALSE, [[Configurable]]:
+    FALSE}, and FALSE.
+
+11. Call the FreezeObject abstract operation with argument siteObj.
+
+12. Remember an association between the source code corresponding to
+    quasiLiteral and siteObj such that siteObj can be retrieve in
+    subsequent calls to this abstract operation.
+
+13. Return siteObj.
+
+NOTE 1 The creation of a call site object can not result in an abrupt
+completion.
+
+NOTE 2 Each QuasiLiteral in the program code is associated with a
+unique Quasi call site object that is used in the evaluation of tagged
+Quasis (11.2.6). The same call site object is used each time a specific
+tagged Quasi is evaluated. Whether call site objects are created lazily
+upon first evaluation of the QuasiLiteral or eagerly prior to first
+evaluation is an implementation choice that is not observable to
+ECMAScript code.
+
+RUNTIME SEMANTICS: SUBSTITUTIONEVALUATION
+
+QuasiMiddleList : [Lexical goal InputElementQuasiTail] _QuasiMiddle
+Expression_
+
+1.  Let sub be the result of evaluating Expression.
+
+2.  ReturnIfAbrupt(middle).
+
+3.  Return a List containing only sub.
+
+QuasiMiddleList : QuasiMiddleList [Lexical goal
+InputElementQuasiTail] _QuasiMiddle Expression_
+
+1.  Let preceeding be the result of SubstitutionEvaluation of
+    QuasiMiddleList .
+
+2.  ReturnIfAbrupt(preceeding).
+
+3.  Let next be the result of evaluating Expression.
+
+4.  ReturnIfAbrupt(next).
+
+5.  Append next as the list element of the List preceeding.
+
+6.  Return preceeding.
+
+RUNTIME SEMANTICS: EVALUATION
+
+QuasiLiteral : FullQuasi
+
+1.  Return the string value whose elements are the QV of FullQuasi as
+    defined in 7.8.6.
+
+QuasiLiteral : QuasiHead Expression [Lexical goal
+InputElementQuasiTail] QuasiTail
+
+1.  Let head be the QV of QuasiHead as defined in 7.8.6.
+
+2.  Let sub be the result of evaluating Expression.
+
+3.  Let middle be ToString(sub).
+
+4.  ReturnIfAbrupt(middle).
+
+5.  Let tail be the QV of QuasiTail as defined in 7.8.6.
+
+6.  Return the string whose elements are the code units of head
+    followed by the elements of middle followed by the code units of
+    tail.
+
+QuasiLiteral : _QuasiHead Expression_ QuasiMiddleList [Lexical goal
+InputElementQuasiTail] QuasiTail
+
+1.  Let head be the QV of QuasiHead as defined in 7.8.6.
+
+2.  Let sub be the result of evaluating Expression.
+
+3.  Let first be ToString(sub).
+
+4.  ReturnIfAbrupt(first).
+
+5.  Let rest be the result of evaluating QuasiMiddleList .
+
+6.  ReturnIfAbrupt(rest).
+
+7.  Let tail be the QV of QuasiTail as defined in 7.8.6.
+
+8.  Return the string whose elements are the code units of head
+    followed by the elements of first followed by the code units of
+    rest followed by the code units of tail.
+
+QuasiMiddleList : [Lexical goal InputElementQuasiTail] _QuasiMiddle
+Expression_
+
+1.  Let head be the QV of QuasiMiddle as defined in 7.8.6.
+
+2.  Let sub be the result of evaluating Expression.
+
+3.  Let middle be ToString(sub).
+
+4.  ReturnIfAbrupt(middle).
+
+5.  Return the sequence of characters consisting of the code units of
+    head followed by the elements of middle.
+
+QuasiMiddleList : QuasiMiddleList [Lexical goal
+InputElementQuasiTail] _QuasiMiddle Expression_
+
+1.  Let rest be the result of evaluating QuasiMiddleList .
+
+2.  ReturnIfAbrupt(rest).
+
+3.  Let middle be the QV of QuasiMiddle as defined in 7.8.6.
+
+4.  Let sub be the result of evaluating Expression.
+
+5.  Let last be ToString(sub).
+
+6.  ReturnIfAbrupt(last).
+
+7.  Return the sequence of characters consisting of the elements of
+    rest followed by the code units of middle followed by the
+    elements of last.
 
 1.  
 
@@ -5854,6 +6490,7 @@ MemberExpression :
 PrimaryExpression
 MemberExpression [ Expression ]
 MemberExpression . IdentifierName
+MemberExpression QuasiLiteral
 SUPER [ Expression ]
 SUPER . IdentifierName
 NEW MemberExpression Arguments
@@ -5870,6 +6507,7 @@ SUPER Arguments
 CallExpression Arguments
 CallExpression [ Expression ]
 CallExpression . IdentifierName
+CallExpression QuasiLiteral
 
 Arguments :
 
@@ -5900,8 +6538,8 @@ MemberExpression : MemberExpression . IdentifierName
 
 2.  If symbol is a ReservedWord, return FALSE.
 
-3.  If symbol is an Identifier and String Value of symbol is the
-    same value as the String Value of IdentifierName, return TRUE;
+3.  If symbol is an Identifier and StringValue of symbol is the
+    same value as the StringValue of IdentifierName, return TRUE;
 
 4.  Return FALSE.
 
@@ -5911,8 +6549,8 @@ MemberExpression : SUPER . IdentifierName
 
 2.  If symbol is a ReservedWord, return FALSE.
 
-3.  If symbol is an Identifier and String Value of symbol is the
-    same value as the String Value of IdentifierName, return TRUE;
+3.  If symbol is an Identifier and StringValue of symbol is the
+    same value as the StringValue of IdentifierName, return TRUE;
 
 4.  Return FALSE.
 
@@ -5922,8 +6560,8 @@ CallExpression : CallExpression . IdentifierName
 
 2.  If symbol is a ReservedWord, return FALSE.
 
-3.  If symbol is an Identifier and String Value of symbol is the
-    same value as the String Value of IdentifierName, return TRUE;
+3.  If symbol is an Identifier and StringValue of symbol is the
+    same value as the StringValue of IdentifierName, return TRUE;
 
 4.  Return FALSE.
 
@@ -6032,28 +6670,32 @@ CallExpression : MemberExpression Arguments
 
 1.  Let ref be the result of evaluating MemberExpression.
 
-2.  Return the result of the abstract operation Evalute Call with
-    arguments ref and Arguments.
+2.  If this CallExpression is in a tail position (13.7) then let
+    tailCall be TRUE, otherwise let tailCall be FALSE.
+
+3.  Return the result of the abstract operation EvaluateCall with
+    arguments ref, Arguments, and tailCall.
 
 CallExpression : CallExpression Arguments
 
 1.  Let ref be the result of evaluating CallExpression.
 
-2.  Return the result of the abstract operation Evalute Call with
-    arguments ref and Arguments.
+2.  If this CallExpression is in a tail position (13.7) then let
+    tailCall be TRUE, otherwise let tailCall be FALSE.
 
-The abstract operation Evalute Call takes as arguments a Reference,
-ref, and a syntactic grammar production arguments. It performs the
-following steps:
+3.  Return the result of the abstract operation EvaluateCall with
+    arguments ref, Arguments, and tailCall.
 
-1.  Let ref be the result of evaluating MemberExpression.
+The abstract operation EvaluateCall takes as arguments a value ref,
+and a syntactic grammar production arguments, and a Boolean argument
+tailPosition. It performs the following steps:
 
-2.  Let func be GetValue(ref).
+1.  2.  Let func be GetValue(ref).
 
 3.  If func is an abrupt completion, return func.
 
-4.  Let argList be the result of evaluating Arguments, producing an
-    internal list of argument values (see 11.2.4).
+4.  Let argList be the result of performing ArgumentListEvaluation of
+    Arguments.
 
 5.  If argList is an abrupt completion, return argList.
 
@@ -6076,14 +6718,46 @@ following steps:
 
     a.  Let thisValue be UNDEFINED.
 
-10. Return the result of calling the [[Call]] internal method on func,
-    providing thisValue as the THIS value and providing the list
-    argList as the argument values.
+10. If tailPosition is true, then
 
-NOTE The returned result will never be of type Reference if func is a
-native ECMAScript object. Whether calling a host object can return a
-value of type Reference is implementation-dependent. If a value of type
-Reference is returned, it must be a non-strict Property Reference.
+    a.  Let leafContext be the running execution context.
+
+    b.  Let leafCallerContext be leafContext’s PreviousContext
+
+    c.  Suspend leafContext.
+
+    d.  Make leafCallerContext the running execution context, however
+        it remains in its suspended state.
+
+    e.  Assert: leafContext has no further use. It will never be
+        activated as the running execution context.
+
+11. Let result be the result of calling the [[Call]] internal method
+    on func, providing thisValue as the THIS value and providing the
+    list argList as the argument values
+
+12. Assert: If tailPosition is true, the above call will not return
+    here, but instead evaluation will continue with the resumption of
+    leafCallerContext as the running execution context.
+
+13. Return result.
+
+A tail position call must either release any transiant internal
+resources associated with the currently executing function execution
+context before invoking the target function or reuse those resources in
+support of the target function.
+
+NOTE 1 For example, a tail position call should only grow an
+implementation’s activication record stack by the amount that the size
+of the target function’s activation record exeeds the size of the
+calling function’s activation record. If the target function’s
+activation record is smaller, then the total size of the stack should
+decrease.
+
+NOTE 2 The returned result will never be of type Reference if func is
+a ordinary ECMAScript object. Whether calling a exotic object can return
+a value of type Reference is implementation-dependent. If a value of
+type Reference is returned, it must be a non-strict Property Reference.
 
 STATIC SEMANTICS
 
@@ -6127,7 +6801,7 @@ MemberExpression : SUPER [ Expression ]
 3.  Let actualThis be the result of calling the GetThisBinding
     concrete method of env.
 
-4.  Let baseValue be the result of calling the GetHomeObject concrete
+4.  Let baseValue be the result of calling the GetSuperBase concrete
     method of env.
 
 5.  6.  7.  Let propertyNameReference be the result of evaluating
@@ -6159,12 +6833,12 @@ MemberExpression : SUPER . IdentifierName
 3.  Let actualThis be the result of calling the GetThisBinding
     concrete method of env.
 
-4.  Let baseValue be the result of calling the GetHomeObject concrete
+4.  Let baseValue be the result of calling the GetSuperBase concrete
     method of env.
 
 5.  ReturnIfAbrupt(CheckObjectCoercible(baseValue)).
 
-6.  Let propertyKey be String Value of IdentifierName.
+6.  Let propertyKey be StringValue of IdentifierName.
 
 7.  If the code matched by the syntactic production that is being
     evaluated is strict mode code, let strict be TRUE, else let
@@ -6185,7 +6859,7 @@ CallExpression : SUPER Arguments
 3.  Let actualThis be the result of calling the GetThisBinding
     concrete method of env.
 
-4.  Let baseValue be the result of calling the GetHomeObject concrete
+4.  Let baseValue be the result of calling the GetSuperBase concrete
     method of env.
 
 5.  ReturnIfAbrupt(CheckObjectCoercible(baseValue)).
@@ -6201,8 +6875,11 @@ CallExpression : SUPER Arguments
     whose base value is baseValue, whose referenced name is
     propertyKey, whose thisValue.
 
-9.  Return the result of the abstract operation Evalute Call with
-    arguments ref and Arguments.
+9.  If this CallExpression is in a tail position (13.7) then let
+    tailCall be TRUE, otherwise let tailCall be FALSE.
+
+10. Return the result of the abstract operation EvaluateCall with
+    arguments ref, Arguments, and tailCall.
 
 The evaluation of an argument list produces a List of values (see 8.7).
 
@@ -6216,7 +6893,7 @@ The evaluation of an argument list produces a List of values (see 8.7).
 
 -   
 
-RUNTIME SEMANTICS: EVALUATION
+RUNTIME SEMANTICS: ArgumentListEvaluation
 
 Arguments : ( )
 
@@ -6318,6 +6995,29 @@ ArgumentList : ArgumentList , _… _AssignmentExpression
     d.  Let n = n+1.
 
 11. Return precedingArgs.
+
+The runtime semantics of production:
+
+CallExpression : CallExpression QuasiLiteral
+
+is identical to that of
+
+MemberExpression: MemberExpression QuasiLiteral
+
+but with evaluation of CallExpression substituted for the evaluation
+of MemberExpression.
+
+RUNTIME SEMANTICS: EVALUATION
+
+MemberExpression : _MemberExpression QuasiLiteral_
+
+1.  Let tagRef be the result of evaluating MemberExpression.
+
+2.  If this MemberExpression is in a tail position (13.7) then let
+    tailCall be TRUE, otherwise let tailCall be FALSE.
+
+3.  Return the result of the abstract operation EvaluateCall with
+    arguments tagRef, QuasiLiteral, and tailCall.
 
 Syntax
 
@@ -6789,8 +7489,8 @@ AdditiveExpression : AdditiveExpression + MultiplicativeExpression
 NOTE 1 No hint is provided in the calls to ToPrimitive in steps 5 and 6.
 All native ECMAScript objects except Date objects handle the absence of
 a hint as if the hint Number were given; Date objects handle the absence
-of a hint as if the hint String were given. Host objects may handle the
-absence of a hint in some other manner.
+of a hint as if the hint String were given. Exotic objects may handle
+the absence of a hint in some other manner.
 
 NOTE 2 Step 7 differs from step 3 of the comparison algorithm for the
 relational operators (11.8.1), by using the logical-or operation instead
@@ -7384,7 +8084,7 @@ ArrayAssignmentPattern :
 []
 [Elision]
 
-1.  Return NormalCompetion(empty).
+1.  Return NormalCompletion(empty).
 
 1.  2.  
 
@@ -7405,7 +8105,7 @@ AssignmentProperty
 
 AssignmentProperty : Identifier Initialiser~opt~
 
-1.  Let P be String Value of Identifier.
+1.  Let P be StringValue of Identifier.
 
 2.  Let exists be the result of calling the [[HasProperty]] internal
     method of obj with argument P.
@@ -7700,7 +8400,7 @@ RUNTIME SEMANTICS: LABELLED EVALUATION
 BreakableStatement : IterationStatement
 
 1.  Let stmtResult be the result performing Labelled Evaluation of
-    IterationStatement wth argument labelSet.
+    IterationStatement with argument labelSet.
 
 2.  If stmtResult.[[type]] is break and stmtResult.[[target]] is
     empty, then
@@ -7737,7 +8437,7 @@ SwitchStatement
 1.  Let newLabelSet be a new empty List.
 
 2.  Return the result of performing Labelled Evaluation of this
-    BreakableStatement wth argument newLabelSet.
+    BreakableStatement with argument newLabelSet.
 
 1.  
 
@@ -7768,7 +8468,7 @@ STATIC SEMANTICS: EARLY ERRORS
 Block : { StatementList }
 
 -   -   It is a Syntax Error if the LexicallyDeclaredNames of
-    StatementList contains any duplicate entiries.
+    StatementList contains any duplicate entries.
 
 -   It is a Syntax Error if any element of the LexicallyDeclaredNames of
     StatementList also occurs in the VarDeclaredNames of
@@ -7793,7 +8493,7 @@ StatementListItem : Statement
 
 StatementListItem : Declaration
 
-1.  Return return a new List containing Declaration.
+1.  Return a new List containing Declaration.
 
 1.  
 
@@ -7991,34 +8691,34 @@ BindingIdentifier : Identifier
 -   It is a Syntax Error if the BindingIdentifier is contained in
     strict code and if the Identifier is EVAL or ARGUMENTS.
 
-STATIC SEMANTICS: BOUND NAMES
+STATIC SEMANTICS: BOUNDNAMES
 
 LexicalDeclaration : _LetOrConst BindingList_ ;
 
-1.  Return the Bound Names of BindingList.
+1.  Return the BoundNames of BindingList.
 
 1.  
 
 BindingList : BindingList , LexicalBinding
 
-1.  Let names be the Bound ames of BindingList.
+1.  Let names be the BoundNames of BindingList.
 
-2.  Append to names the elements of the Bound Names of
+2.  Append to names the elements of the BoundNames of
     LexicalBinding.
 
 3.  Return names.
 
 LexicalBinding : _BindingIdentifier Initialiser_~opt~
 
-1.  Return the Bound Names of BindingIdentifier.
+1.  Return the BoundNames of BindingIdentifier.
 
 LexicalBinding: _BindingPattern Initialiser_
 
-1.  Return the Bound Names of BindingPattern.
+1.  Return the BoundNames of BindingPattern.
 
 BindingIdentifier : Identifier
 
-1.  Return a new List containing the String Value of Identifier.
+1.  Return a new List containing the StringValue of Identifier.
 
 STATIC SEMANTICS: ISCONSTANTDECLARATION
 
@@ -8054,14 +8754,14 @@ BindingIdentifier
 
 1.  If environment is not UNDEFINED, then
 
-    a.  Let name be String Value Identifier.
+    a.  Let name be StringValue of Identifier.
 
     b.  Let env be the environment record component of environment.
 
     c.  Call the InitializeBinding concrete method of env passing
         name and value as the arguments.
 
-    d.  Return NormalValue(undefined).
+    d.  Return NormalCompletion(undefined).
 
 2.  Else
 
@@ -8361,15 +9061,15 @@ STATIC SEMANTICS: EARLY ERRORS
 
 BindingPattern : ObjectBindingPattern
 
--   It is a Syntax Error if the Bound Names of ObjectBindingPattern
+-   It is a Syntax Error if the BoundNames of ObjectBindingPattern
     contains the string “EVAL” or the string “ARGUMENTS”.
 
 BindingPattern : ObjectBindingPattern
 
--   It is a Syntax Error if the Bound Names of ArrayBindingPattern
+-   It is a Syntax Error if the BoundNames of ArrayBindingPattern
     contains the string “EVAL” or the string “ARGUMENTS”.
 
-STATIC SEMANTICS: BOUND NAMES
+STATIC SEMANTICS: BOUNDNAMES
 
 1.  
 
@@ -8929,11 +9629,13 @@ NOTE 1 ForBinding is defined in 11.1.4.2.
 
 NOTE 2 A semicolon is not required after a DO-WHILE statement.
 
-Within the Statement part of an IterationStatement a
-ContinueStatement may be used be begin a new iterations. This
-semantics is defined using the abstract operation LoopContinues with
-arguments completion and labelSet. LoopContinues is defined by the
-following step:
+Runtime Semantics
+
+The abstract operation LoopContinues with arguments completion and
+labelSet is defined by the following step:
+
+NOTE Within the Statement part of an IterationStatement a
+ContinueStatement may be used be begin a new iterations.
 
 STATIC SEMANTICS: VARDECLAREDNAMES
 
@@ -9038,8 +9740,8 @@ incrementExpr, and labelSet is performed as follows:
 
     c.  If stmt.[[value]] is not empty, let V = stmt.[[value]].
 
-    d.  e.  f.  If stmt LoopContinues (stmt_,_labelSet) is FALSE,
-        return stmt.
+    d.  e.  f.  If LoopContinues (stmt_,_labelSet) is FALSE, return
+        stmt.
 
     g.  If incrementExpr is not [empty], then
 
@@ -9128,10 +9830,9 @@ IterationStatement :
   FOR (ForDeclaration OF Expression ) Statement
 
 -   It is a Syntax Error if any element of the LexicallyDeclaredNames of
-    ForDeclaration also occurs in the Var Declared Names of
-    Statement.
+    ForDeclaration also occurs in the VarDeclaredNames of Statement.
 
-STATIC SEMANTICS: BOUND NAMES
+STATIC SEMANTICS: BOUNDNAMES
 
 1.  
 
@@ -9139,25 +9840,25 @@ STATIC SEMANTICS: BOUND NAMES
 
 ForDeclaration : _LetOrConst ForBinding _
 
-1.  Return the Bound Names of ForBinding.
+1.  Return the BoundNames of ForBinding.
 
 1.  
 
 1.  
 
-STATIC SEMANTICS: VAR DECLARED NAMES
+STATIC SEMANTICS: VARDECLAREDNAMES
 
 IterationStatement : FOR ( LeftHandSideExpression IN Expression )
 Statement
 
-1.  Return the Var Declared Names of Statement.
+1.  Return the VarDeclaredNames of Statement.
 
 IterationStatement : FOR ( VAR ForBinding IN Expression )
 Statement
 
-1.  Let names be the Bound Names of ForBinding.
+1.  Let names be the BoundNames of ForBinding.
 
-2.  Append to names the elements of the Var Declared Names of
+2.  Append to names the elements of the VarDeclaredNames of
     Statement.
 
 3.  Return names
@@ -9165,19 +9866,19 @@ Statement
 IterationStatement : FOR ( ForDeclaration IN Expression )
 Statement
 
-1.  Return the Var Declared Names of Statement.
+1.  Return the VarDeclaredNames of Statement.
 
 IterationStatement : FOR ( LeftHandSideExpression OF Expression )
 Statement
 
-1.  Return the Var Declared Names of Statement.
+1.  Return the VarDeclaredNames of Statement.
 
 IterationStatement : FOR ( VAR ForBinding OF Expression )
 Statement
 
-1.  Let names be the Bound Names of ForBinding.
+1.  Let names be the BoundNames of ForBinding.
 
-2.  Append to names the elements of the Var Declared Names of
+2.  Append to names the elements of the VarDeclaredNames of
     Statement.
 
 3.  Return names
@@ -9185,7 +9886,7 @@ Statement
 IterationStatement : FOR ( ForDeclaration OF Expression )
 Statement
 
-1.  Return the Var Declared Names of Statement.
+1.  Return the VarDeclaredNames of Statement.
 
 RUNTIME SEMANTICS: BINDING INSTANTIATION
 
@@ -9193,7 +9894,7 @@ RUNTIME SEMANTICS: BINDING INSTANTIATION
 
 ForDeclaration : _LetOrConst ForBinding _
 
-1.  For each element name of the Bound Names of ForBinding do
+1.  For each element name of the BoundNames of ForBinding do
 
     a.  If IsConstantDeclaration of LetOrConst is FALSE, then
 
@@ -9205,8 +9906,8 @@ ForDeclaration : _LetOrConst ForBinding _
         i.  Call environment’s CreateImmutableBinding concrete method
             with argument name.
 
-2.  Perform Binding Initialisation for ForBinding passing value and
-    environment as the arguments.
+2.  Return the result of performing Binding Initialisation for
+    ForBinding passing value and environment as the arguments.
 
 1.  
 
@@ -9230,11 +9931,11 @@ IterationStatement : FOR (ForDeclaration IN Expression )
 Statement
 
 1.  Let keyResult be the result of performing For In/Of Expression
-    Evalation with Statement, enumerate, and labelSet.
+    Evaluation with Statement, enumerate, and labelSet.
 
 2.  ReturnIfAbrupt(keyResult).
 
-3.  Return the result of performing For In/Of Body Evalation with
+3.  Return the result of performing For In/Of Body Evaluation with
     ForDeclaration, Statement, keyResult, lexicalBinding, and
     labelSet.
 
@@ -9242,11 +9943,11 @@ IterationStatement : FOR ( LeftHandSideExpression OF Expression )
 Statement
 
 1.  Let keyResult be the result of performing For In/Of Expression
-    Evalation with Statement, iterate, and labelSet.
+    Evaluation with Statement, iterate, and labelSet.
 
 2.  ReturnIfAbrupt(keyResult).
 
-3.  Return the result of performing For In/Of Body Evalation with
+3.  Return the result of performing For In/Of Body Evaluation with
     LeftHandSideExpression, Statement, keyResult, assignment, and
     labelSet.
 
@@ -9254,27 +9955,28 @@ IterationStatement : FOR ( VAR ForBinding OF Expression )
 Statement
 
 1.  Let keyResult be the result of performing For In/Of Expression
-    Evalation with Expression, iterate, and labelSet.
+    Evaluation with Expression, iterate, and labelSet.
 
 2.  ReturnIfAbrupt(keyResult).
 
-3.  Return the result of performing For In/Of Body Evalation with
+3.  Return the result of performing For In/Of Body Evaluation with
     ForBinding, Statement, keyResult, varBinding, and labelSet.
 
 IterationStatement : FOR (ForDeclaration OF Expression )
 Statement
 
 1.  Let keyResult be the result of performing For In/Of Expression
-    Evalation with Expression, iterate, and labelSet.
+    Evaluation with Expression, iterate, and labelSet.
 
 2.  ReturnIfAbrupt(keyResult).
 
-3.  Return the result of performing For In/Of Body Evalation with
+3.  Return the result of performing For In/Of Body Evaluation with
     ForDeclaration, Statement, keyResult, lexicalBinding, and
     labelSet.
 
 The abstract operation For In/Of Expression Evaluation with arguments
-expr, iterationKind, and labelSet is performed as follows:
+expr, iterationKind, and labelSet. The value of iterationKind is
+either ENUMERATE or ITERATE.
 
 1.  Let exprRef be the result of evaluating the production that is
     expr.
@@ -9286,12 +9988,11 @@ expr, iterationKind, and labelSet is performed as follows:
     a.  If LoopContinues(experValue_,_labelSet) is FALSE, then return
         experValue.
 
-    b.  Else, return Completion{[[type]]: break, [[value]]: UNDEFINED,
+    b.  Else, return Completion {[[type]]: break, [[value]]: empty
         [[target]]: empty}.
 
-4.  If experValue.[[value]] is NULL or UNDEFINED, return
-    Completion{[[type]]: break, [[value]]: UNDEFINED, [[target]]:
-    empty}..
+4.  If experValue.[[value]] is NULL or UNDEFINED, return Completion
+    {[[type]]: break, [[value]]: empty [[target]]: empty}..
 
 5.  Let obj be ToObject(experValue).
 
@@ -9314,24 +10015,25 @@ expr, iterationKind, and labelSet is performed as follows:
 
     b.  Assert: keys.[[type]] is continue
 
-    c.  Return Completion{[[type]]: break, [[value]]: UNDEFINED,
+    c.  Return Completion {[[type]]: break, [[value]]: empty,
         [[target]]: empty}.
 
 9.  Return keys.
 
 The abstract operation For In/Of Body Evaluation with arguments lhs,
-stmt, keys, lhsKind, and labelSet is performed as follows:
+stmt, keys, lhsKind, and labelSet. The value of lhsKind is
+either ASSIGNMENT, VARBINDING or LEXICALBINDING.
 
 1.  Let oldEnv be the running execution context’s LexicalEnvironment.
 
-2.  Let V = UNDEFINED).
+2.  Let V = UNDEFINED .
 
 3.  Repeat
 
     a.  Let next be the result of performing Invoke with arguments
         "NEXT", keys, and an empty arguments List.
 
-    b.  If IteratorComplete(next) is true, the return
+    b.  If IteratorComplete(next) is true, then return
         NormalCompletion(V).
 
     c.  If LoopContinues(next_,_labelSet) is FALSE, then return
@@ -9486,7 +10188,7 @@ STATIC SEMANTICS
 
 STATIC SEMANTICS: EARLY ERRORS
 
--   -   It is a Syntax Error if a RETURN statement that is not within a
+-   -   It is a Syntax Error if a RETURN statement is not within a
     FunctionBody.
 
 RUNTIME SEMANTICS: EVALUATION
@@ -9567,7 +10269,7 @@ STATIC SEMANTICS: EARLY ERRORS
 CaseBlock : { CaseClauses }
 
 -   It is a Syntax Error if the LexicallyDeclaredNames of CaseClauses
-    contains any duplicate entiries.
+    contains any duplicate entries.
 
 -   It is a Syntax Error if any element of the LexicallyDeclaredNames of
     CaseClauses also occurs in the VarDeclaredNames of CaseClauses.
@@ -9926,7 +10628,7 @@ LabelledStatement : Identifier : Statement
 1.  Let newLabelSet be a new empty List.
 
 2.  Return the result of performing Labelled Evaluation of this
-    LabelledStatement wth argument newLabelSet.
+    LabelledStatement with argument newLabelSet.
 
 Syntax
 
@@ -10127,7 +10829,7 @@ FormalParameterList ) { FunctionBody }
 FunctionBody : _StatementList _
 
 -   It is a Syntax Error if the LexicallyDeclaredNames of
-    StatementList contains any duplicate entiries.
+    StatementList contains any duplicate entries.
 
 -   It is a Syntax Error if any element of the LexicallyDeclaredNames of
     StatementList also occurs in the VarDeclaredNames of
@@ -10162,7 +10864,7 @@ FormalsList : FormalsList, FormalParameter
 
 FunctionRestParameter : ... BindingIdentifier
 
--   It is a Syntax Error if the String Value of the sole element of the
+-   It is a Syntax Error if the StringValue of the sole element of the
     BoundNames of BindingIdentifier is EVAL or ARGUMENTS.
 
 -   -   
@@ -10407,9 +11109,9 @@ FunctionRestParameter : ... BindingIdentifier
         array passing P as the argument.
 
     d.  Call the [[DefineOwnProperty]] internal method of A with
-          arguments ToString(n).[[value]], Property Descriptor
-          {[[Value]]: v.[[value]], [[Writable]]: TRUE, [[Enumerable]]:
-          TRUE, [[Configurable]]: TRUE}, and FALSE.
+          arguments ToString(n), Property Descriptor {[[Value]]:
+          v.[[value]], [[Writable]]: TRUE, [[Enumerable]]: TRUE,
+          [[Configurable]]: TRUE}, and FALSE.
 
     e.  Let n = n+1.
 
@@ -10517,7 +11219,7 @@ ArrowFunction : ArrowParameters => ConciseBody
 
 ArrowParameters : BindingIdentifier
 
--   It is a Syntax Error the String Value of the sole element of the
+-   It is a Syntax Error if the StringValue of the sole element of the
     BoundNames of BindingIdentifier is EVAL or ARGUMENTS.
 
 ArrowFormalParameterList : CoverFormalsList, FunctionRestParameter
@@ -10532,8 +11234,8 @@ CoverFormalsList : Expression
     Expression cannot be parsed using FormalsList as the goal
     symbol.
 
--   All Early Errors rules for FormalsList also apply to the Covered
-    FormalsList of Expression.
+-   All Early Errors rules for FormalsList also apply to the
+    CoveredFormalsList of Expression.
 
 STATIC SEMANTICS: BOUNDNAMES
 
@@ -10559,7 +11261,7 @@ ArrowFormalParameterList : CoverFormalsList , FunctionRestParameter
 
 CoverFormalsList : Expression
 
-1.  Return the BoundNames of Covered FormalsList of Expression.
+1.  Return the BoundNames of CoveredFormalsList of Expression.
 
 STATIC SEMANTICS: CONTAINS
 
@@ -10567,14 +11269,14 @@ STATIC SEMANTICS: CONTAINS
 
 ArrowFunction : _ArrowParameters =>_ ConciseBody
 
-1.  If ArrowParameters Constains symbol is TRUE, return TRUE;
+1.  If ArrowParameters Contains symbol is TRUE, return TRUE;
 
-2.  Return ConciseBody Constains symbol .
+2.  Return ConciseBody Contains symbol .
 
-NOTE This is used to detect YIELD and SUPER usage within a
+NOTE This is used to detect YIELD and SUPER usage within an
 ArrowFunction.
 
-STATIC SEMANTICS: COVERED FORMALSLIST
+STATIC SEMANTICS: COVEREDFORMALSLIST
 
 CoverFormalsList : Expression
 
@@ -10601,7 +11303,7 @@ ArrowFormalParameterList :
 CoverFormalsList
 CoverFormalsList , FunctionRestParameter
 
-1.  Return the ExpectedArgumentCount of CoveredCormalsList of
+1.  Return the ExpectedArgumentCount of CoveredFormalsList of
     CoverFormalsList.
 
 STATIC SEMANTICS: LEXICALLYDECLAREDNAMES
@@ -10630,8 +11332,8 @@ deal with the possibility of multiple parameters with the same name.
 ArrowParameters : BindingIdentifier
 
 1.  Return the result of performing Indexed Binding Initialisation for
-    BindingIdentifier using value, lenValue, 0, and environment
-    as the arguments.
+    BindingIdentifier using value, 0, and environment as the
+    arguments.
 
 1.  
 
@@ -10648,19 +11350,19 @@ ArrowFormalParameterList : FunctionRestParameter
 ArrowFormalParameterList : CoverFormalsList
 
 1.  Return the result of performing Indexed Binding Initialisation for
-    CoveredCormalsList of CoverFormalsList using value, 0, and
+    CoveredFormalsList of CoverFormalsList using value, 0, and
     environment as the arguments.
 
 ArrowFormalParameterList : CoverFormalsList , FunctionRestParameter
 
 1.  Let restIndex be the result of performing Indexed Binding
-    Initialisation for CoveredCormalsList of CoverFormalsList using
+    Initialisation for CoveredFormalsList of CoverFormalsList using
     value, 0, and environment as the arguments.
 
 2.  ReturnIfAbrupt(restIndex).
 
 3.  Return the result of performing Indexed Binding Initialisation for
-    FunctionRestParameter using value, lenValue, restIndex, and
+    FunctionRestParameter using value, restIndex, and
     environment as the arguments.
 
 RUNTIME SEMANTICS: EVALUATION
@@ -10743,7 +11445,7 @@ FunctionBody }
 
 MethodDefinition : GET PropertyName ( ) { FunctionBody }
 
--   It is a Syntax Error if FunctionBodyContains YieldExpression.
+-   It is a Syntax Error if FunctionBody Contains YieldExpression.
 
 MethodDefinition : SET PropertyName ( PropertySetParameterList ) {
 FunctionBody }
@@ -10936,7 +11638,7 @@ MethodDefinition : GET PropertyName ( ) { FunctionBody }
 8.  9.  TODO: Make closure a constructor, for ES5 compat
 
 10. Let desc be the Property Descriptor{[[Get]]: closure,
-    [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
+    [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
 11. Let status be the result of calling the [[DefineOwnProperty]]
     internal method of object with arguments propName, desc, and
@@ -10981,7 +11683,7 @@ FunctionBody }
 8.  9.  TODO: Make closure a constructor, for ES5 compat
 
 10. Let desc be the Property Descriptor{[[Set]]: closure,
-    [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
+    [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
 11. Let status be the result of calling the [[DefineOwnProperty]]
     internal method of object with arguments propName, desc, and
@@ -11138,7 +11840,7 @@ ClassHeritage : EXTENDS AssignmentExpression
 ClassElement : MethodDefinition
 
 -   It is a Syntax Error if PropName of MethodDefinition is
-    ″CONSTRUTOR″ and SpecialMethod of MethodDefinition is TRUE.
+    ″CONSTRUCTOR″ and SpecialMethod of MethodDefinition is TRUE.
 
 STATIC SEMANTICS: BOUNDNAMES
 
@@ -11154,12 +11856,12 @@ ClassBody : ClassElementList
 
 2.  For each MethodDefinition m in list, do
 
-    a.  If PropName of m is ″CONSTRUTOR″, return m.
+    a.  If PropName of m is ″CONSTRUCTOR″, return m.
 
 3.  Return empty.
 
 NOTE Early Error rules ensure that there is only one method definition
-named ″CONSTRUTOR″ and that it isn’t an accessor property or generator
+named ″CONSTRUCTOR″ and that it isn’t an accessor property or generator
 definition.
 
 STATIC SEMANTICS: CONTAINS
@@ -11324,9 +12026,9 @@ ClassTail : ClassHeritage~opt~ { ClassBody }
 9.  Let F be the result of performing Property Definition Evaluation
     for constructor with argument proto.
 
-10. Performing the abstract operation MakeConstructor with argument F
-    and FALSE as the optional writablePrototype argument and proto
-    as the optional prototype argument.
+10. Perform the abstract operation MakeConstructor with argument F and
+    FALSE as the optional writablePrototype argument and proto as
+    the optional prototype argument.
 
 11. Let desc be the Property Descriptor{ [[Writable]]: FALSE,
     [[Configurable]]: FALSE}.
@@ -11349,7 +12051,7 @@ RUNTIME SEMANTICS: EVALUATION
 
 ClassDeclaration: CLASS BindingIdentifier ClassTail
 
-1.  Let className be String Value of BindingIdentifier.
+1.  Let className be StringValue of BindingIdentifier.
 
 2.  Let value be the result of ClassDefinitionEvaluation of
     ClassTail with argument className.
@@ -11370,14 +12072,14 @@ ClassExpression: CLASS BindingIdentifier~opt~ ClassTail
 1.  If BindingIdentifier~opt~ is not present, then let className be
     UNDEFINED.
 
-2.  Else, let className be String Value of BindingIdentifier.
+2.  Else, let className be StringValue of BindingIdentifier.
 
 3.  Let value be the result of ClassDefinitionEvaluation of
     ClassTail with argument className.
 
 4.  ReturnIfAbrupt(value).
 
-5.  Return NormalValue(value).
+5.  Return NormalCompletion(value).
 
 The abstract operation FunctionCreate requires the arguments: kind
 which is one of (Normal, Method, Arrow), an parameter list specified by
@@ -11936,7 +12638,7 @@ DEFINEPROPERTIES function is called, the following steps are taken:
 1.  Return the result of the abstract operation ObjectDefineProperties
     with arguments O and Properties.
 
-The abstract operations ObjectDefineProperties with arguments O and
+The abstract operation ObjectDefineProperties with arguments O and
 Properties performs the following steps:
 
 If an implementation defines a specific order of enumeration for the
@@ -11977,7 +12679,7 @@ built-in OBJECT constructor.
 
 When the TOSTRING method is called, the following steps are taken:
 
-Table 27 — Tags for Classified Native Objects
+Table 27 — Tags for Classified Starndard Objects
 
   [[NATIVEBRAND]] VALUE   TAG VALUE
   ----------------------- -------------
@@ -12258,7 +12960,7 @@ performs the following steps:
 3.  Set A’s common internal methods except for [[DefineOwnProperty]]
     to the default definitions specified in 8.12.
 
-4.  Set A’s [[DefineOwnProperty]] internal methods to the definition
+4.  Set A’s [[DefineOwnProperty]] internal method to the definition
     given in 15.4.5.1.
 
 5.  Set the [[NativeBrand]] internal property of A to the value
@@ -12266,9 +12968,10 @@ performs the following steps:
 
 6.  Set the [[Extensible]] internal property of A to TRUE.
 
-7.  Call the [[DefineOwnProperty]] internal method of A with arguments
-    "LENGTH", Property Desciptor {[[Value]]: length, [[Writable]]:
-    TRUE, [[Enumerable]]: FALSE, [[Configurable]]: FALSE}, and FALSE.
+7.  Call the default [[DefineOwnProperty]] internal method (8.12.9) on
+    A with arguments "LENGTH", Property Descriptor {[[Value]]:
+    length, [[Writable]]: TRUE, [[Enumerable]]: FALSE,
+    [[Configurable]]: FALSE}, and FALSE.
 
 8.  Return A.
 
@@ -12507,8 +13210,8 @@ When the TOSTRING method is called, the following steps are taken:
 NOTE The TOSTRING function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the TOSTRING
-function can be applied successfully to a host object is
-implementation-dependent.
+function can be applied successfully to an exotic object that is not an
+Array is implementation-dependent.
 
 The elements of the array are converted to Strings using their
 TOLOCALESTRING methods, and these Strings are then concatenated,
@@ -12527,8 +13230,8 @@ do not use this parameter position for anything else.
 NOTE 2 The TOLOCALESTRING function is intentionally generic; it does not
 require that its THIS value be an Array object. Therefore it can be
 transferred to other kinds of objects for use as a method. Whether the
-TOLOCALESTRING function can be applied successfully to a host object is
-implementation-dependent.
+TOLOCALESTRING function can be applied successfully to an exotic object
+that is not an Array is implementation-dependent.
 
 When the CONCAT method is called with zero or more arguments item1,
 item2, etc., it returns an array containing the array elements of the
@@ -12538,11 +13241,15 @@ The following steps are taken:
 
 The LENGTH property of the CONCAT method is 1.
 
-NOTE The CONCAT function is intentionally generic; it does not require
+NOTE 1 The explicit setting of the LENGTH property in step 7 is
+necessary to ensure that its value is correct in situations where the
+trailing elements of the result Array are not present.
+
+NOTE 2 The CONCAT function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the CONCAT
-function can be applied successfully to a host object is
-implementation-dependent.
+function can be applied successfully to an exotic object that is not an
+Array is implementation-dependent.
 
 The elements of the array are converted to Strings, and these Strings
 are then concatenated, separated by occurrences of the separator. If
@@ -12556,7 +13263,7 @@ The LENGTH property of the JOIN method is 1.
 NOTE The JOIN function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore, it can be transferred
 to other kinds of objects for use as a method. Whether the JOIN function
-can be applied successfully to a host object is
+can be applied successfully to an exotic object that is not an Array is
 implementation-dependent.
 
 The last element of the array is removed from the array and returned.
@@ -12564,7 +13271,8 @@ The last element of the array is removed from the array and returned.
 NOTE The POP function is intentionally generic; it does not require that
 its THIS value be an Array object. Therefore it can be transferred to
 other kinds of objects for use as a method. Whether the POP function can
-be applied successfully to a host object is implementation-dependent.
+be applied successfully to an exotic object that is not an Array is
+implementation-dependent.
 
 The arguments are appended to the end of the array, in the order in
 which they appear. The new length of the array is returned as the result
@@ -12578,7 +13286,7 @@ The LENGTH property of the PUSH method is 1.
 NOTE The PUSH function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the PUSH function
-can be applied successfully to a host object is
+can be applied successfully to an exotic object that is not an Array is
 implementation-dependent.
 
 The elements of the array are rearranged so as to reverse their order.
@@ -12587,16 +13295,16 @@ The object is returned as the result of the call.
 NOTE The REVERSE function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore, it can be transferred
 to other kinds of objects for use as a method. Whether the REVERSE
-function can be applied successfully to a host object is
-implementation-dependent.
+function can be applied successfully to an exotic object that is not an
+Array is implementation-dependent.
 
 The first element of the array is removed from the array and returned.
 
 NOTE The SHIFT function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the SHIFT
-function can be applied successfully to a host object is
-implementation-dependent.
+function can be applied successfully to an exotic object that is not an
+Array is implementation-dependent.
 
 The SLICE method takes two arguments, start and end, and returns an
 array containing the elements of the array from element start up to,
@@ -12608,11 +13316,16 @@ of the array. The following steps are taken:
 
 The LENGTH property of the SLICE method is 2.
 
-NOTE The SLICE function is intentionally generic; it does not require
+NOTE 1 The explicit setting of the LENGTH property of the result Array
+in step 15 is necessary to ensure that its value is correct in
+situations where the trailing elements of the result Array are not
+present.
+
+NOTE 2 The SLICE function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the SLICE
-function can be applied successfully to a host object is
-implementation-dependent.
+function can be applied successfully to an exotic object that is not an
+Array is implementation-dependent.
 
 The elements of this array are sorted. The sort is not necessarily
 stable (that is, elements that compare equal do not necessarily remain
@@ -12719,7 +13432,7 @@ result, followed by non-existent property values.
 NOTE 2 The SORT function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore, it can be transferred
 to other kinds of objects for use as a method. Whether the SORT function
-can be applied successfully to a host object is
+can be applied successfully to an exotic object that is not an Array is
 implementation-dependent.
 
 When the SPLICE method is called with two or more arguments start,
@@ -12730,11 +13443,15 @@ deleted elements (if any) is returned. The following steps are taken:
 
 The LENGTH property of the SPLICE method is 2.
 
-NOTE The SPLICE function is intentionally generic; it does not require
+NOTE 1 The explicit setting of the LENGTH property of the result Array
+in step 13 is necessary to ensure that its value is correct in
+situations where its trailing elements are not present.
+
+NOTE 2 The SPLICE function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the SPLICE
-function can be applied successfully to a host object is
-implementation-dependent.
+function can be applied successfully to an exotic object that is not an
+Array is implementation-dependent.
 
 The arguments are prepended to the start of the array, such that their
 order within the array is the same as the order in which they appear in
@@ -12748,8 +13465,8 @@ The LENGTH property of the UNSHIFT method is 1.
 NOTE The UNSHIFT function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the UNSHIFT
-function can be applied successfully to a host object is
-implementation-dependent.
+function can be applied successfully to an exotic object that is not an
+Array is implementation-dependent.
 
 INDEXOF compares searchElement to the elements of the array, in
 ascending order, using the internal Strict Equality Comparison Algorithm
@@ -12771,8 +13488,8 @@ The LENGTH property of the INDEXOF method is 1.
 NOTE The INDEXOF function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the INDEXOF
-function can be applied successfully to a host object is
-implementation-dependent.
+function can be applied successfully to an exotic object that is not an
+Array is implementation-dependent.
 
 LASTINDEXOF compares searchElement to the elements of the array in
 descending order using the internal Strict Equality Comparison Algorithm
@@ -12794,8 +13511,8 @@ The LENGTH property of the LASTINDEXOF method is 1.
 NOTE The LASTINDEXOF function is intentionally generic; it does not
 require that its THIS value be an Array object. Therefore it can be
 transferred to other kinds of objects for use as a method. Whether the
-LASTINDEXOF function can be applied successfully to a host object is
-implementation-dependent.
+LASTINDEXOF function can be applied successfully to an exotic object
+that is not an Array is implementation-dependent.
 
 callbackfn should be a function that accepts three arguments and
 returns a value that is coercible to the Boolean value TRUE or FALSE.
@@ -12833,8 +13550,8 @@ The LENGTH property of the EVERY method is 1.
 NOTE The EVERY function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the EVERY
-function can be applied successfully to a host object is
-implementation-dependent.
+function can be applied successfully to an exotic object that is not an
+Array is implementation-dependent.
 
 callbackfn should be a function that accepts three arguments and
 returns a value that is coercible to the Boolean value TRUE or FALSE.
@@ -12872,7 +13589,7 @@ The LENGTH property of the SOME method is 1.
 NOTE The SOME function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the SOME function
-can be applied successfully to a host object is
+can be applied successfully to an exotic object that is not an Array is
 implementation-dependent.
 
 callbackfn should be a function that accepts three arguments. FOREACH
@@ -12950,8 +13667,8 @@ The LENGTH property of the FOREACH method is 1.
 NOTE The FOREACH function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the FOREACH
-function can be applied successfully to a host object is
-implementation-dependent.
+function can be applied successfully to an exotic object that is not an
+Array is implementation-dependent.
 
 callbackfn should be a function that accepts three arguments. MAP
 calls callbackfn once for each element in the array, in ascending
@@ -12984,7 +13701,8 @@ The LENGTH property of the MAP method is 1.
 NOTE The MAP function is intentionally generic; it does not require that
 its THIS value be an Array object. Therefore it can be transferred to
 other kinds of objects for use as a method. Whether the MAP function can
-be applied successfully to a host object is implementation-dependent.
+be applied successfully to an exotic object that is not an Array is
+implementation-dependent.
 
 callbackfn should be a function that accepts three arguments and
 returns a value that is coercible to the Boolean value TRUE or FALSE.
@@ -13020,8 +13738,8 @@ The LENGTH property of the FILTER method is 1.
 NOTE The FILTER function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the FILTER
-function can be applied successfully to a host object is
-implementation-dependent.
+function can be applied successfully to an exotic object that is not an
+Array is implementation-dependent.
 
 callbackfn should be a function that takes four arguments. REDUCE
 calls the callback, as a function, once for each element present in the
@@ -13058,8 +13776,8 @@ The LENGTH property of the REDUCE method is 1.
 NOTE The REDUCE function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
 to other kinds of objects for use as a method. Whether the REDUCE
-function can be applied successfully to a host object is
-implementation-dependent.
+function can be applied successfully to an exotic object that is not an
+Array is implementation-dependent.
 
 callbackfn should be a function that takes four arguments. REDUCERIGHT
 calls the callback, as a function, once for each element present in the
@@ -13096,8 +13814,8 @@ The LENGTH property of the REDUCERIGHT method is 1.
 NOTE The REDUCERIGHT function is intentionally generic; it does not
 require that its this value be an Array object. Therefore it can be
 transferred to other kinds of objects for use as a method. Whether the
-REDUCERIGHT function can be applied successfully to a host object is
-implementation-dependent.
+REDUCERIGHT function can be applied successfully to an exotic object
+that is not an Array is implementation-dependent.
 
 Array instances inherit properties from the Array prototype object and
 have the [[NativeBrand]] internal property with value NativeArray. Array
@@ -13165,15 +13883,120 @@ prototype object (15.5.4).
 This property has the attributes { [[Writable]]: FALSE, [[Enumerable]]:
 FALSE, [[Configurable]]: FALSE }.
 
-Returns a String value containing as many characters as the number of
-arguments. Each argument specifies one character of the resulting
-String, with the first argument specifying the first character, and so
-on, from left to right. An argument is converted to a character by
-applying the operation ToUint16 (9.7) and regarding the resulting 16-bit
-integer as the code unit value of a character. If no arguments are
-supplied, the result is the empty String.
+The STRING.FROMCHARCODE function may be called with a variable number of
+arguments which form the rest parameter codeUnits. The following steps
+are taken:
 
 The LENGTH property of the FROMCHARCODE function is 1.
+
+The STRING.FROMCHARCODE function may be called with a variable number of
+arguments which form the rest parameter codePoints. The following
+steps are taken:
+
+1.  Assert: codeUnits is a well-formed rest parameter object.
+
+2.  Let length be the resulting of calling the [[Get]] internal method
+    of codeUnits with argument "LENGTH".
+
+3.  Let elements be a new List.
+
+4.  Let nextIndex be 0.
+
+5.  Repeat while nextIndex < length
+
+    a.  Let next be the result of calling the [[Get]] internal method
+        of codePoint with argument ToString(nextIndex).
+
+    b.  Let nextCP be ToNumber(next).
+
+    c.  ReturnIfAbrupt(nextCP).
+
+    d.  If SaveValue(nextCP, ToInteger(nextCP)) is FALSE,then throw
+        a RANGEERROR exception.
+
+    e.  If nextCP < 0 or nextCP > 0x10FFFF, then throw a RANGEERROR
+        exception.
+
+    f.  Append the elements of the UTF-16 Encoding of nextCP to the
+        end of elements.
+
+    g.  Let nextIndex be nextIndex + 1.
+
+6.  Return the string value whose elements are, in order, the elements
+    in the List elements. If length is 0, the empty string is
+    returned.
+
+The LENGTH property of the FROMCODEPOINT function is 0.
+
+The STRING.RAW function may be called with a variable number of
+arguments. The first argument is callSite and the remainder of the
+arguments form the rest parameter substitutions. The following steps
+are taken:
+
+1.  Assert: substitutions is a well-formed rest parameter object.
+
+2.  Let cooked be ToObject(callSite).
+
+3.  ReturnIfAbrupt(cooked).
+
+4.  Let rawValue be the resulting of calling the [[Get]] internal
+    method of cooked with argument "RAW".
+
+5.  Let raw be ToObject(rawValue).
+
+6.  ReturnIfAbrupt(raw).
+
+7.  Let len be the resulting of calling the [[Get]] internal method of
+    raw with argument "LENGTH".
+
+8.  Let literalSegments be ToUint(len).
+
+9.  ReturnIfAbrupt(literalSegments).
+
+10. If literalSegments = 0, then return the empty string.
+
+11. Let stringElements be a new List.
+
+12. Let nextIndex be 0.
+
+13. Repeat while nextIndex < literalSegments
+
+    a.  Let nextKey be ToString(nextIndex).
+
+    b.  Let next be the result of calling the [[Get]] internal method
+        of raw with argument nextKey.
+
+    c.  Let nextSeg be ToString(next).
+
+    d.  ReturnIfAbrupt(nextSeg).
+
+    e.  Append in order the code unit elements of nextSeg to the end
+        of elements.
+
+    f.  If nextIndex + 1 = literalSegments, then
+
+        i.  Return the string value whose elements are, in order, the
+            elements in the List elements. If length is 0, the empty
+            string is returned.
+
+    g.  Let next be the result of calling the [[Get]] internal method
+        of substitutions with argument nextKey.
+
+    h.  Let nextSub be ToString(next).
+
+    i.  ReturnIfAbrupt(nextSub).
+
+    j.  Append in order the code unit elements of nextSub to the end
+        of elements.
+
+    k.  Let nextIndex be nextIndex + 1.
+
+The LENGTH property of the RAW function is 1.
+
+NOTE String.raw is intended for use as a tag function of a Tagged Quasi
+(11.2.6). When called as such the first argument will be a well formed
+quasi call site object and the rest parameter will contain the
+substitution values.
 
 The String prototype object is itself a String object whose value is an
 empty String. The String prototype object has the [[NativeBrand]]
@@ -13198,10 +14021,10 @@ The VALUEOF function is not generic; it throws a TYPEERROR exception if
 its THIS value is not a String or String object. Therefore, it cannot be
 transferred to other kinds of objects for use as a method.
 
-Returns a String containing the character at position pos in the
-String resulting from converting this object to a String. If there is no
-character at that position, the result is the empty String. The result
-is a String value, not a String object.
+NOTE Returns a single element String containing the code unit at element
+position pos in the String value resulting from converting this object
+to a String. If there is no element at that position, the result is the
+empty String. The result is a String value, not a String object.
 
 If pos is a value of Number type that is an integer, then the result
 of X.CHARAT(pos) is equal to the result of X.SUBSTRING(pos,
@@ -13210,14 +14033,34 @@ pos+1).
 When the CHARAT method is called with one argument pos, the following
 steps are taken:
 
+1.  ReturnIfAbrupt(CheckObjectCoercible(THIS value)).
+
+2.  Let S be the result of calling ToString, giving it the THIS value
+    as its argument.
+
+3.  ReturnIfAbrupt(S).
+
+4.  Let position be ToInteger(pos).
+
+5.  ReturnIfAbrupt(position).
+
+6.  Let size be the number of elements in S.
+
+7.  If position < 0 or position ≥ size, return the empty String.
+
+8.  Return a String of length 1, containing one code unit from S,
+    namely the code unit at position position, where the first
+    (leftmost) code unit in S is considered to be at position 0, the
+    next one at position 1, and so on.
+
 NOTE The CHARAT function is intentionally generic; it does not require
 that its THIS value be a String object. Therefore, it can be transferred
 to other kinds of objects for use as a method.
 
-Returns a Number (a nonnegative integer less than 2^16^) representing
-the code unit value of the character at position pos in the String
-resulting from converting this object to a String. If there is no
-character at that position, the result is NAN.
+NOTE Returns a Number (a nonnegative integer less than 2^16^) that is
+the code unit value of the string element at position pos in the
+String resulting from converting this object to a String. If there is no
+element at that position, the result is NAN.
 
 When the CHARCODEAT method is called with one argument pos, the
 following steps are taken:
@@ -13227,10 +14070,10 @@ require that its THIS value be a String object. Therefore it can be
 transferred to other kinds of objects for use as a method.
 
 When the CONCAT method is called with zero or more arguments string1,
-string2, etc., it returns a String consisting of the characters of
-this object (converted to a String) followed by the characters of each
-of string1, string2, etc. (where each argument is converted to a
-String). The result is a String value, not a String object. The
+string2, etc., it returns a String consisting of the string elements
+of this object (converted to a String) followed by the string elements
+of each of string1, string2, etc. (where each argument is converted
+to a String). The result is a String value, not a String object. The
 following steps are taken:
 
 The LENGTH property of the CONCAT method is 1.
@@ -13356,24 +14199,32 @@ converted to a String if need be.
 Otherwise, let newstring denote the result of converting
 replaceValue to a String. The result is a String value derived from
 the original input String by replacing each matched substring with a
-String derived from newstring by replacing characters in newstring
-by replacement text as specified in Table 28. These $ replacements are
-done left-to-right, and, once such a replacement is performed, the new
+String derived from newstring by replacing elements in newstring by
+replacement text as specified in Table 28. These $ replacements are done
+left-to-right, and, once such a replacement is performed, the new
 replacement text is not subject to further replacements. For example,
 "$1,$2".REPLACE(/(\$(\D))/G, "$$1-$1$2") returns "$1-$11,$1-$22". A $ in
 newstring that does not match any of the forms below is left as is.
 
 Table 28 — Replacement Text Symbol Substitutions
 
-  ------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Characters   Replacement text
-  $$           $
-  $&           The matched substring.
-  $‘           The portion of string that precedes the matched substring.
-  $’           The portion of string that follows the matched substring.
-  $N           The n^th^ capture, where n is a single digit in the range 1 to 9 and $n is not followed by a decimal digit. If n_≤_m and the nth capture is UNDEFINED, use the empty String instead. If n_>_m, the result is implementation-defined.
-  $NN          The nn^th^ capture, where nn is a two-digit decimal number in the range 01 to 99. If nn_≤_m and the nn^th^ capture is UNDEFINED, use the empty String instead. If nn_>_m, the result is implementation-defined.
-  ------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  --------------------- --------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Code unit             Unicode Characters                Replacement text
+
+  0x0024, 0x0024        $$                                $
+
+  0x0024, 0x0026        $&                                The matched substring.
+
+  0x0024, 0x0060        $`                                The portion of string that precedes the matched substring.
+
+  0x0024, 0x0027        $'                                The portion of string that follows the matched substring.
+
+  0x0024, N where       $N where                          The n^th^ capture, where n is a single digit in the range 1 to 9 and $n is not followed by a decimal digit. If n_≤_m and the nth capture is UNDEFINED, use the empty String instead. If n_>_m, the result is implementation-defined.
+  0x0030 ≤ N ≤ 0x0039   N is one of 0 1 2 3 4 5 6 7 8 9   
+
+  0x0024, N, N where    $NN where                         The nn^th^ capture, where nn is a two-digit decimal number in the range 01 to 99. If nn_≤_m and the nn^th^ capture is UNDEFINED, use the empty String instead. If nn_>_m, the result is implementation-defined.
+  0x0030 ≤ N ≤ 0x0039   N is one of 0 1 2 3 4 5 6 7 8 9   
+  --------------------- --------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 NOTE The REPLACE function is intentionally generic; it does not require
 that its THIS value be a String object. Therefore, it can be transferred
@@ -13388,13 +14239,13 @@ to other kinds of objects for use as a method.
 
 The SLICE method takes two arguments, start and end, and returns a
 substring of the result of converting this object to a String, starting
-from character position start and running to, but not including,
-character position end (or through the end of the String if end is
-UNDEFINED). If start is negative, it is treated as
-sourceLength_+_start where sourceLength is the length of the String.
-If end is negative, it is treated as sourceLength_+_end where
-sourceLength is the length of the String. The result is a String
-value, not a String object. The following steps are taken:
+from element position start and running to, but not including, element
+position end (or through the end of the String if end is UNDEFINED).
+If start is negative, it is treated as sourceLength_+_start where
+sourceLength is the length of the String. If end is negative, it is
+treated as sourceLength_+_end where sourceLength is the length of
+the String. The result is a String value, not a String object. The
+following steps are taken:
 
 The LENGTH property of the SLICE method is 2.
 
@@ -13417,10 +14268,10 @@ this case, separator does not match the empty substring at the
 beginning or end of the input String, nor does it match the empty
 substring at the end of the previous separator match. (For example, if
 separator is the empty String, the String is split up into individual
-characters; the length of the result array equals the length of the
-String, and each substring contains one character.) If separator is a
-regular expression, only the first match at a given position of the THIS
-String is considered, even if backtracking could yield a
+code unit elements; the length of the result array equals the length of
+the String, and each substring contains one code unit.) If separator
+is a regular expression, only the first match at a given position of the
+THIS String is considered, even if backtracking could yield a
 non-empty-substring match at that position. (For example,
 "AB".SPLIT(/A*?/) evaluates to the array ["A","B"], while
 "AB".SPLIT(/A*/) evaluates to the array["","B"].)
@@ -13464,8 +14315,8 @@ to other kinds of objects for use as a method.
 
 The SUBSTRING method takes two arguments, start and end, and returns
 a substring of the result of converting this object to a String,
-starting from character position start and running to, but not
-including, character position end of the String (or through the end of
+starting from element position start and running to, but not
+including, element position end of the String (or through the end of
 the String is end is UNDEFINED). The result is a String value, not a
 String object.
 
@@ -13483,20 +14334,16 @@ NOTE The SUBSTRING function is intentionally generic; it does not
 require that its THIS value be a String object. Therefore, it can be
 transferred to other kinds of objects for use as a method.
 
-The following steps are taken:
-
-For the purposes of this operation, the 16-bit code units of the Strings
-are treated as code points in the Unicode Basic Multilingual Plane.
-Surrogate code points are directly transferred from S to L without
-any mapping.
+This function interprets a string value as a sequence of code points, as
+described in 8.4. The following steps are taken:
 
 The result must be derived according to the case mappings in the Unicode
 character database (this explicitly includes not only the
 UnicodeData.txt file, but also the SpecialCasings.txt file that
-accompanies it in Unicode 2.1.8 and later).
+accompanies it).
 
-NOTE 1 The case mapping of some characters may produce multiple
-characters. In this case the result String may not be the same length as
+NOTE 1 The case mapping of some code points may produce multiple code
+points . In this case the result String may not be the same length as
 the source String. Because both TOUPPERCASE and TOLOWERCASE have
 context-sensitive behaviour, the functions are not symmetrical. In other
 words, S.TOUPPERCASE().TOLOWERCASE() is not necessarily equal to
@@ -13505,6 +14352,9 @@ S.TOLOWERCASE().
 NOTE 2 The TOLOWERCASE function is intentionally generic; it does not
 require that its THIS value be a String object. Therefore, it can be
 transferred to other kinds of objects for use as a method.
+
+This function interprets a string value as a sequence of code points, as
+described in 8.4.
 
 This function works exactly the same as TOLOWERCASE except that its
 result is intended to yield the correct result for the host
@@ -13521,13 +14371,20 @@ NOTE 2 The TOLOCALELOWERCASE function is intentionally generic; it does
 not require that its THIS value be a String object. Therefore, it can be
 transferred to other kinds of objects for use as a method.
 
+This function interprets a string value as a sequence of code points, as
+described in 8.4.
+
 This function behaves in exactly the same way as
-STRING.PROTOTYPE.TOLOWERCASE, except that characters are mapped to their
-uppercase equivalents as specified in the Unicode Character Database.
+STRING.PROTOTYPE.TOLOWERCASE, except that code points are mapped to
+their uppercase equivalents as specified in the Unicode Character
+Database.
 
 NOTE The TOUPPERCASE function is intentionally generic; it does not
 require that its THIS value be a String object. Therefore, it can be
 transferred to other kinds of objects for use as a method.
+
+This function interprets a string value as a sequence of code points, as
+described in 8.4.
 
 This function works exactly the same as TOUPPERCASE except that its
 result is intended to yield the correct result for the host
@@ -13543,6 +14400,9 @@ do not use this parameter position for anything else.
 NOTE 2 The TOLOCALEUPPERCASE function is intentionally generic; it does
 not require that its THIS value be a String object. Therefore, it can be
 transferred to other kinds of objects for use as a method.
+
+This function interprets a string value as a sequence of code points, as
+described in 8.4.
 
 The following steps are taken:
 
@@ -13572,8 +14432,8 @@ The following steps are taken:
 
 8.  Return T.
 
-NOTE 1 This method creates a String consisting of the characters of this
-object (converted to String) repeated count time.
+NOTE 1 This method creates a String consisting of the string elements of
+this object (converted to String) repeated count time.
 
 NOTE 2 The REPEAT function is intentionally generic; it does not require
 that its THIS value be a String object. Therefore, it can be transferred
@@ -13599,26 +14459,26 @@ The following steps are taken:
 
 7.  ReturnIfAbrupt(pos).
 
-8.  Let len be the number of characters in S.
+8.  Let len be the number of elements in S.
 
 9.  Let start be min(max(pos, 0), len).
 
-10. Let searchLength be the number of characters in searchString.
+10. Let searchLength be the number of elements in searchString.
 
 11. If searchLength+start is greater than len, return FALSE.
 
-12. If the searchLength sequence of characters of S starting at
-    start is the same as the full character sequence of
-    searchString, return TRUE.
+12. If the searchLength sequence of elements of S starting at
+    start is the same as the full element sequence of searchString,
+    return TRUE.
 
 13. Otherwise, return FALSE.
 
 The LENGTH property of the STARTSWITH method is 1.
 
-NOTE 1 This method returns TRUE if the sequence of characters of
+NOTE 1 This method returns TRUE if the sequence of elements of
 searchString converted to a String is the same as the corresponding
-characters of this object (converted to a String) starting at
-position. Otherwise returns FALSE.
+elements of this object (converted to a String) starting at position.
+Otherwise returns FALSE.
 
 NOTE 2 The STARTSWITH function is intentionally generic; it does not
 require that its THIS value be a String object. Therefore, it can be
@@ -13639,7 +14499,7 @@ The following steps are taken:
 
 5.  ReturnIfAbrupt(searchStr).
 
-6.  Let len be the number of characters in S.
+6.  Let len be the number of elements in S.
 
 7.  If endPosition is UNDEFINED, let pos be len, else let pos be
     ToInteger(endPosition).
@@ -13648,24 +14508,24 @@ The following steps are taken:
 
 9.  Let end be min(max(pos, 0), len).
 
-10. Let searchLength be the number of characters in searchString.
+10. Let searchLength be the number of elements in searchString.
 
 11. Let start be end - searchLength.
 
 12. If start is less than 0, return FALSE.
 
-13. If the searchLength sequence of characters of S starting at
-    start is the same as the full character sequence of
-    searchString, return TRUE.
+13. If the searchLength sequence of elements of S starting at
+    start is the same as the full element sequence of searchString,
+    return TRUE.
 
 14. Otherwise, return FALSE.
 
 The LENGTH property of the ENDSWITH method is 1.
 
-NOTE 1 Returns TRUE if the sequence of characters of searchString
-converted to a String is the same as the corresponding characters of
-this object (converted to a String) starting at endPosition –
-length(this). Otherwise returns FALSE.
+NOTE 1 Returns TRUE if the sequence of elements of searchString
+converted to a String is the same as the corresponding elements of this
+object (converted to a String) starting at endPosition – length(this).
+Otherwise returns FALSE.
 
 NOTE 2 The ENDSWITH function is intentionally generic; it does not
 require that its THIS value be a String object. Therefore, it can be
@@ -13692,7 +14552,7 @@ and performs the following steps:
 
 7.  ReturnIfAbrupt(pos).
 
-8.  Let len be the number of characters in S.
+8.  Let len be the number of elements in S.
 
 9.  Let start be min(max(pos, 0), len).
 
@@ -13717,6 +14577,50 @@ NOTE 2 The CONTAINS function is intentionally generic; it does not
 require that its THIS value be a String object. Therefore, it can be
 transferred to other kinds of objects for use as a method.
 
+NOTE Returns a Number (a nonnegative integer less than 1114112) that is
+the UTF-16 encode code point value starting at the string element at
+position pos in the String resulting from converting this object to a
+String. If there is no element at that position, the result is NAN. If a
+valid UTF-16 sudsarrogate pair does not begin at pos, the result is
+the code unit at pos.
+
+When the CODEPOINTAT method is called with one argument pos, the
+following steps are taken:
+
+1.  ReturnIfAbrupt(CheckObjectCoercible(THIS value)).
+
+2.  Let S be the result of calling ToString, giving it the THIS value
+    as its argument.
+
+3.  ReturnIfAbrupt(S).
+
+4.  Let position be ToInteger(pos).
+
+5.  ReturnIfAbrupt(position).
+
+6.  Let size be the number of elements in S.
+
+7.  If position < 0 or position ≥ size, return NAN.
+
+8.  Let first be the code unit value of the element at position
+    position in the String S, where the first (leftmost) element in
+    S is considered to be at position 0, the next one at position 1,
+    and so on.
+
+9.  If first < 0xD800 or first > 0xDBFFor position+1 = size,
+    then return first.
+
+10. Let second be the code unit value of the element at position
+    position+1 in the String S.
+
+11. If second < 0xDC00 or first > 0xDFFF, then return first.
+
+12. Return ((first – 0xD800) × 1024) + (second – 0xDC00) + 0x10000.
+
+NOTE The CHARCODEAT function is intentionally generic; it does not
+require that its THIS value be a String object. Therefore it can be
+transferred to other kinds of objects for use as a method.
+
 1.  2.  3.  4.  5.  6.  7.  a.  b.  c.  
 
 8.  
@@ -13729,11 +14633,11 @@ names.
 
 The [[PrimitiveValue]] internal property is the String value represented
 by this String object. The array index named properties correspond to
-the individual characters of the String value. A special
+the individual elements of the String value. A special
 [[GetOwnProperty]] internal method is used to specify the number,
 values, and attributes of the array index named properties.
 
-The number of characters in the String value represented by this String
+The number of elements in the String value represented by this String
 object.
 
 Once a String object is created, this property is unchanging. It has the
@@ -13743,7 +14647,7 @@ attributes { [[Writable]]: FALSE, [[Enumerable]]: FALSE,
 String objects use a variation of the [[GetOwnProperty]] internal method
 used for other native ECMAScript objects (8.12.1). This special internal
 method provides access to named properties corresponding to the
-individual characters of String objects.
+individual elements of String objects.
 
 Assume S is a String object and P is a String.
 
@@ -16203,16 +17107,16 @@ The abstract operation RegExpExec with arguments R (an object) and S
 
         iii. Return NULL.
 
-    b.  Call the [[Match]] internal method of R with arguments S and
-        i.
+    b.  Let r be the result of calling the [[Match]] internal method
+        of R with arguments S and i.
 
-    c.  If [[Match]] returned FAILURE, then
+    c.  If r is FAILURE, then
 
         i.  _Let i = i+1._
 
     d.  else
 
-        i.  Let r be the State result of the call to [[Match]].
+        i.  Assert: r is a State.
 
         ii. Set matchSucceeded to TRUE.
 
@@ -16528,15 +17432,15 @@ JSON.stringify produces a String that conforms to the following JSON
 grammar. JSON.parse accepts a String that conforms to the JSON grammar.
 
 JSON is similar to ECMAScript source text in that it consists of a
-sequence of characters conforming to the rules of SourceCharacter. The
-JSON Lexical Grammar defines the tokens that make up a JSON text similar
-to the manner that the ECMAScript lexical grammar defines the tokens of
-an ECMAScript source text. The JSON Lexical grammar only recognises the
-white space character specified by the production JSONWhiteSpace. The
-JSON lexical grammar shares some productions with the ECMAScript lexical
-grammar. All nonterminal symbols of the grammar that do not begin with
-the characters “JSON” are defined by productions of the ECMAScript
-lexical grammar.
+sequence of Unicode characters conforming to the rules of
+SourceCharacter. The JSON Lexical Grammar defines the tokens that make
+up a JSON text similar to the manner that the ECMAScript lexical grammar
+defines the tokens of an ECMAScript source text. The JSON Lexical
+grammar only recognises the white space character specified by the
+production JSONWhiteSpace. The JSON lexical grammar shares some
+productions with the ECMAScript lexical grammar. All nonterminal symbols
+of the grammar that do not begin with the characters “JSON” are defined
+by productions of the ECMAScript lexical grammar.
 
 Syntax
 
@@ -16565,7 +17469,7 @@ JSONEscapeSequence ::
 
 JSONEscapeCharacter
 
-UnicodeEscapeSequence
+U HexDigit HexDigit HexDigit HexDigit
 
 JSONEscapeCharacter :: ONE OF
 
@@ -16662,15 +17566,16 @@ NOTE In the case where there are duplicate name Strings within an
 object, lexically preceding values for the same key shall be
 overwritten.
 
-The STRINGIFY function returns a String in JSON format representing an
-ECMAScript value. It can take three parameters. The value parameter is
-an ECMAScript value, which is usually an object or array, although it
-can also be a String, Boolean, Number or NULL. The optional replacer
-parameter is either a function that alters the way objects and arrays
-are stringified, or an array of Strings and Numbers that acts as a white
-list for selecting the object properties that will be stringified. The
-optional space parameter is a String or Number that allows the result
-to have white space injected into it to improve human readability.
+The STRINGIFY function returns a String in UTF-16 encoded JSON format
+representing an ECMAScript value. It can take three parameters. The
+value parameter is an ECMAScript value, which is usually an object or
+array, although it can also be a String, Boolean, Number or NULL. The
+optional replacer parameter is either a function that alters the way
+objects and arrays are stringified, or an array of Strings and Numbers
+that acts as a white list for selecting the object properties that will
+be stringified. The optional space parameter is a String or Number
+that allows the result to have white space injected into it to improve
+human readability.
 
 These are the steps in stringifying an object:
 
@@ -18080,8 +18985,8 @@ Static Semantics
 
 Additional Properties
 
-When the ECMAScript host is a web browser the following these additional
-properties of the standard native objects are defined.
+When the ECMAScript host is a web browser the following additional
+properties of the standard built-in objects are defined.
 
 Additional Properties of the Global Object
 
@@ -18163,7 +19068,7 @@ be string values. The following steps are taken:
 
 -   p1
 
--   a single space character
+-   a single space code unit 0x0020
 
 -   attribute
 
@@ -18201,7 +19106,7 @@ are taken:
 1.  Let S be the THIS value.
 
 2.  Return the result of performing the abstract operation CreateHTML
-    with arguments S, "BLICK", "" and "".
+    with arguments S, "BLINK", "" and "".
 
 String.prototype.bold ()
 
@@ -18213,7 +19118,7 @@ are taken:
 2.  Return the result of performing the abstract operation CreateHTML
     with arguments S, "B", "" and "".
 
-A String.prototype.fixed ()
+String.prototype.fixed ()
 
 When the FIXED method is called with no arguments, the following steps
 are taken:
@@ -18223,7 +19128,7 @@ are taken:
 2.  Return the result of performing the abstract operation CreateHTML
     with arguments S, "TT", "" and "".
 
-A String.prototype.fontcolor ( color )
+String.prototype.fontcolor ( color )
 
 When the FONTCOLOR method is called with argument color, the following
 steps are taken:
@@ -18233,7 +19138,7 @@ steps are taken:
 2.  Return the result of performing the abstract operation CreateHTML
     with arguments S, "FONT", "COLOR" and color.
 
-A String.prototype.fontsize ( size )
+String.prototype.fontsize ( size )
 
 When the FONTSIZE method is called with argument size, the following
 steps are taken:
@@ -18243,7 +19148,7 @@ steps are taken:
 2.  Return the result of performing the abstract operation CreateHTML
     with arguments S, "FONT", "SIZE" and size.
 
-A String.prototype.italics ()
+String.prototype.italics ()
 
 When the ITALICS method is called with no arguments, the following steps
 are taken:
@@ -18253,7 +19158,7 @@ are taken:
 2.  Return the result of performing the abstract operation CreateHTML
     with arguments S, "I", "" and "".
 
-A String.prototype.link ( url )
+String.prototype.link ( url )
 
 When the LINK method is called with argument url, the following steps
 are taken:
@@ -18263,45 +19168,45 @@ are taken:
 2.  Return the result of performing the abstract operation CreateHTML
     with arguments S, "A", "HREF" and url.
 
-A String.prototype.small ()
+String.prototype.small ()
 
 When the SMALL method is called with no arguments, the following steps
 are taken:
 
 1.  Let S be the THIS value.
 
-2.  Return the result of performing the abstract operations CreateHTML
+2.  Return the result of performing the abstract operation CreateHTML
     with arguments S, "SMALL", "" and "".
 
-A String.prototype.strike ()
+String.prototype.strike ()
 
 When the STRIKE method is called with no arguments, the following steps
 are taken:
 
 1.  Let S be the THIS value.
 
-2.  Return return the result of performing the abstract operations
-    CreateHTML with arguments S, "STRIKE", "" and "".
+2.  Return the result of performing the abstract operation CreateHTML
+    with arguments S, "STRIKE", "" and "".
 
-A String.prototype.sub ()
+String.prototype.sub ()
 
 When the SUB method is called with no arguments, the following steps are
 taken:
 
 1.  Let S be the THIS value.
 
-2.  Return return the result of performing the abstract operations
-    CreateHTML with arguments S, "SUB", "" and "".
+2.  Return the result of performing the abstract operation CreateHTML
+    with arguments S, "SUB", "" and "".
 
-A String.prototype.sup ()
+String.prototype.sup ()
 
 When the SUP method is called with no arguments, the following steps are
 taken:
 
 1.  Let S be the THIS value.
 
-2.  Return return the result of performing the abstract operations
-    CreateHTML with arguments S, "SUP", "" and "".
+2.  Return the result of performing the abstract operation CreateHTML
+    with arguments S, "SUP", "" and "".
 
 Additional Properties of the Date.prototype Object
 
@@ -18944,13 +19849,13 @@ Static Semantic Rule Cross Reference
   ROUTINE NAME                 PURPOSE                                                                                                                                                                                            DEFINITIONS                                                     USES
   ---------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------- ------
   BoundNames                   Produces a list of the Identifers bound by a production. Does not include Identifers that are bound within inner environments associated with the production.                                      12.2.1, 12.2.2, 12.2.4, 12.6.4, 13.1, 13.2, 13.5                
-  ConstructorMethod            From a ClassBody return the first ClassElement whose PropName is ″CONSTRUTOR″. Returns empty if the ClassBody does not contain one.                                                          13.5                                                            
+  ConstructorMethod            From a ClassBody return the first ClassElement whose PropName is ″CONSTRUCTOR″. Returns empty if the ClassBody does not contain one.                                                         13.5                                                            
   Contains                     Determine if a grammar production either directly or indirectly includes a grammar symbol.                                                                                                         5.3, 13.1, 13.2, 13.5                                           
   CoveredFormalsList           Reparse a covered Expression using FormalsList as the goal symbol.                                                                                                                             13.2                                                            
   CV                           Determines the “character value” of a component of a StringLiteral.                                                                                                                              7.8.4                                                           
   Elision Width                Determine the number of commas in an Elision.                                                                                                                                                    11.1.4.1                                                        
   ExpectedArgumentCount        Determine the “length” of an argument list for the purpose of initializing the “length” property of a function object.                                                                             13.1, 13.2, 13.3                                                
-  HasInitialiser               Determines whether the production constains an Initialiser production.                                                                                                                           12.2.4, 13.1                                                    
+  HasInitialiser               Determines whether the production contains an Initialiser production.                                                                                                                            12.2.4, 13.1                                                    
   IsConstantDeclaration        Determines whether the production introduces a immutable environment record binding                                                                                                                12.2, 13.1, 13.5                                                
   IsInvalidAssignmentPattern   Determines if a LeftHandSideExpression is a valid assignment target. Primarily for dealing with destructuring assignment targets.                                                                11.2                                                            
   LexicalDeclarations          Return a List containing the components of a production that are processed as lexical declarations                                                                                                 12.1, 12.11, 12.5                                               
