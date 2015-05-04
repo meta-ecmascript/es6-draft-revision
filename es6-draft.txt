@@ -44,19 +44,19 @@ _5.3 Static Semantic Rules_ 13
 
 7 _Lexical Conventions_ 14
 
-7.1 _Unicode Format-Control Characters_ 14
+7.1 _Unicode Format-Control Characters_ 15
 
 7.2 _White Space_ 15
 
-7.3 _Line Terminators_ 15
+7.3 _Line Terminators_ 16
 
-7.4 Comments 16
+7.4 Comments 17
 
 7.5 Tokens 17
 
-7.6 _Identifier Names and Identifiers_ 17
+7.6 _Identifier Names and Identifiers_ 18
 
-7.6.1 _Reserved Words_ 18
+7.6.1 _Reserved Words_ 19
 
 7.7 Punctuators 20
 
@@ -64,29 +64,29 @@ _5.3 Static Semantic Rules_ 13
 
 7.8.1 _Null Literals_ 20
 
-7.8.2 _Boolean Literals_ 20
+7.8.2 _Boolean Literals_ 21
 
 7.8.3 _Numeric Literals_ 21
 
-7.8.4 _String Literals_ 23
+7.8.4 _String Literals_ 24
 
-7.8.5 _Regular Expression Literals_ 25
+7.8.5 _Regular Expression Literals_ 26
 
-7.9 _Automatic Semicolon Insertion_ 26
+7.9 _Automatic Semicolon Insertion_ 27
 
-7.9.1 _Rules of Automatic Semicolon Insertion_ 26
+7.9.1 _Rules of Automatic Semicolon Insertion_ 27
 
-7.9.2 _Examples of Automatic Semicolon Insertion_ 27
+7.9.2 _Examples of Automatic Semicolon Insertion_ 28
 
 8 Types 29
 
-8.1 _The Undefined Type_ 29
+8.1 _The Undefined Type_ 30
 
-8.2 _The Null Type_ 29
+8.2 _The Null Type_ 30
 
-8.3 _The Boolean Type_ 29
+8.3 _The Boolean Type_ 30
 
-8.4 _The String Type_ 29
+8.4 _The String Type_ 30
 
 8.5 _The Number Type_ 30
 
@@ -104,10 +104,12 @@ _5.3 Static Semantic Rules_ 13
 
 8.9.1 _GetValue (V)_ 38
 
-8.9.2 _PutValue (V, W)_ 38
+8.9.2 _PutValue (V, W)_ 39
+
+8.9.3 _GetThisValue (V)_ 39
 
 8.10 _The Property Descriptor and Property Identifier Specification
-Types_ 39
+Types_ 40
 
 8.10.1 _IsAccessorDescriptor ( Desc )_ 40
 
@@ -115,42 +117,42 @@ Types_ 39
 
 8.10.3 _IsGenericDescriptor ( Desc )_ 40
 
-8.10.4 _FromPropertyDescriptor ( Desc )_ 40
+8.10.4 _FromPropertyDescriptor ( Desc )_ 41
 
 8.10.5 _ToPropertyDescriptor ( Obj )_ 41
 
 8.11 _The Lexical Environment and Environment Record Specification
-Types_ 41
+Types_ 42
 
-8.12 _Algorithms for Object Internal Methods_ 41
+8.12 _Algorithms for Object Internal Methods_ 42
 
 8.12.1 _[[GetOwnProperty]] (P)_ 42
 
 8.12.2 _[[GetProperty]] (P)_ 42
 
-8.12.3 _[[Get]] (P)_ 42
+8.12.3 _[[Get]] (P [, accessorThisValue] )_ 42
 
-8.12.4 _[[CanPut]] (P)_ 42
+8.12.4 _[[CanPut]] (P)_ 43
 
-8.12.5 _[[Put]] ( P, V, Throw )_ 43
+8.12.5 _[[Put]] ( P, V, Throw[, accessorThisValue] )_ 43
 
 8.12.6 _[[HasProperty]] (P)_ 43
 
-8.12.7 _[[Delete]] (P, Throw)_ 43
+8.12.7 _[[Delete]] (P, Throw)_ 44
 
 8.12.8 _[[DefaultValue]] (hint)_ 44
 
-8.12.9 _[[DefineOwnProperty]] (P, Desc, Throw)_ 44
+8.12.9 _[[DefineOwnProperty]] (P, Desc, Throw)_ 45
 
-8.12.10 _[[Enumerate]] (includePrototype, onlyEnumerable )_ 45
+8.12.10 _[[Enumerate]] (includePrototype, onlyEnumerable )_ 46
 
 8.12.11 _[[Iterate]] ( )_ 46
 
 _9 Abstract Operations_ 46
 
-9.1 _Type Conversion and Testing_ 46
+9.1 _Type Conversion and Testing_ 47
 
-9.1.1 ToPrimitive 46
+9.1.1 ToPrimitive 47
 
 9.1.2 ToBoolean 47
 
@@ -168,11 +170,13 @@ _9 Abstract Operations_ 46
 
 9.1.9 ToObject 53
 
+9.1.10 ToPropertyKey 53
+
 9.2 _Testing and Comparision Operations_ 53
 
 9.2.1 CheckObjectCoercible 53
 
-9.2.2 IsCallable 53
+9.2.2 IsCallable 54
 
 9.2.3 _The SameValue Algorithm_ 54
 
@@ -186,414 +190,426 @@ _9 Abstract Operations_ 46
 
 10.1.1 _Strict Mode Code_ 55
 
-10.2 _Lexical Environments_ 55
+10.1.2 _Code Realms_ 56
+
+10.2 _Lexical Environments_ 56
 
 10.2.1 _Environment Records_ 56
 
-10.2.2 _Lexical Environment Operations_ 60
+10.2.2 _Lexical Environment Operations_ 62
 
-10.2.3 _The Global Environment_ 61
+10.3 _Code Realms_ 63
 
-10.3 _Execution Contexts_ 61
+10.4 _Execution Contexts_ 64
 
-10.3.1 _Identifier Resolution_ 62
+10.4.1 _Identifier Resolution_ 65
 
-10.4 _Establishing an Execution Context_ 62
+10.4.3 GetThisEnvironment 65
 
-10.4.1 _Entering Global Code_ 62
+10.4.3 _This Resolution_ 65
 
-10.4.2 _Entering Eval Code_ 62
+10.5 _Declaration Binding Instantiation_ 65
 
-10.4.3 _Entering Function Code_ 63
+10.5.1 _Top-Level Declaration Instantiation_ 65
 
-10.5 _Declaration Binding Instantiation_ 63
+10.5.2 _Module Declaration Instantiation_ 66
 
-10.5.1 _Top-Level Declaration Instantiation_ 63
+10.5.3 _Function Declaration Instantiation_ 66
 
-10.5.2 _Module Declaration Instantiation_ 64
+10.5.4 _Block Declaration Instantiation_ 68
 
-10.5.3 _Function Declaration Instantiation_ 64
+10.6 _Arguments Object_ 68
 
-10.5.4 _Block Declaration Instantiation_ 65
+11 Expressions 71
 
-10.6 _Arguments Object_ 66
+11.1 _Primary Expressions_ 71
 
-11 Expressions 69
+11.1.1 _The this Keyword_ 71
 
-11.1 _Primary Expressions_ 69
+11.1.2 _Identifier Reference_ 71
 
-11.1.1 _The this Keyword_ 69
+11.1.3 _Literal Reference_ 71
 
-11.1.2 _Identifier Reference_ 69
+11.1.4 _Array Initialiser_ 72
 
-11.1.3 _Literal Reference_ 69
+11.1.5 _Object Initialiser_ 75
 
-11.1.4 _Array Initialiser_ 69
+11.1.6 _Function Expressions_ 78
 
-11.1.5 _Object Initialiser_ 72
+11.1.7 _Generator Comprehensions_ 78
 
-11.1.6 _Function Expressions_ 77
+11.1.8 _The Grouping Operator_ 78
 
-11.1.7 _Generator Comprehensions_ 77
+11.2 _Left-Hand-Side Expressions_ 79
 
-11.1.8 _The Grouping Operator_ 77
+_Static Semantics_ 79
 
-11.2 _Left-Hand-Side Expressions_ 78
+11.2.1 _Property Accessors_ 80
 
-11.2.1 _Property Accessors_ 78
+11.2.2 _The new Operator_ 80
 
-11.2.2 _The new Operator_ 79
+11.2.3 _Function Calls_ 81
 
-11.2.3 _Function Calls_ 80
+11.2.4 _The super Keyword_ 81
 
-11.2.4 _The super Keyword_ 80
+11.2.5 _Argument Lists_ 83
 
-11.2.5 _Argument Lists_ 81
+11.3 _Postfix Expressions_ 84
 
-11.3 _Postfix Expressions_ 82
+11.3.1 _Postfix Increment Operator_ 84
 
-11.3.1 _Postfix Increment Operator_ 82
+11.3.2 _Postfix Decrement Operator_ 84
 
-11.3.2 _Postfix Decrement Operator_ 83
+11.4 _Unary Operators_ 85
 
-11.4 _Unary Operators_ 83
+11.4.1 _The delete Operator_ 85
 
-11.4.1 _The delete Operator_ 83
+11.4.2 _The void Operator_ 86
 
-11.4.2 _The void Operator_ 84
+11.4.3 _The typeof Operator_ 86
 
-11.4.3 _The typeof Operator_ 84
+11.4.4 _Prefix Increment Operator_ 86
 
-11.4.4 _Prefix Increment Operator_ 85
+11.4.5 _Prefix Decrement Operator_ 87
 
-11.4.5 _Prefix Decrement Operator_ 85
+11.4.6 _Unary + Operator_ 87
 
-11.4.6 _Unary + Operator_ 85
+11.4.7 _Unary - Operator_ 87
 
-11.4.7 _Unary - Operator_ 85
+11.4.8 _Bitwise NOT Operator ( ~ )_ 87
 
-11.4.8 _Bitwise NOT Operator ( ~ )_ 86
+11.4.9 _Logical NOT Operator ( ! )_ 88
 
-11.4.9 _Logical NOT Operator ( ! )_ 86
+11.5 _Multiplicative Operators_ 88
 
-11.5 _Multiplicative Operators_ 86
+11.5.1 _Applying the * Operator_ 88
 
-11.5.1 _Applying the * Operator_ 86
+11.5.2 _Applying the / Operator_ 89
 
-11.5.2 _Applying the / Operator_ 87
+11.5.3 _Applying the % Operator_ 89
 
-11.5.3 _Applying the % Operator_ 87
+11.6 _Additive Operators_ 90
 
-11.6 _Additive Operators_ 88
+11.6.1 _The Addition operator ( + )_ 90
 
-11.6.1 _The Addition operator ( + )_ 88
+11.6.2 _The Subtraction Operator ( - )_ 90
 
-11.6.2 _The Subtraction Operator ( - )_ 88
+11.6.3 _Applying the Additive Operators to Numbers_ 91
 
-11.6.3 _Applying the Additive Operators to Numbers_ 89
+11.7 _Bitwise Shift Operators_ 91
 
-11.7 _Bitwise Shift Operators_ 89
+11.7.1 _The Left Shift Operator ( << )_ 91
 
-11.7.1 _The Left Shift Operator ( << )_ 89
+11.7.2 _The Signed Right Shift Operator ( >> )_ 92
 
-11.7.2 _The Signed Right Shift Operator ( >> )_ 90
+11.7.3 _The Unsigned Right Shift Operator ( >>> )_ 92
 
-11.7.3 _The Unsigned Right Shift Operator ( >>> )_ 90
+11.8 _Relational Operators_ 92
 
-11.8 _Relational Operators_ 91
+_11.8.1 Runtime Semantics_ 93
 
-_11.8.1 Runtime Semantics_ 91
+11.9 _Equality Operators_ 95
 
-11.9 _Equality Operators_ 93
+_11.9.1 Runtime Semantics_ 96
 
-_11.9.1 Runtime Semantics_ 94
+11.10 _Binary Bitwise Operators_ 98
 
-11.10 _Binary Bitwise Operators_ 96
+11.11 _Binary Logical Operators_ 99
 
-11.11 _Binary Logical Operators_ 97
+11.12 _Conditional Operator ( ? : )_ 100
 
-11.12 _Conditional Operator ( ? : )_ 98
+11.13 _Assignment Operators_ 100
 
-11.13 _Assignment Operators_ 98
+_Static Semantics_ 101
 
-_Static Semantics_ 99
+_Runtime Semantics_ 101
 
-_Runtime Semantics_ 99
+_11.13.1 Destructuring Assignment_ 102
 
-_11.13.1 Destructuring Assignment_ 100
+11.14 _Comma Operator ( , )_ 105
 
-11.14 _Comma Operator ( , )_ 103
+12 _Statements and Declarations_ 106
 
-12 _Statements and Declarations_ 104
+_Static Semantics_ 106
 
-_Static Semantics_ 104
+_Runtime Semantics_ 107
 
-_Runtime Semantics_ 105
+12.1 Block 108
 
-12.1 Block 106
+12.2 _Declarations and the Variable Statement_ 110
 
-12.2 _Declarations and the Variable Statement_ 108
+12.2.1 _Let and Const Declarations_ 110
 
-12.2.1 _Let and Const Declarations_ 108
+12.2.2 _Variable Statement_ 113
 
-12.2.2 _Variable Statement_ 111
+12.2.4 _Destructuring Binding Patterns_ 116
 
-12.2.4 _Destructuring Binding Patterns_ 114
+12.3 _Empty Statement_ 122
 
-12.3 _Empty Statement_ 120
+12.4 _Expression Statement_ 122
 
-12.4 _Expression Statement_ 120
+12.5 _The if Statement_ 122
 
-12.5 _The if Statement_ 121
+12.6 _Iteration Statements_ 123
 
-12.6 _Iteration Statements_ 122
+12.6.1 _The do-while Statement_ 124
 
-12.6.1 _The do-while Statement_ 122
+12.6.2 _The while Statement_ 124
 
-12.6.2 _The while Statement_ 123
+12.6.3 _The for Statement_ 124
 
-12.6.3 _The for Statement_ 123
-
-12.6.4 _The for-in and for-of Statements_ 125
+12.6.4 _The for-in and for-of Statements_ 126
 
 12.7 _The continue Statement_ 129
 
-12.8 _The break Statement_ 129
+12.8 _The break Statement_ 130
 
 12.9 _The return Statement_ 130
 
-12.10 _The with Statement_ 130
+12.10 _The with Statement_ 131
 
-12.11 _The switch Statement_ 131
+12.11 _The switch Statement_ 132
 
-12.12 _Labelled Statements_ 135
+12.12 _Labelled Statements_ 136
 
-12.13 _The throw Statement_ 136
+12.13 _The throw Statement_ 137
 
 12.14 _The try Statement_ 137
 
-12.15 _The debugger statement_ 139
+12.15 _The debugger statement_ 140
 
-13 _Functions and Generators_ 139
+13 _Functions and Generators_ 140
 
-13.1 _Function Definitions_ 139
+13.1 _Function Definitions_ 140
 
-13.1.1 _Creating Function Objects_ 144
+13.2 _Arrow Function Definitions_ 146
 
-13.2 _Generator Definitions_ 146
+13.3 _Method Definitions_ 150
 
-14 Program 146
+13.4 _Generator Definitions_ 152
 
-14.1 _Directive Prologues and the Use Strict Directive_ 147
+13.5 _Creating Function Objects and Constructors_ 153
 
-15 _Standard Built-in ECMAScript Objects_ 147
+14 Program 155
 
-15.1 _The Global Object_ 148
+14.1 _Directive Prologues and the Use Strict Directive_ 155
 
-15.1.1 _Value Properties of the Global Object_ 149
+15 _Standard Built-in ECMAScript Objects_ 156
 
-15.1.2 _Function Properties of the Global Object_ 149
+15.1 _The Global Object_ 157
 
-15.1.3 _URI Handling Function Properties_ 151
+15.1.1 _Value Properties of the Global Object_ 157
 
-15.1.4 _Constructor Properties of the Global Object_ 155
+15.1.2 _Function Properties of the Global Object_ 157
 
-15.1.5 _Other Properties of the Global Object_ 156
+15.1.3 _URI Handling Function Properties_ 160
 
-15.2 _Object Objects_ 156
+15.1.4 _Constructor Properties of the Global Object_ 164
 
-15.2.1 _The Object Constructor Called as a Function_ 156
+15.1.5 _Other Properties of the Global Object_ 165
 
-15.2.2 _The Object Constructor_ 157
+15.2 _Object Objects_ 165
 
-15.2.3 _Properties of the Object Constructor_ 157
+15.2.1 _The Object Constructor Called as a Function_ 166
 
-15.2.4 _Properties of the Object Prototype Object_ 160
+15.2.2 _The Object Constructor_ 166
 
-15.2.5 _Properties of Object Instances_ 162
+15.2.3 _Properties of the Object Constructor_ 166
 
-15.3 _Function Objects_ 162
+15.2.4 _Properties of the Object Prototype Object_ 169
 
-15.3.1 _The Function Constructor Called as a Function_ 162
+15.2.5 _Properties of Object Instances_ 171
 
-15.3.2 _The Function Constructor_ 162
+15.3 _Function Objects_ 171
 
-15.3.3 _Properties of the Function Constructor_ 163
+15.3.1 _The Function Constructor Called as a Function_ 171
 
-15.3.4 _Properties of the Function Prototype Object_ 163
+15.3.2 _The Function Constructor_ 172
 
-15.3.5 _Properties of Function Instances_ 166
+15.3.3 _Properties of the Function Constructor_ 173
 
-15.4 _Array Objects_ 167
+15.3.4 _Properties of the Function Prototype Object_ 173
 
-15.4.1 _The Array Constructor Called as a Function_ 167
+15.3.5 _Properties of Function Instances_ 175
 
-15.4.2 _The Array Constructor_ 167
+15.4 _Array Objects_ 177
 
-15.4.3 _Properties of the Array Constructor_ 168
+15.4.1 _The Array Constructor Called as a Function_ 177
 
-15.4.4 _Properties of the Array Prototype Object_ 168
+15.4.2 _The Array Constructor_ 177
 
-15.4.5 _Properties of Array Instances_ 186
+15.4.3 _Properties of the Array Constructor_ 178
 
-15.5 _String Objects_ 188
+15.4.4 _Properties of the Array Prototype Object_ 180
 
-15.5.1 _The String Constructor Called as a Function_ 188
+15.4.5 _Properties of Array Instances_ 198
 
-15.5.2 _The String Constructor_ 188
+15.5 _String Objects_ 200
 
-15.5.3 _Properties of the String Constructor_ 188
+15.5.1 _The String Constructor Called as a Function_ 200
 
-15.5.4 _Properties of the String Prototype Object_ 189
+15.5.2 _The String Constructor_ 200
 
-15.5.5 _Properties of String Instances_ 198
+15.5.3 _Properties of the String Constructor_ 200
 
-15.6 _Boolean Objects_ 198
+15.5.4 _Properties of the String Prototype Object_ 201
 
-15.6.1 _The Boolean Constructor Called as a Function_ 198
+15.5.5 _Properties of String Instances_ 212
 
-15.6.2 _The Boolean Constructor_ 198
+15.6 _Boolean Objects_ 213
 
-15.6.3 _Properties of the Boolean Constructor_ 199
+15.6.1 _The Boolean Constructor Called as a Function_ 213
 
-15.6.4 _Properties of the Boolean Prototype Object_ 199
+15.6.2 _The Boolean Constructor_ 213
 
-15.6.5 _Properties of Boolean Instances_ 200
+15.6.3 _Properties of the Boolean Constructor_ 214
 
-15.7 _Number Objects_ 200
+15.6.4 _Properties of the Boolean Prototype Object_ 214
 
-15.7.1 _The Number Constructor Called as a Function_ 200
+15.6.5 _Properties of Boolean Instances_ 214
 
-15.7.2 _The Number Constructor_ 200
+15.7 _Number Objects_ 215
 
-15.7.3 _Properties of the Number Constructor_ 200
+15.7.1 _The Number Constructor Called as a Function_ 215
 
-15.7.4 _Properties of the Number Prototype Object_ 201
+15.7.2 _The Number Constructor_ 215
 
-15.7.5 _Properties of Number Instances_ 205
+15.7.3 _Properties of the Number Constructor_ 215
 
-15.8 _The Math Object_ 205
+15.7.4 _Properties of the Number Prototype Object_ 217
 
-15.8.1 _Value Properties of the Math Object_ 205
+15.7.5 _Properties of Number Instances_ 221
 
-15.8.2 _Function Properties of the Math Object_ 206
+15.8 _The Math Object_ 221
 
-15.9 _Date Objects_ 211
+15.8.1 _Value Properties of the Math Object_ 221
+
+15.8.2 _Function Properties of the Math Object_ 222
+
+15.9 _Date Objects_ 230
 
 15.9.1 _Overview of Date Objects and Definitions of Abstract
-Operators_ 211
+Operators_ 230
 
-15.9.2 _The Date Constructor Called as a Function_ 216
+15.9.2 _The Date Constructor Called as a Function_ 235
 
-15.9.3 _The Date Constructor_ 216
+15.9.3 _The Date Constructor_ 235
 
-15.9.4 _Properties of the Date Constructor_ 217
+15.9.4 _Properties of the Date Constructor_ 236
 
-15.9.5 _Properties of the Date Prototype Object_ 218
+15.9.5 _Properties of the Date Prototype Object_ 238
 
-15.9.6 _Properties of Date Instances_ 225
+15.9.6 _Properties of Date Instances_ 245
 
-15.10 _RegExp (Regular Expression) Objects_ 225
+15.10 _RegExp (Regular Expression) Objects_ 245
 
-15.10.1 Patterns 226
+15.10.1 Patterns 245
 
-15.10.2 _Pattern Semantics_ 228
+15.10.2 _Pattern Semantics_ 247
 
-15.10.3 _The RegExp Constructor Called as a Function_ 239
+15.10.3 _The RegExp Constructor Called as a Function_ 259
 
-15.10.4 _The RegExp Constructor_ 239
+15.10.4 _The RegExp Constructor_ 259
 
-15.10.5 _Properties of the RegExp Constructor_ 240
+15.10.5 _Properties of the RegExp Constructor_ 260
 
-15.10.6 _Properties of the RegExp Prototype Object_ 241
+15.10.6 _Properties of the RegExp Prototype Object_ 260
 
-15.10.7 _Properties of RegExp Instances_ 242
+15.10.7 _Properties of RegExp Instances_ 262
 
-15.11 _Error Objects_ 243
+15.11 _Error Objects_ 263
 
-15.11.1 _The Error Constructor Called as a Function_ 243
+15.11.1 _The Error Constructor Called as a Function_ 263
 
-15.11.2 _The Error Constructor_ 243
+15.11.2 _The Error Constructor_ 263
 
-15.11.3 _Properties of the Error Constructor_ 244
+15.11.3 _Properties of the Error Constructor_ 263
 
-15.11.4 _Properties of the Error Prototype Object_ 244
+15.11.4 _Properties of the Error Prototype Object_ 264
 
-15.11.5 _Properties of Error Instances_ 244
+15.11.5 _Properties of Error Instances_ 264
 
-15.11.6 _Native Error Types Used in This Standard_ 244
+15.11.6 _Native Error Types Used in This Standard_ 264
 
-15.11.7 NativeError Object Structure 245
+15.11.7 NativeError Object Structure 265
 
-15.12 _The JSON Object_ 247
+15.12 _The JSON Object_ 267
 
-15.12.1 _The JSON Grammar_ 247
+15.12.1 _The JSON Grammar_ 267
 
-15.12.2 _parse ( text [ , reviver ] )_ 249
+15.12.2 _parse ( text [ , reviver ] )_ 269
 
-15.12.3 _stringify ( value [ , replacer [ , space ] ] )_ 250
+15.12.3 _stringify ( value [ , replacer [ , space ] ] )_ 270
 
-16 Errors 254
+16 Errors 274
 
-_Annex A (informative) Grammar Summary_ 256
+_Annex A (informative) Grammar Summary_ 276
 
-A.1 _Lexical Grammar_ 256
+A.1 _Lexical Grammar_ 276
 
-A.2 _Number Conversions_ 262
+A.2 _Number Conversions_ 282
 
-A.3 Expressions 263
+A.3 Expressions 283
 
-A.4 Statements 267
+A.4 Statements 287
 
-A.5 _Functions and Programs_ 269
+A.5 _Functions and Programs_ 289
 
-A.6 _Universal Resource Identifier Character Classes_ 270
+A.6 _Universal Resource Identifier Character Classes_ 290
 
-A.7 _Regular Expressions_ 270
+A.7 _Regular Expressions_ 290
 
-A.8 JSON 272
+A.8 JSON 292
 
-A.8.1 _JSON Lexical Grammar_ 272
+A.8.1 _JSON Lexical Grammar_ 292
 
-A.8.2 _JSON Syntactic Grammar_ 273
+A.8.2 _JSON Syntactic Grammar_ 293
 
 _Annex B (normative) Additional ECMAScript Features for Web Browsers_
-276
+296
 
-B.1 _Additional Syntax_ 276
+B.1 _Additional Syntax_ 296
 
-B.1.1 _Numeric Literals_ 276
+B.1.1 _Numeric Literals_ 296
 
-B.1.2 _String Literals_ 276
+B.1.2 _String Literals_ 296
 
-B.2 _Additional Properties_ 277
+B.2 _Additional Properties_ 297
 
-B.2.1 _escape (string)_ 277
+B.2.1 _escape (string)_ 297
 
-B.2.2 _unescape (string)_ 278
+B.2.2 _unescape (string)_ 298
 
-B.2.3 _String.prototype.substr (start, length)_ 279
+B.2.3 _String.prototype.substr (start, length)_ 298
 
-B.2.4 _Date.prototype.getYear ( )_ 279
+B.2.4 _Date.prototype.getYear ( )_ 299
 
-B.2.5 _Date.prototype.setYear (year)_ 279
+B.2.5 _Date.prototype.setYear (year)_ 299
 
-B.2.6 _Date.prototype.toGMTString ( )_ 279
+B.2.6 _Date.prototype.toGMTString ( )_ 299
 
-B.3 _Other Additional Features_ 280
+B.3 _Other Additional Features_ 299
 
-B.3.1 _The _proto_ pseudo property._ 280
+B.3.1 _The _proto_ pseudo property._ 299
 
-_Annex C (informative) The Strict Mode of ECMAScript_ 282
+_Annex C (informative) The Strict Mode of ECMAScript_ 302
 
-_Annex D (informative) Corrections and Clarifications in the 5^th^
-Edition with Possible 3^rd^ Edition Compatibility Impact_ 284
+_Annex D (informative) Corrections and Clarifications Possible
+Compatibility Impact_ 304
 
-_Annex E (informative) Additions and Changes in the 5^th^ Edition that
-Introduce Incompatibilities with the 3^rd^ Edition_ 286
+_In the 6^th^ Edition_ 304
+
+_In the 5^th^ Edition_ 304
+
+_Annex E (informative) Additions and Changes that Introduce
+Incompatibilities with Prior Editions_ 307
+
+_In the 6^th^ Edition_ 307
+
+_In the 5^th^ Edition_ 307
 
 _Annex F (informative) Technically Significant Corrections and
-Clarifications in the 5.1 Edition_ 290
+Clarifications in the 5.1 Edition_ 311
 
 Introduction
 
@@ -1324,11 +1340,11 @@ the appropriate Unicode character from the ASCII range, as opposed to
 any similar-looking characters from other Unicode ranges.
 
 Nonterminal symbols are shown in italic type. The definition of a
-nonterminal is introduced by the name of the nonterminal being defined
-followed by one or more colons. (The number of colons indicates to which
-grammar the production belongs.) One or more alternative right-hand
-sides for the nonterminal then follow on succeeding lines. For example,
-the syntactic definition:
+nonterminal (also called a “production”) is introduced by the name of
+the nonterminal being defined followed by one or more colons. (The
+number of colons indicates to which grammar the production belongs.) One
+or more alternative right-hand sides for the nonterminal then follow on
+succeeding lines. For example, the syntactic definition:
 
 WhileStatement :
 
@@ -1518,6 +1534,15 @@ specification, some algorithms, called abstract operations, are
 named and written in parameterised functional form so that they may be
 referenced by name from within other algorithms.
 
+Algoritms may be associated with productions of one of the ECMAScript
+grammars. A production that has multiple alternative definitions will
+typically have a distinct algorithm for each alternative. When an
+algorithm is associated with a grammar production, it may reference the
+terminal and non-terminal symbols of the production alternative as if
+they were parameters of the algorithm. When used in this manner,
+non-terminal symbols refer to the actual alternative definition that is
+matched when parsing the program souce code.
+
 When an algorithm is to produce a value as a result, the directive
 “return x” is used to indicate that the result of the algorithm is the
 value of x and that the algorithm should terminate. The notation
@@ -1591,11 +1616,41 @@ conventions or prose requirements. Such rules are always associated with
 a production of a grammar and are called the _static semantics_ of the
 production.
 
-An implementation must validate all of the static semantic rules used to
-parse a Program prior to the first evaluation of that Program. If
-any of the static semantic rules are violated the Program is invalid
-and can not be evaluated. Static semantic rule violations are early
-errors (see clause 16) and reported in the same manner as syntax errors.
+Static Semantic Rules have names and typically are defined using an
+algorithm. Such algorithms may be parameterized. Named Static Semantic
+Rules are associated with grammar productions and a production that has
+multiple alternative definitions will typically have for each
+alternative a distinct algorithm for each applicable named static
+semantic rule.
+
+Unless otherwise specified every grammar production alternative in this
+specification implicitly has a definition for a static semantic rule
+name Contains which takes an argument named symbol whose value is a
+terminal or non-terminal of the grammer that includes the associated
+production. The default definition of Contains is:
+
+1.  For each terminal and non-terminal grammar symbol, sym, in the
+    definition of this production do
+
+    a.  If sym is the same grammar symbol as symbol, return TRUE.
+
+    b.  If sym is a non-terminal, let contained be the result of
+        Contains for sym with argument symbol.
+
+    c.  If contained is TRUE, return TRUE.
+
+2.  Return FALSE.
+
+The above definition is explicitly over-ridden for specific productions.
+
+A special kind of static semantic rule is an Early Error Rule. Early
+error rules define early error conditions (see clause 16) that are
+associate with specific grammar productions. Evaluation of most early
+error rules are not explicitly invoked within the algorithms of this
+specification. A comforming implementation must, prior to the first
+evaluation of a Program, validate all of the early error rules of the
+productions used to parse that Program. If any of the early error
+rules are violated the Program is invalid and can not be evaluated.
 
 ECMAScript source text is represented as a sequence of characters in the
 Unicode character encoding, version 3.0 or later. The text is expected
@@ -1915,15 +1970,15 @@ StringLiteral
 NOTE The DivPunctuator and RegularExpressionLiteral productions
 define tokens, but are not included in the Token production.
 
-Identifier Names are tokens that are interpreted according to the
-grammar given in the “Identifiers” section of chapter 5 of the Unicode
-standard, with some small modifications. An Identifier is an
-IdentifierName that is not a ReservedWord (see 7.6.1). The Unicode
-identifier grammar is based on both normative and informative character
-categories specified by the Unicode Standard. The characters in the
-specified categories in version 3.0 of the Unicode standard must be
-treated as in those categories by all conforming ECMAScript
-implementations.
+Identifer, IdentifierName, and ReservedWord are tokens that are
+interpreted according to the grammar given in the “Identifiers” section
+of chapter 5 of the Unicode standard, with some small modifications. An
+Identifier is an IdentifierName that is not a ReservedWord (see
+7.6.1). The Unicode identifier grammar is based on both normative and
+informative character categories specified by the Unicode Standard. The
+characters in the specified categories in version 3.0 of the Unicode
+standard must be treated as in those categories by all conforming
+ECMAScript implementations.
 
 This standard specifies specific character additions: The dollar sign
 ($) and the underscore (_) are permitted anywhere in an
@@ -1938,10 +1993,10 @@ character into an IdentifierName that would otherwise be illegal. In
 other words, if a \ UnicodeEscapeSequence sequence were replaced by
 its UnicodeEscapeSequence's CV, the result must still be a valid
 IdentifierName that has the exact same sequence of characters as the
-original IdentifierName. All interpretations of identifiers within
-this specification are based upon their actual characters regardless of
-whether or not an escape sequence was used to contribute any particular
-characters.
+original IdentifierName. All interpretations of IdentifierName
+within this specification are based upon their actual characters
+regardless of whether or not an escape sequence was used to contribute
+any particular characters.
 
 Two IdentifierName that are canonically equivalent according to the
 Unicode standard are not equal unless they are represented by the
@@ -2137,6 +2192,8 @@ Syntax
 NumericLiteral ::
 
 DecimalLiteral
+BinaryIntegerLiteral
+OctalIntegerLiteral
 HexIntegerLiteral
 
 DecimalLiteral ::
@@ -2176,6 +2233,26 @@ SignedInteger ::
 DecimalDigits
 + DecimalDigits
 - DecimalDigits
+
+BinaryIntegerLiteral ::
+
+0B BinaryDigit
+0B BinaryDigit
+BinaryIntegerLiteral BinaryDigit
+
+BinaryDigit :: ONE OF
+
+0 1
+
+OctalIntegerLiteral ::
+
+0O OctalDigit
+0O OctalDigit
+OctalIntegerLiteral OctalDigit
+
+OctalDigit :: ONE OF
+
+0 1 2 3 4 5 6 7
 
 HexIntegerLiteral ::
 
@@ -2298,6 +2375,52 @@ described below.
 
 -   The MV of DecimalDigit :: 9 or of NonZeroDigit :: 9 or of
     HexDigit :: 9 is 9.
+
+-   The MV of NumericLiteral :: BinaryIntegerLiteral is the MV of
+    BinaryIntegerLiteral.
+
+-   The MV of BinaryDigit :: 0 is 0.
+
+-   The MV of BinaryDigit :: 1 is 1.
+
+-   The MV of BinaryIntegerLiteral :: 0O BinaryDigit is the MV of
+    BinaryDigit.
+
+-   The MV of BinaryIntegerLiteral :: 0O BinaryDigit is the MV of
+    BinaryDigit.
+
+-   The MV of BinaryIntegerLiteral :: BinaryIntegerLiteral
+    BinaryDigit is (the MV of BinaryIntegerLiteral times 2) plus the
+    MV of BinaryDigit.
+
+-   The MV of NumericLiteral :: OctalIntegerLiteral is the MV of
+    OctalIntegerLiteral.
+
+-   The MV of OctalDigit :: 0 is 0.
+
+-   The MV of OctalDigit :: 1 is 1.
+
+-   The MV of OctalDigit :: 2 is 2.
+
+-   The MV of OctalDigit :: 3 is 3.
+
+-   The MV of OctalDigit :: 4 is 4.
+
+-   The MV of OctalDigit :: 5 is 5.
+
+-   The MV of OctalDigit :: 6 is 6.
+
+-   The MV of OctalDigit :: 7 is 7.
+
+-   The MV of OctalIntegerLiteral :: 0O OctalDigit is the MV of
+    OctalDigit.
+
+-   The MV of OctalIntegerLiteral :: 0O OctalDigit is the MV of
+    OctalDigit.
+
+-   The MV of OctalIntegerLiteral :: OctalIntegerLiteral
+    OctalDigit is (the MV of OctalIntegerLiteral times 8) plus the
+    MV of OctalDigit.
 
 -   The MV of HexDigit :: A or of HexDigit :: A is 10.
 
@@ -3178,27 +3301,28 @@ ECMASCript objects as objects that conform to specific parts of this
 specification. The value of a [[NativeBrand]] property is a single
 member of this set of enumerated values: NativeFunction, NativeArray,
 StringWrapper, BooleanWrapper, NumberWrapper, NativeMath, NativeDate,
-NativeRegExp, NativeError, NativeJSON, NativeArguments. The actual value
-of the [[NativeBrand]] internal property is only used to identify
-specific kinds of native ECMAScript objects. Host objects do not have
-this internal property,
+NativeRegExp, NativeError, NativeJSON, NativeArguments,
+NativePrivateName. The actual value of the [[NativeBrand]] internal
+property is only used to identify specific kinds of native ECMAScript
+objects. Host objects do not have this internal property,
 
 Table 10 — Values of the [[NativeBrand]] Internal Property
 
-  _INTERNAL PROPERTY_   CATEGORY          DESCRIPTION
-  --------------------- ------------------- ---------------
-  NativeFunction        Function objects    
-  NativeArray           Array objects       
-  StringWrapper         String objects      
-  BooleanWrapper        Boolean objects     
-  NumberWrapper         Number objects      
-  NativeMath            The Math object     
-  NativeDate            Date objects        
-  NativeRegExp          RegExp objects      
-  NativeError           Error objects       
-  NativeJSON            The JSON object     
-  NativeArguments       Arguments objects   
-                                            
+  VALUE             CATEGORY             DESCRIPTION
+  ------------------- ---------------------- ---------------
+  NativeFunction      Function objects       
+  NativeArray         Array objects          
+  StringWrapper       String objects         
+  BooleanWrapper      Boolean objects        
+  NumberWrapper       Number objects         
+  NativeMath          The Math object        
+  NativeDate          Date objects           
+  NativeRegExp        RegExp objects         
+  NativeError         Error objects          
+  NativeJSON          The JSON object        
+  NativeArguments     Arguments objects      
+  NativePrivateName   Private Name objects   
+                                             
 
 The List type is used to explain the evaluation of argument lists (see
 11.2.4) in NEW expressions, in function calls, and in other algorithms
@@ -3235,7 +3359,7 @@ The Completion type is a Record used to explain the runtime propagation
 of values and control flow such as the behaviour of statements (BREAK,
 CONTINUE, RETURN and THROW) that perform nonlocal transfers of control.
 
-Values of the Completion type are Record value whole fileds are defined
+Values of the Completion type are Record values whole fields are defined
 as by Table xxx.
 
 Table xxx — Completion Record Fields
@@ -3266,9 +3390,6 @@ value is equivalent to an explicit reference to the [[value]] field of
 the Completion Record value unless the Completion Record is an abrupt
 completion.
 
-The abstraction operation NormalValue with a single argument is a
-short hand that is defined as follows:
-
 The abstraction operation NormalCompletion with a single argument is a
 short hand that is defined as follows:
 
@@ -3284,10 +3405,18 @@ mean the same things as:
 1.  Return Completion {[[type]]: throw, [[value]]: a newly created
     TYPEERROR object, [[target]]:empty}.
 
-Algorithms steps that say ReturnIfAbrupt(argument), mean the same
-things as:
+Algorithms steps that say
 
-1.  If argument is an abrupt completion, return argument..
+1.  ReturnIfAbrupt(argument),
+
+mean the same things as:
+
+1.  If argument is an abrupt completion, then return argument,
+
+2.  Else if argument is a Completion Record, then let argument be
+    argument.[[value]],
+
+3.  
 
 NOTE The Reference type is used to explain the behaviour of such
 operators as DELETE, TYPEOF, and the assignment operators. For example,
@@ -3337,13 +3466,16 @@ access the components of references:
 -   IsSuperReference(V). Returns TRUE if this reference has a
     thisValue component.
 
+-   GetThisValue(V). Returns the value of the thisValue component of
+    the reference V. May only be used when IsSuperReference(V) is true.
+
 The following abstract operations are used in this specification to
 operate on references:
 
-The following [[Get]] internal method is used by GetValue when V is a
-property reference with a primitive base value. base is the value the
-internal method is called upon with property name P as its argument.
-The following steps are taken:
+The following [[Get]](P [, accessorThisValue]) internal method is used
+by GetValue when V is a property reference with a primitive base
+value. base is the value the internal method is called upon with
+property name P as its argument. The following steps are taken:
 
 NOTE The object that may be created in step 1 is not accessible outside
 of the above method. An implementation might choose to avoid the actual
@@ -3354,7 +3486,8 @@ invokes an accessor function.
 The following [[Put]] internal method is used by PutValue when V is a
 property reference with a primitive base value. base is the value the
 internal method is called upon with property name P, value W, and
-Boolean flag Throw as arguments. The following steps are taken:
+Boolean flag Throw as required arguments and optional argument
+accessorThisValue. The following steps are taken:
 
 NOTE The object that may be created in step 1 is not accessible outside
 of the above method. An implementation might choose to avoid the actual
@@ -3364,6 +3497,19 @@ visible effect are when it either invokes an accessor function or is in
 violation of a Throw predicated error check. When Throw is TRUE any
 property assignment that would create a new property on the transient
 object throws an error.
+
+1.  ReturnIfAbrupt(V).
+
+2.  If Type(V) is not Reference, return V.
+
+3.  If IsUnresolvableReference(V), throw a REFERENCEERROR exception.
+
+4.  If IsSuperReference(V), then
+
+    a.  Return the value of the thisValue component of the reference
+        V.
+
+5.  Return GetBase(V).
 
 The Property Descriptor type is used to explain the manipulation and
 reification of named property attributes. Values of the Property
@@ -3453,7 +3599,7 @@ name P, the following steps are taken:
 When the [[Get]] internal method of O is called with property name
 P, the following steps are taken:
 
-1.  ReturnIfAbrupt(O).
+1.  
 
 2.  Let desc be the result of calling the [[GetProperty]] internal
     method of O with property name P.
@@ -3467,8 +3613,12 @@ P, the following steps are taken:
 
 6.  If getter is UNDEFINED, return UNDEFINED.
 
-7.  Return the result calling the [[Call]] internal method of getter
-    providing O as the THIS value and providing no arguments.
+7.  If accessorThisValue is not present, then let accessorThisValue
+    be O.
+
+8.  Return the result calling the [[Call]] internal method of getter
+    providing accessorThisValue as the THIS value and providing no
+    arguments.
 
 When the [[CanPut]] internal method of O is called with property name
 P, the following steps are taken:
@@ -3570,7 +3720,7 @@ The following is an informative algorithm that conforms to these rules
         internal method of proto with arguments TRUE and
         onlyEnumerable.
 
-5.  For each string name that is the property key of an own propoperty
+5.  For each string name that is the property key of an own property
     of O
 
     a.  Let desc be the result of calling the [[GetOwnProperty]]
@@ -4095,6 +4245,20 @@ Table 15 — ToObject
   Object              Return argument (no conversion).
   ------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+The abstract operation ToProperty converts its argument to a value
+that can be used as aproperty key by performing the following steps:
+
+1.  ReturnIfAbrupt(argument).
+
+2.  If Type(argument) is Object, then
+
+    a.  If argument has a [[NativeBrand]] internal property whose
+        value is NativePrivateName, then
+
+        i.  Return argument.
+
+3.  Return ToString(argument).
+
 The abstract operation CheckObjectCoercible throws an error if its
 argument is a value that cannot be converted to an Object using
 ToObject. It is defined by Table 16:
@@ -4152,21 +4316,16 @@ There are three types of ECMAScript executable code:
       The eval code for a particular invocation of EVAL is the global
       code portion of that Program.
 
--   _Function code_ is source text that is parsed as part of a
-      FunctionBody. The _function code_ of a particular FunctionBody
-      does not include any source text that is parsed as part of a
-      nested FunctionBody. _Function code_ also denotes the source
-      text supplied when using the built-in FUNCTION object as a
-      constructor. More precisely, the last parameter provided to the
-      FUNCTION constructor is converted to a String and treated as the
-      FunctionBody. If more than one parameter is provided to the
-      FUNCTION constructor, all parameters except the last one are
-      converted to Strings and concatenated together, separated by
-      commas. The resulting String is interpreted as the
-      FormalParameterList for the FunctionBody defined by the last
-      parameter. The function code for a particular instantiation of a
-      FUNCTION does not include any source text that is parsed as part
-      of a nested FunctionBody.
+-   _Function code_ is source text that is parsed to supply the value of
+      the [[Code]] internal property (see 13.5) of function and
+      generator objects. The _function code_ of a particular function or
+      generator does not include any source text that is parsed as the
+      function code of a nested function or generator.
+
+NOTE Function code is generally provided as the bodies of Function
+Definitions (13.1), Arrow Function Definditions (13.2), Method
+Definitions (13.3) and Generator Definitions (13.4). Function code is
+also derived from the last argument to the Function constructor (15.3).
 
 An ECMAScript Program syntactic unit may be processed using either
 unrestricted or strict mode syntax and semantics. When processed using
@@ -4183,9 +4342,9 @@ interpreted as strict mode code in the following situations:
       contained in strict mode code.
 
 -   Function code that is part of a FunctionDeclaration,
-      FunctionExpression, or accessor PropertyAssignment is strict
+      FunctionExpression, or accessor PropertyDefinition is strict
       function code if its FunctionDeclaration, FunctionExpression,
-      or PropertyAssignment is contained in strict mode code or if the
+      or PropertyDefinition is contained in strict mode code or if the
       function code begins with a Directive Prologue that contains a Use
       Strict Directive.
 
@@ -4194,12 +4353,18 @@ interpreted as strict mode code in the following situations:
       is a String that when processed as a FunctionBody begins with a
       Directive Prologue that contains a Use Strict Directive.
 
--   Unless specified otherwise, extended code (10.1.2) is also strict
-      mode code.
-
--   -   -   -   
+-   -   -   -   -   
 
 The term “base code” is used to designate code that is not strict code.
+
+Before it is evaluated, all ECMAScript code must be associated with a
+Realm. Conceptually, a realm consists as of an set of intrinsic
+objects, an ECMAScript global environment, all of the ECMAScript code
+that is loaded within the scope of that global environment, a Loader
+object that can associate new ECMAScript code with the realm, and other
+associated state.
+
+A Realm can also be v
 
 A _Lexical Environment_ is a specification type used to define the
 association of Identifiers to specific variables and functions based
@@ -4207,8 +4372,8 @@ upon the lexical nesting structure of ECMAScript code. A Lexical
 Environment consists of an Environment Record and a possibly null
 reference to an outer Lexical Environment. Usually a Lexical
 Environment is associated with some specific syntactic structure of
-ECMAScript code such as a FunctionDeclaration, a WithStatement, or a
-Catch clause of a TryStatement and a new Lexical Environment is
+ECMAScript code such as a FunctionDeclaration, a BlockStatement, or
+a Catch clause of a TryStatement and a new Lexical Environment is
 created each time such code is evaluated.
 
 An _Environment Record_ records the identifier bindings that are created
@@ -4225,6 +4390,20 @@ two nested FunctionDeclarations then the Lexical Environments of each
 of the nested functions will have as their outer Lexical Environment the
 Lexical Environment of the current execution of the surrounding
 function.
+
+A _global environment_ is a Lexical Environment which does not have an
+outer environment. The global environment’s outer environment reference
+is NULL. A global environment’s environment record may be prepopulated
+with identifier bindings and includes an associated _global object_
+whose properties provide some of the global environment’s identifier
+bindings. This global object is the value of a global environment’s THIS
+bindingAs ECMAScript code is executed, additional properties may be
+added to the global object and the initial properties may be modified.
+
+A method environment is a Lexical Environment that corresponds to the
+invocation of an ECMAScript function object that establishes a new THIS
+binding. A method environment also captures the state necessary to
+support the SUPER method invocations.
 
 Lexical Environments and Environment Record values are purely
 specification mechanisms and need not correspond to any specific
@@ -4252,13 +4431,16 @@ concrete subclasses.
 Table 18 — Abstract Methods of Environment Records
 
   METHOD                     PURPOSE
-  ---------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ---------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   HasBinding(N)                Determine if an environment record has a binding for an identifier. Return TRUE if it does and FALSE if it does not. The String value N is the text of the identifier.
   CreateMutableBinding(N, D)   Create a new mutable binding in an environment record. The String value N is the text of the bound name. If the optional Boolean argument D is TRUE the binding is may be subsequently deleted.
   SetMutableBinding(N,V, S)    Set the value of an already existing mutable binding in an environment record. The String value N is the text of the bound name. V is the value for the binding and may be a value of any ECMAScript language type. S is a Boolean flag. If S is TRUE and the binding cannot be set throw a TYPEERROR exception. S is used to identify strict mode references.
   GetBindingValue(N,S)         Returns the value of an already existing binding from an environment record. The String value N is the text of the bound name. S is used to identify strict mode references. If S is TRUE and the binding does not exist or is uninitialised throw a REFERENCEERROR exception.
   DeleteBinding(N)             Delete a binding from an environment record. The String value N is the text of the bound name If a binding for N exists, remove the binding and return TRUE. If the binding exists but cannot be removed return FALSE. If the binding does not exist return TRUE.
-  ImplicitThisValue()          Returns the value to use as the THIS value on calls to function objects that are obtained as binding values from this environment record.
+  CreateVarBinding(N, D)       Used for global VAR and FUNCTION bindings. Create a new mutable binding in an environment record. The String value N is the text of the bound name. If the optional Boolean argument D is TRUE the binding is may be subsequently deleted. This is logically equivalent to CreateMutableBinding but it allows var and function declaration to receive special treatment.
+  HasThisBinding()             Determine if an environment record establishes a THIS binding. Return TRUE if it does and FALSE if it does not.
+  HasSuperBinding()            Determine if an environment record establishes a SUPER method binding. Return TRUE if it does and FALSE if it does not.
+  WithBaseObject ()            If this environment record is associated with a WITH statement, return the with object. Otherwise, return UNDEFINED.
 
 Each declarative environment record is associated with an ECMAScript
 program scope containing variable, constant, and/or function
@@ -4312,8 +4494,26 @@ The concrete Environment Record method DeleteBinding for declarative
 environment records can only delete bindings that have been explicitly
 designated as being subject to deletion.
 
+The concrete Environment Record method CreateVarBinding for declarative
+environment records performs the same action as the CreateMutableBinding
+concrete method of the same environment Record.
+
+1.  Let envRec be the declarative environment record for which the
+    method was invoked.
+
+2.  Return the result of calling envRec’s CreateMutableBinding
+    concrete method with arguments N and D.
+
+Regular Declarative Environment Records do not provide a THIS binding.
+
+1.  Return FALSE.
+
+Regular Declarative Environment Records do not provide a SUPER binding.
+
+1.  Return FALSE.
+
 Declarative Environment Records always return UNDEFINED as their
-ImplicitThisValue.
+WithBaseObject.
 
 The concrete Environment Record method CreateImmutableBinding for
 declarative environment records creates a new immutable binding for the
@@ -4341,13 +4541,12 @@ even if the Writable attribute of the corresponding property has the
 value FALSE. Immutable bindings do not exist for object environment
 records.
 
-Object environment records can be configured to provide their binding
-object as an implicit this value for use in function calls. This
-capability is used to specify the behaviour of With Statement (12.10)
-induced bindings. The capability is controlled by a provideThis
+Object environment records created for WITH statements (12.10) can
+provide their binding object as an implicit this value for use in
+function calls. The capability is controlled by a withEnvironment
 Boolean value that is associated with each object environment record. By
-default, the value of provideThis is FALSE for any object environment
-record.
+default, the value of withEnvironment is FALSE for any object
+environment record.
 
 The behaviour of the concrete specification methods for Object
 Environment Records is defined by the following algorithms.
@@ -4382,8 +4581,82 @@ environment records can only delete bindings that correspond to
 properties of the environment object whose [[Configurable]] attribute
 have the value TRUE.
 
-Object Environment Records return UNDEFINED as their ImplicitThisValue
-unless their provideThis flag is TRUE.
+The concrete Environment Record method CreateVarBinding for object
+environment records performs the same action as the CreateMutableBinding
+concrete method of the same environment Record.
+
+1.  Let envRec be the declarative environment record for which the
+    method was invoked.
+
+2.  Return the result of calling envRec’s CreateMutableBinding
+    concrete method with arguments N and D.
+
+Regular Object Environment Records do not provide a THIS binding.
+
+1.  Return FALSE.
+
+Regular Object Environment Records do not provide a SUPER binding.
+
+1.  Return FALSE.
+
+Object Environment Records return UNDEFINED as their WithBaseObject
+unless their withEnvironment flag is TRUE.
+
+A method environment record is a declarative environment record that is
+used to represent the outer most scope of a function that provides a
+THIS binding. In addition to its identifier bindings, a method
+environment record contains the THIS value used within its scope. If
+such a function references SUPER, its method environment record also
+contains the state that is used to perform SUPER method invocations from
+within the function.
+
+Method environment records store their THIS binding as the value of
+their thisValue. If the associated function references SUPER, the
+environment record stores in HomeObject the object that the function
+is bound to as a method and in MethodName the property key used for
+unqualified super invocations from within the function. The default
+value for HomeObject and MethodName is UNDEFINED.
+
+Methods environment records support all of Declarative Environment
+Record methods listed in Table 19 and share the same specifications for
+those metjhods. In addition, declarative environment records support the
+methods listed in Table 20:
+
+Table 20 — Additional Methods of Method Environment Records
+
+  METHOD           PURPOSE
+  ------------------ ------------------------------------------------------------------------------------------------------------
+  GetThisBinding()   Return the value of this environment record’s THIS binding.
+  GetHomeObject()    Return the value of this environment record’s HomeObject binding. If the value is Empty, return UNDEFINED.
+  GetMethodName()    Return the value of this environment record’s MethodName binding.
+
+The behaviour of the additional concrete specification methods for
+Method Environment Records is defined by the following algorithms:
+
+Regular Method Environment Records always provide a THIS binding.
+
+1.  Return TRUE.
+
+1.  If this environment record’s HomeObject has the value Empty, then
+    return FALSE. Otherwise, return TRUE.
+
+1.  Return the value of this environment record’s thisValue.
+
+1.  If this environment record’s HomeObject has the value Empty, then
+    return UNDEFINED. Otherwise, return the HomeObject value.
+
+1.  Return the value of this environment record’s MethodName.
+
+A global environment is is used to represent the outer most scope of a
+ECMAScript Program. If such a function references SUPER, A global
+environment provides the bindings for built-in globals (15.1),
+properties of the global object, and for all declarations that are not
+function code and that occur within Program productions.. All
+ECMAScript Program productions that are processed iin a specific Realm
+(10.3) share the same global environment record..
+
+The behaviour of the concrete specification methods for Global
+Environment Records is defined by the following algorithms.
 
 The following abstract operations are used in this specification to
 operate upon lexical environments:
@@ -4401,14 +4674,52 @@ When the abstract operation NewObjectEnvironment is called with an
 Object O and a Lexical Environment E (or NULL) as arguments, the
 following steps are performed:
 
-The _global environment_ is a unique Lexical Environment which is
-created before any ECMAScript code is executed. The global environment’s
-Environment Record is an object environment record whose binding object
-is the global object (15.1). The global environment’s outer environment
-reference is NULL.
+When the abstract operation NewObjectEnvironment is called with an
+ECMAScript function Object F and a ECMAScript value T as arguments,
+the following steps are performed:
 
-As ECMAScript code is executed, additional properties may be added to
-the global object and the initial properties may be modified.
+1.  Let env be a new Lexical Environment.
+
+2.  Let envRec be a new method environment record containing
+    containing no bindings.
+
+3.  Set envRec’s thisValue to T.
+
+4.  If F has a [[Home]] internal property, then
+
+    a.  Set envRec’s HomeObject to the value of F’s [[Home]]
+        internal property.
+
+    b.  Set envRec’s MethodName to the value of F’s [[MethodName]]
+        internal property.
+
+5.  Else, Set envRec’s home to Empty.
+
+6.  Set env’s environment record to be envRec.
+
+7.  Set the outer lexical environment reference of env to the value of
+    F’s [[Scope]] internal property.
+
+8.  Return env.
+
+Before it is evaluated, all ECMAScript code must be associated with a
+Realm. Conceptually, a realm consists as of an set of intrinsic
+objects, an ECMAScript global environment, all of the ECMAScript code
+that is loaded within the scope of that global environment, a Loader
+object that can associate new ECMAScript code with the realm, and other
+associated state.
+
+A Realm is specified as a Record with the following fields:
+
+Table xxx — Realm Record Fields
+
+  ---------------- ---------------------------------------------------------------------------- ------------------------------------------------------------------------
+  _FIELD NAME_     VALUE                                                                      MEANING
+  [[intrinsics]]   A record whose field names are intrinsic keys and whose values are objects   These are the intrinsic values used by code associated with this Realm
+  [[this]]         An ECMAScript object                                                         The global object for this Realm
+  [[globalEnv]]    A ECMAScript environment                                                     The global environment for this Realm
+  [[loader]]       any ECMAScript identifier or EMPTY                                           The Loader object that can associate ECMAScript code with this Realm
+  ---------------- ---------------------------------------------------------------------------- ------------------------------------------------------------------------
 
 When control is transferred to ECMAScript executable code, control is
 entering an _execution context_. Active execution contexts logically
@@ -4420,17 +4731,39 @@ associated with that execution context. The newly created execution
 context is pushed onto the stack and becomes the running execution
 context.
 
-An execution context contains whatever state is necessary to track the
-execution progress of its associated code. In addition, each execution
-context has the state components listed in Table 20.
+An execution context contains whatever implementation specific state is
+necessary to track the execution progress of its associated code. In
+addition, each execution context has the state components listed in
+Table 20.
 
 Table 20 —Execution Context State Components
 
-  COMPONENT           PURPOSE
-  --------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  LexicalEnvironment    Identifies the Lexical Environment used to resolve identifier references made by code within this execution context.
-  VariableEnvironment   Identifies the Lexical Environment whose environment record holds bindings created by VariableStatements and FunctionDeclarations within this execution context.
-  ThisBinding           The value associated with the THIS keyword within ECMAScript code associated with this execution context.
+  COMPONENT             PURPOSE
+  ----------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  code evaluation state   Any state needed to suspend and resume evaluation of the ECMASript code associated with this execution context.
+  PreviousContext         The execution context that was active when this execution context was created. The value Empty indicates that there is no such context.
+  Realm                   The Realm within which the associated ECMAScript code is evaluated
+  LexicalEnvironment      Identifies the Lexical Environment used to resolve identifier references made by code within this execution context.
+  VariableEnvironment     Identifies the Lexical Environment whose environment record holds bindings created by VariableStatements and FunctionDeclarations within this execution context.
+                          
+
+The code evaluation state corresponds the implementation state needed to
+perform, suspend, and subsequently resume evaluation of the ECMAScript
+code associated with the execution context. Only one execution context
+may be actively evaluating ECMAScript code at any point in time. The
+execution context is active is called the _current execution context_.
+
+Evaluation of code by the current execution context may be suspended at
+various points defined within this specification. Once the current
+execution context has been suspended a different execution context may
+become the current execution context and commence evaluating its
+ECMAScript code. At some latter time a suspended execution context may
+again become the current execution context and continue evaluating its
+ECMAScript code at the point where it had previously been suspended.
+Transition of of the current execution context status among execution
+contexts usually occurs in last-in/first-out manner. However, some
+ECMAScript features require non-LIFO changes to the current execution
+context.
 
 The LexicalEnvironment and VariableEnvironment components of an
 execution context are always Lexical Environments. When an execution
@@ -4442,10 +4775,9 @@ an execution context.
 
 In most situations only the running execution context (the top of the
 execution context stack) is directly manipulated by algorithms within
-this specification. Hence when the terms “LexicalEnvironment”,
-“VariableEnvironment” and “ThisBinding” are used without qualification
-they are in reference to those components of the running execution
-context.
+this specification. Hence when the terms “LexicalEnvironment”, and
+“VariableEnvironment” are used without qualification they are in
+reference to those components of the running execution context.
 
 An execution context is purely a specification mechanism and need not
 correspond to any particular artefact of an ECMAScript implementation.
@@ -4461,37 +4793,35 @@ The result of evaluating an identifier is always a value of type
 Reference with its referenced name component equal to the Identifier
 String.
 
-Evaluation of global code or code using the eval function (15.1.2.1)
-establishes and enters a new execution context. Every invocation of an
-ECMAScript code function (13.2.1) also establishes and enters a new
-execution context, even if a function is calling itself recursively.
-Every return exits an execution context. A thrown exception may also
-exit one or more execution contexts.
+The abstract operation GetThisEnviroment find the lexical environment
+that currently supplies the binding of the keyword THIS. It starts
+search with the LexicalEnvironment of the current execution context.
+GetThisEnviroment performs the following steps:
 
-When control enters an execution context, the execution context’s
-ThisBinding is set, its VariableEnvironment and initial
-LexicalEnvironment are defined, and declaration binding instantiation
-(10.5) is performed. The exact manner in which these actions occur
-depend on the type of code being entered.
+1.  Let lex be the current execution context’s LexicalEnvironment.
 
-The following steps are performed when control enters the execution
-context for global code:
+2.  Repeat
 
-The following steps are performed to initialise a global execution
-context for ECMAScript code C:
+    a.  Let envRec be lex’s environment record.
 
-The following steps are performed when control enters the execution
-context for eval code:
+    b.  Let exists be the result of calling the HasThisBinding
+        concrete method of envRec.
 
-NOTE The eval code cannot instantiate variable or function bindings in
-the variable environment of the calling context that invoked the eval if
-either the code of the calling context or the eval code is strict code.
-Instead such bindings are instantiated in a new VariableEnvironment that
-is only accessible to the eval code.
+    c.  If exists is TRUE, then return envRec.
 
-The following steps are performed when control enters the execution
-context for function code contained in function object F, a caller
-provided argumentsList, and a caller provided thisArg:
+    d.  Let outer be the value of lex’s outer environment reference.
+
+    e.  Let lex be outer.
+
+The abstract operation ThisResolution is the process of determining the
+binding of the keyword THIS using the LexicalEnvironment of the current
+execution context. ThisResolution performs the following steps:
+
+1.  Let env be the result of performing the GetThisEnvironment
+    abstract operation.
+
+2.  Return the result of calling the GetThisBinding concrete method of
+    env.
 
 NOTE When an execution context is established for evaluating
 non-function code declarations are instantiated in the current
@@ -4523,7 +4853,7 @@ created.
 3.  Let formals be the value of the [[FormalParameterList]] internal
     property of func.
 
-4.  Let parameterNames be the BoundNames of FormalParameterList.
+4.  Let parameterNames be the BoundNames of formals.
 
 5.  For each String argName in parameterNames, in list order do
 
@@ -4531,7 +4861,7 @@ created.
         HasBinding concrete method passing argName as the argument.
 
     b.  NOTE Duplicate parameter names can only occur in non-strict
-        code.
+        Normal functions.
 
     c.  If alreadyDeclared is FALSE, then
 
@@ -4570,7 +4900,7 @@ created.
         Initialisation for formals with ao and UNDEFINED as
         arguments.
 
-9.  NOTE Binding Initialisation for formals is perform prior to to
+9.  NOTE Binding Initialisation for formals is performed prior to to
     instantiating any non-parameter declarations in order to ensure that
     any such local declarations are not visible to any parameter
     Initialisation code that may be evaluated.
@@ -4655,8 +4985,8 @@ created.
 
         i.  Append fn to initializedFunctions.
 
-        ii. Let fo be the result of instantiating _FunctionDeclaration
-            f_ as described in Clause 13.
+        ii. Let fo be the result of performing Instantiate Function
+            Declaration for f.
 
         iii. Call env’s InitializeBinding concrete method passing
             fn, and fo as the arguments.
@@ -4694,8 +5024,8 @@ bindings are to be.
 
     a.  Let fn be the sole element of the BoundNames of f.
 
-    b.  Let fo be the result of instantiating _FunctionDeclaration f_
-        as described in Clause 13.
+    b.  Let fo be the result of performing Instantiate Function
+        Declaration for f.
 
     c.  d.  Call env’s InitializeBinding concrete method passing fn,
         and fo as the arguments.
@@ -4704,11 +5034,10 @@ bindings are to be.
 
         ii. 1.  
 
-When control enters an execution context for function code, an arguments
-object is created unless (as specified in 10.5) the identifier ARGUMENTS
-occurs as an Identifier in the function’s FormalParameterList or
-occurs as the BindingIdentifier of a Declaration contained in the
-function code.
+When function code is evaluated, an arguments object is created unless
+(as specified in 10.5) the identifier ARGUMENTS occurs as an
+Identifier in the function’s FormalParameterList or occurs as the
+BindingIdentifier of a Declaration contained in the function code.
 
 The abstract operation CreateStrictArgumentsObject called with
 argument list args performs the following steps:
@@ -4887,8 +5216,13 @@ RUNTIME SEMANTICS: EVALUATION
 
 PrimaryExpression : THIS
 
-1.  Return the value of the ThisBinding of the current execution
-    context.
+1.  Let env be the result of performing the GetThisEnvironment
+    abstract operation.
+
+2.  Return the result of calling the GetThisBinding concrete method of
+    env.
+
+1.  
 
 1.  Let ref be the result of performing Identifier Resolution as
     specified in 10.3.1 using the IdentifierName corresponding to
@@ -4950,20 +5284,6 @@ Elision ,
 SpreadElement :
 
 … AssignmentExpression
-
-ArrayComprehension :
-
-Expression ComprehensionForList
-Expression ComprehensionForList IF ( Expression )
-
-ComprehensionForList :
-
-ComprehensionFor
-ComprehensionForList ComprehensionFor
-
-ComprehensionFor :
-
-FOR ( LeftHandSideExpression OF Expression )
 
 STATIC SEMANTICS
 
@@ -5065,9 +5385,11 @@ SpreadElement : … AssignmentExpression
 
 6.  Let spreadLen be ToUint32(lenVal).
 
-7.  Let n=0;
+7.  ReturnIfAbrupt(spreadLen).
 
-8.  Repeat, while n < spreadLen
+8.  Let n=0;
+
+9.  Repeat, while n < spreadLen
 
     a.  Let exists be the result of calling the [[HasProperty]]
           internal method of spreadObj with ToString(n).
@@ -5077,7 +5399,9 @@ SpreadElement : … AssignmentExpression
         i.  Let v be the result of calling the [[Get]] internal method
               of spreadObj passing ToString(n) as the argument.
 
-        ii. Call the [[DefineOwnProperty]] internal method of array
+        ii. ReturnIfAbrupt(v).
+
+        iii. Call the [[DefineOwnProperty]] internal method of array
               with arguments ToString(ToUint32(nextIndex)), Property
               Descriptor {[[Value]]: v, [[Writable]]: TRUE,
               [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and FALSE.
@@ -5086,7 +5410,7 @@ SpreadElement : … AssignmentExpression
 
     d.  Let nextIndex = nextIndex +1.
 
-9.  Return nextIndex.
+10. Return nextIndex.
 
 NOTE [[DefineOwnProperty]] is used to ensure that own properties are
 defined for the array even if the standard built-in Array prototype
@@ -5097,9 +5421,8 @@ RUNTIME SEMANTICS: EVALUATION
 
 ArrayLiteral : [ Elision~opt~ ]
 
-1.  Let array be the result of creating a new object as if by the
-    expression NEW ARRAY() where ARRAY is the standard built-in
-    constructor with that name.
+1.  Let array be the result of the abstraction operation ArrayCreate
+    (15.4) with argument 0.
 
 2.  Let pad be the Elision Width of Elision~opt~.
 
@@ -5110,9 +5433,8 @@ ArrayLiteral : [ Elision~opt~ ]
 
 ArrayLiteral : [ ElementList ]
 
-1.  Let array be the result of creating a new object as if by the
-    expression NEW ARRAY() where ARRAY is the standard built-in
-    constructor with that name.
+1.  Let array be the result of the abstraction operation ArrayCreate
+    (15.4) with argument 0.
 
 2.  Let len be result of performing Array Accumulation for
     ElementList with arguments array and 0.
@@ -5126,9 +5448,8 @@ ArrayLiteral : [ ElementList ]
 
 ArrayLiteral : [ ElementList , Elision~opt~ ]
 
-1.  Let array be the result of creating a new object as if by the
-    expression NEW ARRAY() where ARRAY is the standard built-in
-    constructor with that name.
+1.  Let array be the result of the abstraction operation ArrayCreate
+    (15.4) with argument 0.
 
 2.  3.  Let len be result of performing Array Accumulation for
     ElementList with arguments array and 0.
@@ -5147,7 +5468,7 @@ Syntax
 ArrayComprehension :
 
 [ Expression ComprehensionForList ]
-[ Expression ComprehensionForList IF ( Expression ) ]
+[ Expression ComprehensionForList IF Expression ]
 
 ComprehensionForList :
 
@@ -5156,7 +5477,63 @@ ComprehensionForList ComprehensionFor
 
 ComprehensionFor :
 
-FOR ( LeftHandSideExpression OF Expression )
+FOR ForBinding OF Expression
+
+ForBinding :
+
+BindingIdentifier
+BindingPattern
+
+STATIC SEMANTICS
+
+STATIC SEMANTICS: BOUND NAMES
+
+ForBinding : _BindingIdentifier _
+
+1.  Return the Bound Names of BindingIdentifier.
+
+ForBinding : BindingPattern
+
+1.  Return the Bound Names of BindingPattern.
+
+RUNTIME SEMANTICS
+
+RUNTIME SEMANTICS: BINDING INITIALISATION
+
+  With arguments value and environment.
+
+NOTE UNDEFINED is passed for environment to indicate that a PutValue
+operation should be used to assign the initialisation value. This is the
+case for VAR statements formal parameter lists of non-strict functions.
+In those cases a lexical binding is hosted and preinitialized prior to
+evaluation of its initializer.
+
+ForBinding : _BindingIdentifier _
+
+1.  Perform Binding Initialisation for BindingIdentifier passing
+    value and env as the arguments.
+
+ForBinding: BindingPattern
+
+1.  Perform Binding Initialisation for BindingPattern passing value
+    and env as the arguments.
+
+RUNTIME SEMANTICS: EVALUATION
+
+ArrayLiteral : [ ElementList ]
+
+1.  Let array be the result of the abstraction operation ArrayCreate
+    (15.4) with argument 0.
+
+2.  Let len be result of performing Array Accumulation for
+    ElementList with arguments array and 0.
+
+3.  If len is an abrupt completion, return len.
+
+4.  Call the [[Put]] internal method of array with arguments "LENGTH",
+    len, and FALSE.
+
+5.  Return array.
 
 1.  2.  3.  4.  5.  6.  
 
@@ -5196,22 +5573,19 @@ ObjectLiteral
 ObjectLiteral :
 
 { }
-{ PropertyNameAndValueList }
-{ PropertyNameAndValueList , }
+{ PropertyDefinitionList }
+{ PropertyDefinitionList , }
 
-PropertyNameAndValueList :
+PropertyDefinitionList :
 
-PropertyAssignment
-PropertyNameAndValueList , PropertyAssignment
+PropertyDefinition
+PropertyDefinitionList , PropertyDefinition
 
-PropertyAssignment :
+PropertyDefinition :
 
 IdentifierName
 PropertyName : AssignmentExpression
-PropertyName ( FormalParameterList ) { FunctionBody }
-* PropertyName ( FormalParameterList ) { FunctionBody }
-GET PropertyName ( ) { FunctionBody }
-SET PropertyName ( PropertySetParameterList ) { FunctionBody }
+MethodDefinition
 
 PropertyName :
 
@@ -5219,181 +5593,84 @@ IdentifierName
 StringLiteral
 NumericLiteral
 
-PropertySetParameterList :
-
-BindingIdentifier
-BindingPattern
+NOTE MethodDefinition is defined in 13.3.
 
 EARLY ERRORS
 
-PropertyNameAndValueList : PropertyNameAndValueList ,
-PropertyAssignment
-
--   It is a Syntax Error if this production is contained in strict code,
-    PropertyAssignment is the production PropertyAssignment :
-    PropertyName : AssignmentExpression, and
-    PropertyDefinitionList(PropName of PropertyAssignment) of
-    PropertyNameAndValueList is not the empty List.
-
--   It is a Syntax Error if PropertyAssignment is the production
-    PropertyAssignment : IdentifierName and
-    PropertyDefinitionList(PropName of PropertyAssignment) of
-    PropertyNameAndValueList is not the empty List.
-
--   It is a Syntax Error if PropertyAssignment is the production
-    PropertyAssignment : PropertyName ( FormalParameterList ) {
-    FunctionBody } and PropertyDefinitionList(PropName of
-    PropertyAssignment) of PropertyNameAndValueList is not the empty
-    List.
-
--   It is a Syntax Error if PropertyAssignment is the production
-    PropertyAssignment : * PropertyName ( FormalParameterList ) {
-    FunctionBody } and PropertyDefinitionList(PropName of
-    PropertyAssignment) of PropertyNameAndValueList is not the empty
-    List.
-
--   It is a Syntax Error if PropertyAssignment is the production
-     PropertyAssignment : GET PropertyName ( ) { FunctionBody }
-    and PropertyDefinitionList (PropName of PropertyAssignment) of
-    PropertyNameAndValueList includes a production of the form
-    PropertyAssignment : PropertyName : AssignmentExpression.
-
--   It is a Syntax Error if PropertyAssignment is the production
-     PropertyAssignment : SET PropertyName (
-    PropertySetParameterList ) { FunctionBody }
-    and PropertyDefinitionList (PropName of PropertyAssignment) of
-    PropertyNameAndValueList includes a production of the form
-    PropertyAssignment : PropertyName : AssignmentExpression.
-
--   It is a Syntax Error if PropertyAssignment is the production
-     PropertyAssignment : GET PropertyName ( ) { FunctionBody }
-    and PropertyDefinitionList (PropName of PropertyAssignment) of
-    PropertyNameAndValueList includes a production of the form
-    PropertyAssignment : GET PropertyName ( ) { FunctionBody }.
-
--   It is a Syntax Error if PropertyAssignment is the production
-     PropertyAssignment : SET PropertyName (
-    PropertySetParameterList ) { FunctionBody }
-    and PropertyDefinitionList (PropName of PropertyAssignment) of
-    PropertyNameAndValueList includes a production of the form
-     PropertyAssignment : SET PropertyName (
-    PropertySetParameterList ) { FunctionBody }.
-
-PropertyAssignment : PropertyName ( FormalParameterList ) {
-FunctionBody }
+ObjectLiteral : { PropertyDefinitionList }
 
 and
 
-* PropertyAssignment : PropertyName ( FormalParameterList ) {
-FunctionBody }
+ObjectLiteral : { PropertyDefinitionList , }
 
--   -   It is a Syntax Error if the PropName of PropertyName also
-    occurs in the VarDeclaredNames of FunctionBody.
+-   It is a Syntax Error if PropertyNameList of PropertyDefinitionList
+    contains any duplicate enties, unless one of the following
+    conditions are true for each duplicate entry:
 
--   It is a Syntax Error if the PropName of PropertyName also occurs
-    in the LexicallyDeclaredNames of FunctionBody.
+    1.  The source code corresponding to PropertyDefinitionList is not
+        strict code and all occurances in the list of the duplicated
+        entry were obtained from productions of the form
+        PropertyDefinition : PropertyName : AssignmentExpression.
 
--   It is a Syntax Error if any element of the LexicallyDeclaredNames of
-    FormalParameterList also occurs in the VarDeclaredNames of
-    FunctionBody.
+    2.  The duplicated entry occurs exactly twice in the list and one
+        occurrence was obtained from a GET accessor property definition
+        and the other occurrence was obtained from a SET accessor
+        property definition.
 
--   It is a Syntax Error if any element of the BoundNames of
-    FormalParameterList also occurs in the LexicallyDeclaredNames of
-    FunctionBody.
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   
 
 -   -   
 
-PropertyAssignment : SET PropertyName ( PropertySetParameterList )
-{ FunctionBody }
+-   -   -   -   -   -   
 
--   -   -   -   It is a Syntax Error if any element of the BoundNames of
-    PropertySetParameterList also occurs in the LexicallyDeclaredNames
-    of FunctionBody.
+1.  
 
-PropertySetParameterList : BindingPattern
+1.  
 
--   -   It is a Syntax Error if BoundNames of BindingPattern contains
-    any duplicate elements.
+STATIC SEMANTICS: CONTAINS
 
-STATIC SEMANTICS: BOUNDNAMES
+  With parameter symbol.
 
-PropertySetParameterList : _BindingIdentifier _
+PropertyDefinition : MethodDefinition
 
-1.  Return BoundNames of BindingIdentifier.
+NOTE Static semantic rules that depend upon substructure generally do
+not look into function definitions.
 
-PropertySetParameterList: _BindingPattern _
+1.  
 
-1.  Return BoundNames of BindingPattern.
+1.  
 
-STATIC SEMANTICS: EXPECTEDARGUMENTCOUNT
+1.  
 
-PropertySetParameterList : _BindingIdentifier _
+1.  
 
-1.  Return 1.
+1.  2.  
 
-PropertySetParameterList : _BindingPattern _
+1.  2.  a.  
 
-1.  Return 1.
-
-STATIC SEMANTICS: HASINITIALISER
-
-PropertySetParameterList : _BindingIdentifier _
-
-1.  Return FALSE.
-
-PropertySetParameterList : _BindingPattern _
-
-1.  Return FALSE.
-
-STATIC SEMANTICS: PROPERTYDEFINITIONLIST(NAME)
-
-PropertyNameAndValueList : PropertyAssignment
-
-1.  If PropName of PropertyAssignment is not name return the empty
-    List.
-
-2.  Return a List containing PropertyAssignment.
-
-PropertyNameAndValueList : PropertyNameAndValueList ,
-PropertyAssignment
-
-1.  Let previous be PropertyDefinitionList(name) of
-    PropertyNameAndValueList.
-
-2.  If PropName of PropertyAssignment is name then,
-
-    a.  Append PropertyAssignment to the end of previous.
-
-3.  Return previous.
+3.  
 
 STATIC SEMANTICS: PROPNAME
 
-PropertyAssignment : IdentifierName
+PropertyDefinition : IdentifierName
 
 1.  Return String Value of IdentifierName.
 
-PropertyAssignment : PropertyName : AssignmentExpression
+PropertyDefinition : PropertyName : AssignmentExpression
 
 1.  Return PropName of PropertyName.
 
-PropertyAssignment : PropertyName ( FormalParameterList ) {
-FunctionBody }
+PropertyDefinition : MethodDefinition
 
-1.  Return PropName of PropertyName.
+1.  Return PropName of MethodDefinition.
 
-PropertyAssignment : * PropertyName ( FormalParameterList ) {
-FunctionBody }
+1.  
 
-1.  Return PropName of PropertyName.
+1.  
 
-PropertyAssignment : GET PropertyName ( ) { FunctionBody }
+1.  
 
-1.  Return PropName of PropertyName.
-
-PropertyAssignment : SET PropertyName ( PropertySetParameterList )
-{ FunctionBody }
-
-1.  Return PropName of PropertyName.
+1.  
 
 PropertyName : IdentifierName
 
@@ -5410,6 +5687,21 @@ PropertyName : NumericLiteral
 
 2.  Return ToString(nbr).
 
+STATIC SEMANTICS: PROPERTYNAMELIST
+
+PropertyDefinitionList : PropertyDefinition
+
+1.  Return a new List containing PropName of PropertyDefinition.
+
+PropertyDefinitionList : PropertyDefinitionList ,
+PropertyDefinition
+
+1.  Let list be PropertyNameList of PropertyDefinitionList.
+
+1.  Append PropName of PropertyDefinition to the end of list.
+
+1.  Return list.
+
 RUNTIME SEMANTICS: EVALUATION
 
 ObjectLiteral : { }
@@ -5419,15 +5711,14 @@ ObjectLiteral : { }
 
 ObjectLiteral :
 
-  { PropertyNameAndValueList }_
-  _{ PropertyNameAndValueList , }
+  { PropertyDefinitionList }_
+  _{ PropertyDefinitionList , }
 
-1.  Let obj be the result of creating a new object as if by the
-    expression NEW OBJECT() where OBJECT is the standard built-in
-    constructor with that name.
+1.  Let obj be the result of the abstraction operation ObjectCreate
+    (15.2).
 
 2.  Let success be the result of performing Property Definition
-    Evaluation of PropertyNameAndValueList with argument obj.
+    Evaluation of PropertyDefinitionList with argument obj.
 
 3.  If success is an abrupt completion, return success.
 
@@ -5437,17 +5728,17 @@ RUNTIME SEMANTICS: PROPERTY DEFINITION EVALUATION
 
   With parameter object.
 
-PropertyNameAndValueList : PropertyAssignment
+PropertyDefinitionList : PropertyDefinition
 
 1.  Return the result of
 
-2.  3.  4.  Perform Property Definition Evaluation of
-    PropertyAssignment with argument object.
+2.  3.  4.  Performing Property Definition Evaluation of
+    PropertyDefinition with argument object.
 
-PropertyNameAndValueList : PropertyNameAndValueList ,
-PropertyAssignment
+PropertyDefinitionList : PropertyDefinitionList ,
+PropertyDefinition
 
-PropertyAssignment : IdentifierName
+PropertyDefinition : IdentifierName
 
 1.  Let propName be PropName(IdentifierName).
 
@@ -5466,7 +5757,7 @@ PropertyAssignment : IdentifierName
 
 7.  
 
-PropertyAssignment : PropertyName : AssignmentExpression
+PropertyDefinition : PropertyName : AssignmentExpression
 
 1.  Let propName be PropName(PropertyName).
 
@@ -5482,86 +5773,18 @@ PropertyAssignment : PropertyName : AssignmentExpression
 6.  Return the result of calling the [[DefineOwnProperty]] internal
     method of object with arguments propName, desc, and FALSE.
 
-PropertyAssignment : PropertyName ( FormalParameterList ) {
-FunctionBody }
+PropertyDefinition : MethodDefinition
 
-1.  Let propName be PropName of PropertyName.
+1.  Return the result of Property Definition Evaluation of
+    MethodDefinition with argument object.
 
-2.  Let closure be the result of creating a new Function object as
-    specified in 13.1.1 using a FormalParameterList : [empty]
-    production as the parameter list and body specified by
-    FunctionBody. Pass in the LexicalEnvironment of the running
-    execution context as the Scope. Pass in TRUE as the Strict flag.
-    Pass object as the optional homeObject argument and propName as
-    the optional methodName argument.
+1.  2.  3.  4.  
 
-3.  Let desc be the Property Descriptor{[[Get]]: closure,
-    [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
+1.  2.  3.  4.  
 
-4.  Return the result of calling the [[DefineOwnProperty]] internal
-    method of object with arguments propName, desc, and FALSE.
+1.  2.  3.  4.  
 
-PropertyAssignment : * PropertyName ( FormalParameterList ) {
-FunctionBody }
-
-1.  Let propName be PropName of PropertyName.
-
-2.  Let closure be the result of creating a new Generator object as
-    specified in 13.2.xxx using a FormalParameterList : [empty]
-    production as the parameter list and body specified by
-    FunctionBody. Pass in the LexicalEnvironment of the running
-    execution context as the Scope. Pass in TRUE as the Strict flag.
-    Pass object as the optional homeObject argument and propName as
-    the optional methodName argument.
-
-3.  Let desc be the Property Descriptor{[[Get]]: closure,
-    [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
-
-4.  Return the result of calling the [[DefineOwnProperty]] internal
-    method of object with arguments propName, desc, and FALSE.
-
-PropertyAssignment : GET PropertyName ( ) { FunctionBody }
-
-1.  Let propName be PropName(PropertyName).
-
-2.  Let closure be the result of creating a new Function object as
-    specified in 13.2 using a FormalParameterList : [empty] production
-    as the formal parameter list and body specified by FunctionBody.
-    Pass in the LexicalEnvironment of the running execution context as
-    the Scope. Pass in TRUE as the Strict flag if the
-    PropertyAssignment is contained in strict code or if its
-    FunctionBody is strict code. Pass object as the optional
-    homeObject argument and propName as the optional methodName
-    argument.
-
-3.  Let desc be the Property Descriptor{[[Get]]: closure,
-    [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
-
-4.  Return the result of calling the [[DefineOwnProperty]] internal
-    method of object with arguments propName, desc, and FALSE.
-
-PropertyAssignment : SET PropertyName ( PropertySetParameterList )
-{ FunctionBody }
-
-1.  Let propName be PropName(PropertyName).
-
-2.  Let closure be the result of creating a new Function object as
-    specified in 13.2 with parameters specified by
-    PropertySetParameterList and body specified by FunctionBody.
-    Pass in the LexicalEnvironment of the running execution context as
-    the Scope. Pass in TRUE as the Strict flag if the
-    PropertyAssignment is contained in strict code or if its
-    FunctionBody is strict code. Pass object as the optional
-    homeObject argument and propName as the optional methodName
-    argument.
-
-3.  Let desc be the Property Descriptor{[[Set]]: closure,
-    [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
-
-4.  Return the result of calling the [[DefineOwnProperty]] internal
-    method of object with arguments propName, desc, and FALSE.
-
-5.  
+1.  2.  3.  4.  5.  
 
 RUNTIME SEMANTICS: EVALUATION
 
@@ -5583,7 +5806,7 @@ ComprehensionForList ComprehensionFor
 
 ComprehensionFor :
 
-FOR ( LeftHandSideExpression OF Expression )
+FOR LeftHandSideExpression OF Expression
 
 1.  
 
@@ -5645,12 +5868,32 @@ TriangleLiteral :
 SealedArrayLiteral
 SealedObjectLiteral
 FunctionExpression
+ArrowFunction
 ValueLiteral
 
 LeftHandSideExpression :
 
 NewExpression
 CallExpression
+
+STATIC SEMANTICS: ISINVALIDASSIGNMENTPATTERN
+
+LeftHandSiceExpression : NewExpression
+
+1.  If the source code corresponding to NewExpression cannot be parsed
+    as ArrayLiteral, then
+
+    a.  If the source code corresponding to NewExpression cannot be
+        parsed as ObjectLiteral, then return FALSE.
+
+2.  If the source code corresponding to NewExpression cannot be parsed
+    using AssignmentPattern (11.13.1) as the goal symbol, return TRUE.
+
+3.  Return FALSE.
+
+LeftHandSiceExpression : CallExpression
+
+1.  Return FALSE.
 
 Properties are accessed by name, using either the dot notation:
 
@@ -5738,6 +5981,22 @@ CallExpression : MemberExpression Arguments
 
 1.  Let ref be the result of evaluating MemberExpression.
 
+2.  Return the result of the abstract operation Evalute Call with
+    arguments ref and Arguments.
+
+CallExpression : CallExpression Arguments
+
+1.  Let ref be the result of evaluating CallExpression.
+
+2.  Return the result of the abstract operation Evalute Call with
+    arguments ref and Arguments.
+
+The abstract operation Evalute Call takes as arguments a Reference,
+ref, and a syntactic grammar production arguments. It performs the
+following steps:
+
+1.  Let ref be the result of evaluating MemberExpression.
+
 2.  Let func be GetValue(ref).
 
 3.  If func is an abrupt completion, return func.
@@ -5755,12 +6014,12 @@ CallExpression : MemberExpression Arguments
 
     a.  If IsPropertyReference(ref) is TRUE, then
 
-        i.  Let thisValue be GetBase(ref).
+        i.  Let thisValue be GetThisValue(ref).
 
     b.  Else, the base of ref is an Environment Record
 
-        i.  Let thisValue be the result of calling the
-            ImplicitThisValue concrete method of GetBase(ref).
+        i.  Let thisValue be the result of calling the WithBaseObject
+            concrete method of GetBase(ref).
 
 9.  Else, Type(ref) is not Reference.
 
@@ -5769,12 +6028,6 @@ CallExpression : MemberExpression Arguments
 10. Return the result of calling the [[Call]] internal method on func,
     providing thisValue as the THIS value and providing the list
     argList as the argument values.
-
-CallExpression : CallExpression Arguments
-
-This is evaluated in exactly the same manner as CallExpression :
-MemberExpression Arguments except that the contained
-CallExpression is evaluated in step 1.
 
 NOTE The returned result will never be of type Reference if func is a
 native ECMAScript object. Whether calling a host object can return a
@@ -5814,26 +6067,91 @@ RUNTIME SEMANTICS: EVALUATION
 
 MemberExpression : SUPER [ Expression ]
 
-1.  Let baseReference be the result of evaluating MemberExpression.
+1.  Let env be the result of performing the GetThisEnvironment
+    abstract operation.
 
-2.  Let baseValue be GetValue(baseReference).
+2.  If the result of calling the HasSuperBinding concrete method of
+    env is FALSE, then throw ReferenceError.
 
-3.  Let propertyNameReference be the result of evaluating
+3.  Let actualThis be the result of calling the GetThisBinding
+    concrete method of env.
+
+4.  Let baseValue be the result of calling the GetHomeObject concrete
+    method of env.
+
+5.  6.  7.  Let propertyNameReference be the result of evaluating
     Expression.
 
-4.  Let propertyNameValue be GetValue(propertyNameReference).
+8.  Let propertyNameValue be GetValue(propertyNameReference).
 
-5.  Call CheckObjectCoercible(baseValue).
+9.  ReturnIfAbrupt(CheckObjectCoercible(baseValue)).
 
-6.  Let propertyNameString be ToString(propertyNameValue).
+10. Let propertyKey be ToPropertyKey(propertyNameValue).
+
+11. If the code matched by the syntactic production that is being
+    evaluated is strict mode code, let strict be TRUE, else let
+    strict be FALSE.
+
+12. Return a value of type Reference that is a Super Reference whose
+    base value is baseValue, whose referenced name is propertyKey,
+    whose thisValue is actualThis, and whose strict mode flag is
+    strict.
+
+MemberExpression : SUPER . IdentifierName
+
+1.  Let env be the result of performing the GetThisEnvironment
+    abstract operation.
+
+2.  If the result of calling the HasSuperBinding concrete method of
+    env is FALSE, then throw ReferenceError.
+
+3.  Let actualThis be the result of calling the GetThisBinding
+    concrete method of env.
+
+4.  Let baseValue be the result of calling the GetHomeObject concrete
+    method of env.
+
+5.  ReturnIfAbrupt(CheckObjectCoercible(baseValue)).
+
+6.  Let propertyKey be String Value of IdentifierName.
 
 7.  If the code matched by the syntactic production that is being
     evaluated is strict mode code, let strict be TRUE, else let
     strict be FALSE.
 
-8.  Return a value of type Reference whose base value is baseValue and
-    whose referenced name is propertyNameString, and whose strict mode
-    flag is strict.
+8.  Return a value of type Reference that is a Super Reference whose
+    base value is baseValue, whose referenced name is propertyKey,
+    whose thisValue.
+
+CallExpression : SUPER Arguments
+
+1.  Let env be the result of performing the GetThisEnvironment
+    abstract operation.
+
+2.  If the result of calling the HasSuperBinding concrete method of
+    env is FALSE, then throw ReferenceError.
+
+3.  Let actualThis be the result of calling the GetThisBinding
+    concrete method of env.
+
+4.  Let baseValue be the result of calling the GetHomeObject concrete
+    method of env.
+
+5.  ReturnIfAbrupt(CheckObjectCoercible(baseValue)).
+
+6.  Let propertyKey be the result of calling the GetMethodName concete
+    method of env.
+
+7.  If the code matched by the syntactic production that is being
+    evaluated is strict mode code, let strict be TRUE, else let
+    strict be FALSE.
+
+8.  Let ref be a value of type Reference that is a Super Reference
+    whose base value is baseValue, whose referenced name is
+    propertyKey, whose thisValue.
+
+9.  Return the result of the abstract operation Evalute Call with
+    arguments ref and Arguments.
 
 The evaluation of an argument list produces a List of values (see 8.7).
 
@@ -5884,18 +6202,22 @@ ArgumentList : _… AssignmentExpression_
 
 7.  Let spreadLen be ToUint32(lenVal).
 
-8.  Let n = 0.
+8.  ReturnIfAbrupt(spreadLen).
 
-9.  Repeat, while n < spreadLen
+9.  Let n = 0.
+
+10. Repeat, while n < spreadLen
 
     a.  Let nextArg be the result of calling the [[Get]] internal
           method of spreadObj passing ToString(n) as the argument.
 
-    b.  Append nextArg as the last element of list.
+    b.  ReturnIfAbrupt(nextArg).
 
-    c.  Let n = n+1.
+    c.  Append nextArg as the last element of list.
 
-10. Return list.
+    d.  Let n = n+1.
+
+11. Return list.
 
 ArgumentList : ArgumentList , AssignmentExpression
 
@@ -5931,18 +6253,22 @@ ArgumentList : ArgumentList , _… _AssignmentExpression
 
 7.  Let spreadLen be ToUint32(lenVal).
 
-8.  Let n = 0.
+8.  ReturnIfAbrupt(spreadLen).
 
-9.  Repeat, while n < spreadLen
+9.  Let n = 0.
+
+10. Repeat, while n < spreadLen
 
     a.  Let nextArg be the result of calling the [[Get]] internal
           method of spreadObj passing ToString(n) as the argument.
 
-    b.  Append nextArg as the last element of precedingArgs.
+    b.  ReturnIfAbrupt(nextArg).
 
-    c.  Let n = n+1.
+    c.  Append nextArg as the last element of precedingArgs.
 
-10. Return precedingArgs.
+    d.  Let n = n+1.
+
+11. Return precedingArgs.
 
 Syntax
 
@@ -6077,7 +6403,10 @@ UnaryExpression : DELETE UnaryExpression
 
 5.  If IsPropertyReference(ref) is TRUE, then
 
-    a.  Return the result of calling the [[Delete]] internal method on
+    a.  If IsSuperReference(ref), then throw a REFERENCEERROR
+        exception.
+
+    b.  Return the result of calling the [[Delete]] internal method on
         ToObject(GetBase(ref)) providing GetReferencedName(ref) and
         IsStrictReference(ref) as the arguments.
 
@@ -6807,12 +7136,15 @@ AssignmentExpression :
 
 ConditionalExpression
 YieldExpression
+ArrowFunction
 LeftHandSideExpression = AssignmentExpression
 LeftHandSideExpression AssignmentOperator AssignmentExpression
 
 AssignmentExpressionNoIn :
 
 ConditionalExpressionNoIn
+YieldExpression
+ArrowFunction
 LeftHandSideExpression = AssignmentExpressionNoIn
 LeftHandSideExpression AssignmentOperator AssignmentExpressionNoIn
 
@@ -6835,9 +7167,11 @@ AssignmentExpression :
 LeftHandSideExpression = AssignmentExpression
 LeftHandSideExpression AssignmentOperator AssignmentExpression
 
--   It is a Syntax Error if the AssignmentExpression is contained in
-    strict code and LeftHandSideExpression is the Identifier EVAL or
-    the Identifier ARGUMENTS.
+-   -   
+
+-   -   It is a Syntax Error if the AssignmentExpression is contained
+    in strict code and LeftHandSideExpression is the Identifier EVAL
+    or the Identifier ARGUMENTS.
 
 -   -   -   It is a Syntax Error if the LeftHandSideExpression is an
     Identifier that statically resolves to a declarative environment
@@ -6850,10 +7184,8 @@ LeftHandSideExpression AssignmentOperator AssignmentExpression
 
 AssignmentExpression : LeftHandSideExpression = AssignmentExpression
 
--   It is a Syntax Error if the LeftHandSideExpression is an
-    ObjectLiteral or an ArrayLiteral and the source code
-    corresponding to LeftHandSideExpression cannot be parsed using
-    AssignmentPattern as the goal symbol.
+-   It is a Syntax Error if IsInvalidAssignmentPattern of
+    LeftHandSideExpression is TRUE.
 
 RUNTIME SEMANTICS: EVALUATION
 
@@ -6942,10 +7274,8 @@ AssignmentElement : LeftHandSideExpression
     environment record binding or if the resolved binding is an
     immutable binding.
 
--   It is a Syntax Error if the LeftHandSideExpression is an
-    ObjectLiteral or an ArrayLiteral and the source code
-    corresponding to LeftHandSideExpression cannot be parsed using
-    AssignmentPattern as the goal symbol.
+-   It is a Syntax Error if IsInvalidAssignmentPattern of
+    LeftHandSideExpression is TRUE.
 
 -   It is a Syntax Error if the LeftHandSideExpression is
     PrimaryExpression : ( Expression ) and Expression derived a
@@ -7065,7 +7395,7 @@ AssignmentProperty : PropertyName : LeftHandSideExpression
 
     b.  Let vObj be ToObject(v).
 
-    c.  If vObj is an abrupt completion, return vObj.
+    c.  ReturnIfAbrupt(vObj).
 
     d.  Return the result of evaluating AssignmentPattern using vObj
         as the obj parameter.
@@ -7084,7 +7414,7 @@ ArrayAssignmentPattern : [ Elision~opt~ AssignmentRestElement ]
     Elision, otherwise let skip be 0.
 
 2.  Return the result of performing Indexed Destructuring Assignment
-    Evaluation of AssignmentRestElement with and skip as the
+    Evaluation of AssignmentRestElement with obj and skip as the
     arguments.
 
 3.  
@@ -7175,7 +7505,7 @@ AssignmentElement : LeftHandSideExpression
 
     b.  Let vObj be ToObject(v).
 
-    c.  If vObj is an abrupt completion, return vObj.
+    c.  ReturnIfAbrupt(vObj).
 
     d.  Return the result of evaluating Destructuring Assignment
         Evaluation of AssignmentPattern with vObj as the argument.
@@ -7199,11 +7529,10 @@ AssignmentRestElement : … LeftHandSideExpression
 
 4.  Let len be ToUint32(lenVal).
 
-5.  If len is an abrupt completion, return len.
+5.  ReturnIfAbrupt(len).
 
-6.  Let A be a new array object created as if by the expression NEW
-    ARRAY() where ARRAY is the standard built-in constructor with that
-    name.
+6.  Let A be the result of the abstraction operation ArrayCreate
+    (15.4) with argument 0.
 
 7.  Let n=0;
 
@@ -7219,7 +7548,7 @@ AssignmentRestElement : … LeftHandSideExpression
         i.  Let v be the result of calling the [[Get]] internal method
               of obj passing ToString(index) as the argument.
 
-        ii. If v is an abrupt completion, return v.
+        ii. ReturnIfAbrupt(len).
 
         iii. Call the [[DefineOwnProperty]] internal method of A with
               arguments ToString(n), Property Descriptor {[[Value]]:
@@ -7517,7 +7846,7 @@ BlockStatement : Block
 
 Block : { }
 
-1.  Return NormalCompletion (EMPTY).
+1.  Return NormalCompletion(empty).
 
 -   -   -   
 
@@ -7645,9 +7974,8 @@ STATIC SEMANTICS: EARLY ERRORS
 
 LexicalBinding : BindingIdentifier
 
--   It is a Syntax Error if the BindingIdentifier if
-    IsConstantDeclaration of the LexicalDeclaration containing this
-    production is TRUE.
+-   It is a Syntax Error if IsConstantDeclaration of the
+    LexicalDeclaration containing this production is TRUE.
 
 -   
 
@@ -7662,7 +7990,7 @@ LexicalDeclaration : _LetOrConst BindingList_ ;
 
 1.  Return the Bound Names of BindingList.
 
-BindingList : LexialBinding
+BindingList : LexicalBinding
 
 1.  Return the Bound Names of LexicalBinding.
 
@@ -7671,7 +7999,7 @@ BindingList : BindingList , LexicalBinding
 1.  Let names be the Bound ames of BindingList.
 
 2.  Append to names the elements of the Bound Names of
-    LexialBinding.
+    LexicalBinding.
 
 3.  Return names.
 
@@ -7713,9 +8041,9 @@ RUNTIME SEMANTICS: BINDING INITIALISATION
 
 NOTE UNDEFINED is passed for environment to indicate that a PutValue
 operation should be used to assign the initialisation value. This is the
-the case for VAR statements formal parameter lists of non-strict
-functions. In those cases a lexical binding is hosted and preinitialized
-prior to evaluation of its initializer.
+case for VAR statements formal parameter lists of non-strict functions.
+In those cases a lexical binding is hosted and preinitialized prior to
+evaluation of its initializer.
 
 BindingIdentifier : Identifier
 
@@ -7757,7 +8085,7 @@ BindingList : BindingList , LexicalBinding
 
 2.  If next is an abrupt completion, return next.
 
-3.  Return the result of evaluating LexialBinding.
+3.  Return the result of evaluating LexicalBinding.
 
 LexicalBinding : _BindingIdentifier _
 
@@ -7772,7 +8100,7 @@ LexicalBinding : _BindingIdentifier Initialiser_
 
 3.  If value is an abrupt completion, return rval.
 
-4.  Let env be the running execution context’s LexicalEnvironment.
+4.  Let env be the current execution context’s LexicalEnvironment.
 
 5.  Return the result of performing Binding Initialisation for
     BindingIdentifier passing value and env as the arguments.
@@ -7785,7 +8113,7 @@ LexicalBinding: _BindingPattern Initialiser_
 
 3.  If rval is an abrupt completion, return rval.
 
-4.  Let env be the running execution context’s LexicalEnvironment.
+4.  Let env be the current execution context’s LexicalEnvironment.
 
 5.  Return the result of performing Binding Initialisation for
     BindingPattern using rval as the obj parameter and env as
@@ -7906,9 +8234,9 @@ RUNTIME SEMANTICS: BINDING INITIALISATION
 
 NOTE UNDEFINED is passed for environment to indicate that a PutValue
 operation should be used to assign the initialisation value. This is the
-the case for VAR statements formal parameter lists of non-strict
-functions. In those cases a lexical binding is hosted and preinitialized
-prior to evaluation of its initializer.
+case for VAR statements formal parameter lists of non-strict functions.
+In those cases a lexical binding is hosted and preinitialized prior to
+evaluation of its initializer.
 
 VariableDeclaration : BindingIdentifier
 
@@ -8170,9 +8498,9 @@ RUNTIME SEMANTICS: BINDING INITIALISATION
 
 NOTE When UNDEFINED is passed for environment it indicates that a
 PutValue operation should be used to assign the initialisation value.
-This is the the case for formal parameter lists of non-strict functions.
-In that case the formal parameter bindings are preinitialized in order
-to deal with the possibility of multiple parameters with the same name.
+This is the case for formal parameter lists of non-strict functions. In
+that case the formal parameter bindings are preinitialized in order to
+deal with the possibility of multiple parameters with the same name.
 
 BindingPattern : ObjectBindingPattern
 
@@ -8259,7 +8587,7 @@ BindingPropertyList : BindingPropertyList , BindingProperty
 1.  Let next be the result of performing Binding Initialisation for
     BindingPropertyList using value and environment as arguments.
 
-2.  If next is an abrupt completion, return next.
+2.  ReturnIfAbrupt(next).
 
 3.  Return the result of performing Binding Initialisation for
     BindingProperty using value and environment as arguments.
@@ -8286,9 +8614,9 @@ RUNTIME SEMANTICS: INDEXED BINDING INITIALISATION
 
 NOTE When UNDEFINED is passed for environment it indicates that a
 PutValue operation should be used to assign the initialisation value.
-This is the the case for formal parameter lists of non-strict functions.
-In that case the formal parameter bindings are preinitialized in order
-to deal with the possibility of multiple parameters with the same name.
+This is the case for formal parameter lists of non-strict functions. In
+that case the formal parameter bindings are preinitialized in order to
+deal with the possibility of multiple parameters with the same name.
 
 ArrayBindingPattern : [ Elision~opt~ ]
 
@@ -8319,10 +8647,10 @@ ArrayBindingPattern: [ BindingElementList , Elision~opt~
 BindingRestElement ]
 
 1.  Let index be the result of performing Indexed Binding
-    Initialisation for BindingElementList using array, _,
-    nextIndex_, and environment as arguments.
+    Initialisation for BindingElementList using _array , nextIndex_,
+    and environment as arguments.
 
-2.  If index is an abrupt completion, return index.
+2.  ReturnIfAbrupt(index).
 
 3.  If Elision is present, then let skip be the result of evaluating
     Elision, otherwise let skip be 0.
@@ -8342,7 +8670,7 @@ BindingElementList : Elision~opt~ BindingElement
     Initialisation for BindingElement using array,
     nextIndex +skip , and environment as arguments.
 
-3.  If next is an abrupt completion, return next.
+3.  ReturnIfAbrupt(next).
 
 4.  Return index_+_skip+1.
 
@@ -8355,7 +8683,7 @@ _BindingElement _
     Initialisation for BindingElementList using _array, nextIndex_,
     and environment as arguments.
 
-2.  If next is an abrupt completion, return next.
+2.  ReturnIfAbrupt(next).
 
 3.  If Elision is present, then let skip be the result of evaluating
     Elision, otherwise let skip be 0.
@@ -8364,7 +8692,7 @@ _BindingElement _
     Initialisation for BindingElement using array, listNext_+_skip
     , and environment as arguments.
 
-5.  If listNext is an abrupt completion, return listNext.
+5.  ReturnIfAbrupt(listNext).
 
 6.  Return listNext_+_skip+1.
 
@@ -8430,23 +8758,22 @@ BindingElement: _BindingPattern Initialiser_~opt~
 
         i.  Let v be UNDEFINED.
 
-10. If v is an abrupt completion, return v.
+10. ReturnIfAbrupt(v).
 
 11. Return the result of performing Binding Initialisation for
     BindingPattern passing v and environment as arguments.
 
 BindingRestElement : … BindingIdentifier
 
-1.  Let A be a new array object created as if by the expression NEW
-    ARRAY() where ARRAY is the standard built-in constructor with that
-    name.
+1.  Let A be the result of the abstraction operation ArrayCreate
+    (15.4) with argument 0.
 
 2.  Let lenVal be the result of calling the [[Get]] internal method of
     array with argument “LENGTH”.
 
 3.  Let arrayLength be ToUint32(lenVal).
 
-4.  If arrayLength is an abrupt completion, return arrayLength.
+4.  ReturnIfAbrupt(arrayLength).
 
 5.  Let n=0.
 
@@ -8464,11 +8791,11 @@ BindingRestElement : … BindingIdentifier
         i.  Let v be the result of calling the [[Get]] internal method
               of array passing P as the argument.
 
-        ii. If v is an abrupt completion, return v.
+        ii. ReturnIfAbrupt(v).
 
         iii. Call the [[DefineOwnProperty]] internal method of A with
               arguments ToString(n), Property Descriptor {[[Value]]:
-              v.[[value]], [[Writable]]: TRUE, [[Enumerable]]: TRUE,
+              v, [[Writable]]: TRUE, [[Enumerable]]: TRUE,
               [[Configurable]]: TRUE}, and FALSE.
 
     d.  Let n = n+1.
@@ -8476,7 +8803,7 @@ BindingRestElement : … BindingIdentifier
     e.  Let index = index+1.
 
 8.  Return the result of performing Binding Initialisation for
-    BindingIdentifer using array and environment as arguments.
+    BindingIdentifier using A and environment as arguments.
 
 RUNTIME SEMANTICS: KEYED BINDING INITIALISATION
 
@@ -8484,9 +8811,9 @@ RUNTIME SEMANTICS: KEYED BINDING INITIALISATION
 
 NOTE When UNDEFINED is passed for environment it indicates that a
 PutValue operation should be used to assign the initialisation value.
-This is the the case for formal parameter lists of non-strict functions.
-In that case the formal parameter bindings are preinitialized in order
-to deal with the possibility of multiple parameters with the same name.
+This is the case for formal parameter lists of non-strict functions. In
+that case the formal parameter bindings are preinitialized in order to
+deal with the possibility of multiple parameters with the same name.
 
 BindingElement: SingleNameBinding
 
@@ -8514,7 +8841,7 @@ BindingElement: BindingPattern Initialiser~opt~
 
         i.  Let v be UNDEFINED.
 
-4.  If v is an abrupt completion, return v.
+4.  ReturnIfAbrupt(v).
 
 5.  Return the result of performing Binding Initialisation for
     BindingPattern passing v and environment as arguments.
@@ -8539,7 +8866,7 @@ SingleNameBinding : _BindingIdentifier Initialiser_~opt~
 
         i.  Let v be UNDEFINED.
 
-4.  If v is an abrupt completion, return v.
+4.  ReturnIfAbrupt(v).
 
 5.  Return the result of performing Binding Initialisation for
     BindingIdentifer passing v and environment as arguments.
@@ -8625,29 +8952,21 @@ FOR ( VAR VariableDeclarationListNoIn; Expression~opt~ ; Expression~opt~
 FOR ( LexicalDeclarationNoIn; Expression~opt~ ; Expression~opt~ )
 Statement
 FOR ( LeftHandSideExpression IN Expression ) Statement
-FOR ( VAR BindingIdentifer IN Expression ) Statement
+FOR ( VAR ForBinding IN Expression ) Statement
 FOR ( ForDeclaration IN Expression ) Statement
 FOR ( LeftHandSideExpression OF Expression ) Statement
-FOR ( VAR ForVarDeclaration OF Expression ) Statement
+FOR ( VAR ForBinding OF Expression ) Statement
 FOR ( ForDeclaration OF Expression ) Statement
-
-ForVarDeclaration :
-
-BindingPattern
-VariableDeclarationNoIn
 
 ForDeclaration :
 
 LetOrConst ForBinding
 
-ForBinding :
+NOTE 1 ForBinding is defined in 11.1.4.2.
 
-BindingIdentifier
-BindingPattern
+NOTE 2 A semicolon is not required after a DO-WHILE statement.
 
-NOTE A semicolon is not required after a DO-WHILE statement.
-
-The abstract operation loopContinues with arguments completion and
+The abstract operation LoopContinues with arguments completion and
 labelSet is defined by the following step:
 
 STATIC SEMANTICS: VARDECLAREDNAMES
@@ -8672,7 +8991,7 @@ IterationStatement : DO Statement WHILE ( Expression );
 
     c.  i.  
 
-    d.  If stmt is an abrupt completion and loopContinues
+    d.  If stmt is an abrupt completion and LoopContinues
         (stmt_,_labelSet) is FALSE, return stmt.
 
     e.  Let exprRef be the result of evaluating Expression.
@@ -8685,7 +9004,7 @@ IterationStatement : DO Statement WHILE ( Expression );
 
         i.  Assert: exprValue is an abrupt completion.
 
-        ii. If loopContinues (exprValue_,_labelSet) is FALSE, return
+        ii. If LoopContinues (exprValue_,_labelSet) is FALSE, return
               exprValue.
 
 4.  
@@ -8746,14 +9065,14 @@ incrementExpr, and labelSet is performed as follows:
 
         iii. If testExprValue is FALSE, return NormalCompletion(V).
 
-        iv. Else loopContinues (testExprValue_,_labelSet) is FALSE,
+        iv. Else LoopContinues (testExprValue_,_labelSet) is FALSE,
             return testExprValue.
 
     b.  Let stmt be the result of evaluating Statement.
 
     c.  If stmt.[[value]] is not empty, let V = stmt.[[value]].
 
-    d.  e.  f.  If stmt loopContinues (stmt_,_labelSet) is FALSE,
+    d.  e.  f.  If stmt LoopContinues (stmt_,_labelSet) is FALSE,
         return stmt.
 
     g.  If incrementExpr is not [empty], then
@@ -8763,7 +9082,7 @@ incrementExpr, and labelSet is performed as follows:
 
         ii. Let incExprValue be GetValue(incExprRef).
 
-        iii. If loopContinues(incExprValue_,_labelSet) is FALSE,
+        iii. If LoopContinues(incExprValue_,_labelSet) is FALSE,
             return incExprValue.
 
 IterationStatement : FOR ( VAR VariableDeclarationListNoIn ;
@@ -8772,13 +9091,13 @@ Expression~opt~ ; Expression~opt~ ) Statement
 IterationStatement : FOR ( LexicalDeclarationNoIn ;
 Expression~opt~ ; Expression~opt~ ) Statement
 
-1.  Let oldEnv be the running execution context’s LexicalEnvironment.
+1.  Let oldEnv be the current execution context’s LexicalEnvironment.
 
 2.  Let loopEnv be the result of calling NewDeclarativeEnvironment
     passing oldEnv as the argument.
 
-3.  Let isConst be the the result of performing IsConstantDeclaration
-    of d.
+3.  Let isConst be the result of performing IsConstantDeclaration of
+    d.
 
 4.  For each element dn of the BoundNames of LexicalDeclarationNoIn
     do
@@ -8793,13 +9112,13 @@ Expression~opt~ ; Expression~opt~ ) Statement
         i.  Call loopEnv’s CreateMutableBinding concrete method
             passing dn and FALSE as the arguments.
 
-5.  Set the running EXECUTION context’s LexicalEnvironment to loopEnv.
+5.  Set the current execution context’s LexicalEnvironment to loopEnv.
 
 6.  Let forDcl be the result of evaluating LexicalDeclarationNoIn.
 
-7.  If loopContinues(varDcl_,_labelSet) is FALSE, then
+7.  If LoopContinues(varDcl_,_labelSet) is FALSE, then
 
-    a.  Set the running EXECUTION context’s LexicalEnvironment to
+    a.  Set the current execution context’s LexicalEnvironment to
         oldEnv.
 
     b.  Return varDcl.
@@ -8808,7 +9127,7 @@ Expression~opt~ ; Expression~opt~ ) Statement
     with the first Expression as the incrementExpr argument, the
     second Expression as the testExpr argument and with labelSet.
 
-9.  Set the running EXECUTION context’s LexicalEnvironment to oldEnv.
+9.  Set the current execution context’s LexicalEnvironment to oldEnv.
 
 10. Return bodyResult.
 
@@ -8833,10 +9152,8 @@ IterationStatement :
     production that would produce a Syntax Error according to these
     rules. This rule is recursively applied.
 
--   It is a Syntax Error if the LeftHandSideExpression is an
-    ObjectLiteral or an ArrayLiteral and the source code
-    corresponding to LeftHandSideExpression cannot be parsed using
-    AssignmentPattern as the goal symbol.
+-   It is a Syntax Error if IsInvalidAssignmentPattern of
+    LeftHandSideExpression is TRUE.
 
 IterationStatement :
 
@@ -8844,31 +9161,23 @@ IterationStatement :
 
   FOR (ForDeclaration OF Expression ) Statement
 
--   It is a Syntax Error if any element of the Lexically Declared Names
-    of ForDeclaration also occurs in the Var Declared Names of
+-   It is a Syntax Error if any element of the LexicallyDeclaredNames of
+    ForDeclaration also occurs in the Var Declared Names of
     Statement.
 
 STATIC SEMANTICS: BOUND NAMES
 
-ForVarDeclaration : _BindingPattern _
+1.  
 
-1.  Return the Bound Names of BindingPattern.
-
-ForVarDeclaration : VariableDeclarationNoIn
-
-1.  Return the Bound Names of VariableDeclarationNoIn.
+1.  
 
 ForDeclaration : _LetOrConst ForBinding _
 
 1.  Return the Bound Names of ForBinding.
 
-ForBinding : BindingIdentifier
+1.  
 
-1.  Return the Bound Names of BindingIdentifier.
-
-ForDeclaration : BindingPattern
-
-1.  Return the Bound Names of BindingPattern.
+1.  
 
 STATIC SEMANTICS: VAR DECLARED NAMES
 
@@ -8877,10 +9186,10 @@ Statement
 
 1.  Return the Var Declared Names of Statement.
 
-IterationStatement : FOR ( VAR BindingIdentifier IN Expression )
+IterationStatement : FOR ( VAR ForBinding IN Expression )
 Statement
 
-1.  Let names be the Bound Names of BindingIdentifier.
+1.  Let names be the Bound Names of ForBinding.
 
 2.  Append to names the elements of the Var Declared Names of
     Statement.
@@ -8897,10 +9206,10 @@ Statement
 
 1.  Return the Var Declared Names of Statement.
 
-IterationStatement : FOR ( VAR ForVarDeclaration OF Expression )
+IterationStatement : FOR ( VAR ForBinding OF Expression )
 Statement
 
-1.  Let names be the Bound Names of ForVarDeclaration.
+1.  Let names be the Bound Names of ForBinding.
 
 2.  Append to names the elements of the Var Declared Names of
     Statement.
@@ -8933,35 +9242,13 @@ ForDeclaration : _LetOrConst ForBinding _
 2.  Perform Binding Initialisation for ForBinding passing value and
     environment as the arguments.
 
-RUNTIME SEMANTICS: BINDING INITIALISATION
+1.  
 
-  With arguments value and environment.
+1.  
 
-NOTE UNDEFINED is passed for environment to indicate that a PutValue
-operation should be used to assign the initialisation value. This is the
-the case for VAR statements formal parameter lists of non-strict
-functions. In those cases a lexical binding is hosted and preinitialized
-prior to evaluation of its initializer.
+1.  
 
-ForVarDeclaration : _BindingPattern _
-
-1.  Perform Binding Initialisation for BindingPattern passing value
-    and env as the arguments.
-
-ForVarDeclaration : VariableDeclarationNoIn
-
-1.  Perform Binding Initialisation for VariableDeclarationNoIn passing
-    value and env as the arguments.
-
-ForBinding : _BindingIdentifier _
-
-1.  Perform Binding Initialisation for BindingIdentifier passing
-    value and env as the arguments.
-
-ForBinding: BindingPattern
-
-1.  Perform Binding Initialisation for BindingPattern passing value
-    and env as the arguments.
+1.  
 
 RUNTIME SEMANTICS: LABELLED EVALUATION
 
@@ -8970,7 +9257,7 @@ RUNTIME SEMANTICS: LABELLED EVALUATION
 IterationStatement : FOR ( LeftHandSideExpression IN Expression )
 Statement
 
-IterationStatement : FOR ( VAR BindingIdentifier IN Expression )
+IterationStatement : FOR ( VAR ForBinding IN Expression )
 Statement
 
 IterationStatement : FOR (ForDeclaration IN Expression )
@@ -8982,8 +9269,8 @@ Statement
 2.  ReturnIfAbrupt(keyResult).
 
 3.  Return the result of performing For In/Of Body Evalation with
-    ForDeclaration, Statement, keyResult.[[value]],
-    ForDeclaration, and labelSet.
+    ForDeclaration, Statement, keyResult, lexicalBinding, and
+    labelSet.
 
 IterationStatement : FOR ( LeftHandSideExpression OF Expression )
 Statement
@@ -8994,32 +9281,31 @@ Statement
 2.  ReturnIfAbrupt(keyResult).
 
 3.  Return the result of performing For In/Of Body Evalation with
-    LeftHandSideExpression, Statement, keyResult.[[value]],
-    assignment, and labelSet.
+    LeftHandSideExpression, Statement, keyResult, assignment, and
+    labelSet.
 
-IterationStatement : FOR ( VAR BindingIdentifier OF Expression )
+IterationStatement : FOR ( VAR ForBinding OF Expression )
 Statement
 
 1.  Let keyResult be the result of performing For In/Of Expression
-    Evalation with Statement, iterate, and labelSet.
+    Evalation with Expression, iterate, and labelSet.
 
 2.  ReturnIfAbrupt(keyResult).
 
 3.  Return the result of performing For In/Of Body Evalation with
-    BindingIdentifier, Statement, keyResult.[[value]], varBinding,
-    and labelSet.
+    ForBinding, Statement, keyResult, varBinding, and labelSet.
 
 IterationStatement : FOR (ForDeclaration OF Expression )
 Statement
 
 1.  Let keyResult be the result of performing For In/Of Expression
-    Evalation with Statement, iterate, and labelSet.
+    Evalation with Expression, iterate, and labelSet.
 
 2.  ReturnIfAbrupt(keyResult).
 
 3.  Return the result of performing For In/Of Body Evalation with
-    ForDeclaration, Statement, keyResult.[[value]],
-    ForDeclaration, and labelSet.
+    ForDeclaration, Statement, keyResult, lexicalBinding, and
+    labelSet.
 
 The abstraction operation For In/Of Expression Evaluation with arguments
 expr, iterationKind, and labelSet is performed as follows:
@@ -9029,9 +9315,9 @@ expr, iterationKind, and labelSet is performed as follows:
 
 2.  Let experValue be GetValue(exprRef).
 
-3.  If experValue is an abrupt completion, then return
+3.  If experValue is an abrupt completion,
 
-    a.  If loopContinues(experValue_,_labelSet) is FALSE, then return
+    a.  If LoopContinues(experValue_,_labelSet) is FALSE, then return
         experValue.
 
     b.  Else, return Completion{type: break, value: UNDEFINED, target:
@@ -9069,7 +9355,7 @@ The abstraction operation For In/Of Body Evaluation with arguments
 lhs, stmt, keys, lhsKind, and labelSet is performed as
 follows:
 
-1.  Let oldEnv be the running execution context’s LexicalEnvironment.
+1.  Let oldEnv be the current execution context’s LexicalEnvironment.
 
 2.  Let V = UNDEFINED).
 
@@ -9081,7 +9367,7 @@ follows:
     b.  If IteratorComplete(next) is true, the return
         NormalCompletion(V).
 
-    c.  If loopContinues(next_,_labelSet) is FALSE, then return
+    c.  If LoopContinues(next_,_labelSet) is FALSE, then return
         next.
 
     d.  If next is an abrupt completion, then let status be next.
@@ -9094,17 +9380,18 @@ follows:
 
         iii. If lhsKind is assignment, then
 
-            1.  If lhs is neither an ObjectLiteral nor an
+            1.  Assert: lhs is a LeftHandSideExpression.
+
+            2.  If lhs is neither an ObjectLiteral nor an
                 ArrayLiteral then
 
-                a.  b.  Let lhsRef be the result of evaluating the
-                    LeftHandSideExpression ( it may be evaluated
-                    repeatedly).
+                a.  b.  Let lhsRef be the result of evaluating lhs (
+                    it may be evaluated repeatedly).
 
                 c.  Let status be the result of performing
                     PutValue(lhsRef, nextValue).
 
-            2.  Else
+            3.  Else
 
                 a.  Let AssignmentPattern be the parse of the source
                     code corresponding to lhs using
@@ -9121,24 +9408,28 @@ follows:
 
         iv. Else if lhsKind is varBinding, then
 
-            1.  Let status be the result of performing Binding
+            1.  Assert: lhs is a ForBinding.
+
+            2.  Let status be the result of performing Binding
                 Initialisation for lhs passing nextValue and
                 UNDEFINED as the arguments.
 
         v.  Else,
 
-            1.  Asset lhsKind is ForDeclaration.
+            1.  Asset lhsKind is lexicalBinding.
 
-            2.  Let iterationEnv be the result of calling
+            2.  Assert: lhs is a ForDeclaration.
+
+            3.  Let iterationEnv be the result of calling
                 NewDeclarativeEnvironment passing oldEnv as the
                 argument.
 
-            3.  Perform Binding Instantiation for lhs passing
+            4.  Perform Binding Instantiation for lhs passing
                 nextValue and iterationEnv as arguments.
 
-            4.  Let status be NormalCompletion(empty)
+            5.  Let status be NormalCompletion(empty)
 
-            5.  Set the running EXECUTION context’s LexicalEnvironment
+            6.  Set the current execution context’s LexicalEnvironment
                 to iterationEnv.
 
         vi. If status.[[type]] is normal, then
@@ -9150,11 +9441,11 @@ follows:
 
                 a.  Let V = status.[[value]].
 
-        vii. Set the running EXECUTION context’s LexicalEnvironment to
+        vii. Set the current execution context’s LexicalEnvironment to
             oldEnv.
 
         viii. If status is an abrupt completion and
-            loopContinues(status_,_labelSet) is FALSE, then return
+            LoopContinues(status_,_labelSet) is FALSE, then return
             status.
 
 1.  2.  3.  
@@ -9228,7 +9519,7 @@ STATIC SEMANTICS
 
 STATIC SEMANTICS: EARLY ERRORS
 
--   It is a Syntax Error if a RETURN statement that is not within a
+-   -   It is a Syntax Error if a RETURN statement that is not within a
     FunctionBody.
 
 RUNTIME SEMANTICS: EVALUATION
@@ -9338,7 +9629,7 @@ CaseBlock : { CaseClauses~opt~ _DefaultClause CaseClauses_~opt~ }
 
 4.  If the second CaseClauses is not present, return names.
 
-5.  Else return the result of append to names the elements of the the
+5.  Else return the result of appending to names the elements of the
     LexicallyDeclaredNames of the second CaseClauses.
 
 CaseClauses : CaseClause
@@ -9390,7 +9681,7 @@ CaseBlock : { CaseClauses~opt~ _DefaultClause CaseClauses_~opt~ }
 
 4.  If the second CaseClauses is not present, return names.
 
-5.  Else return the result of append to names the elements of the the
+5.  Else return the result of appending to names the elements of the
     LexicallyDeclaredNames of the second CaseClauses.
 
 CaseClauses : CaseClause
@@ -9446,7 +9737,7 @@ CaseBlock : { CaseClauses~opt~ _DefaultClause CaseClauses_~opt~ }
 
 4.  If the second CaseClauses is not present, return names.
 
-5.  Else return the result of append to names the elements of the the
+5.  Else return the result of appending to names the elements of the
     VarDeclaredNames of the second CaseClauses.
 
 CaseClauses : CaseClause
@@ -9669,9 +9960,9 @@ RUNTIME SEMANTICS: BINDING INITIALISATION
 
 NOTE UNDEFINED is passed for environment to indicate that a PutValue
 operation should be used to assign the initialisation value. This is the
-the case for VAR statements formal parameter lists of non-strict
-functions. In those cases a lexical binding is hosted and preinitialized
-prior to evaluation of its initializer.
+case for VAR statements formal parameter lists of non-strict functions.
+In those cases a lexical binding is hosted and preinitialized prior to
+evaluation of its initializer.
 
 CatchParameter: BindingIdentifier
 
@@ -9775,13 +10066,11 @@ and
 FunctionExpression : FUNCTION BindingIdentifier~opt~ (
 FormalParameterList ) { FunctionBody }
 
--   -   -   It is a Syntax Error if the any element of the
-    LexicallyDeclaredNames of FormalParameterList also occurs in the
-    VarDeclaredNames of FunctionBody.
-
--   It is a Syntax Error if any element of the BoundNames of
+-   -   -   -   It is a Syntax Error if any element of the BoundNames of
     FormalParameterList also occurs in the LexicallyDeclaredNames of
     FunctionBody.
+
+-   It is a Syntax Error if FunctionBody Contains YieldExpression.
 
 FunctionBody : _StatementList _
 
@@ -9792,36 +10081,41 @@ FunctionBody : _StatementList _
     StatementList also occurs in the VarDeclaredNames of
     StatementList.
 
+FormalParameterList : FormalsList
+
+-   It is a Syntax Error if BoundNames of FormalsList contains any
+    duplicate elements and either FormalsList Contains
+    BindingPattern or FormalsList Contains Initialiser.
+
+-   It is a Syntax Error if BoundNames of FormalsList contains either
+    ″EVAL″ or ″ARGUMENTS″ and either FormalsList Contains
+    BindingPattern or FormalsList Contains Initialiser.
+
 FormalParameterList : FormalsList, FunctionRestParameter
 
--   It is a Syntax Error if BoundNames of FormalsList contains the
-    String Value of Identifier.
+-   It is a Syntax Error if BoundNames of FormalsList contains any
+    duplicate elements.
+
+-   It is a Syntax Error if BoundNames of FormalsList contains any
+    element of the BoundNames of FunctionRestParameter.
 
 FormalsList : FormalsList, FormalParameter
 
 -   It is a Syntax Error if the source code matching this production is
-    strict code and BoundNames of FormalsList contains an element
+    strict code and BoundNames of FormalsList contains any element
     which is also contained in BoundNames of FormalParameter.
 
 FunctionRestParameter : ... BindingIdentifier
 
--   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
+-   It is a Syntax Error if the String Value of the sole element of the
+    BoundNames of BindingIdentifier is EVAL or ARGUMENTS.
 
--   
+-   -   
 
 FormalParameter : BindingElement
 
--   It is a Syntax Error if the derivation of BindingElement is
-    _BindingIdentifier Initialiser_ and the source code matching this
-    production is not extended code.
-
--   It is a Syntax Error if the derivation of BindingElement is
-    _BindingPattern Initialiser_~opt~ and the source code parsed with
-    this production is not extended code.
-
--   It is a Syntax Error if BoundNames of BindingElement contains any
-    duplicate elements.
+-   -   -   It is a Syntax Error if BoundNames of BindingElement
+    contains any duplicate elements.
 
 STATIC SEMANTICS: BOUNDNAMES
 
@@ -9865,6 +10159,23 @@ FormalParameterList : ... BindingIdentifier
 FormalParameter : BindingElement
 
 1.  Return the BoundNames of BindingElement .
+
+STATIC SEMANTICS: CONTAINS
+
+  With parameter symbol.
+
+FunctionDeclaration : FUNCTION BindingIdentifier (
+FormalParameterList ) { FunctionBody }
+
+1.  Return FALSE.
+
+FunctionExpression : FUNCTION BindingIdentifier~opt~ (
+FormalParameterList ) { FunctionBody }
+
+1.  Return FALSE.
+
+NOTE Static semantic rules that depend upon substructure generally do
+not look into function definitions.
 
 STATIC SEMANTICS: EXPECTEDARGUMENTCOUNT
 
@@ -9932,7 +10243,7 @@ FunctionBody : [empty]
 
 FunctionBody : StatementList
 
-1.  Return the LexicllyDeclaredNames of StatementList.
+1.  Return the LexicallyDeclaredNames of StatementList.
 
 STATIC SEMANTICS: VARDECLAREDNAMES
 
@@ -9956,9 +10267,9 @@ RUNTIME SEMANTICS: BINDING INITIALISATION
 
 NOTE When UNDEFINED is passed for environment it indicates that a
 PutValue operation should be used to assign the initialisation value.
-This is the the case for formal parameter lists of non-strict functions.
-In that case the formal parameter bindings are preinitialized in order
-to deal with the possibility of multiple parameters with the same name.
+This is the case for formal parameter lists of non-strict functions. In
+that case the formal parameter bindings are preinitialized in order to
+deal with the possibility of multiple parameters with the same name.
 
 FormalParameterList : [empty]
 
@@ -9974,14 +10285,8 @@ FormalParameterList : FunctionRestParameter
 
 FormalParameterList : FormalsList
 
-1.  Asset: value is a new created arguments object and hence it has a
-    valid integer valued "LENGTH" property.
-
-2.  Let lenValue be the result of calling the [[Get]] internal method
-    of value with argument "LENGTH".
-
-3.  Return the result of performing Indexed Binding Initialisation for
-    FormalsList using value, lenValue.[[value]], 0, and
+1.  2.  3.  Return the result of performing Indexed Binding
+    Initialisation for FormalsList using value, lenValue, 0, and
     environment as the arguments.
 
 4.  
@@ -9989,54 +10294,63 @@ FormalParameterList : FormalsList
 FormalParameterList : FormalsList , FunctionRestParameter
 
 1.  Let restIndex be the result of performing Indexed Binding
-    Initialisation for FormalsList using value, lenValue, 0, and
-    environment as the arguments.
+    Initialisation for FormalsList using value, 0, and environment
+    as the arguments.
 
 2.  ReturnIfAbrupt(restIndex).
 
 3.  Return the result of performing Indexed Binding Initialisation for
-    FunctionRestParameter using value, lenValue,
-    restIndex.[[value]], and environment as the arguments.
+    FunctionRestParameter using value, lenValue, restIndex, and
+    environment as the arguments.
 
 4.  
 
 RUNTIME SEMANTICS: INDEXED BINDING INITIALISATION
 
-  With parameters array, _arrayLength, nextIndex,_ and environment.
+  With parameters array, nextIndex, and environment.
 
 FormalsList : FormalParameter
 
-1.  Let status be the result of performing Binding Initialisation for
-    FormalParameter using value, env, and index as the
-    arguments.
+1.  Let status be the result of performing Indexed Binding
+    Initialisation for FormalParameter using array, env, and
+    nextIndex as the arguments.
 
 2.  ReturnIfAbrupt(status).
 
-3.  Return index + 1.
+3.  Return nextIndex + 1.
 
 FormalsList : FormalsList , FormalParameter
 
 1.  Let lastIndex be the result of performing Indexed Binding
-    Initialisation for FormalsList using value, lenValue,
-    nextIndex, and environment as the arguments.
+    Initialisation for FormalsList using array, nextIndex, and
+    environment as the arguments.
 
-2.  Let status be the result of performing Indexed Binding
-    Initialisation for FormalParameter using value, lenValue,
-    lastIndex, and environment as the arguments.
+2.  ReturnIfAbrupt(lastIndex).
 
-3.  ReturnIfAbrupt(status).
+3.  Let status be the result of performing Indexed Binding
+    Initialisation for FormalParameter using array, lastIndex, and
+    environment as the arguments.
 
-4.  Return lastIndex + 1.
+4.  ReturnIfAbrupt(status).
+
+5.  Return lastIndex + 1.
 
 FunctionRestParameter : ... BindingIdentifier
 
-1.  Let A be a new array object created as if by the expression NEW
-    ARRAY() where ARRAY is the standard built-in constructor with that
-    name.
+1.  Asset: array is a well formed arguments object and hence it has a
+    valid integer valued "LENGTH" property.
 
-2.  Let n=0;
+2.  Let argumentsLength be the result of calling the [[Get]] internal
+    method of value with argument "LENGTH".
 
-3.  Repeat, while nextIndex < arrayLength
+3.  Let argumentsLength be argumentsLength.[[value]].
+
+4.  Let A be the result of the abstraction operation ArrayCreate
+    (15.4) with argument 0.
+
+5.  Let n=0;
+
+6.  Repeat, while nextIndex < argumentsLength
 
     a.  Let P be ToString(nextIndex).
 
@@ -10047,22 +10361,27 @@ FunctionRestParameter : ... BindingIdentifier
         array passing P as the argument.
 
     d.  Call the [[DefineOwnProperty]] internal method of A with
-          arguments ToString(n), Property Descriptor {[[Value]]: v,
-          [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]:
-          TRUE}, and FALSE.
+          arguments ToString(n).[[value]], Property Descriptor
+          {[[Value]]: v.[[value]], [[Writable]]: TRUE, [[Enumerable]]:
+          TRUE, [[Configurable]]: TRUE}, and FALSE.
 
     e.  Let n = n+1.
 
     f.  Let nextIndex = nextIndex +1.
 
-4.  Return the result of performing Binding Initialisation for
-    BindingIdentifer using A and environment as arguments.
+7.  Return the result of performing Binding Initialisation for
+    BindingIdentifier using A and environment as arguments.
 
 FormalParameter : BindingElement
 
 1.  Return the result of performing Indexed Binding Initialisation for
-    BindingElement using array, arrayLength, nextIndex, and
-    environment as the arguments.
+    BindingElement using array, nextIndex, and environment as
+    the arguments.
+
+RUNTIME SEMANTICS: INSTANTIATE FUNCTION DECLARATION
+
+FunctionDeclaration : FUNCTION BindingIdentifier (
+FormalParameterList ) { FunctionBody }
 
 RUNTIME SEMANTICS: EVALUATION
 
@@ -10071,6 +10390,22 @@ FormalParameterList ) { FunctionBody }
 
 FunctionExpression : FUNCTION ( FormalParameterList ) {
 FunctionBody }
+
+1.  If the FunctionExpression is contained in strict code or if its
+    FunctionBody is strict code, then let strict be TRUE. Otherwise
+    let strict be FALSE.
+
+2.  Let scope be the LexicalEnvironment of the current execution
+    context.
+
+3.  Let closure be the result of performing the FunctionCreate
+    abstract operation with arguments Normal, FormalParameterList,
+    _FunctionBody, scope_, and strict.
+
+4.  Performing the abstract operation MakeConstructor with argument
+    closure.
+
+5.  Return closure.
 
 FunctionExpression : FUNCTION BindingIdentifier (
 FormalParameterList ) { FunctionBody }
@@ -10082,27 +10417,462 @@ FunctionDeclaration, the BindingIdentifier in a FunctionExpression
 cannot be referenced from and does not affect the scope enclosing the
 FunctionExpression.
 
-FunctionBody : StatementList~opt~
-
-A Function object is constructed as follows given an parameter list
-specified by FormalParameterList, a body specified by FunctionBody,
-a Lexical Environment specified by Scope, a Boolean flag Strict, and
-optionally, an object homeObject and a string methodName:
-
 NOTE A PROTOTYPE property is automatically created for every function,
 to allow for the possibility that the function will be used as a
 constructor.
 
-When the [[Call]] internal method for a Function object F is called
-with a this value and a list of arguments, the following steps are
-taken:
+FunctionBody : StatementList~opt~
 
-When the [[Construct]] internal method for a Function object F is
-called with a possibly empty list of arguments, the following steps are
-taken:
+Syntax
 
-The [[ThrowTypeError]] object is a unique function object that is
-defined once as follows:
+ArrowFunction :
+
+ArrowParameters => ConciseBody
+
+ArrowParameters :
+
+BindingIdentifer
+( ArrowFormalParameterList )
+
+ArrowFormalParameterList :
+
+[empty]
+FunctionRestParameter
+CoverFormalsList
+CoverFormalsList , FunctionRestParameter
+
+ConciseBody :
+
+[lookahead ∉ { { }] AssignmentExpression
+{ FunctionBody }
+
+CoverFormalsList :
+
+Expression
+
+Supplemental Syntax
+
+When processing the production CoverFormalsList : Expression the
+FormalsList production is used to further restrict the source code
+that matches Expression.
+
+ArrowFormalParameterList :
+
+FormalParameterList
+
+STATIC SEMANTICS: EARLY ERRORS
+
+ArrowFunction : ArrowParameters => ConsiceBody
+
+-   It is a Syntax Error if any element of the LexicallyDeclaredNames of
+    ConsiceBody also occurs in the VarDeclaredNames of ConsiceBody.
+
+-   It is a Syntax Error if any element of the BoundNames of
+    ArrowParameters also occurs in the LexicallyDeclaredNames of
+    ConsiceBody.
+
+-   It is a Syntax Error if ConsiceBody Contains YieldExpression.
+
+ArrowParameters : BindingIdentifier
+
+-   It is a Syntax Error the String Value of the sole element of the
+    BoundNames of BindingIdentifier is EVAL or ARGUMENTS.
+
+ArrowFormalParameterList : CoverFormalsList, FunctionRestParameter
+
+-   It is a Syntax Error if BoundNames of CoverFormalsList contains
+    any element which is also contained in BoundNames of
+    FunctionRestParameter.
+
+CoverFormalsList : Expression
+
+-   It is a Syntax Error if the source code corresponding to
+    Expression cannot be parsed using FormalsList as the goal
+    symbol.
+
+-   All Early Errors rules for FormalsList also apply to the Covered
+    FormalsList of Expression.
+
+STATIC SEMANTICS: BOUNDNAMES
+
+ArrowParameters : BindingIdentifer
+
+1.  Return the BoundNames of BindingIdentifer.
+
+ArrowParameters : ( ArrowFormalParameterList )
+
+1.  Return the BoundNames of ArrowFormalParameterList.
+
+ArrowFormalParameterList : [empty]
+
+1.  Return an empty List.
+
+ArriowFormalParameterList : FunctionRestParameter
+
+1.  Return the BoundNames of FunctionRestParameter.
+
+ArrowFormalParameterList : CoverFormalsList
+
+1.  Return the BoundNames of CoverFormalsList.
+
+ArrowFormalParameterList : CoverFormalsList , FunctionRestParameter
+
+1.  Let names be BoundNames of CoverFormalsList.
+
+2.  Append to names the BoundNames of FunctionRestParameter.
+
+3.  Return names.
+
+CoverFormalsList : Expression
+
+1.  Return the BoundNames of Covered FormalsList of Expression.
+
+STATIC SEMANTICS: CONTAINS
+
+  With parameter symbol.
+
+ArrowFunction : _ArrowParameters =>_ ConsiceBody
+
+1.  Return FALSE.
+
+NOTE Static semantic rules that depend upon substructure generally do
+not look into function definitions.
+
+STATIC SEMANTICS: COVERED FORMALSLIST
+
+CoverFormalsList : Expression
+
+1.  Return the result of parsing the source code corresponding to
+    Expression using FormalsList as the goal symbol.
+
+STATIC SEMANTICS: EXPECTEDARGUMENTCOUNT
+
+ArrowParameters : BindingIdentifier
+
+1.  Return 1.
+
+ArrowParameters : ( ArrowFormalParameterList )
+
+1.  Return the ExpectedArgumentCount of ArrowFormalParameterList.
+
+ArrowFormalParameterList :
+
+[empty]
+FunctionRestParameter
+
+1.  Return 0.
+
+ArrowFormalParameterList :
+
+CoverFormalsList
+CoverFormalsList , FunctionRestParameter
+
+1.  Return the ExpectedArgumentCount of CoveredCormalsList of
+    CoverFormalsList.
+
+STATIC SEMANTICS: LEXICALLYDECLAREDNAMES
+
+ConsiceBody : [lookahead ∉ { { }] AssignmentExpression
+
+1.  Return an empty List.
+
+ConciseBody : { FunctionBody }
+
+1.  Return the LexicallyDeclaredNames of FunctionBody.
+
+STATIC SEMANTICS: VARDECLAREDNAMES
+
+ConsiseBody : [lookahead ∉ { { }] AssignmentExpression
+
+1.  Return the VarDeclaredNames of AssignmentExpression.
+
+ConsiseBody : { FunctionBody }
+
+1.  Return the VarDeclaredNames of FunctionBody.
+
+RUNTIME SEMANTICS: BINDING INITIALISATION
+
+  With parameters value and environment and optional parameter
+  index.
+
+NOTE When UNDEFINED is passed for environment it indicates that a
+PutValue operation should be used to assign the initialisation value.
+This is the case for formal parameter lists of non-strict functions. In
+that case the formal parameter bindings are preinitialized in order to
+deal with the possibility of multiple parameters with the same name.
+
+ArrowParameters : BindingIdentifier
+
+1.  Return the result of performing Indexed Binding Initialisation for
+    BindingIdentifier using value, lenValue, 0, and environment
+    as the arguments.
+
+ArrowParameters : ( ArrowFormalParameterList )
+
+1.  Return the result of performing Binding Initialisation for
+    ArrowFormalParameterList using value, environment as the
+    arguments. Also pass the optional argument index if it is
+    present..
+
+ArrowFormalParameterList : [empty]
+
+1.  Return NormalCompletion(empty).
+
+ArrowFormalParameterList : FunctionRestParameter
+
+1.  Return the result of performing Indexed Binding Initialisation for
+    FunctionRestParameter using value, lenValue, 0, and
+    environment as the arguments..
+
+ArrowFormalParameterList : CoverFormalsList
+
+1.  Return the result of performing Indexed Binding Initialisation for
+    CoveredCormalsList of CoverFormalsList using value, lenValue,
+    0, and environment as the arguments.
+
+ArrowFormalParameterList : CoverFormalsList , FunctionRestParameter
+
+1.  Let restIndex be the result of performing Indexed Binding
+    Initialisation for CoveredCormalsList of CoverFormalsList using
+    value, 0, and environment as the arguments.
+
+2.  ReturnIfAbrupt(restIndex).
+
+3.  Return the result of performing Indexed Binding Initialisation for
+    FunctionRestParameter using value, lenValue, restIndex, and
+    environment as the arguments.
+
+RUNTIME SEMANTICS: EVALUATION
+
+ArrowFunction : ArrowParameters => ConsiseBody
+
+1.  Let strict be TRUE.
+
+2.  Let scope be the LexicalEnvironment of the current execution
+    context.
+
+3.  Let closure be the result of performing the FunctionCreate
+    abstract operation with arguments Arrow, ArrowParameterList,
+    _ConciseBody, scope_, and strict.
+
+4.  Return closure.
+
+ConsiseBody : [lookahead ∉ { { }] AssignmentExpression
+
+1.  The code of this ArrowBody is strict mode code if it is contained
+    in strict mode code or if any of the conditions in 10.1.1 apply If
+    the code of this ArrowBody is strict mode code,
+    AssignmentExpression is evaluated in the following steps as strict
+    mode code. Otherwise, AssignmentExpression is evaluated in the
+    following steps as non-strict mode code.
+
+2.  Let exprRef be the result of evaluating AssignmentExpression.
+
+3.  Let exprValue be GetValue(exprRef).
+
+4.  If exprValue is an abrupt completion, return exprValue.
+
+5.  Return Completion {[[type]]: return, [[value]]: exprValue,
+    [[target]]: empty}.
+
+ConsiseBody : { FunctionBody }
+
+1.  Return the result of evaluating FunctionBody.
+
+Syntax
+
+MethodDefinition :
+
+PropertyName ( FormalParameterList ) ConsiseBody
+* PropertyName ( FormalParameterList ) ConsiseBody
+GET PropertyName ( ) ConsiseBody
+SET PropertyName ( PropertySetParameterList ) ConsiseBody
+
+PropertySetParameterList :
+
+BindingIdentifier
+BindingPattern
+
+EARLY ERRORS
+
+MethodDefinition : PropertyName ( FormalParameterList )
+ConsiseBody
+
+and
+
+MethodDefinition : * PropertyName ( FormalParameterList )
+ConsiseBody
+
+-   It is a Syntax Error if any element of the LexicallyDeclaredNames of
+    FormalParameterList also occurs in the VarDeclaredNames of
+    ConciseBody.
+
+-   It is a Syntax Error if any element of the BoundNames of
+    FormalParameterList also occurs in the LexicallyDeclaredNames of
+    ConciseBody.
+
+MethodDefinition : PropertyName ( FormalParameterList )
+ConsiseBody
+
+-   It is a Syntax Error if ConsiceBody Contains YieldExpression.
+
+MethodDefinition : GET PropertyName ( ) ConsiseBody
+
+-   It is a Syntax Error if ConsiceBody Contains YieldExpression.
+
+MethodDefinition : SET PropertyName ( PropertySetParameterList )
+ConsiseBody
+
+-   It is a Syntax Error if any element of the BoundNames of
+    PropertySetParameterList also occurs in the LexicallyDeclaredNames
+    of ConciseBody.
+
+-   It is a Syntax Error if ConsiceBody Contains YieldExpression.
+
+PropertySetParameterList : BindingPattern
+
+-   It is a Syntax Error if BoundNames of BindingPattern contains any
+    duplicate elements.
+
+STATIC SEMANTICS: BOUNDNAMES
+
+PropertySetParameterList : _BindingIdentifier _
+
+1.  Return BoundNames of BindingIdentifier.
+
+PropertySetParameterList: _BindingPattern _
+
+1.  Return BoundNames of BindingPattern.
+
+STATIC SEMANTICS: EXPECTEDARGUMENTCOUNT
+
+PropertySetParameterList : _BindingIdentifier _
+
+1.  Return 1.
+
+PropertySetParameterList : _BindingPattern _
+
+1.  Return 1.
+
+STATIC SEMANTICS: PROPNAME
+
+MethodDefinition : PropertyName ( FormalParameterList )
+ConsiseBody
+
+1.  Return PropName of PropertyName.
+
+MethodDefinition : * PropertyName ( FormalParameterList )
+ConsiseBody
+
+1.  Return PropName of PropertyName.
+
+MethodDefinition : GET PropertyName ( ) ConsiseBody
+
+1.  Return PropName of PropertyName.
+
+MethodDefinition : SET PropertyName ( PropertySetParameterList )
+ConsiseBody
+
+1.  Return PropName of PropertyName.
+
+RUNTIME SEMANTICS: PROPERTY DEFINITION EVALUATION
+
+  With parameter object.
+
+MethodDefinition : PropertyName ( FormalParameterList )
+ConsiseBody
+
+1.  Let propName be PropName of PropertyName.
+
+2.  Let strict be TRUE.
+
+3.  Let scope be the current execution context’s LexicalEnvironment.
+
+4.  Let closure be the result of performing the FunctionCreate
+    abstract operation with arguments Method, FormalParameterList,
+    _ConciseBody, scope_, and strict and with object as the
+    homeObject optional argument and propName as the methodName
+    optional argument.
+
+5.  Let desc be the Property Descriptor{[[Value]]: closure,
+    [[Writable]]: TRUE, [[Enumerable]]: FALSE, [[Configurable]]: TRUE}.
+
+6.  Return the result of calling the [[DefineOwnProperty]] internal
+    method of object with arguments propName, desc, and FALSE.
+
+MethodDefinition : * PropertyName ( FormalParameterList )
+ConsiseBody
+
+1.  Let propName be PropName of PropertyName.
+
+2.  Let strict be TRUE.
+
+3.  Let scope be the current execution context’s LexicalEnvironment.
+
+4.  Let closure be the result of performing the FunctionCreate
+    abstract operation with arguments Method, FormalParameterList,
+    _ConciseBody, scope_, and strict and with object as the
+    homeObject optional argument and propName as the methodName
+    optional argument.
+
+5.  Let desc be the Property Descriptor{[[Value]]: closure,
+    [[Writable]]: TRUE, [[Enumerable]]: FALSE, [[Configurable]]: TRUE}.
+
+6.  Return the result of calling the [[DefineOwnProperty]] internal
+    method of object with arguments propName, desc, and FALSE.
+
+MethodDefinition : GET PropertyName ( ) ConsiseBody
+
+1.  Let propName be PropName of PropertyName.
+
+2.  If this MethodDefinition is contained in strict code or if
+    ConciseBody is strict code, then let strict be TRUE. Otherwise,
+    let strict be FALSE.
+
+3.  Let scope be the current execution context’s LexicalEnvironment.
+
+4.  Let formalPrameterList be the production FormalParameterList :
+    [empty]
+
+5.  Let closure be the result of performing the FunctionCreate
+    abstract operation with arguments Method, formalParameterList,
+    _ConciseBody, scope_, and strict and with object as the
+    homeObject optional argument and propName as the methodName
+    optional argument.
+
+6.  Let desc be the Property Descriptor{[[Get]]: closure,
+    [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
+
+7.  Return the result of calling the [[DefineOwnProperty]] internal
+    method of object with arguments propName, desc, and FALSE.
+
+MethoodDefinition : SET PropertyName ( PropertySetParameterList )
+ConsiseBody
+
+1.  Let propName be PropName of PropertyName.
+
+2.  If this MethodDefinition is contained in strict code or if
+    ConciseBody is strict code, then let strict be TRUE. Otherwise,
+    let strict be FALSE.
+
+3.  Let scope be the current execution context’s LexicalEnvironment.
+
+4.  Let closure be the result of performing the FunctionCreate
+    abstract operation with arguments Method,
+    PropoertySetParameterList, _ConciseBody, scope_, and strict and
+    with object as the homeObject optional argument and propName
+    as the methodName optional argument.
+
+5.  Let desc be the Property Descriptor{[[Set]]: closure,
+    [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
+
+6.  Return the result of calling the [[DefineOwnProperty]] internal
+    method of object with arguments propName, desc, and FALSE.
+
+NOTE The strictness and property attributes for SET and GET
+MethodDefinition productions differ from the other MethodDefinition
+productions in order to maintain compatability with previous editions of
+this specification.
 
 Syntax
 
@@ -10115,6 +10885,90 @@ GeneratorExpression :
 FUNCTION * BindingIdentifier~opt~ ( FormalParameterList ) { FunctionBody
 }
 
+STATIC SEMANTICS: EARLY ERRORS
+
+FunctionDeclaration : FUNCTION * BindingIdentifier (
+FormalParameterList ) { FunctionBody }
+and
+FunctionExpression : FUNCTION * BindingIdentifier~opt~ (
+FormalParameterList ) { FunctionBody }
+
+-   It is a Syntax Error if any element of the BoundNames of
+    FormalParameterList also occurs in the LexicallyDeclaredNames of
+    FunctionBody.
+
+STATIC SEMANTICS: CONTAINS
+
+  With parameter symbol.
+
+FunctionDeclaration : FUNCTION * BindingIdentifier (
+FormalParameterList ) { FunctionBody }
+
+1.  Return FALSE.
+
+FunctionExpression : FUNCTION * BindingIdentifier~opt~ (
+FormalParameterList ) { FunctionBody }
+
+1.  Return FALSE.
+
+NOTE Static semantic rules that depend upon substructure generally do
+not look into function definitions.
+
+The abstract operation FunctionCreate requires the arguments: kind
+which is one of (Normal, Method, Arrow), an parameter list specified by
+FormalParameterList, a body specified by FunctionBody, a Lexical
+Environment specified by Scope, a Boolean flag Strict, and
+optionally, an object functionPrototype, an object homeObject and a
+string methodName. FunctionCreate performs the following steps:
+
+The abstract operation MakeConstructor requires a Function argument F
+and optionally, a Boolean writablePrototype and an object prototype.
+It converts F into a constructor by performs the following steps:
+
+1.  If the prototype argument was not provided,then
+
+    a.  Let prototype be the result of the abstraction operation
+        ObjectCreate (15.2).
+
+2.  If the writablePrototype argument was not provided,then
+
+    a.  Let writablePrototype be TRUE.
+
+3.  Set the [[Construct]] internal property of F as described in
+    13.5.2.
+
+4.  Set the [[HasInstance]] internal property of F as described in
+    15.3.5.3.
+
+5.  Set the [[Home]] internal property of F to prototype.
+
+6.  Set the [[MethodName]] internal property of F to "CONSTRUCTOR".
+
+7.  8.  Call the [[DefineOwnProperty]] internal method of prototype
+    with arguments "CONSTRUCTOR", Property Descriptor {[[Value]]: F,
+    [[Writable]]: writablePrototype , [[Enumerable]]: FALSE,
+    [[Configurable]]: writablePrototype }, and FALSE.
+
+9.  Call the [[DefineOwnProperty]] internal method of F with arguments
+    "PROTOTYPE", Property Descriptor {[[Value]]: prototype ,
+    [[Writable]]: writablePrototype , [[Enumerable]]: FALSE,
+    [[Configurable]]: FALSE}, and FALSE.
+
+10. a.  b.  c.  
+
+11. 12. Return.
+
+When the [[Call]] internal method for a Function object F is called
+with a thisArgument and a list of arguments, the following steps are
+taken:
+
+When the [[Construct]] internal method for a Function object F is
+called with a possibly empty list of arguments, the following steps are
+taken:
+
+The [[ThrowTypeError]] object is a unique function object that is
+defined once as follows:
+
 Syntax
 
 Program :
@@ -10125,9 +10979,11 @@ ProgramBody :
 
 StatementList
 
-Semantics
+RUNTIME SEMANTICS: PROGRAM EVALUATION
 
-The production Program : ProgramBody~opt~ is evaluated as follows:
+  With argument realm.
+
+Program : ProgramBody~opt~
 
 NOTE The processes for initiating the evaluation of a Program and for
 dealing with the result of such an evaluation are defined by an
@@ -10280,6 +11136,12 @@ attributes { [[Writable]]: FALSE, [[Enumerable]]: FALSE,
 
 When the EVAL function is called with one argument x, the following
 steps are taken:
+
+NOTE The eval code cannot instantiate variable or function bindings in
+the variable environment of the calling context that invoked the eval if
+either the code of the calling context or the eval code is strict code.
+Instead such bindings are instantiated in a new VariableEnvironment that
+is only accessible to the eval code.
 
 A direct call to the eval function is one that is expressed as a
 CallExpression that meets the following two conditions:
@@ -10545,6 +11407,10 @@ See 15.8.
 
 See 15.12.
 
+The abstract operation ObjectCreate with optional argument proto (an
+object or null) is used to specify the creation of new Object objects.
+It performs the following steps:
+
 When OBJECT is called as a function rather than as a constructor, it
 performs a type conversion.
 
@@ -10594,6 +11460,12 @@ The DEFINEPROPERTIES function is used to add own properties and/or
 update the attributes of existing own properties of an object. When the
 DEFINEPROPERTIES function is called, the following steps are taken:
 
+1.  Return the result of the abstract operation ObjectDefineProperties
+    with arguemnts O and Properties.
+
+The abstract operations ObjectDefineProperties with arguments O and
+Properties performs the following steps:
+
 If an implementation defines a specific order of enumeration for the
 for-in statement, that same enumeration order must be used to order the
 list elements in step 3 of this algorithm.
@@ -10620,6 +11492,13 @@ are taken:
 If an implementation defines a specific order of enumeration for the
 for-in statement, that same enumeration order must be used in step 5 of
 this algorithm.
+
+When the ISOBJECT function is called with argument O, the following
+steps are taken:
+
+1.  If Type(O) is Object return TRUE.
+
+2.  Return FALSE.
 
 The value of the [[Prototype]] internal property of the Object prototype
 object is NULL and the initial value of the [[Extensible]] internal
@@ -10651,8 +11530,10 @@ When the TOLOCALESTRING method is called, the following steps are taken:
 
 1.  Let O be the THIS value.
 
-2.  3.  4.  Return the result of calling Invoke with arguments
-    "TOSTRING", O, and an empty arguments List.
+2.  ReturnIfAbrupt(O).
+
+3.  4.  5.  Return the result of the abstract operation Invoke with
+    arguments "TOSTRING", O, and an empty arguments List.
 
 NOTE 1 This function is provided to give all Objects a generic
 TOLOCALESTRING interface, even though not all may use it. Currently,
@@ -10897,56 +11778,72 @@ properties that may be inherited from its prototypes.
 An object, O, is said to be sparse if the following algorithm
 returns TRUE:
 
-When ARRAY is called as a function rather than as a constructor, it
+The abstract operation ArrayCreate with argument length (a positive
+integer) is used to specify the creation of new Array objects. It
+performs the following steps:
+
+1.  Let A be a newly created ECMAScript object.
+
+2.  Set the [[Prototype]] internal property of A to the intrinsic
+    object %ArrayPrototype%.
+
+3.  Set A’s common internal methods except for [[DefineOwnProperty]]
+    to the default definitions specified in 8.12.
+
+4.  Set A’s [[DefineOwnProperty]] internal methods to the definition
+    given in 15.4.5.1.
+
+5.  Set the [[NativeBrand]] internal property of A to the value
+    NativeArray.
+
+6.  Set the [[Extensible]] internal property of A to TRUE.
+
+7.  Call the [[DefineOwnProperty]] internal method of A with arguments
+    "LENGTH", Property Desciptor {[[Value]]: length, [[Writable]]:
+    TRUE, [[Enumerable]]: FALSE, [[Configurable]]: FALSE}, and FALSE.
+
+8.  Return A.
+
+NOTE When ARRAY is called as a function rather than as a constructor, it
 creates and initialises a new Array object. Thus the function call
 ARRAY(…) is equivalent to the object creation expression NEW ARRAY(…)
 with the same arguments.
 
 When the ARRAY function is called the following steps are taken:
 
-When ARRAY is called as part of a NEW expression, it is a constructor:
-it initialises the newly created object.
+NOTE When ARRAY is called as part of a NEW expression, it is a
+constructor: it initialises the newly created object.
 
 This description applies if and only if the Array constructor is given
 no arguments or at least two arguments.
 
-The [[Prototype]] internal property of the newly constructed object is
-set to the original Array prototype object, the one that is the initial
-value of ARRAY.PROTOTYPE (15.4.3.1).
+This description applies if and only if the Array constructor is given
+exactly one argument.
 
-The newly constructed object has the [[NativeBrand]] internal property
-with value NativeArray.
+1.  If Type(len) is not Number, then
 
-The [[Extensible]] internal property of the newly constructed object is
-set to TRUE.
+    a.  Let array be the result of of the abstraction operation
+        ArrayCreate (15.4) with argument 1.
 
-The LENGTH property of the newly constructed object is set to the number
-of arguments.
+    b.  ReturnIfAbrupt(array).
 
-The 0 property of the newly constructed object is set to item0 (if
-supplied); the 1 property of the newly constructed object is set to
-item1 (if supplied); and, in general, for as many arguments as there
-are, the k property of the newly constructed object is set to argument
-k, where the first argument is considered to be argument number 0.
-These properties all have the attributes {[[Writable]]: TRUE,
-[[Enumerable]]: TRUE, [[Configurable]]: TRUE}.
+    c.  Let defineStatus be the result of calling the
+        [[DefineOwnProperty]] internal method of array with arguments
+        "0", Property Descriptor {[[Value]]: len, [[Writable]]: TRUE,
+        [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and TRUE.
 
-The [[Prototype]] internal property of the newly constructed object is
-set to the original Array prototype object, the one that is the initial
-value of ARRAY.PROTOTYPE (15.4.3.1). The newly constructed object has
-the [[NativeBrand]] internal property with value NativeArray. The
-[[Extensible]] internal property of the newly constructed object is set
-to TRUE.
+    d.  ReturnIfAbrupt(defineStatus).
 
-If the argument len is a Number and ToUint32(len) is equal to len,
-then the LENGTH property of the newly constructed object is set to
-ToUint32(len). If the argument len is a Number and ToUint32(len)
-is not equal to len, a RANGEERROR exception is thrown.
+    e.  Return array.
 
-If the argument len is not a Number, then the LENGTH property of the
-newly constructed object is set to 1 and the 0 property of the newly
-constructed object is set to len with attributes {[[Writable]]: TRUE,
-[[Enumerable]]: TRUE, [[Configurable]]: TRUE}.
+2.  Let intLen be ToUint32(len).
+
+3.  If intLen ≠ len, then throw a RangeError exception.
+
+4.  Let array be the result of of the abstraction operation
+    ArrayCreate (15.4) with argument intLen.
+
+5.  Return array.
 
 The value of the [[Prototype]] internal property of the Array
 constructor is the Function prototype object (15.3.4).
@@ -10963,6 +11860,143 @@ FALSE, [[Configurable]]: FALSE }.
 The isArray function takes one argument arg, and returns the Boolean
 value TRUE if the argument is an object whose class internal property is
 "ARRAY"; otherwise it returns FALSE. The following steps are taken:
+
+1.  If Type(arg) is not Object, return FALSE.
+
+2.  If arg has the [[NativeBrand]] internal property with value
+    NativeArray, then return TRUE.
+
+3.  Return FALSE.
+
+When the OF method is called with any number of arguments, the following
+steps are taken:
+
+1.  Let lenValue be the result of calling the [[Get]] internal method
+    of items with the argument "LENGTH".
+
+2.  Let len be ToInteger(lenValue).
+
+3.  Let C be the THIS value.
+
+4.  If isConstructor(C) is TRUE, then
+
+    a.  Let newObj be the result of calling the [[Construct]] internal
+        method of C with an argument list containing the single item
+        len.
+
+    b.  Let A be ToObject(newObj).
+
+5.  Else,
+
+    a.  Let A be the result of the abstraction operation ArrayCreate
+        (15.4) with argument len.
+
+6.  ReturnIfAbrupt(A).
+
+7.  Let k be 0.
+
+8.  Repeat, while k < len
+
+    a.  Let Pk be ToString(k).
+
+    b.  Let kValue be the result of calling the [[Get]] internal
+        method of items with argument Pk.
+
+    c.  Let defineStatus be the result of calling the
+        [[DefineOwnProperty]] internal method of A with arguments
+        Pk, Property Descriptor {[[Value]]: kValue.[[value]],
+        [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]:
+        TRUE}, and TRUE.
+
+    d.  ReturnIfAbrupt(defineStatus).
+
+    e.  Increase k by 1.
+
+9.  Let putStatus be the result of calling the [[Put]] internal method
+    of A with arguments "LENGTH", len, and TRUE.
+
+10. ReturnIfAbrupt(putStatus).
+
+11. Return A.
+
+The LENGTH property of the OF method is 0.
+
+NOTE 1 The items argument is assume to be a well-formed rest argument
+value.
+
+NOTE 2 The OF function is an intentionally generic factory method; it
+does not require that its THIS value be the Array constructor. Therefore
+it can be transferred to or herited by other constructors that may be
+called with a single numeric argument.
+
+When the FROM method is called with any number of arguments, the
+following steps are taken:
+
+1.  Let items be ToObject(arrayLike).
+
+2.  ReturnIfAbrupt(items).
+
+3.  Let lenValue be the result of calling the [[Get]] internal method
+    of items with the argument "LENGTH".
+
+4.  Let len be ToInteger(lenValue).
+
+5.  ReturnIfAbrupt(len).
+
+6.  Let C be the THIS value.
+
+7.  If isConstructor(C) is TRUE, then
+
+    a.  Let newObj be the result of calling the [[Construct]] internal
+        method of C with an argument list containing the single item
+        len.
+
+    b.  Let A be ToObject(newObj).
+
+8.  Else,
+
+    a.  Let A be the result of the abstraction operation ArrayCreate
+        (15.4) with argument len.
+
+9.  ReturnIfAbrupt(A).
+
+10. Let k be 0.
+
+11. Repeat, while k < len
+
+    a.  Let Pk be ToString(k).
+
+    b.  Let kPresent be the result of calling the [[HasProperty]]
+        internal method of items with argument Pk.
+
+    c.  If kPresent is TRUE, then
+
+        i.  Let kValue be the result of calling the [[Get]] internal
+            method of items with argument Pk.
+
+        ii. ReturnIfAbrupt(kValue).
+
+        iii. Let defineStatus be the result of calling the
+            [[DefineOwnProperty]] internal method of A with arguments
+            Pk, Property Descriptor {[[Value]]: kValue.[[value]],
+            [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]:
+            TRUE}, and TRUE.
+
+        iv. ReturnIfAbrupt(defineStatus).
+
+    d.  Increase k by 1.
+
+12. Let putStatus be the result of calling the [[Put]] internal method
+    of A with arguments "LENGTH", len, and TRUE.
+
+13. ReturnIfAbrupt(putStatus).
+
+14. Return A.
+
+NOTE The FROM function is an intentionally generic factory method; it
+does not require that its THIS value be the Array constructor. Therefore
+it can be transferred to or herited by any other constructors that may
+be called with a single numeric argument.
 
 The value of the [[Prototype]] internal property of the Array prototype
 object is the standard built-in Object prototype object (15.2.4).
@@ -10986,6 +12020,21 @@ The initial value of ARRAY.PROTOTYPE.CONSTRUCTOR is the standard
 built-in ARRAY constructor.
 
 When the TOSTRING method is called, the following steps are taken:
+
+1.  Let array be the result of calling ToObject on the THIS value.
+
+2.  ReturnIfAbrupt(array).
+
+3.  Let func be the result of calling the [[Get]] internal method of
+    array with argument "JOIN".
+
+4.  ReturnIfAbrupt(func).
+
+5.  If IsCallable(func) is FALSE, then let func be the standard
+    built-in method Object.prototype.toString (15.2.4.2).
+
+6.  Return the result of calling the [[Call]] internal method of func
+    providing array as the THIS value and an empty arguments list.
 
 NOTE The TOSTRING function is intentionally generic; it does not require
 that its THIS value be an Array object. Therefore it can be transferred
@@ -11384,6 +12433,49 @@ not visited.
 
 When the FOREACH method is called with one or two arguments, the
 following steps are taken:
+
+1.  Let O be the result of calling ToObject passing the THIS value as
+    the argument.
+
+2.  ReturnIfAbrupt(O).
+
+3.  Let lenValue be the result of calling the [[Get]] internal method
+    of O with the argument "LENGTH".
+
+4.  Let len be ToUint32(lenValue).
+
+5.  ReturnIfAbrupt(len).
+
+6.  If IsCallable(callbackfn) is FALSE, throw a TYPEERROR exception.
+
+7.  If thisArg was supplied, let T be thisArg; else let T be
+    UNDEFINED.
+
+8.  Let k be 0.
+
+9.  Repeat, while k < len
+
+    a.  Let Pk be ToString(k).
+
+    b.  Let kPresent be the result of calling the [[HasProperty]]
+        internal method of O with argument Pk.
+
+    c.  If kPresent is TRUE, then
+
+        i.  Let kValue be the result of calling the [[Get]] internal
+            method of O with argument Pk.
+
+        ii. ReturnIfAbrupt(kValue).
+
+        iii. Let funcResult be the result of calling [[Call]] internal
+            method of callbackfn with T as the THIS value and
+            argument list containing kValue, k, and O.
+
+        iv. ReturnIfAbrupt(funcResult).
+
+    d.  Increase k by 1.
+
+10. Return UNDEFINED.
 
 The LENGTH property of the FOREACH method is 1.
 
@@ -11990,6 +13082,213 @@ NOTE The TRIM function is intentionally generic; it does not require
 that its THIS value be a String object. Therefore, it can be transferred
 to other kinds of objects for use as a method.
 
+15.5.4.21 STRING.PROTOTYPE.REPEAT (COUNT)
+
+The following steps are taken:
+
+1.  ReturnIfAbrupt(CheckObjectCoercible(THIS value)).
+
+2.  Let S be the result of calling ToString, giving it the THIS value
+    as its argument.
+
+3.  ReturnIfAbrupt(S).
+
+4.  Let n be the result of calling ToInteger(count).
+
+5.  ReturnIfAbrupt(n).
+
+6.  If n ≤ 0, then throw a RangeError exception.
+
+7.  Let T be a String value that is made from n copies of S
+    appended together.
+
+8.  Return T.
+
+NOTE 1 This method creates a String consisting of the characters of this
+object (converted to String) repeated count time.
+
+NOTE 2 The REPEAT function is intentionally generic; it does not require
+that its THIS value be a String object. Therefore, it can be transferred
+to other kinds of objects for use as a method.
+
+15.5.4.22 STRING.PROTOTYPE.STARTSWITH (SEARCHSTRING [, POSITION ] )
+
+The following steps are taken:
+
+1.  ReturnIfAbrupt(CheckObjectCoercible(THIS value)).
+
+2.  Let S be the result of calling ToString, giving it the THIS value
+    as its argument.
+
+3.  ReturnIfAbrupt(S).
+
+4.  Let searchStr be ToString(searchString).
+
+5.  ReturnIfAbrupt(searchStr).
+
+6.  Let pos be ToInteger(position). (If position is UNDEFINED,
+    this step produces the value 0).
+
+7.  ReturnIfAbrupt(pos).
+
+8.  Let len be the number of characters in S.
+
+9.  Let start be min(max(pos, 0), len).
+
+10. Let searchLength be the number of characters in searchString.
+
+11. If searchLength+start is greater than len, return FALSE.
+
+12. If the searchLength sequence of characters of S starting at
+    start is the same as the full character sequence of
+    searchString, return TRUE.
+
+13. Otherwise, return FALSE.
+
+The LENGTH property of the STARTSWITH method is 1.
+
+NOTE 1 This method returns TRUE if the sequence of characters of
+searchString converted to a String is the same as the corresponding
+characters of this object (converted to a String) starting at
+position. Otherwise returns FALSE.
+
+NOTE 2 The STARTSWITH function is intentionally generic; it does not
+require that its THIS value be a String object. Therefore, it can be
+transferred to other kinds of objects for use as a method.
+
+15.5.4.23 STRING.PROTOTYPE.ENDSWITH (SEARCHSTRING [, ENDPOSITION] )
+
+The following steps are taken:
+
+1.  ReturnIfAbrupt(CheckObjectCoercible(THIS value)).
+
+2.  Let S be the result of calling ToString, giving it the THIS value
+    as its argument.
+
+3.  ReturnIfAbrupt(S).
+
+4.  Let searchStr be ToString(searchString).
+
+5.  ReturnIfAbrupt(searchStr).
+
+6.  Let len be the number of characters in S.
+
+7.  If endPosition is UNDEFINED, let pos be len, else let pos be
+    ToInteger(endPosition).
+
+8.  ReturnIfAbrupt(pos).
+
+9.  Let end be min(max(pos, 0), len).
+
+10. Let searchLength be the number of characters in searchString.
+
+11. Let start be end - searchLength.
+
+12. If start is less than 0, return FALSE.
+
+13. If the searchLength sequence of characters of S starting at
+    start is the same as the full character sequence of
+    searchString, return TRUE.
+
+14. Otherwise, return FALSE.
+
+The LENGTH property of the ENDSWITH method is 1.
+
+NOTE 1 Returns TRUE if the sequence of characters of searchString
+converted to a String is the same as the corresponding characters of
+this object (converted to a String) starting at endPosition –
+length(this). Otherwise returns FALSE.
+
+NOTE 2 The ENDSWITH function is intentionally generic; it does not
+require that its THIS value be a String object. Therefore, it can be
+transferred to other kinds of objects for use as a method.
+
+15.5.4.24 STRING.PROTOTYPE.CONTAINS (SEARCHSTRING [, POSITION ] )
+
+The CONTAINS method takes two arguments, searchString and position,
+and performs the following steps:
+
+1.  ReturnIfAbrupt(CheckObjectCoercible(THIS value)).
+
+2.  Let S be the result of calling ToString, giving it the THIS value
+    as its argument.
+
+3.  ReturnIfAbrupt(S).
+
+4.  Let searchStr be ToString(searchString).
+
+5.  ReturnIfAbrupt(searchStr).
+
+6.  Let pos be ToInteger(position). (If position is UNDEFINED,
+    this step produces the value 0).
+
+7.  ReturnIfAbrupt(pos).
+
+8.  Let len be the number of characters in S.
+
+9.  Let start be min(max(pos, 0), len).
+
+10. Let searchLen be the number of characters in searchStr.
+
+11. If there exists any integer k not smaller than start such that
+    k + searchLen is not greater than len, and for all nonnegative
+    integers j less than searchLen, the character at position
+    k_+_j of S is the same as the character at position j of
+    searchStr, return TRUE; but if there is no such integer k,
+    return FALSE.
+
+The LENGTH property of the CONTAINS method is 1.
+
+NOTE 1 If searchString appears as a substring of the result of
+converting this object to a String, at one or more positions that are
+greater than or equal to position, then return TRUE; otherwise,
+returns FALSE. If position is UNDEFINED, 0 is assumed, so as to search
+all of the String.
+
+NOTE 2 The CONTAINS function is intentionally generic; it does not
+require that its THIS value be a String object. Therefore, it can be
+transferred to other kinds of objects for use as a method.
+
+15.5.4.25 STRING.PROTOTYPE.TOARRAY()
+
+The following steps are taken:
+
+1.  ReturnIfAbrupt(CheckObjectCoercible(THIS value)).
+
+2.  Let S be the result of calling ToString, giving it the THIS value
+    as its argument.
+
+3.  ReturnIfAbrupt(S).
+
+4.  Let len be the number of characters in S.
+
+5.  Let array be the result of the abstraction operation ArrayCreate
+    (15.4) with argument len.
+
+6.  Let n be 0
+
+7.  Repeat, while n < len:
+
+    a.  Let c be the character at position n in S.
+
+    b.  Call the [[DefineOwnProperty]] internal method of array with
+        arguments ToString(n), the PropertyDescriptor {[[Value]]: c,
+        [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]:
+        TRUE}, and FALSE.
+
+    c.  Increment n by 1.
+
+8.  Return array.
+
+The LENGTH property of the TOARRAY method is 0.
+
+NOTE 1 Returns an Array object with elements corresponding to the
+characters of this object (converted to a String).
+
+NOTE 2 The TOARRAY function is intentionally generic; it does not
+require that its THIS value be a String object. Therefore, it can be
+transferred to other kinds of objects for use as a method.
+
 String instances inherit properties from the String prototype object and
 have a [[NativeBrand]] internal property with value StringWrapper.
 String instances also have a [[PrimitiveValue]] internal property, a
@@ -12119,6 +13418,12 @@ FALSE, [[Configurable]]: FALSE }.
 The value of NUMBER.MIN_VALUE is the smallest positive value of the
 Number type, which is approximately 5 × 10^324^.
 
+In the IEEE-764 double precission binary representation, the smallest
+possible value is a denormalized numbered. If an implementation does not
+support denormalized values, the value of NUMBER.MIN_VALUE must be the
+smallest non-zero positive value that can actually be represented by the
+implementation.
+
 This property has the attributes { [[Writable]]: FALSE, [[Enumerable]]:
 FALSE, [[Configurable]]: FALSE }.
 
@@ -12136,6 +13441,72 @@ The value of Number.POSITIVE_INFINITY is +∞.
 
 This property has the attributes { [[Writable]]: FALSE, [[Enumerable]]:
 FALSE, [[Configurable]]: FALSE }.
+
+15.7.3.7 NUMBER.EPSILON
+
+The value of Number.EPSILON is the difference between 1 and the smallest
+value greater than 1 that is representable as a Number value, which is
+approximately 2.2204460492503130808472633361816 x 10^-16^.
+
+This property has the attributes { [[Writable]]: FALSE, [[Enumerable]]:
+FALSE, [[Configurable]]: FALSE }.
+
+15.7.3.7 NUMBER.MAX_INTEGER
+
+The value of Number.MAX_INTEGER is the largest integer value that can be
+represented as a Number value without losing precision, which is
+9007199254740991.
+
+This property has the attributes { [[Writable]]: FALSE, [[Enumerable]]:
+FALSE, [[Configurable]]: FALSE }.
+
+15.7.3.8 NUMBER.PARSEINT (STRING, RADIX)
+
+Same as 15.1.2.2.
+
+15.7.3.9 NUMBER.PARSEFLOAT (STRING)
+
+Same as 15.1.2.3.
+
+15.7.3.10 NUMBER.ISNAN (NUMBER)
+
+When the NUMBER.ISNAN is called with one argument number, the
+following steps are taken:
+
+1.  If Type(number) is not Number, return FALSE.
+
+2.  If number is NAN, return TRUE.
+
+3.  Otherwise, return FALSE.
+
+NOTE This function differs from the global isNaN function (15.1.2.4) is
+that it does not convert its argument to a Number before determining
+whether it is NaN.
+
+15.7.3.11 NUMBER.ISFINITE (NUMBER)
+
+When the NUMBER.ISFINITE is called with one argument number, the
+following steps are taken:
+
+15.7.3.12 NUMBER.ISINTEGER (NUMBER)
+
+When the NUMBER.ISINTEGER is called with one argument number, the
+following steps are taken:
+
+1.  If Type(number) is not Number, return FALSE.
+
+2.  Let integer be ToInteger(number).
+
+3.  If integer is not equal to number, return FALSE.
+
+4.  Otherwise, return TRUE.
+
+15.7.3.13 NUMBER.TOINT (NUMBER)
+
+When the NUMBER.TOINTEGER is called with one argument number, the
+following steps are taken:
+
+1.  Return ToInteger(number).
 
 The Number prototype object is itself a Number object with a
 [[NativeBrand]] internal property whose value is NumberWrapper. Its
@@ -12191,8 +13562,6 @@ not encouraged, for it to return the same thing as TOSTRING.
 NOTE The first parameter to this function is likely to be used in a
 future version of this standard; it is recommended that implementations
 do not use this parameter position for anything else.
-
-Returns this Number value.
 
 The VALUEOF function is not generic; it throws a TYPEERROR exception if
 its THIS value is not a Number or a Number object. Therefore, it cannot
@@ -12256,6 +13625,25 @@ the behaviour is undefined (see clause 15).
 An implementation is permitted to extend the behaviour of TOPRECISION
 for values of precision less than 1 or greater than 21. In this case
 TOPRECISION would not necessarily throw RANGEERROR for such values.
+
+15.7.3.14 NUMBER.PROTOTYPE.CLZ ()
+
+When the NUMBER.PROTOTYPE.CLZ is called with one argument number, the
+following steps are taken:
+
+1.  Let x be this Number value.
+
+2.  Let n be ToUint32(x).
+
+3.  ReturnIfAbrupt(n).
+
+4.  Let p be the number of leading zero bits in the 32-bit binary
+    representation of n.
+
+5.  Return p.
+
+NOTE If n if 0, p will be 32. If the most significant bit the 32-bit
+binary encoding of n is 1, p will be 0.
 
 Number instances inherit properties from the Number prototype object and
 have a [[NativeBrand]] internal property whose value is NumberWrapper.
@@ -12340,8 +13728,9 @@ FALSE, [[Configurable]]: FALSE }.
 
 Each of the following MATH object functions applies the ToNumber
 abstract operator to each of its arguments (in left-to-right order if
-there is more than one) and then performs a computation on the resulting
-Number value(s).
+there is more than one). If ToNumber returns an abrupt completion, that
+completion record is immediately returned. Otherwise, functction
+performs a computation on the resulting Number value(s).
 
 In the function descriptions below, the symbols NaN, −0, +0, −∞ and +∞
 refer to the Number values described in 8.5.
@@ -12704,6 +14093,220 @@ The argument is expressed in radians.
 
 -   If x is +∞ or −∞, the result is NaN.
 
+Returns an implementation-dependent approximation to the base 10
+logarithm of x.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is less than 0, the result is NaN.
+
+-   If x is +0, the result is −∞.
+
+-   If x is −0, the result is −∞.
+
+-   If x is 1, the result is +0.
+
+-   If x is +∞, the result is +∞.
+
+Returns an implementation-dependent approximation to the base 2
+logarithm of x.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is less than 0, the result is NaN.
+
+-   If x is +0, the result is −∞.
+
+-   If x is −0, the result is −∞.
+
+-   If x is 1, the result is +0.
+
+-   If x is +∞, the result is +∞.
+
+Returns an implementation-dependent approximation to the natural
+logarithm of 1 + x. The result is computed in a way that is accurate
+even when the value of x is close to zero.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is less than -1, the result is NaN.
+
+-   If x is -1, the result is -∞.
+
+-   If x is +0, the result is +0.
+
+-   If x is −0, the result is −0.
+
+-   If x is +∞, the result is +∞.
+
+Returns an implementation-dependent approximation to subtracting 1 from
+the exponential function of x (e raised to the power of x, where
+e is the base of the natural logarithms). The result is computed in a
+way that is accurate even when the value of x is close 0.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is +0, the result is +0.
+
+-   If x is −0, the result is −0.
+
+-   If x is +∞, the result is +∞.
+
+-   If x is −∞, the result is -1.
+
+Returns an implementation-dependent approximation to the hyperbolic
+cosine of x.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is +0, the result is 1.
+
+-   If x is −0, the result is 1.
+
+-   If x is +∞, the result is +∞.
+
+-   If x is −∞, the result is +∞.
+
+NOTE The value of cosh(x) is the same as _(exp(x) + exp(-x))/2_.
+
+Returns an implementation-dependent approximation to the hyperbolic sine
+of x.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is +0, the result is +0.
+
+-   If x is −0, the result is −0.
+
+-   If x is +∞, the result is +∞.
+
+-   If x is −∞, the result is −∞.
+
+NOTE The value of cosh(x) is the same as _(exp(x) - exp(-x))/2_.
+
+Returns an implementation-dependent approximation to the hyperbolic
+tangent of x.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is +0, the result is +0.
+
+-   If x is −0, the result is −0.
+
+-   If x is +∞, the result is +1.
+
+-   If x is −∞, the result is -1.
+
+NOTE The value of tanh(x) is the same as _(exp(x) - exp(-x))/(exp(x) +
+exp(-x))_.
+
+Returns an implementation-dependent approximation to the inverse
+hyperbolic cosine of x.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is less than 1, the result is NaN.
+
+-   If x is 1, the result is +0.
+
+-   If x is +∞, the result is +∞.
+
+Returns an implementation-dependent approximation to the inverse
+hyperbolic sine of x.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is +0, the result is +0.
+
+-   If x is −0, the result is −0.
+
+-   If x is +∞, the result is +∞.
+
+-   If x is −∞, the result is −∞.
+
+Returns an implementation-dependent approximation to the inverse
+hyperbolic tangent of x.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is less than −1, the result is NaN.
+
+-   If x is greater than 1, the result is NaN.
+
+-   If x is −1, the result is −∞.
+
+-   If x is +1, the result is +∞.
+
+-   If x is +0, the result is +0.
+
+-   If x is −0, the result is −0.
+
+Given two or three arguments, hypot returns an implementation-dependent
+approximation of the square root of the sum of squares of its arguments.
+
+-   If any argument is +∞, the result is +∞.
+
+-   If any argument is −∞, the result is +∞.
+
+-   If no argument is +∞ or −∞, and any argument is NaN, the result is
+      NaN.
+
+-   If all arguments are either +0 or -0, the result is +0.
+
+~~Given two or three arguments, hypot2 returns an
+implementation-dependent approximation of the sum of squares of its
+arguments. ~~
+
+-   ~~If no arguments are given, the result is +0.~~
+
+-   ~~If any argument is +∞, the result is +∞.~~
+
+-   ~~If any argument is −∞, the result is +∞.~~
+
+-   ~~If no argument is +∞ or −∞, and any argument is NaN, the result is
+      NaN.~~
+
+-   ~~If all arguments are either +0 or -0, the result is +0.~~
+
+Returns the integral part of the number x, removing any fractional
+digits. If x is already an integer, the result is x.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is −0, the result is −0.
+
+-   If x is +0, the result is +0.
+
+-   If x is +∞, the result is +∞.
+
+-   If x is −∞, the result is −∞.
+
+Returns the sign of the x, indicating whether x is positive, negative or
+zero.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is −0, the result is −0.
+
+-   If x is +0, the result is +0.
+
+-   If x is negative, the result is −1.
+
+-   If x is positive, the result is +1.
+
+Returns an implementation-dependent approximation to the cube root of
+x.
+
+-   If x is NaN, the result is NaN.
+
+-   If x is +0, the result is +0.
+
+-   If x is −0, the result is −0.
+
+-   If x is +∞, the result is +∞.
+
+-   If x is −∞, the result is −∞.
+
 The following functions are abstract operations that operate on time
 values (defined in 15.9.1.1). Note that, in every case, if any argument
 to one of these functions is NAN, the result will be NAN.
@@ -13062,17 +14665,19 @@ object (15.9.5).
 This property has the attributes { [[Writable]]: FALSE, [[Enumerable]]:
 FALSE, [[Configurable]]: FALSE }.
 
-The PARSE function applies the ToString operator to its argument and
-interprets the resulting String as a date and time; it returns a Number,
-the UTC time value corresponding to the date and time. The String may be
-interpreted as a local time, a UTC time, or a time in some other time
-zone, depending on the contents of the String. The function first
-attempts to parse the format of the String according to the rules called
-out in Date Time String Format (15.9.1.15). If the String does not
-conform to that format the function may fall back to any
-implementation-specific heuristics or implementation-specific date
-formats. Unrecognisable Strings or dates containing illegal element
-values in the format String shall cause DATE.PARSE to return NAN.
+The PARSE function applies the ToString operator to its argument. If
+ToString results in an abrupt completion the Completion Record is
+immediately returned. Otherwise, PARSE interprets the resulting String
+as a date and time; it returns a Number, the UTC time value
+corresponding to the date and time. The String may be interpreted as a
+local time, a UTC time, or a time in some other time zone, depending on
+the contents of the String. The function first attempts to parse the
+format of the String according to the rules called out in Date Time
+String Format (15.9.1.15). If the String does not conform to that format
+the function may fall back to any implementation-specific heuristics or
+implementation-specific date formats. Unrecognisable Strings or dates
+containing illegal element values in the format String shall cause
+DATE.PARSE to return NAN.
 
 If x is any Date object whose milliseconds amount is zero within a
 particular implementation of ECMAScript, then all of the following
@@ -13134,7 +14739,7 @@ The initial value of DATE.PROTOTYPE.CONSTRUCTOR is the built-in DATE
 constructor.
 
 This function returns a String value. If this time value is NaN, the
-String value is ″INVALID DATE", otherwise the contents of the String are
+String value is "INVALID DATE", otherwise the contents of the String are
 implementation-dependent, but are intended to represent the Date in the
 current time zone in a convenient, human-readable form.
 
@@ -14021,14 +15626,18 @@ backreferences. Inside a CharacterClass, \B means the backspace
 character, while \B and backreferences raise errors. Using a
 backreference inside a ClassAtom causes an error.
 
-If pattern is an object R that has a [[NativeBrand]] internal
-property whose value is NativeRegExp and flags is UNDEFINED, then
-return R unchanged. Otherwise call the standard built-in REGEXP
-constructor (15.10.4.1) as if by the expression NEW REGEXP(pattern,
-flags) and return the object constructed by that constructor.
+The following steps are taken:
 
 When REGEXP is called as part of a NEW expression, it is a constructor:
 it initialises the newly created object.
+
+The following steps are taken:
+
+1.  Return the result of the abstraction operation RegExpCreate with
+    arguments pattern and flags.
+
+The abstract operation RegExpCreate with arguments pattern and flags
+does the following:
 
 If pattern is an object R that has a [[NativeBrand]] internal
 property whose value is NativeRegExp and flags is UNDEFINED, then let
@@ -14143,6 +15752,112 @@ match, or NULL if string did not match.
 
 The String ToString(string) is searched for an occurrence of the
 regular expression pattern as follows:
+
+1.  Let R be this RegExp object.
+
+2.  ReturnIfAbrupt(R).
+
+3.  Let S be the value of ToString(string)
+
+4.  ReturnIfAbrupt(S).
+
+5.  Return the result of the RegExpExec abstraction operation with
+    arguments R and S.
+
+The abstract operation RegExpExec with arguments R (an object) and S
+(a string) performs the following steps:
+
+1.  Let length be the length of S.
+
+2.  Let lastIndex be the result of calling the [[Get]] internal method
+    of R with argument "LASTINDEX".
+
+3.  Let i be the value of ToInteger(lastIndex).
+
+4.  ReturnIfAbrupt(i).
+
+5.  Let global be the result of calling the [[Get]] internal method of
+    R with argument "GLOBAL".
+
+6.  ReturnIfAbrupt(global).
+
+7.  If global is FALSE, then let i = 0.
+
+8.  Let matchSucceeded be FALSE.
+
+9.  Repeat, while matchSucceeded is FALSE
+
+    a.  If i < 0 or i > length, then
+
+        i.  Let putStatus be the result of calling the [[Put]]
+            internal method of R with arguments "LASTINDEX", 0, and
+            TRUE.
+
+        ii. ReturnIfAbrupt(putStatus).
+
+        iii. Return NULL.
+
+    b.  Call the [[Match]] internal method of R with arguments S and
+        i.
+
+    c.  If [[Match]] returned FAILURE, then
+
+        i.  _Let i = i+1._
+
+    d.  else
+
+        i.  Let r be the State result of the call to [[Match]].
+
+        ii. Set matchSucceeded to TRUE.
+
+10. Let e be r's endIndex value.
+
+11. If global is TRUE,
+
+    a.  Let putStatus be the result of calling the [[Put]] internal
+        method of R with arguments "LASTINDEX", e, and TRUE.
+
+    b.  ReturnIfAbrupt(putStatus).
+
+12. Let n be the length of r's captures array. (This is the same
+    value as 15.10.2.1's NCapturingParens.)
+
+13. Let A be the result of the abstract operation ArrayCreate with
+    argument 0.
+
+14. Let matchIndex be i.
+
+15. Assert: The following [DefineOwnProperty]] calls will not result in
+    an abrupt completion.
+
+16. Call the [[DefineOwnProperty]] internal method of A with arguments
+    "INDEX", Property Descriptor {[[Value]]: matchIndex, [[Writable]]:
+    TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and TRUE.
+
+17. Call the [[DefineOwnProperty]] internal method of A with arguments
+    "INPUT", Property Descriptor {[[Value]]: S, [[Writable]]: TRUE,
+    [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and TRUE.
+
+18. Call the [[DefineOwnProperty]] internal method of A with arguments
+    "LENGTH", Property Descriptor {[[Value]]: n + 1}, and TRUE.
+
+19. Let matchedSubstr be the matched substring (i.e. the portion of
+    S between offset i inclusive and offset e exclusive).
+
+20. Call the [[DefineOwnProperty]] internal method of A with arguments
+    "0", Property Descriptor {[[Value]]: matchedSubstr, [[Writable]]:
+    TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and TRUE.
+
+21. For each integer i such that i > 0 and i ≤ n
+
+    a.  Let captureI be i^th^ element of r's captures array.
+
+    b.  Call the [[DefineOwnProperty]] internal method of A with
+        arguments ToString(i), Property Descriptor {[[Value]]:
+        captureI, [[Writable]]: TRUE, [[Enumerable]]: TRUE,
+        [[Configurable]]: TRUE}, and TRUE.
+
+22. Return A.
 
 The following steps are taken:
 
@@ -15172,15 +16887,15 @@ Elision ,
 ObjectLiteral : See 11.1.5
 
 { }
-{ PropertyNameAndValueList }
-{ PropertyNameAndValueList , }
+{ PropertyDefinitionList }
+{ PropertyDefinitionList , }
 
-PropertyNameAndValueList : See 11.1.5
+PropertyDefinitionList : See 11.1.5
 
-PropertyAssignment
-PropertyNameAndValueList , PropertyAssignment
+PropertyDefinition
+PropertyDefinitionList , PropertyDefinition
 
-PropertyAssignment : See 11.1.5
+PropertyDefinition : See 11.1.5
 
 PropertyName : AssignmentExpression
 GET PropertyName ( ) { FunctionBody }
@@ -15866,45 +17581,25 @@ Syntax
 NumericLiteral ::
 
 DecimalLiteral
-HexIntegerLiteral
+BinaryIntegerLiteral
 OctalIntegerLiteral
+HexIntegerLiteral
+LegacyOctalIntegerLiteral
 
-OctalIntegerLiteral ::
+LegacyOctalIntegerLiteral ::
 
 0 OctalDigit
-OctalIntegerLiteral OctalDigit
-
-OctalDigit :: ONE OF
-
-0 1 2 3 4 5 6 7
+LegacyOctalIntegerLiteral OctalDigit
 
 Semantics
 
--   The MV of NumericLiteral :: OctalIntegerLiteral is the MV of
-      OctalIntegerLiteral.
-
--   The MV of OctalDigit :: 0 is 0.
-
--   The MV of OctalDigit :: 1 is 1.
-
--   The MV of OctalDigit :: 2 is 2.
-
--   The MV of OctalDigit :: 3 is 3.
-
--   The MV of OctalDigit :: 4 is 4.
-
--   The MV of OctalDigit :: 5 is 5.
-
--   The MV of OctalDigit :: 6 is 6.
-
--   The MV of OctalDigit :: 7 is 7.
-
--   The MV of OctalIntegerLiteral :: 0 OctalDigit is the MV of
+-   -   -   -   -   -   -   -   -   -   The MV of
+      LegacyOctalIntegerLiteral :: 0 OctalDigit is the MV of
       OctalDigit.
 
--   The MV of OctalIntegerLiteral :: OctalIntegerLiteral
-      OctalDigit is (the MV of OctalIntegerLiteral times 8) plus the
-      MV of OctalDigit.
+-   The MV of LegacyOctalIntegerLiteral :: LegacyOctalIntegerLiteral
+      OctalDigit is (the MV of LegacyOctalIntegerLiteral times 8)
+      plus the MV of OctalDigit.
 
 String Literals
 
@@ -16143,14 +17838,14 @@ _proto__ Object Initialisers _
 
 Definitions of two algorithms in 11.1.5 are replaced with the following:
 
-The production PropertyNameAndValueList : PropertyAssignment is
+The production PropertyDefinitionList : PropertyDefinition is
 evaluated as follows:
 
 1.  Let obj be the result of creating a new object as if by the
     expression NEW OBJECT() where OBJECT is the standard built-in
     constructor with that name.
 
-2.  Let propId be the result of evaluating PropertyAssignment.
+2.  Let propId be the result of evaluating PropertyDefinition.
 
 3.  If propId.name is the string value "_PROTO_" and
     UnderscoreProtoEnabled is TRUE and
@@ -16173,8 +17868,8 @@ evaluated as follows:
 5.  Return obj.
 
 The production
- PropertyNameAndValueList : PropertyNameAndValueList ,
-PropertyAssignment
+ PropertyDefinitionList : PropertyDefinitionList ,
+PropertyDefinition
 is evaluated as follows:
 
 5.  Call the [[DefineOwnProperty]] internal method of obj with
@@ -16236,7 +17931,7 @@ THE STRICT MODE RESTRICTION AND EXCEPTIONS
 
 -   It is a SYNTAXERROR if the Identifier "EVAL" or the Identifier
       "ARGUMENTS" occurs as the Identifier in a
-      PropertySetParameterList of a PropertyAssignment that is
+      PropertySetParameterList of a PropertyDefinition that is
       contained in strict code or if its FunctionBody is strict code
       (11.1.5).
 
@@ -16296,8 +17991,15 @@ THE STRICT MODE RESTRICTION AND EXCEPTIONS
       exception.
 
 (informative)
-Corrections and Clarifications in the 5^th^ Edition
-with Possible 3^rd^ Edition Compatibility Impact
+Corrections and Clarifications Possible Compatibility Impact
+
+15.9.1.15: If a time zone offset is not present, the local time zone is
+used. Edition 5.1 incorrectly stated that a missing time zone should be
+interpreted as “z”.
+
+15.9.5.2: Previous editions did not specify the value returned by
+Date.prototype.toString when this time value is NaN. The 6^th^ Edition
+species the result to be the String value is "INVALID DATE"
 
 Throughout: In the Edition 3 specification the meaning of phrases such
 as “as if by the expression NEW ARRAY()” are subject to
@@ -16359,8 +18061,8 @@ observable using Object.prototype.toString is now “RegExp” rather than
 “Object”.
 
 (informative)
-Additions and Changes in the 5^th^ Edition that
-Introduce Incompatibilities with the 3^rd^ Edition
+Additions and Changes that
+Introduce Incompatibilities with Prior Editions
 
 7.1: Unicode format control characters are no longer stripped from
 ECMAScript source text before processing. In Edition 5, if such a
