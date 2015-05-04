@@ -200,9 +200,9 @@ Introduction vii
 
 10.6 Arguments Object 61
 
-11 Expressions 63
+11 Expressions 64
 
-11.1 Primary Expressions 63
+11.1 Primary Expressions 64
 
 11.1.1 The this Keyword 64
 
@@ -214,339 +214,339 @@ Introduction vii
 
 11.1.5 Object Initialiser 66
 
-11.1.6 The Grouping Operator 68
+11.1.6 The Grouping Operator 69
 
-11.2 Left-Hand-Side Expressions 68
+11.2 Left-Hand-Side Expressions 70
 
-11.2.1 Property Accessors 69
+11.2.1 Property Accessors 70
 
-11.2.2 The new Operator 70
+11.2.2 The new Operator 71
 
-11.2.3 Function Calls 70
+11.2.3 Function Calls 71
 
-11.2.4 Argument Lists 70
+11.2.4 Argument Lists 72
 
-11.2.5 Function Expressions 71
+11.2.5 Function Expressions 73
 
-11.3 Postfix Expressions 71
+11.3 Postfix Expressions 73
 
-11.3.1 Postfix Increment Operator 71
+11.3.1 Postfix Increment Operator 73
 
-11.3.2 Postfix Decrement Operator 71
+11.3.2 Postfix Decrement Operator 74
 
-11.4 Unary Operators 72
+11.4 Unary Operators 74
 
-11.4.1 The delete Operator 72
+11.4.1 The delete Operator 74
 
-11.4.2 The void Operator 72
+11.4.2 The void Operator 74
 
-11.4.3 The typeof Operator 73
+11.4.3 The typeof Operator 75
 
-11.4.4 Prefix Increment Operator 73
+11.4.4 Prefix Increment Operator 75
 
-11.4.5 Prefix Decrement Operator 73
+11.4.5 Prefix Decrement Operator 75
 
-11.4.6 Unary + Operator 74
+11.4.6 Unary + Operator 76
 
-11.4.7 Unary - Operator 74
+11.4.7 Unary - Operator 76
 
-11.4.8 Bitwise NOT Operator ( ~ ) 74
+11.4.8 Bitwise NOT Operator ( ~ ) 76
 
-11.4.9 Logical NOT Operator ( ! ) 74
+11.4.9 Logical NOT Operator ( ! ) 76
 
-11.5 Multiplicative Operators 74
+11.5 Multiplicative Operators 76
 
-11.5.1 Applying the * Operator 75
+11.5.1 Applying the * Operator 77
 
-11.5.2 Applying the / Operator 75
+11.5.2 Applying the / Operator 77
 
-11.5.3 Applying the % Operator 76
+11.5.3 Applying the % Operator 78
 
-11.6 Additive Operators 76
+11.6 Additive Operators 78
 
-11.6.1 The Addition operator ( + ) 76
+11.6.1 The Addition operator ( + ) 78
 
-11.6.2 The Subtraction Operator ( - ) 77
+11.6.2 The Subtraction Operator ( - ) 79
 
-11.6.3 Applying the Additive Operators to Numbers 77
+11.6.3 Applying the Additive Operators to Numbers 79
 
-11.7 Bitwise Shift Operators 77
+11.7 Bitwise Shift Operators 80
 
-11.7.1 The Left Shift Operator ( << ) 77
+11.7.1 The Left Shift Operator ( << ) 80
 
-11.7.2 The Signed Right Shift Operator ( >> ) 78
+11.7.2 The Signed Right Shift Operator ( >> ) 80
 
-11.7.3 The Unsigned Right Shift Operator ( >>> ) 78
+11.7.3 The Unsigned Right Shift Operator ( >>> ) 80
 
-11.8 Relational Operators 79
+11.8 Relational Operators 81
 
-11.8.1 The Less-than Operator ( < ) 79
+11.8.1 The Less-than Operator ( < ) 81
 
-11.8.2 The Greater-than Operator ( > ) 79
+11.8.2 The Greater-than Operator ( > ) 81
 
-11.8.3 The Less-than-or-equal Operator ( <= ) 80
+11.8.3 The Less-than-or-equal Operator ( <= ) 82
 
-11.8.4 The Greater-than-or-equal Operator ( >= ) 80
+11.8.4 The Greater-than-or-equal Operator ( >= ) 82
 
-11.8.5 The Abstract Relational Comparison Algorithm 80
+11.8.5 The Abstract Relational Comparison Algorithm 82
 
-11.8.6 The instanceof operator 81
+11.8.6 The instanceof operator 83
 
-11.8.7 The in operator 81
+11.8.7 The in operator 83
 
-11.9 Equality Operators 81
+11.9 Equality Operators 83
 
-11.9.1 The Equals Operator ( == ) 82
+11.9.1 The Equals Operator ( == ) 84
 
-11.9.2 The Does-not-equals Operator ( != ) 82
+11.9.2 The Does-not-equals Operator ( != ) 84
 
-11.9.3 The Abstract Equality Comparison Algorithm 82
+11.9.3 The Abstract Equality Comparison Algorithm 84
 
-11.9.4 The Strict Equals Operator ( === ) 83
+11.9.4 The Strict Equals Operator ( === ) 85
 
-11.9.5 The Strict Does-not-equal Operator ( !== ) 83
+11.9.5 The Strict Does-not-equal Operator ( !== ) 85
 
-11.9.6 The Strict Equality Comparison Algorithm 83
+11.9.6 The Strict Equality Comparison Algorithm 85
 
-11.10 Binary Bitwise Operators 84
+11.10 Binary Bitwise Operators 86
 
-11.11 Binary Logical Operators 84
+11.11 Binary Logical Operators 87
 
-11.12 Conditional Operator ( ? : ) 85
+11.12 Conditional Operator ( ? : ) 87
 
-11.13 Assignment Operators 86
+11.13 Assignment Operators 88
 
-11.13.1 Simple Assignment ( = ) 87
+11.13.1 Simple Assignment ( = ) 89
 
-11.13.2 Compound Assignment ( op= ) 90
+11.13.2 Compound Assignment ( op= ) 92
 
-11.14 Comma Operator ( , ) 91
+11.14 Comma Operator ( , ) 93
 
-12 Statements 91
+12 Statements 93
 
-12.1 Block 92
+12.1 Block 94
 
-12.2 Variable Statement 92
+12.2 Variable Statement 95
 
-12.2.1 Strict Mode Restrictions 94
+12.2.1 Strict Mode Restrictions 96
 
-12.3 Empty Statement 94
+12.3 Empty Statement 98
 
-12.4 Expression Statement 94
+12.4 Expression Statement 98
 
-12.5 The if Statement 94
+12.5 The if Statement 98
 
-12.6 Iteration Statements 95
+12.6 Iteration Statements 99
 
-12.6.1 The do-while Statement 95
+12.6.1 The do-while Statement 99
 
-12.6.2 The while Statement 95
+12.6.2 The while Statement 99
 
-12.6.3 The for Statement 96
+12.6.3 The for Statement 99
 
-12.6.4 The for-in Statement 96
+12.6.4 The for-in Statement 100
 
-12.7 The continue Statement 97
+12.7 The continue Statement 101
 
-12.8 The break Statement 98
+12.8 The break Statement 102
 
-12.9 The return Statement 98
+12.9 The return Statement 102
 
-12.10 The with Statement 99
+12.10 The with Statement 102
 
-12.10.1 Strict Mode Restrictions 99
+12.10.1 Strict Mode Restrictions 103
 
-12.11 The switch Statement 99
+12.11 The switch Statement 103
 
-12.12 Labelled Statements 101
+12.12 Labelled Statements 105
 
-12.13 The throw Statement 101
+12.13 The throw Statement 105
 
-12.14 The try Statement 102
+12.14 The try Statement 105
 
-12.14.1 Strict Mode Restrictions 103
+12.14.1 Strict Mode Restrictions 106
 
-12.15 The debugger statement 103
+12.15 The debugger statement 106
 
-13 Function Definition 103
+13 Function Definition 107
 
-13.1 Strict Mode Restrictions 104
+13.1 Strict Mode Restrictions 108
 
-13.2 Creating Function Objects 104
+13.2 Creating Function Objects 110
 
-13.2.1 [[Call]] 105
+13.2.1 [[Call]] 110
 
-13.2.2 [[Construct]] 105
+13.2.2 [[Construct]] 111
 
-13.2.3 The [[ThrowTypeError]] Function Object 106
+13.2.3 The [[ThrowTypeError]] Function Object 111
 
-14 Program 106
+14 Program 111
 
-14.1 Directive Prologues and the Use Strict Directive 107
+14.1 Directive Prologues and the Use Strict Directive 112
 
-15 Standard Built-in ECMAScript Objects 107
+15 Standard Built-in ECMAScript Objects 112
 
-15.1 The Global Object 108
+15.1 The Global Object 113
 
-15.1.1 Value Properties of the Global Object 109
+15.1.1 Value Properties of the Global Object 114
 
-15.1.2 Function Properties of the Global Object 109
+15.1.2 Function Properties of the Global Object 114
 
-15.1.3 URI Handling Function Properties 111
+15.1.3 URI Handling Function Properties 116
 
-15.1.4 Constructor Properties of the Global Object 115
+15.1.4 Constructor Properties of the Global Object 120
 
-15.1.5 Other Properties of the Global Object 116
+15.1.5 Other Properties of the Global Object 121
 
-15.2 Object Objects 116
+15.2 Object Objects 122
 
-15.2.1 The Object Constructor Called as a Function 116
+15.2.1 The Object Constructor Called as a Function 122
 
-15.2.2 The Object Constructor 117
+15.2.2 The Object Constructor 122
 
-15.2.3 Properties of the Object Constructor 117
+15.2.3 Properties of the Object Constructor 122
 
-15.2.4 Properties of the Object Prototype Object 120
+15.2.4 Properties of the Object Prototype Object 125
 
-15.2.5 Properties of Object Instances 122
+15.2.5 Properties of Object Instances 127
 
-15.3 Function Objects 122
+15.3 Function Objects 127
 
-15.3.1 The Function Constructor Called as a Function 122
+15.3.1 The Function Constructor Called as a Function 127
 
-15.3.2 The Function Constructor 122
+15.3.2 The Function Constructor 128
 
-15.3.3 Properties of the Function Constructor 123
+15.3.3 Properties of the Function Constructor 128
 
-15.3.4 Properties of the Function Prototype Object 124
+15.3.4 Properties of the Function Prototype Object 129
 
-15.3.5 Properties of Function Instances 126
+15.3.5 Properties of Function Instances 131
 
-15.4 Array Objects 127
+15.4 Array Objects 132
 
-15.4.1 The Array Constructor Called as a Function 128
+15.4.1 The Array Constructor Called as a Function 133
 
-15.4.2 The Array Constructor 128
+15.4.2 The Array Constructor 133
 
-15.4.3 Properties of the Array Constructor 129
+15.4.3 Properties of the Array Constructor 134
 
-15.4.4 Properties of the Array Prototype Object 129
+15.4.4 Properties of the Array Prototype Object 134
 
-15.4.5 Properties of Array Instances 145
+15.4.5 Properties of Array Instances 150
 
-15.5 String Objects 147
+15.5 String Objects 152
 
-15.5.1 The String Constructor Called as a Function 147
+15.5.1 The String Constructor Called as a Function 152
 
-15.5.2 The String Constructor 147
+15.5.2 The String Constructor 152
 
-15.5.3 Properties of the String Constructor 147
+15.5.3 Properties of the String Constructor 152
 
-15.5.4 Properties of the String Prototype Object 148
+15.5.4 Properties of the String Prototype Object 153
 
-15.5.5 Properties of String Instances 157
+15.5.5 Properties of String Instances 162
 
-15.6 Boolean Objects 157
+15.6 Boolean Objects 162
 
-15.6.1 The Boolean Constructor Called as a Function 157
+15.6.1 The Boolean Constructor Called as a Function 162
 
-15.6.2 The Boolean Constructor 158
+15.6.2 The Boolean Constructor 163
 
-15.6.3 Properties of the Boolean Constructor 158
+15.6.3 Properties of the Boolean Constructor 163
 
-15.6.4 Properties of the Boolean Prototype Object 158
+15.6.4 Properties of the Boolean Prototype Object 163
 
-15.6.5 Properties of Boolean Instances 159
+15.6.5 Properties of Boolean Instances 164
 
-15.7 Number Objects 159
+15.7 Number Objects 164
 
-15.7.1 The Number Constructor Called as a Function 159
+15.7.1 The Number Constructor Called as a Function 164
 
-15.7.2 The Number Constructor 159
+15.7.2 The Number Constructor 164
 
-15.7.3 Properties of the Number Constructor 159
+15.7.3 Properties of the Number Constructor 164
 
-15.7.4 Properties of the Number Prototype Object 160
+15.7.4 Properties of the Number Prototype Object 165
 
-15.7.5 Properties of Number Instances 164
+15.7.5 Properties of Number Instances 169
 
-15.8 The Math Object 164
+15.8 The Math Object 169
 
-15.8.1 Value Properties of the Math Object 164
+15.8.1 Value Properties of the Math Object 169
 
-15.8.2 Function Properties of the Math Object 165
+15.8.2 Function Properties of the Math Object 170
 
-15.9 Date Objects 170
+15.9 Date Objects 175
 
 15.9.1 Overview of Date Objects and Definitions of Abstract Operators
-170
+175
 
-15.9.2 The Date Constructor Called as a Function 175
+15.9.2 The Date Constructor Called as a Function 180
 
-15.9.3 The Date Constructor 176
+15.9.3 The Date Constructor 181
 
-15.9.4 Properties of the Date Constructor 177
+15.9.4 Properties of the Date Constructor 182
 
-15.9.5 Properties of the Date Prototype Object 178
+15.9.5 Properties of the Date Prototype Object 183
 
-15.9.6 Properties of Date Instances 185
+15.9.6 Properties of Date Instances 190
 
-15.10 RegExp (Regular Expression) Objects 185
+15.10 RegExp (Regular Expression) Objects 190
 
-15.10.1 Patterns 185
+15.10.1 Patterns 190
 
-15.10.2 Pattern Semantics 187
+15.10.2 Pattern Semantics 192
 
-15.10.3 The RegExp Constructor Called as a Function 199
+15.10.3 The RegExp Constructor Called as a Function 204
 
-15.10.4 The RegExp Constructor 199
+15.10.4 The RegExp Constructor 204
 
-15.10.5 Properties of the RegExp Constructor 200
+15.10.5 Properties of the RegExp Constructor 205
 
-15.10.6 Properties of the RegExp Prototype Object 200
+15.10.6 Properties of the RegExp Prototype Object 205
 
-15.10.7 Properties of RegExp Instances 202
+15.10.7 Properties of RegExp Instances 207
 
-15.11 Error Objects 203
+15.11 Error Objects 208
 
-15.11.1 The Error Constructor Called as a Function 203
+15.11.1 The Error Constructor Called as a Function 208
 
-15.11.2 The Error Constructor 203
+15.11.2 The Error Constructor 208
 
-15.11.3 Properties of the Error Constructor 203
+15.11.3 Properties of the Error Constructor 208
 
-15.11.4 Properties of the Error Prototype Object 203
+15.11.4 Properties of the Error Prototype Object 208
 
-15.11.5 Properties of Error Instances 204
+15.11.5 Properties of Error Instances 209
 
-15.11.6 Native Error Types Used in This Standard 204
+15.11.6 Native Error Types Used in This Standard 209
 
-15.11.7 NativeError Object Structure 205
+15.11.7 NativeError Object Structure 210
 
-15.12 The JSON Object 206
+15.12 The JSON Object 211
 
-15.12.1 The JSON Grammar 207
+15.12.1 The JSON Grammar 212
 
-15.12.2 parse ( text [ , reviver ] ) 208
+15.12.2 parse ( text [ , reviver ] ) 213
 
-15.12.3 stringify ( value [ , replacer [ , space ] ] ) 210
+15.12.3 stringify ( value [ , replacer [ , space ] ] ) 215
 
-16 Errors 213
+16 Errors 218
 
-Annex A (informative) Grammar Summary 216
+Annex A (informative) Grammar Summary 221
 
-Annex B (informative) Compatibility 236
+Annex B (informative) Compatibility 241
 
-Annex C (informative) The Strict Mode of ECMAScript 240
+Annex C (informative) The Strict Mode of ECMAScript 245
 
 Annex D (informative) Corrections and Clarifications in the 5^th^
-Edition with Possible 3^rd^ Edition Compatibility Impact 242
+Edition with Possible 3^rd^ Edition Compatibility Impact 247
 
 Annex E (informative) Additions and Changes in the 5^th^ Edition that
-Introduce Incompatibilities with the 3^rd^ Edition 244
+Introduce Incompatibilities with the 3^rd^ Edition 249
 
 Annex F (informative) Technically Significant Corrections and
-Clarifications in the 5.1 Edition 248
+Clarifications in the 5.1 Edition 253
 
 Introduction
 
@@ -1238,7 +1238,7 @@ line terminator characters). Furthermore, certain token sequences that
 are described by the grammar are not considered acceptable if a
 terminator character appears in certain “awkward” places.
 
-In certain cases in order to avoid ambiguirties the syntactic grammar
+In certain cases in order to avoid ambiguities the syntactic grammar
 uses productions that permit token sequences that are not valid
 ECMAScript programs. In such cases a more restrictive supplemental
 grammar is provided that further restricts the acceptable token
@@ -1536,11 +1536,11 @@ explicitly deals with the exception, using terminology such as “If an
 exception was thrown…”. Once such an algorithm step has been encountered
 the exception is no longer considered to have occurred.
 
-Context-free grammars are not powerful to express all the rules that
-define whether a stream of input elements make up a valid ECMAScript
-program that may be evaluated. In some situations additional rules are
-needed that may be expressed using either ECMAScript algorithm
-conventions or prose requirements. Such rules are always associate with
+Context-free grammars are not sufficiently powerful to express all the
+rules that define whether a stream of input elements make up a valid
+ECMAScript program that may be evaluated. In some situations additional
+rules are needed that may be expressed using either ECMAScript algorithm
+conventions or prose requirements. Such rules are always associated with
 a production of a grammar and are called the _static semantics_ of the
 production.
 
@@ -3887,12 +3887,12 @@ interpreted as strict mode code in the following situations:
       is a String that when processed as a FunctionBody begins with a
       Directive Prologue that contains a Use Strict Directive.
 
--   Unless specified otherwise, extended code (10.2.1) is also consider
-      strict code.
+-   Unless specified otherwise, extended code (10.1.2) is also strict
+      mode code.
 
-_Extended code_ is any any code contained in an ECMAScript Program
-syntactic unit that contains occurances of lexical or syntactic
-productions define subsequent to the Fifth Edition of the ECMAScript
+_Extended code_ is any code contained in an ECMAScript Program
+syntactic unit that contains occurrences of lexical or syntactic
+productions defined subsequent to the Fifth Edition of the ECMAScript
 specification. Code is interpreted as extended code in the following
 situations:
 
@@ -3916,8 +3916,9 @@ situations:
       is a String that when processed as a FunctionBody begins with
       ???.
 
-The “strict code” includes both actual strict mode code while “extended
-code” islucco only used to to mean actual extended code.
+The term “strict code” is used to designate both actual strict mode code
+and extended code while the term “extended code” is designates only
+actual extended code.
 
 A _Lexical Environment_ is a specification type used to define the
 association of Identifiers to specific variables and functions based
@@ -4107,9 +4108,9 @@ The following abstract operations are used in this specification to
 operate upon lexical environments:
 
 The abstract operation GetIdentifierReference is called with a Lexical
-Environment lex, an identifier String name, and a Boolean flag
-strict. The value of lex may be NULL. When called, the following
-steps are performed:
+Environment lex, a String name, and a Boolean flag strict. The
+value of lex may be NULL. When called, the following steps are
+performed:
 
 When the abstract operation NewDeclarativeEnvironment is called with
 either a Lexical Environment or NULL as argument E the following steps
@@ -4171,7 +4172,7 @@ It is impossible for an ECMAScript program to access an execution
 context.
 
 Identifier resolution is the process of determining the binding of an
-Identifier using the LexicalEnvironment of the running execution
+IdentifierName using the LexicalEnvironment of the running execution
 context. During execution of ECMAScript code, Identifier Resolution is
 performed using the following algorithm:
 
@@ -4227,8 +4228,8 @@ argument List args:
 When control enters an execution context for function code, an arguments
 object is created unless (as specified in 10.5) the identifier ARGUMENTS
 occurs as an Identifier in the function’s FormalParameterList or
-occurs as the Identifier of a VariableDeclaration or
-FunctionDeclaration contained in the function code.
+occurs as the Identifier of a FunctionDeclaration contained in the
+function code.
 
 The arguments object is created by calling the abstract operation
 CreateArgumentsObject with arguments func the function object whose
@@ -4310,8 +4311,9 @@ The THIS keyword evaluates to the value of the ThisBinding of the
 current execution context.
 
 An Identifier is evaluated by performing Identifier Resolution as
-specified in 10.3.1. The result of evaluating an Identifier is always
-a value of type Reference.
+specified in 10.3.1 using the IdentifierName corresponding to
+Identifier. The result of evaluating an Identifier is always a value
+of type Reference.
 
 A Literal is evaluated as described in 7.8.
 
@@ -4442,7 +4444,7 @@ is evaluated as follows:
     a.  Let exists be the result of calling the [[HasProperty]]
           internal method of spreadObj with ToString(n).
 
-    b.  If exists then,
+    b.  If exists is TRUE then,
 
         i.  Let v be the result of calling the [[Get]] internal method
               of spreadObj passing ToString(n) as the argument.
@@ -4515,7 +4517,7 @@ AssignmentExpression_ is evaluated as follows:
     a.  Let exists be the result of calling the [[HasProperty]]
           internal method of spreadObj with ToString(n).
 
-    b.  If exists then,
+    b.  If exists is TRUE then,
 
         i.  Let v be the result of calling the [[Get]] internal method
               of spreadObj passing ToString(n) as the argument.
@@ -4676,21 +4678,18 @@ is evaluated as follows:
 If the above steps would throw a SYNTAXERROR then an implementation must
 treat the error as an early error (Clause 16).
 
-The PropName of the productions PropertyAssignment : IdentifierName
-and PropertyAssignment : PropertyName : AssignmentExpression is
-determined as follows:
+The PropName of the production PropertyAssignment : IdentifierName
+is determined as follows:
 
-1.  Let propName be the result of evaluating PropertyName.
+1.  2.  Return PropName(IdentifierName).
 
-2.  Return propName.
-
-The production PropertyAssignment : PropertyName is evaluated as
+The production PropertyAssignment : IdentifierName is evaluated as
 follows:
 
-1.  Let propName be PropName(PropertyName).
+1.  Let propName be PropName(IdentifierName).
 
 2.  Let exprValue be the result of performing Identifier Resolution as
-    specified in 10.3.1 using propName as the Identifier.
+    specified in 10.3.1 using IdentifierName.
 
 3.  Let propValue be GetValue(exprValue).
 
@@ -4698,6 +4697,11 @@ follows:
     [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
 5.  Return Property Identifier (propName, desc).
+
+The PropName of the production PropertyAssignment : PropertyName :
+AssignmentExpression is determined as follows:
+
+1.  Return PropName(PropertyName).
 
 The production PropertyAssignment : PropertyName :
 AssignmentExpression is evaluated as follows:
@@ -4716,9 +4720,7 @@ AssignmentExpression is evaluated as follows:
 The PropName of the production PropertyAssignment : GET PropertyName
 ( ) { FunctionBody } is determined as follows:
 
-1.  Let propName be the result of evaluating PropertyName.
-
-2.  Return propName.
+1.  2.  Return PropName(PropertyName).
 
 The production PropertyAssignment : GET PropertyName ( ) {
 FunctionBody } is evaluated as follows:
@@ -4741,9 +4743,7 @@ The PropName of the production PropertyAssignment : SET PropertyName
 ( PropertySetParameterList ) { FunctionBody } is determined as
 follows:
 
-1.  Let propName be the result of evaluating PropertyName.
-
-2.  Return propName.
+1.  2.  Return the result of PropName(PropertyName).
 
 The production PropertyAssignment : SET PropertyName (
 PropertySetParameterList ) { FunctionBody } is evaluated as follows:
@@ -4771,23 +4771,28 @@ PropertyName ( PropertySetParameterList ) { FunctionBody } are:
     PropertySetParameterList of a PropertyAssignment that is either
     contained in strict code or whose FunctionBody is strict code.
 
-The production PropertyName : IdentifierName is evaluated as
-follows:
+The PropName of the production PropertyName : IdentifierName is
+evaluated as follows:
 
-1.  Return the String value containing the same sequence of characters
-    as the IdentifierName.
+1.  Return PropName(IdentifierName).
 
-The production PropertyName : StringLiteral is evaluated as follows:
+The PropName of the production PropertyName : StringLiteral is
+evaluated as follows:
 
 1.  Return the SV of the StringLiteral.
 
-The production PropertyName : NumericLiteral is evaluated as
-follows:
+The PropName of the production PropertyName : NumericLiteral is
+evaluated as follows:
 
 1.  Let nbr be the result of forming the value of the
     NumericLiteral.
 
 2.  Return ToString(nbr).
+
+The PropName of the token IdentiferName is determined as follows:
+
+1.  Return the String value containing the same sequence of characters
+    as IdentifierName.
 
 The production PrimaryExpression : ( Expression ) is evaluated as
 follows:
@@ -5903,13 +5908,9 @@ LeftHandSideExpression = AssignmentExpression are:
     strict code and LeftHandSideExpression is the Identifer EVAL or
     the Identifer ARGUMENTS.
 
--   It is a Syntax Error if the AssignmentExpression is contained in
-    extended code and the LeftHandSideExpression is the Identifier
-    THIS or the Identifer SUPER.
-
--   It is a Syntax Error if the AssignmentExpression is contained in
-    extended code and the LeftHandSideExpression is a Literal or a
-    FunctionExpression.
+-   -   It is a Syntax Error if the AssignmentExpression is contained
+    in extended code and the LeftHandSideExpression is a Literal or
+    a FunctionExpression.
 
 -   It is a Syntax Error if the AssignmentExpression is contained in
     extended code and the LeftHandSideExpression is an Identifier
@@ -5924,8 +5925,8 @@ LeftHandSideExpression = AssignmentExpression are:
 -   It is a Syntax Error if the AssignmentExpression is contained in
     extended code and the LeftHandSideExpression is an ObjectLiteral
     or an ArrayLiteral and the source code corresponding to
-    LeftHandSideExpesson using cannot be parsed using
-    AssignmentPattern as the goal symbol.
+    LeftHandSideExpresson cannot be parsed using AssignmentPattern
+    as the goal symbol.
 
 The production AssignmentExpression : LeftHandSideExpression =
 AssignmentExpression is evaluated as follows:
@@ -5987,7 +5988,7 @@ evaluated with the parameter obj as follows:
     obj passing the Identifier string as the argument.
 
 2.  Let lref be the result of performing Identifier Resolution(10.3.1)
-    using Identifier.
+    using the IdentifierName corresponding to Identifier.
 
 3.  Call PutValue(lref_,_v).
 
@@ -6014,8 +6015,8 @@ AssignmentRestElement : … LeftHandSideExpression are:
 
 -   It is a Syntax Error if the LeftHandSideExpression is an
     ObjectLiteral or an ArrayLiteral and the source code
-    corresponding to LeftHandSideExpesson using cannot be parsed using
-    AssignmentPattern as the goal symbol.
+    corresponding to LeftHandSideExpresson using cannot be parsed
+    using AssignmentPattern as the goal symbol.
 
 -   It is a Syntax Error if the LeftHandSideExpression is
     PrimaryExpression : ( Expression ) and Expression derived a
@@ -6035,7 +6036,7 @@ follows:
     ArrayLiteral then
 
     a.  Let AssignmentPattern be the parse of the source code
-        corresponding to LeftHandSideExpesson using
+        corresponding to LeftHandSideExpresson using
         AssignmentPattern as the goal symbol
 
     b.  Let vObj be ToObject(v).
@@ -6113,7 +6114,7 @@ index as follows:
     ArrayLiteral then
 
     a.  Let AssignmentPattern be the parse of the source code
-        corresponding to LeftHandSideExpesson using
+        corresponding to LeftHandSideExpresson using
         AssignmentPattern as the goal symbol
 
     b.  Let vObj be ToObject(v).
@@ -6159,7 +6160,7 @@ index as follows:
 2.  Let lenVal be the result of calling the [[Get]] internal method of
     obj with argument “LENGTH”.
 
-3.  Let len be toUint32(lenVal).
+3.  Let len be ToUint32(lenVal).
 
 4.  Let A be a new array object created as if by the expression NEW
     ARRAY() where ARRAY is the standard built-in constructor with that
@@ -6396,14 +6397,14 @@ follows:
 The production VariableDeclaration : _Identifier Initialiser_ is
 evaluated as follows:
 
-NOTE The String value of a VariableDeclaration is used in the
+NOTE 1 The String value of a VariableDeclaration is used in the
 evaluation of for-in statements (12.6.4).
 
-1.  If a VariableDeclaration is nested within a with statement and the
-    Identifier in the VariableDeclaration is the same as a property
-    name of the binding object of the with statement’s object
-    environment record, then step 4 will assign value to the property
-    instead of to the VariableEnvironment binding of the Identifier.
+NOTE 2 If a VariableDeclaration is nested within a with statement and
+the Identifier in the VariableDeclaration is the same as a property
+name of the binding object of the with statement’s object environment
+record, then step 4 will assign value to the property instead of to the
+VariableEnvironment binding of the Identifier.
 
 The production Initialiser : = AssignmentExpression is evaluated as
 follows:
@@ -6969,13 +6970,13 @@ The ExpectedArgumentCount of the productions FormalParameterList :
 FormalsList and FormalParameterList : _FormalsList ,_ … Identifier
 is determined as follows:
 
-1.  Return the ExpectArgumentCount of FormalsList.
+1.  Return the ExpectedArgumentCount of FormalsList.
 
 NOTE The ExpectedArgumentCount of a FormalParameterList is the number
 of FormalParameters to the left of either the rest parameter or the
 first FormalParameter with an Initialiser.
 
-The ExpectedArgumentCount of the production FormalsList :
+The ExpectededArgumentCount of the production FormalsList :
 FormalParameter is determined as follows:
 
 1.  If HasInitialiser of FormalParameter is FALSE return 0
@@ -6990,7 +6991,7 @@ determined as follows:
 The ExpectedArgumentCount of the production FormalsList :
 FormalsList, FormalParameter is determined as follows:
 
-1.  Let count be ExpectArgumentCount of FormalsList.
+1.  Let count be ExpectedArgumentCount of FormalsList.
 
 2.  If HasInitialiser of FormalsList is TRUE or HasInitialiser of
     FormalParameter is TRUE, then return count.
@@ -7594,8 +7595,8 @@ Table 23 — Tags for Classified Native Objects
   [[IsNumber]]        "NUMBER"
   [[IsMath]]          "MATH"
   [[IsDate]]          "DATE"
-  [[IsRegExp]]        "FUNCTION"
-  [[IsError]]         "REGEXP"
+  [[IsRegExp]]        "REGEXP"
+  [[IsError]]         "ERROR"
   [[IsJSON]]          "JSON"
   [[IsArguments]]     "ARGUMENTS"
   [[]]                
@@ -9890,8 +9891,8 @@ THH:MM:SS.SSS
 
 All numbers must be base 10. If the MM or DD fields are absent “01” is
 used as the value. If the HH, MM, or SS fields are absent “00” is used
-as the value and the value of an absent SSS field is “000”. The value of
-an absent time zone offset is “Z”.
+as the value and the value of an absent SSS field is “000”. If the time
+zone offset is absent, the date-time is in interpreted as a local time.
 
 Illegal values (out-of-bounds as well as syntax errors) in a format
 string means that the format string is not a valid instance of this
@@ -11465,15 +11466,14 @@ object, lexically preceding values for the same key shall be
 overwritten.
 
 The STRINGIFY function returns a String in JSON format representing an
-ECMAScript value. It can take three parameters. The first parameter is
-required. The value parameter is an ECMAScript value, which is usually
-an object or array, although it can also be a String, Boolean, Number or
-NULL. The optional replacer parameter is either a function that alters
-the way objects and arrays are stringified, or an array of Strings and
-Numbers that acts as a white list for selecting the object properties
-that will be stringified. The optional space parameter is a String or
-Number that allows the result to have white space injected into it to
-improve human readability.
+ECMAScript value. It can take three parameters. The value parameter is
+an ECMAScript value, which is usually an object or array, although it
+can also be a String, Boolean, Number or NULL. The optional replacer
+parameter is either a function that alters the way objects and arrays
+are stringified, or an array of Strings and Numbers that acts as a white
+list for selecting the object properties that will be stringified. The
+optional space parameter is a String or Number that allows the result
+to have white space injected into it to improve human readability.
 
 These are the steps in stringifying an object:
 
@@ -11495,16 +11495,15 @@ quotes and escapes characters within it.
   tab "T"
 
 The abstract operation JO_(_value) serializes an object. It has access
-to the stack, indent, gap, PropertyList, ReplacerFunction, and
-space of the invocation of the stringify method.
+to the stack, indent, gap, and PropertyList of the invocation of
+the stringify method.
 
 The abstract operation JA_(_value) serializes an array. It has access
-to the stack, indent, gap, and space of the invocation of the
-stringify method. The representation of arrays includes only the
-elements between zero and ARRAY.LENGTH – 1 inclusive. Named properties
-are excluded from the stringification. An array is stringified as an
-open left bracket, elements separated by comma, and a closing right
-bracket.
+to the stack, indent, and gap of the invocation of the stringify
+method. The representation of arrays includes only the elements between
+zero and ARRAY.LENGTH – 1 inclusive. Named properties are excluded from
+the stringification. An array is stringified as an open left bracket,
+elements separated by comma, and a closing right bracket.
 
 NOTE 1 JSON structures are allowed to be nested to any depth, but they
 must be acyclic. If value is or contains a cyclic structure, then the
@@ -12773,9 +12772,10 @@ JSONElementList , JSONValue
 (normative)
 Additional ECMAScript Features for Web Browsers
 
-The ECMAScript language syntax and semantics defined in this annex is
-required when the ECMAScript host is a web browsers. It is normative but
-optionalif the host is not a web browser.
+The ECMAScript language syntax and semantics defined in this annex are
+required when the ECMAScript host is a web browser. The content of this
+annex is normative but optional if the ECMAScript host is not a web
+browser.
 
 
 Additional Syntax
