@@ -96,18 +96,18 @@ _8.6.1_ _Property Attributes_
 
 _8.6.2_ _Object Internal Properties and Methods_ 
 
-_8.7_ _The Reference Specification Type_ 
+_8.7_ _The List and Record Specification Type_ 
 
-_8.7.1_ _GetValue (V)_ 
+_8.8_ _The Completion Record Specification Type_ 
 
-_8.7.2_ _PutValue (V, W)_ 
+_8.9_ _The Reference Specification Type_ 
 
-_8.8_ _The List Specification Type_ 
+_8.9.1_ _GetValue (V)_ 
 
-_8.9_ _The Completion Specification Type_ 
+_8.9.2_ _PutValue (V, W)_ 
 
 _8.10_ _The Property Descriptor and Property Identifier Specification
-Types_ 38
+Types_ 39
 
 _8.10.1_ _IsAccessorDescriptor ( Desc )_ 
 
@@ -120,7 +120,7 @@ _8.10.4_ _FromPropertyDescriptor ( Desc )_
 _8.10.5_ _ToPropertyDescriptor ( Obj )_ 
 
 _8.11_ _The Lexical Environment and Environment Record Specification
-Types_ 40
+Types_ 41
 
 _8.12_ _Algorithms for Object Internal Methods_ 
 
@@ -142,43 +142,49 @@ _8.12.8_ _[[DefaultValue]] (hint)_
 
 _8.12.9_ _[[DefineOwnProperty]] (P, Desc, Throw)_ 
 
-_9_ _Type Conversion and Testing_ 
+_8.12.10_ _[[Enumerate]] (includePrototype, onlyEnumerable )_ 
 
-_9.1_ _ToPrimitive_ 
+_8.12.11_ _[[Iterate]] ( )_ 
 
-_9.2_ _ToBoolean_ 
+_9 Abstract Operations_ 
 
-_9.3_ _ToNumber_ 
+_9.1_ _Type Conversion and Testing_ 
 
-_9.3.1_ _ToNumber Applied to the String Type_ 
+_9.1.1_ _ToPrimitive_ 
 
-_9.4_ _ToInteger_ 
+_9.1.2_ _ToBoolean_ 
 
-_9.5_ _ToInt32: (Signed 32 Bit Integer)_ 
+_9.1.3_ _ToNumber_ 
 
-_9.6_ _ToUint32: (Unsigned 32 Bit Integer)_ 
+_9.1.4_ _ToInteger_ 
 
-_9.7_ _ToUint16: (Unsigned 16 Bit Integer)_ 
+_9.1.5_ _ToInt32: (Signed 32 Bit Integer)_ 
 
-_9.8_ _ToString_ 
+_9.1.6_ _ToUint32: (Unsigned 32 Bit Integer)_ 
 
-_9.8.1_ _ToString Applied to the Number Type_ 
+_9.1.7_ _ToUint16: (Unsigned 16 Bit Integer)_ 
 
-_9.9_ _ToObject_ 
+_9.1.8_ _ToString_ 
 
-_9.10_ _CheckObjectCoercible_ 
+_9.1.9_ _ToObject_ 
 
-_9.11_ _IsCallable_ 
+_9.2_ _Testing and Comparision Operations_ 
 
-_9.12_ _The SameValue Algorithm_ 
+_9.2.1_ _CheckObjectCoercible_ 
+
+_9.2.2_ _IsCallable_ 
+
+_9.2.3_ _The SameValue Algorithm_ 
+
+_9.3_ _Property Access Operations_ 
+
+_9.3.1_ _Invoke_ 
 
 _10_ _Executable Code and Execution Contexts_ 
 
 _10.1_ _Types of Executable Code_ 
 
 _10.1.1_ _Strict Mode Code_ 
-
-_10.1.2_ _Extended Code_ 
 
 _10.2_ _Lexical Environments_ 
 
@@ -202,9 +208,9 @@ _10.4.3_ _Entering Function Code_
 
 _10.5_ _Declaration Binding Instantiation_ 
 
-_10.5.1_ _Base Code Top-Level Declaration Instantiation_ 
+_10.5.1_ _Top-Level Declaration Instantiation_ 
 
-_10.5.2_ _Extended Code Top-Level Declaration Instantiation_ 
+_10.5.2_ _Module Declaration Instantiation_ 
 
 _10.5.3_ _Function Declaration Instantiation_ 
 
@@ -228,7 +234,9 @@ _11.1.5_ _Object Initialiser_
 
 _11.1.6_ _Function Expressions_ 
 
-_11.1.7_ _The Grouping Operator_ 
+_11.1.7_ _Generator Comprehensions_ 
+
+_11.1.8_ _The Grouping Operator_ 
 
 _11.2_ _Left-Hand-Side Expressions_ 
 
@@ -238,7 +246,7 @@ _11.2.2_ _The new Operator_
 
 _11.2.3_ _Function Calls_ 
 
-_11.2.3_ _The super Keyword_ 
+_11.2.4_ _The super Keyword_ 
 
 _11.2.5_ _Argument Lists_ 
 
@@ -318,15 +326,17 @@ _11.14_ _Comma Operator ( , )_
 
 _12_ _Statements and Declarations_ 
 
+_Static Semantics_ 
+
+_Runtime Semantics_ 
+
 _12.1_ _Block_ 
 
 _12.2_ _Declarations and the Variable Statement_ 
 
-_12.2.1_ _Let Declaration_ 
+_12.2.1_ _Let and Const Declarations_ 
 
-_12.2.2_ _Const Declaration_ 
-
-_12.2.3_ _Variable Statement_ 
+_12.2.2_ _Variable Statement_ 
 
 _12.2.4_ _Destructuring Binding Patterns_ 
 
@@ -344,7 +354,7 @@ _12.6.2_ _The while Statement_
 
 _12.6.3_ _The for Statement_ 
 
-_12.6.4_ _The for-in Statement_ 
+_12.6.4_ _The for-in and for-of Statements_ 
 
 _12.7_ _The continue Statement_ 
 
@@ -364,15 +374,13 @@ _12.14_ _The try Statement_
 
 _12.15_ _The debugger statement_ 
 
-_13_ _Function Definition_ 
+_13_ _Functions and Generators_ 
 
-_13.2_ _Creating Function Objects_ 
+_13.1_ _Function Definitions_ 
 
-_13.2.1_ _[[Call]]_ 
+_13.1.1_ _Creating Function Objects_ 
 
-_13.2.2_ _[[Construct]]_ 
-
-_13.2.3_ _The [[ThrowTypeError]] Function Object_ 
+_13.2_ _Generator Definitions_ 
 
 _14_ _Program_ 
 
@@ -473,7 +481,7 @@ _15.8.2_ _Function Properties of the Math Object_
 _15.9_ _Date Objects_ 
 
 _15.9.1_ _Overview of Date Objects and Definitions of Abstract
-Operators_ 200
+Operators_ 211
 
 _15.9.2_ _The Date Constructor Called as a Function_ 
 
@@ -572,16 +580,20 @@ _B.2.5_ _Date.prototype.setYear (year)_
 
 _B.2.6_ _Date.prototype.toGMTString ( )_ 
 
+_B.3_ _Other Additional Features_ 
+
+_B.3.1_ _The __proto__ pseudo property._ 
+
 _Annex C (informative) The Strict Mode of ECMAScript_ 
 
 _Annex D (informative) Corrections and Clarifications in the 5^th^
-Edition with Possible 3^rd^ Edition Compatibility Impact_ 272
+Edition with Possible 3^rd^ Edition Compatibility Impact_ 284
 
 _Annex E (informative) Additions and Changes in the 5^th^ Edition that
-Introduce Incompatibilities with the 3^rd^ Edition_ 274
+Introduce Incompatibilities with the 3^rd^ Edition_ 286
 
 _Annex F (informative) Technically Significant Corrections and
-Clarifications in the 5.1 Edition_ 278
+Clarifications in the 5.1 Edition_ 290
 
 Introduction
 
@@ -1695,8 +1707,8 @@ Token
 RegularExpressionLiteral
 
 The Unicode format-control characters (i.e., the characters in category
-“Cf” in the Unicode Character Database such as LEFT-TO-RIGHT MARK or
-RIGHT-TO-LEFT MARK) are control codes used to control the formatting of
+“Cf” in the Unicode Character Database such as left-to-right mark or
+right-to-left mark) are control codes used to control the formatting of
 a range of text in the absence of higher-level protocols for this (such
 as mark-up languages).
 
@@ -3023,9 +3035,9 @@ returned value.
 
 Table 8 — Internal Properties Common to All Objects
 
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   _INTERNAL PROPERTY_     _VALUE TYPE DOMAIN_                                                _DESCRIPTION_
-  ----------------------- ------------------------------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------
+  ----------------------- ------------------------------------------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------
   [[Prototype]]           Object _or_ Null                                                   The prototype of this object.
 
                                                                                              
@@ -3053,7 +3065,11 @@ Table 8 — Internal Properties Common to All Objects
   [[DefaultValue]]        SpecOp (_Hint_) _→_ _primitive_                                    Hint is a String. Returns a default value for the object.
 
   [[DefineOwnProperty]]   SpecOp (_propertyName, PropertyDescriptor, Boolean_) _→_ Boolean   Creates or alters the named own property to have the state described by a Property Descriptor. The flag controls failure handling.
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  [[Enumerate]]           SpecOp()_→_Object                                                  Returns an object that can enumerate the string values of the keys of the enumerable properties of the object. The returned object is an Iterator object.
+
+  [[Iterate]]             SpecOp()_→_Object                                                  Returns an object that can enumate the logical component values of the object. The returned object is an Iterator object.
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Every object (including host objects) must implement all of the internal
 properties listed in Table 8. However, the [[DefaultValue]] internal
@@ -3184,6 +3200,95 @@ Table 10 — Values of the [[NativeBrand]] Internal Property
   NativeArguments       Arguments objects   
                                             
 
+The List type is used to explain the evaluation of argument lists (see
+11.2.4) in NEW expressions, in function calls, and in other algorithms
+where a simple list of values is needed. Values of the List type are
+simply ordered sequences of values. These sequences may be of any
+length.
+
+The Record type is used to describe data aggrations within the
+algorithms of this specifation. A Record type value consists of one or
+more named fields. The value of each field is either the ECMAScript type
+value or a an abstract value represented by a name assocatiated with the
+Record type. Field names are always enclosed in double brackets. For
+example, [[value]]
+
+For notational convenience within this specification, an object
+literal-like syntax can be used to express a Record value. For example,
+{[[field1]]: 42, [[field2]]: FALSE, [[field3]]: EMPTY} defines a Record
+value that has fields three fields each of why is initialized to a
+specific value. Field name order is not significant. Any fields that are
+not explicitly listed are considered to be absent.
+
+In specification text and algorithms, dot notation may be used to refer
+to a specific field of a Record value. For example, if D is the record
+shown in the previous paragraph then D.[[field2]] is shorthand for “the
+field of D named [[Field2]]”.
+
+Schema for commonly used Record field combination may be named and that
+name may be used as a prefix to a literal Record value to identify the
+specific kind of aggrations that is being described. For example:
+Property Descriptor {[[Value]]: 42, [[Writable]]: FALSE,
+[[Configurable]]: TRUE}
+
+The Completion type is a Record used to explain the runtime propagation
+of values and control flow such as the behaviour of statements (BREAK,
+CONTINUE, RETURN and THROW) that perform nonlocal transfers of control.
+
+Values of the Completion type are Record value whole fileds are defined
+as by Table xxx.
+
+Table xxx — Completion Record Fields
+
+  -------------- -------------------------------------------------- --------------------------------------------------
+  _FIELD NAME_   _VALUE_                                            _MEANING_
+  [[type]]       One of NORMAL, BREAK, CONTINUE, RETURN, or THROW   The type of completion that occurred.
+  [[value]]      any ECMAScript language value or EMPTY             The value that was produced.
+  [[target]]     any ECMAScript identifier or EMPTY                 The target label for directed control transfers.
+  -------------- -------------------------------------------------- --------------------------------------------------
+
+The term “abrupt completion” refers to any completion with a [[type]]
+value other than NORMAL.
+
+The algorithms of this specification often implicitly return Completion
+Records whose [[type]] is NORMAL. Unless it is otherwise obvious from
+the context, an algorithm statement that returns a value that is not a
+Completion Record, such as:
+
+mean the same things as:
+
+1.  Return Completion {[[type]]: normal, [[value]]: String "INFINITY",
+    [[target]]:empty}.
+
+Similarly, any reference to a Completion Record value that is in a
+context that does not explicitly require a complete Completion Record
+value is equivalent to an explicit reference to the [[value]] field of
+the Completion Record value unless the Completion Record is an abrupt
+completion.
+
+The abstraction operation NormalValue with a single _argument_ is a
+short hand that is defined as follows:
+
+The abstraction operation NormalCompletion with a single _argument_ is a
+short hand that is defined as follows:
+
+1.  Return Completion {[[type]]: normal, [[value]]: _argument_,
+    [[target]]:empty}.
+
+Algorithms steps that say to throw an exception, such as
+
+1.  Throw a TYPEERROR exception.
+
+mean the same things as:
+
+1.  Return Completion {[[type]]: throw, [[value]]: a newly created
+    TYPEERROR object, [[target]]:empty}.
+
+Algorithms steps that say ReturnIfAbrupt(_argument_), mean the same
+things as:
+
+1.  If _argument_ is an abrupt completion, return _argument_..
+
 NOTE The Reference type is used to explain the behaviour of such
 operators as DELETE, TYPEOF, and the assignment operators. For example,
 the left-hand operand of an assignment is expected to produce a
@@ -3260,24 +3365,6 @@ violation of a _Throw_ predicated error check. When _Throw_ is TRUE any
 property assignment that would create a new property on the transient
 object throws an error.
 
-The List type is used to explain the evaluation of argument lists (see
-11.2.4) in NEW expressions, in function calls, and in other algorithms
-where a simple list of values is needed. Values of the List type are
-simply ordered sequences of values. These sequences may be of any
-length.
-
-The Completion type is used to explain the behaviour of statements
-(BREAK, CONTINUE, RETURN and THROW) that perform nonlocal transfers of
-control. Values of the Completion type are triples of the form (_type_,
-_value_, _target_), where _type_ is one of NORMAL, BREAK, CONTINUE,
-RETURN, or THROW, _value_ is any ECMAScript language value or EMPTY, and
-_target_ is any ECMAScript identifier or EMPTY. If _cv_ is a completion
-value then _cv_.type, _cv_.value, and _cv_.target may be used to
-directly refer to its constituent values.
-
-The term “abrupt completion” refers to any completion with a _type_
-other than NORMAL.
-
 The Property Descriptor type is used to explain the manipulation and
 reification of named property attributes. Values of the Property
 Descriptor type are records composed of named fields where each field’s
@@ -3323,6 +3410,13 @@ operate upon Property Descriptor values:
 When the abstract operation IsAccessorDescriptor is called with property
 descriptor _Desc_, the following steps are taken:
 
+1.  If _Desc_ is UNDEFINED, then return FALSE.
+
+2.  If both _Desc_.[[Get]] and _Desc_.[[Set]] are absent, then return
+    FALSE.
+
+3.  Return TRUE.
+
 When the abstract operation IsDataDescriptor is called with property
 descriptor _Desc_, the following steps are taken:
 
@@ -3359,19 +3453,21 @@ name _P_, the following steps are taken:
 When the [[Get]] internal method of _O_ is called with property name
 _P_, the following steps are taken:
 
-1.  Let _desc_ be the result of calling the [[GetProperty]] internal
+1.  ReturnIfAbrupt(_O_).
+
+2.  Let _desc_ be the result of calling the [[GetProperty]] internal
     method of _O_ with property name _P_.
 
-2.  If _desc_ is UNDEFINED, return UNDEFINED.
+3.  If _desc_ is UNDEFINED, return UNDEFINED.
 
-3.  If IsDataDescriptor(_desc_) is TRUE, return _desc_.[[Value]].
+4.  If IsDataDescriptor(_desc_) is TRUE, return _desc_.[[Value]].
 
-4.  Otherwise, IsAccessorDescriptor(_desc_) must be true so, let
+5.  Otherwise, IsAccessorDescriptor(_desc_) must be true so, let
     _getter_ be _desc_.[[Get]].
 
-5.  If _getter_ is UNDEFINED, return UNDEFINED.
+6.  If _getter_ is UNDEFINED, return UNDEFINED.
 
-6.  Return the result calling the [[Call]] internal method of _getter
+7.  Return the result calling the [[Call]] internal method of _getter
     providing _O_ as the THIS value and providing no arguments.
 
 When the [[CanPut]] internal method of _O_ is called with property name
@@ -3428,15 +3524,87 @@ TRUE. This even permits changing the [[Value]] of a property whose
 where [[Writable]] is first set to TRUE, a new [[Value]] is set, and
 then [[Writable]] is set to FALSE.
 
-The ECMAScript runtime system performs automatic type conversion as
-needed. To clarify the semantics of certain constructs it is useful to
-define a set of conversion abstract operations. These abstract
-operations are not a part of the language; they are defined here to aid
-the specification of the semantics of the language. The conversion
-abstract operations are polymorphic; that is, they can accept a value of
-any ECMAScript language type, but not of specification types.
+When the [[Enumerate]] internal method of _O_ is called with Boolean
+arguments _includePrototype_ and _onlyEnumerable_, the following steps
+are taken:
 
-The abstract operation ToPrimitive takes an _input_ argument and an
+1.  Return an Iterator object (reference xxxx) whose next method
+    iterates over all the keys of enumerable property keys of _O_. If
+    _includePrototype_ is FALSE, then only own properties of _O_ are
+    included. If _onlyEnumerable_ is FALSE, then all properties that do
+    not have private name keys are included. The mechanics and order of
+    enumerating the properties is not specified but must conform to the
+    rules specified below.
+
+Enumerated properties do not include properties whose property key is a
+private name. Properties of the object being enumerated may be deleted
+during enumeration. If a property that has not yet been visited during
+enumeration is deleted, then it will not be visited. If new properties
+are added to the object being enumerated during enumeration, the newly
+added properties are not guaranteed to be visited in the active
+enumeration. A property name must not be visited more than once in any
+enumeration.
+
+Enumerating the properties of an object includes enumerating properties
+of its prototype, and the prototype of the prototype, and so on,
+recursively; but a property of a prototype is not enumerated if it is
+“shadowed” because some previous object in the prototype chain has a
+property with the same name. The values of [[Enumerable]] attributes are
+not considered when determining if a property of a prototype object is
+shadowed by a previous object on the prototype chain.
+
+The following is an informative algorithm that conforms to these rules
+
+1.  Let _obj_ be _O_.
+
+2.  Let _proto_ be the value of the [[Prototype]] internal property of
+    _O_.
+
+3.  If _includePrototype_ is false or _proto_ is the value NULL, then
+
+    a.  Let _propList_ be a new empty List.
+
+4.  Else
+
+    a.  Let _propList_ be the result of calling the [[Enumerate]]
+        internal method of _proto_ with arguments TRUE and
+        _onlyEnumerable_.
+
+5.  For each string _name_ that is the property key of an own propoperty
+    of _O_
+
+    a.  Let _desc_ be the result of calling the [[GetOwnProperty]]
+        internal method of _O_ with argument _name_.
+
+    b.  If _name_ is an element of _propList_, then remove _name_ as an
+        element of _propList_.
+
+    c.  If _onlyEnumerable_ is FALSE or _desc_.[[Enumerable]] is TRUE,
+        then add _name_ as an element of _propList_.
+
+6.  Order the elements of _propList_ in an implementation defined order.
+
+7.  Return _propList_.
+
+When the [[Iterate]] internal method of _O_ is called the following
+steps are taken:
+
+1.  Let _itr_ be the result of performing Invoke with arguments
+    %iterator%, _O_ and an empty argument List.
+
+2.  Return _itr_.
+
+These operations are not a part of the ECMAScript language; they are
+defined here to solely to aid the specification of the semantics of the
+ECMAScript Language.
+
+The ECMAScript language implicitly performs automatic type conversion as
+needed. To clarify the semantics of certain constructs it is useful to
+define a set of conversion abstract operations.. The conversion abstract
+operations are polymorphic; that is, they can accept a value of any
+ECMAScript language type, but not of specification types.
+
+The abstract operation ToPrimitive takes an input _argument_ and an
 optional argument _PreferredType_. The abstract operation ToPrimitive
 converts its _input_ argument to a non-Object type. If an object is
 capable of converting to more than one primitive type, it may use the
@@ -3445,55 +3613,72 @@ according to Table 11:
 
 Table 11 — ToPrimitive Conversions
 
-  -------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  _INPUT TYPE_   _RESULT_
-  Undefined      The result equals the _input_ argument (no conversion).
-  Null           The result equals the _input_ argument (no conversion).
-  Boolean        The result equals the _input_ argument (no conversion).
-  Number         The result equals the _input_ argument (no conversion).
-  String         The result equals the _input_ argument (no conversion).
-  Object         Return a default value for the Object. The default value of an object is retrieved by calling the [[DefaultValue]] internal method of the object, passing the optional hint _PreferredType_. The behaviour of the [[DefaultValue]] internal method is defined by this specification for all native ECMAScript objects in 8.12.8.
-  -------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ------------------- ---------------------------------------------------------------------------------------------------------------------------------------
+  _INPUT TYPE_        _RESULT_
 
-The abstract operation ToBoolean converts its argument to a value of
+  Completion Record   If _argument_ is an abrupt completion, return _argument_. Otherwise return ToPrimitive(_argument_.[[value]])
+
+  Undefined           Return _argument_ t (no conversion).
+
+  Null                Return _argument_ (no conversion).
+
+  Boolean             Return _argument_ (no conversion).
+
+  Number              Return _argument_ (no conversion).
+
+  String              Return _argument_ (no conversion).
+
+  Object              Perform the following steps:
+                      
+                      Let _default_ be the result of calling the [[DefaultValue]] internal method of _argument_, passing the optional hint _PreferredType_.
+                      
+                      Return ToPrimitive(_default_).
+                      
+                      The behaviour of the [[DefaultValue]] internal method is defined by this specification for all native ECMAScript objects in 8.12.8.
+  ------------------- ---------------------------------------------------------------------------------------------------------------------------------------
+
+The abstract operation ToBoolean converts its _argument_ to a value of
 type Boolean according to Table 12:
 
 Table 12 — ToBoolean Conversions
 
-  ----------------- -------------------------------------------------------------------------------------------------------------
-  _ARGUMENT TYPE_   _RESULT_
-  Undefined         FALSE
-  Null              FALSE
-  Boolean           The result equals the input argument (no conversion).
-  Number            The result is FALSE if the argument is +0, −0, or NAN; otherwise the result is TRUE.
-  String            The result is FALSE if the argument is the empty String (its length is zero); otherwise the result is TRUE.
-  Object            TRUE
-  ----------------- -------------------------------------------------------------------------------------------------------------
+  ------------------- --------------------------------------------------------------------------------------------------------------
+  _ARGUMENT TYPE_     _RESULT_
+  Completion Record   If _argument_ is an abrupt completion, return the argument. Otherwise return ToBoolean(_argument_.[[value]])
+  Undefined           Return FALSE
+  Null                Return FALSE
+  Boolean             Return the input argument (no conversion).
+  Number              Return FALSE if the argument is +0, −0, or NAN; otherwise return TRUE.
+  String              Return FALSE if the argument is the empty String (its length is zero); otherwise return TRUE.
+  Object              Return TRUE
+  ------------------- --------------------------------------------------------------------------------------------------------------
 
-The abstract operation ToNumber converts its argument to a value of type
-Number according to Table 13:
+The abstract operation ToNumber converts its _argument_ to a value of
+type Number according to Table 13:
 
 Table 13 — To Number Conversions
 
-  ----------------- -------------------------------------------------------------------------------------
-  _ARGUMENT TYPE_   _RESULT_
+  ------------------- -----------------------------------------------------------------------------------------------------------
+  _ARGUMENT TYPE_     _RESULT_
 
-  Undefined         NAN
+  Completion Record   If _argument_ is an abrupt completion, return _argument_. Otherwise return ToNumber(_argument_.[[value]])
 
-  Null              +0
+  Undefined           Return NAN
 
-  Boolean           The result is 1 if the argument is TRUE. The result is +0 if the argument is FALSE.
+  Null                Return +0
 
-  Number            The result equals the input argument (no conversion).
+  Boolean             Return 1 if _argument_ is TRUE. Return +0 if _argument_ is FALSE.
 
-  String            See grammar and note below.
+  Number              Return _argument_ (no conversion).
 
-  Object            Apply the following steps:
-                    
-                    Let _primValue_ be ToPrimitive(_input argument_, hint Number).
-                    
-                    Return ToNumber(_primValue_).
-  ----------------- -------------------------------------------------------------------------------------
+  String              See grammar and note below.
+
+  Object              Apply the following steps:
+                      
+                      Let _primValue_ be ToPrimitive(_argument_, hint Number).
+                      
+                      Return ToNumber(_primValue_).
+  ------------------- -----------------------------------------------------------------------------------------------------------
 
 ToNumber applied to Strings applies the following grammar to the input
 String. If the grammar cannot interpret the String as an expansion of
@@ -3781,35 +3966,81 @@ NOTE Given the above definition of ToUint16:
 
 -   ToUint16 maps −0 to +0.
 
-The abstract operation ToString converts its argument to a value of type
-String according to Table 14:
+The abstract operation ToString converts its _argument_ to a value of
+type String according to Table 14:
 
 Table 14 — ToString Conversions
 
-  ----------------- -----------------------------------------------------------------
-  _ARGUMENT TYPE_   _RESULT_
+  ------------------- -----------------------------------------------------------------------------------------------------------
+  _ARGUMENT TYPE_     _RESULT_
 
-  Undefined         "UNDEFINED"
+  Completion Record   If _argument_ is an abrupt completion, return _argument_. Otherwise return ToString(_argument_.[[value]])
 
-  Null              "NULL"
+  Undefined           "UNDEFINED"
 
-  Boolean           If the argument is TRUE, then the result is "TRUE".
-                    
-                    If the argument is FALSE, then the result is "FALSE".
+  Null                "NULL"
 
-  Number            See 9.8.1.
+  Boolean             If _argument_ is TRUE, then return "TRUE".
+                      
+                      If _argument_ is FALSE, then return "FALSE".
 
-  String            Return the input argument (no conversion)
+  Number              See 9.8.1.
 
-  Object            Apply the following steps:
-                    
-                    1. Let _primValue_ be ToPrimitive(input argument, hint String).
-                    
-                    2. Return ToString(_primValue_).
-  ----------------- -----------------------------------------------------------------
+  String              Return _argument_ (no conversion)
+
+  Object              Apply the following steps:
+                      
+                      1. Let _primValue_ be ToPrimitive(_argument_, hint String).
+                      
+                      2. Return ToString(_primValue_).
+  ------------------- -----------------------------------------------------------------------------------------------------------
 
 The abstract operation ToString converts a Number _m_ to String format
 as follows:
+
+1.  If _m_ is NAN, return the String "NAN".
+
+2.  If _m_ is +0 or −0, return the String "0".
+
+3.  If _m_ is less than zero, return the String concatenation of the
+    String "-" and ToString(−_m_).
+
+4.  If _m_ is infinity, return the String "INFINITY".
+
+5.  Otherwise, let _n_, _k_, and _s_ be integers such that _k_ ≥ 1,
+    10^_k_−1^ ≤ _s_ < 10_^k^_, the Number value for _s_ × 10_^n−k^_ is
+    _m_, and _k_ is as small as possible. Note that _k_ is the number of
+    digits in the decimal representation of _s_, that _s_ is not
+    divisible by 10, and that the least significant digit of _s_ is not
+    necessarily uniquely determined by these criteria.
+
+6.  If _k_ ≤ _n_ ≤ 21, return the String consisting of the _k_ digits of
+    the decimal representation of s (in order, with no leading zeroes),
+    followed by _n−k_ occurrences of the character ‘0’.
+
+7.  If 0 < n ≤ 21, return the String consisting of the most significant
+    _n_ digits of the decimal representation of _s_, followed by a
+    decimal point ‘.’, followed by the remaining _k−n_ digits of the
+    decimal representation of _s_.
+
+8.  If −6 < n ≤ 0, return the String consisting of the character ‘0’,
+    followed by a decimal point ‘.’, followed by −_n_ occurrences of the
+    character ‘0’, followed by the _k_ digits of the decimal
+    representation of _s_.
+
+9.  Otherwise, if _k_ = 1, return the String consisting of the single
+    digit of _s_, followed by lowercase character ‘E’, followed by a
+    plus sign ‘+’ or minus sign ‘−’ according to whether _n_−1 is
+    positive or negative, followed by the decimal representation of the
+    integer abs(_n_−1) (with no leading zeroes).
+
+10. Return the String consisting of the most significant digit of the
+    decimal representation of _s_, followed by a decimal point ‘.’,
+    followed by the remaining _k_−1 digits of the decimal representation
+    of _s_, followed by the lowercase character ‘E’, followed by a plus
+    sign ‘+’ or minus sign ‘−’ according to whether _n_−1 is positive or
+    negative, followed by the decimal representation of the integer
+    abs(_n_−1) (with no leading zeroes).
 
 NOTE 1 The following observations may be useful as guidelines for
 implementations, but are not part of the normative requirements of this
@@ -3848,20 +4079,21 @@ floating-point numbers:
   http://cm.bell-labs.com/netlib/fp/g_fmt.c.gz and may also be found at
   the various NETLIB mirror sites.
 
-The abstract operation ToObject converts its argument to a value of type
-Object according to Table 15:
+The abstract operation ToObject converts its _argument_ to a value of
+type Object according to Table 15:
 
 Table 15 — ToObject
 
-  ----------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------
-  _ARGUMENT TYPE_   _RESULT_
-  Undefined         Throw a TYPEERROR exception.
-  Null              Throw a TYPEERROR exception.
-  Boolean           Create a new Boolean object whose [[PrimitiveValue]] internal property is set to the value of the argument. See 15.6 for a description of Boolean objects.
-  Number            Create a new Number object whose [[PrimitiveValue]] internal property is set to the value of the argument. See 15.7 for a description of Number objects.
-  String            Create a new String object whose [[PrimitiveValue]] internal property is set to the value of the argument. See 15.5 for a description of String objects.
-  Object            The result is the input argument (no conversion).
-  ----------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------
+  _ARGUMENT TYPE_     _RESULT_
+  Completion Record   If _argument_ is an abrupt completion, return _argument_. Otherwise return ToObject(_argument_.[[value]])
+  Undefined           Throw a TYPEERROR exception.
+  Null                Throw a TYPEERROR exception.
+  Boolean             Return a new Boolean object whose [[PrimitiveValue]] internal property is set to the value of _argument_. See 15.6 for a description of Boolean objects.
+  Number              Return a new Number object whose [[PrimitiveValue]] internal property is set to the value of _argument_. See 15.7 for a description of Number objects.
+  String              Return a new String object whose [[PrimitiveValue]] internal property is set to the value of _argument_. See 15.5 for a description of String objects.
+  Object              Return _argument_ (no conversion).
+  ------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The abstract operation CheckObjectCoercible throws an error if its
 argument is a value that cannot be converted to an Object using
@@ -3869,34 +4101,43 @@ ToObject. It is defined by Table 16:
 
 Table 16 — CheckObjectCoercible Results
 
-  _ARGUMENT TYPE_   _RESULT_
-  ----------------- ------------------------------
-  Undefined         Throw a TYPEERROR exception.
-  Null              Throw a TYPEERROR exception.
-  Boolean           Return
-  Number            Return
-  String            Return
-  Object            Return
+  _ARGUMENT TYPE_     _RESULT_
+  ------------------- -----------------------------------------------------------------------------------------------------------------------
+  Completion Record   If _argument_ is an abrupt completion, return _argument_. Otherwise return CheckObjectCoercible(_argument_.[[value]])
+  Undefined           Throw a TYPEERROR exception.
+  Null                Throw a TYPEERROR exception.
+  Boolean             Return _argument_
+  Number              Return _argument_
+  String              Return _argument_
+  Object              Return _argument_
 
-The abstract operation IsCallable determines if its argument, which must
-be an ECMAScript language value, is a callable function Object according
-to Table 17:
+The abstract operation IsCallable determines if its _argument_, which
+must be an ECMAScript language value, is a callable function Object
+according to Table 17:
 
 Table 17 — IsCallable Results
 
-  ----------------- --------------------------------------------------------------------------------------------------
-  _ARGUMENT TYPE_   _RESULT_
-  Undefined         Return FALSE.
-  Null              Return FALSE.
-  Boolean           Return FALSE.
-  Number            Return FALSE.
-  String            Return FALSE.
-  Object            If the argument object has a [[Call]] internal method, then return TRUE, otherwise return FALSE.
-  ----------------- --------------------------------------------------------------------------------------------------
+  ------------------- -------------------------------------------------------------------------------------------------------------
+  _ARGUMENT TYPE_     _RESULT_
+  Completion Record   If _argument_ is an abrupt completion, return _argument_. Otherwise return IsCallable(_argument_.[[value]])
+  Undefined           Return FALSE.
+  Null                Return FALSE.
+  Boolean             Return FALSE.
+  Number              Return FALSE.
+  String              Return FALSE.
+  Object              If _argument_ has a [[Call]] internal method, then return TRUE, otherwise return FALSE.
+  ------------------- -------------------------------------------------------------------------------------------------------------
 
 The internal comparison abstract operation SameValue(_x_, _y_), where
 _x_ and _y_ are ECMAScript language values, produces TRUE or FALSE. Such
 a comparison is performed as follows:
+
+The Invoke abstraction abstract operation is used to call a method
+property of an object. The operation is called with arguments _P_, _O_,
+and _args_ where _P_ is the property key, _O_ serves as both the lookup
+point for the property and the this value of the call, and _args_ is the
+list of arguments values passed to the method. This abstract operation
+perform, the following steps:
 
 There are three types of ECMAScript executable code:
 
@@ -3956,36 +4197,9 @@ interpreted as strict mode code in the following situations:
 -   Unless specified otherwise, extended code (10.1.2) is also strict
       mode code.
 
-_Extended code_ is any code contained in an ECMAScript _Program
-syntactic unit that contains occurrences of lexical or syntactic
-productions defined subsequent to the Fifth Edition of the ECMAScript
-specification. Code is interpreted as extended code in the following
-situations:
+-   -   -   -   
 
--   Global code is extended global code if it is contained in an
-      ECMAScript _Program_ syntactic unit that has been designated as an
-      extended _Program_ unit in an implementation defined manner or if
-      ???.
-
--   Eval code is extended eval code if the call to eval is a direct call
-      (see 15.1.2.1.1) to the eval function that is contained in
-      extended mode code or if it begins with ???.
-
--   Function code that is part of a _FunctionDeclaration_,
-      _FunctionExpression_, or accessor _PropertyAssignment_ is extended
-      function code if its _FunctionDeclaration_, _FunctionExpression_,
-      or _PropertyAssignment_ is contained in extended mode code or if
-      the function code begins with ???.
-
--   Function code that is supplied as the last argument to the built-in
-      Function constructor is strict function code if the last argument
-      is a String that when processed as a _FunctionBody_ begins with
-      ???.
-
-The term “strict code” is used to designate both actual strict mode code
-and extended code while the term “extended code” only designates actual
-extended code. The term “base code” is used to designate code that is
-not extended code.
+The term “base code” is used to designate code that is not strict code.
 
 A _Lexical Environment_ is a specification type used to define the
 association of _Identifiers_ to specific variables and functions based
@@ -4280,8 +4494,8 @@ context for function code contained in function object _F_, a caller
 provided _argumentsList_, and a caller provided _thisArg_:
 
 NOTE When an execution context is established for evaluating
-non-function code that is base code declarations are instantiated in the
-current VariableEnvironment. Each top-level level variable, constant, or
+non-function code declarations are instantiated in the current
+VariableEnvironment. Each top-level level variable, constant, or
 function declarated in the code is instantiated.
 
 Top-level Declaration Instantiation for base code is performed as
@@ -4336,8 +4550,8 @@ created.
     a.  Let _ao_ be the result of CreateStrictArgumentsObject. with
         argument _argumentsList._
 
-    b.  Perform Binding Initialization for _formals_ with _ao_ and _env_
-        as arguments.
+    b.  Let _formalStatus_ be the result of performing Binding
+        Initialisation for _formals_ with _ao_ and _env_ as arguments.
 
 8.  Else,
 
@@ -4352,15 +4566,18 @@ created.
         CreateMappedArgumentsObject with arguments _names_, _env_, and
         _argumentsList_.
 
-    d.  Perform Binding Initialization for _formals_ with _ao_ and
-        UNDEFINED as arguments.
+    d.  Let _formalStatus_ be the result of performing Binding
+        Initialisation for _formals_ with _ao_ and UNDEFINED as
+        arguments.
 
-9.  NOTE Binding initialization for _formals_ is perform prior to to
+9.  NOTE Binding Initialisation for _formals_ is perform prior to to
     instantiating any non-parameter declarations in order to ensure that
     any such local declarations are not visible to any parameter
-    initialization code that may be evaluated.
+    Initialisation code that may be evaluated.
 
-10. For each element _d_ in _declarations_ do
+10. ReturnIfAbrupt(_formalStatus_).
+
+11. For each element _d_ in _declarations_ do
 
     a.  For each element _dn_ of the BoundNames of _d_ do
 
@@ -4369,7 +4586,7 @@ created.
 
         ii. If _alreadyDeclared_ is FALSE, then
 
-            1.  If _d_ is a _ConstDeclaration_, then
+            1.  If IsConstantDeclaration of _d_ is TRUE, then
 
                 a.  Call _env_’s CreateImmutableBinding concrete method
                     passing _dn_ as the argument.
@@ -4379,15 +4596,15 @@ created.
                 a.  Call _env_’s CreateMutableBinding concrete method
                     passing _dn_ and FALSE as the arguments.
 
-11. Let _argumentsAlreadyDeclared_ be the result of calling _env’s
+12. Let _argumentsAlreadyDeclared_ be the result of calling _env’s
     HasBinding concrete method passing "ARGUMENTS" as the argument.
 
-12. NOTE If _argumentsAlreadyDeclared_ is TRUE then the value of _ao_ is
+13. NOTE If _argumentsAlreadyDeclared_ is TRUE then the value of _ao_ is
     not directly observable to ECMAScript code and need not actually
     exist. In that case, its use in the above steps is strictly as a
-    device for specifying formal parameter initialization semantics.
+    device for specifying formal parameter initialisation semantics.
 
-13. 14. If _argumentsAlreadyDeclared_ is FALSE, then
+14. 15. If _argumentsAlreadyDeclared_ is FALSE, then
 
     a.  If _strict_ is TRUE, then
 
@@ -4402,9 +4619,9 @@ created.
     c.  Call _env_’s InitializeBinding concrete method passing
         "ARGUMENTS" and _ao_ as arguments.
 
-15. Let _varNames_ be the VarDeclaredNames of _code_.
+16. Let _varNames_ be the VarDeclaredNames of _code_.
 
-16. For each String _varName_ in _varNames_, in list order do
+17. For each String _varName_ in _varNames_, in list order do
 
     a.  Let _alreadyDeclared_ be the result of calling _env’s_
         HasBinding concrete method passing _varName_ as the argument.
@@ -4422,9 +4639,9 @@ created.
         ii. Call _env_’s InitializeBinding concrete method passing _fn_,
             and UNDEFINED as the arguments.
 
-17. Let _initializedFunctions_ be an emptyList.
+18. Let _initializedFunctions_ be an emptyList.
 
-18. For each _FunctionDeclaration_ _f_ in _declarations_, in reverse
+19. For each _FunctionDeclaration_ _f_ in _declarations_, in reverse
     list order do
 
     a.  NOTE If there are multiple _FunctionDeclarations_ for the same
@@ -4444,12 +4661,12 @@ created.
         iii. Call _env_’s InitializeBinding concrete method passing
             _fn_, and _fo_ as the arguments.
 
-19. Return.
+20. Return NormalCompletion(empty)..
 
-NOTE When a _Block_ or _CaseBlock_ production contained in extended code
-is evaluated a new Declarative Environment Record is created and
-bindings for each block scoped variable, constant, or function
-declarated in the block are instantiated in the environment record.
+NOTE When a _Block_ or _CaseBlock_ production is evaluated a new
+Declarative Environment Record is created and bindings for each block
+scoped variable, constant, or function declarated in the block are
+instantiated in the environment record.
 
 Block Declaration Instantiation is performed as follows using arguments
 _code_ and _env_. _code_ is the grammar production corresponding to the
@@ -4462,7 +4679,7 @@ bindings are to be.
 
     a.  For each element _dn_ of the BoundNames of _d_ do
 
-        i.  If _d_ is a _ConstDeclaration_, then
+        i.  If IsConstantDeclaration of _d_ is TRUE, then
 
             1.  Call _env_’s CreateImmutableBinding concrete method
                 passing _dn_ as the argument.
@@ -4662,6 +4879,8 @@ Literal
 SealedArrayLiteral
 SealedObjectLiteral
 FunctionExpression
+GeneratorExpression
+GeneratorComprehension
 ( Expression )
 
 RUNTIME SEMANTICS: EVALUATION
@@ -4671,18 +4890,34 @@ PrimaryExpression : THIS
 1.  Return the value of the ThisBinding of the current execution
     context.
 
-An _Identifier_ is evaluated by performing Identifier Resolution as
-specified in 10.3.1 using the _IdentifierName_ corresponding to
-_Identifier_. The result of evaluating an _Identifier_ is always a value
-of type Reference.
+1.  Let _ref_ be the result of performing Identifier Resolution as
+    specified in 10.3.1 using the _IdentifierName_ corresponding to
+    _Identifier_.
+
+2.  Return _ref_.
+
+NOTE: The result of evaluating an _Identifier_ is always a value of type
+Reference.
 
 A _Literal_ is evaluated as described in 7.8.
 
-NOTE An array initialiser is an expression describing the initialisation
-of an Array object, written in a form of a literal. It is a list of zero
-or more expressions, each of which represents an array element, enclosed
-in square brackets. The elements need not be literals; they are
-evaluated each time the array initialiser is evaluated.
+Syntax
+
+SealedArrayInitialiser :
+
+ArrayInitialiser
+# ArrayInitialiser
+
+ArrayInitialiser :
+
+ArrayLiteral
+ArrayComprehension
+
+NOTE An _ArrayLiteral_ is an expression describing the initialisation of
+an Array object, using a list, of zero or more expressions each of which
+represents an array element, enclosed in square brackets. The elements
+need not be literals; they are evaluated each time the array initialiser
+is evaluated.
 
 Array elements may be elided at the beginning, middle or end of the
 element list. Whenever a comma in the element list is not preceded by an
@@ -4693,11 +4928,6 @@ are not defined. If an element is elided at the end of an array, that
 element does not contribute to the length of the Array.
 
 Syntax
-
-SealedArrayLiteral :
-
-ArrayLiteral
-# ArrayLiteral
 
 ArrayLiteral :
 
@@ -4721,14 +4951,23 @@ SpreadElement :
 
 … AssignmentExpression
 
-STATIC SEMANTICS: EARLY ERRORS
+ArrayComprehension :
 
-_SpreadElement_ : _… AssignmentExpression
+Expression ComprehensionForList
+Expression ComprehensionForList IF ( Expression )
 
--   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
+ComprehensionForList :
 
--   
+ComprehensionFor
+ComprehensionForList ComprehensionFor
+
+ComprehensionFor :
+
+FOR ( LeftHandSideExpression OF Expression )
+
+STATIC SEMANTICS
+
+-   -   
 
 STATIC SEMANTICS: ELISION WIDTH
 
@@ -4746,6 +4985,8 @@ _Elision_ : _Elision_ ,
 
 2.  Return _preceding_+1.
 
+RUNTIME SEMANTICS
+
 RUNTIME SEMANTICS: ARRAY ACCUMULATION
 
   With parameters _array_ and _nextIndex_.
@@ -4758,12 +4999,14 @@ _ElementList_ : _Elision_~opt~ _AssignmentExpression
 
 3.  Let _initValue_ be GetValue(_initResult_).
 
-4.  Call the [[DefineOwnProperty]] internal method of _array_ with
+4.  If _initValue_ is an abrupt completion, return _initValue_.
+
+5.  Call the [[DefineOwnProperty]] internal method of _array_ with
     arguments ToString(ToUint32(_nextIndex+padding_)), the Property
     Descriptor { [[Value]]: _initValue_, [[Writable]]: TRUE,
     [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and FALSE.
 
-5.  Return _nextIndex+padding+_1.
+6.  Return _nextIndex+padding+_1.
 
 _ElementList_ : _Elision_~opt~ _SpreadElement
 
@@ -4777,28 +5020,34 @@ _ElementList_ : _ElementList_ , _Elision_~opt~ _AssignmentExpression
 1.  Let _postIndex_ be the result of performing Array Accumulation for
     _ElementList_ with arguments _array_ and _nextIndex_.
 
-2.  Let _padding_ be the Elision Width of _Elision_~opt~.
+2.  If _postIndex_ is an abrupt completion, return _postIndex_.
 
-3.  Let _initResult_ be the result of evaluating _AssignmentExpression_.
+3.  Let _padding_ be the Elision Width of _Elision_~opt~.
 
-4.  Let _initValue_ be GetValue(_initResult_).
+4.  Let _initResult_ be the result of evaluating _AssignmentExpression_.
 
-5.  Call the [[DefineOwnProperty]] internal method of _array_ with
+5.  Let _initValue_ be GetValue(_initResult_).
+
+6.  If _initValue_ is an abrupt completion, return _initValue_.
+
+7.  Call the [[DefineOwnProperty]] internal method of _array_ with
     arguments ToString(ToUint32((_postIndex_+_padding_)) and the
     Property Descriptor { [[Value]]: _initValue_, [[Writable]]: TRUE,
     [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and FALSE.
 
-6.  Return _postIndex_+_padding+_1.
+8.  Return _postIndex_+_padding+_1.
 
 _ElementList_ : _ElementList_ , _Elision_~opt~ _SpreadElement
 
 1.  Let _postIndex_ be the result of performing Array Accumulation for
     _ElementList_ with arguments _array_ and _nextIndex_.
 
-2.  Let _pad_ be the result of evaluating _Elision_~opt~; if not
+2.  If _postIndex_ is an abrupt completion, return _postIndex_ .
+
+3.  Let _pad_ be the result of evaluating _Elision_~opt~; if not
     present, use the numeric value zero.
 
-3.  Return the result of performing Array Accumulation for
+4.  Return the result of performing Array Accumulation for
     _SpreadElement_ with arguments _array_ and _postIndex_+_padding_.
 
 _SpreadElement_ : … _AssignmentExpression
@@ -4809,14 +5058,16 @@ _SpreadElement_ : … _AssignmentExpression
 
 3.  Let _spreadObj_ be ToObject(_spreadValue_).
 
-4.  Let _lenVal_ be the result of calling the [[Get]] internal method of
+4.  If _spreadObj_ is an abrupt completion, return _spreadObj_.
+
+5.  Let _lenVal_ be the result of calling the [[Get]] internal method of
     _spreadObj_ with argument “LENGTH”.
 
-5.  Let _spreadLen_ be ToUint32(_lenVal_).
+6.  Let _spreadLen_ be ToUint32(_lenVal_).
 
-6.  Let _n_=0;
+7.  Let _n_=0;
 
-7.  Repeat, while _n_ < _spreadLen
+8.  Repeat, while _n_ < _spreadLen
 
     a.  Let _exists_ be the result of calling the [[HasProperty]]
           internal method of _spreadObj_ with ToString(_n_).
@@ -4835,7 +5086,7 @@ _SpreadElement_ : … _AssignmentExpression
 
     d.  Let _nextIndex_ = _nextIndex_ +1.
 
-8.  Return _nextIndex_.
+9.  Return _nextIndex_.
 
 NOTE [[DefineOwnProperty]] is used to ensure that own properties are
 defined for the array even if the standard built-in Array prototype
@@ -4866,10 +5117,12 @@ _ArrayLiteral_ : [ _ElementList_ ]
 2.  Let _len_ be result of performing Array Accumulation for
     _ElementList_ with arguments _array_ and 0.
 
-3.  Call the [[Put]] internal method of _array_ with arguments "LENGTH",
+3.  If _len_ is an abrupt completion, return _len_.
+
+4.  Call the [[Put]] internal method of _array_ with arguments "LENGTH",
     _len_, and FALSE.
 
-4.  Return _array_.
+5.  Return _array_.
 
 _ArrayLiteral_ : [ _ElementList_ , _Elision_~opt~ ]
 
@@ -4880,12 +5133,30 @@ _ArrayLiteral_ : [ _ElementList_ , _Elision_~opt~ ]
 2.  3.  Let _len_ be result of performing Array Accumulation for
     _ElementList_ with arguments _array_ and 0.
 
-4.  Let _pad_ be the Elision Width of _Elision_~opt~.
+4.  If _len_ is an abrupt completion, return _len_.
 
-5.  6.  Call the [[Put]] internal method of _array_ with arguments
+5.  Let _pad_ be the Elision Width of _Elision_~opt~.
+
+6.  7.  Call the [[Put]] internal method of _array_ with arguments
     "LENGTH", ToUint32(_pad_+_len_), and FALSE.
 
-7.  Return _array_.
+8.  Return _array_.
+
+Syntax
+
+ArrayComprehension :
+
+[ Expression ComprehensionForList ]
+[ Expression ComprehensionForList IF ( Expression ) ]
+
+ComprehensionForList :
+
+ComprehensionFor
+ComprehensionForList ComprehensionFor
+
+ComprehensionFor :
+
+FOR ( LeftHandSideExpression OF Expression )
 
 1.  2.  3.  4.  5.  6.  
 
@@ -4938,6 +5209,7 @@ PropertyAssignment :
 IdentifierName
 PropertyName : AssignmentExpression
 PropertyName ( FormalParameterList ) { FunctionBody }
+* PropertyName ( FormalParameterList ) { FunctionBody }
 GET PropertyName ( ) { FunctionBody }
 SET PropertyName ( PropertySetParameterList ) { FunctionBody }
 
@@ -4962,6 +5234,23 @@ _PropertyAssignment
     _PropertyName_ : _AssignmentExpression_, and
     PropertyDefinitionList(PropName of _PropertyAssignment_) of
     _PropertyNameAndValueList_ is not the empty List.
+
+-   It is a Syntax Error if _PropertyAssignment_ is the production
+    _PropertyAssignment_ : _IdentifierName_ and
+    PropertyDefinitionList(PropName of _PropertyAssignment_) of
+    _PropertyNameAndValueList_ is not the empty List.
+
+-   It is a Syntax Error if _PropertyAssignment_ is the production
+    _PropertyAssignment_ : _PropertyName_ ( _FormalParameterList_ ) {
+    _FunctionBody_ } and PropertyDefinitionList(PropName of
+    _PropertyAssignment_) of _PropertyNameAndValueList_ is not the empty
+    List.
+
+-   It is a Syntax Error if _PropertyAssignment_ is the production
+    _PropertyAssignment_ : * _PropertyName_ ( _FormalParameterList_ ) {
+    _FunctionBody_ } and PropertyDefinitionList(PropName of
+    _PropertyAssignment_) of _PropertyNameAndValueList_ is not the empty
+    List.
 
 -   It is a Syntax Error if _PropertyAssignment_ is the production
      _PropertyAssignment_ : GET _PropertyName_ ( ) { _FunctionBody_ }
@@ -4993,11 +5282,13 @@ _PropertyAssignment
 _PropertyAssignment_ : _PropertyName_ ( _FormalParameterList_ ) {
 _FunctionBody_ }
 
--   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
+and
 
--   It is a Syntax Error if the PropName of _PropertyName_ also occurs
-    in the VarDeclaredNames of _FunctionBody_.
+* _PropertyAssignment_ : _PropertyName_ ( _FormalParameterList_ ) {
+_FunctionBody_ }
+
+-   -   It is a Syntax Error if the PropName of _PropertyName_ also
+    occurs in the VarDeclaredNames of _FunctionBody_.
 
 -   It is a Syntax Error if the PropName of _PropertyName_ also occurs
     in the LexicallyDeclaredNames of _FunctionBody_.
@@ -5010,44 +5301,19 @@ _FunctionBody_ }
     _FormalParameterList_ also occurs in the LexicallyDeclaredNames of
     _FunctionBody_.
 
-_PropertyAssignment_ : GET _PropertyName_ () { _FunctionBody_ }
-
--   It is a Syntax Error if the source code matching this production is
-    extended code and the PropName of _PropertyName_ also occurs in the
-    VarDeclaredNames of _FunctionBody_.
-
--   It is a Syntax Error if the source code matching this production is
-    extended code and the PropName of _PropertyName_ also occurs in the
-    LexicallyDeclaredNames of _FunctionBody_.
+-   -   
 
 _PropertyAssignment_ : SET _PropertyName_ ( _PropertySetParameterList_ )
 { _FunctionBody_ }
 
--   It is a Syntax Error if the source code matching this production is
-    extended code and the PropName of _PropertyName_ also occurs in the
-    VarDeclaredNames of _FunctionBody_.
-
--   It is a Syntax Error if the source code matching this production is
-    extended code and the PropName of _PropertyName_ also occurs in the
-    LexicallyDeclaredNames of _FunctionBody_.
-
--   It is a Syntax Error if the source code matching this production is
-    extended code and any element of the LexicallyDeclaredNames of
-    _PropertySetParameterList_ also occurs in the VarDeclaredNames of
-    _FunctionBody_.
-
--   It is a Syntax Error if the source code matching this production is
-    extended code and any element of the BoundNames of
+-   -   -   -   It is a Syntax Error if any element of the BoundNames of
     _PropertySetParameterList_ also occurs in the LexicallyDeclaredNames
     of _FunctionBody_.
 
 _PropertySetParameterList_ : _BindingPattern
 
--   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
-
--   It is a Syntax Error if BoundNames of _BindingPattern_ contains any
-    duplicate elements.
+-   -   It is a Syntax Error if BoundNames of _BindingPattern_ contains
+    any duplicate elements.
 
 STATIC SEMANTICS: BOUNDNAMES
 
@@ -5081,9 +5347,10 @@ _PropertySetParameterList_ : _BindingPattern
 
 STATIC SEMANTICS: PROPERTYDEFINITIONLIST(NAME)
 
-_PropertyAssignment_ : _PropertyName_ : _AssignmentExpression
+_PropertyNameAndValueList_ : _PropertyAssignment
 
-1.  If PropName of _PropertyName_ is not _name_ return the empty List.
+1.  If PropName of _PropertyAssignment_ is not _name_ return the empty
+    List.
 
 2.  Return a List containing _PropertyAssignment_.
 
@@ -5110,6 +5377,11 @@ _PropertyAssignment_ : _PropertyName_ : _AssignmentExpression
 1.  Return PropName of _PropertyName_.
 
 _PropertyAssignment_ : _PropertyName_ ( _FormalParameterList_ ) {
+_FunctionBody_ }
+
+1.  Return PropName of _PropertyName_.
+
+_PropertyAssignment_ : * _PropertyName_ ( _FormalParameterList_ ) {
 _FunctionBody_ }
 
 1.  Return PropName of _PropertyName_.
@@ -5154,10 +5426,12 @@ ObjectLiteral :
     expression NEW OBJECT() where OBJECT is the standard built-in
     constructor with that name.
 
-2.  Perform Property Definition Dvaluation of _PropertyNameAndValueList
-    with argument _obj_.
+2.  Let _success_ be the result of performing Property Definition
+    Evaluation of _PropertyNameAndValueList_ with argument _obj_.
 
-3.  Return _obj_.
+3.  If _success_ is an abrupt completion, return _success_.
+
+4.  Return _obj_.
 
 RUNTIME SEMANTICS: PROPERTY DEFINITION EVALUATION
 
@@ -5165,7 +5439,9 @@ RUNTIME SEMANTICS: PROPERTY DEFINITION EVALUATION
 
 _PropertyNameAndValueList_ : _PropertyAssignment
 
-1.  2.  3.  4.  Perform Property Definition Dvaluation of
+1.  Return the result of
+
+2.  3.  4.  Perform Property Definition Evaluation of
     _PropertyAssignment_ with argument _object_.
 
 _PropertyNameAndValueList_ : _PropertyNameAndValueList_ ,
@@ -5180,13 +5456,15 @@ _PropertyAssignment_ : _IdentifierName
 
 3.  Let _propValue_ be GetValue(_exprValue_).
 
-4.  Let _desc_ be the Property Descriptor{[[Value]]: _propValue_,
+4.  If _propValue_ is an abrupt completion, return _propValue_.
+
+5.  Let _desc_ be the Property Descriptor{[[Value]]: _propValue_,
     [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
-5.  Call the [[DefineOwnProperty]] internal method of _object_ with
-    arguments _propName_, _desc_, and FALSE.
+6.  Return the result of calling the [[DefineOwnProperty]] internal
+    method of _object_ with arguments _propName_, _desc_, and FALSE.
 
-6.  
+7.  
 
 _PropertyAssignment_ : _PropertyName_ : _AssignmentExpression
 
@@ -5196,11 +5474,13 @@ _PropertyAssignment_ : _PropertyName_ : _AssignmentExpression
 
 3.  Let _propValue_ be GetValue(_exprValue_).
 
-4.  Let _desc_ be the Property Descriptor{[[Value]]: _propValue_,
+4.  If _propValue_ is an abrupt completion, return _propValue_.
+
+5.  Let _desc_ be the Property Descriptor{[[Value]]: _propValue_,
     [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
-5.  Call the [[DefineOwnProperty]] internal method of _object_ with
-    arguments _propName_, _desc_, and FALSE.
+6.  Return the result of calling the [[DefineOwnProperty]] internal
+    method of _object_ with arguments _propName_, _desc_, and FALSE.
 
 _PropertyAssignment_ : _PropertyName_ ( _FormalParameterList_ ) {
 _FunctionBody_ }
@@ -5208,18 +5488,37 @@ _FunctionBody_ }
 1.  Let _propName_ be PropName of _PropertyName_.
 
 2.  Let _closure_ be the result of creating a new Function object as
-    specified in 13.2 using a _FormalParameterList_ : [empty] production
-    as the parameter list and body specified by _FunctionBody_. Pass in
-    the LexicalEnvironment of the running execution context as the
-    _Scope_. Pass in TRUE as the _Strict_ flag. Pass object as the
-    optional _homeObject_ argument and propName as the optional
-    _methodName_ argument.
+    specified in 13.1.1 using a _FormalParameterList_ : [empty]
+    production as the parameter list and body specified by
+    _FunctionBody_. Pass in the LexicalEnvironment of the running
+    execution context as the _Scope_. Pass in TRUE as the _Strict_ flag.
+    Pass object as the optional _homeObject_ argument and propName as
+    the optional _methodName_ argument.
 
 3.  Let _desc_ be the Property Descriptor{[[Get]]: _closure_,
     [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
-4.  Call the [[DefineOwnProperty]] internal method of _object_ with
-    arguments _propName_, _desc_, and FALSE.
+4.  Return the result of calling the [[DefineOwnProperty]] internal
+    method of _object_ with arguments _propName_, _desc_, and FALSE.
+
+_PropertyAssignment_ : * _PropertyName_ ( _FormalParameterList_ ) {
+_FunctionBody_ }
+
+1.  Let _propName_ be PropName of _PropertyName_.
+
+2.  Let _closure_ be the result of creating a new Generator object as
+    specified in 13.2.xxx using a _FormalParameterList_ : [empty]
+    production as the parameter list and body specified by
+    _FunctionBody_. Pass in the LexicalEnvironment of the running
+    execution context as the _Scope_. Pass in TRUE as the _Strict_ flag.
+    Pass object as the optional _homeObject_ argument and propName as
+    the optional _methodName_ argument.
+
+3.  Let _desc_ be the Property Descriptor{[[Get]]: _closure_,
+    [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
+
+4.  Return the result of calling the [[DefineOwnProperty]] internal
+    method of _object_ with arguments _propName_, _desc_, and FALSE.
 
 _PropertyAssignment_ : GET _PropertyName_ ( ) { _FunctionBody_ }
 
@@ -5238,8 +5537,8 @@ _PropertyAssignment_ : GET _PropertyName_ ( ) { _FunctionBody_ }
 3.  Let _desc_ be the Property Descriptor{[[Get]]: _closure_,
     [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
-4.  Call the [[DefineOwnProperty]] internal method of _object_ with
-    arguments _propName_, _desc_, and FALSE.
+4.  Return the result of calling the [[DefineOwnProperty]] internal
+    method of _object_ with arguments _propName_, _desc_, and FALSE.
 
 _PropertyAssignment_ : SET _PropertyName_ ( _PropertySetParameterList_ )
 { _FunctionBody_ }
@@ -5259,8 +5558,8 @@ _PropertyAssignment_ : SET _PropertyName_ ( _PropertySetParameterList_ )
 3.  Let _desc_ be the Property Descriptor{[[Set]]: _closure_,
     [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
-4.  Call the [[DefineOwnProperty]] internal method of _object_ with
-    arguments _propName_, _desc_, and FALSE.
+4.  Return the result of calling the [[DefineOwnProperty]] internal
+    method of _object_ with arguments _propName_, _desc_, and FALSE.
 
 5.  
 
@@ -5269,6 +5568,22 @@ RUNTIME SEMANTICS: EVALUATION
 _PrimaryExpression_ : _FunctionExpression
 
 1.  Return the result of evaluating _FunctionExpression_.
+
+Syntax
+
+GeneratorComprehension :
+
+( Expression ComprehensionForList )
+( Expression ComprehensionForList IF ( Expression ) )
+
+ComprehensionForList :
+
+ComprehensionFor
+ComprehensionForList ComprehensionFor
+
+ComprehensionFor :
+
+FOR ( LeftHandSideExpression OF Expression )
 
 1.  
 
@@ -5379,18 +5694,20 @@ _CallExpression_ is evaluated in step 1.
 
 RUNTIME SEMANTICS: EVALUATION
 
-NEW _NewExpression_
+_NewExpression_ : NEW _NewExpression
 
 1.  Let _ref_ be the result of evaluating _NewExpression_.
 
 2.  Let _constructor_ be GetValue(_ref_).
 
-3.  If Type(_constructor_) is not Object, throw a TYPEERROR exception.
+3.  If _constructor_ is an abrupt completion, return _constructor_.
 
-4.  If _constructor_ does not implement the [[Construct]] internal
+4.  If Type(_constructor_) is not Object, throw a TYPEERROR exception.
+
+5.  If _constructor_ does not implement the [[Construct]] internal
     method, throw a TYPEERROR exception.
 
-5.  Return the result of calling the [[Construct]] internal method on
+6.  Return the result of calling the [[Construct]] internal method on
     _constructor_, providing no arguments (that is, an empty list of
     arguments).
 
@@ -5400,15 +5717,19 @@ _MemberExpression_ : NEW _MemberExpression_ _Arguments
 
 2.  Let _constructor_ be GetValue(_ref_).
 
-3.  Let _argList_ be the result of evaluating _Arguments_, producing an
+3.  If _constructor_ is an abrupt completion, return _constructor_.
+
+4.  Let _argList_ be the result of evaluating _Arguments_, producing an
     internal list of argument values (11.2.4).
 
-4.  If Type(_constructor_) is not Object, throw a TYPEERROR exception.
+5.  If _argList_ is an abrupt completion, return _argList_.
 
-5.  If _constructor_ does not implement the [[Construct]] internal
+6.  If Type(_constructor_) is not Object, throw a TYPEERROR exception.
+
+7.  If _constructor_ does not implement the [[Construct]] internal
     method, throw a TYPEERROR exception.
 
-6.  Return the result of calling the [[Construct]] internal method on
+8.  Return the result of calling the [[Construct]] internal method on
     _constructor_, providing the list _argList_ as the argument values.
 
 RUNTIME SEMANTICS: EVALUATION
@@ -5419,14 +5740,18 @@ _CallExpression_ : _MemberExpression_ _Arguments
 
 2.  Let _func_ be GetValue(_ref_).
 
-3.  Let _argList_ be the result of evaluating _Arguments_, producing an
+3.  If _func_ is an abrupt completion, return _func_.
+
+4.  Let _argList_ be the result of evaluating _Arguments_, producing an
     internal list of argument values (see 11.2.4).
 
-4.  If Type(_func_) is not Object, throw a TYPEERROR exception.
+5.  If _argList_ is an abrupt completion, return _argList_.
 
-5.  If IsCallable(_func_) is FALSE, throw a TYPEERROR exception.
+6.  If Type(_func_) is not Object, throw a TYPEERROR exception.
 
-6.  If Type(_ref_) is Reference, then
+7.  If IsCallable(_func_) is FALSE, throw a TYPEERROR exception.
+
+8.  If Type(_ref_) is Reference, then
 
     a.  If IsPropertyReference(_ref_) is TRUE, then
 
@@ -5437,11 +5762,11 @@ _CallExpression_ : _MemberExpression_ _Arguments
         i.  Let _thisValue_ be the result of calling the
             ImplicitThisValue concrete method of GetBase(_ref_).
 
-7.  Else, Type(_ref_) is not Reference.
+9.  Else, Type(_ref_) is not Reference.
 
     a.  Let _thisValue_ be UNDEFINED.
 
-8.  Return the result of calling the [[Call]] internal method on _func_,
+10. Return the result of calling the [[Call]] internal method on _func_,
     providing _thisValue_ as the THIS value and providing the list
     _argList_ as the argument values.
 
@@ -5456,7 +5781,7 @@ native ECMAScript object. Whether calling a host object can return a
 value of type Reference is implementation-dependent. If a value of type
 Reference is returned, it must be a non-strict Property Reference.
 
-Static SEMANTICS
+STATIC SEMANTICS
 
 STATIC SEMANTICS: EARLY ERRORS
 
@@ -5466,28 +5791,24 @@ SUPER [ Expression ]
 SUPER . IdentifierName
 
 -   It is a Syntax Error if the source code parsed with this production
-    is global code code that is not eval code.
-
--   It is a SyntaxError if the source code parsed with this production
-    is eval code that is also global code and the source code is not
-    being processed by a direct call to eval that is contained in
-    function code.
+    is global code that is not eval code.
 
 -   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
+    is eval code and the source code is not being processed by a direct
+    call to eval that is contained in function code.
+
+-   
 
 _CallExpression_ : SUPER _Arguments
 
 -   It is a Syntax Error if the source code parsed with this production
-    is global code code that is not eval code.
-
--   It is a SyntaxError if the source code parsed with this production
-    is eval code that is also global code and the source code is not
-    being processed by a direct call to eval that is contained in
-    function code.
+    is global code that is not eval code.
 
 -   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
+    is eval code and the source code is not being processed by a direct
+    call to eval that is contained in function code.
+
+-   
 
 RUNTIME SEMANTICS: EVALUATION
 
@@ -5514,9 +5835,7 @@ _MemberExpression_ : SUPER [ _Expression_ ]
     whose referenced name is _propertyNameString_, and whose strict mode
     flag is _strict_.
 
-The evaluation of an argument list produces a List of values (see 8.8).
-
-STATIC SEMANTICS: EARLY ERRORS
+The evaluation of an argument list produces a List of values (see 8.7).
 
 1.  
 
@@ -5524,15 +5843,9 @@ STATIC SEMANTICS: EARLY ERRORS
 
 1.  2.  3.  
 
-_ArgumentList_ : _… AssignmentExpression
+-   
 
--   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
-
-_ArgumentList_ : _ArgumentList_ , _… __AssignmentExpression
-
--   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
+-   
 
 RUNTIME SEMANTICS: EVALUATION
 
@@ -5550,7 +5863,9 @@ _ArgumentList_ : _AssignmentExpression
 
 2.  Let _arg_ be GetValue(_ref_).
 
-3.  Return a List whose sole item is _arg_.
+3.  If _arg_ is an abrupt completion, return _arg_.
+
+4.  Return a List whose sole item is _arg_.
 
 _ArgumentList_ : _… AssignmentExpression
 
@@ -5562,14 +5877,16 @@ _ArgumentList_ : _… AssignmentExpression
 
 4.  Let _spreadObj_ be ToObject(_spreadValue_).
 
-5.  Let _lenVal_ be the result of calling the [[Get]] internal method of
+5.  If _spreadObj_ is an abrupt completion, return _spreadObj_.
+
+6.  Let _lenVal_ be the result of calling the [[Get]] internal method of
     _spreadObj_ with argument “LENGTH”.
 
-6.  Let _spreadLen_ be ToUint32(_lenVal_).
+7.  Let _spreadLen_ be ToUint32(_lenVal_).
 
-7.  Let _n_ = 0.
+8.  Let _n_ = 0.
 
-8.  Repeat, while _n_ < _spreadLen
+9.  Repeat, while _n_ < _spreadLen
 
     a.  Let _nextArg_ be the result of calling the [[Get]] internal
           method of _spreadObj_ passing ToString(_n_) as the argument.
@@ -5578,17 +5895,21 @@ _ArgumentList_ : _… AssignmentExpression
 
     c.  Let _n_ = _n_+1.
 
-9.  Return _list_.
+10. Return _list_.
 
 _ArgumentList_ : _ArgumentList_ , _AssignmentExpression
 
 1.  Let _precedingArgs_ be the result of evaluating _ArgumentList_.
 
-2.  Let _ref_ be the result of evaluating _AssignmentExpression_.
+2.  If _precedingArgs_ is an abrupt completion, return _precedingArgs_.
 
-3.  Let _arg_ be GetValue(_ref_).
+3.  Let _ref_ be the result of evaluating _AssignmentExpression_.
 
-4.  Return a List whose length is one greater than the length of
+4.  Let _arg_ be GetValue(_ref_).
+
+5.  If _arg_ is an abrupt completion, return _arg_.
+
+6.  Return a List whose length is one greater than the length of
     _precedingArgs_ and whose items are the items of _precedingArgs_, in
     order, followed at the end by _arg_ which is the last item of the
     new list.
@@ -5603,14 +5924,16 @@ _ArgumentList_ : _ArgumentList_ , _… __AssignmentExpression
 
 4.  Let _spreadObj_ be ToObject(_spreadValue_).
 
-5.  Let _lenVal_ be the result of calling the [[Get]] internal method of
+5.  If _spreadObj_ is an abrupt completion, return _spreadObj_.
+
+6.  Let _lenVal_ be the result of calling the [[Get]] internal method of
     _spreadObj_ with argument “LENGTH”.
 
-6.  Let _spreadLen_ be ToUint32(_lenVal_).
+7.  Let _spreadLen_ be ToUint32(_lenVal_).
 
-7.  Let _n_ = 0.
+8.  Let _n_ = 0.
 
-8.  Repeat, while _n_ < _spreadLen
+9.  Repeat, while _n_ < _spreadLen
 
     a.  Let _nextArg_ be the result of calling the [[Get]] internal
           method of _spreadObj_ passing ToString(_n_) as the argument.
@@ -5619,7 +5942,7 @@ _ArgumentList_ : _ArgumentList_ , _… __AssignmentExpression
 
     c.  Let _n_ = _n_+1.
 
-9.  Return _precedingArgs_.
+10. Return _precedingArgs_.
 
 Syntax
 
@@ -5642,19 +5965,11 @@ LeftHandSideExpression [no LineTerminator here] --
     strict code and _LeftHandSideExpression_ is the _Identifier_ EVAL or
     the _Identifier_ ARGUMENTS.
 
--   It is a Syntax Error if the _AssignmentExpression_ is contained in
-    extended code and the _LeftHandSideExpression_ is a _Literal_ or a
-    _FunctionExpression_.
-
--   It is a Syntax Error if the _AssignmentExpression_ is contained in
-    extended code and the _LeftHandSideExpression_ is an _Identifier_
-    that does not statically resolve to a declarative environment record
-    binding or if the resolved binding is an immutable binding.
-
--   It is a Syntax Error if the _LeftHandSideExpression_ is
+-   -   -   It is a Syntax Error if the _LeftHandSideExpression_ is
     _PrimaryExpression_ : ( _Expression_ ) and _Expression_ derived a
-    production that would produce a Syntax Error according to these
-    rules. This rule is recursively applied.
+    production that if used in place of _LeftHandSideExpression_ would
+    produce a Syntax Error according to these rules. This rule is
+    recursively applied.
 
 RUNTIME SEMANTICS: EVALUATION
 
@@ -5669,12 +5984,15 @@ here] ++
 
 1.  Let _oldValue_ be ToNumber(GetValue(_lhs_)).
 
-2.  Let _newValue_ be the result of adding the value 1 to _oldValue_,
+2.  If _oldValue_ is an abrupt completion, return _oldValue_.
+
+3.  Let _newValue_ be the result of adding the value 1 to _oldValue_,
     using the same rules as for the + operator (see 11.6.3).
 
-3.  Call PutValue(_lhs_, _newValue_).
+4.  If PutValue(_lhs_, _newValue_) is an abrupt completion, return that
+    Completion Record.
 
-4.  Return _oldValue_.
+5.  Return _oldValue_.
 
 RUNTIME SEMANTICS: EVALUATION
 
@@ -5692,7 +6010,8 @@ here] --
 2.  Let _newValue_ be the result of subtracting the value 1 from
     _oldValue_, using the same rules as for the - operator (11.6.3).
 
-3.  Call PutValue(_lhs_, _newValue_).
+3.  If Call PutValue(_lhs_, _newValue_) ) is an abrupt completion,
+    return that Completion Record.
 
 4.  Return _oldValue_.
 
@@ -5725,19 +6044,19 @@ DELETE UnaryExpression
     code and the derived _UnaryExpression_ is the _Identifier_ EVAL or
     the _Identifier_ ARGUMENTS.
 
--   It is a Syntax Error if the _UnaryExpression_ is contained in
-    extended code and the derived _UnaryExpression_ is a _Literal_ or a
-    _FunctionExpression_.
-
--   It is a Syntax Error if the _UnaryExpression_ is contained in
-    extended code and the derived _UnaryExpression_ is an _Identifier_
-    that does not statically resolve to a declarative environment record
-    binding or if the resolved binding is an immutable binding.
-
--   It is a Syntax Error if the derived _UnaryExpression_ is
+-   -   -   It is a Syntax Error if the derived _UnaryExpression_ is
     _PrimaryExpression_ : ( _Expression_ ) and _Expression_ derived a
-    production that would produce a Syntax Error according to these
-    rules. This rule is recursively applied.
+    production that if used in place of _LeftHandSideExpression_ would
+    produce a Syntax Error according to these rules. This rule is
+    recursively applied.
+
+STATIC SEMANTICS: EARLY ERRORS
+
+_UnaryExpression_ : DELETE _UnaryExpression
+
+-   It is a Syntax Error if the _UnaryExpression_ is contained in strict
+    code and the _UnaryExpression_ derives an _Identifier_ that
+    statically resolves to a environment record.
 
 RUNTIME SEMANTICS: EVALUATION
 
@@ -5745,22 +6064,24 @@ _UnaryExpression_ : DELETE _UnaryExpression
 
 1.  Let _ref_ be the result of evaluating _UnaryExpression_.
 
-2.  If Type(_ref_) is not Reference, return TRUE.
+2.  If _ref_ is an abrupt completion, return _ref_.
 
-3.  If IsUnresolvableReference(_ref_) is TRUE, then,
+3.  If Type(_ref_) is not Reference, return TRUE.
+
+4.  If IsUnresolvableReference(_ref_) is TRUE, then,
 
     a.  If IsStrictReference(_ref_) is TRUE, throw a SYNTAXERROR
         exception.
 
     b.  Else, return TRUE.
 
-4.  If IsPropertyReference(_ref_) is TRUE, then
+5.  If IsPropertyReference(_ref_) is TRUE, then
 
     a.  Return the result of calling the [[Delete]] internal method on
         ToObject(GetBase(_ref)_) providing GetReferencedName(_ref_) and
         IsStrictReference(_ref_) as the arguments.
 
-5.  Else, _ref_ is a Reference to an Environment Record binding, so
+6.  Else, _ref_ is a Reference to an Environment Record binding, so
 
     a.  b.  Let _bindings_ be GetBase(_ref_).
 
@@ -5783,7 +6104,9 @@ _UnaryExpression_ : VOID _UnaryExpression
 
 2.  Call GetValue(_expr_).
 
-3.  Return UNDEFINED.
+3.  If _ref_ is an abrupt completion, return _ref_.
+
+4.  Return UNDEFINED.
 
 NOTE GetValue must be called even though its value is not used because
 it may have observable side-effects.
@@ -5800,7 +6123,9 @@ _UnaryExpression_ : TYPEOF _UnaryExpression
 
     b.  Let _val_ be GetValue(_val_).
 
-3.  Return a String determined by Type(_val_) according to Table 21.
+3.  If _val_ is an abrupt completion, return _val_.
+
+4.  Return a String determined by Type(_val_) according to Table 21.
 
 Table 21 — typeof Operator Results
 
@@ -5828,12 +6153,15 @@ _UnaryExpression_ : ++ _UnaryExpression
 
 1.  Let _oldValue_ be ToNumber(GetValue(_expr_)).
 
-2.  Let _newValue_ be the result of adding the value 1 to _oldValue_,
+2.  If _oldValue_ is an abrupt completion, return _oldValue_.
+
+3.  Let _newValue_ be the result of adding the value 1 to _oldValue_,
     using the same rules as for the + operator (see 11.6.3).
 
-3.  Call PutValue(_expr_, _newValue_).
+4.  If PutValue(_expr_, _newValue_) is an abrupt completion, return that
+    Completion Record.
 
-4.  Return _newValue_.
+5.  Return _newValue_.
 
 RUNTIME SEMANTICS: EVALUATION
 
@@ -5847,12 +6175,15 @@ _UnaryExpression_ : -- _UnaryExpression
 
 1.  Let _oldValue_ be ToNumber(GetValue(_expr_)).
 
-2.  Let _newValue_ be the result of subtracting the value 1 from
+2.  If _oldValue_ is an abrupt completion, return _oldValue_.
+
+3.  Let _newValue_ be the result of subtracting the value 1 from
     _oldValue_, using the same rules as for the - operator (see 11.6.3).
 
-3.  Call PutValue(_expr_, _newValue_).
+4.  If PutValue(_expr_, _newValue_) is an abrupt completion, return that
+    Completion Record.
 
-4.  Return _newValue_.
+5.  Return _newValue_.
 
 NOTE The unary + operator converts its operand to Number type.
 
@@ -5875,9 +6206,11 @@ _UnaryExpression_ : - _UnaryExpression
 
 2.  Let _oldValue_ be ToNumber(GetValue(_expr_)).
 
-3.  If _oldValue_ is NAN, return NAN.
+3.  If _oldValue_ is an abrupt completion, return _oldValue_.
 
-4.  Return the result of negating _oldValue_; that is, compute a Number
+4.  If _oldValue_ is NAN, return NAN.
+
+5.  Return the result of negating _oldValue_; that is, compute a Number
     with the same magnitude but opposite sign.
 
 RUNTIME SEMANTICS: EVALUATION
@@ -5888,7 +6221,9 @@ _UnaryExpression_ : ~ _UnaryExpression
 
 2.  Let _oldValue_ be ToInt32(GetValue(_expr_)).
 
-3.  Return the result of applying bitwise complement to _oldValue_. The
+3.  If _oldValue_ is an abrupt completion, return _oldValue_.
+
+4.  Return the result of applying bitwise complement to _oldValue_. The
     result is a signed 32-bit integer.
 
 RUNTIME SEMANTICS: EVALUATION
@@ -5899,9 +6234,11 @@ _UnaryExpression_ : ! _UnaryExpression
 
 2.  Let _oldValue_ be ToBoolean(GetValue(_expr_)).
 
-3.  If _oldValue_ is TRUE, return FALSE.
+3.  If _oldValue_ is an abrupt completion, return _oldValue_.
 
-4.  Return TRUE.
+4.  If _oldValue_ is TRUE, return FALSE.
+
+5.  Return TRUE.
 
 Syntax
 
@@ -5922,15 +6259,21 @@ definitions, is evaluated as follows:
 
 2.  Let _leftValue_ be GetValue(_left_).
 
-3.  Let _right_ be the result of evaluating UnaryExpression.
+3.  If _leftValue_ is an abrupt completion, return _leftValue_.
 
-4.  Let _rightValue_ be GetValue(_right_).
+4.  Let _right_ be the result of evaluating UnaryExpression.
 
-5.  Let _leftNum_ be ToNumber(_leftValue_).
+5.  Let _rightValue_ be GetValue(_right_).
 
-6.  Let _rightNum_ be ToNumber(_rightValue_).
+6.  Let _leftNum_ be ToNumber(_leftValue_).
 
-7.  Return the result of applying the specified operation (*, /, or %)
+7.  If _leftNum_ is an abrupt completion, return _leftNum_.
+
+8.  Let _rightNum_ be ToNumber(_rightValue_).
+
+9.  If _rightNum_ is an abrupt completion, return _rightNum_.
+
+10. Return the result of applying the specified operation (*, /, or %)
     to _leftNum_ and _rightNum_. See the Notes below 11.5.1, 11.5.2,
     11.5.3.
 
@@ -6321,11 +6664,15 @@ IS _RelationalExpression_
 
 2.  Let _lval_ be GetValue(_lref_).
 
-3.  Let _rref_ be the result of evaluating _RelationalExpression_.
+3.  If _lval_ is an abrupt completion, return _lval_.
 
-4.  Let _rval_ be GetValue(_rref_).
+4.  Let _rref_ be the result of evaluating _RelationalExpression_.
 
-5.  Return the result of performing SaveValue(_rval_, _lval_).
+5.  Let _rval_ be GetValue(_rref_).
+
+6.  If _rval_ is an abrupt completion, return _rval_.
+
+7.  Return the result of performing SameValue(_rval_, _lval_).
 
 _EqualityExpression_ : _EqualityExpression_ [no _LineTerminator_ here]
 ISNT _RelationalExpression_
@@ -6334,13 +6681,15 @@ ISNT _RelationalExpression_
 
 2.  Let _lval_ be GetValue(_lref_).
 
-3.  Let _rref_ be the result of evaluating _RelationalExpression_.
+3.  If _lval_ is an abrupt completion, return _lval_.
 
-4.  Let _rval_ be GetValue(_rref_).
+4.  Let _rref_ be the result of evaluating _RelationalExpression_.
 
-5.  Let _r_ be the result of performing SaveValue(_rval_, _lval_).
+5.  Let _rval_ be GetValue(_rref_).
 
-6.  If _r_ is TRUE, return FALSE. Otherwise, return TRUE.
+6.  Let _r_ be the result of performing SameValue(_rval_, _lval_).
+
+7.  If _r_ is TRUE, return FALSE. Otherwise, return TRUE.
 
 Syntax
 
@@ -6457,6 +6806,7 @@ Syntax
 AssignmentExpression :
 
 ConditionalExpression
+YieldExpression
 LeftHandSideExpression = AssignmentExpression
 LeftHandSideExpression AssignmentOperator AssignmentExpression
 
@@ -6489,14 +6839,9 @@ LeftHandSideExpression AssignmentOperator AssignmentExpression
     strict code and _LeftHandSideExpression_ is the _Identifier_ EVAL or
     the _Identifier_ ARGUMENTS.
 
--   -   It is a Syntax Error if the _AssignmentExpression_ is contained
-    in extended code and the _LeftHandSideExpression_ is a _Literal_ or
-    a _FunctionExpression_.
-
--   It is a Syntax Error if the _AssignmentExpression_ is contained in
-    extended code and the _LeftHandSideExpression_ is an _Identifier_
-    that does not statically resolve to a declarative environment record
-    binding or if the resolved binding is an immutable binding.
+-   -   -   It is a Syntax Error if the _LeftHandSideExpression_ is an
+    _Identifier_ that statically resolves to a declarative environment
+    record binding and the resolved binding is an immutable binding.
 
 -   It is a Syntax Error if the _LeftHandSideExpression_ is
     _PrimaryExpression_ : ( _Expression_ ) and _Expression_ derived a
@@ -6505,11 +6850,10 @@ LeftHandSideExpression AssignmentOperator AssignmentExpression
 
 AssignmentExpression : LeftHandSideExpression = AssignmentExpression
 
--   It is a Syntax Error if the _AssignmentExpression_ is contained in
-    extended code and the _LeftHandSideExpression_ is an _ObjectLiteral_
-    or an _ArrayLiteral_ and the source code corresponding to
-    _LeftHandSideExpression_ cannot be parsed using _AssignmentPattern_
-    as the goal symbol.
+-   It is a Syntax Error if the _LeftHandSideExpression_ is an
+    _ObjectLiteral_ or an _ArrayLiteral_ and the source code
+    corresponding to _LeftHandSideExpression_ cannot be parsed using
+    _AssignmentPattern_ as the goal symbol.
 
 RUNTIME SEMANTICS: EVALUATION
 
@@ -6521,10 +6865,11 @@ AssignmentExpression_
 
 -   -   -   -   
 
-NOTE When an assignment occurs within strict mode code, _lref_ in step
-1.d of the first must not be an unresolvable reference. If it is, a
-REFERENCEERROR exception is thrown upon assignment. The _LeftHandSide_
-also may not be a reference to a data property with the attribute value
+NOTE When an assignment occurs within strict mode code, it is an runtime
+error if _lref_ in step 1.e of the first algorithm or step 9 of the
+second algorithm it is an unresolvable reference. If it is, a
+REFERENCEERROR exception is thrown. The _LeftHandSide_ also may not be a
+reference to a data property with the attribute value
 {[[Writable]]:FALSE}, to an accessor property with the attribute value
 {[[Set]]:UNDEFINED}, nor to a non-existent property of an object whose
 [[Extensible]] internal property has the value FALSE. In these cases a
@@ -6594,13 +6939,13 @@ _AssignmentElement_ : _LeftHandSideExpression
 
 -   It is a Syntax Error if the _LeftHandSideExpression_ is an
     _Identifier_ that does not statically resolve to a declarative
-    environment record binding or if the resolved binding an immutable
-    binding.
+    environment record binding or if the resolved binding is an
+    immutable binding.
 
 -   It is a Syntax Error if the _LeftHandSideExpression_ is an
     _ObjectLiteral_ or an _ArrayLiteral_ and the source code
-    corresponding to _LeftHandSideExpression_ using cannot be parsed
-    using _AssignmentPattern_ as the goal symbol.
+    corresponding to _LeftHandSideExpression_ cannot be parsed using
+    _AssignmentPattern_ as the goal symbol.
 
 -   It is a Syntax Error if the _LeftHandSideExpression_ is
     _PrimaryExpression_ : ( _Expression_ ) and _Expression_ derived a
@@ -6635,15 +6980,15 @@ RUNTIME SEMANTICS: DESTRUCTURING ASSIGNMENT EVALUATION
 
 _AssignmentPattern_ : _ObjectAssignmentPattern
 
-1.  Perform Destructuring Assignment Evaluation of
-    _ObjectAssignmentPattern_ with _obj_ as the argument.
+1.  Return the result of performing Destructuring Assignment Evaluation
+    of _ObjectAssignmentPattern_ with _obj_ as the argument.
 
 2.  
 
 _AssignmentPattern_ : _ArrayAssignmentPattern
 
-1.  Perform Destructuring Assignment Evaluation of
-    _ArrayAssignmentPattern_ with _obj_ as the argument.
+1.  Return the result of performing Destructuring Assignment Evaluation
+    of _ArrayAssignmentPattern_ with _obj_ as the argument.
 
 2.  
 
@@ -6663,26 +7008,30 @@ ObjectAssignmentPattern :
 { AssignmentPropertyList }
 { AssignmentPropertyList , }
 
-1.  Perform Destructuring Assignment Evaluation of
-    _AssignmentPropertyList_ with _obj_ as the argument.
+1.  Return the result of performing Destructuring Assignment Evaluation
+    of _AssignmentPropertyList_ with _obj_ as the argument.
 
 2.  
 
 _AssignmentPropertyList_ : _AssignmentProperty
 
-1.  Perform Destructuring Assignment Evaluation of _AssignmentProperty
-    with _obj_ as the argument.
+1.  Return the result of performing Destructuring Assignment Evaluation
+    of _AssignmentProperty_ with _obj_ as the argument.
 
 2.  
 
 _AssignmentPropertyList_ : _AssignmentPropertyList_ ,
 _AssignmentProperty
 
-1.  Perform Destructuring Assignment Evaluation of
+  Let _status_ be
+
+1.  the result of performing Destructuring Assignment Evaluation of
     _AssignmentPropertyList_ with _obj_ as the argument.
 
-2.  Perform Destructuring Assignment Evaluation of _AssignmentProperty
-    with _obj_ as the argument.
+2.  If _status_ is an abrupt completion, return _status_.
+
+3.  Return the result of performing Destructuring Assignment Evaluation
+    of _AssignmentProperty_ with _obj_ as the argument.
 
 _AssignmentProperty_ : _Identifier
 
@@ -6692,7 +7041,7 @@ _AssignmentProperty_ : _Identifier
 2.  Let _lref_ be the result of performing Identifier Resolution(10.3.1)
     with the _IdentifierName_ corresponding to _Identifier_.
 
-3.  Call PutValue(_lref_,_v_).
+3.  Return PutValue(_lref_,_v_).
 
 4.  
 
@@ -6705,7 +7054,9 @@ _AssignmentProperty_ : _PropertyName_ : _LeftHandSideExpression
 2.  Let _v_ be the result of calling the [[Get]] internal method of
     _obj_ with _name_ as the argument.
 
-3.  If _LeftHandSideExpression_ is an _ObjectLiteral_ or an
+3.  If _v_ is an abrupt completion, return _v_.
+
+4.  If _LeftHandSideExpression_ is an _ObjectLiteral_ or an
     _ArrayLiteral_ then
 
     a.  Let _AssignmentPattern_ be the parse of the source code
@@ -6714,47 +7065,56 @@ _AssignmentProperty_ : _PropertyName_ : _LeftHandSideExpression
 
     b.  Let _vObj_ be ToObject(_v_).
 
-    c.  Evaluate _AssignmentPattern_ using _vObj_ as the _obj_
-        parameter.
+    c.  If _vObj_ is an abrupt completion, return _vObj_.
 
-    d.  Return.
+    d.  Return the result of evaluating _AssignmentPattern_ using _vObj_
+        as the _obj_ parameter.
 
-4.  Let _lref_ be the result of evaluating _LeftHandSideExpression_.
+    e.  .
 
-5.  Call PutValue(_lref_,_v_).
+5.  Let _lref_ be the result of evaluating _LeftHandSideExpression_.
 
-6.  
+6.  Call PutValue(_lref_,_v_).
+
+7.  
 
 _ArrayAssignmentPattern_ : [ _Elision_~opt~ _AssignmentRestElement_ ]
 
 1.  If _Elision_ is present, then let _skip_ be the result of evaluating
     _Elision_, otherwise let _skip_ be 0.
 
-2.  Perform Indexed Destructuring Assignment Evaluation of
-    _AssignmentRestElement_ with and _skip_ as the arguments.
+2.  Return the result of performing Indexed Destructuring Assignment
+    Evaluation of _AssignmentRestElement_ with and _skip_ as the
+    arguments.
 
 3.  
 
 _ArrayAssignmentPattern_ : [ _AssignmentElementList_ ]
 
-1.  Perform Indexed Destructuring Assignment Evaluation of
-    _AssignmentElementList_ using _obj_ and 0 as the arguments.
+1.  Return the result of performing Indexed Destructuring Assignment
+    Evaluation of _AssignmentElementList_ using _obj_ and 0 as the
+    arguments.
+
+2.  
 
 _ArrayAssignmentPattern_ : [ _AssignmentElementList_ , _Elision_~opt~
 _AssignmentRestElement_~opt~ ]
 
-1.  Let _lastIndex_ be the result of performing Indexed Destructuring
-    Assignment Evaluation of _AssignmentElementList_ using _obj_ and 0
-    as the arguments.
+1.  2.  Let _lastIndex_ be the result of performing Indexed
+    Destructuring Assignment Evaluation of _AssignmentElementList_ using
+    _obj_ and 0 as the arguments.
 
-2.  If _Elision_ is present, then let _skip_ be the result of evaluating
+3.  If _lastIndex_ is an abrupt completion, return _lastIndex_.
+
+4.  If _Elision_ is present, then let _skip_ be the result of evaluating
     _Elision_, otherwise let _skip_ be 0.
 
-3.  If _AssignmentRestElement_ is present, then perform Indexed
-    Destructuring Assignment Evaluation of _AssignmentRestElement_ with
-    _obj_ and _lastIndex_+_skip_ as the arguments.
+5.  If _AssignmentRestElement_ is present, then return the result of
+    performing Indexed Destructuring Assignment Evaluation of
+    _AssignmentRestElement_ with _obj_ and _lastIndex_+_skip_ as the
+    arguments.
 
-4.  
+6.  7.  Return _lastIndex_.
 
 RUNTIME SEMANTICS: INDEXED DESTRUCTURING ASSIGNMENT EVALUATION
 
@@ -6765,17 +7125,18 @@ _AssignmentElementList_ : _Elision_~opt~ _AssignmentElement
 1.  If _Elision_ is present, then let _skip_ be the result of evaluating
     _Elision_, otherwise let _skip_ be 0.
 
-2.  Perform Indexed Destructuring Assignment Evaluation of
-    _AssignmentElement_ with _obj_ and _index_+_skip_ as the arguments.
+2.  Let _status_ be the result of performing Indexed Destructuring
+    Assignment Evaluation of _AssignmentElement_ with _obj_ and
+    _index_+_skip_ as the arguments.
 
-3.  Return _index_+_skip_+1.
+3.  If _status_ is an abrupt completion, return _status_.
 
-4.  
+4.  Return _index_+_skip_+1.
+
+5.  
 
 _AssignmentElementList_ : _AssignmentElementList_ , _Elision_~opt~
 _AssignmentElement 
-
-  with parameters _obj_ and _index_
 
 1.  Let _listNext_ be the result of performing Indexed Destructuring
     Assignment Evaluation of _AssignmentElementList_ using _obj_ as the
@@ -6784,24 +7145,28 @@ _AssignmentElement
 2.  If _Elision_ is present, then let _skip_ be the result of evaluating
     _Elision_, otherwise let _skip_ be 0.
 
-3.  Perform Indexed Destructuring Assignment Evaluation of
-    _AssignmentElement_ with _obj_ and _listNext_+_skip_ as the
-    arguments.
+3.  If _listNext_ is an abrupt completion, return _listNext_.
 
-4.  Return _listNext_+_skip+_1.
+4.  Let _status_ be the result of performing Indexed Destructuring
+    Assignment Evaluation of _AssignmentElement_ with _obj_ and
+    _listNext_+_skip_ as the arguments.
 
-5.  
+5.  If _status_ is an abrupt completion, return _status_.
+
+6.  Return _listNext_+_skip+_1.
+
+7.  
 
 _AssignmentElement_ : _LeftHandSideExpression
-
-  with parameters _obj_ and _index_
 
 1.  Let _name_ be ToString(_index_).
 
 2.  Let _v_ be the result of calling the [[Get]] internal method of
     _obj_ with _name_ as the argument.
 
-3.  If _LeftHandSideExpression_ is an _ObjectLiteral_ or an
+3.  If _v_ is an abrupt completion, return _v_.
+
+4.  If _LeftHandSideExpression_ is an _ObjectLiteral_ or an
     _ArrayLiteral_ then
 
     a.  Let _AssignmentPattern_ be the parse of the source code
@@ -6810,35 +7175,39 @@ _AssignmentElement_ : _LeftHandSideExpression
 
     b.  Let _vObj_ be ToObject(_v_).
 
-    c.  Performing Destructuring Assignment Evaluation of
-        _AssignmentPattern_ with _vObj_ as the argument.
+    c.  If _vObj_ is an abrupt completion, return _vObj_.
 
-    d.  Return.
+    d.  Return the result of evaluating Destructuring Assignment
+        Evaluation of _AssignmentPattern_ with _vObj_ as the argument.
 
-4.  Let _lref_ be the result of evaluating _LeftHandSideExpression_.
+    e.  .
 
-5.  Call PutValue(_lref_,_v_).
+5.  Let _lref_ be the result of evaluating _LeftHandSideExpression_.
 
-6.  
+6.  Return PutValue(_lref_,_v_).
+
+7.  
 
 _AssignmentRestElement_ : … _LeftHandSideExpression
 
-  with parameters _obj_ and _index_
-
 1.  Let _lref_ be the result of evaluating _LeftHandSideExpression_.
 
-2.  Let _lenVal_ be the result of calling the [[Get]] internal method of
+2.  If _lref_ is an abrupt completion, return _lref_.
+
+3.  Let _lenVal_ be the result of calling the [[Get]] internal method of
     _obj_ with argument “LENGTH”.
 
-3.  Let _len_ be ToUint32(_lenVal_).
+4.  Let _len_ be ToUint32(_lenVal_).
 
-4.  Let _A_ be a new array object created as if by the expression NEW
+5.  If _len_ is an abrupt completion, return _len_.
+
+6.  Let _A_ be a new array object created as if by the expression NEW
     ARRAY() where ARRAY is the standard built-in constructor with that
     name.
 
-5.  Let _n_=0;
+7.  Let _n_=0;
 
-6.  Repeat, while _index_ < _len
+8.  Repeat, while _index_ < _len
 
     a.  Let _P_ be ToString(_index_).
 
@@ -6850,7 +7219,9 @@ _AssignmentRestElement_ : … _LeftHandSideExpression
         i.  Let _v_ be the result of calling the [[Get]] internal method
               of _obj_ passing ToString(_index_) as the argument.
 
-        ii. Call the [[DefineOwnProperty]] internal method of _A_ with
+        ii. If _v_ is an abrupt completion, return _v_.
+
+        iii. Call the [[DefineOwnProperty]] internal method of _A_ with
               arguments ToString(_n_), Property Descriptor {[[Value]]:
               _v_, [[Writable]]: TRUE, [[Enumerable]]: TRUE,
               [[Configurable]]: TRUE}, and FALSE.
@@ -6859,9 +7230,9 @@ _AssignmentRestElement_ : … _LeftHandSideExpression
 
     e.  Let _index_ = _index_+1.
 
-7.  Call PutValue(_lref_,_A_).
+9.  Return PutValue(_lref_,_A_).
 
-8.  
+10. 
 
 Syntax
 
@@ -6896,13 +7267,12 @@ VariableStatement
 EmptyStatement
 ExpressionStatement
 IfStatement
-IterationStatement
+BreakableStatement
 ContinueStatement
 BreakStatement
 ReturnStatement
 WithStatement
 LabelledStatement
-SwitchStatement
 ThrowStatement
 TryStatement
 DebuggerStatement
@@ -6910,19 +7280,12 @@ DebuggerStatement
 Declaration :
 
 FunctionDeclaration
-LetDeclaration
-ConstDeclaration
+LexicalDeclaration
 
-Static Semantics
+BreakableStatement :
 
-A _Statement_ can be part of a _LabelledStatement_, which itself can be
-part of a _LabelledStatement_, and so on. The labels introduced this way
-are collectively referred to as the “current label set” when describing
-the semantics of individual statements. A _LabelledStatement_ has no
-semantic meaning other than the introduction of a label to a _label
-set_. The label set of an _IterationStatement_ or a _SwitchStatement_
-initially contains the single element EMPTY. The label set of any other
-statement is initially empty.
+IterationStatement
+SwitchStatement
 
 STATIC SEMANTICS: BOUNDNAMES
 
@@ -6963,20 +7326,60 @@ _Statement_ : _VariableStatement
 
 1.  Return the BoundNames of _VariableStatement_.
 
+RUNTIME SEMANTICS: LABELLED EVALUATION
+
+  With argument _labelSet_.
+
+_BreakableStatement_ : _IterationStatement
+
+1.  Let _stmtResult_ be the result performing Labelled Evaluation of
+    _IterationStatement_ wth argument _labelSet_.
+
+2.  If _stmtResult_.[[type]] is break and _stmtResult_.[[target]] is
+    empty, then
+
+    a.  Let _stmtResult_ be NormalCompletion(_stmtResult_.[[value]])
+
+3.  Return _stmtResult_.
+
+_BreakableStatement_ : _SwitchStatement
+
+1.  Let _stmtResult_ be the result of evaluating _SwitchStatement_.
+
+2.  If _stmtResult_.[[type]] is break and _stmtResult_.[[target]] is
+    empty, then
+
+    a.  Let _stmtResult_ be NormalCompletion(_stmtResult_.[[value]])
+
+3.  Return _stmtResult_.
+
+NOTE A _BreakableStatement_ is one that can be existed via an unlabelled
+_BreakStatement_.
+
 RUNTIME SEMANTICS: EVALUATION
 
-The _Statement_ productions are all evaluated as as follows
+The _Statement_ productions are all evaluated as follows
 
 1.  Return the result of evaluating the single non-terminal symbol that
     is the right hand side of the production.
 
-The _Declaration_ productions are all evaluated as as follows
+The _Declaration_ productions are all evaluated as follows
 
 1.  Return the result of evaluating the single non-terminal symbol that
     is the right hand side of the production.
 
 NOTE The result of evaluating a _Statement_ or _Declaration_ is always a
 Completion value.
+
+BreakableStatement :
+
+IterationStatement
+SwitchStatement
+
+1.  Let _newLabelSet_ be a new empty List.
+
+2.  Return the result of performing Labelled Evaluation of this
+    _BreakableStatement_ wth argument _newLabelSet_.
 
 1.  
 
@@ -7006,14 +7409,8 @@ STATIC SEMANTICS: EARLY ERRORS
 
 _Block_ : { _StatementList_ }
 
--   It is a Syntax Error if _StatementList_ includes a
-    _StatementListItem_ : _Declaration_ production whose _Declaration_
-    is a _Declaration_ : _FunctionDeclaration_ production and the source
-    code matching this _Block_ production is not contained in extended
-    code.
-
--   It is a Syntax Error if the LexicallyDeclaredNames of
-    _StatementList_ contains any duplicate entires.
+-   -   It is a Syntax Error if the LexicallyDeclaredNames of
+    _StatementList_ contains any duplicate entiries.
 
 -   It is a Syntax Error if any element of the LexicallyDeclaredNames of
     _StatementList_ also occurs in the VarDeclaredNames of
@@ -7054,7 +7451,7 @@ _Block_ : { }
 
 _Block_ : { _StatementList_ }
 
-1.  Return the LexicallyDeclaredNames of _StatementListItem_.
+1.  Return the LexicallyDeclaredNames of _StatementList_.
 
 _StatementList_ : _StatementListItem
 
@@ -7120,7 +7517,7 @@ _BlockStatement_ : _Block
 
 _Block_ : { }
 
-1.  Return (NORMAL, EMPTY, EMPTY).
+1.  Return NormalCompletion (EMPTY).
 
 -   -   -   
 
@@ -7149,7 +7546,7 @@ _StatementList_ : _StatementListItem
 
 _StatementList_ : _StatementList StatementListItem
 
-NOTE Steps 5 and 6 of the above algoritm ensure that the value of a
+NOTE Steps 4 and 5 of the above algoritm ensure that the value of a
 _StatementList_ is the value of the last value producing _Statement_ in
 the _StatementList_. For example, the following calls to the EVAL
 function all return the value 1:
@@ -7178,38 +7575,48 @@ _StatementListItem_ : _Declaration
 
 1.  Return the result of evaluating _Declaration_.
 
-NOTE A LET declaration defines variables that are scoped to the current
-execution context’s LexicalEnvironment. Let variables are created when
-their containing Lexical Environment is instantiated but may not be
-accssed in any way until the variable’s _LetBinding_ is executed. A
-variable defined by a _LetBinding_ with an _Initialiser_ is assigned the
-value of its _Initialiser_’s _AssignmentExpression_ when the
-_LetBinding_ is executed, not when the variable is created. If a
-_LetBinding_ does not have an an _Initialiser_ the variable is assigned
-the value UNDEFINED when the _LetBinding_ is executed.
+NOTE A LET and CONST declarations define variables that are scoped to
+the current execution context’s LexicalEnvironment. The variables are
+created when their containing Lexical Environment is instantiated but
+may not be accssed in any way until the variable’s _LexicalBinding_ is
+evaluated. A variable defined by a _LexicalBinding_ with an
+_Initialiser_ is assigned the value of its _Initialiser_’s
+_AssignmentExpression_ when the _LetBinding_ is evaluated, not when the
+variable is created. If a _LexicalBinding_ in a LET declaration does not
+have an an _Initialiser_ the variable is assigned the value UNDEFINED
+when the _LetBinding_ is executed.
 
 Syntax
 
-LetDeclaration :
+LexicalDeclaration :
 
-LET LetBindingList ;
+LetOrConst BindingList ;
 
-LetBindingList :
+LexicalDeclarationNoIn :
 
-LetBinding
-LetBindingList , LetBinding
+LetOrConst BindingListNoIn
 
-LetBindingListNoIn :
+LetOrConst :
 
-LetBindingNoIn
-LetBindingListNoIn , LetBindingNoIn
+LET
+CONST
 
-LetBinding :
+BindingList :
+
+LexicalBinding
+BindingList , LexicalBinding
+
+BindingListNoIn :
+
+LexicalBindingNoIn
+BindingListNoIn , LexicalBindingNoIn
+
+LexicalBinding :
 
 BindingIdentifier Initialiser~opt
 ~BindingPattern Initialiser
 
-LetBindingNoIn :
+LexicalBindingNoIn :
 
 BindingIdentifier InitialiserNoIn~opt
 ~BindingPattern InitialiserNoIn
@@ -7226,241 +7633,197 @@ InitialiserNoIn :
 
 = AssignmentExpressionNoIn
 
-The semantics of the _LetBindingListNoIn_, _LetBindingNoIn_ and
-_InitialiserNoIn_ productions are the same as the _LetBindingList_,
-_LetBinding_ and _Initialiser_ productions except that the contained
-_LetBindingListNoIn_, _LetBindingNoIn_, _InitialiserNoIn_ and
-_AssignmentExpressionNoIn_ are used in place of the contained
-_LetBindingList_, _LetBinding_, _Initialiser_ and
-_AssignmentExpression_, respectively.
+The semantics of the _LexicalDeclarationNoIn_, _BindingListNoIn_,
+_LexicalBindingNoIn_ and _InitialiserNoIn_ productions are the same as
+the _LexicalDeclaration_, _BindingList_, _LexicalBinding_ and
+_Initialiser_ productions except that the contained _BindingListNoIn_,
+_LexicalBindingNoIn_, _InitialiserNoIn_ and _AssignmentExpressionNoIn
+are used in place of the contained _BindingList_, _LexicalBinding_,
+_Initialiser_ and _AssignmentExpression_, respectively.
 
 STATIC SEMANTICS: EARLY ERRORS
 
-_LetDeclaration_ : LET _LetBindingList_ ;
+_LexicalBinding_ : _BindingIdentifier
 
--   It is a Syntax Error if the code that matches this production is not
-    contained in extended code.
+-   It is a Syntax Error if the _BindingIdentifier_ if
+    IsConstantDeclaration of the _LexicalDeclaration_ containing this
+    production is TRUE.
+
+-   
 
 _BindingIdentifier_ : _Identifier
 
 -   It is a Syntax Error if the _BindingIdentifier_ is contained in
     strict code and if the _Identifier_ is EVAL or ARGUMENTS.
 
-STATIC SEMANTICS: BOUNDNAMES
+STATIC SEMANTICS: BOUND NAMES
 
-_LetDeclaration_ : LET _LetBindingList_ ;
+_LexicalDeclaration_ : _LetOrConst BindingList_ ;
 
-1.  Return BoundNames of _LetBindingList_.
+1.  Return the Bound Names of _BindingList_.
 
-_LetBindingList_ : _LetBinding
+_BindingList_ : _LexialBinding
 
-1.  Return BoundNames of _LetBinding_.
+1.  Return the Bound Names of _LexicalBinding_.
 
-_LetBindingList_ : _LetBindingList_ , _LetBinding
+_BindingList_ : _BindingList_ , _LexicalBinding
 
-1.  Let _names_ be BoundNames of _LetBindingList_.
+1.  Let _names_ be the Bound ames of _BindingList_.
 
-2.  Append to _names_ the elements of BoundNames of _LetBinding.
+2.  Append to _names_ the elements of the Bound Names of
+    _LexialBinding._
 
 3.  Return _names_.
 
-_LetBinding_ : _BindingIdentifier Initialiser_~opt~
+_LexicalBinding_ : _BindingIdentifier Initialiser_~opt~
 
-1.  Return the BoundNames of _BindingIdentifier_.
+1.  Return the Bound Names of _BindingIdentifier_.
 
-_LetBinding_: _BindingPattern Initialiser
+_LexicalBinding_: _BindingPattern Initialiser
 
-1.  Return the BoundNames of _BindingPattern_.
+1.  Return the Bound Names of _BindingPattern_.
 
 _BindingIdentifier_ : _Identifier
 
 1.  Return a new List containing the String Value of _Identifier_.
 
-RUNTIME SEMANTICS: STRING VALUE
+STATIC SEMANTICS: ISCONSTANTDECLARATION
+
+_LexicalDeclaration_ : _LetOrConst BindingList_ ;
+
+1.  Return IsConstantDeclaration of _LetOrConst_.
+
+_LetOrConst BindingList_ : LET
+
+1.  Return FALSE.
+
+_LetOrConst BindingList_ : CONST
+
+1.  Return FALSE.
+
+STATIC SEMANTICS: STRING VALUE
 
 _BindingIdentifier_ : _Identifier
 
 1.  Return the String Value of _Identifier_.
 
-RUNTIME SEMANTICS: BINDING INITIALIZATION
+RUNTIME SEMANTICS: BINDING INITIALISATION
 
-  With arguments _value_ and _enviornment_.
+  With arguments _value_ and _environment_.
 
 NOTE UNDEFINED is passed for _environment_ to indicate that a PutValue
-operation should be used to assign the initialization value. This is the
+operation should be used to assign the initialisation value. This is the
 the case for VAR statements formal parameter lists of non-strict
 functions. In those cases a lexical binding is hosted and preinitialized
 prior to evaluation of its initializer.
 
 _BindingIdentifier_ : _Identifier
 
-1.  Perform Binding Initialization for _Identifier_ passing _value_ and
-    _env_ as the arguments.
+1.  Return the result of performing Binding Initialisation for
+    _Identifier_ passing _value_ and _env_ as the arguments.
 
 Token _Identifier_
 
-1.  If _enviornment_ is not UNDEFINED, then
+1.  If _environment_ is not UNDEFINED, then
 
-    a.  Call the InitializeBinding concrete method of _enviornment_
-        passing _Identifier_ and _value_ as the arguments.
+    a.  Return the result of calling the InitializeBinding concrete
+        method of _environment_ passing _Identifier_ and _value_ as the
+        arguments.
 
 2.  Else
 
     a.  Let _lhs_ be the result of evaluating _Identifier_ as described
         in 11.1.2.
 
-    b.  Call PutValue(_lhs_, _value_).
+    b.  Return PutValue(_lhs_, _value_).
 
 RUNTIME SEMANTICS: EVALUATION
 
-_LetDeclaration_ : LET _LetBindingList_ ;
+_LexicalDeclaration_ : _LetOrConst BindingList_ ;
 
-1.  Evaluate _LetBindingList_.
+1.  Let _next_ be the result of evaluating _BindingList_.
 
-2.  Return (normal, empty, empty).
+2.  If _next_ is an abrupt completion, return _next_.
 
-_LetBindingList_ : _LetBinding
+3.  Return NormalCompletion(empty).
 
-1.  Evaluate _LetBinding_.
+_BindingList_ : _LexicalBinding
 
-_LetBindingList_ : _LetBindingList_ , _LetBinding
+1.  Return the result of evaluating _LexicalBinding_.
 
-1.  Evaluate _LetBindingList_.
+_BindingList_ : _BindingList_ , _LexicalBinding
 
-2.  Evaluate _LetBinding_.
+1.  Let _next_ be the result of evaluating _BindingList_.
 
-_LetBinding_ : _BindingIdentifier 
+2.  If _next_ is an abrupt completion, return _next_.
 
-_LetBinding_ : _BindingIdentifier Initialiser
+3.  Return the result of evaluating Lexial_Binding_.
+
+_LexicalBinding_ : _BindingIdentifier 
+
+NOTE A static sementic rule ensures that this form of _LexicalBinding_
+never occurs in a CONST declaration.
+
+_LexicalBinding_ : _BindingIdentifier Initialiser
 
 1.  Let _rhs_ be the result of evaluating _Initialiser_.
 
 2.  Let _value_ be GetValue(_rhs_).
 
-3.  Let _env_ be the running execution context’s LexicalEnvironment.
+3.  If _value_ is an abrupt completion, return _rval_.
 
-4.  Perform Binding Initialization for _BindingIdentifier_ passing
-    _value_ and _env_ as the arguments.
+4.  Let _env_ be the running execution context’s LexicalEnvironment.
 
-_LetBinding_: _BindingPattern Initialiser
+5.  Return the result of performing Binding Initialisation for
+    _BindingIdentifier_ passing _value_ and _env_ as the arguments.
+
+_LexicalBinding_: _BindingPattern Initialiser
 
 1.  Let _rhs_ be the result of evaluating _Initialiser_.
 
 2.  Let _rval_ be GetValue(_rhs_).
 
-3.  Let _env_ be the running execution context’s LexicalEnvironment.
+3.  If _rval_ is an abrupt completion, return _rval_.
 
-4.  Perform Binding Initialization for _BindingPattern_ using _rval_ as
-    the _obj_ parameter and _env_ as the _environment_ parameter.
+4.  Let _env_ be the running execution context’s LexicalEnvironment.
+
+5.  Return the result of performing Binding Initialisation for
+    _BindingPattern_ using _rval_ as the _obj_ parameter and _env_ as
+    the _environment_ parameter.
 
 1.  
 
 _Initialiser_ : = _AssignmentExpression
 
-NOTE A CONST declaration defines read-only variables that are scoped to
-the current execution context’s LexicalEnvironment. Constant variables
-are created when their containing Lexical Environment is instantiated
-but may not be accssed in any way until the variable’s _ConstBinding_ is
-executed. A variable defined by a _ConstBinding_ is assigned the value
-of its _Initialiser_’s _AssignmentExpression_ when the _ConstBinding_ is
-executed, not when the variable is created.
-
-Syntax
-
-ConstDeclaration :
-
-CONST ConstBindingList ;
-
-ConstBindingList :
-
-ConstBinding
-ConstBinding List , ConstBinding
-
-ConstBinding :
-
-BindingIdentifier Initialiser~
-~BindingPattern Initialiser
-
-STATIC SEMANTICS: EARLY ERRORS
-
-_ConstDeclaration_ : CONST _ConstBindingList_ ;
-
--   It is a Syntax Error if the code that matches this production is not
-    contained in extended code.
-
-STATIC SEMANTICS: BOUNDNAMES
-
-_ConstDeclaration_ : CONST _ConstBindingList_ ;
-
-1.  Return BoundNames of _ConstBindingList_.
-
-_ConstBindingList_ : _ConstBinding
-
-1.  Return BoundNames of _ConstBinding_.
-
-_ConstBindingList_ : _ConstBindingList_ , _ConstBinding
-
-1.  Let _names_ be BoundNames of _ConstBindingList_.
-
-2.  Append to _names_ the elements of BoundNames of _ConstBinding.
-
-3.  Return _names_.
-
-_ConstBinding_ : _BindingIdentifier Initialiser
-
-1.  Return the BoundNames of _BindingIdentifier_.
-
-_ConstBinding_: _BindingPattern Initialiser
-
-1.  Return the BoundNames of _BindingPattern_.
-
-RUNTIME SEMANTICS: EVALUATION
-
-_ConstDeclaration_ : CONST _ConstBindingList_ ;
-
-1.  Evaluate _ConstBindingList_.
-
-2.  Return (normal, empty, empty).
+-   
 
 1.  
 
-_ConstBindingList_ : _ConstBinding
-
-1.  Evaluate _ConstBinding_.
+1.  
 
 1.  2.  3.  
 
-_ConstBindingList_ : _ConstBindingList_ , _ConstBinding
-
-1.  Evaluate _ConstBindingList_.
-
-2.  Evaluate _ConstBinding_.
+1.  
 
 1.  
 
-_ConstBinding_ : _BindingIdentifier Initialiser
-
-1.  Let _rhs_ be the result of evaluating _Initialiser_.
-
-2.  Let _value_ be GetValue(_rhs_).
-
-3.  Let _env_ be the running execution context’s LexicalEnvironment.
-
-4.  Perform Binding Initialization for _BindingIdentifier_ passing
-    _value_ and _env_ as the arguments.
+1.  2.  
 
 1.  
 
-_ConstBinding_: _BindingPattern Initialiser
+1.  
 
-1.  Let _rhs_ be the result of evaluating _Initialiser_.
+1.  2.  3.  
 
-2.  Let _rval_ be GetValue(_rhs_).
+1.  2.  
 
-3.  Let _env_ be the running execution context’s LexicalEnvironment.
+1.  
 
-4.  Perform Binding Initialization for _BindingPattern_ using _rval_ as
-    the _obj_ parameter and _env_ as the _environment_ parameter.
+1.  2.  3.  4.  
+
+1.  
+
+1.  2.  3.  4.  
 
 NOTE A VAR statement declares variables that are scoped to the current
 execution context’s VariableEnvironment. Var variables are created when
@@ -7507,12 +7870,7 @@ _InitialiserNoIn_ and _AssignmentExpressionNoIn_ are used in of the
 contained _VariableDeclarationList_, _VariableDeclaration_,
 _Initialiser_ and _AssignmentExpression_, respectively.
 
-STATIC SEMANTICS: EARLY ERRORS
-
-_VariableDeclaration_ : _BindingPattern Initialiser
-
--   It is a Syntax Error if the source code matching this production is
-    not contained in extended code.
+-   
 
 STATIC SEMANTICS: BOUNDNAMES
 
@@ -7542,32 +7900,60 @@ _VariableDeclaration_ : _BindingPattern Initialiser
 
 1.  Return the BoundNames of _BindingPattern_.
 
+RUNTIME SEMANTICS: BINDING INITIALISATION
+
+  With arguments _value_ and _environment_.
+
+NOTE UNDEFINED is passed for _environment_ to indicate that a PutValue
+operation should be used to assign the initialisation value. This is the
+the case for VAR statements formal parameter lists of non-strict
+functions. In those cases a lexical binding is hosted and preinitialized
+prior to evaluation of its initializer.
+
+_VariableDeclaration_ : _BindingIdentifier
+
+_VariableDeclaration_ : _BindingIdentifier Initialiser
+
+1.  Return the result of performing Binding Initialisation for
+    _BindingIdentifier_ passing _value_ and UNDEFINED as the arguments.
+
+_VariableDeclaration_ : _BindingPattern Initialiser
+
+1.  Return the result of performing Binding Initialisation for
+    _BindingPattern_ passing _value_ and UNDEFINED as the arguments.
+
 RUNTIME SEMANTICS: EVALUATION
 
 _VariableStatement_ : VAR _VariableDeclarationList_ ;
 
-1.  Evaluate _VariableDeclarationList_.
+1.  Let _next_ be the result of evaluating _VariableDeclarationList_.
 
-2.  Return (normal, empty, empty).
+2.  If _next_ is an abrupt completion, return _next_.
+
+3.  Return NormalCompletion( empty).
 
 1.  
 
 _VariableDeclarationList_ :_VariableDeclaration
 
-1.  Evaluate _VariableDeclaration_.
+1.  Return the result of evaluating _VariableDeclaration_.
 
 1.  2.  3.  
 
 _VariableDeclarationList_ : _VariableDeclarationList_ ,
 _VariableDeclaration
 
-1.  Evaluate _VariableDeclarationList_.
+1.  Let _next_ be the result of evaluating _VariableDeclarationList_.
 
-2.  Evaluate _VariableDeclaration_.
+2.  If _next_ is an abrupt completion, return _next_.
+
+3.  Return the result of evaluating _VariableDeclaration_.
 
 1.  
 
 _VariableDeclaration_ : _BindingIdentifier
+
+1.  Return NormalCompletion(empty).
 
 _VariableDeclaration_ : _BindingIdentifier Initialiser
 
@@ -7575,13 +7961,12 @@ _VariableDeclaration_ : _BindingIdentifier Initialiser
 
 2.  Let _value_ be GetValue(_rhs_).
 
-3.  Perform Binding Initialization for _BindingIdentifier_ passing
-    _value_ and UNDEFINED as the arguments.
+3.  If _value_ is an abrupt completion, return _value_.
 
-NOTE 1 The String value of a _VariableDeclaration_ is used in the
-evaluation of for-in statements (12.6.4).
+4.  Return the result of performing Binding Initialisation for
+    _BindingIdentifier_ passing _value_ and UNDEFINED as the arguments.
 
-NOTE 2 If a _VariableDeclaration_ is nested within a with statement and
+NOTE If a _VariableDeclaration_ is nested within a with statement and
 the _Identifier_ in the _VariableDeclaration_ is the same as a property
 name of the binding object of the with statement’s object environment
 record, then step 3 will assign value to the property instead of to the
@@ -7595,10 +7980,12 @@ _VariableDeclaration_ : _BindingPattern Initialiser
 
 1.  Let _rhs_ be the result of evaluating _Initialiser_.
 
-2.  Let _rval_ be ToObject(GetValue(_rhs_)).
+2.  Let _rval_ be GetValue(_rhs_).
 
-3.  Perform Binding Initialization for _BindingPattern_ using _rval_ as
-    the _obj_ parameter and UNDEFINED as the _environment_ parameter.
+3.  If _rval_ is an abrupt completion, return _rval_.
+
+4.  Return the result of performing Binding Initialisation for
+    _BindingPattern_ passing _rval_ and UNDEFINED as arguments.
 
 Syntax
 
@@ -7647,11 +8034,23 @@ BindingRestElement :
 
 … BindingIdentifier
 
-STATIC SEMANTICS: BOUNDNAMES
+STATIC SEMANTICS: EARLY ERRORS
 
 _BindingPattern_ : _ObjectBindingPattern
 
-1.  Return BoundNames of _ObjectBindingPattern_.
+-   It is a Syntax Error if the Bound Names of _ObjectBindingPattern_
+    contains the string “EVAL” or the string “ARGUMENTS”.
+
+_BindingPattern_ : _ObjectBindingPattern
+
+-   It is a Syntax Error if the Bound Names of _ArrayBindingPattern_
+    contains the string “EVAL” or the string “ARGUMENTS”.
+
+STATIC SEMANTICS: BOUND NAMES
+
+_BindingPattern_ : _ObjectBindingPattern
+
+1.  Return the Bound Names of _ObjectBindingPattern_.
 
 _BindingPattern_ : _ArrayBindingPattern
 
@@ -7765,12 +8164,12 @@ _SingleNameBinding_ : _BindingIdentifier Initialiser
 
 1.  Return TRUE.
 
-RUNTIME SEMANTICS: BINDING INITIALIZATION
+RUNTIME SEMANTICS: BINDING INITIALISATION
 
-  With parameters _value_ and _enviornment_.
+  With parameters _value_ and _environment_.
 
 NOTE When UNDEFINED is passed for _environment_ it indicates that a
-PutValue operation should be used to assign the initialization value.
+PutValue operation should be used to assign the initialisation value.
 This is the the case for formal parameter lists of non-strict functions.
 In that case the formal parameter bindings are preinitialized in order
 to deal with the possibility of multiple parameters with the same name.
@@ -7783,8 +8182,8 @@ _BindingPattern_ : _ObjectBindingPattern
 
 2.  Else, let _obj_ be UNDEFINED.
 
-3.  Perform Binding Initialization for _ObjectBindingPattern_ using
-    _obj_ and _environment_ as arguments.
+3.  Return the result of performing Binding Initialisation for
+    _ObjectBindingPattern_ using _obj_ and _environment_ as arguments.
 
 1.  
 
@@ -7802,8 +8201,9 @@ _BindingPattern_ : _ArrayBindingPattern
 
     b.  
 
-3.  Perform Indexed Binding Initialization for _ArrayBindingPattern
-    using _array_, 0, and _environment_ as arguments.
+3.  Return the result of performing Indexed Binding Initialisation for
+    _ArrayBindingPattern_ using _array_, 0, and _environment_ as
+    arguments.
 
 1.  
 
@@ -7820,8 +8220,8 @@ ObjectBindingPattern :
 
 1.  a.  
 
-2.  3.  Perform Binding Initialization for _BindingPropertyList_ using
-    _value_ and _environment_ as arguments.
+2.  3.  Return the result of performing Binding Initialisation for
+    _BindingPropertyList_ using _value_ and _environment_ as arguments.
 
 1.  
 
@@ -7849,40 +8249,43 @@ ObjectBindingPattern :
 
 _BindingPropertyList_ : _BindingProperty
 
-1.  Perform Binding Initialization for _BindingProperty_ using _value
-    and _environment_ as arguments.
+1.  Return the result of performing Binding Initialisation for
+    _BindingProperty_ using _value_ and _environment_ as arguments.
 
 1.  2.  3.  
 
 _BindingPropertyList_ : _BindingPropertyList_ , _BindingProperty
 
-1.  Perform Binding Initialization for _BindingPropertyList_ using
-    _value_ and _environment_ as arguments.
+1.  Let _next_ be the result of performing Binding Initialisation for
+    _BindingPropertyList_ using _value_ and _environment_ as arguments.
 
-2.  Perform Binding Initialization for _BindingProperty_ using _value
-    and _environment_ as arguments.
+2.  If _next_ is an abrupt completion, return _next_.
+
+3.  Return the result of performing Binding Initialisation for
+    _BindingProperty_ using _value_ and _environment_ as arguments.
 
 _BindingProperty_ : _SingleNameBinding
 
 1.  Let _name_ be the _string_ that is the only element of BoundNames of
     _SingleNameBinding_.
 
-2.  Perform Keyed Binding Initialization for _SingleNameBinding_ using
-    _value_, _environment_, and _name_ as the arguments.
+2.  Return the result of performing Keyed Binding Initialisation for
+    _SingleNameBinding_ using _value_, _environment_, and _name_ as the
+    arguments.
 
 _BindingProperty_ : _PropertyName_ : _BindingElement 
 
 1.  Let _P_ be the PropName of _PropertyName
 
-2.  Perform Keyed Binding Initialization for _BindingElement_ using
-    _value_, _envirnment_, and _P_ as arguments.
+2.  Return the result of performing Keyed Binding Initialisation for
+    _BindingElement_ using _value_, _envirnment_, and _P_ as arguments.
 
-RUNTIME SEMANTICS: INDEXED BINDING INITIALIZATION
+RUNTIME SEMANTICS: INDEXED BINDING INITIALISATION
 
   With parameters _array_, _nextIndex,_ and _environment_.
 
 NOTE When UNDEFINED is passed for _environment_ it indicates that a
-PutValue operation should be used to assign the initialization value.
+PutValue operation should be used to assign the initialisation value.
 This is the the case for formal parameter lists of non-strict functions.
 In that case the formal parameter bindings are preinitialized in order
 to deal with the possibility of multiple parameters with the same name.
@@ -7896,31 +8299,37 @@ _ArrayBindingPattern_: [ _Elision_~opt~ _BindingRestElement_ ]
 1.  If _Elision_ is present, then let _nextIndex_ be the result of
     evaluating _Elision_, otherwise let _nextIndex_ be 0.
 
-2.  Perform Indexed Binding Initialization for _BindingRestElement
-    using _array, nextIndex_, and _environment_ as arguments.
+2.  Return the result of performing Indexed Binding Initialisation for
+    _BindingRestElement_ using _array, nextIndex_, and _environment_ as
+    arguments.
 
 _ArrayBindingPattern_: [ _BindingElementList_ ]
 
-1.  Perform Indexed Binding Initialization for _BindingElementList
-    using _array_, _nextIndex_, and _environment_ as arguments.
+1.  Return the result of performing Indexed Binding Initialisation for
+    _BindingElementList_ using _array_, _nextIndex_, and _environment_
+    as arguments.
 
 _ArrayBindingPattern_: [ _BindingElementList_ , _Elision_~opt~]
 
-1.  Perform Indexed Binding Initialization for _BindingElementList
-    using _array_, _nextIndex_, and _environment_ as arguments.
+1.  Return the result of performing Indexed Binding Initialisation for
+    _BindingElementList_ using _array_, _nextIndex_, and _environment_
+    as arguments.
 
 _ArrayBindingPattern_: [ _BindingElementList_ , _Elision_~opt~
 _BindingRestElement_ ]
 
 1.  Let _index_ be the result of performing Indexed Binding
-    Initialization for _BindingElementList_ using _array_, _,
+    Initialisation for _BindingElementList_ using _array_, _,
     nextIndex_, and _environment_ as arguments.
 
-2.  If _Elision_ is present, then let _skip_ be the result of evaluating
+2.  If _index_ is an abrupt completion, return _index_.
+
+3.  If _Elision_ is present, then let _skip_ be the result of evaluating
     _Elision_, otherwise let _skip_ be 0.
 
-3.  Perform Indexed Binding Initialization for _BindingRestElement
-    using _array, index_+_skip_ , and _environment_ as arguments.
+4.  Return the result of performing Indexed Binding Initialisation for
+    _BindingRestElement_ using _array, index_+_skip_ , and _environment_
+    as arguments.
 
 1.  
 
@@ -7929,10 +8338,13 @@ _BindingElementList_ : _Elision_~opt~ _BindingElement
 1.  If _Elision_ is present, then let _skip_ be the result of evaluating
     _Elision_, otherwise let _skip_ be 0.
 
-2.  Perform Indexed Binding Initialization for _BindingElement_ using
-    _array_, _nextIndex_ +_skip_ , and _environment_ as arguments.
+2.  Let _next_ be the result of performing Indexed Binding
+    Initialisation for _BindingElement_ using _array_,
+    _nextIndex_ +_skip_ , and _environment_ as arguments.
 
-3.  Return _index_+_skip_+1.
+3.  If _next_ is an abrupt completion, return _next_.
+
+4.  Return _index_+_skip_+1.
 
 1.  2.  3.  
 
@@ -7940,18 +8352,23 @@ _BindingElementList_ : _BindingElementList_ , _Elision_~opt~
 _BindingElement 
 
 1.  Let _listNext_ be the result of performing Indexed Binding
-    Initialization for _BindingElementList_ using _array, nextIndex_,
+    Initialisation for _BindingElementList_ using _array, nextIndex_,
     and _environment_ as arguments.
 
-2.  If _Elision_ is present, then let _skip_ be the result of evaluating
+2.  If _next_ is an abrupt completion, return _next_.
+
+3.  If _Elision_ is present, then let _skip_ be the result of evaluating
     _Elision_, otherwise let _skip_ be 0.
 
-3.  Perform Indexed Binding Initialization for _BindingElement_ using
-    _array_, _listNext_+_skip_ , and _environment_ as arguments.
+4.  Let _next_ be the result of performing Indexed Binding
+    Initialisation for _BindingElement_ using _array_, _listNext_+_skip_
+    , and _environment_ as arguments.
 
-4.  Return _listNext_+_skip+_1.
+5.  If _listNext_ is an abrupt completion, return _listNext_.
 
-5.  
+6.  Return _listNext_+_skip+_1.
+
+7.  
 
 1.  
 
@@ -7985,9 +8402,9 @@ _BindingElement_: _SingleNameBinding
 
 1.  a.  
 
-2.  3.  Perform Keyed Binding Initialization for _SingleNameBinding
-    using _array_, _environment_, and ToString(_nextIndex_) as the
-    arguments.
+2.  3.  Return the result of performing Keyed Binding Initialisation for
+    _SingleNameBinding_ using _array_, _environment_, and
+    ToString(_nextIndex_) as the arguments.
 
 1.  
 
@@ -8013,8 +8430,10 @@ _BindingElement_: _BindingPattern Initialiser_~opt~
 
         i.  Let _v_ be UNDEFINED.
 
-10. Perform Binding Initialization for _BindingPattern_ passing _v_ and
-    _environment_ as arguments.
+10. If _v_ is an abrupt completion, return _v_.
+
+11. Return the result of performing Binding Initialisation for
+    _BindingPattern_ passing _v_ and _environment_ as arguments.
 
 _BindingRestElement_ : … _BindingIdentifier
 
@@ -8027,11 +8446,13 @@ _BindingRestElement_ : … _BindingIdentifier
 
 3.  Let _arrayLength_ be ToUint32(_lenVal_).
 
-4.  Let _n_=0.
+4.  If _arrayLength_ is an abrupt completion, return _arrayLength_.
 
-5.  Let _index_ = _nextIndex_.
+5.  Let _n_=0.
 
-6.  Repeat, while _index_ < _arrayLength
+6.  Let _index_ = _nextIndex_.
+
+7.  Repeat, while _index_ < _arrayLength
 
     a.  Let _P_ be ToString(_index_).
 
@@ -8043,32 +8464,35 @@ _BindingRestElement_ : … _BindingIdentifier
         i.  Let _v_ be the result of calling the [[Get]] internal method
               of _array_ passing _P_ as the argument.
 
-        ii. Call the [[DefineOwnProperty]] internal method of _A_ with
+        ii. If _v_ is an abrupt completion, return _v_.
+
+        iii. Call the [[DefineOwnProperty]] internal method of _A_ with
               arguments ToString(_n_), Property Descriptor {[[Value]]:
-              _v_, [[Writable]]: TRUE, [[Enumerable]]: TRUE,
+              _v_.[[value]], [[Writable]]: TRUE, [[Enumerable]]: TRUE,
               [[Configurable]]: TRUE}, and FALSE.
 
     d.  Let _n_ = _n_+1.
 
     e.  Let _index_ = _index_+1.
 
-7.  Perform Binding Initialization for _BindingIdentifer_ using _array
-    and _environment_ as arguments.
+8.  Return the result of performing Binding Initialisation for
+    _BindingIdentifer_ using _array_ and _environment_ as arguments.
 
-RUNTIME SEMANTICS: KEYED BINDING INITIALIZATION
+RUNTIME SEMANTICS: KEYED BINDING INITIALISATION
 
   With parameters _obj_, _environment,_ and _propertyName_.
 
 NOTE When UNDEFINED is passed for _environment_ it indicates that a
-PutValue operation should be used to assign the initialization value.
+PutValue operation should be used to assign the initialisation value.
 This is the the case for formal parameter lists of non-strict functions.
 In that case the formal parameter bindings are preinitialized in order
 to deal with the possibility of multiple parameters with the same name.
 
 _BindingElement_: _SingleNameBinding
 
-1.  Perform Keyed Binding Initialization for _SingleNameBinding_ using
-    _obj_, _environment_, and _propertyName_ as the arguments.
+1.  Return the result of performing Keyed Binding Initialisation for
+    _SingleNameBinding_ using _obj_, _environment_, and _propertyName_
+    as the arguments.
 
 _BindingElement_: _BindingPattern_ _Initialiser_~opt~
 
@@ -8090,8 +8514,10 @@ _BindingElement_: _BindingPattern_ _Initialiser_~opt~
 
         i.  Let _v_ be UNDEFINED.
 
-4.  Perform Binding Initialization for _BindingPattern_ passing _v_ and
-    _environment_ as arguments.
+4.  If _v_ is an abrupt completion, return _v_.
+
+5.  Return the result of performing Binding Initialisation for
+    _BindingPattern_ passing _v_ and _environment_ as arguments.
 
 _SingleNameBinding_ : _BindingIdentifier Initialiser_~opt~
 
@@ -8113,8 +8539,10 @@ _SingleNameBinding_ : _BindingIdentifier Initialiser_~opt~
 
         i.  Let _v_ be UNDEFINED.
 
-4.  Perform Binding Initialization for _BindingIdentifer_ passing _v
-    and _enviornment_ as arguments.
+4.  If _v_ is an abrupt completion, return _v_.
+
+5.  Return the result of performing Binding Initialisation for
+    _BindingIdentifer_ passing _v_ and _environment_ as arguments.
 
 1.  
 
@@ -8189,23 +8617,78 @@ Syntax
 
 IterationStatement :
 
-DO Statement WHILE ( Expression );
+DO Statement WHILE ( Expression )
 WHILE ( Expression ) Statement
 FOR (ExpressionNoIn~opt~; Expression~opt~ ; Expression~opt~ ) Statement
 FOR ( VAR VariableDeclarationListNoIn; Expression~opt~ ; Expression~opt~
 ) Statement
+FOR ( LexicalDeclarationNoIn; Expression~opt~ ; Expression~opt~ )
+Statement
 FOR ( LeftHandSideExpression IN Expression ) Statement
-FOR ( VAR VariableDeclarationNoIn IN Expression ) Statement
+FOR ( VAR BindingIdentifer IN Expression ) Statement
+FOR ( ForDeclaration IN Expression ) Statement
+FOR ( LeftHandSideExpression OF Expression ) Statement
+FOR ( VAR ForVarDeclaration OF Expression ) Statement
+FOR ( ForDeclaration OF Expression ) Statement
+
+ForVarDeclaration :
+
+BindingPattern
+VariableDeclarationNoIn
+
+ForDeclaration :
+
+LetOrConst ForBinding
+
+ForBinding :
+
+BindingIdentifier
+BindingPattern
+
+NOTE A semicolon is not required after a DO-WHILE statement.
+
+The abstract operation loopContinues with arguments _completion_ and
+_labelSet_ is defined by the following step:
 
 STATIC SEMANTICS: VARDECLAREDNAMES
 
-DO _Statement_ WHILE ( _Expression_ );
+_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );
 
 1.  Return the VarDeclaredNames of _Statement_.
 
-RUNTIME SEMANTICS: EVALUATION
+RUNTIME SEMANTICS: LABELLED EVALUATION
 
-DO _Statement_ WHILE ( _Expression_ );
+  With argument _labelSet_.
+
+_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );
+
+1.  Let _V_ = UNDEFINED.
+
+2.  3.  Repeat
+
+    a.  Let _stmt_ be the result of evaluating _Statement_.
+
+    b.  If _stmt_.[[value]] is not empty, let _V_ = _stmt_.[[value]]_._
+
+    c.  i.  
+
+    d.  If _stmt_ is an abrupt completion and loopContinues
+        (_stmt_,_labelSet_) is FALSE, return _stmt_.
+
+    e.  Let _exprRef_ be the result of evaluating _Expression_.
+
+    f.  Let _exprValue_ be ToBoolean(GetValue(_exprRef_)).
+
+    g.  If _exprValue_ is FALSE, Return NormalCompletion(_V_).
+
+    h.  Else if _exprValue_ is a Completion Record, then
+
+        i.  Assert: _exprValue_ is an abrupt completion.
+
+        ii. If loopContinues (_exprValue_,_labelSet_) is FALSE, return
+              _exprValue._
+
+4.  
 
 STATIC SEMANTICS: VARDECLAREDNAMES
 
@@ -8213,7 +8696,9 @@ _IterationStatement_ : WHILE ( _Expression_ )
 
 1.  Return the VarDeclaredNames of _Statement_.
 
-RUNTIME SEMANTICS: EVALUATION
+RUNTIME SEMANTICS: LABELLED EVALUATION
+
+  With argument _labelSet_.
 
 _IterationStatement_ : WHILE ( _Expression_ ) _Statement
 
@@ -8234,60 +8719,445 @@ _Expression_~opt~ ; _Expression_~opt~ ) _Statement
 
 3.  Return _names_.
 
-RUNTIME SEMANTICS: EVALUATION
+FOR (_LexicalDeclarationNoIn_; _Expression_~opt~ ; _Expression_~opt~)
+_Statement
+
+1.  Return the VarDeclaredNames of _Statement_.
+
+RUNTIME SEMANTICS: LABELLED EVALUATION
+
+  With argument _labelSet_.
 
 _IterationStatement_ : FOR (_ExpressionNoIn_~opt~ ; _Expression_~opt~ ;
 _Expression_~opt~) _Statement
 
-1.  2.  3.  
+The abstraction operation For Body Evaluation with arguments _testExpr_,
+_incrementExpr_, and _labelSet_ is performed as follows:
+
+1.  Let _V_ = UNDEFINED,.
+
+2.  Repeat
+
+    a.  If _testExpr_ is not [empty], then
+
+        i.  Let _testExprRef_ be the result of evaluating _testExpr_.
+
+        ii. Let _testExprValue_ be ToBoolean(GetValue(_testExprRef_))
+
+        iii. If _testExprValue_ is FALSE, return NormalCompletion(_V_).
+
+        iv. Else loopContinues (_testExprValue_,_labelSet_) is FALSE,
+            return _testExprValue._
+
+    b.  Let _stmt_ be the result of evaluating _Statement_.
+
+    c.  If _stmt_.[[value]] is not empty, let _V_ = _stmt_.[[value]].
+
+    d.  e.  f.  If _stmt_ loopContinues (_stmt_,_labelSet_) is FALSE,
+        return _stmt_.
+
+    g.  If _incrementExpr_ is not [empty], then
+
+        i.  Let _incExprRef_ be the result of evaluating
+            _incrementExpr_.
+
+        ii. Let _incExprValue_ be GetValue(_incExprRef_).
+
+        iii. If loopContinues(_incExprValue_,_labelSet_) is FALSE,
+            return _incExprValue._
 
 _IterationStatement_ : FOR ( VAR _VariableDeclarationListNoIn_ ;
 _Expression_~opt~ ; _Expression_~opt~ ) _Statement
 
-STATIC SEMANTICS: VARDECLAREDNAMES
+_IterationStatement_ : FOR ( _LexicalDeclarationNoIn_ ;
+_Expression_~opt~ ; _Expression_~opt~ ) _Statement
 
-FOR ( _LeftHandSideExpression_ IN _Expression_ ) _Statement_
+1.  Let _oldEnv_ be the running execution context’s LexicalEnvironment.
 
-1.  Return the VarDeclaredNames of _Statement_.
+2.  Let _loopEnv_ be the result of calling NewDeclarativeEnvironment
+    passing _oldEnv_ as the argument.
 
-_IterationStatement_ : FOR ( VAR _VariableDeclarationNoIn_ IN
-_Expression_ ) _Statement
+3.  Let _isConst_ be the the result of performing IsConstantDeclaration
+    of _d_.
 
-1.  Let _names_ be BoundNames of _VariableDeclarationNoIn_.
+4.  For each element _dn_ of the BoundNames of _LexicalDeclarationNoIn
+    do
 
-2.  Append to _names_ the elements of the VarDeclaredNames of
-    _Statement._
+    a.  If _isConst_ is TRUE, then
 
-3.  Return _names
+        i.  Call _loopEnv_’s CreateImmutableBinding concrete method
+            passing _dn_ as the argument.
 
-RUNTIME SEMANTICS: EVALUATION
+    b.  Else,
+
+        i.  Call _loopEnv_’s CreateMutableBinding concrete method
+            passing _dn_ and FALSE as the arguments.
+
+5.  Set the running EXECUTION context’s LexicalEnvironment to _loopEnv_.
+
+6.  Let _forDcl_ be the result of evaluating _LexicalDeclarationNoIn_.
+
+7.  If loopContinues(_varDcl_,_labelSet_) is FALSE, then
+
+    a.  Set the running EXECUTION context’s LexicalEnvironment to
+        _oldEnv_.
+
+    b.  Return _varDcl_.
+
+8.  Let _bodyResult_ be the result of performing For Body Evaluation
+    with the first _Expression_ as the _incrementExpr_ argument, the
+    second _Expression_ as the _testExpr_ argument and with _labelSet_.
+
+9.  Set the running EXECUTION context’s LexicalEnvironment to _oldEnv_.
+
+10. Return _bodyResult_.
+
+STATIC SEMANTICS: EARLY ERRORS
+
+_IterationStatement_ :
+
+  FOR (_LeftHandSideExpression_ IN _Expression_ ) _Statement_
+
+  FOR (_LeftHandSideExpression_ OF _Expression_ ) _Statement_
+
+-   It is a Syntax Error if the _IterationStatement_ is contained in
+    strict code and _LeftHandSideExpression_ is the _Identifier_ EVAL or
+    the _Identifier_ ARGUMENTS.
+
+-   It is a Syntax Error if the _LeftHandSideExpression_ is an
+    _Identifier_ that statically resolves to a declarative environment
+    record binding and the resolved binding is an immutable binding.
+
+-   It is a Syntax Error if the _LeftHandSideExpression_ is
+    _PrimaryExpression_ : ( _Expression_ ) and _Expression_ derived a
+    production that would produce a Syntax Error according to these
+    rules. This rule is recursively applied.
+
+-   It is a Syntax Error if the _LeftHandSideExpression_ is an
+    _ObjectLiteral_ or an _ArrayLiteral_ and the source code
+    corresponding to _LeftHandSideExpression_ cannot be parsed using
+    _AssignmentPattern_ as the goal symbol.
+
+_IterationStatement_ :
+
+  FOR (_ForDeclaration_ IN _Expression_ ) _Statement_
+
+  FOR (_ForDeclaration_ OF _Expression_ ) _Statement_
+
+-   It is a Syntax Error if any element of the Lexically Declared Names
+    of _ForDeclaration_ also occurs in the Var Declared Names of
+    _Statement_.
+
+STATIC SEMANTICS: BOUND NAMES
+
+_ForVarDeclaration_ : _BindingPattern 
+
+1.  Return the Bound Names of _BindingPattern_.
+
+_ForVarDeclaration_ : _VariableDeclarationNoIn
+
+1.  Return the Bound Names of _VariableDeclarationNoIn_.
+
+_ForDeclaration_ : _LetOrConst ForBinding 
+
+1.  Return the Bound Names of _ForBinding_.
+
+_ForBinding_ : _BindingIdentifier
+
+1.  Return the Bound Names of _BindingIdentifier_.
+
+_ForDeclaration_ : _BindingPattern
+
+1.  Return the Bound Names of _BindingPattern_.
+
+STATIC SEMANTICS: VAR DECLARED NAMES
 
 _IterationStatement_ : FOR ( _LeftHandSideExpression_ IN _Expression_ )
 _Statement
 
+1.  Return the Var Declared Names of _Statement_.
+
+_IterationStatement_ : FOR ( VAR _BindingIdentifier_ IN _Expression_ )
+_Statement
+
+1.  Let _names_ be the Bound Names of _BindingIdentifier_.
+
+2.  Append to _names_ the elements of the Var Declared Names of
+    _Statement._
+
+3.  Return _names
+
+_IterationStatement_ : FOR ( _ForDeclaration_ IN _Expression_ )
+_Statement
+
+1.  Return the Var Declared Names of _Statement_.
+
+_IterationStatement_ : FOR ( _LeftHandSideExpression_ OF _Expression_ )
+_Statement
+
+1.  Return the Var Declared Names of _Statement_.
+
+_IterationStatement_ : FOR ( VAR _ForVarDeclaration_ OF _Expression_ )
+_Statement
+
+1.  Let _names_ be the Bound Names of _ForVarDeclaration_.
+
+2.  Append to _names_ the elements of the Var Declared Names of
+    _Statement._
+
+3.  Return _names
+
+_IterationStatement_ : FOR ( _ForDeclaration_ OF _Expression_ )
+_Statement
+
+1.  Return the Var Declared Names of _Statement_.
+
+RUNTIME SEMANTICS: BINDING INSTANTIATION
+
+  With arguments _value_ and _environment_.
+
+_ForDeclaration_ : _LetOrConst ForBinding 
+
+1.  For each element _name_ of the Bound Names of _ForBinding_ do
+
+    a.  If IsConstantDeclaration of _LetOrConst_ is FALSE, then
+
+        i.  Call _environment_’s CreateMutableBinding concrete method
+            with argument _name_.
+
+    b.  Else,
+
+        i.  Call _environment_’s CreateImmutableBinding concrete method
+            with argument _name_.
+
+2.  Perform Binding Initialisation for _ForBinding_ passing _value_ and
+    _environment_ as the arguments.
+
+RUNTIME SEMANTICS: BINDING INITIALISATION
+
+  With arguments _value_ and _environment_.
+
+NOTE UNDEFINED is passed for _environment_ to indicate that a PutValue
+operation should be used to assign the initialisation value. This is the
+the case for VAR statements formal parameter lists of non-strict
+functions. In those cases a lexical binding is hosted and preinitialized
+prior to evaluation of its initializer.
+
+_ForVarDeclaration_ : _BindingPattern 
+
+1.  Perform Binding Initialisation for _BindingPattern_ passing _value
+    and _env_ as the arguments.
+
+_ForVarDeclaration_ : _VariableDeclarationNoIn
+
+1.  Perform Binding Initialisation for _VariableDeclarationNoIn_ passing
+    _value_ and _env_ as the arguments.
+
+_ForBinding_ : _BindingIdentifier 
+
+1.  Perform Binding Initialisation for _BindingIdentifier_ passing
+    _value_ and _env_ as the arguments.
+
+_ForBinding_: _BindingPattern
+
+1.  Perform Binding Initialisation for _BindingPattern_ passing _value
+    and _env_ as the arguments.
+
+RUNTIME SEMANTICS: LABELLED EVALUATION
+
+  With argument _labelSet_.
+
+_IterationStatement_ : FOR ( _LeftHandSideExpression_ IN _Expression_ )
+_Statement
+
+_IterationStatement_ : FOR ( VAR _BindingIdentifier_ IN _Expression_ )
+_Statement
+
+_IterationStatement_ : FOR (_ForDeclaration_ IN _Expression_ )
+_Statement
+
+1.  Let _keyResult_ be the result of performing For In/Of Expression
+    Evalation with _Statement_, enumerate, and _labelSet_.
+
+2.  ReturnIfAbrupt(_keyResult_).
+
+3.  Return the result of performing For In/Of Body Evalation with
+    _ForDeclaration_, _Statement_, _keyResult_.[[value]],
+    ForDeclaration, and _labelSet_.
+
+_IterationStatement_ : FOR ( _LeftHandSideExpression_ OF _Expression_ )
+_Statement
+
+1.  Let _keyResult_ be the result of performing For In/Of Expression
+    Evalation with _Statement_, iterate, and _labelSet_.
+
+2.  ReturnIfAbrupt(_keyResult_).
+
+3.  Return the result of performing For In/Of Body Evalation with
+    _LeftHandSideExpression_, _Statement_, _keyResult_.[[value]],
+    assignment, and _labelSet_.
+
+_IterationStatement_ : FOR ( VAR _BindingIdentifier_ OF _Expression_ )
+_Statement
+
+1.  Let _keyResult_ be the result of performing For In/Of Expression
+    Evalation with _Statement_, iterate, and _labelSet_.
+
+2.  ReturnIfAbrupt(_keyResult_).
+
+3.  Return the result of performing For In/Of Body Evalation with
+    _BindingIdentifier_, _Statement_, _keyResult_.[[value]], varBinding,
+    and _labelSet_.
+
+_IterationStatement_ : FOR (_ForDeclaration_ OF _Expression_ )
+_Statement
+
+1.  Let _keyResult_ be the result of performing For In/Of Expression
+    Evalation with _Statement_, iterate, and _labelSet_.
+
+2.  ReturnIfAbrupt(_keyResult_).
+
+3.  Return the result of performing For In/Of Body Evalation with
+    _ForDeclaration_, _Statement_, _keyResult_.[[value]],
+    ForDeclaration, and _labelSet_.
+
+The abstraction operation For In/Of Expression Evaluation with arguments
+_expr_, _iterationKind_, and _labelSet_ is performed as follows:
+
+1.  Let _exprRef_ be the result of evaluating the production that is
+    _expr_.
+
+2.  Let _experValue_ be GetValue(_exprRef_).
+
+3.  If _experValue_ is an abrupt completion, then return
+
+    a.  If loopContinues(_experValue_,_labelSet_) is FALSE, then return
+        _experValue_.
+
+    b.  Else, return Completion{type: break, value: UNDEFINED, target:
+        empty}.
+
+4.  If _experValue_.[value]] is NULL or UNDEFINED, return
+    Completion{type: break, value: UNDEFINED, target: empty}..
+
+5.  Let _obj_ be ToObject(_experValue_).
+
+6.  If _iterationKind_ is enumerate, then
+
+    a.  Let _keys_ be the result of calling the [[Enumerate]] internal
+        method of _obj_ with arguments TRUE and TRUE.
+
+7.  Else,
+
+    a.  Assert _iterationKind_ is iterate.
+
+    b.  Let _keys_ be the result of calling the [[Iterate]] internal
+        method of _obj_.
+
+8.  If _keys_ is an abrupt completion, then
+
+    a.  If LoopContinues(_experValue_,_labelSet_) is FALSE, then return
+        _experValue_.
+
+    b.  Asset: _keys_.[[type]] is continue
+
+    c.  Return Completion{type: break, value: UNDEFINED, target: empty}.
+
+9.  Return _keys_.
+
+The abstraction operation For In/Of Body Evaluation with arguments
+_lhs_, _stmt,_ _keys,_ _lhsKind_, and _labelSet_ is performed as
+follows:
+
+1.  Let _oldEnv_ be the running execution context’s LexicalEnvironment.
+
+2.  Let _V_ = UNDEFINED).
+
+3.  Repeat
+
+    a.  Let _next_ be the result of performing Invoke with arguments
+        "NEXT", _keys_, and an empty arguments List.
+
+    b.  If IteratorComplete(_next_) is _true_, the return
+        NormalCompletion(_V_).
+
+    c.  If loopContinues(_next_,_labelSet_) is FALSE, then return
+        _next_.
+
+    d.  If _next_ is an abrupt completion, then let _status_ be next.
+
+    e.  Else,
+
+        i.  Assert _next_.[[type]] is normal.
+
+        ii. Let _nextValue_ be _next_.[[value]].
+
+        iii. If _lhsKind_ is assignment, then
+
+            1.  If _lhs_ is neither an _ObjectLiteral_ nor an
+                _ArrayLiteral_ then
+
+                a.  b.  Let _lhsRef_ be the result of evaluating the
+                    _LeftHandSideExpression_ ( it may be evaluated
+                    repeatedly).
+
+                c.  Let _status_ be the result of performing
+                    PutValue(_lhsRef_, _nextValue_).
+
+            2.  Else
+
+                a.  Let _AssignmentPattern_ be the parse of the source
+                    code corresponding to _lhs_ using
+                    _AssignmentPattern_ as the goal symbol.
+
+                b.  Let _rval_ be ToObject(_nextValue_).
+
+                c.  If _rval_ is an abrupt completion, then let _status_
+                    be _rval_.
+
+                d.  Else, let _status_ be the result of performing
+                    Destructuring Assignment Evaluation of
+                    _AssignmentPattern_ using _rval_ as the argument.
+
+        iv. Else if _lhsKind_ is varBinding, then
+
+            1.  Let _status_ be the result of performing Binding
+                Initialisation for _lhs_ passing _nextValue_ and
+                UNDEFINED as the arguments.
+
+        v.  Else,
+
+            1.  Asset _lhsKind_ is ForDeclaration.
+
+            2.  Let _iterationEnv_ be the result of calling
+                NewDeclarativeEnvironment passing _oldEnv_ as the
+                argument.
+
+            3.  Perform Binding Instantiation for _lhs_ passing
+                _nextValue_ and _iterationEnv_ as arguments.
+
+            4.  Let _status_ be NormalCompletion(empty)
+
+            5.  Set the running EXECUTION context’s LexicalEnvironment
+                to _iterationEnv_.
+
+        vi. If _status_.[[type]] is normal, then
+
+            1.  Let _status_ be the result of evaluating _stmt_.
+
+            2.  If _status_.[[type]] is normal and _status_.[[value]]
+                not empty, then
+
+                a.  Let _V_ = _status_.[[value]].
+
+        vii. Set the running EXECUTION context’s LexicalEnvironment to
+            _oldEnv_.
+
+        viii. If _status_ is an abrupt completion and
+            loopContinues(_status_,_labelSet_) is FALSE, then return
+            _status_.
+
 1.  2.  3.  
-
-_IterationStatement_ : FOR ( VAR _VariableDeclarationNoIn_ IN
-_Expression_ ) _Statement
-
-The mechanics and order of enumerating the properties (step 6.a in the
-first algorithm, step 7.a in the second) is not specified. Properties of
-the object being enumerated may be deleted during enumeration. If a
-property that has not yet been visited during enumeration is deleted,
-then it will not be visited. If new properties are added to the object
-being enumerated during enumeration, the newly added properties are not
-guaranteed to be visited in the active enumeration. A property name must
-not be visited more than once in any enumeration.
-
-Enumerating the properties of an object includes enumerating properties
-of its prototype, and the prototype of the prototype, and so on,
-recursively; but a property of a prototype is not enumerated if it is
-“shadowed” because some previous object in the prototype chain has a
-property with the same name. The values of [[Enumerable]] attributes are
-not considered when determining if a property of a prototype object is
-shadowed by a previous object on the prototype chain.
-
-NOTE See NOTE 11.13.1.
 
 Syntax
 
@@ -8296,24 +9166,25 @@ ContinueStatement :
 CONTINUE ;
 CONTINUE [no LineTerminator here] Identifier;
 
-Semantics
+STATIC SEMANTICS: EARLY ERRORS
 
-A program is considered syntactically incorrect if either of the
-following is true:
+_ContinueStatement_ : CONTINUE ;
 
--   The program contains a CONTINUE statement without the optional
-      _Identifier_, which is not nested, directly or indirectly (but not
-      crossing function boundaries), within an _IterationStatement_.
-
--   The program contains a CONTINUE statement with the optional
-      _Identifier_, where _Identifier_ does not appear in the label set
-      of an enclosing (but not crossing function boundaries)
+-   It is a Syntax Error if this production is not nested, directly or
+      indirectly (but not crossing function boundaries), within an
       _IterationStatement_.
 
-A _ContinueStatement_ without an _Identifier_ is evaluated as follows:
+_ContinueStatement_ : CONTINUE [no _LineTerminator_ here] _Identifier_;
 
-A _ContinueStatement_ with the optional _Identifier_ is evaluated as
-follows:
+-   It is a Syntax Error if _Identifier_ does not appear in the
+      _CurrentLabelSet_ of an enclosing (but not crossing function
+      boundaries) _IterationStatement_.
+
+RUNTIME SEMANTICS: EVALUATION
+
+_ContinueStatement_ : CONTINUE ;
+
+_ContinueStatement_ : CONTINUE [no _LineTerminator_ here] _Identifier_;
 
 Syntax
 
@@ -8322,24 +9193,25 @@ BreakStatement :
 BREAK ;
 BREAK [no LineTerminator here] Identifier ;
 
-Semantics
+STATIC SEMANTICS: EARLY ERRORS
 
-A program is considered syntactically incorrect if either of the
-following is true:
+_BreakStatement_ : BREAK ;
 
--   The program contains a BREAK statement without the optional
-      _Identifier_, which is not nested, directly or indirectly (but not
-      crossing function boundaries), within an _IterationStatement_ or a
-      _SwitchStatement_.
+-   It is a Syntax Error if this production not nested, directly or
+      indirectly (but not crossing function boundaries), within an
+      _IterationStatement_ or a _SwitchStatement_.
 
--   The program contains a BREAK statement with the optional
-      _Identifier_, where _Identifier_ does not appear in the label set
-      of an enclosing (but not crossing function boundaries)
-      _Statement_.
+_BreakStatement_ : BREAK [no _LineTerminator_ here] _Identifier_;
 
-A _BreakStatement_ without an _Identifier_ is evaluated as follows:
+-   It is a Syntax Error if _Identifier_ does not appear in the
+      _CurrentLabelSet_ of an enclosing (but not crossing function
+      boundaries) _Statement_.
 
-A _BreakStatement_ with an _Identifier_ is evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
+
+_BreakStatement_ : BREAK ;
+
+_BreakStatement_ : BREAK [no _LineTerminator_ here] _Identifier_;
 
 Syntax
 
@@ -8348,15 +9220,31 @@ ReturnStatement :
 RETURN ;
 RETURN [no LineTerminator here] Expression ;
 
-Semantics
-
-An ECMAScript program is considered syntactically incorrect if it
-contains a RETURN statement that is not within a _FunctionBody_. A
-RETURN statement causes a function to cease execution and return a value
-to the caller. If _Expression_ is omitted, the return value is
+NOTE A RETURN statement causes a function to cease execution and return
+a value to the caller. If _Expression_ is omitted, the return value is
 UNDEFINED. Otherwise, the return value is the value of _Expression_.
 
-A _ReturnStatement_ is evaluated as follows:
+STATIC SEMANTICS
+
+STATIC SEMANTICS: EARLY ERRORS
+
+-   It is a Syntax Error if a RETURN statement that is not within a
+    _FunctionBody_.
+
+RUNTIME SEMANTICS: EVALUATION
+
+_ReturnStatement_ : RETURN ;
+
+_ReturnStatement_ : RETURN [no _LineTerminator_ here] _Expression_;
+
+1.  Let _exprRef_ be the result of evaluating _Expression_.
+
+2.  Let _exprValue_ be GetValue(_exprRef_).
+
+3.  If _exprValue_ is an abrupt completion, return _exprValue_.
+
+4.  Return Completion {[[type]]: return, [[value]]: _exprValue_,
+    [[target]]: empty}.
 
 Syntax
 
@@ -8369,21 +9257,24 @@ object to the lexical environment of the current execution context. It
 then executes a statement using this augmented lexical environment.
 Finally, it restores the original lexical environment.
 
-Semantics
+STATIC SEMANTICS
 
-The static semantics of the production _WithStatement_ : WITH (
-_Expression_ ) _Statement_ are:
+STATIC SEMANTICS: EARLY ERRORS
+
+_WithStatement_ : WITH ( _Expression_ ) _Statement
 
 -   It is a Syntax Error if the code that matches this production is
-    contained in static code.
+    contained in strict code.
 
-The VarDeclaredNames of the production _WithStatement_ : WITH (
-_Expression_ ) _Statement_ is determined as follows:
+STATIC SEMANTICS: VARDECLAREDNAMES
+
+_WithStatement_ : WITH ( _Expression_ ) _Statement
 
 1.  Return the VarDeclaredNames of _Statement_.
 
-The production _WithStatement_ : WITH ( _Expression_ ) _Statement_ is
-evaluated as follows:
+RUNTIME SEMANTICS: EVALUATION
+
+_WithStatement_ : WITH ( _Expression_ ) _Statement
 
 NOTE No matter how control leaves the embedded _Statement_, whether
 normally or by some form of abrupt completion or exception, the
@@ -8415,20 +9306,15 @@ DEFAULT : StatementList~opt~
 
 STATIC SEMANTICS: EARLY ERRORS
 
-_CaseBlock_ : { _CaseClauses_ } are:
+_CaseBlock_ : { _CaseClauses_ }
 
 -   It is a Syntax Error if the LexicallyDeclaredNames of _CaseClauses_
-    contains any duplicate entires.
+    contains any duplicate entiries.
 
 -   It is a Syntax Error if any element of the LexicallyDeclaredNames of
     _CaseClauses_ also occurs in the VarDeclaredNames of _CaseClauses_.
 
-_CaseClause_ : CASE _Expression_ : _StatementList
-
--   It is a Syntax Error if _StatementList_ includes a
-    _StatementListItem_ : _FunctionDeclaration_ production and the
-    source code matching this _CaseClause_ production is not contained
-    in extended code.
+-   
 
 STATIC SEMANTICS: LEXICALDECLARATIONS
 
@@ -8590,23 +9476,22 @@ _DefaultClause_ : DEFAULT : _StatementList_~opt~
 
 2.  Else return a new empty List.
 
+RUNTIME SEMANTICS: CASE EVALUATION
+
+  With argument _input_.
+
+_CaseBlock_ : { _CaseClauses_~opt~ }
+
+_CaseBlock_ : { _CaseClauses_~opt~ _DefaultClause CaseClauses_~opt~ }
+
 RUNTIME SEMANTICS: EVALUATION
 
-The production _SwitchStatement_ : SWITCH ( _Expression_ ) _CaseBlock_
-is evaluated as follows:
+_SwitchStatement_ : SWITCH ( _Expression_ ) _CaseBlock
 
 NOTE No matter how control leaves the _SwitchStatement_ the
 LexicalEnvironment is always restored to its former state.
 
-The production _CaseBlock_ : { _CaseClauses_~opt~ } is given an input
-parameter, _input_, and is evaluated as follows:
-
-The production _CaseBlock_ : { _CaseClauses_~opt~ _DefaultClause
-CaseClauses_~opt~ } is given an input parameter, _input_, and is
-evaluated as follows:
-
-The production _CaseClause_ : CASE _Expression_ : _StatementList_~opt~
-is evaluated as follows:
+_CaseClause_ : CASE _Expression_ : _StatementList_~opt~
 
 NOTE Evaluating _CaseClause_ does not execute the associated
 _StatementList_. It simply evaluates the _Expression_ and returns the
@@ -8619,36 +9504,70 @@ LabelledStatement :
 
 Identifier : Statement
 
-Semantics
-
 NOTE A _Statement_ may be prefixed by a label. Labelled statements are
 only used in conjunction with labelled BREAK and CONTINUE statements.
-ECMAScript has no GOTO statement.
+ECMAScript has no GOTO statement. A _Statement_ can be part of a
+_LabelledStatement_, which itself can be part of a _LabelledStatement_,
+and so on. The labels introduced this way are collectively referred to
+as the “current label set” when describing the semantics of individual
+statements. A _LabelledStatement_ has no semantic meaning other than the
+introduction of a label to a _label set_. The label set of an
+_IterationStatement_ or a _SwitchStatement_ initially contains the
+single element EMPTY. The label set of any other statement is initially
+empty.
 
-An ECMAScript program is considered syntactically incorrect if it
-contains a _LabelledStatement_ that is enclosed by a _LabelledStatement_
-with the same _Identifier_ as label. This does not apply to labels
-appearing within the body of a _FunctionDeclaration_ that is nested,
-directly or indirectly, within a labelled statement.
+STATIC SEMANTICS: EARLY ERRORS
 
-The VarDeclaredNames of the production _DefaultCase_ : _Identifier_ :
-_Statement_ is determined as follows:
+-   It is a Syntax Error if a _LabelledStatement_ is enclosed by a
+    _LabelledStatement_ with the same _Identifier_ as label. This does
+    not apply to labels appearing within the body of a
+    _FunctionDeclaration_ that is nested, directly or indirectly, within
+    a labelled statement.
+
+STATIC SEMANTICS: VARDECLAREDNAMES
+
+_LabelledStatement_ : _Identifier_ : _Statement
 
 1.  Return the VarDeclaredNames of _Statement_.
 
-The production _Identifier_ : _Statement_ is evaluated by adding
-_Identifier_ to the label set of _Statement_ and then evaluating
-_Statement_. If the _LabelledStatement_ itself has a non-empty label
-set, these labels are also added to the label set of _Statement_ before
-evaluating it. If the result of evaluating _Statement_ is (BREAK, _V_,
-_L_) where _L_ is equal to _Identifier_, the production results in
-(NORMAL, _V_, EMPTY).
+RUNTIME SEMANTICS: LABELLED EVALUATION
 
-Prior to the evaluation of a _LabelledStatement_, the contained
-_Statement_ is regarded as possessing an empty label set, unless it is
-an _IterationStatement_ or a _SwitchStatement_, in which case it is
-regarded as possessing a label set consisting of the single element,
-EMPTY.
+  With argument _labelSet_.
+
+_LabelledStatement_ : _Identifier_ : _Statement
+
+1.  Let _label_ be the StringValue of _Identifier_.
+
+2.  Let _newLabelSet_ be a new List containing _label_ and the elements
+    of _labelSet_.
+
+3.  If Statement is either _LabelledStatement_ or _BreakableStatement_,
+    then
+
+    a.  Let _stmtResult_ be the result of performing Labelled Evaluation
+        of _Statement_ with argument _newLabelSet_.
+
+4.  Else,
+
+    a.  Let _stmtResult_ be the result of evaluating _Statement_.
+
+5.  If _stmtResult_.[[type]] is BREAK and _stmtResult_.[[target]] is the
+    same value as _label_, then
+
+    a.  Let result be NormalCompletion(_stmtResult_.[[value]]).
+
+6.  Else, let _result_ be _stmtResult_.
+
+7.  Return _result_.
+
+RUNTIME SEMANTICS: EVALUATION
+
+_LabelledStatement_ : _Identifier_ : _Statement
+
+1.  Let _newLabelSet_ be a new empty List.
+
+2.  Return the result of performing Labelled Evaluation of this
+    _LabelledStatement_ wth argument _newLabelSet_.
 
 Syntax
 
@@ -8682,7 +9601,7 @@ CatchParameter :
 BindingIdentifier~
 ~BindingPattern
 
-The TRY statement encloses a block of code in which an exceptional
+NOTE The TRY statement encloses a block of code in which an exceptional
 condition can occur, such as a runtime error or a THROW statement. The
 CATCH clause provides the exception-handling code. When a catch clause
 catches an exception, its _Identifier_ is bound to that exception.
@@ -8695,8 +9614,7 @@ _Catch_ : CATCH ( _CatchParameter_ ) _Block
     _CatchParameter_ also occurs in the LexicallyDeclaredNames of
     _Block_.
 
--   It is a Syntax Error if the code that matches this production is
-    contained in extended code and any element of the BoundNames of
+-   It is a Syntax Error if any element of the BoundNames of
     _CatchParameter_ also occurs in the VarDeclaredNames of _Block_.
 
 STATIC SEMANTICS: BOUNDNAMES
@@ -8745,27 +9663,29 @@ _Finally_ : FINALLY _Block
 
 1.  Return the VarDeclaredNames of _Block_.
 
-RUNTIME SEMANTICS: BINDING INITIALIZATION
+RUNTIME SEMANTICS: BINDING INITIALISATION
 
-  With arguments _value_ and _enviornment_.
+  With arguments _value_ and _environment_.
 
 NOTE UNDEFINED is passed for _environment_ to indicate that a PutValue
-operation should be used to assign the initialization value. This is the
+operation should be used to assign the initialisation value. This is the
 the case for VAR statements formal parameter lists of non-strict
 functions. In those cases a lexical binding is hosted and preinitialized
 prior to evaluation of its initializer.
 
 _CatchParameter_: _BindingIdentifier
 
-1.  Perform Binding Initialization for _BindingIdentifier_ passing
-    _value_ and _enviornment_ as the arguments.
+1.  Return the result of performing Binding Initialisation for
+    _BindingIdentifier_ passing _value_ and _environment_ as the
+    arguments.
 
 _CatchParameter_: _BindingPattern
 
 1.  Let _exceptionObj_ be ToObject(_value_).
 
-2.  Perform Binding Initialization for _BindingPattern_ passing
-    _exceptionObj_ and _enviornment_ as the arguments.
+2.  Return the result of performing Binding Initialisation for
+    _BindingPattern_ passing _exceptionObj_ and _environment_ as the
+    arguments.
 
 RUNTIME SEMANTICS: CATCH CLAUSE EVALUATION
 
@@ -8855,32 +9775,20 @@ and
 _FunctionExpression_ : FUNCTION _BindingIdentifier_~opt~ (
 _FormalParameterList_ ) { _FunctionBody_ }
 
--   It is a Syntax Error if the source code matching this production is
-    extended code and the BoundNames of _BindingIdentifier_ also occurs
-    in the VarDeclaredNames of _FunctionBody_.
+-   -   -   It is a Syntax Error if the any element of the
+    LexicallyDeclaredNames of _FormalParameterList_ also occurs in the
+    VarDeclaredNames of _FunctionBody_.
 
--   It is a Syntax Error if the source code matching this production is
-    extended code and the BoundNames of _BindingIdentifier_ also occurs
-    in the LexicallyDeclaredNames of _FunctionBody_.
-
--   It is a Syntax Error if the source code matching this production is
-    extended code and any element of the LexicallyDeclaredNames of
-    _FormalParameterList_ also occurs in the VarDeclaredNames of
-    _FunctionBody_.
-
--   It is a Syntax Error if the source code matching this production is
-    extended code and any element of the BoundNames of
+-   It is a Syntax Error if any element of the BoundNames of
     _FormalParameterList_ also occurs in the LexicallyDeclaredNames of
     _FunctionBody_.
 
 _FunctionBody_ : _StatementList 
 
--   It is a Syntax Error if the source code matching this production is
-    extended code and the LexicallyDeclaredNamesBoundNames of
-    _StatementList_ contains any duplicate entires.
+-   It is a Syntax Error if the LexicallyDeclaredNames of
+    _StatementList_ contains any duplicate entiries.
 
--   It is a Syntax Error if the source code matching this production is
-    extended code and any element of the LexicallyDeclaredNames of
+-   It is a Syntax Error if any element of the LexicallyDeclaredNames of
     _StatementList_ also occurs in the VarDeclaredNames of
     _StatementList_.
 
@@ -9009,6 +9917,13 @@ _FormalParameter_ : _BindingElement
 
 1.  Return HasInitialiser of _BindingElement_.
 
+STATIC SEMANTICS: ISCONSTANTDECLARATION
+
+_FunctionDeclaration_ : FUNCTION _BindingIdentifier_ (
+_FormalParameterList_ ) { _FunctionBody_ }
+
+1.  Return FALSE.
+
 STATIC SEMANTICS: LEXICALLYDECLAREDNAMES
 
 FunctionBody : [empty]
@@ -9034,75 +9949,84 @@ FunctionBody : StatementList
 
 1.  Return the VarDeclaredNames of _StatementList_.
 
-RUNTIME SEMANTICS: BINDING INITIALIZATION
+RUNTIME SEMANTICS: BINDING INITIALISATION
 
-  With parameters _value_ and _enviornment_ and optional parameter
+  With parameters _value_ and _environment_ and optional parameter
   _index_.
 
 NOTE When UNDEFINED is passed for _environment_ it indicates that a
-PutValue operation should be used to assign the initialization value.
+PutValue operation should be used to assign the initialisation value.
 This is the the case for formal parameter lists of non-strict functions.
 In that case the formal parameter bindings are preinitialized in order
 to deal with the possibility of multiple parameters with the same name.
 
 FormalParameterList : [empty]
 
-1.  Return.
+1.  Return NormalCompletion(empty).
 
 FormalParameterList : FunctionRestParameter
 
-1.  Perform Indexed Binding Initialization for _FunctionRestParameter
-    using _value_, _lenValue_, 0, and _environment_ as the arguments.
+1.  Return the result of performing Indexed Binding Initialisation for
+    _FunctionRestParameter_ using _value_, _lenValue_, 0, and
+    _environment_ as the arguments.
 
-2.  Return.
+2.  .
 
 FormalParameterList : FormalsList
 
 1.  Asset: _value_ is a new created arguments object and hence it has a
-    valid integer valued "length" property.
+    valid integer valued "LENGTH" property.
 
 2.  Let _lenValue_ be the result of calling the [[Get]] internal method
-    of _value_ with argument "length".
+    of _value_ with argument "LENGTH".
 
-3.  Perform Indexed Binding Initialization for _FormalsList_ using
-    _value_, _lenValue_, 0, and _environment_ as the arguments.
+3.  Return the result of performing Indexed Binding Initialisation for
+    _FormalsList_ using _value_, _lenValue_.[[value]], 0, and
+    _environment_ as the arguments.
 
-4.  Return.
+4.  
 
 FormalParameterList : FormalsList , FunctionRestParameter
 
 1.  Let _restIndex_ be the result of performing Indexed Binding
-    Initialization for _FormalsList_ using _value_, _lenValue_, 0, and
+    Initialisation for _FormalsList_ using _value_, _lenValue_, 0, and
     _environment_ as the arguments.
 
-2.  Perform Indexed Binding Initialization for _FunctionRestParameter
-    using _value_, _lenValue_, _restIndex_, and _environment_ as the
-    arguments.
+2.  ReturnIfAbrupt(_restIndex_).
 
-3.  Return.
+3.  Return the result of performing Indexed Binding Initialisation for
+    _FunctionRestParameter_ using _value_, _lenValue_,
+    _restIndex_.[[value]], and _environment_ as the arguments.
 
-RUNTIME SEMANTICS: INDEXED BINDING INITIALIZATION
+4.  
+
+RUNTIME SEMANTICS: INDEXED BINDING INITIALISATION
 
   With parameters _array_, _arrayLength, nextIndex,_ and _environment_.
 
-FormalList : FormalParameter
+FormalsList : FormalParameter
 
-1.  Perform Binding Initialization for _FormalParameter_ using _value_,
-    _env_, and _index_ as the arguments.
-
-2.  Return _index_ + 1.
-
-FormalList : FormalsList , FormalParameter
-
-1.  Let _lastIndex_ be the result of performing Indexed Binding
-    Initialization for _FormalsList_ using _value_, _lenValue_,
-    _nextIndex_, and _environment_ as the arguments.
-
-2.  Perform Indexed Binding Initialization for _FormalParameter_ using
-    _value_, _lenValue_, _lastIndex_, and _environment_ as the
+1.  Let _status_ be the result of performing Binding Initialisation for
+    _FormalParameter_ using _value_, _env_, and _index_ as the
     arguments.
 
-3.  Return _lastIndex_ + 1.
+2.  ReturnIfAbrupt(_status_).
+
+3.  Return _index_ + 1.
+
+FormalsList : FormalsList , FormalParameter
+
+1.  Let _lastIndex_ be the result of performing Indexed Binding
+    Initialisation for _FormalsList_ using _value_, _lenValue_,
+    _nextIndex_, and _environment_ as the arguments.
+
+2.  Let status be the result of performing Indexed Binding
+    Initialisation for _FormalParameter_ using _value_, _lenValue_,
+    _lastIndex_, and _environment_ as the arguments.
+
+3.  ReturnIfAbrupt(status).
+
+4.  Return _lastIndex_ + 1.
 
 FunctionRestParameter : ... BindingIdentifier
 
@@ -9131,14 +10055,14 @@ FunctionRestParameter : ... BindingIdentifier
 
     f.  Let _nextIndex_ = _nextIndex_ +1.
 
-4.  Perform Binding Initialization for _BindingIdentifer_ using _A_ and
-    _environment_ as arguments.
+4.  Return the result of performing Binding Initialisation for
+    _BindingIdentifer_ using _A_ and _environment_ as arguments.
 
 FormalParameter : BindingElement
 
-1.  Perform Indexed Binding Initialization for _BindingElement_ using
-    _array_, _arrayLength_, _nextIndex_, and _environment_ as the
-    arguments.
+1.  Return the result of performing Indexed Binding Initialisation for
+    _BindingElement_ using _array_, _arrayLength_, _nextIndex_, and
+    _environment_ as the arguments.
 
 RUNTIME SEMANTICS: EVALUATION
 
@@ -9182,44 +10106,42 @@ defined once as follows:
 
 Syntax
 
+GeneratorDeclaration :
+
+FUNCTION * BindingIdentifier ( FormalParameterList ) { FunctionBody }
+
+GeneratorExpression :
+
+FUNCTION * BindingIdentifier~opt~ ( FormalParameterList ) { FunctionBody
+}
+
+Syntax
+
 Program :
 
-SourceElements~opt~
+ProgramBody~opt~
 
-SourceElements :
+ProgramBody :
 
-SourceElement
-SourceElements SourceElement
-
-SourceElement :
-
-Statement
-FunctionDeclaration
+StatementList
 
 Semantics
 
-The production _Program_ : _SourceElements_~opt~ is evaluated as
-follows:
+The production _Program_ : _ProgramBody_~opt~ is evaluated as follows:
 
 NOTE The processes for initiating the evaluation of a _Program_ and for
 dealing with the result of such an evaluation are defined by an
 ECMAScript implementation and not by this specification.
 
-The production _SourceElements_ : _SourceElements_ _SourceElement_ is
-evaluated as follows:
-
-The production _SourceElement_ : _Statement_ is evaluated as follows:
-
-The production _SourceElement_ : _FunctionDeclaration_ is evaluated as
-follows:
+The production _ProgramBody_ : _StatementList_ is evaluated as follows:
 
 A Directive Prologue is the longest sequence of _ExpressionStatement_
-productions occurring as the initial _SourceElement_ productions of a
-_Program_ or as the initial _StatementListItem_ productions of a
-_FunctionBody_ and where each _ExpressionStatement_ in the sequence
-consists entirely of a _StringLiteral_ token followed a semicolon. The
-semicolon may appear explicitly or may be inserted by automatic
-semicolon insertion. A Directive Prologue may be an empty sequence.
+productions occurring as the initial _StatementListItem_ productions of
+a _ProgramBody_ or _FunctionBody_ and where each _ExpressionStatement_
+in the sequence consists entirely of a _StringLiteral_ token followed a
+semicolon. The semicolon may appear explicitly or may be inserted by
+automatic semicolon insertion. A Directive Prologue may be an empty
+sequence.
 
 A Use Strict Directive is an _ExpressionStatement_ in a Directive
 Prologue whose _StringLiteral_ is either the exact character sequences
@@ -9726,6 +10648,11 @@ Table 23 — Tags for Classified Native Objects
                           
 
 When the TOLOCALESTRING method is called, the following steps are taken:
+
+1.  Let _O_ be the THIS value.
+
+2.  3.  4.  Return the result of calling Invoke with arguments
+    "TOSTRING", _O_, and an empty arguments List.
 
 NOTE 1 This function is provided to give all Objects a generic
 TOLOCALESTRING interface, even though not all may use it. Currently,
@@ -12206,7 +13133,8 @@ represented by this Date object, that is, the value of the
 The initial value of DATE.PROTOTYPE.CONSTRUCTOR is the built-in DATE
 constructor.
 
-This function returns a String value. The contents of the String are
+This function returns a String value. If this time value is NaN, the
+String value is ″INVALID DATE", otherwise the contents of the String are
 implementation-dependent, but are intended to represent the Date in the
 current time zone in a convenient, human-readable form.
 
@@ -13346,8 +14274,8 @@ Indicates a numeric value has exceeded the allowable range. See
 15.4.2.2, 15.4.5.1, 15.7.4.2, 15.7.4.5, 15.7.4.6, 15.7.4.7, and
 15.9.5.43.
 
-Indicate that an invalid reference value has been detected. See 8.7.1,
-8.7.2, 10.2.1, 10.2.1.1.4, 10.2.1.2.4, and 11.13.1.
+Indicate that an invalid reference value has been detected. See 8.9.1,
+8.9.2, 10.2.1, 10.2.1.1.4, 10.2.1.2.4, and 11.13.1.
 
 Indicates that a parsing error has occurred. See 11.1.5, 11.3.1, 11.3.2,
 11.4.1, 11.4.4, 11.4.5, 11.13.1, 11.13.2, 12.2.1, 12.10.1, 12.14.1,
@@ -13355,7 +14283,7 @@ Indicates that a parsing error has occurred. See 11.1.5, 11.3.1, 11.3.2,
 15.10.2.19, 15.10.4.1, and 15.12.2.
 
 Indicates the actual type of an operand is different than the expected
-type. See 8.6.2, 8.7.2, 8.10.5, 8.12.5, 8.12.7, 8.12.8, 8.12.9, 9.9,
+type. See 8.6.2, 8.9.2, 8.10.5, 8.12.5, 8.12.7, 8.12.8, 8.12.9, 9.9,
 9.10, 10.2.1, 10.2.1.1.3, 10.6, 11.2.2, 11.2.3, 11.4.1, 11.8.6, 11.8.7,
 11.3.1, 13.2, 13.2.3, 15, 15.2.3.2, 15.2.3.3, 15.2.3.4, 15.2.3.5,
 15.2.3.6, 15.2.3.7, 15.2.3.8, 15.2.3.9, 15.2.3.10, 15.2.3.11, 15.2.3.12,
@@ -15123,6 +16051,137 @@ The Function object that is the initial value of
 DATE.PROTOTYPE.TOGMTSTRING is the same Function object that is the
 initial value of DATE.PROTOTYPE.TOUTCSTRING.
 
+
+Other Additional Features
+
+The __proto__ pseudo property.
+
+Object.prototype.__proto__
+
+The initial value of the __PROTO__ property of the Object prototype
+object is a data property whose initial value is NULL. This property
+initially has the attributes { [[Writable]]: TRUE, [[Enumerable]]:
+FALSE, [[Configurable]]: TRUE }.
+
+Manipulations of this property as tracked by the Boolean valued
+primordial internal variable UnderscoreProtoEnabled. The default initial
+value of UnderscoreProtoEnabled is true only if this property is
+initially present on the primordial Object prototype object.
+
+NOTE Any modification of this property or its attributes causes
+UnderscoreProtoEnabled to be set to FALSE.
+
+ Changes To Internal Methods__
+
+The definition of the [[Get]] internal method given in 8.12.3 is
+replaced with the following:
+
+1.  If _P_ is the string value "__PROTO__" and UnderscoreProtoEnabled is
+    TRUE, then
+
+    a.  Let _desc_ be the result of calling the [[GetProperty]] internal
+        method of _O_ with property name _P_.
+
+    b.  If _desc_ is not UNDEFINED and was create by step 1.a to
+        describe the property defined in B.3.1.1 then,
+
+        i.  Return the value of the [[Prototype]] internal property of
+            _O_.
+
+2.  Continue by executing the steps of 8.12.3 starting with step 1.
+
+The definition of the [[Put]] internal method given in 8.12.5 is
+replaced with the following:
+
+1.  If _P_ is the string value "__PROTO__" and UnderscoreProtoEnabled is
+    TRUE and _O_ is not the standard built-in Object prototype object,
+    then
+
+    a.  Let _desc_ be the result of calling the [[GetProperty]] internal
+        method of _O_ with property name _P_.
+
+    b.  If _desc_ is not UNDEFINED and was create by step 1.a to
+        describe the property defined in B.3.1.1 then,
+
+        i.  If the type of _V_ is neither Object or Null, return
+
+        ii. Set the value of the [[Prototype]] internal property of O to
+            V.
+
+        iii. Return.
+
+2.  Continue by executing the steps of 8.12.5 starting with step 1.
+
+The definition of the [[Delete]] internal method given in 8.12.7 is
+replaced with the following:
+
+1.  If UnderscoreProtoEnabled is TRUE and _P_ is the string value
+    "__PROTO__" and _O_ is the standard built-in Object prototype
+    object, then
+
+    a.  Set UnderscoreProtoEnabled to FALSE.
+
+2.  Continue by executing the steps of 8.12.7 starting with step 1.
+
+The definition of the [[DefineOwnProperty]] internal method given in
+8.12.9 is replaced with the following:
+
+1.  If UnderscoreProtoEnabled is TRUE and _P_ is the string value
+    "__PROTO__" and _O_ is the standard built-in Object prototype
+    object, then
+
+    a.  If any attribute contained in _Desc_ is not present or has a
+        different value from the corresponding attribute in {
+        [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE
+        }then,
+
+        i.  Set UnderscoreProtoEnabled to FALSE.
+
+2.  Continue by executing the steps of 8.12.9 starting with step 1.
+
+__proto___ Object Initialisers 
+
+Definitions of two algorithms in 11.1.5 are replaced with the following:
+
+The production _PropertyNameAndValueList_ : _PropertyAssignment_ is
+evaluated as follows:
+
+1.  Let _obj_ be the result of creating a new object as if by the
+    expression NEW OBJECT() where OBJECT is the standard built-in
+    constructor with that name.
+
+2.  Let _propId_ be the result of evaluating _PropertyAssignment_.
+
+3.  If _propId_.name is the string value "__PROTO__" and
+    UnderscoreProtoEnabled is TRUE and
+    IsDataDescriptor(_propId_.descriptor) is TRUE, then
+
+    a.  Let _v_ be _propId_.descriptor.value.
+
+    b.  If _desc be propId_.descriptor
+
+    c.  If the type of _v_ is either Object or Null,
+
+        i.  Set the value of the [[Prototype]] internal property of _O_
+            to _V_.
+
+        ii. Return.
+
+4.  Call the [[DefineOwnProperty]] internal method of _obj_ with
+    arguments _propId_.name, _propId_.descriptor, and FALSE.
+
+5.  Return _obj_.
+
+The production
+ _PropertyNameAndValueList_ : _PropertyNameAndValueList_ ,
+_PropertyAssignment
+is evaluated as follows:
+
+5.  Call the [[DefineOwnProperty]] internal method of _obj_ with
+    arguments _propId_.name, _propId_.descriptor, and FALSE.
+
+6.  Return _obj_.
+
 (informative)
 The Strict Mode of ECMAScript
 
@@ -15145,7 +16204,7 @@ THE STRICT MODE RESTRICTION AND EXCEPTIONS
       reference does not create a property in the global object. When a
       simple assignment occurs within strict mode code, its
       _LeftHandSide_ must not evaluate to an unresolvable Reference. If
-      it does a REFERENCEERROR exception is thrown (8.7.2). The
+      it does a REFERENCEERROR exception is thrown (8.9.2). The
       _LeftHandSide_ also may not be a reference to a data property with
       the attribute value {[[Writable]]:FALSE}, to an accessor property
       with the attribute value {[[Set]]:UNDEFINED}, nor to a
