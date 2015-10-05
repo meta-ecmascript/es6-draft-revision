@@ -204,7 +204,7 @@ _10.5_ _Declaration Binding Instantiation_
 
 _10.5.1_ _Base Code Top-Level Declaration Instantiation_ 
 
-_10.5.2_ _Exrtended Code Top-Level Declaration Instantiation_ 
+_10.5.2_ _Extended Code Top-Level Declaration Instantiation_ 
 
 _10.5.3_ _Function Declaration Instantiation_ 
 
@@ -238,7 +238,9 @@ _11.2.2_ _The new Operator_
 
 _11.2.3_ _Function Calls_ 
 
-_11.2.4_ _Argument Lists_ 
+_11.2.3_ _The super Keyword_ 
+
+_11.2.5_ _Argument Lists_ 
 
 _11.3_ _Postfix Expressions_ 
 
@@ -296,7 +298,7 @@ _11.8.1 Runtime Semantics_
 
 _11.9_ _Equality Operators_ 
 
-_11.1.1 Runtime Semantics_ 
+_11.9.1 Runtime Semantics_ 
 
 _11.10_ _Binary Bitwise Operators_ 
 
@@ -471,7 +473,7 @@ _15.8.2_ _Function Properties of the Math Object_
 _15.9_ _Date Objects_ 
 
 _15.9.1_ _Overview of Date Objects and Definitions of Abstract
-Operators_ 198
+Operators_ 200
 
 _15.9.2_ _The Date Constructor Called as a Function_ 
 
@@ -573,13 +575,13 @@ _B.2.6_ _Date.prototype.toGMTString ( )_
 _Annex C (informative) The Strict Mode of ECMAScript_ 
 
 _Annex D (informative) Corrections and Clarifications in the 5^th^
-Edition with Possible 3^rd^ Edition Compatibility Impact_ 270
+Edition with Possible 3^rd^ Edition Compatibility Impact_ 272
 
 _Annex E (informative) Additions and Changes in the 5^th^ Edition that
-Introduce Incompatibilities with the 3^rd^ Edition_ 272
+Introduce Incompatibilities with the 3^rd^ Edition_ 274
 
 _Annex F (informative) Technically Significant Corrections and
-Clarifications in the 5.1 Edition_ 276
+Clarifications in the 5.1 Edition_ 278
 
 Introduction
 
@@ -3182,25 +3184,30 @@ Table 10 — Values of the [[NativeBrand]] Internal Property
   NativeArguments       Arguments objects   
                                             
 
-The Reference type is used to explain the behaviour of such operators as
-DELETE, TYPEOF, and the assignment operators. For example, the left-hand
-operand of an assignment is expected to produce a reference. The
-behaviour of assignment could, instead, be explained entirely in terms
-of a case analysis on the syntactic form of the left-hand operand of an
-assignment operator, but for one difficulty: function calls are
-permitted to return references. This possibility is admitted purely for
-the sake of host objects. No built-in ECMAScript function defined by
-this specification returns a reference and there is no provision for a
-user-defined function to return a reference. (Another reason not to use
-a syntactic case analysis is that it would be lengthy and awkward,
-affecting many parts of the specification.)
+NOTE The Reference type is used to explain the behaviour of such
+operators as DELETE, TYPEOF, and the assignment operators. For example,
+the left-hand operand of an assignment is expected to produce a
+reference. The behaviour of assignment could, instead, be explained
+entirely in terms of a case analysis on the syntactic form of the
+left-hand operand of an assignment operator, but for one difficulty:
+function calls are permitted to return references. This possibility is
+admitted purely for the sake of host objects. No built-in ECMAScript
+function defined by this specification returns a reference and there is
+no provision for a user-defined function to return a reference. (Another
+reason not to use a syntactic case analysis is that it would be lengthy
+and awkward, affecting many parts of the specification.)
 
 A REFERENCE is a resolved name binding. A Reference consists of three
 components, the _base_ value, the _referenced name_ and the Boolean
-valued _strict reference_ flag. The base value is either UNDEFINED, an
+valued _strict reference_ flag. The _base_ value is either UNDEFINED, an
 Object, a Boolean, a String, a Number, or an environment record
-(10.2.1). A base value of UNDEFINED indicates that the reference could
-not be resolved to a binding. The referenced name is a String.
+(10.2.1). A _base_ value of UNDEFINED indicates that the Reference could
+not be resolved to a binding. The _referenced name_ is a String.
+
+A Super Reference is a Reference that is used to represents a name
+binding that was expressed using the SUPER keyword. A Super Reference
+has an additional _thisValue_ component and its _base_ value will never
+be an environment record.
 
 The following abstract operations are used in this specification to
 access the components of references:
@@ -3222,13 +3229,16 @@ access the components of references:
 -   IsUnresolvableReference(V). Returns TRUE if the base value is
     UNDEFINED and FALSE otherwise.
 
+-   IsSuperReference(V). Returns TRUE if this reference has a
+    _thisValue_ component.
+
 The following abstract operations are used in this specification to
 operate on references:
 
 The following [[Get]] internal method is used by GetValue when _V_ is a
-property reference with a primitive base value. It is called using
-_base_ as its THIS value and with property _P_ as its argument. The
-following steps are taken:
+property reference with a primitive base value. _base_ is the value the
+internal method is called upon with property name _P_ as its argument.
+The following steps are taken:
 
 NOTE The object that may be created in step 1 is not accessible outside
 of the above method. An implementation might choose to avoid the actual
@@ -3237,9 +3247,9 @@ access that uses this internal method can have visible effect is when it
 invokes an accessor function.
 
 The following [[Put]] internal method is used by PutValue when _V_ is a
-property reference with a primitive base value. It is called using
-_base_ as its THIS value and with property _P_, value _W_, and Boolean
-flag _Throw_ as arguments. The following steps are taken:
+property reference with a primitive base value. _base_ is the value the
+internal method is called upon with property name _P_, value _W_, and
+Boolean flag _Throw_ as arguments. The following steps are taken:
 
 NOTE The object that may be created in step 1 is not accessible outside
 of the above method. An implementation might choose to avoid the actual
@@ -4267,7 +4277,7 @@ is only accessible to the eval code.
 
 The following steps are performed when control enters the execution
 context for function code contained in function object _F_, a caller
-provided _argumentsList_ , and a caller provided _thisArg_:
+provided _argumentsList_, and a caller provided _thisArg_:
 
 NOTE When an execution context is established for evaluating
 non-function code that is base code declarations are instantiated in the
@@ -4281,20 +4291,23 @@ NOTE When an execution context is established for evaluating function
 code a new Declarative Environment Record is created and bindings for
 each formal parameter, and each function level variable, constant, or
 function declarated in the function are instantiated in the environment
-record.
+record. Formal parameters and functions are initialized as part of this
+process. All other bindings are initialized during execution of the
+function code.
 
 Function Declaration Instantiation is performed as follows using
-arguments _func_ and _env_. _func_ is the function object that for which
-the execution context is being established. _env_ is the declarative
-environment record in which bindings are to be created.
+arguments _func,_ _argumentsList_, and _env_. _func_ is the function
+object that for which the execution context is being established. _env_
+is the declarative environment record in which bindings are to be
+created.
 
 1.  Let _code_ be the value of the [[Code]] internal property of _func_.
 
 2.  Let _strict_ be be the value of the [[Strict]] internal property of
     _func_.
 
-3.  Let _FormalParameterList_ be the value of the
-    [[FormalParameterList]] internal property of _func_.
+3.  Let _formals_ be the value of the [[FormalParameterList]] internal
+    property of _func_.
 
 4.  Let _parameterNames_ be the BoundNames of _FormalParameterList_.
 
@@ -4318,7 +4331,36 @@ environment record in which bindings are to be created.
 
 6.  Let _declarations_ be the LexicalDeclarations of _code_.
 
-7.  For each element _d_ in _declarations_ do
+7.  If _strict_ is TRUE, then
+
+    a.  Let _ao_ be the result of CreateStrictArgumentsObject. with
+        argument _argumentsList._
+
+    b.  Perform Binding Initialization for _formals_ with _ao_ and _env_
+        as arguments.
+
+8.  Else,
+
+    a.  Let _names_ be BoundNames of _formals_.
+
+    b.  NOTE Because _F_ is a none strict function it is not extended
+        code. Hence _formals_ does not contain the names of any
+        destructuring _BindingProperties_, rest parameters, or
+        parameters with default value initialisers.
+
+    c.  Let _ao_ be the result of performing the abstract operation
+        CreateMappedArgumentsObject with arguments _names_, _env_, and
+        _argumentsList_.
+
+    d.  Perform Binding Initialization for _formals_ with _ao_ and
+        UNDEFINED as arguments.
+
+9.  NOTE Binding initialization for _formals_ is perform prior to to
+    instantiating any non-parameter declarations in order to ensure that
+    any such local declarations are not visible to any parameter
+    initialization code that may be evaluated.
+
+10. For each element _d_ in _declarations_ do
 
     a.  For each element _dn_ of the BoundNames of _d_ do
 
@@ -4337,13 +4379,15 @@ environment record in which bindings are to be created.
                 a.  Call _env_’s CreateMutableBinding concrete method
                     passing _dn_ and FALSE as the arguments.
 
-8.  Let _argumentsAlreadyDeclared_ be the result of calling _env’s
+11. Let _argumentsAlreadyDeclared_ be the result of calling _env’s
     HasBinding concrete method passing "ARGUMENTS" as the argument.
 
-9.  Let _hasArgumentsObject_ be the Boolean negation of
-    _argumentsAlreadyDeclared_.
+12. NOTE If _argumentsAlreadyDeclared_ is TRUE then the value of _ao_ is
+    not directly observable to ECMAScript code and need not actually
+    exist. In that case, its use in the above steps is strictly as a
+    device for specifying formal parameter initialization semantics.
 
-10. If _argumentsAlreadyDeclared_ is FALSE, then
+13. 14. If _argumentsAlreadyDeclared_ is FALSE, then
 
     a.  If _strict_ is TRUE, then
 
@@ -4355,9 +4399,12 @@ environment record in which bindings are to be created.
         i.  Call _env_’s CreateMutableBinding concrete method passing
             the String "ARGUMENTS" as the argument.
 
-11. Let _varNames_ be the VarDeclaredNames of _code_.
+    c.  Call _env_’s InitializeBinding concrete method passing
+        "ARGUMENTS" and _ao_ as arguments.
 
-12. For each String _varName_ in _varNames_, in list order do
+15. Let _varNames_ be the VarDeclaredNames of _code_.
+
+16. For each String _varName_ in _varNames_, in list order do
 
     a.  Let _alreadyDeclared_ be the result of calling _env’s_
         HasBinding concrete method passing _varName_ as the argument.
@@ -4375,9 +4422,9 @@ environment record in which bindings are to be created.
         ii. Call _env_’s InitializeBinding concrete method passing _fn_,
             and UNDEFINED as the arguments.
 
-13. Let _initializedFunctions_ be an emptyList.
+17. Let _initializedFunctions_ be an emptyList.
 
-14. For each _FunctionDeclaration_ _f_ in _declarations_, in reverse
+18. For each _FunctionDeclaration_ _f_ in _declarations_, in reverse
     list order do
 
     a.  NOTE If there are multiple _FunctionDeclarations_ for the same
@@ -4397,7 +4444,7 @@ environment record in which bindings are to be created.
         iii. Call _env_’s InitializeBinding concrete method passing
             _fn_, and _fo_ as the arguments.
 
-15. Return _hasArgumentsObject_.
+19. Return.
 
 NOTE When a _Block_ or _CaseBlock_ production contained in extended code
 is evaluated a new Declarative Environment Record is created and
@@ -4663,24 +4710,137 @@ ElementList :
 Elision~opt~ AssignmentExpression
 Elision~opt~ … AssignmentExpression
 ElementList , Elision~opt~ AssignmentExpression
-ElementList , Elision~opt~ … AssignmentExpression
+ElementList , Elision~opt~ SpreadElement
 
 Elision :
 
 ,
 Elision ,
 
-EARLY ERRORS
+SpreadElement :
 
-_ElementList_ : _Elision_~opt~ _… AssignmentExpression
+… AssignmentExpression
+
+STATIC SEMANTICS: EARLY ERRORS
+
+_SpreadElement_ : _… AssignmentExpression
 
 -   It is a Syntax Error if the source code parsed with this production
     is not extended code.
 
-_ElementList_ : _ElementList_ , _Elision_~opt~ _… AssignmentExpression
+-   
 
--   It is a Syntax Error if the source code parsed with this production
-    is not extended code.
+STATIC SEMANTICS: ELISION WIDTH
+
+_Elision_ : [empty]
+
+1.  Return the numeric value 0.
+
+_Elision_ : ,
+
+1.  Return the numeric value 1.
+
+_Elision_ : _Elision_ ,
+
+1.  Let _preceding_ be the Elision Width of _Elision_.
+
+2.  Return _preceding_+1.
+
+RUNTIME SEMANTICS: ARRAY ACCUMULATION
+
+  With parameters _array_ and _nextIndex_.
+
+_ElementList_ : _Elision_~opt~ _AssignmentExpression
+
+1.  Let _padding_ be the Elision Width of _Elision_~opt~.
+
+2.  Let _initResult_ be the result of evaluating _AssignmentExpression_.
+
+3.  Let _initValue_ be GetValue(_initResult_).
+
+4.  Call the [[DefineOwnProperty]] internal method of _array_ with
+    arguments ToString(ToUint32(_nextIndex+padding_)), the Property
+    Descriptor { [[Value]]: _initValue_, [[Writable]]: TRUE,
+    [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and FALSE.
+
+5.  Return _nextIndex+padding+_1.
+
+_ElementList_ : _Elision_~opt~ _SpreadElement
+
+1.  Let _padding_ be the Elision Width of _Elision_~opt~.
+
+2.  Return the result of performing Array Accumulation for
+    _SpreadElement_ with arguments _array_ and _nextIndex_+_padding_.
+
+_ElementList_ : _ElementList_ , _Elision_~opt~ _AssignmentExpression
+
+1.  Let _postIndex_ be the result of performing Array Accumulation for
+    _ElementList_ with arguments _array_ and _nextIndex_.
+
+2.  Let _padding_ be the Elision Width of _Elision_~opt~.
+
+3.  Let _initResult_ be the result of evaluating _AssignmentExpression_.
+
+4.  Let _initValue_ be GetValue(_initResult_).
+
+5.  Call the [[DefineOwnProperty]] internal method of _array_ with
+    arguments ToString(ToUint32((_postIndex_+_padding_)) and the
+    Property Descriptor { [[Value]]: _initValue_, [[Writable]]: TRUE,
+    [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and FALSE.
+
+6.  Return _postIndex_+_padding+_1.
+
+_ElementList_ : _ElementList_ , _Elision_~opt~ _SpreadElement
+
+1.  Let _postIndex_ be the result of performing Array Accumulation for
+    _ElementList_ with arguments _array_ and _nextIndex_.
+
+2.  Let _pad_ be the result of evaluating _Elision_~opt~; if not
+    present, use the numeric value zero.
+
+3.  Return the result of performing Array Accumulation for
+    _SpreadElement_ with arguments _array_ and _postIndex_+_padding_.
+
+_SpreadElement_ : … _AssignmentExpression
+
+1.  Let _spreadRef_ be the result of evaluating _AssignmentExpression_.
+
+2.  Let _spreadValue_ be GetValue(_spreadRef_).
+
+3.  Let _spreadObj_ be ToObject(_spreadValue_).
+
+4.  Let _lenVal_ be the result of calling the [[Get]] internal method of
+    _spreadObj_ with argument “LENGTH”.
+
+5.  Let _spreadLen_ be ToUint32(_lenVal_).
+
+6.  Let _n_=0;
+
+7.  Repeat, while _n_ < _spreadLen
+
+    a.  Let _exists_ be the result of calling the [[HasProperty]]
+          internal method of _spreadObj_ with ToString(_n_).
+
+    b.  If _exists_ is TRUE then,
+
+        i.  Let _v_ be the result of calling the [[Get]] internal method
+              of _spreadObj_ passing ToString(_n_) as the argument.
+
+        ii. Call the [[DefineOwnProperty]] internal method of _array_
+              with arguments ToString(ToUint32(_nextIndex)_), Property
+              Descriptor {[[Value]]: _v_, [[Writable]]: TRUE,
+              [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and FALSE.
+
+    c.  Let _n_ = _n_+1.
+
+    d.  Let _nextIndex_ = _nextIndex_ +1.
+
+8.  Return _nextIndex_.
+
+NOTE [[DefineOwnProperty]] is used to ensure that own properties are
+defined for the array even if the standard built-in Array prototype
+object has been modified in a manner that would preclude the creation of
+new own properties using [[Put]].
 
 RUNTIME SEMANTICS: EVALUATION
 
@@ -4690,8 +4850,7 @@ _ArrayLiteral_ : [ _Elision_~opt~ ]
     expression NEW ARRAY() where ARRAY is the standard built-in
     constructor with that name.
 
-2.  Let _pad_ be the result of evaluating _Elision_; if not present, use
-    the numeric value zero.
+2.  Let _pad_ be the Elision Width of _Elision_~opt~.
 
 3.  Call the [[Put]] internal method of _array_ with arguments "LENGTH",
     _pad_, and FALSE.
@@ -4700,167 +4859,55 @@ _ArrayLiteral_ : [ _Elision_~opt~ ]
 
 _ArrayLiteral_ : [ _ElementList_ ]
 
-1.  Return the result of evaluating _ElementList_.
+1.  Let _array_ be the result of creating a new object as if by the
+    expression NEW ARRAY() where ARRAY is the standard built-in
+    constructor with that name.
+
+2.  Let _len_ be result of performing Array Accumulation for
+    _ElementList_ with arguments _array_ and 0.
+
+3.  Call the [[Put]] internal method of _array_ with arguments "LENGTH",
+    _len_, and FALSE.
+
+4.  Return _array_.
 
 _ArrayLiteral_ : [ _ElementList_ , _Elision_~opt~ ]
 
-1.  Let _array_ be the result of evaluating _ElementList_.
-
-2.  Let _pad_ be the result of evaluating _Elision_; if not present, use
-    the numeric value zero.
-
-3.  Let _len_ be the result of calling the [[Get]] internal method of
-    _array_ with argument "LENGTH".
-
-4.  Call the [[Put]] internal method of _array_ with arguments "LENGTH",
-    ToUint32(_pad_+_len_), and FALSE.
-
-5.  Return _array_.
-
-_ElementList_ : _Elision_~opt~ _AssignmentExpression
-
 1.  Let _array_ be the result of creating a new object as if by the
     expression NEW ARRAY() where ARRAY is the standard built-in
     constructor with that name.
 
-2.  Let _firstIndex_ be the result of evaluating _Elision_; if not
-    present, use the numeric value zero.
+2.  3.  Let _len_ be result of performing Array Accumulation for
+    _ElementList_ with arguments _array_ and 0.
 
-3.  Let _initResult_ be the result of evaluating _AssignmentExpression_.
+4.  Let _pad_ be the Elision Width of _Elision_~opt~.
 
-4.  Let _initValue_ be GetValue(_initResult_).
-
-5.  Call the [[DefineOwnProperty]] internal method of _array_ with
-    arguments ToString(_firstIndex)_, the Property Descriptor {
-    [[Value]]: _initValue_, [[Writable]]: TRUE, [[Enumerable]]: TRUE,
-    [[Configurable]]: TRUE}, and FALSE.
-
-6.  Return _array_.
-
-_ElementList_ : _Elision_~opt~ _… AssignmentExpression
-
-1.  Let _array_ be the result of creating a new object as if by the
-    expression NEW ARRAY() where ARRAY is the standard built-in
-    constructor with that name.
-
-2.  Let _index_ be the result of evaluating _Elision_; if not present,
-    use the numeric value zero.
-
-3.  Let _spreadRef_ be the result of evaluating _AssignmentExpression_.
-
-4.  Let _spreadValue_ be GetValue(_spreadRef_).
-
-5.  Let _spreadObj_ be ToObject(_spreadValue_).
-
-6.  Let _lenVal_ be the result of calling the [[Get]] internal method of
-    _spreadObj_ with argument “LENGTH”.
-
-7.  Let _spreadLen_ be ToUint32(_lenVal_).
-
-8.  Let _n_=0;
-
-9.  Repeat, while _n_ < _spreadLen
-
-    a.  Let _exists_ be the result of calling the [[HasProperty]]
-          internal method of _spreadObj_ with ToString(_n_).
-
-    b.  If _exists_ is TRUE then,
-
-        i.  Let _v_ be the result of calling the [[Get]] internal method
-              of _spreadObj_ passing ToString(_n_) as the argument.
-
-        ii. Call the [[DefineOwnProperty]] internal method of _array_
-              with arguments ToString(ToUint32(_index)_), Property
-              Descriptor {[[Value]]: _v_, [[Writable]]: TRUE,
-              [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and FALSE.
-
-    c.  Let _n_ = _n_+1.
-
-    d.  Let _index_ = _index_ +1.
-
-10. Return _array_.
-
-_ElementList_ : _ElementList_ , _Elision_~opt~ _AssignmentExpression
-
-1.  Let _array_ be the result of evaluating _ElementList_.
-
-2.  Let _pad_ be the result of evaluating _Elision_; if not present, use
-    the numeric value zero.
-
-3.  Let _initResult_ be the result of evaluating _AssignmentExpression_.
-
-4.  Let _initValue_ be GetValue(_initResult_).
-
-5.  Let _len_ be the result of calling the [[Get]] internal method of
-    _array_ with argument "LENGTH".
-
-6.  Call the [[DefineOwnProperty]] internal method of _array_ with
-    arguments ToString(ToUint32((_pad_+_len_)) and the Property
-    Descriptor { [[Value]]: _initValue_, [[Writable]]: TRUE,
-    [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and FALSE.
+5.  6.  Call the [[Put]] internal method of _array_ with arguments
+    "LENGTH", ToUint32(_pad_+_len_), and FALSE.
 
 7.  Return _array_.
 
+1.  2.  3.  4.  5.  6.  
+
+1.  2.  3.  4.  5.  6.  7.  a.  b.  i.  ii. 
+
+    c.  d.  
+
+8.  
+
+1.  2.  3.  4.  5.  6.  7.  
+
 -   
 
-_ElementList_ : _ElementList_ , _Elision_~opt~ _… AssignmentExpression
+1.  2.  3.  4.  5.  6.  7.  8.  9.  10. a.  b.  i.  ii. 
 
-1.  Let _array_ be the result of evaluating _ElementList_.
+    c.  d.  
 
-2.  Let _pad_ be the result of evaluating _Elision_; if not present, use
-    the numeric value zero.
+11. 
 
-3.  Let _spreadRef_ be the result of evaluating _AssignmentExpression_.
+1.  
 
-4.  Let _spreadValue_ be GetValue(_spreadRef_).
-
-5.  Let _spreadObj_ be ToObject(_spreadValue_).
-
-6.  Let _index_ be the result of calling the [[Get]] internal method of
-    _array_ with argument "LENGTH".
-
-7.  Let _lenVal_ be the result of calling the [[Get]] internal method of
-    _spreadObj_ with argument “LENGTH”.
-
-8.  Let _spreadLen_ be ToUint32(_lenVal_).
-
-9.  Let _n_=0;
-
-10. Repeat, while _n_ < _spreadLen
-
-    a.  Let _exists_ be the result of calling the [[HasProperty]]
-          internal method of _spreadObj_ with ToString(_n_).
-
-    b.  If _exists_ is TRUE then,
-
-        i.  Let _v_ be the result of calling the [[Get]] internal method
-              of _spreadObj_ passing ToString(_n_) as the argument.
-
-        ii. Call the [[DefineOwnProperty]] internal method of _array_
-              with arguments ToString(ToUint32((_pad_+_index_)) and the
-              Property Descriptor { [[Value]]: _v_, [[Writable]]: TRUE,
-              [[Enumerable]]: TRUE, [[Configurable]]: TRUE}, and FALSE.
-
-    c.  Let _n_ = _n_+1.
-
-    d.  Let _index_ = _index_ +1.
-
-11. Return _array_.
-
-_Elision_ : ,
-
-1.  Return the numeric value 1.
-
-_Elision_ : _Elision_ ,
-
-1.  Let _preceding_ be the result of evaluating _Elision_.
-
-2.  Return _preceding_+1.
-
-NOTE [[DefineOwnProperty]] is used to ensure that own properties are
-defined for the array even if the standard built-in Array prototype
-object has been modified in a manner that would preclude the creation of
-new own properties using [[Put]].
+1.  2.  
 
 NOTE An object initialiser is an expression describing the
 initialisation of an Object, written in a form resembling a literal. It
@@ -4943,6 +4990,36 @@ _PropertyAssignment
      _PropertyAssignment_ : SET _PropertyName_ (
     _PropertySetParameterList_ ) { _FunctionBody_ }.
 
+_PropertyAssignment_ : _PropertyName_ ( _FormalParameterList_ ) {
+_FunctionBody_ }
+
+-   It is a Syntax Error if the source code parsed with this production
+    is not extended code.
+
+-   It is a Syntax Error if the PropName of _PropertyName_ also occurs
+    in the VarDeclaredNames of _FunctionBody_.
+
+-   It is a Syntax Error if the PropName of _PropertyName_ also occurs
+    in the LexicallyDeclaredNames of _FunctionBody_.
+
+-   It is a Syntax Error if any element of the LexicallyDeclaredNames of
+    _FormalParameterList_ also occurs in the VarDeclaredNames of
+    _FunctionBody_.
+
+-   It is a Syntax Error if any element of the BoundNames of
+    _FormalParameterList_ also occurs in the LexicallyDeclaredNames of
+    _FunctionBody_.
+
+_PropertyAssignment_ : GET _PropertyName_ () { _FunctionBody_ }
+
+-   It is a Syntax Error if the source code matching this production is
+    extended code and the PropName of _PropertyName_ also occurs in the
+    VarDeclaredNames of _FunctionBody_.
+
+-   It is a Syntax Error if the source code matching this production is
+    extended code and the PropName of _PropertyName_ also occurs in the
+    LexicallyDeclaredNames of _FunctionBody_.
+
 _PropertyAssignment_ : SET _PropertyName_ ( _PropertySetParameterList_ )
 { _FunctionBody_ }
 
@@ -5006,8 +5083,7 @@ STATIC SEMANTICS: PROPERTYDEFINITIONLIST(NAME)
 
 _PropertyAssignment_ : _PropertyName_ : _AssignmentExpression
 
-1.  If PropName of _PropertyAssignment_ is not _name_ return the empty
-    List.
+1.  If PropName of _PropertyName_ is not _name_ return the empty List.
 
 2.  Return a List containing _PropertyAssignment_.
 
@@ -5033,18 +5109,23 @@ _PropertyAssignment_ : _PropertyName_ : _AssignmentExpression
 
 1.  Return PropName of _PropertyName_.
 
+_PropertyAssignment_ : _PropertyName_ ( _FormalParameterList_ ) {
+_FunctionBody_ }
+
+1.  Return PropName of _PropertyName_.
+
 _PropertyAssignment_ : GET _PropertyName_ ( ) { _FunctionBody_ }
 
-1.  Return PropName(_PropertyName_).
+1.  Return PropName of _PropertyName_.
 
 _PropertyAssignment_ : SET _PropertyName_ ( _PropertySetParameterList_ )
 { _FunctionBody_ }
 
-1.  Return PropName(_PropertyName_).
+1.  Return PropName of _PropertyName_.
 
 _PropertyName_ : _IdentifierName
 
-1.  Return PropName(_IdentifierName_).
+1.  Return PropName of _IdentifierName_.
 
 _PropertyName_ : _StringLiteral
 
@@ -5069,20 +5150,23 @@ ObjectLiteral :
   { _PropertyNameAndValueList_ }_
   _{ _PropertyNameAndValueList_ , }
 
-1.  Return the result of evaluating _PropertyNameAndValueList_.
-
-_PropertyNameAndValueList_ : _PropertyAssignment
-
 1.  Let _obj_ be the result of creating a new object as if by the
     expression NEW OBJECT() where OBJECT is the standard built-in
     constructor with that name.
 
-2.  Let _propId_ be the result of evaluating _PropertyAssignment_.
+2.  Perform Property Definition Dvaluation of _PropertyNameAndValueList
+    with argument _obj_.
 
-3.  Call the [[DefineOwnProperty]] internal method of _obj_ with
-    arguments _propId_.name, _propId_.descriptor, and FALSE.
+3.  Return _obj_.
 
-4.  Return _obj_.
+RUNTIME SEMANTICS: PROPERTY DEFINITION EVALUATION
+
+  With parameter _object_.
+
+_PropertyNameAndValueList_ : _PropertyAssignment
+
+1.  2.  3.  4.  Perform Property Definition Dvaluation of
+    _PropertyAssignment_ with argument _object_.
 
 _PropertyNameAndValueList_ : _PropertyNameAndValueList_ ,
 _PropertyAssignment
@@ -5099,7 +5183,10 @@ _PropertyAssignment_ : _IdentifierName
 4.  Let _desc_ be the Property Descriptor{[[Value]]: _propValue_,
     [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
-5.  Return Property Identifier (_propName_, _desc_).
+5.  Call the [[DefineOwnProperty]] internal method of _object_ with
+    arguments _propName_, _desc_, and FALSE.
+
+6.  
 
 _PropertyAssignment_ : _PropertyName_ : _AssignmentExpression
 
@@ -5112,7 +5199,27 @@ _PropertyAssignment_ : _PropertyName_ : _AssignmentExpression
 4.  Let _desc_ be the Property Descriptor{[[Value]]: _propValue_,
     [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
-5.  Return Property Identifier (_propName_, _desc_).
+5.  Call the [[DefineOwnProperty]] internal method of _object_ with
+    arguments _propName_, _desc_, and FALSE.
+
+_PropertyAssignment_ : _PropertyName_ ( _FormalParameterList_ ) {
+_FunctionBody_ }
+
+1.  Let _propName_ be PropName of _PropertyName_.
+
+2.  Let _closure_ be the result of creating a new Function object as
+    specified in 13.2 using a _FormalParameterList_ : [empty] production
+    as the parameter list and body specified by _FunctionBody_. Pass in
+    the LexicalEnvironment of the running execution context as the
+    _Scope_. Pass in TRUE as the _Strict_ flag. Pass object as the
+    optional _homeObject_ argument and propName as the optional
+    _methodName_ argument.
+
+3.  Let _desc_ be the Property Descriptor{[[Get]]: _closure_,
+    [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
+
+4.  Call the [[DefineOwnProperty]] internal method of _object_ with
+    arguments _propName_, _desc_, and FALSE.
 
 _PropertyAssignment_ : GET _PropertyName_ ( ) { _FunctionBody_ }
 
@@ -5120,16 +5227,19 @@ _PropertyAssignment_ : GET _PropertyName_ ( ) { _FunctionBody_ }
 
 2.  Let _closure_ be the result of creating a new Function object as
     specified in 13.2 using a _FormalParameterList_ : [empty] production
-    as the parameter list and body specified by _FunctionBody_. Pass in
-    the LexicalEnvironment of the running execution context as the
-    _Scope_. Pass in TRUE as the _Strict_ flag if the
+    as the formal parameter list and body specified by _FunctionBody_.
+    Pass in the LexicalEnvironment of the running execution context as
+    the _Scope_. Pass in TRUE as the _Strict_ flag if the
     _PropertyAssignment_ is contained in strict code or if its
-    _FunctionBody_ is strict code.
+    _FunctionBody_ is strict code. Pass object as the optional
+    _homeObject_ argument and propName as the optional _methodName_
+    argument.
 
 3.  Let _desc_ be the Property Descriptor{[[Get]]: _closure_,
     [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
-4.  Return Property Identifier (_propName_, _desc_).
+4.  Call the [[DefineOwnProperty]] internal method of _object_ with
+    arguments _propName_, _desc_, and FALSE.
 
 _PropertyAssignment_ : SET _PropertyName_ ( _PropertySetParameterList_ )
 { _FunctionBody_ }
@@ -5142,12 +5252,15 @@ _PropertyAssignment_ : SET _PropertyName_ ( _PropertySetParameterList_ )
     Pass in the LexicalEnvironment of the running execution context as
     the _Scope_. Pass in TRUE as the _Strict_ flag if the
     _PropertyAssignment_ is contained in strict code or if its
-    _FunctionBody_ is strict code.
+    _FunctionBody_ is strict code. Pass object as the optional
+    _homeObject_ argument and propName as the optional _methodName_
+    argument.
 
 3.  Let _desc_ be the Property Descriptor{[[Set]]: _closure_,
     [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
-4.  Return Property Identifier (_propName_, _desc_).
+4.  Call the [[DefineOwnProperty]] internal method of _object_ with
+    arguments _propName_, _desc_, and FALSE.
 
 5.  
 
@@ -5181,12 +5294,9 @@ MemberExpression :
 PrimaryExpression
 MemberExpression [ Expression ]
 MemberExpression . IdentifierName
+MemberExpression <| TriangleLiteral
 SUPER [ Expression ]
 SUPER . IdentifierName
-MemberExpression <| SealedArrayLiteral
-MemberExpression <| SealedObjectLiteral
-MemberExpression <| FunctionExpression
-MemberExpression <| ValueLiteral
 NEW MemberExpression Arguments
 
 NewExpression :
@@ -5197,9 +5307,11 @@ NEW NewExpression
 CallExpression :
 
 MemberExpression Arguments
+SUPER Arguments
 CallExpression Arguments
 CallExpression [ Expression ]
 CallExpression . IdentifierName
+CallExpression <| TriangleLiteral
 
 Arguments :
 
@@ -5212,6 +5324,13 @@ AssignmentExpression
 ... AssignmentExpression
 ArgumentList , AssignmentExpression
 ArgumentList , ... AssignmentExpression
+
+TriangleLiteral :
+
+SealedArrayLiteral
+SealedObjectLiteral
+FunctionExpression
+ValueLiteral
 
 LeftHandSideExpression :
 
@@ -5337,9 +5456,67 @@ native ECMAScript object. Whether calling a host object can return a
 value of type Reference is implementation-dependent. If a value of type
 Reference is returned, it must be a non-strict Property Reference.
 
+Static SEMANTICS
+
+STATIC SEMANTICS: EARLY ERRORS
+
+MemberExpression :
+
+SUPER [ Expression ]
+SUPER . IdentifierName
+
+-   It is a Syntax Error if the source code parsed with this production
+    is global code code that is not eval code.
+
+-   It is a SyntaxError if the source code parsed with this production
+    is eval code that is also global code and the source code is not
+    being processed by a direct call to eval that is contained in
+    function code.
+
+-   It is a Syntax Error if the source code parsed with this production
+    is not extended code.
+
+_CallExpression_ : SUPER _Arguments
+
+-   It is a Syntax Error if the source code parsed with this production
+    is global code code that is not eval code.
+
+-   It is a SyntaxError if the source code parsed with this production
+    is eval code that is also global code and the source code is not
+    being processed by a direct call to eval that is contained in
+    function code.
+
+-   It is a Syntax Error if the source code parsed with this production
+    is not extended code.
+
+RUNTIME SEMANTICS: EVALUATION
+
+_MemberExpression_ : SUPER [ _Expression_ ]
+
+1.  Let _baseReference_ be the result of evaluating _MemberExpression_.
+
+2.  Let _baseValue_ be GetValue(_baseReference_).
+
+3.  Let _propertyNameReference_ be the result of evaluating
+    _Expression_.
+
+4.  Let _propertyNameValue_ be GetValue(_propertyNameReference_).
+
+5.  Call CheckObjectCoercible(_baseValue_).
+
+6.  Let _propertyNameString_ be ToString(_propertyNameValue_).
+
+7.  If the code matched by the syntactic production that is being
+    evaluated is strict mode code, let _strict_ be TRUE, else let
+    _strict_ be FALSE.
+
+8.  Return a value of type Reference whose base value is _baseValue_ and
+    whose referenced name is _propertyNameString_, and whose strict mode
+    flag is _strict_.
+
 The evaluation of an argument list produces a List of values (see 8.8).
 
-EARLY ERRORS
+STATIC SEMANTICS: EARLY ERRORS
 
 1.  
 
@@ -5347,7 +5524,7 @@ EARLY ERRORS
 
 1.  2.  3.  
 
-_ArgumentList_ : _… AssignmentExpression_:
+_ArgumentList_ : _… AssignmentExpression
 
 -   It is a Syntax Error if the source code parsed with this production
     is not extended code.
@@ -5444,8 +5621,6 @@ _ArgumentList_ : _ArgumentList_ , _… __AssignmentExpression
 
 9.  Return _precedingArgs_.
 
-1.  
-
 Syntax
 
 PostfixExpression :
@@ -5454,6 +5629,33 @@ LeftHandSideExpression
 LeftHandSideExpression [no LineTerminator here] ++
 LeftHandSideExpression [no LineTerminator here] --
 
+STATIC SEMANTICS
+
+STATIC SEMANTICS: EARLY ERRORS
+
+PostfixExpression :
+
+LeftHandSideExpression [no LineTerminator here] ++
+LeftHandSideExpression [no LineTerminator here] --
+
+-   It is a Syntax Error if the _PostfixExpression_ is contained in
+    strict code and _LeftHandSideExpression_ is the _Identifier_ EVAL or
+    the _Identifier_ ARGUMENTS.
+
+-   It is a Syntax Error if the _AssignmentExpression_ is contained in
+    extended code and the _LeftHandSideExpression_ is a _Literal_ or a
+    _FunctionExpression_.
+
+-   It is a Syntax Error if the _AssignmentExpression_ is contained in
+    extended code and the _LeftHandSideExpression_ is an _Identifier_
+    that does not statically resolve to a declarative environment record
+    binding or if the resolved binding is an immutable binding.
+
+-   It is a Syntax Error if the _LeftHandSideExpression_ is
+    _PrimaryExpression_ : ( _Expression_ ) and _Expression_ derived a
+    production that would produce a Syntax Error according to these
+    rules. This rule is recursively applied.
+
 RUNTIME SEMANTICS: EVALUATION
 
 _PostfixExpression_ : _LeftHandSideExpression_ [no _LineTerminator
@@ -5461,16 +5663,9 @@ here] ++
 
 1.  Let _lhs_ be the result of evaluating _LeftHandSideExpression_.
 
-2.  Throw a SYNTAXERROR exception if the following conditions are all
-    true:
+2.  
 
--   Type(_lhs_) is Reference is TRUE
-
--   IsStrictReference(_lhs_) is TRUE
-
--   Type(GetBase(_lhs_)) is Environment Record
-
--   GetReferencedName(_lhs_) is either "EVAL" or "ARGUMENTS"
+-   -   -   -   
 
 1.  Let _oldValue_ be ToNumber(GetValue(_lhs_)).
 
@@ -5488,16 +5683,9 @@ here] --
 
 1.  Let _lhs_ be the result of evaluating _LeftHandSideExpression_.
 
-2.  Throw a SYNTAXERROR exception if the following conditions are all
-    true:
+2.  
 
--   Type(_lhs_) is Reference is TRUE
-
--   IsStrictReference(_lhs_) is TRUE
-
--   Type(GetBase(_lhs_)) is Environment Record
-
--   GetReferencedName(_lhs_) is either "EVAL" or "ARGUMENTS"
+-   -   -   -   
 
 1.  Let _oldValue_ be ToNumber(GetValue(_lhs_)).
 
@@ -5523,6 +5711,34 @@ TYPEOF UnaryExpression
 ~ UnaryExpression
 ! UnaryExpression
 
+STATIC SEMANTICS
+
+STATIC SEMANTICS: EARLY ERRORS
+
+UnaryExpression :
+
+DELETE UnaryExpression
+++ UnaryExpression
+-- UnaryExpression
+
+-   It is a Syntax Error if the _UnaryExpression_ is contained in strict
+    code and the derived _UnaryExpression_ is the _Identifier_ EVAL or
+    the _Identifier_ ARGUMENTS.
+
+-   It is a Syntax Error if the _UnaryExpression_ is contained in
+    extended code and the derived _UnaryExpression_ is a _Literal_ or a
+    _FunctionExpression_.
+
+-   It is a Syntax Error if the _UnaryExpression_ is contained in
+    extended code and the derived _UnaryExpression_ is an _Identifier_
+    that does not statically resolve to a declarative environment record
+    binding or if the resolved binding is an immutable binding.
+
+-   It is a Syntax Error if the derived _UnaryExpression_ is
+    _PrimaryExpression_ : ( _Expression_ ) and _Expression_ derived a
+    production that would produce a Syntax Error according to these
+    rules. This rule is recursively applied.
+
 RUNTIME SEMANTICS: EVALUATION
 
 _UnaryExpression_ : DELETE _UnaryExpression
@@ -5531,7 +5747,7 @@ _UnaryExpression_ : DELETE _UnaryExpression
 
 2.  If Type(_ref_) is not Reference, return TRUE.
 
-3.  If IsUnresolvableReference(_ref_) then,
+3.  If IsUnresolvableReference(_ref_) is TRUE, then,
 
     a.  If IsStrictReference(_ref_) is TRUE, throw a SYNTAXERROR
         exception.
@@ -5546,10 +5762,7 @@ _UnaryExpression_ : DELETE _UnaryExpression
 
 5.  Else, _ref_ is a Reference to an Environment Record binding, so
 
-    a.  If IsStrictReference(_ref_) is TRUE, throw a SYNTAXERROR
-        exception.
-
-    b.  Let _bindings_ be GetBase(_ref_).
+    a.  b.  Let _bindings_ be GetBase(_ref_).
 
     c.  Return the result of calling the DeleteBinding concrete method
         of _bindings_, providing GetReferencedName(_ref_) as the
@@ -5609,16 +5822,9 @@ _UnaryExpression_ : ++ _UnaryExpression
 
 1.  Let _expr_ be the result of evaluating UnaryExpression.
 
-2.  Throw a SYNTAXERROR exception if the following conditions are all
-    true:
+2.  
 
--   Type(_expr_) is Reference is TRUE
-
--   IsStrictReference(_expr_) is TRUE
-
--   Type(GetBase(_expr_)) is Environment Record
-
--   GetReferencedName(_expr_) is either "EVAL" or "ARGUMENTS"
+-   -   -   -   
 
 1.  Let _oldValue_ be ToNumber(GetValue(_expr_)).
 
@@ -5635,16 +5841,9 @@ _UnaryExpression_ : -- _UnaryExpression
 
 1.  Let _expr_ be the result of evaluating UnaryExpression.
 
-2.  Throw a SYNTAXERROR exception if the following conditions are all
-    true:
+2.  
 
--   Type(_expr_) is Reference is TRUE
-
--   IsStrictReference(_expr_) is TRUE
-
--   Type(GetBase(_expr_)) is Environment Record
-
--   GetReferencedName(_expr_) is either "EVAL" or "ARGUMENTS"
+-   -   -   -   
 
 1.  Let _oldValue_ be ToNumber(GetValue(_expr_)).
 
@@ -6016,8 +6215,7 @@ RUNTIME SEMANTICS: EVALUATION
 
 _RelationalExpression_ : _RelationalExpression_ < _ShiftExpression
 
-_RelationalExpression_ : _RelationalExpression_ > _ShiftExpression_ is
-evaluated as follows:
+_RelationalExpression_ : _RelationalExpression_ > _ShiftExpression
 
 _RelationalExpression_ : _RelationalExpression_ <= _ShiftExpression
 
@@ -6041,6 +6239,8 @@ EqualityExpression == RelationalExpression
 EqualityExpression != RelationalExpression
 EqualityExpression === RelationalExpression
 EqualityExpression !== RelationalExpression
+EqualityExpression [no LineTerminator here] IS RelationalExpression
+EqualityExpression [no LineTerminator here] ISNT RelationalExpression
 
 EqualityExpressionNoIn :
 
@@ -6049,6 +6249,8 @@ EqualityExpressionNoIn == RelationalExpressionNoIn
 EqualityExpressionNoIn != RelationalExpressionNoIn
 EqualityExpressionNoIn === RelationalExpressionNoIn
 EqualityExpressionNoIn !== RelationalExpressionNoIn
+EqualityExpression [no LineTerminator here] IS RelationalExpression
+EqualityExpression [no LineTerminator here] ISNT RelationalExpression
 
 The semantics of the _EqualityExpressionNoIn_ productions are the same
 as the _EqualityExpression_ productions except that the contained
@@ -6111,6 +6313,34 @@ _EqualityExpression_ : _EqualityExpression_ != _RelationalExpression
 _EqualityExpression_ : _EqualityExpression_ === _RelationalExpression
 
 _EqualityExpression_ : _EqualityExpression_ !== _RelationalExpression
+
+_EqualityExpression_ : _EqualityExpression_ [no _LineTerminator_ here]
+IS _RelationalExpression_
+
+1.  Let _lref_ be the result of evaluating _EqualityExpression_.
+
+2.  Let _lval_ be GetValue(_lref_).
+
+3.  Let _rref_ be the result of evaluating _RelationalExpression_.
+
+4.  Let _rval_ be GetValue(_rref_).
+
+5.  Return the result of performing SaveValue(_rval_, _lval_).
+
+_EqualityExpression_ : _EqualityExpression_ [no _LineTerminator_ here]
+ISNT _RelationalExpression_
+
+1.  Let _lref_ be the result of evaluating _EqualityExpression_.
+
+2.  Let _lval_ be GetValue(_lref_).
+
+3.  Let _rref_ be the result of evaluating _RelationalExpression_.
+
+4.  Let _rval_ be GetValue(_rref_).
+
+5.  Let _r_ be the result of performing SaveValue(_rval_, _lval_).
+
+6.  If _r_ is TRUE, return FALSE. Otherwise, return TRUE.
 
 Syntax
 
@@ -6321,6 +6551,7 @@ ObjectAssignmentPattern :
 ArrayAssignmentPattern :
 
 [ Elision~opt~ AssignmentRestElement~opt~ ]
+[ AssignmentElementList ]
 [ AssignmentElementList , Elision~opt~ AssignmentRestElement~opt~ ]
 
 AssignmentPropertyList :
@@ -6503,6 +6734,11 @@ _ArrayAssignmentPattern_ : [ _Elision_~opt~ _AssignmentRestElement_ ]
     _AssignmentRestElement_ with and _skip_ as the arguments.
 
 3.  
+
+_ArrayAssignmentPattern_ : [ _AssignmentElementList_ ]
+
+1.  Perform Indexed Destructuring Assignment Evaluation of
+    _AssignmentElementList_ using _obj_ and 0 as the arguments.
 
 _ArrayAssignmentPattern_ : [ _AssignmentElementList_ , _Elision_~opt~
 _AssignmentRestElement_~opt~ ]
@@ -7380,7 +7616,8 @@ ObjectBindingPattern :
 ArrayBindingPattern :
 
 [ Elision~opt~ BindingRestElement~opt~ ]
-[BindingElementList , Elision~opt~ BindingRestElement~opt~ ]
+[ BindingElementList ]
+[ BindingElementList , Elision~opt~ BindingRestElement~opt~ ]
 
 BindingPropertyList :
 
@@ -7439,7 +7676,11 @@ _ArrayBindingPattern_ : [ _Elision_~opt~ _BindingRestElement_ ]
 
 1.  Return the BoundNames of _BindingElementList_.
 
-_ArrayBindingPattern_ : [_BindingElementList_ , _Elision_~opt~ ]
+_ArrayBindingPattern_ : [ _BindingElementList_ ]
+
+1.  Return the BoundNames of _BindingElementList_.
+
+_ArrayBindingPattern_ : [ _BindingElementList_ , _Elision_~opt~ ]
 
 1.  Return the BoundNames of _BindingElementList_.
 
@@ -7545,11 +7786,6 @@ _BindingPattern_ : _ObjectBindingPattern
 3.  Perform Binding Initialization for _ObjectBindingPattern_ using
     _obj_ and _environment_ as arguments.
 
-4.  Note, as currently written destructuring array assignment doesn’t
-    take into account the length property of the source object but
-    destructuring binding does. We need to decide which semantic we want
-    to consistently apply to both.
-
 1.  
 
 _BindingPattern_ : _ArrayBindingPattern
@@ -7558,20 +7794,16 @@ _BindingPattern_ : _ArrayBindingPattern
 
     a.  Let _array_ be ToObject(_value_).
 
-    b.  Let _lenValue_ be the result of calling the [[Get]] internal
-        method of _array_ with argument "length".
-
-    c.  Let _arrayLength_ be ToUint32(_lenValue_).
+    b.  c.  
 
 2.  Else,
 
     a.  Let _array_ be UNDEFINED.
 
-    b.  Let _arrayLength_ be 0.
+    b.  
 
 3.  Perform Indexed Binding Initialization for _ArrayBindingPattern
-    using _array_, _arrayLength_, UNDEFINED, and _environment_ as
-    arguments.
+    using _array_, 0, and _environment_ as arguments.
 
 1.  
 
@@ -7642,12 +7874,12 @@ _BindingProperty_ : _PropertyName_ : _BindingElement
 
 1.  Let _P_ be the PropName of _PropertyName
 
-2.  Evaluate _BindingElement_ using _value_, _envirnment_, and _P_ as
-    arguments.
+2.  Perform Keyed Binding Initialization for _BindingElement_ using
+    _value_, _envirnment_, and _P_ as arguments.
 
 RUNTIME SEMANTICS: INDEXED BINDING INITIALIZATION
 
-  With parameters _array_, _arrayLength, nextIndex,_ and _environment_.
+  With parameters _array_, _nextIndex,_ and _environment_.
 
 NOTE When UNDEFINED is passed for _environment_ it indicates that a
 PutValue operation should be used to assign the initialization value.
@@ -7665,27 +7897,30 @@ _ArrayBindingPattern_: [ _Elision_~opt~ _BindingRestElement_ ]
     evaluating _Elision_, otherwise let _nextIndex_ be 0.
 
 2.  Perform Indexed Binding Initialization for _BindingRestElement
-    using _array, arrayLength, nextIndex_, and _environment_ as
-    arguments.
+    using _array, nextIndex_, and _environment_ as arguments.
+
+_ArrayBindingPattern_: [ _BindingElementList_ ]
+
+1.  Perform Indexed Binding Initialization for _BindingElementList
+    using _array_, _nextIndex_, and _environment_ as arguments.
 
 _ArrayBindingPattern_: [ _BindingElementList_ , _Elision_~opt~]
 
 1.  Perform Indexed Binding Initialization for _BindingElementList
-    using _array_, 0_, nextIndex_, and _environment_ as arguments.
+    using _array_, _nextIndex_, and _environment_ as arguments.
 
 _ArrayBindingPattern_: [ _BindingElementList_ , _Elision_~opt~
 _BindingRestElement_ ]
 
 1.  Let _index_ be the result of performing Indexed Binding
-    Initialization for _BindingElementList_ using _array_, 0_,
+    Initialization for _BindingElementList_ using _array_, _,
     nextIndex_, and _environment_ as arguments.
 
 2.  If _Elision_ is present, then let _skip_ be the result of evaluating
     _Elision_, otherwise let _skip_ be 0.
 
 3.  Perform Indexed Binding Initialization for _BindingRestElement
-    using _array, arrayLength, index_+_skip_ , and _environment_ as
-    arguments.
+    using _array, index_+_skip_ , and _environment_ as arguments.
 
 1.  
 
@@ -7695,8 +7930,7 @@ _BindingElementList_ : _Elision_~opt~ _BindingElement
     _Elision_, otherwise let _skip_ be 0.
 
 2.  Perform Indexed Binding Initialization for _BindingElement_ using
-    _array_, _arrayLength, nextIndex_ +_skip_ , and _environment_ as
-    arguments.
+    _array_, _nextIndex_ +_skip_ , and _environment_ as arguments.
 
 3.  Return _index_+_skip_+1.
 
@@ -7706,15 +7940,14 @@ _BindingElementList_ : _BindingElementList_ , _Elision_~opt~
 _BindingElement 
 
 1.  Let _listNext_ be the result of performing Indexed Binding
-    Initialization for _BindingElementList_ using _array, arrayLength,
-    nextIndex_, and _environment_ as arguments.
+    Initialization for _BindingElementList_ using _array, nextIndex_,
+    and _environment_ as arguments.
 
 2.  If _Elision_ is present, then let _skip_ be the result of evaluating
     _Elision_, otherwise let _skip_ be 0.
 
 3.  Perform Indexed Binding Initialization for _BindingElement_ using
-    _array_, _arrayLength,_ , _listNext_+_skip_ , and _environment_ as
-    arguments.
+    _array_, _listNext_+_skip_ , and _environment_ as arguments.
 
 4.  Return _listNext_+_skip+_1.
 
@@ -7750,12 +7983,11 @@ _BindingElement
 
 _BindingElement_: _SingleNameBinding
 
-1.  If _nextIndex_ ≥ _arrayLength_, then
+1.  a.  
 
-    a.  Let _array_ be UNDEFINED.
-
-2.  3.  Evaluate _SingleNameBinding_ using _array_, _environment_, and
-    ToString(_nextIndex_) as the arguments.
+2.  3.  Perform Keyed Binding Initialization for _SingleNameBinding
+    using _array_, _environment_, and ToString(_nextIndex_) as the
+    arguments.
 
 1.  
 
@@ -7763,21 +7995,15 @@ _BindingElement_: _BindingPattern Initialiser_~opt~
 
 1.  Let _P_ be ToString(_nextIndex_).
 
-2.  If _nextIndex_ ≥ _arrayLength_, then
+2.  3.  4.  5.  Let _exists_ be the result of calling the
+    [[HasProperty]] internal method of _array_ with argument _P_.
 
-    a.  Let _exists_ be FALSE.
-
-3.  Else
-
-    a.  Let _exists_ be the result of calling the [[HasProperty]]
-        internal method of _array_ with argument _P_.
-
-4.  5.  6.  If _exists_ is TRUE, then
+6.  7.  8.  If _exists_ is TRUE, then
 
     a.  Let _v_ be the result of calling the [[Get]] internal method of
         _array_ with argument _P_.
 
-7.  Else
+9.  Else
 
     a.  If _Initialiser_~opt~ is present, then
 
@@ -7787,7 +8013,7 @@ _BindingElement_: _BindingPattern Initialiser_~opt~
 
         i.  Let _v_ be UNDEFINED.
 
-8.  Perform Binding Initialization for _BindingPattern_ passing _v_ and
+10. Perform Binding Initialization for _BindingPattern_ passing _v_ and
     _environment_ as arguments.
 
 _BindingRestElement_ : … _BindingIdentifier
@@ -7796,11 +8022,16 @@ _BindingRestElement_ : … _BindingIdentifier
     ARRAY() where ARRAY is the standard built-in constructor with that
     name.
 
-2.  Let _n_=0.
+2.  Let _lenVal_ be the result of calling the [[Get]] internal method of
+    _array_ with argument “LENGTH”.
 
-3.  Let _index_ = _nextIndex_.
+3.  Let _arrayLength_ be ToUint32(_lenVal_).
 
-4.  Repeat, while _index_ < _arrayLength
+4.  Let _n_=0.
+
+5.  Let _index_ = _nextIndex_.
+
+6.  Repeat, while _index_ < _arrayLength
 
     a.  Let _P_ be ToString(_index_).
 
@@ -7821,7 +8052,7 @@ _BindingRestElement_ : … _BindingIdentifier
 
     e.  Let _index_ = _index_+1.
 
-5.  Perform Binding Initialization for _BindingIdentifer_ using _array
+7.  Perform Binding Initialization for _BindingIdentifer_ using _array
     and _environment_ as arguments.
 
 RUNTIME SEMANTICS: KEYED BINDING INITIALIZATION
@@ -7833,6 +8064,34 @@ PutValue operation should be used to assign the initialization value.
 This is the the case for formal parameter lists of non-strict functions.
 In that case the formal parameter bindings are preinitialized in order
 to deal with the possibility of multiple parameters with the same name.
+
+_BindingElement_: _SingleNameBinding
+
+1.  Perform Keyed Binding Initialization for _SingleNameBinding_ using
+    _obj_, _environment_, and _propertyName_ as the arguments.
+
+_BindingElement_: _BindingPattern_ _Initialiser_~opt~
+
+1.  Let _exists_ be the result of calling the [[HasProperty]] internal
+    method of _obj_ with argument _propertyName_.
+
+2.  If _exists_ is TRUE, then
+
+    a.  Let _v_ be the result of calling the [[Get]] internal method of
+        _obj_ with argument _propertyName_.
+
+3.  Else
+
+    a.  If _Initialiser_~opt~ is present, then
+
+        i.  Let _v_ be the result of evaluating _Initialiser_.
+
+    b.  Else,
+
+        i.  Let _v_ be UNDEFINED.
+
+4.  Perform Binding Initialization for _BindingPattern_ passing _v_ and
+    _environment_ as arguments.
 
 _SingleNameBinding_ : _BindingIdentifier Initialiser_~opt~
 
@@ -8578,7 +8837,7 @@ FormalsList , FormalParameter
 
 FunctionRestParameter :
 
-... Identifier
+... BindingIdentifier
 
 FormalParameter :
 
@@ -8587,10 +8846,6 @@ BindingElement
 FunctionBody :
 
 StatementList~opt~
-
-NOTE The identifier of a rest parameter is specified as an _Identifier_
-rather than a _BindingIdentifier_ because it may be the the identifier
-ARGUMENTS..
 
 STATIC SEMANTICS: EARLY ERRORS
 
@@ -8640,12 +8895,12 @@ _FormalsList_ : _FormalsList,_ _FormalParameter
     strict code and BoundNames of _FormalsList_ contains an element
     which is also contained in BoundNames of _FormalParameter_.
 
-_FunctionRestParameter_ : ... _Identifier
+_FunctionRestParameter_ : ... _BindingIdentifier
 
 -   It is a Syntax Error if the source code parsed with this production
     is not extended code.
 
--   It is a Syntax Error if _Identifier_ is "EVAL"
+-   
 
 _FormalParameter_ : _BindingElement
 
@@ -8695,9 +8950,9 @@ _FormalsList_ : _FormalsList ,_ _FormalParameter
 
 3.  Return _names_.
 
-FormalParameterList : ... Identifier
+FormalParameterList : ... BindingIdentifier
 
-1.  Return the String Value of _Identifier_.
+1.  Return the BoundNames of _BindingIdentifier_.
 
 _FormalParameter_ : _BindingElement
 
@@ -8849,7 +9104,7 @@ FormalList : FormalsList , FormalParameter
 
 3.  Return _lastIndex_ + 1.
 
-FunctionRestParameter : ... Identifier
+FunctionRestParameter : ... BindingIdentifier
 
 1.  Let _A_ be a new array object created as if by the expression NEW
     ARRAY() where ARRAY is the standard built-in constructor with that
@@ -8876,7 +9131,7 @@ FunctionRestParameter : ... Identifier
 
     f.  Let _nextIndex_ = _nextIndex_ +1.
 
-4.  Perform Binding Initialization for _Identifer_ using _A_ and
+4.  Perform Binding Initialization for _BindingIdentifer_ using _A_ and
     _environment_ as arguments.
 
 FormalParameter : BindingElement
@@ -8905,10 +9160,10 @@ _FunctionExpression_.
 
 _FunctionBody_ : _StatementList_~opt~
 
-Given an parameter list specified by _FormalParameterList_, a body
-specified by _FunctionBody_, a Lexical Environment specified by _Scope_,
-and a Boolean flag _Strict_, a Function object is constructed as
-follows:
+A Function object is constructed as follows given an parameter list
+specified by _FormalParameterList_, a body specified by _FunctionBody_,
+a Lexical Environment specified by _Scope_, a Boolean flag _Strict_, and
+optionally, an object _homeObject_ and a string _methodName_:
 
 NOTE A PROTOTYPE property is automatically created for every function,
 to allow for the possibility that the function will be used as a
