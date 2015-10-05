@@ -69,7 +69,7 @@ _6.2.3_ _The Reference Specification Type_
 _6.2.4_ _The Property Descriptor Specification Type_ 
 
 _6.2.5_ _The Lexical Environment and Environment Record Specification
-Types_ 40
+Types_ 38
 
 _6.2.6_ _Data Blocks_ 
 
@@ -239,7 +239,7 @@ _8.4.1_ _EnqueueJob ( queueName, job, arguments)_
 
 _8.4.2_ _NextJob result_ 
 
-_8.5_ _Initialization()_ 
+_8.5_ _ECMAScript Initialization()_ 
 
 _8.5.1_ _InitializeHostDefinedRealm ( realm )_ 
 
@@ -274,41 +274,39 @@ _9.1.12_ _[[OwnPropertyKeys]] ( )_
 _9.1.13_ _ObjectCreate(proto, internalSlotsList)_ 
 
 _9.1.14_ _OrdinaryCreateFromConstructor ( constructor,
-intrinsicDefaultProto, internalSlotsList )_ 98
+intrinsicDefaultProto, internalSlotsList )_ 93
 
 _9.1.15_ _GetPrototypeFromConstructor ( constructor,
-intrinsicDefaultProto )_ 98
+intrinsicDefaultProto )_ 93
 
 _9.2_ _ECMAScript Function Objects_ 
 
-_9.2.1_ _[[GetOwnProperty]] (P)_ 
+_9.2.1_ _[[Call]] ( thisArgument, argumentsList)_ 
 
-_9.2.2_ _[[Call]] ( thisArgument, argumentsList)_ 
+_9.2.2_ _[[Construct]] ( argumentsList, newTarget)_ 
 
-_9.2.3_ _[[Construct]] ( argumentsList, newTarget)_ 
+_9.2.3_ _FunctionAllocate (functionPrototype, strict [,functionKind] )
+9
 
-_9.2.4_ _FunctionAllocate (functionPrototype, strict [,functionKind] )
-1
+_9.2.4_ _FunctionInitialize (F, kind, ParameterList, Body, Scope)_ 
 
-_9.2.5_ _FunctionInitialize (F, kind, ParameterList, Body, Scope)_ 
+_9.2.5_ _FunctionCreate (kind, ParameterList, Body, Scope, Strict,
+prototype)_ 97
 
-_9.2.6_ _FunctionCreate (kind, ParameterList, Body, Scope, Strict,
-prototype)_ 103
+_9.2.6_ _GeneratorFunctionCreate (kind, ParameterList, Body, Scope,
+Strict)_ 97
 
-_9.2.7_ _GeneratorFunctionCreate (kind, ParameterList, Body, Scope,
-Strict)_ 103
+_9.2.7_ _AddRestrictedFunctionProperties ( F, realm )_ 
 
-_9.2.8_ _AddRestrictedFunctionProperties ( F, realm )_ 
+_9.2.8_ _MakeConstructor (F, writablePrototype, prototype)_ 
 
-_9.2.9_ _MakeConstructor (F, writablePrototype, prototype)_ 
+_9.2.9_ _MakeClassConstructor ( F)_ 
 
-_9.2.10_ _MakeClassConstructor ( F)_ 
+_9.2.10_ _MakeMethod ( F, homeObject)_ 
 
-_9.2.11_ _MakeMethod ( F, homeObject)_ 
+_9.2.11_ _SetFunctionName (F, name, prefix)_ 
 
-_9.2.12_ _SetFunctionName (F, name, prefix)_ 
-
-_9.2.13_ _FunctionDeclarationInstantiation(func, argumentsList)_ 
+_9.2.12_ _FunctionDeclarationInstantiation(func, argumentsList)_ 
 
 _9.3_ _Built-in Function Objects_ 
 
@@ -317,7 +315,7 @@ _9.3.1_ _[[Call]] ( thisArgument, argumentsList)_
 _9.3.2_ _[[Construct]] (argumentsList, newTarget)_ 
 
 _9.3.3_ _CreateBuiltinFunction(realm, steps, prototype,
-internalSlotsList)_ 109
+internalSlotsList)_ 103
 
 _9.4_ _Built-in Exotic Object Internal Methods and Slots_ 
 
@@ -656,7 +654,7 @@ _13.1.12_ _Static Semantics: VarScopedDeclarations_
 _13.1.13_ _Runtime Semantics: Evaluation_ 
 
 _13.1.14_ _Runtime Semantics: BlockDeclarationInstantiation( code, env
-)_ 226
+)_ 212
 
 _13.2_ _Declarations and the Variable Statement_ 
 
@@ -841,7 +839,7 @@ _14.1.7_ _Static Semantics: HasInitializer_
 _14.1.8_ _Static Semantics: HasName_ 
 
 _14.1.9_ _Static Semantics: IsAnonymousFunctionDefinition ( production
-)_ 281
+)_ 264
 
 _14.1.10_ _Static Semantics: IsConstantDeclaration_ 
 
@@ -891,15 +889,15 @@ _14.2.10_ _Static Semantics: LexicallyDeclaredNames_
 
 _14.2.11_ _Static Semantics: LexicallyScopedDeclarations_ 
 
-_Static Semantics: VarDeclaredNames_ 
+_14.2.12_ _Static Semantics: VarDeclaredNames_ 
 
-_14.2.12_ _Static Semantics: VarScopedDeclarations_ 
+_14.2.13_ _Static Semantics: VarScopedDeclarations_ 
 
-_14.2.13_ _Runtime Semantics: IteratorBindingInitialization_ 
+_14.2.14_ _Runtime Semantics: IteratorBindingInitialization_ 
 
-_14.2.14_ _Runtime Semantics: EvaluateBody_ 
+_14.2.15_ _Runtime Semantics: EvaluateBody_ 
 
-_14.2.15_ _Runtime Semantics: Evaluation_ 
+_14.2.16_ _Runtime Semantics: Evaluation_ 
 
 _14.3_ _Method Definitions_ 
 
@@ -915,13 +913,11 @@ _14.3.5_ _Static Semantics: HasDirectSuper_
 
 _14.3.6_ _Static Semantics: PropName_ 
 
-_14.3.7_ _Static Semantics: NeedsSuperBinding_ 
+_14.3.7_ _Static Semantics: SpecialMethod_ 
 
-_14.3.8_ _Static Semantics: SpecialMethod_ 
+_14.3.8_ _Runtime Semantics: DefineMethod_ 
 
-_14.3.9_ _Runtime Semantics: DefineMethod_ 
-
-_14.3.10_ _Runtime Semantics: PropertyDefinitionEvaluation_ 
+_14.3.9_ _Runtime Semantics: PropertyDefinitionEvaluation_ 
 
 _14.4_ _Generator Function Definitions_ 
 
@@ -1014,7 +1010,7 @@ _15.1.6_ _Static Semantics: VarScopedDeclarations_
 _15.1.7_ _Runtime Semantics: ScriptEvaluation_ 
 
 _15.1.8_ _Runtime Semantics: GlobalDeclarationInstantiation (script,
-env)_ 313
+env)_ 293
 
 _15.1.9_ _Runtime Semantics: ScriptEvaluationJob ( sourceText )_ 
 
@@ -1209,7 +1205,7 @@ _20.2.2_ _Function Properties of the Math Object_
 _20.3_ _Date Objects_ 
 
 _20.3.1_ _Overview of Date Objects and Definitions of Abstract
-Operations_ 398
+Operations_ 372
 
 _20.3.2_ _The Date Constructor_ 
 
@@ -1461,7 +1457,7 @@ _A.7_ _Universal Resource Identifier Character Classes_
 _A.8_ _Regular Expressions_ 
 
 _Annex B (normative) Additional ECMAScript Features for Web Browsers
-6
+5
 
 _B.1_ _Additional Syntax_ 
 
@@ -1492,7 +1488,7 @@ _B.3.1_ ___proto__ Property Names in Object Initializers_
 _B.3.2_ _Labelled Function Declarations_ 
 
 _B.3.3_ _Block-Level Function Declarations Web Legacy Compatibility
-Semantics_ 621
+Semantics_ 582
 
 _B.3.4_ _FunctionDeclarations in IfStatement Statement Clauses_ 
 
@@ -1501,10 +1497,10 @@ _B.3.5_ _VariableStatements in Catch blocks_
 _Annex C (informative) The Strict Mode of ECMAScript_ 
 
 _Annex D (informative) Corrections and Clarifications in Edition 6 with
-Possible Compatibility Impact_ 627
+Possible Compatibility Impact_ 587
 
 _Annex E (informative) Additions and Changes That Introduce
-Incompatibilities with Prior Editions_ 628
+Incompatibilities with Prior Editions_ 588
 
 Introduction
 
@@ -1597,7 +1593,7 @@ and inspection of objects, program control of property attributes,
 additional array manipulation functions, support for the JSON object
 encoding format, and a strict mode that provides enhanced error checking
 and program security. The Fifth Edition was adopted by the Ecma General
-Assembly of December 1999.
+Assembly of December 2009.
 
 The Fifth Edition was submitted to ISO/IEC JTC 1 for adoption under the
 fast-track procedure, and approved as international standard ISO/IEC
@@ -1943,21 +1939,22 @@ non-strict form of the language.
 The strict variant of ECMAScript is commonly referred to as the _strict
 mode_ of the language. Strict mode selection and use of the strict mode
 syntax and semantics of ECMAScript is explicitly made at the level of
-individual ECMAScript code units. Because strict mode is selected at the
-level of a syntactic code unit, strict mode only imposes restrictions
-that have local effect within such a code unit. Strict mode does not
-restrict or modify any aspect of the ECMAScript semantics that must
-operate consistently across multiple code units. A complete ECMAScript
-program may be composed for both strict mode and non-strict mode
-ECMAScript code units. In this case, strict mode only applies when
-actually executing code that is defined within a strict mode code unit.
+individual ECMAScript source text units. Because strict mode is selected
+at the level of a syntactic source text unit, strict mode only imposes
+restrictions that have local effect within such a source text unit.
+Strict mode does not restrict or modify any aspect of the ECMAScript
+semantics that must operate consistently across multiple source text
+units. A complete ECMAScript program may be composed of both strict mode
+and non-strict mode ECMAScript source text units. In this case, strict
+mode only applies when actually executing code that is defined within a
+strict mode source text unit.
 
 In order to conform to this specification, an ECMAScript implementation
 must implement both the full unrestricted ECMAScript language and the
 strict mode variant of the ECMAScript language as defined by this
 specification. In addition, an implementation must support the
-combination of unrestricted and strict mode code units into a single
-composite program.
+combination of unrestricted and strict mode source text units into a
+single composite program.
 
 
 Terms and definitions
@@ -2214,8 +2211,8 @@ that are not described in this specification.
 
 property
 
-association between a key and a value that is a part of an object. The
-key be either a String value or a Symbol value
+part of an object that associates a key (either a String value or a
+Symbol value) and a value.
 
 NOTE Depending upon the form of the property the value may be
 represented either directly as a data value (a primitive value, an
@@ -2310,9 +2307,9 @@ A _lexical grammar_ for ECMAScript is given in clause 11. This grammar
 has as its terminal symbols Unicode code points that conform to the
 rules for _SourceCharacter_ defined in 10.1. It defines a set of
 productions, starting from the goal symbol _InputElementDiv_,
-_InputElementTemplateTail_, or _InputElementRegExp_, that describe how
-sequences of such code points are translated into a sequence of input
-elements.
+_InputElementTemplateTail_, or _InputElementRegExp_, or
+_InputElementRegExpOrTemplateTail_, that describe how sequences of such
+code points are translated into a sequence of input elements.
 
 Input elements other than white space and comments form the terminal
 symbols for the syntactic grammar for ECMAScript and are called
@@ -2384,7 +2381,7 @@ form a valid ECMAScript _Script_ or _Module_. For example, this
 technique is used for object literals and object destructuring patterns.
 In such cases a more restrictive _supplemental grammar_ is provided that
 further restricts the acceptable token sequences. In certain contexts,
-when explicitly specific, the input elements corresponding to such a
+when explicitly specified, the input elements corresponding to such a
 production are parsed again using a goal symbol of a supplemental
 grammar. The input stream is syntactically in error if the tokens in the
 stream of input elements parsed by a cover grammar cannot be parsed as a
@@ -2842,7 +2839,7 @@ cases when _x_ is zero.
 The mathematical function min(_x_~1~, _x_~2~, ..., _x_~n~) produces the
 mathematically smallest of _x_~1~ through _x_~n~. The mathematical
 function max(_x_~1~, _x_~2~, ..., _x_~n~) produces the mathematically
-largest of _x_~1~ through _x_~n~. The domains and range of theses
+largest of _x_~1~ through _x_~n~. The domain and range of these
 mathematical functions include +∞ and −∞.
 
 The notation “_x_ modulo _y_” (_y_ must be finite and nonzero) computes
@@ -2960,9 +2957,11 @@ a String value, so they may be ill-formed when interpreted as UTF-16
 code unit sequences. Operations that do not interpret String contents
 treat them as sequences of undifferentiated 16-bit unsigned integers.
 The function STRING.PROTOTYPE.NORMALIZE (see 21.1.3.12) can be used to
-normalize a string value, but no other operations normalized the strings
-upon which they operate. Only operations that are explicitly specified
-to be language or locale sensitive produce language-sensitive results.
+explicitly normalize a string value. STRING.PROTOTYPE.LOCALECOMPARE (see
+21.1.3.10) internally normalizes strings values, but no other operations
+implicitly normalize the strings upon which they operate. Only
+operations that are explicitly specified to be language or locale
+sensitive produce language-sensitive results.
 
 NOTE The rationale behind this design was to keep the implementation of
 Strings as simple and high-performing as possible. If ECMAScript source
@@ -3252,45 +3251,55 @@ the method invocation.
 
 Table 5 — Essential Internal Methods
 
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  _INTERNAL METHOD_       _SIGNATURE_                                       _DESCRIPTION_
-  ----------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  [[GetPrototypeOf]]      ()_→_Object or Null                               Determine the object that provides inherited properties for this object. A NULL value indicates that there are no inherited properties.
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  _INTERNAL METHOD_       _SIGNATURE_                           _DESCRIPTION_
+  ----------------------- ------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  [[GetPrototypeOf]]      () _→_ Object or Null                 Determine the object that provides inherited properties for this object. A NULL value indicates that there are no inherited properties.
 
-  [[SetPrototypeOf]]      (_Object_ or Null)_→_Boolean                      Associate with this object another object that provides inherited properties. Passing NULL indicates that there are no inherited properties. Returns TRUE indicating that the operation was completed successfully or FALSE indicating that the operation was not successful.
+  [[SetPrototypeOf]]      (_Object_ or Null) _→_ Boolean        Associate with this object another object that provides inherited properties. Passing NULL indicates that there are no inherited properties. Returns TRUE indicating that the operation was completed successfully or FALSE indicating that the operation was not successful.
 
-  [[IsExtensible]]        ( )_→_Boolean                                     Determine whether it is permitted to add additional properties to this object.
+  [[IsExtensible]]        ( ) _→_ Boolean                       Determine whether it is permitted to add additional properties to this object.
 
-  [[PreventExtensions]]   ( )_→_Boolean                                     Control whether new properties may be added to this object. Returns TRUE if the operation was successful or FALSE if the operation was unsuccessful.
+  [[PreventExtensions]]   ( ) _→_ Boolean                       Control whether new properties may be added to this object. Returns TRUE if the operation was successful or FALSE if the operation was unsuccessful.
 
-  [[GetOwnProperty]]      (_propertyKey_) →                                 Return a Property Descriptor for the own property of this object whose key is _propertyKey_, or UNDEFINED if no such property exists.
-                                                                            
-                          Undefined or Property Descriptor                  
+  [[GetOwnProperty]]      (_propertyKey_) →                     Return a Property Descriptor for the own property of this object whose key is _propertyKey_, or UNDEFINED if no such property exists.
+                                                                
+                          Undefined or Property Descriptor      
 
-  [[HasProperty]]         (_propertyKey_) _→_ Boolean                       Return a Boolean value indicating whether this object already has either an own or inherited property whose key is _propertyKey_.
+  [[HasProperty]]         (_propertyKey_) _→_ Boolean           Return a Boolean value indicating whether this object already has either an own or inherited property whose key is _propertyKey_.
 
-  [[Get]]                 (_propertyKey_, _Receiver_) _→ any_               Return the value of the property whose key is _propertyKey_ from this object. If any ECMAScript code must be executed to retrieve the property value, _Receiver_ is used as the THIS value when evaluating the code.
+  [[Get]]                 (_propertyKey_, _Receiver_) _→ any_   Return the value of the property whose key is _propertyKey_ from this object. If any ECMAScript code must be executed to retrieve the property value, _Receiver_ is used as the THIS value when evaluating the code.
 
-  [[Set]]                 (_propertyKey_,_value_, _Receiver_) _→ Boolean_   Set the value of this object property whose key is _propertyKey_ to _value_. If any ECMAScript code must be executed to set the property value, _Receiver_ is used as the THIS value when evaluating the code. Returns TRUE if that the property value was set or FALSE if that it could not be set.
+  [[Set]]                 (_propertyKey_,_value_, _Receiver_)   Set the value of this object property whose key is _propertyKey_ to _value_. If any ECMAScript code must be executed to set the property value, _Receiver_ is used as the THIS value when evaluating the code. Returns TRUE if that the property value was set or FALSE if that it could not be set.
+                          _→ Boolean_                           
 
-  [[Delete]]              (_propertyKey_) _→_ Boolean                       Remove the own property whose key is _propertyKey_ from this object . Return FALSE if the property was not deleted and is still present. Return TRUE if the property was deleted or is not present.
+  [[Delete]]              (_propertyKey_) _→_ Boolean           Remove the own property whose key is _propertyKey_ from this object . Return FALSE if the property was not deleted and is still present. Return TRUE if the property was deleted or is not present.
 
-  [[DefineOwnProperty]]   (_propertyKey, PropertyDescriptor_) _→_ Boolean   Create or alter the own property, whose key is _propertyKey_, to have the state described by _PropertyDescriptor_. Return TRUE if that the property was successfully created/updated or FALSE if the property could not be created or updated.
+  [[DefineOwnProperty]]   (_propertyKey,PropertyDescriptor_)_   Create or alter the own property, whose key is _propertyKey_, to have the state described by _PropertyDescriptor_. Return TRUE if that the property was successfully created/updated or FALSE if the property could not be created or updated.
+                          →_ Boolean                            
 
-  [[Enumerate]]           ()_→_Object                                       Return an iterator object that produces the keys of the string-keyed enumerable properties of the object.
+  [[Enumerate]]           ()_→_Object                           Return an iterator object that produces the keys of the string-keyed enumerable properties of the object.
 
-  [[OwnPropertyKeys]]     ()_→_List of propertyKey                          Return a List whose elements are all of the own property keys for the object.
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  [[OwnPropertyKeys]]     ()_→_List of propertyKey              Return a List whose elements are all of the own property keys for the object.
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Table 6 summarizes additional essential internal methods that are
-supported by objects that may be called as functions.
+supported by objects that may be called as functions. A _function
+object_ is an object that supports the [[Call]] internal methods. A
+_constructor_ (also referred to as a _constructor function_) is a
+function object that supports the [[Construct]] internal method.
 
 Table 6 — Additional Essential Internal Methods of Function Objects
 
-  _INTERNAL METHOD_   _SIGNATURE_                            _DESCRIPTION_
-  ------------------- -------------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  [[Call]]            (_any_, a List of _any_) _→_ _any_     Executes code associated with this object. Invoked via a function call expression. The arguments to the internal method are a THIS value and a list containing the arguments passed to the function by a call expression. Objects that implement this internal method are _callable_.
-  [[Construct]]       (a List of _any_, Object) _→_ Object   Creates an object. Invoked via the NEW or SUPER operators. The first arguments to the internal method is a list containing the arguments of the operator. The second argument is the object to which the NEW operator was initially applied. Objects that implement this internal method are called _constructors_. A Function object is not necessarily a constructor and such non-constructor Function objects do not have a [[Construct]] internal method.
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  _INTERNAL METHOD_   _SIGNATURE_                 _DESCRIPTION_
+  ------------------- --------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  [[Call]]            (_any_, a List of _any_)    Executes code associated with this object. Invoked via a function call expression. The arguments to the internal method are a THIS value and a list containing the arguments passed to the function by a call expression. Objects that implement this internal method are _callable_.
+                      _→_ _any_                   
+
+  [[Construct]]       (a List of _any_, Object)   Creates an object. Invoked via the NEW or SUPER operators. The first arguments to the internal method is a list containing the arguments of the operator. The second argument is the object to which the NEW operator was initially applied. Objects that implement this internal method are called _constructors_. A Function object is not necessarily a constructor and such non-constructor Function objects do not have a [[Construct]] internal method.
+                      _→_ Object                  
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The semantics of the essential internal methods for ordinary objects and
 standard exotic objects are specified in clause 9. If any specified use
@@ -3515,6 +3524,14 @@ Table 7 — Well-known Intrinsic Objects
 
   %DatePrototype%                DATE.PROTOTYPE           The initial value of the PROTOTYPE data property of %Date%.
 
+  %decodeURI%                    DECODEURI                The decodeURI function (18.2.6.2).
+
+  %decodeURIComponent%           DECODEURICOMPONENT       The decodeURIComponent function (18.2.6.3).
+
+  %encodeURI%                    ENCODEURI                The ENCODEURI function (18.2.6.4).
+
+  %encodeURIComponent%           ENCODEURICOMPONENT       The ENCODEURICOMPONENT function (18.2.6.5).
+
   %Error%                        ERROR                    The ERROR constructor (19.5.1)
 
   %ErrorPrototype%               ERROR.PROTOTYPE          The initial value of the PROTOTYPE data property of %Error%.
@@ -3539,7 +3556,7 @@ Table 7 — Well-known Intrinsic Objects
 
   %Generator%                                             The initial value of the PROTOTYPE property of %GeneratorFunction%
 
-  %GeneratorFunction%                                     The constructor of generator objects(25.2.1)
+  %GeneratorFunction%                                     The constructor of generator objects (25.2.1)
 
   %GeneratorPrototype%                                    The initial value of the PROTOTYPE property of %Generator%
 
@@ -3554,6 +3571,10 @@ Table 7 — Well-known Intrinsic Objects
   %Int32Array%                   INT32ARRAY               The INT32ARRAY constructor (22.2)
 
   %Int32ArrayPrototype%          INT32ARRAY.PROTOTYPE     The initial value of the PROTOTYPE data property of %Int32Array%.
+
+  %isFinite%                     ISFINITE                 The ISFINITE function (18.2.2).
+
+  %isNaN%                        ISNAN                    The ISNAN function (18.2.3).
 
   %IteratorPrototype%                                     An object that all standard built-in iterator objects indirectly inherit from.
 
@@ -3578,6 +3599,10 @@ Table 7 — Well-known Intrinsic Objects
   %ObjProto_toString%            OBJECT.PROTOTYPE.        The initial value of the TOSTRING data property of %ObjectPrototype% (19.1.3.6)
                                  TOSTRING                 
 
+  %parseFloat%                   PARSEFLOAT               The PARSEFLOAT function (18.2.4).
+
+  %parseInt%                     PARSEINT                 The PARSEINT function (18.2.5).
+
   %Promise%                      PROMISE                  The PROMISE constructor (25.4.3)
 
   %PromisePrototype%             PROMISE.PROTOTYPE        The initial value of the PROTOTYPE data property of %Promise%.
@@ -3593,7 +3618,7 @@ Table 7 — Well-known Intrinsic Objects
   %ReferenceErrorPrototype%      REFERENCEERROR.          The initial value of the PROTOTYPE property of %ReferenceError%
                                  PROTOTYPE                
 
-  %Reflect%                      REFLECT                  The Reflect object (26.1)
+  %Reflect%                      REFLECT                  The REFLECT object (26.1)
 
   %RegExp%                       REGEXP                   The REGEXP constructor (21.2.3)
 
@@ -4069,19 +4094,19 @@ _Obj_, the following steps are taken:
 
 4.  If HasProperty(_Obj_, "ENUMERABLE") is TRUE, then
 
-    a.  Let _enum_ be Get(_Obj_, "ENUMERABLE").
+    a.  Let _enum_ be ToBoolean(Get(_Obj_, "ENUMERABLE")).
 
     b.  ReturnIfAbrupt(_enum_).
 
-    c.  Set the [[Enumerable]] field of _desc_ to ToBoolean(_enum_).
+    c.  Set the [[Enumerable]] field of _desc_ to _enum_.
 
 5.  If HasProperty(_Obj_, "CONFIGURABLE") is TRUE, then
 
-    a.  Let _conf_ be Get(_Obj_, "CONFIGURABLE").
+    a.  Let _conf_ be ToBoolean(Get(_Obj_, "CONFIGURABLE")).
 
     b.  ReturnIfAbrupt(_conf_).
 
-    c.  Set the [[Configurable]] field of _desc_ to ToBoolean(_conf_).
+    c.  Set the [[Configurable]] field of _desc_ to _conf_.
 
 6.  If HasProperty(_Obj_, "VALUE") is TRUE, then
 
@@ -4093,11 +4118,11 @@ _Obj_, the following steps are taken:
 
 7.  If HasProperty(_Obj_, "WRITABLE") is TRUE, then
 
-    a.  Let _writable_ be Get(_Obj_, "WRITABLE").
+    a.  Let _writable_ be ToBoolean(Get(_Obj_, "WRITABLE")).
 
     b.  ReturnIfAbrupt(_writable_).
 
-    c.  Set the [[Writable]] field of _desc_ to ToBoolean(_writable_).
+    c.  Set the [[Writable]] field of _desc_ to _writable_.
 
 8.  If HasProperty(_Obj_, "GET") is TRUE, then
 
@@ -4842,7 +4867,7 @@ as follows:
 
 7.  If 0 < _n_ ≤ 21, return the String consisting of the code units of
     the most significant _n_ digits of the decimal representation of
-    _s_, followed by the code units 0x002E (FULL STOP), followed by the
+    _s_, followed by the code unit 0x002E (FULL STOP), followed by the
     code units of the remaining _k−n_ digits of the decimal
     representation of _s_.
 
@@ -6196,7 +6221,7 @@ successive elements of _iterator2_. It performs the following steps:
 CompoundIterator next( ) 
 
 The CompoundIterator NEXT method is a standard built-in function object
-that performs the following steps:
+(clause 17) that performs the following steps:
 
 1.  Let _O_ be the THIS value.
 
@@ -6565,11 +6590,11 @@ name is the value of the argument _N_:
 
 9.  If Type(_unscopables_) is Object, then
 
-    a.  Let _blocked_ be Get(_unscopables_, _N_).
+    a.  Let _blocked_ be ToBoolean(Get(_unscopables_, _N_)).
 
     b.  ReturnIfAbrupt(_blocked_).
 
-    c.  If ToBoolean(_blocked_) is TRUE, return FALSE.
+    c.  If _blocke_ is TRUE, return FALSE.
 
 10. Return TRUE.
 
@@ -6621,11 +6646,11 @@ exist.
 
 4.  Return _envRec_.SetMutableBinding(_N_, _V_, FALSE).
 
-NOTE In this specification, all uses of CreateMutableBinding and
-CreateImmutableBinding for object environment records are immediately
-followed by a call to InitializeBinding for the same name. Hence,
-implementations do not need to explicitly track the initialization state
-of individual object environment record bindings.
+NOTE In this specification, all uses of CreateMutableBinding for object
+environment records are immediately followed by a call to
+InitializeBinding for the same name. Hence, implementations do not need
+to explicitly track the initialization state of individual object
+environment record bindings.
 
 SetMutableBinding (N,V,S)
 
@@ -6724,7 +6749,7 @@ Table 16 — Additional Fields of Function Environment Records
   ----------------------- --------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   [[thisValue]]           Any                                           This is the THIS value used for this invocation of the function.
   [[thisBindingStatus]]   "LEXICAL" | "INITIALIZED" | "UNINITIALIZED"   If the value is "LEXICAL", this is an _ArrowFunction_ and does not have a local this value.
-  [[FunctionObject]]      Object                                        The Function Object whose invocation caused this environment record to be created.
+  [[FunctionObject]]      Object                                        The function Object whose invocation caused this environment record to be created.
   [[HomeObject]]          Object | UNDEFINED                            If the associated function has SUPER property accesses and is not an _ArrowFunction_, [[HomeObject]] is the object that the function is bound to as a method. The default value for [[HomeObject]] is UNDEFINED.
   [[NewTarget]]           Object | UNDEFINED                            If this environment record was created by the [[Construct]] internal method, [[NewTarget]] is the value of the [[Construct]] _newTarget_ parameter. Otherwise, its value is UNDEFINED.
 
@@ -7003,7 +7028,7 @@ designated as being subject to deletion.
 
 5.  Let _globalObject_ be the binding object for _ObjRec_.
 
-6.  Let _existingProp_ be _globalObject_.[[GetOwnProperty]](_N_).
+6.  Let _existingProp_ be HasOwnProperty(_globalObject_, _N_).
 
 7.  ReturnIfAbrupt(_existingProp_).
 
@@ -7134,11 +7159,9 @@ properties are allowed.
 
 6.  If _hasProperty_ is TRUE, return TRUE.
 
-7.  Let _extensible_ be IsExtensible(_globalObject_).
+7.  Return IsExtensible(_globalObject_).
 
-8.  ReturnIfAbrupt(_extensible_).
-
-9.  Return _extensible_.
+8.  9.  
 
 CanDeclareGlobalFunction (N)
 
@@ -7163,7 +7186,7 @@ argument _N_.
 7.  If _existingProp_.[[Configurable]] is TRUE, return TRUE.
 
 8.  If IsDataDescriptor(_existingProp_) is TRUE and _existingProp_ has
-    attribute values {.[[Writable]]: TRUE, [[Enumerable]]: TRUE}, return
+    attribute values {[[Writable]]: TRUE, [[Enumerable]]: TRUE}, return
     TRUE.
 
 9.  Return FALSE.
@@ -7243,7 +7266,7 @@ replaced.
 
 9.  ReturnIfAbrupt(_status_).
 
-10. Let _status_ be Put(_globalObject_, _V_).
+10. Let _status_ be Set(_globalObject_, _N_, _V_, FALSE).
 
 11. Record that the binding for _N_ in _ObjRec_ has been initialized.
 
@@ -7310,9 +7333,13 @@ the value of _S._
 
     b.  If _M_ is UNDEFINED, throw a REFERENCEERROR exception.
 
-    c.  Let _targetER_ be _M_.[[Environment]]’s environment record.
+    c.  Let _targetEnv_ be _M_.[[Environment]].
 
-    d.  Return _targetER_.GetBindingValue(_N2_, _S_).
+    d.  If _targetEnv_ is UNDEFINED, throw a REFERENCEERROR exception.
+
+    e.  Let _targetER_ be _targetEnv_’s environment record.
+
+    f.  Return _targetER_.GetBindingValue(_N2_, _S_).
 
 4.  If the binding for _N_ in _envRec_ is an uninitialized binding,
     throw a REFERENCEERROR exception.
@@ -7412,9 +7439,8 @@ performed:
 
 NewDeclarativeEnvironment (E) 
 
-When the abstract operation NewDeclarativeEnvironment is called with
-either a Lexical Environment or NULL as argument _E_ the following steps
-are performed:
+When the abstract operation NewDeclarativeEnvironment is called with a
+Lexical Environment as argument _E_ the following steps are performed:
 
 1.  Let _env_ be a new Lexical Environment.
 
@@ -7430,8 +7456,8 @@ are performed:
 NewObjectEnvironment (O, E)
 
 When the abstract operation NewObjectEnvironment is called with an
-Object _O_ and a Lexical Environment _E_ (or NULL) as arguments, the
-following steps are performed:
+Object _O_ and a Lexical Environment _E_ as arguments, the following
+steps are performed:
 
 1.  Let _env_ be a new Lexical Environment.
 
@@ -7540,7 +7566,7 @@ Table 21 — Realm Record Fields
   [[intrinsics]]    Record whose field names are intrinsic keys and whose values are objects   These are the intrinsic values used by code associated with this Realm
   [[globalThis]]    Object                                                                     The global object for this Realm
   [[globalEnv]]     Lexical Environment                                                        The global environment for this Realm
-  [[templateMap]]   A List of Record{ [[strings]]: List, [[array]]: Object}.                   Template objects are canonicalized separately for each Realm using its [[templateMap]]. Each [[strings]] value is a List containing, in source text order, the raw string values of a _TemplateLiteral_ that has been evaluated. The associated [[array]] value is the corresponding template object that is passed to a tag function.
+  [[templateMap]]   A List of Record { [[strings]]: List, [[array]]: Object}.                  Template objects are canonicalized separately for each Realm using its [[templateMap]]. Each [[strings]] value is a List containing, in source text order, the raw string values of a _TemplateLiteral_ that has been evaluated. The associated [[array]] value is the corresponding template object that is passed to a tag function.
   ----------------- -------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 An implementation may define other, implementation specific fields.
@@ -7575,7 +7601,7 @@ performs the following steps:
 
 4.  Set _intrinsics_.[[%ObjectPrototype%]] to _objProto_.
 
-5.  Let _throwerSteps_ be the algorithm steps specifed in 9.2.8.1 for
+5.  Let _throwerSteps_ be the algorithm steps specified in 9.2.7.1 for
     the %ThrowTypeError% function.
 
 6.  Let _thrower_ be CreateBuiltinFunction(_realmRec_, _throwerSteps_,
@@ -7646,9 +7672,9 @@ performs the following steps:
 
     b.  Let _desc_ be the fully populated data property descriptor for
         the property containing the specified attributes for the
-        property. For properties whose values are functions, the value
-        of the [[Value]] attribute is the corresponding intrinsic
-        function object from _realmRec_.
+        property. For properties listed in 18.2, 18.3, or 18.4 the value
+        of the [[Value]] attribute is the corresponding intrinsic object
+        from _realmRec_.
 
     c.  Let _status_ be DefinePropertyOrThrow(_global_, _name_, _desc_).
 
@@ -7949,7 +7975,7 @@ following steps:
     the elements of _nextPending_.[[Arguments]] as its arguments.
 
 
-Initialization() 
+ECMAScript Initialization() 
 
 An ECMAScript implementation performs the following steps prior to the
 execution of any Jobs or the evaluation of any ECMAScript code:
@@ -7974,8 +8000,8 @@ execution of any Jobs or the evaluation of any ECMAScript code:
     b.  Terminate ECMAScript execution.
 
 8.  In an implementation dependent manner, obtain the ECMAScript source
-    text strings (see clause 10) for zero or more ECMAScript scripts
-    and/or ECMAScript modules. For each such _sourceText_ do,
+    texts (see clause 10) for zero or more ECMAScript scripts and/or
+    ECMAScript modules. For each such _sourceText_ do,
 
     a.  If _sourceText_ is the source code of a script, then
 
@@ -7991,7 +8017,7 @@ execution of any Jobs or the evaluation of any ECMAScript code:
 
 InitializeHostDefinedRealm ( realm ) 
 
-The abstract operation InitializeFirstRealm with parameter _realm_
+The abstract operation InitializeHostDefinedRealm with parameter _realm_
 performs the following steps:
 
 1.  If this implementation requires use of an exotic object to serve as
@@ -8459,51 +8485,58 @@ steps are taken:
 
 The iterator’s NEXT method processes object properties to determine
 whether the property key should be returned as an iterator value.
-Processed properties do not include properties whose property key is a
-Symbol. Properties of the object being enumerated may be deleted during
-enumeration. A property that is deleted before it is processed by the
-iterator’s NEXT method is ignored. If new properties are added to the
-object being enumerated during enumeration, the newly added properties
-are not guaranteed to be processed in the active enumeration. A property
-name will be returned by the iterator’s NEXT method at most once in any
-enumeration.
+Returned property keys do not include keys that are Symbols. Properties
+of the target object may be deleted during enumeration. A property that
+is deleted before it is processed by the iterator’s NEXT method is
+ignored. If new properties are added to the target object during
+enumeration, the newly added properties are not guaranteed to be
+processed in the active enumeration. A property name will be returned by
+the iterator’s NEXT method at most once in any enumeration.
 
-Enumerating the properties of an object includes enumerating properties
-of its prototype, and the prototype of the prototype, and so on,
-recursively; but a property of a prototype is not processed if it has
-the same name as a property that has already been processed by the
+Enumerating the properties of the target object includes enumerating
+properties of its prototype, and the prototype of the prototype, and so
+on, recursively; but a property of a prototype is not processed if it
+has the same name as a property that has already been processed by the
 iterator’s NEXT method. The values of [[Enumerable]] attributes are not
 considered when determining if a property of a prototype object has
-already been processed. The enumerable properties of prototype objects
-must be accessed by invoking the prototype object’s [[Enumerate]]
-internal method.
+already been processed. The enumerable property names of prototype
+objects must be obtained as if by invoking the prototype object’s
+[[Enumerate]] internal method. [[Enumerate]] must obtain the own
+property keys of the target object as if by calling its
+[[OwnPropertyKeys]] internal method. Property attributes of the target
+object must be obtained as if by calling its [[GetOwnProperty]] internal
+method.
 
-The following is an informative definition of an ECMAScript generator
-function that conforms to these rules:
+NOTE The following is an informative definition of an ECMAScript
+generator function that conforms to these rules:
 
 function* enumerate(obj) {
 
 let visited=new Set;
 
-for (let name of Object.getOwnPropertyNames(obj)) {
+for (let key of Reflect.ownKeys(obj)) {
 
-let desc = Object.getOwnPropertyDescriptor(obj,name);
+if (typeof key === "string") {
+
+let desc = Reflect.getOwnPropertyDescriptor(obj,key);
 
 if (desc) {
 
-visited.add(name);
+visited.add(key);
 
-if (desc.enumerable) yield name;
+if (desc.enumerable) yield key;
+
+}
 
 }
 
 }
 
-let proto = Object.getPrototypeOf(obj)
+let proto = Reflect.getPrototypeOf(obj)
 
 if (proto === null) return;
 
-for (let protoName of Reflect.enumerate(proto){
+for (let protoName of Reflect.enumerate(proto)) {
 
 if (!visited.has(protoName)) yield protoName;
 
@@ -8663,35 +8696,13 @@ addition have the [[Construct]] internal method. ECMAScript function
 objects whose code is not strict mode code have the [[GetOwnProperty]]
 internal method defined here.
 
-[[GetOwnProperty]] (P)
+ 
 
-When the [[GetOwnProperty]] internal method of a non-strict mode
-ECMAScript function object _F_ is called with property key _P_, the
-following steps are taken:
+1.  2.  a.  i.  ii. 1.  
 
-1.  Let _v_ be OrdinaryGetOwnProperty(_F_, _P_).
+        iii. 
 
-2.  If IsDataDescriptor(_v_) is TRUE, then
-
-    a.  If _P_ is "CALLER", then
-
-        i.  Let _callerValue_ be _v_.[[Value]].
-
-        ii. If _callerValue_ is an ECMAScript Function object, then
-
-            1.  If _callerValue_’s [[Strict]] internal slot is TRUE, set
-                _v_.[[Value]] to NULL.
-
-        iii. Else if IsCallable(_callerValue_) is TRUE, set
-            _v_.[[Value]] to NULL.
-
-3.  Return _v_.
-
-If an implementation extends non-strict mode ECMAScript function or
-built-in function objects with a built-in CALLER own property then it
-must use this definition of [[GetOwnProperty]]. If an implementation
-does not provide such an extension, the ordinary object
-[[GetOwnProperty]] internal method must be used.
+3.  
 
 [[Call]] ( thisArgument, argumentsList) 
 
@@ -8708,32 +8719,27 @@ ECMAScript language values. The following steps are taken:
 
 4.  Let _calleeContext_ be PrepareForOrdinaryCall(_F_, NULL).
 
-5.  ReturnIfAbrupt(_calleeContext_).
+5.  Assert: _calleeContext_ is now the running execution context.
 
-6.  Let _status_ be OrdinaryCallBindThis(_F_, _calleeContext_,
+6.  7.  Perform OrdinaryCallBindThis(_F_, _calleeContext_,
     _thisArgument_).
 
-7.  If _status_ is an abrupt completion, then
+8.  a.  b.  
 
-    a.  Remove _calleeContext_ from the execution context stack and
-        restore _callerContext_ as the running execution context.
+9.  Let _result_ be OrdinaryCallEvaluateBody(_F_, _argumentsList_).
 
-    b.  Return _status_.
-
-8.  Let _result_ be OrdinaryCallEvaluateBody(_F_, _argumentsList_).
-
-9.  Remove _calleeContext_ from the execution context stack and restore
+10. Remove _calleeContext_ from the execution context stack and restore
     _callerContext_ as the running execution context.
 
-10. If _result_.[[type]] is return, return
+11. If _result_.[[type]] is return, return
     NormalCompletion(_result_.[[value]]).
 
-11. ReturnIfAbrupt(_result_).
+12. ReturnIfAbrupt(_result_).
 
-12. Return NormalCompletion(UNDEFINED).
+13. Return NormalCompletion(UNDEFINED).
 
 NOTE When _calleeContext_ is removed from the execution context stack in
-step 9 it must not be destroyed if it is suspended and retained for
+step 8 it must not be destroyed if it is suspended and retained for
 later resumption by an accessible generator object_._
 
 PrepareForOrdinaryCall( F, newTarget )
@@ -8756,12 +8762,7 @@ following steps are taken:
 
 7.  Let _localEnv_ be NewFunctionEnvironment(_F_, _newTarget_).
 
-8.  ReturnIfAbrupt(_localEnv_).
-
-9.  NOTE Any exception objects produced by NewFunctionEnvironment are
-    associated with _callerRealm_.
-
-10. Set the LexicalEnvironment of _calleeContext_ to _localEnv_.
+8.  9.  10. Set the LexicalEnvironment of _calleeContext_ to _localEnv_.
 
 11. Set the VariableEnvironment of _calleeContext_ to _localEnv_.
 
@@ -8771,7 +8772,10 @@ following steps are taken:
 13. Push _calleeContext_ onto the execution context stack;
     _calleeContext_ is now the running execution context.
 
-14. Return _calleeContext_.
+14. NOTE Any exception objects produced after this point are associated
+    with _calleeRealm_.
+
+15. Return _calleeContext_.
 
 OrdinaryCallBindThis ( F, calleeContext, thisArgument )
 
@@ -8805,7 +8809,10 @@ _thisArgument_ the following steps are taken:
 
 7.  Let _envRec_ be _localEnv_’s environment record.
 
-8.  Return _envRec_.BindThisValue(_thisValue_).
+8.  Assert: The next step never returns an abrupt completion because
+    _envRec_.[[thisBindingStatus]] is "UNINITIALIZED".
+
+9.  Return _envRec_.BindThisValue(_thisValue_).
 
 OrdinaryCallEvaluateBody ( F, argumentsList )
 
@@ -8846,32 +8853,24 @@ The following steps are taken:
 
 6.  Let _calleeContext_ be PrepareForOrdinaryCall(_F_, _newTarget_).
 
-7.  ReturnIfAbrupt(_calleeContext_).
+7.  8.  Assert: _calleeContext_ is now the running execution context.
 
-8.  Assert: _calleeContext_ is now the running execution context.
+9.  If _kind_ is "BASE",
 
-9.  If _kind_ is "BASE", then
+10. perform OrdinaryCallBindThis(_F_, _calleeContext_, _thisArgument_).
 
-    a.  Let _status_ be OrdinaryCallBindThis(_F_, _calleeContext_,
-        _thisArgument_).
+    a.  i.  ii. 
 
-    b.  If _status_ is an abrupt completion, then
+11. Let _constructorEnv_ be the LexicalEnvironment of _calleeContext_.
 
-        i.  Remove _calleeContext_ from the execution context stack and
-            restore _callerContext_ as the running execution context.
+12. Let _envRec_ be _constructorEnv_’s environment record.
 
-        ii. Return _status_.
+13. Let _result_ be OrdinaryCallEvaluateBody(_F_, _argumentsList_).
 
-10. Let _constructorEnv_ be the LexicalEnvironment of _calleeContext_.
-
-11. Let _envRec_ be _constructorEnv_’s environment record.
-
-12. Let _result_ be OrdinaryCallEvaluateBody(_F_, _argumentsList_).
-
-13. Remove _calleeContext_ from the execution context stack and restore
+14. Remove _calleeContext_ from the execution context stack and restore
     _callerContext_ as the running execution context.
 
-14. If _result_.[[type]] is return, then
+15. If _result_.[[type]] is return, then
 
     a.  If Type(_result_.[[value]]) is Object, return
         NormalCompletion(_result_.[[value]]).
@@ -8881,9 +8880,9 @@ The following steps are taken:
     c.  If _result_.[[value]] is not UNDEFINED, throw a TYPEERROR
         exception.
 
-15. Else, ReturnIfAbrupt(_result_).
+16. Else, ReturnIfAbrupt(_result_).
 
-16. Return _envRec_.GetThisBinding().
+17. Return _envRec_.GetThisBinding().
 
 FunctionAllocate (functionPrototype, strict [,functionKind] )
 
@@ -8910,22 +8909,16 @@ _functionKind_. FunctionAllocate performs the following steps:
     internal slots listed in Table 27. All of those internal slots are
     initialized to UNDEFINED.
 
-7.  Set _F_’s essential internal methods except for [[GetOwnProperty]]
-    to the default ordinary object definitions specified in 9.1.
+7.  Set _F_’s essential internal methods to the default ordinary object
+    definitions specified in 9.1.
 
-8.  If _strict_ is TRUE, set _F_’s [[GetOwnProperty]] internal method to
-    the default ordinary object definition specified in 9.1.5.
-
-9.  Else, set _F_’s [[GetOwnProperty]] internal method as specified in
-    9.2.1.
-
-10. Set _F_’s [[Call]] internal method to the definition specified in
-    9.2.2.
+8.  9.  10. Set _F_’s [[Call]] internal method to the definition
+    specified in 9.2.1.
 
 11. If _needsConstruct_ is TRUE, then
 
     a.  Set _F_’s [[Construct]] internal method to the definition
-        specified in 9.2.3.
+        specified in 9.2.2.
 
     b.  If _functionKind_ is "GENERATOR", set the [[ConstructorKind]]
         internal slot of _F_ to "DERIVED".
@@ -8964,9 +8957,7 @@ _Scope_. FunctionInitialize performs the following steps:
 
 2.  Let _len_ be the ExpectedArgumentCount of _ParameterList_.
 
-3.  Let _realm_ be the value of _F’s_ [[Realm]] internal slot.
-
-4.  Let _status_ be DefinePropertyOrThrow(_F_, "LENGTH",
+3.  4.  Let _status_ be DefinePropertyOrThrow(_F_, "LENGTH",
     PropertyDescriptor{[[Value]]: _len_, [[Writable]]: FALSE,
     [[Enumerable]]: FALSE, [[Configurable]]: TRUE}).
 
@@ -9163,8 +9154,8 @@ following steps:
 
 5.  If _prefix_ was passed, then
 
-    a.  Let _name_ be the concatenation of _prefix_, Unicode code unit
-        0x0020 (Space) , and _name_.
+    a.  Let _name_ be the concatenation of _prefix_, code unit 0x0020
+        (Space), and _name_.
 
 6.  Return DefinePropertyOrThrow(_F_, "NAME",
     PropertyDescriptor{[[Value]]: _name_, [[Writable]]: FALSE,
@@ -9442,7 +9433,7 @@ execution context is being established.
 
     c.  Assert: _status_ is never an abrupt completion.
 
-36. For each parsed grammar phase _f_ in _functionsToInitialize_, do
+36. For each parsed grammar phrase _f_ in _functionsToInitialize_, do
 
     a.  Let _fn_ be the sole element of the BoundNames of _f._
 
@@ -9477,13 +9468,12 @@ specifications. An implementation may also provide additional built-in
 function objects that are not defined in this specification.
 
 If a built-in function object is implemented as an exotic object it must
-have the ordinary object behaviour specified in 9.1 except
-[[GetOwnProperty]] which must be as specified in 9.2.1. All such exotic
+have the ordinary object behaviour specified in 9.1. All such exotic
 function objects also have [[Prototype]], [[Extensible]], and [[Realm]]
 internal slots.
 
-Unless otherwise specified every built-in function object initially has
-the %FunctionPrototype% object (19.2.3) as the initial value of its
+Unless otherwise specified every built-in function object has the
+%FunctionPrototype% object (19.2.3) as the initial value of its
 [[Prototype]] internal slot.
 
 The behaviour specified for each built-in function via algorithm steps
@@ -9598,6 +9588,10 @@ following steps:
 5.  Set the [[Prototype]] internal slot of _func_ to _prototype_.
 
 6.  Return _func_.
+
+Each built-in function defined in this specification is created as if by
+calling the CreateBuiltinFunction abstract operation, unless otherwise
+specified.
 
 
 Built-in Exotic Object Internal Methods and Slots
@@ -9823,11 +9817,13 @@ of new Array exotic objects. It performs the following steps:
 
 9.  Set the [[Extensible]] internal slot of _A_ to TRUE.
 
-10. Call OrdinaryDefineOwnProperty with arguments _A_, "LENGTH" and
+10. Perform OrdinaryDefineOwnProperty(_A_, "LENGTH",
     PropertyDescriptor{[[Value]]: _length_, [[Writable]]: TRUE,
-    [[Enumerable]]: FALSE, [[Configurable]]: FALSE}.
+    [[Enumerable]]: FALSE, [[Configurable]]: FALSE}).
 
-11. Return _A_.
+11. Assert: the preceding stop never produces an abrupt completion.
+
+12. Return _A_.
 
 ArraySpeciesCreate(originalArray, length)
 
@@ -9866,7 +9862,7 @@ the following steps:
             1.  If SameValue(_C_, _realmC_.[[intrinsics]].[[%Array%]])
                 is TRUE, let _C_ be UNDEFINED.
 
-    d.  If Type(C) is Object, then
+    d.  If Type(_C_) is Object, then
 
         i.  Let _C_ be Get(_C_, @@species).
 
@@ -9940,7 +9936,7 @@ are taken:
 16. Let _succeeded_ be OrdinaryDefineOwnProperty(_A_, "LENGTH",
     _newLenDesc_).
 
-17. Assert:_succeeded_ is not an abrupt completion.
+17. Assert: _succeeded_ is not an abrupt completion.
 
 18. If _succeeded_ is FALSE, return FALSE.
 
@@ -9962,7 +9958,7 @@ are taken:
         iii. Let _succeeded_ be OrdinaryDefineOwnProperty(_A_, "LENGTH",
             _newLenDesc_).
 
-        iv. Assert:_succeeded_ is not an abrupt completion.
+        iv. Assert: _succeeded_ is not an abrupt completion.
 
         v.  Return FALSE.
 
@@ -10052,30 +10048,13 @@ is called with property key _P_, the following steps are taken:
 
 4.  If _desc_ is UNDEFINED, return FALSE; otherwise, return TRUE.
 
-[[Enumerate]] ()
+ 
 
-When the [[Enumerate]] internal method of an exotic String object _O_ is
-called the following steps are taken:
+1.  
 
-1.  Let _indexKeys_ be a new empty List.
+2.  3.  4.  a.  
 
-2.  Let _str_ be the String value of the [[StringData]] internal slot of
-    _O_.
-
-3.  Let _len_ be the number of elements in _str_.
-
-4.  For each integer _i_ starting with 0 such that _i_ < _len_, in
-    ascending order,
-
-    a.  Add ToString(_i_) as the last element of _indexKeys_
-
-5.  Let _ordinary_ be the result of calling the default ordinary object
-    [[Enumerate]] internal method (9.1.11) on _O_.
-
-6.  ReturnIfAbrupt(_ordinary_).
-
-7.  Return CreateCompoundIterator(CreateListIterator(_indexKeys_),
-    _ordinary_)_._
+5.  6.  7.  
 
 [[OwnPropertyKeys]] ( )
 
@@ -10134,10 +10113,8 @@ objects. It performs the following steps:
 7.  Set the [[HasProperty]] internal method of _S_ as specified in
     9.4.3.2.
 
-8.  Set the [[Enumerate]] internal method of _S_ as specified in 9.4.3.
-
-9.  Set the [[OwnPropertyKeys]] internal method of _S_ as specified in
-    9.4.3.4.
+8.  9.  Set the [[OwnPropertyKeys]] internal method of _S_ as specified
+    in 9.4.3.3.
 
 10. Set the [[Prototype]] internal slot of _S_ to _prototype_.
 
@@ -10258,8 +10235,7 @@ performs the following steps:
 
     a.  If IsAccessorDescriptor(_Desc_) is TRUE, then
 
-        i.  Call the [[Delete]] internal method of _map_ passing _P_ as
-            the argument.
+        i.  Call _map_.[[Delete]](_P_)t.
 
     b.  Else
 
@@ -10274,8 +10250,7 @@ performs the following steps:
         ii. If _Desc_.[[Writable]] is present and its value is FALSE,
             then
 
-            1.  Call the [[Delete]] internal method of _map_ passing _P_
-                as the argument.
+            1.  Call _map_.[[Delete]](_P_).
 
 8.  Return TRUE.
 
@@ -10359,8 +10334,7 @@ with a property key _P_ performs the following steps:
 
 6.  If _result_ is TRUE and the value of _isMapped_ is TRUE, then
 
-    a.  Call the [[Delete]] internal method of _map_ passing _P_ as the
-        argument.
+    a.  Call _map_.[[Delete]](_P_).
 
 7.  Return _result_.
 
@@ -10478,11 +10452,9 @@ environment record _env_. The following steps are performed:
 
             2.  Let _p_ be MakeArgSetter(_name_, _env_).
 
-            3.  Call the [[DefineOwnProperty]] internal method of _map_
-                passing ToString(_index_) and the
+            3.  Call _map_.[[DefineOwnProperty]](ToString(_index_),
                 PropertyDescriptor{[[Set]]: _p_, [[Get]]: _g,_
-                [[Enumerable]]: FALSE, [[Configurable]]: TRUE} as
-                arguments.
+                [[Enumerable]]: FALSE, [[Configurable]]: TRUE}).
 
     c.  Let _index_ be _index_ − 1
 
@@ -10755,31 +10727,11 @@ value _Receiver_, the following steps are taken:
     internal method (9.1.8) on _O_ passing _P_, _V_, and _Receiver_ as
     arguments.
 
-[[Enumerate]] ()
+ 
 
-When the [[Enumerate]] internal method of an Integer Indexed exotic
-object _O_ is called the following steps are taken:
+1.  2.  3.  4.  a.  
 
-1.  Let _indexKeys_ be a new empty List.
-
-2.  Assert: _O_ is an Object that has [[ViewedArrayBuffer]],
-    [[ArrayLength]], [[ByteOffset]], and [[TypedArrayName]] internal
-    slots.
-
-3.  Let _len_ be the value of _O_’s [[ArrayLength]] internal slot.
-
-4.  For each integer _i_ starting with 0 such that _i_ < _len_, in
-    ascending order,
-
-    a.  Add ToString(_i_) as the last element of _indexKeys_.
-
-5.  Let _ordinary_ be the result of calling the default ordinary object
-    [[Enumerate]] internal method (9.1.11) on _O_.
-
-6.  ReturnIfAbrupt(_ordinary_).
-
-7.  Return CreateCompoundIterator(CreateListIterator(_indexKeys_),
-    _ordinary_)_._
+5.  6.  7.  
 
 [[OwnPropertyKeys]] ()
 
@@ -10839,11 +10791,8 @@ steps:
 
 7.  Set the [[Set]] internal method of _A_ as specified in 9.4.5.5.
 
-8.  Set the [[Enumerate]] internal method of _A_ as specified in
-    9.4.5.6.
-
-9.  Set the [[OwnPropertyKeys]] internal method of _A_ as specified in
-    9.4.5.7.
+8.  9.  Set the [[OwnPropertyKeys]] internal method of _A_ as specified
+    in 9.4.5.6.
 
 10. Set the [[Prototype]] internal slot of _A_ to _prototype_.
 
@@ -10885,8 +10834,8 @@ _index_ performs the following steps:
 
 12. Let _indexedPosition_ = (_index_ × _elementSize_) + _offset_.
 
-13. Let _elementType_ be the string value of the Element Type value
-    inTable 49 for _arrayTypeName_.
+13. Let _elementType_ be the string value of the Element Type value in
+    Table 49 for _arrayTypeName_.
 
 14. Return GetValueFromBuffer(_buffer_, _indexedPosition_,
     _elementType_).
@@ -12200,7 +12149,7 @@ There are four types of ECMAScript code:
 NOTE Function code is generally provided as the bodies of Function
 Definitions (14.1), Arrow Function Definitions (14.2), Method
 Definitions (14.3) and Generator Definitions (14.4). Function code is
-also derived from the last argument to the Function constructor
+also derived from the last argument to the FUNCTION constructor
 (19.2.1.1) and the GeneratorFunction constructor (25.2.1.1).
 
 Strict Mode Code
@@ -12230,7 +12179,7 @@ strict mode code in the following situations:
       Directive.
 
 -   Function code that is supplied as the last argument to the built-in
-      Function constructor is strict mode code if the last argument is a
+      FUNCTION constructor is strict mode code if the last argument is a
       String that when processed as a _FunctionBody_ begins with a
       Directive Prologue that contains a Use Strict Directive.
 
@@ -12252,7 +12201,7 @@ ECMASCRIPT LANGUAGE: LEXICAL GRAMMAR
 The source text of an ECMAScript _Script_ or _Module_ is first converted
 into a sequence of input elements, which are tokens, line terminators,
 comments, or white space. The source text is scanned from left to right,
-repeatedly taking the longest possible sequence of code units as the
+repeatedly taking the longest possible sequence of code points as the
 next input element.
 
 There are several situations where the identification of lexical input
@@ -12363,7 +12312,7 @@ Table 31 — Format-Control Code Point Usage
   _CODE POINT _   _NAME_                      _ABBREVIATION_   _USAGE_
   U+200C          Zero width non-joiner       <ZWNJ>           _IdentifierPart_
   U+200D          Zero width joiner           <ZWJ>            _IdentifierPart_
-  U+FEFF          ZERO WIDTH NO-BREAK SPACE   <ZWNBSP>         _Whitespace_
+  U+FEFF          ZERO WIDTH NO-BREAK SPACE   <ZWNBSP>         _WhiteSpace_
   --------------- --------------------------- ---------------- ------------------
 
 
@@ -12381,7 +12330,7 @@ token.
 
 The ECMAScript white space code points are listed in Table 32.
 
-Table 32 — Whitespace Code Points
+Table 32 — White Space Code Points
 
   --------------------- ------------------------------------------------- ----------------
   _CODE POINT _         _NAME_                                            _ABBREVIATION_
@@ -12394,14 +12343,14 @@ Table 32 — Whitespace Code Points
   Other category “Zs”   Any other Unicode “Separator, space” code point   <USP>
   --------------------- ------------------------------------------------- ----------------
 
-ECMAScript implementations must recognize as _Whitespace_ code points
+ECMAScript implementations must recognize as _WhiteSpace_ code points
 listed in the “Separator, space” (Zs) category by Unicode 5.1.
-ECMAScript implementations may also recognize as _Whitespace_ additional
+ECMAScript implementations may also recognize as _WhiteSpace_ additional
 category Zs code points from subsequent editions of the Unicode
 Standard.
 
 NOTE Other than for the code points listed in Table 32, ECMAScript
-_Whitespace_ intentionally excludes all code points that have the
+_WhiteSpace_ intentionally excludes all code points that have the
 Unicode “White_Space” property but which are not classified in category
 “Zs”.
 
@@ -12552,7 +12501,8 @@ Template
 
 NOTE The _DivPunctuator_, _RegularExpressionLiteral_,
 _RightBracePunctuator,_ and _TemplateSubstitutionTail_ productions
-define tokens, but are not included in the _CommonToken_ production.
+derive additional tokens that are not included in the _CommonToken_
+production.
 
 
 Names and Keywords
@@ -12570,7 +12520,7 @@ conforming ECMAScript implementations. ECMAScript implementations may
 recognize identifier code points defined in later editions of the
 Unicode Standard.
 
-NOTE 1 This standard specifies specific code point additions: U+0024
+NOTE This standard specifies specific code point additions: U+0024
 (dollar sign) and U+005F (LOW LINE) are permitted anywhere in an
 _IdentifierName_, and the code points U+200C (zero-width non-joiner) and
 U+200D (zero-width joiner) are permitted anywhere after the first code
@@ -12593,10 +12543,9 @@ regardless of whether or not an escape sequence was used to contribute
 any particular code point.
 
 Two _IdentifierName_ that are canonically equivalent according to the
-Unicode standard are _not_ equal unless they are represented by the
-exact same sequence of code points (in other words, conforming
-ECMAScript implementations are only required to do bitwise comparison on
-_IdentifierName_ values).
+Unicode standard are _not_ equal unless, after replacement of each
+_UnicodeEscapeSequence_, they are represented by the exact same sequence
+of code points.
 
 Syntax
 
@@ -13632,7 +13581,7 @@ situations.
 Rules of Automatic Semicolon Insertion
 
 In the following rules, “token” means the actual recognized lexical
-token determined using the current lexical goal symbol is described in
+token determined using the current lexical goal symbol as described in
 clause 11.
 
 There are three basic rules of semicolon insertion:
@@ -13647,6 +13596,10 @@ There are three basic rules of semicolon insertion:
       one _LineTerminator_.
 
 -   The offending token is }.
+
+-   The previous token is ) and the inserted semicolon would then be
+      parsed as the terminating semicolon of a do-while statement
+      (13.6.1).
 
     1.  When, as the _Script_ or _Module_ is parsed from left to right,
         the end of the input stream of tokens is encountered and the
@@ -13850,20 +13803,16 @@ _BindingIdentifier_ : _Identifier
     contained in strict code and the StringValue of _Identifier_ is
     "ARGUMENTS" or "EVAL".
 
-_IdentifierReference_~[Yield]~ : YIELD
+_IdentifierReference_ : YIELD
 
-_BindingIdentifier_~[Yield]~ : YIELD
+_BindingIdentifie_ : YIELD
 
-_LabelIdentifier_~[Yield]~ : YIELD
+_LabelIdentifier_ : YIELD
 
--   It is a Syntax Error if this production has a ~[Yield]~ parameter.
-
--   It is a Syntax Error if the code match by this production is
+-   -   It is a Syntax Error if the code matched by this production is
     contained in strict code_._
 
--   It is a Syntax Error if the code match by this production is within
-    the _GeneratorBody_ of a _GeneratorMethod, GeneratorDeclaration,_ or
-    _GeneratorExpression_.
+-   
 
 _IdentifierReference_~[Yield]~ : _Identifier
 
@@ -13874,7 +13823,7 @@ _LabelIdentifier_~[Yield]~ : _Identifier
 -   It is a Syntax Error if this production has a ~[Yield]~ parameter
     and StringValue of _Identifier_ is "YIELD".
 
-_Identifier_ :: _IdentifierName_ BUT NOT _ReservedWord
+_Identifier_ : _IdentifierName_ BUT NOT _ReservedWord
 
 -   It is a Syntax Error if this phrase is contained in strict code and
     the StringValue of _IdentifierName_ is: "IMPLEMENTS", "INTERFACE",
@@ -13944,7 +13893,7 @@ See also: 13.2.3.5, 13.6.4.9.
 NOTE UNDEFINED is passed for _environment_ to indicate that a PutValue
 operation should be used to assign the initialization value. This is the
 case for VAR statements and formal parameter lists of some non-strict
-mode functions (See 9.2.13). In those cases a lexical binding is hoisted
+mode functions (See 9.2.12). In those cases a lexical binding is hoisted
 and preinitialized prior to evaluation of its initializer.
 
 _BindingIdentifier_ _:_ _Identifier
@@ -14628,7 +14577,7 @@ Runtime Semantics: PropertyDefinitionEvaluation
 
   With parameter _object_ and _enumerable_.
 
-See also: 14.3.10, 14.4.13, B.3.1
+See also: 14.3.9, 14.4.13, B.3.1
 
 _PropertyDefinitionList_ : _PropertyDefinitionList_ ,
 _PropertyDefinition
@@ -14671,22 +14620,19 @@ _PropertyDefinition_ : _PropertyName_ : _AssignmentExpression
 
 5.  ReturnIfAbrupt(_propValue_).
 
-6.  If IsFunctionDefinition of _AssignmentExpression_ is TRUE, then
+6.  7.  If IsAnonymousFunctionDefinition(_AssignmentExpression_) is
+    TRUE, then
 
-    a.  If IsAnonymousFunctionDefinition(_AssignmentExpression_) is
-        TRUE, then
+    a.  Let _hasNameProperty_ be HasOwnProperty(_propValue_, "NAME").
 
-        i.  Let _hasNameProperty_ be HasOwnProperty(_propValue_,
-            "NAME").
+    b.  ReturnIfAbrupt(_hasNameProperty_).
 
-        ii. ReturnIfAbrupt(_hasNameProperty_).
+    c.  If _hasNameProperty_ is FALSE, perform
+        SetFunctionName(_propValue_, _propKey_).
 
-        iii. If _hasNameProperty_ is FALSE, perform
-            SetFunctionName(_propValue_, _propKey_).
+8.  Assert: _enumerable_ is TRUE.
 
-7.  Assert: _enumerable_ is TRUE.
-
-8.  Return CreateDataPropertyOrThrow(_object_, _propKey_, _propValue_).
+9.  Return CreateDataPropertyOrThrow(_object_, _propKey_, _propValue_).
 
 _NOTE An alternative semantics for this production is given in B.3.1.
 
@@ -14908,26 +14854,23 @@ steps:
 
     b.  Let _cookedValue_ be the string value _cookedStrings_[_index_].
 
-    c.  Call the [[DefineOwnProperty]] internal method of _template_
-        with arguments _prop_ and PropertyDescriptor{[[Value]]:
-        _cookedValue_, [[Enumerable]]: TRUE, [[Writable]]: FALSE,
-        [[Configurable]]: FALSE}_._
+    c.  Call _template_.[[DefineOwnProperty]](_prop_,
+        PropertyDescriptor{[[Value]]: _cookedValue_, [[Enumerable]]:
+        TRUE, [[Writable]]: FALSE, [[Configurable]]: FALSE})_._
 
     d.  Let _rawValue_ be the string value _rawStrings_[_index_].
 
-    e.  Call the [[DefineOwnProperty]] internal method of _rawObj_ with
-        arguments _prop_ and PropertyDescriptor{[[Value]]: _rawValue_,
-        [[Enumerable]]: TRUE, [[Writable]]: FALSE, [[Configurable]]:
-        FALSE}_._
+    e.  Call _rawObj_.[[DefineOwnProperty]](_prop_,
+        PropertyDescriptor{[[Value]]: _rawValue_, [[Enumerable]]: TRUE,
+        [[Writable]]: FALSE, [[Configurable]]: FALSE})_._
 
     f.  Let _index_ be _index_+1.
 
 12. Perform SetIntegrityLevel(_rawObj_, "FROZEN").
 
-13. Call the [[DefineOwnProperty]] internal method of _template_ with
-    arguments "RAW" and PropertyDescriptor{[[Value]]: _rawObj_,
-    [[Writable]]: FALSE, [[Enumerable]]: FALSE, [[Configurable]]:
-    FALSE}_._
+13. Call _template_.[[DefineOwnProperty]]("RAW",
+    PropertyDescriptor{[[Value]]: _rawObj_, [[Writable]]: FALSE,
+    [[Enumerable]]: FALSE, [[Configurable]]: FALSE})_._
 
 14. Perform SetIntegrityLevel(_template_, "FROZEN").
 
@@ -15095,7 +15038,7 @@ _ParenthesizedExpression_ : ( _Expression_ )
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2, 12.7.2,
+See also: 12.1.3, 12.2.0.4, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2, 12.7.2,
 12.8.2, 12.9.2, 12.10.2, 12.11.2, 12.12.2, 12.13.2, 12.14.3, 12.15.2.
 
 _ParenthesizedExpression_ : ( _Expression_ )
@@ -15257,7 +15200,7 @@ CallExpression TemplateLiteral
 
 Static Semantics: IsDestructuring
 
-See also: 13.6.4.5.
+See also: 13.6.4.6.
 
 _MemberExpression_ : _PrimaryExpression
 
@@ -15315,7 +15258,7 @@ NEW NewExpression
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.4.3, 12.5.3, 12.6.2, 12.7.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.4.3, 12.5.3, 12.6.2, 12.7.2,
 12.8.2, 12.9.2, 12.10.2, 12.11.2, 12.12.2, 12.13.2, 12.14.3, 12.15.2.
 
 CallExpression :
@@ -15605,8 +15548,7 @@ and a Boolean argument _tailPosition_. It performs the following steps:
 
 4.  If IsCallable(_func_) is FALSE, throw a TYPEERROR exception.
 
-5.  If _tailPosition_ is TRUE, perform the PrepareForTailCall abstract
-    operation.
+5.  If _tailPosition_ is TRUE, perform PrepareForTailCall().
 
 6.  Let _result_ be Call(_func_, _thisValue_, _argList_).
 
@@ -15878,7 +15820,7 @@ LeftHandSideExpression --
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.3.1.5, 12.5.3, 12.6.2, 12.7.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.3.1.5, 12.5.3, 12.6.2, 12.7.2,
 12.8.2, 12.9.2, 12.10.2, 12.11.2, 12.12.2, 12.13.2, 12.14.3, 12.15.2.
 
 PostfixExpression :
@@ -15980,7 +15922,7 @@ TYPEOF UnaryExpression
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.3.1.5, 12.4.3, 12.6.2, 12.7.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.3.1.5, 12.4.3, 12.6.2, 12.7.2,
 12.8.2, 12.9.2, 12.10.2, 12.11.2, 12.12.2, 12.13.2, 12.14.3, 12.15.2.
 
 UnaryExpression :
@@ -16252,7 +16194,7 @@ _MultiplicativeOperator_ _UnaryExpression
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.7.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.7.2,
 12.8.2, 12.9.2, 12.10.2, 12.11.2, 12.12.2, 12.13.2, 12.14.3, 12.15.2.
 
 _MultiplicativeExpression_ : _MultiplicativeExpression
@@ -16432,7 +16374,7 @@ AdditiveExpression - MultiplicativeExpression
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
 12.8.2, 12.9.2, 12.10.2, 12.11.2, 12.12.2, 12.13.2, 12.14.3, 12.15.2.
 
 AdditiveExpression :
@@ -16607,7 +16549,7 @@ ShiftExpression >>> AdditiveExpression
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
 12.7.2, 12.9.2, 12.10.2, 12.11.2, 12.12.2, 12.13.2, 12.14.3, 12.15.2.
 
 ShiftExpression :
@@ -16768,7 +16710,7 @@ RelationalExpression IN ShiftExpression
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
 12.7.2, 12.8.2, 12.10.2, 12.11.2, 12.12.2, 12.13.2, 12.14.3, 12.15.2.
 
 RelationalExpression :
@@ -16959,7 +16901,7 @@ EqualityExpression !== RelationalExpression
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
 12.7.2, 12.8.2, 12.9.2, 12.11.2, 12.12.2, 12.13.2, 12.14.3, 12.15.2.
 
 EqualityExpression :
@@ -17117,7 +17059,7 @@ _BitwiseORExpression_ : _BitwiseORExpression_ | _BitwiseXORExpression
 
 Static Semantics: IsValidSimpleAssignmentTarget 
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
 12.7.2, 12.8.2, 12.9.2, 12.10.2, 12.12.2, 12.13.2, 12.14.3, 12.15.2.
 
 _BitwiseANDExpression_ : _BitwiseANDExpression_ & _EqualityExpression
@@ -17191,7 +17133,7 @@ _LogicalORExpression_ : _LogicalORExpression_ || _LogicalANDExpression
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
 12.7.2, 12.8.2, 12.9.2, 12.10.2, 12.11.2, 12.13.2, 12.14.3, 12.15.2.
 
 _LogicalANDExpression_ : _LogicalANDExpression_ && _BitwiseORExpression
@@ -17266,7 +17208,7 @@ _ConditionalExpression_ : _LogicalORExpression_ ? _AssignmentExpression
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
 12.7.2, 12.8.2, 12.9.2, 12.10.2, 12.11.2, 12.12.2, 12.14.3, 12.15.2.
 
 _ConditionalExpression_ : _LogicalORExpression_ ? _AssignmentExpression
@@ -17359,7 +17301,7 @@ LeftHandSideExpression AssignmentOperator AssignmentExpression
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
 12.7.2, 12.8.2, 12.9.2, 12.10.2, 12.11.2, 12.12.2, 12.13.2, 12.15.2.
 
 AssignmentExpression :
@@ -18001,7 +17943,7 @@ _Expression_ _: Expression_ , _AssignmentExpression
 
 Static Semantics: IsValidSimpleAssignmentTarget
 
-See also: 12.1.3, 12.2.0.3, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
+See also: 12.1.3, 12.2.0.4, 12.2.9.3, 12.3.1.5, 12.4.3, 12.5.3, 12.6.2,
 12.7.2, 12.8.2, 12.9.2, 12.10.2, 12.11.2, 12.12.2, 12.13.2, 12.14.3.
 
 _Expression_ _: Expression_ , _AssignmentExpression
@@ -18153,7 +18095,7 @@ _Declaration_ : _LexicalDeclaration
 Static Semantics: VarDeclaredNames
 
 See also: 13.1.11, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.2.4, 13.6.3.5,
-13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 0, 15.1.5,
+13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 14.2.12, 15.1.5,
 15.2.1.13.
 
 Statement :
@@ -18171,7 +18113,7 @@ DebuggerStatement
 Static Semantics: VarScopedDeclarations
 
 See also: 13.1.12, 13.2.2.3, 13.5.6, 13.6.1.5, 13.6.2.5, 13.6.3.6,
-13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.12, 15.1.6,
+13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.13, 15.1.6,
 15.2.1.14.
 
 Statement :
@@ -18547,7 +18489,7 @@ _StatementListItem_ : _Declaration
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.2.4, 13.6.3.5,
-13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 0, 15.1.5,
+13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 14.2.12, 15.1.5,
 15.2.1.13.
 
 _Block_ : { }
@@ -18570,7 +18512,7 @@ _StatementListItem_ : _Declaration
 Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.2.2.3, 13.5.6, 13.6.1.5, 13.6.2.5, 13.6.3.6,
-13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.12, 15.1.6,
+13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.13, 15.1.6,
 15.2.1.14.
 
 _Block_ : { }
@@ -18896,7 +18838,7 @@ _VariableDeclaration_ : _BindingPattern_ _Initializer
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.5.5, 13.6.1.4, 13.6.2.4, 13.6.3.5,
-13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 0, 15.1.5,
+13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 14.2.12, 15.1.5,
 15.2.1.13.
 
 _VariableStatement_ : VAR _VariableDeclarationList_ ;
@@ -18906,7 +18848,7 @@ _VariableStatement_ : VAR _VariableDeclarationList_ ;
 Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.5.6, 13.6.1.5, 13.6.2.5, 13.6.3.6,
-13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.12, 15.1.6,
+13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.13, 15.1.6,
 15.2.1.14.
 
 _VariableDeclarationList_ : _VariableDeclaration
@@ -19203,7 +19145,7 @@ _SingleNameBinding_ : _BindingIdentifier Initializer
 
 Static Semantics: IsSimpleParameterList
 
-See also: 14.1.12, 14.2.8.
+See also: 14.1.12, 14.2.9.
 
 _BindingElement_ : _BindingPattern
 
@@ -19297,7 +19239,7 @@ Runtime Semantics: IteratorBindingInitialization
 
   With parameters _iteratorRecord,_ and _environment_.
 
-See also: 14.1.19, 14.2.13.
+See also: 14.1.19, 14.2.14.
 
 NOTE When UNDEFINED is passed for _environment_ it indicates that a
 PutValue operation should be used to assign the initialization value.
@@ -19670,8 +19612,7 @@ IfStatement :
 IF ( Expression) Statement ELSE Statement
 IF ( Expression ) Statement
 
--   It is a Syntax Error if IsLabelledFunction(_Statement_) is TRUE for
-    any occurrence of _Statement_ in these rules.
+-   It is a Syntax Error if IsLabelledFunction(_Statement_) is TRUE.
 
 NOTE It is only necessary to apply this rule if the extension specified
 in B.3.2 is implemented.
@@ -19745,7 +19686,7 @@ _IfStatement_ : IF ( _Expression_ ) _Statement
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.6.1.4, 13.6.2.4, 13.6.3.5,
-13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 0, 15.1.5,
+13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 14.2.12, 15.1.5,
 15.2.1.13.
 
 _IfStatement_ : IF ( _Expression_ ) _Statement_ ELSE _Statement
@@ -19764,7 +19705,7 @@ _IfStatement_ : IF ( _Expression_ ) _Statement
 Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.2.2.3, 13.6.1.5, 13.6.2.5, 13.6.3.6,
-13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.12, 15.1.6,
+13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.13, 15.1.6,
 15.2.1.14.
 
 _IfStatement_ : IF ( _Expression_ ) _Statement_ ELSE _Statement
@@ -19837,8 +19778,7 @@ Syntax
 
 IterationStatement~[Yield,\ Return]~ :
 
-  DO Statement~[?Yield,\ ?Return]~ WHILE ( Expression~[In,\ ?Yield]~ )
-  ;~opt~
+  DO Statement~[?Yield,\ ?Return]~ WHILE ( Expression~[In,\ ?Yield]~ ) ;
 
   WHILE ( Expression~[In,\ ?Yield]~ ) Statement~[?Yield,\ ?Return]~
 
@@ -19853,8 +19793,8 @@ IterationStatement~[Yield,\ Return]~ :
   FOR ( LexicalDeclaration~[?Yield]~ Expression~[In,\ ?Yield]opt~ ;
   Expression~[In,\ ?Yield]opt~ ) Statement~[?Yield,\ ?Return]~
 
-  FOR (LeftHandSideExpression~[?Yield]~ IN Expression~[In,\ ?Yield]~ )
-  Statement~[?Yield,\ ?Return]~
+  FOR ( [lookahead ∉ {LET [ }] LeftHandSideExpression~[?Yield]~ IN
+  Expression~[In,\ ?Yield]~ ) Statement~[?Yield,\ ?Return]~
 
   FOR ( VAR ForBinding~[?Yield]~ IN Expression~[In,\ ?Yield]~ )
   Statement~[?Yield,\ ?Return]~
@@ -19862,7 +19802,7 @@ IterationStatement~[Yield,\ Return]~ :
   FOR ( ForDeclaration~[?Yield]~ IN Expression~[In,\ ?Yield]~ )
   Statement~[?Yield,\ ?Return]~
 
-  FOR ([lookahead ≠ LET] LeftHandSideExpression~[?Yield]~ OF
+  FOR ( [lookahead ≠ LET] LeftHandSideExpression~[?Yield]~ OF
   AssignmentExpression~[In,\ ?Yield]~ ) Statement~[?Yield, ?Return]~
 
   FOR ( VAR ForBinding~[?Yield]~ OF AssignmentExpression~[In,\ ?Yield]~
@@ -19880,28 +19820,24 @@ ForBinding~[Yield]~ :
 BindingIdentifier~[?Yield]~
 BindingPattern~[?Yield]~
 
-NOTE 1 A semicolon is not required after a DO-WHILE statement.
-
 Semantics
 
 Static Semantics: Early Errors
 
 IterationStatement :
 
-  DO Statement WHILE ( Expression ) ;~opt~
+  DO Statement WHILE ( Expression ) ;
 
   WHILE ( Expression ) Statement
 
-  FOR ( [lookahead ∉ {LET [ }] Expression~opt~ ; Expression~opt~ ;
-  Expression~opt~ ) Statement
+  FOR ( Expression~opt~ ; Expression~opt~ ; Expression~opt~ ) Statement
 
   FOR ( VAR VariableDeclarationList; Expression~opt~ ; Expression~opt~ )
   Statement
 
   FOR ( LexicalDeclaration Expression~opt~ ; Expression~opt~ ) Statement
 
-  FOR ( [lookahead ∉ {LET [ }] LeftHandSideExpression IN Expression)
-  Statement
+  FOR ( LeftHandSideExpression IN Expression) Statement
 
   FOR ( VAR ForBinding IN Expression ) Statement
 
@@ -19913,8 +19849,7 @@ IterationStatement :
 
   FOR ( ForDeclaration OF AssignmentExpression ) Statement
 
--   It is a Syntax Error if IsLabelledFunction(_Statement_) is TRUE for
-    any occurrence of _Statement_ in these rules.
+-   It is a Syntax Error if IsLabelledFunction(_Statement_) is TRUE.
 
 NOTE It is only necessary to apply this rule if the extension specified
 in B.3.2 is implemented.
@@ -19946,7 +19881,7 @@ Static Semantics: ContainsDuplicateLabels
 See also: 13.0.1, 13.1.2, 13.5.2, 13.6.2.1, 13.6.3.2, 13.6.4.3, 13.10.2,
 13.11.2, 13.12.2, 13.14.2, 15.2.1.2.
 
-_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );~opt~
+_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );
 
 1.  Return ContainsDuplicateLabels of _Statement_ with argument
     _labelSet._
@@ -19958,7 +19893,7 @@ Static Semantics: ContainsUndefinedBreakTarget
 See also: 13.0.2, 13.1.3, 13.5.3, 13.6.2.2, 13.6.3.3, 13.6.4.4, 13.8.2,
 13.10.3, 13.11.3, 13.12.3, 13.14.3, 15.2.1.3.
 
-_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );~opt~
+_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );
 
 1.  Return ContainsUndefinedBreakTarget of _Statement_ with argument
     _labelSet._
@@ -19970,7 +19905,7 @@ Static Semantics: ContainsUndefinedContinueTarget
 See also: 13.0.3, 13.1.4, 13.5.4, 13.6.2.3, 13.6.3.4, 13.6.4.5, 13.7.2,
 13.10.4, 13.11.4, 13.12.4,13.14.4, 15.2.1.4.
 
-_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );~opt~
+_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );
 
 1.  Return ContainsUndefinedContinueTarget of _Statement_ with arguments
     _iterationSet_ and « »_._
@@ -19978,20 +19913,20 @@ _IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );~opt~
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.5.5, 13.6.2.4, 13.6.3.5,
-13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 0, 15.1.5,
+13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 14.2.12, 15.1.5,
 15.2.1.13.
 
-_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );~opt~
+_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );
 
 1.  Return the VarDeclaredNames of _Statement_.
 
 Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.2.2.3, 13.5.6, 13.6.2.5, 13.6.3.6,
-13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.12, 15.1.6,
+13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.13, 15.1.6,
 15.2.1.14.
 
-_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );~opt~
+_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );
 
 1.  Return the VarScopedDeclarations of _Statement_.
 
@@ -19999,9 +19934,9 @@ Runtime Semantics: LabelledEvaluation
 
   With argument _labelSet_.
 
-See also: 13.0.6, 13.6.2.5, 13.6.3.6, 13.6.4.11, 13.12.14.
+See also: 13.0.7, 13.6.2.6, 13.6.3.7, 13.6.4.11, 13.12.14.
 
-_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );~opt~
+_IterationStatement_ : DO _Statement_ WHILE ( _Expression_ );
 
 1.  Let _V_ = UNDEFINED.
 
@@ -20070,7 +20005,7 @@ _IterationStatement_ : WHILE ( _Expression_ ) _Statement
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.3.5,
-13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 0, 15.1.5,
+13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 14.2.12, 15.1.5,
 15.2.1.13.
 
 _IterationStatement_ : WHILE ( _Expression_ ) _Statement
@@ -20080,7 +20015,7 @@ _IterationStatement_ : WHILE ( _Expression_ ) _Statement
 Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.2.2.3, 13.5.6, 13.6.1.5, 13.6.3.6,
-13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.12, 15.1.6,
+13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.13, 15.1.6,
 15.2.1.14.
 
 _IterationStatement_ : WHILE ( _Expression_ ) _Statement
@@ -20192,7 +20127,7 @@ IterationStatement :
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.2.4,
-13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 0, 15.1.5,
+13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 14.2.12, 15.1.5,
 15.2.1.13.
 
 _IterationStatement_ : FOR ( _Expression_~opt~ ; _Expression_~opt~ ;
@@ -20218,7 +20153,7 @@ _Expression_~opt~ ) _Statement
 Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.2.2.3, 13.5.6, 13.6.1.5, 13.6.2.5,
-13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.12, 15.1.6,
+13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.13, 15.1.6,
 15.2.1.14.
 
 _IterationStatement_ : FOR ( _Expression_~opt~ ; _Expression_~opt~ ;
@@ -20246,7 +20181,7 @@ Runtime Semantics: LabelledEvaluation
 
   With argument _labelSet_.
 
-See also: 13.0.7, 13.6.1.6,, 13.6.2.6, 13.6.4.11, 13.12.14.
+See also: 13.0.7, 13.6.1.6, 13.6.2.6, 13.6.4.11, 13.12.14.
 
 _IterationStatement_ : FOR ( _Expression_~opt~ ; _Expression_~opt~ ;
 _Expression_~opt~ ) _Statement
@@ -20560,7 +20495,7 @@ _ForBinding_ : _BindingPattern
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.2.4,
-13.6.3.5, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 0, 15.1.5,
+13.6.3.5, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 14.2.12, 15.1.5,
 15.2.1.13.
 
 _IterationStatement_ : FOR ( _LeftHandSideExpression_ IN _Expression_ )
@@ -20606,7 +20541,7 @@ _IterationStatement_ : FOR ( _ForDeclaration_ OF _AssignmentExpression
 Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.2.2.3, 13.5.6, 13.6.1.5, 13.6.2.5,
-13.6.3.6, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.12, 15.1.6,
+13.6.3.6, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.13, 15.1.6,
 15.2.1.14.
 
 _IterationStatement_ : FOR ( _LeftHandSideExpression_ IN _Expression_ )
@@ -20658,7 +20593,7 @@ See also: 12.1.5, 13.2.3.5.
 NOTE UNDEFINED is passed for _environment_ to indicate that a PutValue
 operation should be used to assign the initialization value. This is the
 case for VAR statements and the formal parameter lists of some
-non-strict mode functions (see 9.2.13). In those cases a lexical binding
+non-strict mode functions (see 9.2.12). In those cases a lexical binding
 is hoisted and preinitialized prior to evaluation of its initializer.
 
 _ForDeclaration_ : _LetOrConst_ _ForBinding
@@ -20689,7 +20624,7 @@ Runtime Semantics: LabelledEvaluation
 
   With argument _labelSet_.
 
-See also: 13.0.7, 13.6.1.6,, 13.6.2.6, 13.6.3.7, 13.12.14.
+See also: 13.0.7, 13.6.1.6, 13.6.2.6, 13.6.3.7, 13.12.14.
 
 _IterationStatement_ : FOR ( _LeftHandSideExpression_ IN _Expression_ )
 _Statement
@@ -21171,8 +21106,8 @@ _WithStatement_ : WITH ( _Expression_ ) _Statement
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.2.4,
-13.6.3.5, 13.6.4.7, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 0, 15.1.5,
-15.2.1.13.
+13.6.3.5, 13.6.4.7, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 14.2.12,
+15.1.5, 15.2.1.13.
 
 _WithStatement_ : WITH ( _Expression_ ) _Statement
 
@@ -21181,7 +21116,7 @@ _WithStatement_ : WITH ( _Expression_ ) _Statement
 Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.2.2.3, 13.5.6, 13.6.1.5, 13.6.2.5,
-13.6.3.6, 13.6.4.8, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.12,
+13.6.3.6, 13.6.4.8, 13.11.8, 13.12.13, 13.14.6, 14.1.17, 14.2.13,
 15.1.6, 15.2.1.14.
 
 _WithStatement_ : WITH ( _Expression_ ) _Statement
@@ -21443,7 +21378,7 @@ _DefaultClause_ : DEFAULT : _StatementList_~opt~
 
 Static Semantics: LexicallyDeclaredNames
 
-See also: 13.1.2, 13.12.6, 14.1.14, 14.2.10, 15.1.3, 15.2.1.11.
+See also: 13.1.5, 13.12.6, 14.1.14, 14.2.10, 15.1.3, 15.2.1.11.
 
 _CaseBlock_ : { }
 
@@ -21537,8 +21472,8 @@ _DefaultClause_ : DEFAULT : _StatementList_~opt~
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.2.4,
-13.6.3.5, 13.6.4.7, 13.10.5, 13.12.12, 13.14.5, 14.1.16, 0, 15.1.5,
-15.2.1.13.
+13.6.3.5, 13.6.4.7, 13.10.5, 13.12.12, 13.14.5, 14.1.16, 14.2.12,
+15.1.5, 15.2.1.13.
 
 _SwitchStatement_ : SWITCH ( _Expression_ ) _CaseBlock
 
@@ -21589,7 +21524,7 @@ _DefaultClause_ : DEFAULT : _StatementList_~opt~
 Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.2.2.3, 13.5.6, 13.6.1.5, 13.6.2.5,
-13.6.3.6, 13.6.4.8, 13.10.6, 13.12.13, 13.14.6, 14.1.17, 14.2.12,
+13.6.3.6, 13.6.4.8, 13.10.6, 13.12.13, 13.14.6, 14.1.17, 14.2.13,
 15.1.6, 15.2.1.14.
 
 _SwitchStatement_ : SWITCH ( _Expression_ ) _CaseBlock
@@ -21957,7 +21892,7 @@ the following steps:
 
 Static Semantics: LexicallyDeclaredNames
 
-See also: 13.1.2, 13.11.5, 14.1.14, 14.2.10, 15.1.3, 15.2.1.11.
+See also: 13.1.5, 13.11.5, 14.1.14, 14.2.10, 15.1.3, 15.2.1.11.
 
 _LabelledStatement_ : _LabelIdentifier_ : _LabelledItem
 
@@ -22045,7 +21980,7 @@ _LabelledItem_ : _FunctionDeclaration
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.2.4,
-13.6.3.5, 13.6.4.7, 13.10.5, 13.11.7, 13.14.5, 14.1.16, 0, 15.1.5,
+13.6.3.5, 13.6.4.7, 13.10.5, 13.11.7, 13.14.5, 14.1.16, 14.2.12, 15.1.5,
 15.2.1.13.
 
 _LabelledStatement_ : _LabelIdentifier_ : _LabelledItem
@@ -22059,7 +21994,7 @@ _LabelledItem_ : _FunctionDeclaration
 Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.2.2.3, 13.5.6, 13.6.1.5, 13.6.2.5,
-13.6.3.6, 13.6.4.8, 13.10.6, 13.11.8, 13.14.6, 14.1.17, 14.2.12, 15.1.6,
+13.6.3.6, 13.6.4.8, 13.10.6, 13.11.8, 13.14.6, 14.1.17, 14.2.13, 15.1.6,
 15.2.1.14.
 
 _LabelledStatement_ : _LabelIdentifier_ : _LabelledItem
@@ -22074,7 +22009,7 @@ Runtime Semantics: LabelledEvaluation
 
   With argument _labelSet_.
 
-See also: 13.0.7, 13.6.1.6,, 13.6.2.6, 13.6.3.7, 13.6.4.11.
+See also: 13.0.7, 13.6.1.6, 13.6.2.6, 13.6.3.7, 13.6.4.11.
 
 _LabelledStatement_ : _LabelIdentifier_ : _LabelledItem
 
@@ -22172,6 +22107,9 @@ catches an exception, its _CatchParameter_ is bound to that exception.
 Static Semantics: Early Errors
 
 _Catch_ : CATCH ( _CatchParameter_ ) _Block 
+
+-   It is a Syntax Error if BoundNames of _FormalParameterList_ contains
+    any duplicate elements.
 
 -   It is a Syntax Error if any element of the BoundNames of
     _CatchParameter_ also occurs in the LexicallyDeclaredNames of
@@ -22325,8 +22263,8 @@ _Catch_ : CATCH ( _CatchParameter_ ) _Block
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.2.4,
-13.6.3.5, 13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 14.1.16, 0, 15.1.5,
-15.2.1.13.
+13.6.3.5, 13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 14.1.16, 14.2.12,
+15.1.5, 15.2.1.13.
 
 _TryStatement_ : TRY _Block_ _Catch
 
@@ -22361,7 +22299,7 @@ _Catch_ : CATCH ( _CatchParameter_ ) _Block
 Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.2.2.3, 13.5.6, 13.6.1.5, 13.6.2.5,
-13.6.3.6, 13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 14.1.17, 14.2.12,
+13.6.3.6, 13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 14.1.17, 14.2.13,
 15.1.6, 15.2.1.14.
 
 _TryStatement_ : TRY _Block_ _Catch
@@ -22527,7 +22465,7 @@ ECMASCRIPT LANGUAGE: FUNCTIONS AND CLASSES
 
 NOTE Various ECMAScript language elements cause the creation of
 ECMAScript function objects (9.1.14). Evaluation of such functions
-starts with the execution of their [[Call]] internal method (9.2.2).
+starts with the execution of their [[Call]] internal method (9.2.1).
 
 
 Function Definitions
@@ -22878,7 +22816,7 @@ _FunctionExpression_ : FUNCTION _BindingIdentifier_ ( _FormalParameters
 
 Static Semantics: IsSimpleParameterList
 
-See also: 13.2.3.4, 14.2.8
+See also: 13.2.3.4, 14.2.9
 
 FormalParameters : [empty]
 
@@ -22914,7 +22852,7 @@ _FunctionStatementList_ : _StatementList_~opt~
 
 Static Semantics: LexicallyDeclaredNames
 
-See also: 13.1.2, 13.11.5, 13.12.6, 14.2.10, 15.1.3, 15.2.1.11.
+See also: 13.1.5, 13.11.5, 13.12.6, 14.2.10, 15.1.3, 15.2.1.11.
 
 FunctionStatementList : [empty]
 
@@ -22940,8 +22878,8 @@ _FunctionStatementList_ : _StatementList
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.2.4,
-13.6.3.5, 13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 0, 15.1.5,
-15.2.1.13.
+13.6.3.5, 13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.2.12,
+15.1.5, 15.2.1.13.
 
 FunctionStatementList : [empty]
 
@@ -22954,7 +22892,7 @@ FunctionStatementList : StatementList
 Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.2.2.3, 13.5.6, 13.6.1.5, 13.6.2.5,
-13.6.3.6, 13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.2.12,
+13.6.3.6, 13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.2.13,
 15.1.6, 15.2.1.14.
 
 FunctionStatementList : [empty]
@@ -22969,7 +22907,7 @@ Runtime Semantics: EvaluateBody
 
   With parameter _functionObject_.
 
-See also: 14.2.14, 14.4.11.
+See also: 14.2.15, 14.4.11.
 
 _FunctionBody_ : _FunctionStatementList 
 
@@ -22986,7 +22924,7 @@ functions. In that case the formal parameter bindings are preinitialized
 in order to deal with the possibility of multiple parameters with the
 same name.
 
-See also: 13.2.3.6, 14.2.13.
+See also: 13.2.3.6, 14.2.14.
 
 FormalParameters : [empty]
 
@@ -23138,7 +23076,7 @@ _FunctionExpression_ : FUNCTION _BindingIdentifier_ ( _FormalParameters
 
 5.  Let _name_ be StringValue of _BindingIdentifier_.
 
-6.  Perfrom _envRec._CreateImmutableBinding(_name_).
+6.  Perform _envRec._CreateImmutableBinding(_name_).
 
 7.  Let _closure_ be FunctionCreate(Normal, _FormalParameters_,
     _FunctionBody, funcEnv_, _strict_).
@@ -23147,7 +23085,7 @@ _FunctionExpression_ : FUNCTION _BindingIdentifier_ ( _FormalParameters
 
 9.  Perform SetFunctionName(_closure_, _name_).
 
-10. Perform _envRec_ InitializeBinding(_name,_ _closure_).
+10. Perform _envRec_.InitializeBinding(_name,_ _closure_).
 
 11. Return NormalCompletion(_closure_).
 
@@ -23235,7 +23173,7 @@ of an _ArrowFormalParameters_.
 Static Semantics: BoundNames
 
 See also: 12.1.2, 13.2.1.2, 13.2.2.1, 13.2.3.1, 13.6.4.2, 14.1.3,
-14.2.2, 14.5.2, 15.2.2.2, 15.2.3.2.
+14.4.2, 14.5.2, 15.2.2.2, 15.2.3.2.
 
 _ArrowParameters_ : _CoverParenthesizedExpressionAndArrowParameterList
 
@@ -23313,7 +23251,7 @@ CoverParenthesizedExpressionAndArrowParameterList~[Yield]~ :
 
 Static Semantics: ExpectedArgumentCount
 
-See also: 14.1.5,14.3.3.
+See also: 14.1.6,14.3.3.
 
 _ArrowParameters_ : _BindingIdentifier
 
@@ -23366,7 +23304,7 @@ _ArrowParameters_ : _CoverParenthesizedExpressionAndArrowParameterList
 
 Static Semantics: LexicallyDeclaredNames
 
-See also: 13.1.2, 13.11.5, 13.12.6, 14.1.14, 15.1.3, 15.2.1.11.
+See also: 13.1.5, 13.11.5, 13.12.6, 14.1.14, 15.1.3, 15.2.1.11.
 
 _ConciseBody_ : _AssignmentExpression
 
@@ -23380,6 +23318,8 @@ See also: 13.1.6, 13.11.6, 13.12.7, 14.1.15, 15.1.4, 15.2.1.12,
 _ConciseBody_ : _AssignmentExpression
 
 1.  Return an empty List.
+
+Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.2.4,
 13.6.3.5, 13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16,
@@ -23545,7 +23485,7 @@ SET PropertyName ( PropertySetParameterList ) { FunctionBody }
 
 Static Semantics: ExpectedArgumentCount
 
-See also: 14.1.5, 14.2.6.
+See also: 14.1.6, 14.2.6.
 
 _PropertySetParameterList_ : _FormalParameter
 
@@ -23601,27 +23541,11 @@ SET PropertyName ( PropertySetParameterList ) { FunctionBody }
 
 1.  Return PropName of _PropertyName_.
 
-Static Semantics: NeedsSuperBinding
+1.  2.  
 
-MethodDefinition : PropertyName ( StrictFormalParameters ) {
-FunctionBody }
+1.  
 
-1.  If _StrictFormalParameters_ Contains _SuperProperty_ is TRUE, return
-    TRUE.
-
-2.  Return _FunctionBody_ Contains _SuperProperty_.
-
-_MethodDefinition_ : GET _PropertyName_ ( ) { _FunctionBody_ }
-
-1.  Return _FunctionBody_ Contains _SuperProperty_.
-
-_MethodDefinition_ : SET _PropertyName_ ( _PropertySetParameterList_ ) {
-_FunctionBody_ }
-
-1.  If _PropertySetParameterList_ Contains _SuperProperty_ is TRUE,
-    return TRUE.
-
-2.  Return _FunctionBody_ Contains _SuperProperty_.
+1.  2.  
 
 Static Semantics: SpecialMethod
 
@@ -23661,11 +23585,9 @@ _FunctionBody_ }
     as a parameter then pass its value as the _functionPrototype_
     optional argument of FunctionCreate.
 
-7.  If NeedsSuperBinding of _MethodDefinition_ is TRUE, then
+7.  8.  Perform MakeMethod(_closure_, _object_).
 
-    a.  Perform MakeMethod(_closure_, _object_).
-
-8.  Return the Record{[[key]]: _propKey_, [[closure]]: _closure_}.
+9.  Return the Record{[[key]]: _propKey_, [[closure]]: _closure_}.
 
 Runtime Semantics: PropertyDefinitionEvaluation
 
@@ -23710,16 +23632,14 @@ _MethodDefinition_ : GET _PropertyName_ ( ) { _FunctionBody_ }
 6.  Let _closure_ be FunctionCreate(Method, _formalParameterList_,
     _FunctionBody, scope_, _strict_).
 
-7.  If NeedsSuperBinding of _MethodDefinition_ is TRUE, then
+7.  8.  Perform MakeMethod(_closure_, _object_).
 
-    a.  Perform MakeMethod(_closure_, _object_).
+9.  Perform SetFunctionName(_closure_, _propKey_, "GET").
 
-8.  Perform SetFunctionName(_closure_, _propKey_, "GET").
-
-9.  Let _desc_ be the PropertyDescriptor{[[Get]]: _closure_,
+10. Let _desc_ be the PropertyDescriptor{[[Get]]: _closure_,
     [[Enumerable]]: _enumerable_, [[Configurable]]: TRUE}
 
-10. Return DefinePropertyOrThrow(_object_, _propKey_, _desc_).
+11. Return DefinePropertyOrThrow(_object_, _propKey_, _desc_).
 
 _MethodDefinition_ : SET _PropertyName_ ( _PropertySetParameterList_ ) {
 _FunctionBody_}
@@ -23735,16 +23655,14 @@ _FunctionBody_}
 5.  Let _closure_ be FunctionCreate(Method, _PropertySetParameterList_,
     _FunctionBody, scope_, _strict_).
 
-6.  If NeedsSuperBinding of _MethodDefinition_ is TRUE, then
+6.  7.  Perform MakeMethod(_closure_, _object_).
 
-    a.  Perform MakeMethod(_closure_, _object_).
+8.  Perform SetFunctionName(_closure_, _propKey_, "SET").
 
-7.  Perform SetFunctionName(_closure_, _propKey_, "SET").
-
-8.  Let _desc_ be the PropertyDescriptor{[[Set]]: _closure_,
+9.  Let _desc_ be the PropertyDescriptor{[[Set]]: _closure_,
     [[Enumerable]]: _enumerable_, [[Configurable]]: TRUE}
 
-9.  Return DefinePropertyOrThrow(_object_, _propKey_, _desc_).
+10. Return DefinePropertyOrThrow(_object_, _propKey_, _desc_).
 
 
 Generator Function Definitions
@@ -23754,26 +23672,23 @@ Syntax
 GeneratorMethod~[Yield]~ :
 
 * PropertyName~[?Yield]~
-(StrictFormalParameters~[Yield,GeneratorParameter]~ ) {
-GeneratorBody~[Yield]~ }
+(StrictFormalParameters~[Yield,GeneratorParameter]~ ) { GeneratorBody }
 
 GeneratorDeclaration~[Yield,\ Default]~ :
 
 FUNCTION * BindingIdentifier~[?Yield]~ (
-FormalParameters~[Yield,GeneratorParameter]~ ) { GeneratorBody~[Yield]~
-}
+FormalParameters~[Yield,GeneratorParameter]~ ) { GeneratorBody }
 [+Default] FUNCTION * ( FormalParameters~[Yield,GeneratorParameter]~ ) {
-GeneratorBody~[Yield]~ }
+GeneratorBody }
 
 GeneratorExpression :
 
 FUNCTION * BindingIdentifier~[Yield]opt~ (
-FormalParameters~[Yield,GeneratorParameter]~ ) { GeneratorBody~[Yield]~
-}
+FormalParameters~[Yield,GeneratorParameter]~ ) { GeneratorBody }
 
-GeneratorBody~[Yield]~ :
+GeneratorBody :
 
-FunctionBody~[?Yield]~
+FunctionBody~[Yield]~
 
 YieldExpression~[In]~ :
 
@@ -23982,7 +23897,7 @@ Runtime Semantics: EvaluateBody
 
   With parameter _functionObject_.
 
-See also: 14.1.18, 14.2.14.
+See also: 14.1.18, 14.2.15.
 
 _GeneratorBody_ : _FunctionBody
 
@@ -24054,7 +23969,7 @@ Runtime Semantics: PropertyDefinitionEvaluation
 
   With parameter _object_ and _enumerable_.
 
-See also: 12.2.5.9, 14.3.10, B.3.1
+See also: 12.2.5.9, 14.3.9, B.3.1
 
 _GeneratorMethod_ : * _PropertyName_ ( _StrictFormalParameters_ ) {
 _GeneratorBody_ }
@@ -24070,21 +23985,19 @@ _GeneratorBody_ }
 5.  Let _closure_ be GeneratorFunctionCreate(Method,
     _StrictFormalParameters_, _GeneratorBody, scope_, _strict_).
 
-6.  If NeedsSuperBinding of _GeneratorMethod_ is TRUE, then
+6.  7.  Perform MakeMethod(_closure_, _object_).
 
-    a.  Perform MakeMethod(_closure_, _object_).
+8.  Let _prototype_ be ObjectCreate(%GeneratorPrototype%).
 
-7.  Let _prototype_ be ObjectCreate(%GeneratorPrototype%).
+9.  Perform MakeConstructor(_closure_, TRUE, _prototype_).
 
-8.  Perform MakeConstructor(_closure_, TRUE, _prototype_).
+10. Perform SetFunctionName(_closure_, _propKey_).
 
-9.  Perform SetFunctionName(_closure_, _propKey_).
-
-10. Let _desc_ be the Property Descriptor{[[Value]]: _closure_,
+11. Let _desc_ be the Property Descriptor{[[Value]]: _closure_,
     [[Writable]]: TRUE, [[Enumerable]]: _enumerable_, [[Configurable]]:
     TRUE}.
 
-11. Return DefinePropertyOrThrow(_object_, _propKey_, _desc_).
+12. Return DefinePropertyOrThrow(_object_, _propKey_, _desc_).
 
 Runtime Semantics: Evaluation
 
@@ -24119,7 +24032,7 @@ _FormalParameters_ ) { _GeneratorBody_ }
 
 5.  Let _name_ be StringValue of _BindingIdentifier_.
 
-6.  Perfrom _envRec._CreateImmutableBinding(_name_).
+6.  Perform _envRec._CreateImmutableBinding(_name_).
 
 7.  Let _closure_ be GeneratorFunctionCreate(Normal, _FormalParameters_,
     _GeneratorBody, funcEnv_, _strict_).
@@ -24446,7 +24359,7 @@ _ClassElement_ : ;
 
 Static Semantics: HasName
 
-See also: 14.1.8, 14.2.8,14.5.6.
+See also: 14.1.8, 14.2.8,14.4.7.
 
 _ClassExpression_ : CLASS _ClassTail
 
@@ -24659,24 +24572,26 @@ _ClassTail_ : _ClassHeritage_~opt~ { _ClassBody_~opt~ }
     _constructor_ with arguments _proto_ and _constructorParent_ as the
     optional _functionPrototype_ argument.
 
-13. Let _F_ be _constructorInfo_.[[closure]]
+13. Assert: _constructorInfo_ is not an abrupt completion.
 
-14. If _ClassHeritage_~opt~ is present, set _F_’s [[ConstructorKind]]
+14. Let _F_ be _constructorInfo_.[[closure]]
+
+15. If _ClassHeritage_~opt~ is present, set _F_’s [[ConstructorKind]]
     internal slot to "DERIVED".
 
-15. Perform MakeConstructor(_F_, FALSE, _proto_).
+16. Perform MakeConstructor(_F_, FALSE, _proto_).
 
-16. Perform MakeClassConstructor(_F_).
+17. Perform MakeClassConstructor(_F_).
 
-17. Perform CreateMethodProperty(_proto_, "CONSTRUCTOR", _F_)_.
+18. Perform CreateMethodProperty(_proto_, "CONSTRUCTOR", _F_)_.
 
-18. If _ClassBody_~opt~ is not present, let _methods_ be a new empty
+19. If _ClassBody_~opt~ is not present, let _methods_ be a new empty
     List.
 
-19. Else, let _methods_ be NonConstructorMethodDefinitions of
+20. Else, let _methods_ be NonConstructorMethodDefinitions of
     _ClassBody_.
 
-20. For each _ClassElement_ _m_ in order from _methods
+21. For each _ClassElement_ _m_ in order from _methods
 
     a.  If IsStatic of _m_ is FALSE, then
 
@@ -24697,13 +24612,13 @@ _ClassTail_ : _ClassHeritage_~opt~ { _ClassBody_~opt~ }
 
         ii. Return _status_.
 
-21. Set the running execution context’s LexicalEnvironment to _lex_.
+22. Set the running execution context’s LexicalEnvironment to _lex_.
 
-22. If _className_ is not UNDEFINED, then
+23. If _className_ is not UNDEFINED, then
 
     a.  Perform _classScopeEnvRec._InitializeBinding(_className_, _F_).
 
-23. Return _F_.
+24. Return _F_.
 
 Runtime Semantics: BindingClassDeclarationEvaluation
 
@@ -24808,7 +24723,7 @@ performs the following steps:
     argument _nonterminal_.
 
 NOTE Tail Position calls are only defined in strict mode code because of
-a common non-standard language extension (see 9.2.8) that enables
+a common non-standard language extension (see 9.2.7) that enables
 observation of the chain of caller contexts.
 
 Static Semantics: HasProductionInTailPosition
@@ -24884,7 +24799,7 @@ _IfStatement_ : IF ( _Expression_ ) _Statement
 
 IterationStatement :
 
-DO Statement WHILE ( Expression ) ;~opt~
+DO Statement WHILE ( Expression ) ;
 WHILE ( Expression ) Statement
 FOR (Expression~opt~ ; Expression~opt~ ; Expression~opt~ ) Statement
 FOR ( VAR VariableDeclarationList ; Expression~opt~ ; Expression~opt~ )
@@ -25189,14 +25104,13 @@ _ScriptBody_ : _StatementList
 
 -   It is a Syntax Error if _StatementList_ Contains SUPER unless the
     source code containing SUPER is eval code that is being processed by
-    a direct EVAL that is contained in function code. However, such
-    function code does not include _ArrowFunction_ function code.
+    a direct EVAL that is contained in function code that is not
+    _ArrowFunction_ function code.
 
 -   It is a Syntax Error if _StatementList_ Contains _NewTarget_ unless
     the source code containing _NewTarget_ is eval code that is being
-    processed by a direct EVAL that is contained in function code.
-    However, such function code does not include _ArrowFunction_
-    function code.
+    processed by a direct EVAL that is contained in function code that
+    is not _ArrowFunction_ function code.
 
 -   It is a Syntax Error if ContainsDuplicateLabels of _StatementList_
     with argument « » is TRUE.
@@ -25219,7 +25133,7 @@ _ScriptBody_ : _StatementList
 
 Static Semantics: LexicallyDeclaredNames
 
-See also: 13.1.2, 13.11.5, 13.12.6, 14.1.14, 14.2.10, 15.2.1.11.
+See also: 13.1.5, 13.11.5, 13.12.6, 14.1.14, 14.2.10, 15.2.1.11.
 
 _ScriptBody_ : _StatementList
 
@@ -25240,8 +25154,8 @@ _ScriptBody_ : _StatementList
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.2.4,
-13.6.3.5, 13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 0,
-15.2.1.13.
+13.6.3.5, 13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16,
+14.2.12, 15.2.1.13.
 
 _ScriptBody_ : _StatementList
 
@@ -25251,7 +25165,7 @@ Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.2.2.3, 13.5.6, 13.6.1.5, 13.6.2.5,
 13.6.3.6, 13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17,
-14.2.12, 15.2.1.14.
+14.2.13, 15.2.1.14.
 
 _ScriptBody_ : _StatementList
 
@@ -25766,7 +25680,7 @@ _ModuleItem_ : _StatementListItem
 
 Static Semantics: LexicallyDeclaredNames
 
-See also: 13.1.2, 13.11.5, 13.12.6, 14.1.14, 14.2.10, 15.1.3.
+See also: 13.1.5, 13.11.5, 13.12.6, 14.1.14, 14.2.10, 15.1.3.
 
 NOTE The LexicallyDeclaredNames of a _Module_ includes the names of all
 of its imported bindings.
@@ -25823,8 +25737,8 @@ _ModuleItem_ : _ImportDeclaration
 Static Semantics: VarDeclaredNames
 
 See also: 13.0.5, 13.1.11, 13.2.2.2, 13.5.5, 13.6.1.4, 13.6.2.4,
-13.6.3.5, 13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16, 0,
-15.1.5.
+13.6.3.5, 13.6.4.7, 13.10.5, 13.11.7, 13.12.12, 13.14.5, 14.1.16,
+14.2.12, 15.1.5.
 
 _Module_ : [empty]
 
@@ -25854,7 +25768,7 @@ Static Semantics: VarScopedDeclarations
 
 See also: 13.0.6, 13.1.12, 13.2.2.3, 13.5.6, 13.6.1.5, 13.6.2.5,
 13.6.3.6, 13.6.4.8, 13.10.6, 13.11.8, 13.12.13, 13.14.6, 14.1.17,
-14.2.12, 15.1.6.
+14.2.13, 15.1.6.
 
 _Module_ : [empty]
 
@@ -26021,8 +25935,7 @@ The abstract operation ParseModule with argument _sourceText_ creates a
 Source Text Module Record based upon the result of parsing _sourceText_
 as a _Module._ ParseModule performs the following steps:
 
-1.  Assert: Assert: _sourceText_ is an ECMAScript source text (see
-    clause 10).
+1.  Assert: _sourceText_ is an ECMAScript source text (see clause 10).
 
 2.  Parse _sourceText_ using _Module_ as the goal symbol and analyze the
     parse result for any Early Error conditions. If the parse was
@@ -26072,12 +25985,11 @@ as a _Module._ ParseModule performs the following steps:
     _starExportEntries_, [[IndirectExportEntries]]:
     _indirectExportEntries_}.
 
-NOTE An implementation may parse the source code identified by a host
-supplied module identifier as a _Module_ and analyze it for Early Error
-conditions prior to the evaluation of ParseModule for that module source
-text. However, the reporting of any errors must be deferred until the
-point where this specification actually performs ParseModule upon that
-source text.
+NOTE An implementation may parse module source text and analyze it for
+Early Error conditions prior to the evaluation of ParseModule for that
+module source text. However, the reporting of any errors must be
+deferred until the point where this specification actually performs
+ParseModule upon that source text.
 
 GetExportedNames( exportStarSet ) Concrete Method
 
@@ -26128,8 +26040,7 @@ argument _exportStarSet_ performs the following steps:
 
             1.  If _n_ is not an element of _exportedNames_, then
 
-                a.  Append _n_ to _exportedNames_.Return
-                    _exportedNames_.
+                a.  Append _n_ to _exportedNames_.
 
 8.  Return _exportedNames_.
 
@@ -26212,7 +26123,7 @@ following steps:
     b.  ReturnIfAbrupt(_importedModule_).
 
     c.  Let _resolution_ be _importedModule_.ResolveExport(_exportName_,
-        _resolveSet_, _exportStarSetCopy_).
+        _resolveSet_, _exportStarSet_).
 
     d.  ReturnIfAbrupt(_resolution_).
 
@@ -26384,7 +26295,7 @@ performs the following steps:
 
 1.  Let _module_ be this Source Text Module Record.
 
-2.  Assert: ModuleDeclarationInstantion has already been invoked on
+2.  Assert: ModuleDeclarationInstantiation has already been invoked on
     _module_ and successfully completed.
 
 3.  Assert: _module_.[[Realm]] is not UNDEFINED.
@@ -26451,7 +26362,7 @@ following requirements:
 
 -   If a Module Record corresponding to the pair _referencingModule_,
     _specifier_ does not exist or cannot be created, an exception must
-    be thrown,
+    be thrown.
 
 -   This operation must be idempotent if it completes normally. Each
     time it is called with a specific _referencingModule_, _specifier_
@@ -26469,7 +26380,7 @@ Runtime Semantics: GetModuleNamespace( module )
 The abstract operation GetModuleNamespace called with argument _module_
 performs the following steps:
 
-1.  Assert: _module_ is a instance of a concrete subclass of Module
+1.  Assert: _module_ is an instance of a concrete subclass of Module
     Record.
 
 2.  Let _namespace_ be _module_.[[Namespace]].
@@ -26678,7 +26589,7 @@ _ImportSpecifier_ : _IdentifierName_ AS _ImportedBinding
 
 Static Semantics: ImportEntries
 
-See also: 15.2.1.7.
+See also: 15.2.1.8.
 
 _ImportDeclaration_ : IMPORT _ImportClause_ _FromClause_ ;
 
@@ -27350,7 +27261,7 @@ ways:
     objects defined using syntactic constructors in strict code must not
     be created with own properties named "CALLER" or "ARGUMENTS" other
     than those that are created by applying the
-    AddRestrictedFunctionProperties abstract operation (9.2.8) to the
+    AddRestrictedFunctionProperties abstract operation (9.2.7) to the
     function. Such own properties also must not be created for function
     objects defined in non-strict code using an _ArrowFunction_,
     _MethodDefinition_, _GeneratorDeclaration_, _GeneratorExpression_,
@@ -27415,8 +27326,8 @@ the code Realm for which the object was initially created.
 Many built-in objects are functions: they can be invoked with arguments.
 Some of them furthermore are constructors: they are functions intended
 for use with the NEW operator. For each built-in function, this
-specification describes the arguments required by that function and
-properties of the Function object. For each built-in constructor, this
+specification describes the arguments required by that function and the
+properties of that function object. For each built-in constructor, this
 specification furthermore describes properties of the prototype object
 of that constructor and properties of specific object instances returned
 by a NEW expression that invokes that constructor.
@@ -27457,8 +27368,8 @@ Built-in function objects that are not identified as constructors do not
 implement the [[Construct]] internal method unless otherwise specified
 in the description of a particular function.
 
-Unless otherwise specified, each built-in function defined in clauses 18
-through 26 is created as if by calling the CreateBuiltinFunction
+Unless otherwise specified, each built-in function defined in this
+specification is created as if by calling the CreateBuiltinFunction
 abstract operation (9.3.3).
 
 Every built-in Function object, including constructors, has a LENGTH
@@ -27468,7 +27379,7 @@ subclause headings for the function description, including optional
 parameters. However, rest parameters shown using the form “...name” are
 not included in the default argument count.
 
-NOTE For example, the Function object that is the initial value of the
+NOTE For example, the function object that is the initial value of the
 slice property of the String prototype object is described under the
 subclause heading “String.prototype.slice (start, end)” which shows the
 two named arguments start and end; therefore the value of the length
@@ -27651,7 +27562,7 @@ LexicalEnvironment.
 
 Runtime Semantics: EvalDeclarationInstantiation( body, varEnv, lexEnv, strict)
 
-When the abstract operation EvalDeclarationInstantiation is call with
+When the abstract operation EvalDeclarationInstantiation is called with
 arguments _body_, _varEnv_, _lexEnv_, and _strict_ the following steps
 are taken:
 
@@ -27852,8 +27763,9 @@ NOTE An alternative version of this algorithm is described in B.3.5.
 
 isFinite (number)
 
-Returns FALSE if the argument coerces to NAN, +∞, or −∞, and otherwise
-returns TRUE.
+The ISFINITE function is the %isFinite% intrinsic object. When the
+ISFINITE function is called with one argument _x_, the following steps
+are taken:
 
 1.  Let _num_ be ToNumber(_number_).
 
@@ -27865,8 +27777,9 @@ returns TRUE.
 
 isNaN (number)
 
-Returns TRUE if the argument coerces to NAN, and otherwise returns
-FALSE.
+The ISNAN function is the %isNaN% intrinsic object. When the ISNAN
+function is called with one argument _number_, the following steps are
+taken:
 
 1.  Let _num_ be ToNumber(_number_).
 
@@ -27886,7 +27799,9 @@ The PARSEFLOAT function produces a Number value dictated by
 interpretation of the contents of the _string_ argument as a decimal
 literal.
 
-When the PARSEFLOAT function is called, the following steps are taken:
+The PARSEFLOAT function is the %parseFloat% intrinsic object. When the
+PARSEFLOAT function is called with one argument _string_, the following
+steps are taken:
 
 1.  Let _inputString_ be ToString(_string_).
 
@@ -27931,7 +27846,8 @@ begins with the code unit pairs 0X or 0X, in which case a radix of 16 is
 assumed. If _radix_ is 16, the number may also optionally begin with the
 code unit pairs 0X or 0X.
 
-When the PARSEINT function is called, the following steps are taken:
+The PARSEINT function is the %parseInt% intrinsic object. When the
+PARSEINT function is called, the following steps are taken:
 
 1.  Let _inputString_ be ToString(_string_).
 
@@ -28354,8 +28270,9 @@ by the ENCODEURI function is replaced with the UTF-16 encoding of the
 code points that it represents. Escape sequences that could not have
 been introduced by ENCODEURI are not replaced.
 
-When the DECODEURI function is called with one argument _encodedURI_,
-the following steps are taken:
+The DECODEURI function is the %decodeURI% intrinsic object. When the
+DECODEURI function is called with one argument _encodedURI_, the
+following steps are taken:
 
 1.  Let _uriString_ be ToString(_encodedURI_).
 
@@ -28376,7 +28293,8 @@ each escape sequence and UTF-8 encoding of the sort that might be
 introduced by the ENCODEURICOMPONENT function is replaced with the
 UTF-16 encoding of the code points that it represents.
 
-When the DECODEURICOMPONENT function is called with one argument
+The DECODEURICOMPONENT function is the %decodeURIComponent% intrinsic
+object. When the DECODEURICOMPONENT function is called with one argument
 _encodedURIComponent_, the following steps are taken:
 
 1.  Let _componentString_ be ToString(_encodedURIComponent_).
@@ -28394,8 +28312,9 @@ The ENCODEURI function computes a new version of an UTF-16 encoded
 one, two, three, or four escape sequences representing the UTF-8
 encoding of the code points.
 
-When the ENCODEURI function is called with one argument _uri_, the
-following steps are taken:
+The ENCODEURI function is the %encodeURI% intrinsic object. When the
+ENCODEURI function is called with one argument _uri_, the following
+steps are taken:
 
 1.  Let _uriString_ be ToString(_uri_).
 
@@ -28416,7 +28335,8 @@ encoded (6.1.4) URI in which each instance of certain code points is
 replaced by one, two, three, or four escape sequences representing the
 UTF-8 encoding of the code point.
 
-When the ENCODEURICOMPONENT function is called with one argument
+The ENCODEURICOMPONENT function is the %encodeURIComponent% intrinsic
+object. When the ENCODEURICOMPONENT function is called with one argument
 _uriComponent_, the following steps are taken:
 
 1.  Let _componentString_ be ToString(_uriComponent_).
@@ -29208,7 +29128,7 @@ values that were passed to _constructor_. The following steps are taken:
 
 3.  Else,
 
-    a.  Let _goal_ be the grammar symbol _GeneratorBody_~[Yield]~.
+    a.  Let _goal_ be the grammar symbol _GeneratorBody_.
 
     b.  Let _parameterGoal_ be the grammar symbol
         _FormalParameters_~[Yield,\ GeneratorParameter]~.
@@ -29475,12 +29395,13 @@ _thisArg_ and zero or more _args_, the following steps are taken:
 2.  Let _argList_ be an empty List.
 
 3.  If this method was called with more than one argument then in left
-    to right order, starting with the second argument, append each
-    argument as the last element of _argList_
+    to right order, starting with the second argument, appendes6
 
-4.  Perform PrepareForTailCall().
+4.  each argument as the last element of _argList
 
-5.  Return Call(_func_, _thisArg_, _argList_).
+5.  Perform PrepareForTailCall().
+
+6.  Return Call(_func_, _thisArg_, _argList_).
 
 The LENGTH property of the CALL method is 1.
 
@@ -29619,9 +29540,8 @@ Function instances that can be used as a constructor have a PROTOTYPE
 property. Whenever such a function instance is created another ordinary
 object is also created and is the initial value of the function’s
 PROTOTYPE property. Unless otherwise specified, the value of the
-prototype property is used to initialize the [[Prototype]] internal slot
-of a newly created ordinary object before the Function object is invoked
-as a constructor for that newly created object.
+PROTOTYPE property is used to initialize the [[Prototype]] internal slot
+of the object created when that function is invoked as a constructor.
 
 This property has the attributes { [[Writable]]: TRUE, [[Enumerable]]:
 FALSE, [[Configurable]]: FALSE }.
@@ -29968,8 +29888,8 @@ argument _sym_, the following steps are taken:
 
 4.  Assert: Type(_desc_) is String.
 
-5.  Return the _result_ be the result of concatenating the strings
-    "SYMBOL(", _desc_, and ")".
+5.  Return the result of concatenating the strings "SYMBOL(", _desc_,
+    and ")".
 
 Symbol.prototype.valueOf ( )
 
@@ -31876,7 +31796,7 @@ NOTE It is recommended that implementations use the time zone
 information of the IANA Time Zone Database
 _http://www.iana.org/time-zones/_.
 
-Local Time
+LocalTime ( t )
 
 The abstract operation LocalTime with argument _t_ converts _t_ from UTC
 to local time by performing the following steps:
@@ -31885,13 +31805,14 @@ to local time by performing the following steps:
 
 2.  Return _t_ + LocalTZA + DaylightSavingTA(_t_).
 
+UTC ( t )
+
 The abstract operation UTC with argument _t_ converts _t_ from local
 time to UTC is defined by performing the following steps:
 
 1.  ReturnIfAbrupt(_t_).
 
-2.  ReturnIfAbrupt(_t_). _t_ – LocalTZA – DaylightSavingTA(_t_ –
-    LocalTZA).
+2.  Return _t_ – LocalTZA – DaylightSavingTA(_t_ – LocalTZA).
 
 NOTE UTC(LocalTime(_t_)) is not necessarily always equal to _t_.
 
@@ -32255,7 +32176,7 @@ corresponding to the date and time. The String may be interpreted as a
 local time, a UTC time, or a time in some other time zone, depending on
 the contents of the String. The function first attempts to parse the
 format of the String according to the rules (including extended years)
-called out in Date Time String Format (20.3.1.15). If the String does
+called out in Date Time String Format (20.3.1.16). If the String does
 not conform to that format the function may fall back to any
 implementation-specific heuristics or implementation-specific date
 formats. Unrecognizable Strings or dates containing illegal element
@@ -32282,7 +32203,7 @@ However, the expression
 is not required to produce the same Number value as the preceding three
 expressions and, in general, the value produced by DATE.PARSE is
 implementation-dependent when given any String value that does not
-conform to the Date Time String Format (20.3.1.15) and that could not be
+conform to the Date Time String Format (20.3.1.16) and that could not be
 produced in that implementation by the TOSTRING or TOUTCSTRING method.
 
 Date.prototype
@@ -32822,10 +32743,9 @@ Date.prototype.setTime ( time )
 
 The following steps are performed:
 
-1.  Let _O_ be the THIS value.
+1.  Let _valueNotUsed_ be the THIS value.
 
-2.  If Type(_O_) is not Object or _O_ does not have a [[DateValue]]
-    internal slot, throw a TYPEERROR exeption.
+2.  ReturnIfAbrupt(_valueNotUsed_).
 
 3.  Let _t_ be ToNumber(_time_).
 
@@ -32833,7 +32753,7 @@ The following steps are performed:
 
 5.  Let _v_ be TimeClip(_t_).
 
-6.  Set the [[DateValue]] internal slot of _O_ to _v_.
+6.  Set the [[DateValue]] internal slot of this Date object to _v_.
 
 7.  Return _v_.
 
@@ -33057,7 +32977,7 @@ Date.prototype.toISOString ( )
 
 This function returns a String value representing the instance in time
 corresponding to this time value. The format of the String is the Date
-Time string format defined in 20.3.1.15. All fields are present in the
+Time string format defined in 20.3.1.16. All fields are present in the
 String. The time zone is always UTC, denoted by the suffix Z. If this
 time value is not a finite Number or if the year is not a value that can
 be represented in that format (if necessary using extended year format),
@@ -33196,10 +33116,10 @@ implementation-dependent, but are intended to represent this time value
 in a convenient, human-readable form in UTC.
 
 NOTE The intent is to produce a String representation of a date that is
-more readable than the format specified in 20.3.1.15. It is not
+more readable than the format specified in 20.3.1.16. It is not
 essential that the chosen format be unambiguous or easily machine
 parsable. If an implementation does not have a preferred human-readable
-format it is recommended to use the format defined in 20.3.1.15 but with
+format it is recommended to use the format defined in 20.3.1.16 but with
 a space rather than a “T” used to separate the date and time elements.
 
 Date.prototype.valueOf ( )
@@ -33399,11 +33319,9 @@ arguments form the List _substitutions_. The following steps are taken:
 
 4.  ReturnIfAbrupt(_cooked_).
 
-5.  Let _rawValue_ be Get(_cooked_, "RAW").
+5.  Let _raw_ be ToObject(Get(_cooked_, "RAW")).
 
-6.  Let _raw_ be ToObject(_rawValue_).
-
-7.  ReturnIfAbrupt(_raw_).
+6.  7.  ReturnIfAbrupt(_raw_).
 
 8.  Let _literalSegments_ be ToLength(Get(_raw_, "LENGTH")).
 
@@ -33419,11 +33337,9 @@ arguments form the List _substitutions_. The following steps are taken:
 
     a.  Let _nextKey_ be ToString(_nextIndex_).
 
-    b.  Let _next_ be Get(_raw_, _nextKey_).
+    b.  Let _nextSeg_ be ToString(Get(_raw_, _nextKey_)).
 
-    c.  Let _nextSeg_ be ToString(_next_).
-
-    d.  ReturnIfAbrupt(_nextSeg_).
+    c.  d.  ReturnIfAbrupt(_nextSeg_).
 
     e.  Append in order the code unit elements of _nextSeg_ to the end
         of _stringElements_.
@@ -34124,7 +34040,7 @@ _position_, _captures_, _replacement_) performs the following steps:
 Table 45 — Replacement Text Symbol Substitutions
 
   --------------------- ------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Code units            Unicode Characters                                                        Replacement text
+  _CODE UNITS_          _UNICODE CHARACTERS_                                                      _REPLACEMENT TEXT_
 
   0x0024, 0x0024        $$                                                                        $
 
@@ -34788,7 +34704,7 @@ instances are initially created with the internal slots listed in Table
 Table 46 — Internal Slots of String Iterator Instances
 
   ----------------------------- ------------------------------------------------------------------------------
-  INTERNAL SLOT                 DESCRIPTION
+  _INTERNAL SLOT_               _DESCRIPTION_
   [[IteratedString]]            The String value whose elements are being iterated.
   [[StringIteratorNextIndex]]   The integer index of the next string index to be examined by this iteration.
   ----------------------------- ------------------------------------------------------------------------------
@@ -34898,7 +34814,7 @@ RegExpUnicodeEscapeSequence~[U]~ ::
 U _Hex4Digits_
 [+U] U{ HexDigits }
 
--   It is a Syntax Error if the MV of _HexDigits_ > 1114111_._
+-   
 
 LeadSurrogate ::
 
@@ -34962,6 +34878,12 @@ B
 [+U] -
 CharacterEscape~[?U]~
 CharacterClassEscape
+
+Static Semantics: Early Errors
+
+_RegExpUnicodeEscapeSequence_ :: U{ _HexDigits_ }
+
+-   It is a Syntax Error if the MV of _HexDigits_ > 1114111_._
 
 Pattern Semantics
 
@@ -35118,14 +35040,15 @@ The production _Pattern_ :: _Disjunction_ evaluates as follows:
         (6.1.4) Unicode string. Otherwise, let _Input_ be a List
         consisting of the sequence of code units that are the elements
         of _str_. _Input_ will be used throughout the algorithms in
-        21.2.2. Each element of _Input_ is considered to be a character.
+        21.2.1.1. Each element of _Input_ is considered to be a
+        character.
 
     2.  Let _listIndex_ be the index into _Input_ of the character that
         was obtained from element _index_ of _str_.
 
     3.  Let _InputLength_ be the number of characters contained in
         _Input_. This variable will be used throughout the algorithms in
-        21.2.2.
+        21.2.1.1.
 
     4.  Let _c_ be a Continuation that always returns its State argument
         as a successful MatchResult.
@@ -35142,11 +35065,12 @@ REGEXP.PROTOTYPE.EXEC and other methods can then apply this procedure to
 a String and an offset within the String to determine whether the
 pattern would match starting at exactly that offset within the String,
 and, if it does match, what the values of the capturing parentheses
-would be. The algorithms in 21.2.2 are designed so that compiling a
+would be. The algorithms in 21.2.1.1 are designed so that compiling a
 pattern may throw a SYNTAXERROR exception; on the other hand, once the
-pattern is successfully compiled, applying its result internal procedure
-to find a match in a String cannot throw an exception (except for any
-host-defined exceptions that can occur anywhere such as out-of-memory).
+pattern is successfully compiled, applying the resulting internal
+procedure to find a match in a String cannot throw an exception (except
+for any host-defined exceptions that can occur anywhere such as
+out-of-memory).
 
 Disjunction
 
@@ -36293,8 +36217,8 @@ _pattern_, and _flags_ is called, the following steps are taken:
         its 16-bit elements as a Unicode BMP code point. UTF-16 decoding
         is not applied to the elements. The goal symbol for the parse is
         _Pattern_.Throw a SYNTAXERROR exception if _P_ did not conform
-        to the grammar or if any elements of _P_ were not matched by the
-        parse.
+        to the grammar, if any elements of _P_ were not matched by the
+        parse, or if any Early Error conditions exist.
 
     b.  Let _patternCharacters_ be a List whose elements are the code
         unit elements of _P._
@@ -36304,8 +36228,9 @@ _pattern_, and _flags_ is called, the following steps are taken:
     a.  Parse _P_ using the grammars in 21.2.1 and interpreting _P_ as
         UTF-16 encoded Unicode code points (6.1.4). The goal symbol for
         the parse is _Pattern_~[U]~. Throw a SYNTAXERROR exception if
-        _P_ did not conform to the grammar or if any elements of _P_
-        were not matched by the parse.
+        _P_ did not conform to the grammar, if any elements of _P_ were
+        not matched by the parse, or if any Early Error conditions
+        exist.
 
     b.  Let _patternCharacters_ be a List whose elements are the code
         points resulting from applying UTF-16 decoding to _P_’s sequence
@@ -36317,7 +36242,7 @@ _pattern_, and _flags_ is called, the following steps are taken:
 
 13. Set _obj’s_ [[RegExpMatcher]] internal slot to the internal
     procedure that evaluates the above parse of _P_ by applying the
-    semantics provided in 21.2.2 using _patternCharacters_ as the
+    semantics provided in 21.2.1.1 using _patternCharacters_ as the
     pattern’s List of _SourceCharacter_ values and _F_ as the flag
     parameters.
 
@@ -36390,8 +36315,8 @@ UNDEFINED. Its get accessor function performs the following steps:
 
 1.  Return the THIS value.
 
-The value of the NAME property of this function is
-"GET[SYMBOL.SPECIES]".
+The value of the NAME property of this function is "GET
+[SYMBOL.SPECIES]".
 
 NOTE RegExp prototype methods normally use their THIS object’s
 constructor to create a derived object. However, a subclass constructor
@@ -36430,11 +36355,7 @@ regular expression pattern as follows:
 
 2.  If Type(_R_) is not Object, throw a TYPEERROR exception.
 
-3.  If _R_ is %RegExpPrototype%, then
-
-    a.  Let _R_ be RegExpCreate("", "").
-
-    b.  ReturnIfAbrupt(_R_).
+3.  a.  b.  
 
 4.  If _R_ does not have a [[RegExpMatcher]] internal slot, throw a
     TYPEERROR exception.
@@ -36737,13 +36658,9 @@ steps are taken:
 
         iv. Else _result_ is not NULL,
 
-            1.  Let _matchValue_ be Get(_result_, "0").
+            1.  Let _matchStr_ be ToString(Get(_result_, "0")).
 
-            2.  ReturnIfAbrupt(_matchValue_).
-
-            3.  Let _matchStr_ be ToString(_matchValue_).
-
-            4.  ReturnIfAbrupt(_matchStr_).
+            2.  3.  4.  ReturnIfAbrupt(_matchStr_).
 
             5.  Let _status_ be CreateDataProperty(_A_, ToString(_n_),
                 _matchStr_).
@@ -36924,7 +36841,7 @@ _replaceValue_ the following steps are taken:
     p.  If _position_ ≥ _nextSourcePosition_, then
 
         i.  NOTE _position_ should not normally move backwards. If it
-            does, it is in indication of a ill-behaving RegExp subclass
+            does, it is an indication of an ill-behaving RegExp subclass
             or use of an access triggered side-effect to change the
             global flag or other characteristics of _rx._ In such cases,
             the corresponding substitution is ignored.
@@ -37259,9 +37176,7 @@ The following steps are taken:
 
 4.  ReturnIfAbrupt(_string_).
 
-5.  If _R_ is %RegExpPrototype%, return TRUE.
-
-6.  Let _match_ be RegExpExec(_R_, _string_).
+5.  6.  Let _match_ be RegExpExec(_R_, _string_).
 
 7.  ReturnIfAbrupt(_match_).
 
@@ -38313,14 +38228,6 @@ the index of the element, and the object being traversed.
 FOREACH does not directly mutate the object on which it is called but
 the object may be mutated by the calls to _callbackfn_.
 
-The range of elements processed by FOREACH is set before the first call
-to _callbackfn_. Elements which are appended to the array after the call
-to FOREACH begins will not be visited by _callbackfn_. If existing
-elements of the array are changed, their value as passed to callback
-will be the value at the time FOREACH visits them; elements that are
-deleted after the call to FOREACH begins and before being visited are
-not visited.
-
 When the FOREACH method is called with one or two arguments, the
 following steps are taken:
 
@@ -39191,7 +39098,7 @@ The following steps are taken:
 The LENGTH property of the SLICE method is 2.
 
 NOTE 1 The explicit setting of the LENGTH property of the result Array
-in step 19 is necessary to ensure that its value is correct in
+in step 16 is necessary to ensure that its value is correct in
 situations where the trailing elements of the result Array are not
 present.
 
@@ -39318,10 +39225,9 @@ implementation-defined. The sort order is also implementation-defined if
 _comparefn_ is UNDEFINED and SortCompare (22.1.3.24.1) does not act as a
 consistent comparison function.
 
-Let _proto_ be the result of calling the [[GetPrototypeOf]] internal
-method of _obj_. If _proto_ is not NULL and there exists an integer _j_
-such that all of the conditions below are satisfied then the sort order
-is implementation-defined:
+Let _proto_ be _obj_.[[GetPrototypeOf]](). If _proto_ is not NULL and
+there exists an integer _j_ such that all of the conditions below are
+satisfied then the sort order is implementation-defined:
 
 -   _obj_ is sparse (22.1)
 
@@ -40062,7 +39968,7 @@ instances are initially created with the internal slots listed in Table
 Table 48 — Internal Slots of Array Iterator Instances
 
   ---------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  INTERNAL SLOT                DESCRIPTION
+  _INTERNAL SLOT_              _DESCRIPTION_
   [[IteratedObject]]           The object whose array elements are being iterated.
   [[ArrayIteratorNextIndex]]   The integer index of the next array index to be examined by this iteration.
   [[ArrayIterationKind]]       A string value that identifies what is to be returned for each element of the iteration. The possible values are: "KEY", "VALUE", "KEY+VALUE".
@@ -40080,36 +39986,36 @@ prototype object.
 
 Table 49 – The _TypedArray_ Constructors
 
-  -------------------------------------------------------------------------------------------------------------------------------------------------------
-  Constructor Name and Intrinsic   Element Type   Element Size   Conversion Operation   Description                                   Equivalent C Type
-  -------------------------------- -------------- -------------- ---------------------- --------------------------------------------- -------------------
-  Int8Array                        Int8           1              ToInt8                 8-bit 2’s complement signed integer           signed char
-  %Int8Array%                                                                                                                         
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  _Constructor Name and Intrinsic_   _Element Type_   _Element Size_   _Conversion Operation_   _Description _                                _Equivalent C Type_
+  ---------------------------------- ---------------- ---------------- ------------------------ --------------------------------------------- ---------------------
+  Int8Array                          Int8             1                ToInt8                   8-bit 2’s complement signed integer           signed char
+  %Int8Array%                                                                                                                                 
 
-  Uint8Array                       Uint8          1              ToUint8                8-bit unsigned integer                        unsigned char
-  %Uint8Array%                                                                                                                        
+  Uint8Array                         Uint8            1                ToUint8                  8-bit unsigned integer                        unsigned char
+  %Uint8Array%                                                                                                                                
 
-  Uint8ClampedArray                Uint8C         1              ToUint8Clamp           8-bit unsigned integer (clamped conversion)   unsigned char
-  %Uint8ClampedArray%                                                                                                                 
+  Uint8ClampedArray                  Uint8C           1                ToUint8Clamp             8-bit unsigned integer (clamped conversion)   unsigned char
+  %Uint8ClampedArray%                                                                                                                         
 
-  Int16Array                       Int16          2              ToInt16                16-bit 2’s complement signed integer          short
-  %Int16Array%                                                                                                                        
+  Int16Array                         Int16            2                ToInt16                  16-bit 2’s complement signed integer          short
+  %Int16Array%                                                                                                                                
 
-  Uint16Array                      Uint16         2              ToUint16               16-bit unsigned integer                       unsigned short
-  %Uint16Array%                                                                                                                       
+  Uint16Array                        Uint16           2                ToUint16                 16-bit unsigned integer                       unsigned short
+  %Uint16Array%                                                                                                                               
 
-  Int32Array                       Int32          4              ToInt32                32-bit 2’s complement signed integer          int
-  %Int32Array%                                                                                                                        
+  Int32Array                         Int32            4                ToInt32                  32-bit 2’s complement signed integer          int
+  %Int32Array%                                                                                                                                
 
-  Uint32Array                      Uint32         4              ToUint32               32-bit unsigned integer                       unsigned int
-  %Uint32Array%                                                                                                                       
+  Uint32Array                        Uint32           4                ToUint32                 32-bit unsigned integer                       unsigned int
+  %Uint32Array%                                                                                                                               
 
-  Float32Array                     Float32        4                                     32-bit IEEE floating point                    float
-  %Float32Array%                                                                                                                      
+  Float32Array                       Float32          4                                         32-bit IEEE floating point                    float
+  %Float32Array%                                                                                                                              
 
-  Float64Array                     Float64        8                                     64-bit IEEE floating point                    double
-  %Float64Array%                                                                                                                      
-  -------------------------------------------------------------------------------------------------------------------------------------------------------
+  Float64Array                       Float64          8                                         64-bit IEEE floating point                    double
+  %Float64Array%                                                                                                                              
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 In the definitions below, references to _TypedArray_ should be replaced
 with the appropriate constructor name from the above table. The phrase
@@ -40135,7 +40041,7 @@ designed to be directly called in any other way. If %TypedArray% is
 directly called or called as part of a NEW expression an exception is
 thrown.
 
-The %TypedArray% intrinsic function constructor is a single function
+The %TypedArray% intrinsic constructor function is a single function
 whose behaviour is overloaded based upon the number and types of its
 arguments. The actual behaviour of a SUPER call of %TypedArray% depends
 upon the number and kind of arguments that are passed to it.
@@ -40741,7 +40647,7 @@ The initial value of %TypedArray%.prototype.constructor is the
 the same algorithm as ARRAY.PROTOTYPE.COPYWITHIN as defined in 22.1.3.3
 except that the THIS object’s [[ArrayLength]] internal slot is accessed
 in place of performing a [[Get]] of "LENGTH" and the actual copying of
-values in step 17 must be performed in a manner that perserves the
+values in step 17 must be performed in a manner that preserves the
 bit-level encoding of the source data
 
 The implementation of the algorithm may be optimized with the knowledge
@@ -41181,8 +41087,9 @@ object _array_. The optional _offset_ value indicates the first element
 index in this _TypedArray_ where values are written. If omitted, it is
 assumed to be 0.
 
-1.  Assert: _array_ does not have a [[TypedArrayName]] internal slot. If
-    it does, the definition in 22.2.3.22.2 applies.
+1.  Assert: _array_ is any ECMAScript language value other than an
+    Object with a [[TypedArrayName]] internal slot. If it is such an
+    Object, the definition in 22.2.3.22.2 applies.
 
 2.  Let _target_ be the THIS value.
 
@@ -41224,11 +41131,9 @@ assumed to be 0.
 
 17. ReturnIfAbrupt(_src_).
 
-18. Let _srcLen_ be Get(_src_, "LENGTH").
+18. Let _srcLength_ be ToLength(Get(_src_, "LENGTH")).
 
-19. Let _srcLength_ be ToLength(_srcLen_).
-
-20. ReturnIfAbrupt(_srcLength_).
+19. 20. ReturnIfAbrupt(_srcLength_).
 
 21. If _srcLength_ + _targetOffset_ > _targetLength_, throw a RANGEERROR
     exception.
@@ -41239,17 +41144,15 @@ assumed to be 0.
 23. Let _k_ be 0.
 
 24. Let _limit_ be _targetByteIndex_ + _targetElementSize_ ×
-    min(_srcLength_, _targetLength_ – _targetOffset_).
+    _srcLength_.
 
 25. Repeat, while _targetByteIndex_ < _limit
 
     a.  Let _Pk_ be ToString(_k_).
 
-    b.  Let _kValue_ be Get(_src_, _Pk_).
+    b.  Let _kNumber_ be ToNumber(Get(_src_, _Pk_)).
 
-    c.  Let _kNumber_ be ToNumber(_kValue_).
-
-    d.  ReturnIfAbrupt(_kNumber_).
+    c.  d.  ReturnIfAbrupt(_kNumber_).
 
     e.  If IsDetachedBuffer(_targetBuffer_) is TRUE, throw a TYPEERROR
         exception.
@@ -41352,7 +41255,7 @@ omitted, it is assumed to be 0.
     _targetByteOffset_.
 
 27. Let _limit_ be _targetByteIndex_ + _targetElementSize_ ×
-    min(_srcLength_, _targetLength_ – _targetOffset_).
+    _srcLength_.
 
 28. If SameValue(_srcType_, _targetType_) is FALSE, then
 
@@ -41372,7 +41275,7 @@ omitted, it is assumed to be 0.
 29. Else,
 
     a.  NOTE: If _srcType_ and _targetType_ are the same the transfer
-        must be performed in a manner that perserves the bit-level
+        must be performed in a manner that preserves the bit-level
         encoding of the source data.
 
     b.  Repeat, while _targetByteIndex_ < _limit_
@@ -41432,16 +41335,19 @@ as defined in 22.1.3.22. The following steps are taken:
 
 16. ReturnIfAbrupt(_A_).
 
-17. Let _srcType_ be the string value of the Element Type value in Table
-    49 for _defaultConstructor_.
-
-18. Let _targetType_ be the string value of the Element Type value in
-    Table 49 for _C_.
-
-19. Let _srcBuffer_ be the value of _typedArray_’s [[ViewedArrayBuffer]]
+17. Let _srcName_ be the string value of _O’s_ [[TypedArrayName]]
     internal slot.
 
-20. If SameValue(_srcType_, _targetType_) is FALSE, then
+18. Let _srcType_ be the string value of the Element Type value in Table
+    49 for _srcName_.
+
+19. Let _targetName_ be the string value of _A’s_ [[TypedArrayName]]
+    internal slot.
+
+20. Let _targetType_ be the string value of the Element Type value in
+    Table 49 for _targetName_.
+
+21. 22. If SameValue(_srcType_, _targetType_) is FALSE, then
 
     a.  Let _n_ be 0.
 
@@ -41461,7 +41367,7 @@ as defined in 22.1.3.22. The following steps are taken:
 
         vii. Increase _n_ by 1.
 
-21. Else,
+23. Else if _count_ > 0,
 
     a.  Let _srcBuffer_ be the value of _O_’s [[ViewedArrayBuffer]]
         internal slot.
@@ -41476,14 +41382,17 @@ as defined in 22.1.3.22. The following steps are taken:
         specified in Table 49 for _srcType_.
 
     e.  NOTE: If _srcType_ and _targetType_ are the same the transfer
-        must be performed in a manner that perserves the bit-level
+        must be performed in a manner that preserves the bit-level
         encoding of the source data.
 
-    f.  Let _srcByteIndex_ be 0.
+    f.  Let _srcByteOffet_ be the value of _O_’s [[ByteOffset]] internal
+        slot.
 
-    g.  Let _targetByteIndex_ be _k_ × _ElementSize_.
+    g.  Let _targetByteIndex_ be 0.
 
-    h.  Repeat, while _targetByteIndex_ < _count_ × _ElementSize_
+    h.  Let _srcByteIndex_ be (_k_ × _ElementSize_) + _srcByteOffet_.
+
+    i.  Repeat, while _targetByteIndex_ < _count_ × _elementSize_
 
         i.  Let _value_ be GetValueFromBuffer(_srcBuffer_,
             _srcByteIndex_, "UINT8").
@@ -41495,7 +41404,7 @@ as defined in 22.1.3.22. The following steps are taken:
 
         iv. Increase _targetByteIndex_ by 1.
 
-22. Return _A_.
+24. Return _A_.
 
 This function is not generic. The THIS value must be an object with a
 [[TypedArrayName]] internal slot.
@@ -41607,27 +41516,27 @@ to an index from the end of the array, as opposed to from the beginning.
 
 6.  Let _srcLength_ be the value of _O_’s [[ArrayLength]] internal slot.
 
-7.  Let _beginInt_ be ToInteger(_begin_)
+7.  Let _relativeBegin_ be ToInteger(_begin_)
 
-8.  ReturnIfAbrupt(_beginInt_).
+8.  ReturnIfAbrupt(_relativeBegin_).
 
-9.  If _beginInt_ < 0, let _beginInt_ be _srcLength_ + _beginInt_.
+9.  If _relativeBegin_ < 0, let _beginIndex_ be max((_srcLength_ +
+    _relativeBegin_), 0); else
 
-10. Let _beginIndex_ be min(_srcLength_, max(0, _beginInt_)).
+10. let _beginIndex_ be min(_relativeBegin_, _srcLength_).
 
-11. If _end_ is UNDEFINED, let _end_ be _srcLength_.
+11. If _end_ is UNDEFINED, let _relativeEnd_ be _srcLength_; else, l
 
-12. Let _endInt_ be ToInteger(_end_).
+12. et _relativeEnd_ be ToInteger(_end_).
 
-13. ReturnIfAbrupt(_endInt_).
+13. ReturnIfAbrupt(_relativeEnd_).
 
-14. If _endInt_ < 0, let _endInt_ be _srcLength_ + _endInt_.
+14. If _relativeEnd_ < 0, let _endIndex_ be max((_srcLength_ +
+    _relativeEnd_), 0); else
 
-15. Let _endIndex_ be max(0,min(_srcLength_, _endInt_)).
+15. let _endIndex_ be min(_relativeEnd_, _srcLength_).
 
-16. If _endIndex_ < _beginIndex_, let _endIndex_ be _beginIndex_.
-
-17. Let _newLength_ be _endIndex_ - _beginIndex_.
+16. 17. Let _newLength_ be max(_endIndex_ – _beginIndex_, 0).
 
 18. Let _constructorName_ be the string value of _O_’s
     [[TypedArrayName]] internal slot.
@@ -42037,22 +41946,6 @@ The following steps are taken:
 
 Map.prototype.forEach ( callbackfn [ , thisArg ] )
 
-NOTE _callbackfn_ should be a function that accepts three arguments.
-FOREACH calls _callbackfn_ once for each key/value pair present in the
-map object, in key insertion order. _callbackfn_ is called only for keys
-of the map which actually exist; it is not called for keys that have
-been deleted from the map.
-
-If a _thisArg_ parameter is provided, it will be used as the THIS value
-for each invocation of _callbackfn_. If it is not provided, UNDEFINED is
-used instead.
-
-_callbackfn_ is called with three arguments: the value of the item, the
-key of the item, and the Map object being traversed.
-
-FOREACH does not directly mutate the object on which it is called but
-the object may be mutated by the calls to _callbackfn_.
-
 When the FOREACH method is called with one or two arguments, the
 following steps are taken:
 
@@ -42084,6 +41977,28 @@ following steps are taken:
 8.  Return UNDEFINED.
 
 The LENGTH property of the FOREACH method is 1.
+
+NOTE _callbackfn_ should be a function that accepts three arguments.
+FOREACH calls _callbackfn_ once for each key/value pair present in the
+map object, in key insertion order. _callbackfn_ is called only for keys
+of the map which actually exist; it is not called for keys that have
+been deleted from the map.
+
+If a _thisArg_ parameter is provided, it will be used as the THIS value
+for each invocation of _callbackfn_. If it is not provided, UNDEFINED is
+used instead.
+
+_callbackfn_ is called with three arguments: the value of the item, the
+key of the item, and the Map object being traversed.
+
+FOREACH does not directly mutate the object on which it is called but
+the object may be mutated by the calls to _callbackfn_. Each entry of a
+map’s [[MapData]] is only visited once. New keys added after the call to
+FOREACH begins are visited. A key will be revisited if it is deleted
+after it has been visited and then re-added before the FOREACH call
+completes. Keys that are deleted after the call to FOREACH begins and
+before being visited are not visited unless the key is added again
+before the FOREACH call completes.
 
 Map.prototype.get ( key )
 
@@ -42328,7 +42243,7 @@ initially created with the internal slots described in Table 50.
 Table 50 — Internal Slots of Map Iterator Instances
 
   ---------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  INTERNAL SLOT          DESCRIPTION
+  _INTERNAL SLOT_        _DESCRIPTION_
   [[Map]]                The Map object that is being iterated.
   [[MapNextIndex]]       The integer index of the next Map data element to be examined by this iterator.
   [[MapIterationKind]]   A string value that identifies what is to be returned for each element of the iteration. The possible values are: "KEY", "VALUE", "KEY+VALUE".
@@ -42550,35 +42465,6 @@ entry has the same value for its key and value.
 
 Set.prototype.forEach ( callbackfn [ , thisArg ] )
 
-NOTE _callbackfn_ should be a function that accepts three arguments.
-FOREACH calls _callbackfn_ once for each value present in the set
-object, in value insertion order. _callbackfn_ is called only for values
-of the Set which actually exist; it is not called for keys that have
-been deleted from the set.
-
-If a _thisArg_ parameter is provided, it will be used as the THIS value
-for each invocation of _callbackfn_. If it is not provided, UNDEFINED is
-used instead.
-
-_callbackfn_ is called with three arguments: the first two arguments are
-a value contained in the Set. The same value of passed for both
-arguments. The Set object being traversed is passed as the third
-argument.
-
-The _callbackfn_ is called with three arguments to be consistent with
-the call back functions used by FOREACH methods for Map and Array. For
-Sets, each item value is considered to be both the key and the value.
-
-FOREACH does not directly mutate the object on which it is called but
-the object may be mutated by the calls to _callbackfn_.
-
-Each value is normally visited only once. However, a value will be
-revisited if it is deleted after it has been visited and then re-added
-before the to FOREACH call completes. Values that are deleted after the
-call to FOREACH begins and before being visited are not visited unless
-the value is added again before the to FOREACH call completes. New
-values added, after the call to FOREACH begins are visited.
-
 When the FOREACH method is called with one or two arguments, the
 following steps are taken:
 
@@ -42610,6 +42496,35 @@ following steps are taken:
 8.  Return UNDEFINED.
 
 The LENGTH property of the FOREACH method is 1.
+
+NOTE _callbackfn_ should be a function that accepts three arguments.
+FOREACH calls _callbackfn_ once for each value present in the set
+object, in value insertion order. _callbackfn_ is called only for values
+of the Set which actually exist; it is not called for keys that have
+been deleted from the set.
+
+If a _thisArg_ parameter is provided, it will be used as the THIS value
+for each invocation of _callbackfn_. If it is not provided, UNDEFINED is
+used instead.
+
+_callbackfn_ is called with three arguments: the first two arguments are
+a value contained in the Set. The same value of passed for both
+arguments. The Set object being traversed is passed as the third
+argument.
+
+The _callbackfn_ is called with three arguments to be consistent with
+the call back functions used by FOREACH methods for Map and Array. For
+Sets, each item value is considered to be both the key and the value.
+
+FOREACH does not directly mutate the object on which it is called but
+the object may be mutated by the calls to _callbackfn_.
+
+Each value is normally visited only once. However, a value will be
+revisited if it is deleted after it has been visited and then re-added
+before the FOREACH call completes. Values that are deleted after the
+call to FOREACH begins and before being visited are not visited unless
+the value is added again before the FOREACH call completes. New values
+added after the call to FOREACH begins are visited.
 
 Set.prototype.has ( value )
 
@@ -42791,7 +42706,7 @@ initially created with the internal slots specified in Table 51.
 
 Table 51 — Internal Slots of Set Iterator Instances
 
-  INTERNAL SLOT          DESCRIPTION
+  _INTERNAL SLOT_        _DESCRIPTION_
   ---------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   [[IteratedSet]]        The Set object that is being iterated.
   [[SetNextIndex]]       The integer index of the next Set data element to be examined by this iterator
@@ -43920,13 +43835,11 @@ performs the following steps:
 
 12. Else,
 
-    a.  Let _viewLength_ be ToLength(_byteLength_)_._
+    a.  Let _viewByteLength_ be ToLength(_byteLength_)_._
 
-    b.  ReturnIfAbrupt(_viewLength_).
+    b.  ReturnIfAbrupt(_viewByteLength_).
 
-    c.  Let _viewByteLength_ be _viewLength_.
-
-    d.  If _offset_+_viewByteLength_ > _bufferByteLength_, throw a
+    c.  d.  If _offset_+_viewByteLength_ > _bufferByteLength_, throw a
         RANGEERROR exception.
 
 13. Let _O_ be OrdinaryCreateFromConstructor(NewTarget,
@@ -44915,7 +44828,7 @@ The _Iterable_ interface includes the property described in Table 52:
 
 Table 52 — _Iterable_ Interface Required Properties
 
-  PROPERTY     VALUE                                           REQUIREMENTS
+  _PROPERTY_   _VALUE_                                         _REQUIREMENTS_
   ------------ ----------------------------------------------- ---------------------------------------------------------------
   @@ITERATOR   A function that returns an _Iterator_ object.   The returned object must conform to the _Iterator_ interface.
 
@@ -44927,9 +44840,9 @@ Table 53.
 
 Table 53 — _Iterator_ Interface Required Properties
 
-  PROPERTY   VALUE                                                 REQUIREMENTS
-  ---------- ----------------------------------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  NEXT       A function that returns an _IteratorResult_ object.   The returned object must conform to the _IteratorResult_ interface. If a previous call to the NEXT method of an _Iterator_ has returned an _IteratorResult_ object whose DONE property is TRUE, then all subsequent calls to the NEXT method of that object should also return an _IteratorResult_ object whose DONE property is TRUE. However, this requirement is not enforced.
+  _PROPERTY_   _VALUE_                                               _REQUIREMENTS_
+  ------------ ----------------------------------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  NEXT         A function that returns an _IteratorResult_ object.   The returned object must conform to the _IteratorResult_ interface. If a previous call to the NEXT method of an _Iterator_ has returned an _IteratorResult_ object whose DONE property is TRUE, then all subsequent calls to the NEXT method of that object should also return an _IteratorResult_ object whose DONE property is TRUE. However, this requirement is not enforced.
 
 NOTE Arguments may be passed to the next function but their
 interpretation and validity is dependent upon the target _Iterator_. The
@@ -44939,10 +44852,10 @@ must be prepared to deal with being called with no arguments.
 
 Table 54 — _Iterator_ Interface Optional Properties
 
-  PROPERTY   VALUE                                                 REQUIREMENTS
-  ---------- ----------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  RETURN     A function that returns an _IteratorResult_ object.   The returned object must conform to the _IteratorResult_ interface. Invoking this method notifies the _Iterator_ object that the caller does not intend to make any more NEXT method calls to the _Iterator_. The returned _IteratorResult_ object will typically have a DONE property whose value TRUE, and a VALUE property is the value passed as the argument of the RETURN method. However, this requirement is not enforced.
-  THROW      A function that returns an _IteratorResult_ object.   The returned object must conform to the _IteratorResult_ interface. Invoking this method notifies the _Iterator_ object that the caller has detected an error condition. The argument may be used to identify the error condition and typically will be an exception object. A typical response is to THROW the value passed as the argument. If the method does not THROW, the returned _IteratorResult_ object will typically have a DONE property whose value TRUE.
+  _PROPERTY_   _VALUE_                                               _REQUIREMENTS_
+  ------------ ----------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  RETURN       A function that returns an _IteratorResult_ object.   The returned object must conform to the _IteratorResult_ interface. Invoking this method notifies the _Iterator_ object that the caller does not intend to make any more NEXT method calls to the _Iterator_. The returned _IteratorResult_ object will typically have a DONE property whose value TRUE, and a VALUE property is the value passed as the argument of the RETURN method. However, this requirement is not enforced.
+  THROW        A function that returns an _IteratorResult_ object.   The returned object must conform to the _IteratorResult_ interface. Invoking this method notifies the _Iterator_ object that the caller has detected an error condition. The argument may be used to identify the error condition and typically will be an exception object. A typical response is to THROW the value passed as the argument. If the method does not THROW, the returned _IteratorResult_ object will typically have a DONE property whose value TRUE.
 
 NOTE Typically callers of these methods should check for their existence
 before invoking them. Certain ECMAScript language features including
@@ -44957,10 +44870,10 @@ The _IteratorResult_ interface includes the properties listed in Table
 
 Table 55 — _IteratorResult_ Interface Properties
 
-  PROPERTY   VALUE                            REQUIREMENTS
-  ---------- -------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  DONE       Either TRUE or FALSE.            This is the result status of an _iterator_ NEXT method call. If the end of the iterator was reached DONE is TRUE. If the end was not reached DONE is FALSE and a value is available. If a DONE property (either own or inherited does not exist), it is consider to have the value FALSE.
-  VALUE      Any ECMAScript language value.   If done is FALSE, this is the current iteration element value. If done is TRUE, this is the return value of the iterator, if it supplied one. If the iterator does not have a return value, VALUE is UNDEFINED. In that case, the VALUE property may be absent from the conforming object if it does not inherit an explicit VALUE property.
+  _PROPERTY_   _VALUE_                          _REQUIREMENTS_
+  ------------ -------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  DONE         Either TRUE or FALSE.            This is the result status of an _iterator_ NEXT method call. If the end of the iterator was reached DONE is TRUE. If the end was not reached DONE is FALSE and a value is available. If a DONE property (either own or inherited does not exist), it is consider to have the value FALSE.
+  VALUE        Any ECMAScript language value.   If done is FALSE, this is the current iteration element value. If done is TRUE, this is the return value of the iterator, if it supplied one. If the iterator does not have a return value, VALUE is UNDEFINED. In that case, the VALUE property may be absent from the conforming object if it does not inherit an explicit VALUE property.
 
 The %IteratorPrototype% Object
 
@@ -45223,7 +45136,7 @@ described in Table 56.
 Table 56 — Internal Slots of Generator Instances
 
   ---------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
-  INTERNAL SLOT          DESCRIPTION
+  _INTERNAL SLOT_        _DESCRIPTION_
   [[GeneratorState]]     The current execution state of the generator. The possible values are: UNDEFINED, "SUSPENDEDSTART", "SUSPENDEDYIELD", "EXECUTING", and "COMPLETED".
   [[GeneratorContext]]   The execution context that is used when executing the code of this generator.
   ---------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -46159,22 +46072,22 @@ steps are taken:
 
         ii. Return _promiseCapability_.[[Promise]].
 
-    a.  Let _nextValue_ be IteratorValue(_next_).
+    e.  Let _nextValue_ be IteratorValue(_next_).
 
-    b.  If _nextValue_ is an abrupt completion, set
+    f.  If _nextValue_ is an abrupt completion, set
         _iteratorRecord_.[[done]] to TRUE.
 
-    c.  ReturnIfAbrupt(_nextValue_).
+    g.  ReturnIfAbrupt(_nextValue_).
 
-    d.  Let _nextPromise_ be Invoke(_C_, "RESOLVE", «‍_nextValue_»).
+    h.  Let _nextPromise_ be Invoke(_C_, "RESOLVE", «‍_nextValue_»).
 
-    e.  ReturnIfAbrupt(_nextPromise_).
+    i.  ReturnIfAbrupt(_nextPromise_).
 
-    f.  Let _result_ be Invoke(_nextPromise_, "THEN",
+    j.  Let _result_ be Invoke(_nextPromise_, "THEN",
         «‍_promiseCapability_.[[Resolve]],
         _promiseCapability_.[[Reject]]»).
 
-    g.  ReturnIfAbrupt(_result_).
+    k.  ReturnIfAbrupt(_result_).
 
 Promise.reject ( r )
 
@@ -46375,7 +46288,7 @@ Table 59.
 Table 59 — Internal Slots of Promise Instances
 
   ----------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  INTERNAL SLOT                 DESCRIPTION
+  _INTERNAL SLOT_               _DESCRIPTION_
   [[PromiseState]]                A string value that governs how a promise will react to incoming calls to its THEN method. The possible values are: UNDEFINED, "PENDING", "FULFILLED", and "REJECTED".
   [[PromiseConstructor]]          The function object that was used to construct this promise. Checked by the RESOLVE method of the PROMISE constructor.
   [[PromiseResult]]               The value with which the promise has been fulfilled or rejected, if any. Only meaningful if [[PromiseState]] is not "PENDING".
@@ -46414,7 +46327,7 @@ _thisArgument_, and _argumentsList_ the following steps are taken:
 
 3.  ReturnIfAbrupt(_args_).
 
-4.  Perform the PrepareForTailCall abstract operation.
+4.  Perform PrepareForTailCall().
 
 5.  Return Call(_target_, _thisArgument_, _args_).
 
@@ -47662,8 +47575,7 @@ IF ( Expression~[In,\ ?Yield]~ ) Statement~[?Yield,\ ?Return]~
 
 IterationStatement~[Yield,\ Return]~ : See 13.6
 
-  DO Statement~[?Yield,\ ?Return]~ WHILE ( Expression~[In,\ ?Yield]~ )
-  ;~opt~
+  DO Statement~[?Yield,\ ?Return]~ WHILE ( Expression~[In,\ ?Yield]~ ) ;
 
   WHILE ( Expression~[In,\ ?Yield]~ ) Statement~[?Yield,\ ?Return]~
 
@@ -47687,7 +47599,7 @@ IterationStatement~[Yield,\ Return]~ : See 13.6
   FOR ( ForDeclaration~[?Yield]~ IN Expression~[In,\ ?Yield]~ )
   Statement~[?Yield,\ ?Return]~
 
-  FOR ( LeftHandSideExpression~[?Yield]~ OF
+  FOR ( [lookahead ≠ LET] LeftHandSideExpression~[?Yield]~ OF
   AssignmentExpression~[In,\ ?Yield]~ ) Statement~[?Yield, ?Return]~
 
   FOR ( VAR ForBinding~[?Yield]~ OF AssignmentExpression~[In,\ ?Yield]~
@@ -47876,26 +47788,23 @@ FormalParameter
 GeneratorMethod~[Yield]~ : See 14.4
 
 * PropertyName~[?Yield]~
-(StrictFormalParameters~[Yield,GeneratorParameter]~ ) {
-GeneratorBody~[Yield]~ }
+(StrictFormalParameters~[Yield,GeneratorParameter]~ ) { GeneratorBody }
 
 GeneratorDeclaration~[Yield,\ Default]~ : See 14.4
 
 FUNCTION * BindingIdentifier~[?Yield]~ (
-FormalParameters~[Yield,GeneratorParameter]~ ) { GeneratorBody~[Yield]~
-}
+FormalParameters~[Yield,GeneratorParameter]~ ) { GeneratorBody }
 [+Default] FUNCTION * ( FormalParameters~[Yield,GeneratorParameter]~ ) {
-GeneratorBody~[Yield]~ }
+GeneratorBody }
 
 GeneratorExpression : See 14.4
 
 FUNCTION * BindingIdentifier~[Yield]opt~ (
-FormalParameters~[Yield,GeneratorParameter]~ ) { GeneratorBody~[Yield]~
-}
+FormalParameters~[Yield,GeneratorParameter]~ ) { GeneratorBody }
 
-GeneratorBody~[Yield]~ : See 14.4
+GeneratorBody : See 14.4
 
-FunctionBody~[?Yield]~
+FunctionBody~[Yield]~
 
 YieldExpression~[In]~ : See 14.4
 
@@ -48709,7 +48618,7 @@ B
 
 1.  PATTERN SEMANTICS
 
-The semantics of 21.2.2 is extended as follows:
+The semantics of 21.2.1.1 is extended as follows:
 
 Within 21.2.2.5 reference to “_Atom_ :: ( _Disjunction_ )” are to be
 interpreted as meaning “_Atom_ :: ( _Disjunction_ )or _AtomNoBrace_ :: (
@@ -48772,9 +48681,19 @@ Additional Built-in Properties
 When the ECMAScript host is a web browser the following additional
 properties of the standard built-in objects are defined.
 
-1.  Additional Properties of the Global Object
+Additional Properties of the Global Object
 
-    1.  escape (string)
+The entries in Table 60 are added to Table 7.
+
+Table 60 — Additional Well-known Intrinsic Objects
+
+  ------------------ --------------- -----------------------------------
+  _INTRINSIC NAME_   _GLOBAL NAME_   _ECMASCRIPT LANGUAGE ASSOCIATION_
+  %escape%           ESCAPE          The ESCAPE function (B.2.1.1)
+  %unescape%         UNESCAPE        The UNESCAPE function (B.2.1.2)
+  ------------------ --------------- -----------------------------------
+
+escape (string)
 
 The ESCAPE function is a property of the global object. It computes a
 new version of a String value in which certain code units have been
@@ -48785,8 +48704,9 @@ two-digit escape sequence of the form %_xx_ is used. For those
 characters being replaced whose code unit value is greater than 0X00FF,
 a four-digit escape sequence of the form %U_xxxx_ is used.
 
-When the ESCAPE function is called with one argument _string_, the
-following steps are taken:
+The ESCAPE function is the %escape% intrinsic object. When the ESCAPE
+function is called with one argument _string_, the following steps are
+taken:
 
 1.  Let _string_ be ToString(_string_).
 
@@ -48803,8 +48723,7 @@ following steps are taken:
     a.  Let _char_ be the code unit (represented as a 16-bit unsigned
         integer) at index _k_ within _string_.
 
-    b.  If _char_ is the code unit of one of the 69 nonblank code units
-        in
+    b.  If _char_ is one of the code units in
         "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@*_+-./",
         then
 
@@ -48841,8 +48760,9 @@ new version of a String value in which each escape sequence of the sort
 that might be introduced by the ESCAPE function is replaced with the
 code unit that it represents.
 
-When the UNESCAPE function is called with one argument _string_, the
-following steps are taken:
+The UNEUNSCAPE function is the %escape% intrinsic object. When the
+UNESCAPE function is called with one argument _string_, the following
+steps are taken:
 
 1.  Let _string_ be ToString(_string_).
 
@@ -49203,8 +49123,8 @@ NOTE The property TOUTCSTRING is preferred. The TOGMTSTRING property is
 provided principally for compatibility with old code. It is recommended
 that the TOUTCSTRING property be used in new ECMAScript code.
 
-The Function object that is the initial value of
-DATE.PROTOTYPE.TOGMTSTRING is the same Function object that is the
+The function object that is the initial value of
+DATE.PROTOTYPE.TOGMTSTRING is the same function object that is the
 initial value of DATE.PROTOTYPE.TOUTCSTRING.
 
 1.  Additional Properties of the RegExp.prototype Object
@@ -49295,22 +49215,19 @@ _PropertyDefinition_ : _PropertyName_ : _AssignmentExpression
 
     b.  Return NormalCompletion(empty).
 
-7.  If IsFunctionDefinition of _AssignmentExpression_ is TRUE, then
+7.  8.  If IsAnonymousFunctionDefinition(_AssignmentExpression_) is
+    TRUE, then
 
-    a.  If IsAnonymousFunctionDefinition(_AssignmentExpression_) is
-        TRUE, then
+    a.  Let _hasNameProperty_ be HasOwnProperty(_propValue_, "NAME").
 
-        i.  Let _hasNameProperty_ be HasOwnProperty(_propValue_,
-            "NAME").
+    b.  ReturnIfAbrupt(_hasNameProperty_).
 
-        ii. ReturnIfAbrupt(_hasNameProperty_).
+    c.  If _hasNameProperty_ is FALSE, perform
+        SetFunctionName(_propValue_, _propKey_).
 
-        iii. If _hasNameProperty_ is FALSE, perform
-            SetFunctionName(_propValue_, _propKey_).
+9.  Assert: _enumerable_ is TRUE.
 
-8.  Assert: _enumerable_ is TRUE.
-
-9.  Return CreateDataPropertyOrThrow(_object_, _propKey_, _propValue_).
+10. Return CreateDataPropertyOrThrow(_object_, _propKey_, _propValue_).
 
     1.  Labelled Function Declarations
 
@@ -49402,7 +49319,7 @@ and 14 of this specification.
 
 Sixth edition interoperability for the second and third use cases
 requires the following extensions to the clause 9 and clause 14
-semantics. During FunctionDeclarationInstantiation (9.2.13) the
+semantics. During FunctionDeclarationInstantiation (9.2.12) the
 following steps are performed in place of step 29:
 
 1.  If _strict_ is FALSE, then
@@ -49459,8 +49376,8 @@ following steps are performed in place of step 29:
 
 If an ECMAScript implementation has a mechanism for reporting diagnostic
 warning messages, a warning should be produced for each function whose
-function code contains a _FunctionDeclaration_ for which steps 2.b.i.1-3
-will be performed.
+function code contains a _FunctionDeclaration_ for which steps
+1.a.ii.1-3 will be performed.
 
 FunctionDeclarations in IfStatement Statement Clauses
 
@@ -49537,8 +49454,8 @@ THE STRICT MODE RESTRICTION AND EXCEPTIONS
       not extend the syntax of _NumericLiteral_ (11.8.3) to include
       _LegacyOctalIntegerLiteral_ as described in B.1.1.
 
--   A conforming implementation, when processing strict mode code (see
-      10.2.1), may not extend the syntax of _EscapeSequence_ to include
+-   A conforming implementation, when processing strict mode code, may
+      not extend the syntax of _EscapeSequence_ to include
       _LegacyOctalEscapeSequence_ as described in B.1.2.
 
 -   Assignment to an undeclared identifier or otherwise unresolvable
@@ -49555,13 +49472,13 @@ THE STRICT MODE RESTRICTION AND EXCEPTIONS
 
 -   The identifier EVAL or ARGUMENTS may not appear as the
       _LeftHandSideExpression_ of an Assignment operator (12.14) or of a
-      _PostfixExpression_ (12.14) or as the _UnaryExpression_ operated
+      _PostfixExpression_ (12.4) or as the _UnaryExpression_ operated
       upon by a Prefix Increment (12.5.7) or a Prefix Decrement (12.5.8)
       operator.
 
 -   Arguments objects for strict mode functions define non-configurable
       accessor properties named "CALLER" and "CALLEE" which throw a
-      TYPEERROR exception on access (9.2.8).
+      TYPEERROR exception on access (9.2.7).
 
 -   Arguments objects for strict mode functions do not dynamically share
       their array indexed property values with the corresponding formal
@@ -49570,7 +49487,7 @@ THE STRICT MODE RESTRICTION AND EXCEPTIONS
 -   For strict mode functions, if an arguments object is created the
       binding of the local identifier ARGUMENTS to the arguments object
       is immutable and hence may not be the target of an assignment
-      expression. (9.2.13).
+      expression. (9.2.12).
 
 -   It is a SYNTAXERROR if the _IdentifierName_ EVAL or the
       _IdentifierName_ ARGUMENTS occurs as a _BindingIdentifier_ within
@@ -49587,34 +49504,34 @@ THE STRICT MODE RESTRICTION AND EXCEPTIONS
       converted to wrapper objects. The THIS value passed via a function
       call (including calls made using FUNCTION.PROTOTYPE.APPLY and
       FUNCTION.PROTOTYPE.CALL) do not coerce the passed this value to an
-      object (8.3.2, 12.2.1, 19.2.3.1, 19.2.3.3).
+      object (9.2.1.2, 19.2.3.1, 19.2.3.3).
 
 -   When a DELETE operator occurs within strict mode code, a SYNTAXERROR
       is thrown if its _UnaryExpression_ is a direct reference to a
-      variable, function argument, or function name (12.5.4).
+      variable, function argument, or function name (12.5.4.1
 
 -   When a DELETE operator occurs within strict mode code, a TYPEERROR
       is thrown if the property to be deleted has the attribute {
-      [[Configurable]]:FALSE } (12.5.4).
+      [[Configurable]]:FALSE } (12.5.4.2).
 
 -   Strict mode code may not include a _WithStatement_. The occurrence
-      of a _WithStatement_ in such a context is a SYNTAXERROR (13.10).
+      of a _WithStatement_ in such a context is a SYNTAXERROR (13.10.1).
 
 -   It is a SYNTAXERROR if a _TryStatement_ with a _Catch_ occurs within
       strict code and the _Identifier_ of the _Catch_ production is EVAL
-      or ARGUMENTS (13.14)
+      or ARGUMENTS (13.14.1).
 
 -   It is a SYNTAXERROR if the same _BindingIdentifier_ appears more
       than once in the _FormalParameters_ of a strict mode function. An
       attempt to create such a function using a FUNCTION or GENERATOR
-      constructor is a SYNTAXERROR (14.1.2, 19.2.1, 25.2.1).
+      constructor is a SYNTAXERROR (14.1.2, 19.2.1.1.1).
 
 -   An implementation may not extend, beyond that defined in this
       specification, the meanings within strict mode functions of
       properties named CALLER or ARGUMENTS of function instances.
       ECMAScript code may not create or modify properties with these
       names on function objects that correspond to strict mode functions
-      (9.2.1, 9.4.4).
+      (16.1).
 
 (informative)
 Corrections and Clarifications in Edition 6 with Possible Compatibility
@@ -49633,18 +49550,18 @@ conversion process has the side-effect of changing the array length. The
 6^th^ Edition specifies that the current array length must be captured
 after the possible occurrence of such side-effects.
 
-20.3.1.14: Previous editions permitted the TimeClip abstract operation
+20.3.1.15: Previous editions permitted the TimeClip abstract operation
 to return either +0 or −0 as the representation of a 0 time value. The
 6^th^ Edition specifies that +0 always returned. This means that for the
 6^th^ Edition the time value of a Date object is never observably −0 and
 methods that return time values never return −0.
 
-20.3.1.15: If a time zone offset is not present, the local time zone is
+20.3.1.16: If a time zone offset is not present, the local time zone is
 used. Edition 5.1 incorrectly stated that a missing time zone should be
 interpreted as “z”.
 
 20.3.4.36: If the year cannot be represented using the Date Time String
-Format specified in 20.3.1.15 a RangeError exception is thrown. Previous
+Format specified in 20.3.1.16 a RangeError exception is thrown. Previous
 editions did not specify the behaviour for that case.
 
 20.3.4.41: Previous editions did not specify the value returned by
@@ -49682,6 +49599,11 @@ strings. In previous editions such strings were converted to NAN,
 6.2.3: In Edition 6, Function calls are not allowed to return a
 Reference value.
 
+11.9.1: In Edition 6, Automatic Semicolon Insertion adds a semicolon at
+the end of a do-while statement if the semicolon is missing. This change
+aligns the specification with the actual behaviour of most existing
+implementations.
+
 12.2.5.1: In Edition 6, it is no longer an early error to have duplicate
 property names in Object Initializers.
 
@@ -49694,8 +49616,15 @@ followed by the token [ is the start of a _LexicalDeclaration_. In
 previous editions such a sequence would be the start of an
 _ExpressionStatement_.
 
-13.6: In Edition 6, a terminating semi-colon is no longer required at
-the end of a do-while statement.
+13.6: In Edition 6, if the ( token of a for statement is immediately
+followed by the token sequence LET [ then the LET is treated as the
+start of a _LexicalDeclaration_. In previous editions such a token
+sequence would be the start of an _Expression_.
+
+13.6: In Edition 6, if the ( token of a for-in statement is immediately
+followed by the token sequence LET [ then the LET is treated as the
+start of a _ForDeclaration_. In previous editions such a token sequence
+would be the start of an _LeftHandSidexpression_.
 
 13.6: Prior to Edition 6, an initialization expression could appear as
 part of the _VariableDeclaration_ that precedes the IN keyword. The
@@ -49703,12 +49632,38 @@ value of that expression was always discarded. In Edition 6, the
 _ForBind_ in that same position does not allow the occurrence of such an
 initializer.
 
+13.6: In Edition 6, the normal completion value of an
+_IterationStatement_ is never the value EMPTY. If the _Statement_ part
+of an _IterationStatement_ is not evaluated or if the final evaluation
+of the _Statement_ part produces a normal completion whose value is
+EMPTY, the completion value of the _IterationStatement_ is UNDEFINED.
+
+13.10.7: In Edition 6, the normal completion value of a _WithStatement
+is never the value EMPTY. If evaluation of the _Statement_ part of a
+_WithStatement_ produces a normal completion whose value is EMPTY, the
+completion value of the _WithStatement_ is UNDEFINED.
+
+13.11.9: In Edition 6, the normal completion value of a
+_SwitchStatement_ is never the value EMPTY. If the _CaseBlock_ part of a
+_SwitchStatement_ does not contain _CaseClauses_ or if the last
+evaluated _CaseClause_ or _DefaultClause_ produces a normal completion
+whose value is EMPTY, the completion value of the _SwitchStatement_ is
+UNDEFINED.
+
 13.14: In Edition 6, it is an early error for a _Catch_ clause to
 contained a VAR declaration for the same _Identifier_ that appears as
 the _Catch_ clause parameter. In previous editions, such a variable
 declaration would be instantiated in the enclosing variable environment
 but the declaration’s _Initializer_ value would be assigned to the
 _Catch_ parameter.
+
+13.14.8: In Edition 6, the normal completion value of a _TryStatement
+is never the value EMPTY. If the _Block_ part of a _TryStatement_
+evaluates to a normal completion whose value is EMPTY, the completion
+value of the _TryStatement_ is UNDEFINED. If the _Block_ part of a
+_TryStatement_ evaluates to a throw completion and it has a Catch part
+that evaluates to a normal completion whose value is EMPTY, the
+completion value of the _TryStatement_ is UNDEFINED.
 
 14.3.9 In Edition 6, the function objects that are created as the values
 of the [[Get]] or [[Set]] attribute of accessor properties in an
@@ -49826,8 +49781,6 @@ editions they were data properties defined on RegExp instances.
 
 Bibliography
 
-_IANA Time Zone Database_ at <_http://www.iana.org/time-zones_>
-
 ISO 8601:2004(E) _Data elements and interchange formats – Information
 interchange_ — _Representation of dates and times_
 
@@ -49843,12 +49796,14 @@ RFC 3629 “UTF-8, a transformation format of ISO 10646”, available at
 RFC 4627 “The application/json Media Type for JavaScript Object Notation
 (JSON)” , available at <_http://tools.ietf.org/html/rfc4627_>
 
-Unicode Inc. (2002), Unicode Technical Note #5: Canonical Equivalence in
-Applications, available at <_http://www.unicode.org/notes/tn5/_>
+Unicode Technical Note #5: Canonical Equivalence in Applications,
+available at <_http://www.unicode.org/notes/tn5/_>
 
-Unicode Inc. (2002), Unicode Technical Standard #10: Unicode Collation
-Algorithm version 5.1.0, or successor, available at
+Unicode Technical Standard #10: Unicode Collation Algorithm version
+5.1.0, or successor, available at
 <_http://www.unicode.org/reports/tr10/_>
+
+_IANA Time Zone Database_ at <_http://www.iana.org/time-zones_>
 
 [1] Note: Please note that for ECMAScript Edition 4 the Ecma standard
 number “ECMA-262 Edition 4” was reserved but not used in the Ecma
