@@ -533,20 +533,20 @@ Introduction vii
 
 16 Errors 
 
-Annex A (informative) Grammar Summary 216
+Annex A (informative) Grammar Summary 221
 
-Annex B (informative) Compatibility 236
+Annex B (informative) Compatibility 241
 
-Annex C (informative) The Strict Mode of ECMAScript 240
+Annex C (informative) The Strict Mode of ECMAScript 245
 
 Annex D (informative) Corrections and Clarifications in the 5^th^
-Edition with Possible 3^rd^ Edition Compatibility Impact 242
+Edition with Possible 3^rd^ Edition Compatibility Impact 247
 
 Annex E (informative) Additions and Changes in the 5^th^ Edition that
-Introduce Incompatibilities with the 3^rd^ Edition 244
+Introduce Incompatibilities with the 3^rd^ Edition 249
 
 Annex F (informative) Technically Significant Corrections and
-Clarifications in the 5.1 Edition 248
+Clarifications in the 5.1 Edition 253
 
 Introduction
 
@@ -1238,7 +1238,7 @@ line terminator characters). Furthermore, certain token sequences that
 are described by the grammar are not considered acceptable if a
 terminator character appears in certain “awkward” places.
 
-In certain cases in order to avoid ambiguirties the syntactic grammar
+In certain cases in order to avoid ambiguities the syntactic grammar
 uses productions that permit token sequences that are not valid
 ECMAScript programs. In such cases a more restrictive _supplemental_
 _grammar_ is provided that further restricts the acceptable token
@@ -1536,11 +1536,11 @@ explicitly deals with the exception, using terminology such as “If an
 exception was thrown…”. Once such an algorithm step has been encountered
 the exception is no longer considered to have occurred.
 
-Context-free grammars are not powerful to express all the rules that
-define whether a stream of input elements make up a valid ECMAScript
-program that may be evaluated. In some situations additional rules are
-needed that may be expressed using either ECMAScript algorithm
-conventions or prose requirements. Such rules are always associate with
+Context-free grammars are not sufficiently powerful to express all the
+rules that define whether a stream of input elements make up a valid
+ECMAScript program that may be evaluated. In some situations additional
+rules are needed that may be expressed using either ECMAScript algorithm
+conventions or prose requirements. Such rules are always associated with
 a production of a grammar and are called the _static semantics_ of the
 production.
 
@@ -3887,12 +3887,12 @@ interpreted as strict mode code in the following situations:
       is a String that when processed as a _FunctionBody_ begins with a
       Directive Prologue that contains a Use Strict Directive.
 
--   Unless specified otherwise, extended code (10.2.1) is also consider
-      strict code.
+-   Unless specified otherwise, extended code (10.1.2) is also strict
+      mode code.
 
-_Extended code_ is any any code contained in an ECMAScript _Program
-syntactic unit that contains occurances of lexical or syntactic
-productions define subsequent to the Fifth Edition of the ECMAScript
+_Extended code_ is any code contained in an ECMAScript _Program
+syntactic unit that contains occurrences of lexical or syntactic
+productions defined subsequent to the Fifth Edition of the ECMAScript
 specification. Code is interpreted as extended code in the following
 situations:
 
@@ -3916,8 +3916,9 @@ situations:
       is a String that when processed as a _FunctionBody_ begins with
       ???.
 
-The “strict code” includes both actual strict mode code while “extended
-code” islucco only used to to mean actual extended code.
+The term “strict code” is used to designate both actual strict mode code
+and extended code while the term “extended code” is designates only
+actual extended code.
 
 A _Lexical Environment_ is a specification type used to define the
 association of _Identifiers_ to specific variables and functions based
@@ -4107,9 +4108,9 @@ The following abstract operations are used in this specification to
 operate upon lexical environments:
 
 The abstract operation GetIdentifierReference is called with a Lexical
-Environment _lex_, an identifier String _name_, and a Boolean flag
-_strict._ The value of _lex_ may be NULL. When called, the following
-steps are performed:
+Environment _lex_, a String _name_, and a Boolean flag _strict._ The
+value of _lex_ may be NULL. When called, the following steps are
+performed:
 
 When the abstract operation NewDeclarativeEnvironment is called with
 either a Lexical Environment or NULL as argument _E_ the following steps
@@ -4171,7 +4172,7 @@ It is impossible for an ECMAScript program to access an execution
 context.
 
 Identifier resolution is the process of determining the binding of an
-_Identifier_ using the LexicalEnvironment of the running execution
+_IdentifierName_ using the LexicalEnvironment of the running execution
 context. During execution of ECMAScript code, Identifier Resolution is
 performed using the following algorithm:
 
@@ -4227,8 +4228,8 @@ argument List _args_:
 When control enters an execution context for function code, an arguments
 object is created unless (as specified in 10.5) the identifier ARGUMENTS
 occurs as an _Identifier_ in the function’s _FormalParameterList_ or
-occurs as the _Identifier_ of a _VariableDeclaration_ or
-_FunctionDeclaration_ contained in the function code.
+occurs as the _Identifier_ of a _FunctionDeclaration_ contained in the
+function code.
 
 The arguments object is created by calling the abstract operation
 CreateArgumentsObject with arguments _func_ the function object whose
@@ -4310,8 +4311,9 @@ The THIS keyword evaluates to the value of the ThisBinding of the
 current execution context.
 
 An _Identifier_ is evaluated by performing Identifier Resolution as
-specified in 10.3.1. The result of evaluating an _Identifier_ is always
-a value of type Reference.
+specified in 10.3.1 using the _IdentifierName_ corresponding to
+_Identifier_. The result of evaluating an _Identifier_ is always a value
+of type Reference.
 
 A _Literal_ is evaluated as described in 7.8.
 
@@ -4442,7 +4444,7 @@ is evaluated as follows:
     a.  Let _exists_ be the result of calling the [[HasProperty]]
           internal method of _spreadObj_ with ToString(_n_).
 
-    b.  If _exists_ then,
+    b.  If _exists_ is TRUE then,
 
         i.  Let _v_ be the result of calling the [[Get]] internal method
               of _spreadObj_ passing ToString(_n_) as the argument.
@@ -4515,7 +4517,7 @@ AssignmentExpression_ is evaluated as follows:
     a.  Let _exists_ be the result of calling the [[HasProperty]]
           internal method of _spreadObj_ with ToString(_n_).
 
-    b.  If _exists_ then,
+    b.  If _exists_ is TRUE then,
 
         i.  Let _v_ be the result of calling the [[Get]] internal method
               of _spreadObj_ passing ToString(_n_) as the argument.
@@ -4676,21 +4678,18 @@ is evaluated as follows:
 If the above steps would throw a SYNTAXERROR then an implementation must
 treat the error as an early error (Clause 16).
 
-The PropName of the productions _PropertyAssignment_ : _IdentifierName_
-and _PropertyAssignment_ : _PropertyName_ : _AssignmentExpression_ is
-determined as follows:
+The PropName of the production _PropertyAssignment_ : _IdentifierName_
+is determined as follows:
 
-1.  Let _propName_ be the result of evaluating _PropertyName_.
+1.  2.  Return PropName(_IdentifierName_).
 
-2.  Return _propName_.
-
-The production _PropertyAssignment_ : _PropertyName_ is evaluated as
+The production _PropertyAssignment_ : _IdentifierName_ is evaluated as
 follows:
 
-1.  Let _propName_ be PropName(_PropertyName_).
+1.  Let _propName_ be PropName(_IdentifierName_).
 
 2.  Let _exprValue_ be the result of performing Identifier Resolution as
-    specified in 10.3.1 using _propName_ as the _Identifier_.
+    specified in 10.3.1 using _IdentifierName_.
 
 3.  Let _propValue_ be GetValue(_exprValue_).
 
@@ -4698,6 +4697,11 @@ follows:
     [[Writable]]: TRUE, [[Enumerable]]: TRUE, [[Configurable]]: TRUE}
 
 5.  Return Property Identifier (_propName_, _desc_).
+
+The PropName of the production _PropertyAssignment_ : _PropertyName_ :
+_AssignmentExpression_ is determined as follows:
+
+1.  Return PropName(_PropertyName_).
 
 The production _PropertyAssignment_ : _PropertyName_ :
 _AssignmentExpression_ is evaluated as follows:
@@ -4716,9 +4720,7 @@ _AssignmentExpression_ is evaluated as follows:
 The PropName of the production _PropertyAssignment_ : GET _PropertyName_
 ( ) { _FunctionBody_ } is determined as follows:
 
-1.  Let _propName_ be the result of evaluating _PropertyName_.
-
-2.  Return _propName_.
+1.  2.  Return PropName(_PropertyName_).
 
 The production _PropertyAssignment_ : GET _PropertyName_ ( ) {
 _FunctionBody_ } is evaluated as follows:
@@ -4741,9 +4743,7 @@ The PropName of the production _PropertyAssignment_ : SET _PropertyName_
 ( _PropertySetParameterList_ ) { _FunctionBody_ } is determined as
 follows:
 
-1.  Let _propName_ be the result of evaluating _PropertyName_.
-
-2.  Return _propName_.
+1.  2.  Return the result of PropName(_PropertyName_).
 
 The production _PropertyAssignment_ : SET _PropertyName_ (
 _PropertySetParameterList_ ) { _FunctionBody_ } is evaluated as follows:
@@ -4771,23 +4771,28 @@ _PropertyName_ ( _PropertySetParameterList_ ) { _FunctionBody_ } are:
     _PropertySetParameterList_ of a _PropertyAssignment_ that is either
     contained in strict code or whose _FunctionBody_ is strict code.
 
-The production _PropertyName_ : _IdentifierName_ is evaluated as
-follows:
+The PropName of the production _PropertyName_ : _IdentifierName_ is
+evaluated as follows:
 
-1.  Return the String value containing the same sequence of characters
-    as the _IdentifierName_.
+1.  Return PropName(_IdentifierName_).
 
-The production _PropertyName_ : _StringLiteral_ is evaluated as follows:
+The PropName of the production _PropertyName_ : _StringLiteral_ is
+evaluated as follows:
 
 1.  Return the SV of the _StringLiteral_.
 
-The production _PropertyName_ : _NumericLiteral_ is evaluated as
-follows:
+The PropName of the production _PropertyName_ : _NumericLiteral_ is
+evaluated as follows:
 
 1.  Let _nbr_ be the result of forming the value of the
     _NumericLiteral_.
 
 2.  Return ToString(_nbr_).
+
+The PropName of the token _IdentiferName_ is determined as follows:
+
+1.  Return the String value containing the same sequence of characters
+    as _IdentifierName_.
 
 The production _PrimaryExpression_ : ( _Expression_ ) is evaluated as
 follows:
@@ -5903,13 +5908,9 @@ _LeftHandSideExpression_ = _AssignmentExpression_ are:
     strict code and _LeftHandSideExpression_ is the _Identifer_ EVAL or
     the _Identifer_ ARGUMENTS.
 
--   It is a Syntax Error if the _AssignmentExpression_ is contained in
-    extended code and the _LeftHandSideExpression_ is the _Identifier_
-    THIS or the _Identifer_ SUPER.
-
--   It is a Syntax Error if the _AssignmentExpression_ is contained in
-    extended code and the _LeftHandSideExpression_ is a _Literal_ or a
-    _FunctionExpression_.
+-   -   It is a Syntax Error if the _AssignmentExpression_ is contained
+    in extended code and the _LeftHandSideExpression_ is a _Literal_ or
+    a _FunctionExpression_.
 
 -   It is a Syntax Error if the _AssignmentExpression_ is contained in
     extended code and the _LeftHandSideExpression_ is an _Identifier_
@@ -5924,8 +5925,8 @@ _LeftHandSideExpression_ = _AssignmentExpression_ are:
 -   It is a Syntax Error if the _AssignmentExpression_ is contained in
     extended code and the _LeftHandSideExpression_ is an _ObjectLiteral_
     or an _ArrayLiteral_ and the source code corresponding to
-    _LeftHandSideExpesson_ using cannot be parsed using
-    _AssignmentPattern_ as the goal symbol.
+    _LeftHandSideExpresson_ cannot be parsed using _AssignmentPattern_
+    as the goal symbol.
 
 The production _AssignmentExpression_ : _LeftHandSideExpression_ =
 _AssignmentExpression_ is evaluated as follows:
@@ -5987,7 +5988,7 @@ evaluated with the parameter _obj_ as follows:
     _obj_ passing the _Identifier_ string as the argument.
 
 2.  Let _lref_ be the result of performing Identifier Resolution(10.3.1)
-    using _Identifier_.
+    using the _IdentifierName_ corresponding to _Identifier_.
 
 3.  Call PutValue(_lref_,_v_).
 
@@ -6014,8 +6015,8 @@ _AssignmentRestElement_ : … _LeftHandSideExpression_ are:
 
 -   It is a Syntax Error if the _LeftHandSideExpression_ is an
     _ObjectLiteral_ or an _ArrayLiteral_ and the source code
-    corresponding to _LeftHandSideExpesson_ using cannot be parsed using
-    _AssignmentPattern_ as the goal symbol.
+    corresponding to _LeftHandSideExpresson_ using cannot be parsed
+    using _AssignmentPattern_ as the goal symbol.
 
 -   It is a Syntax Error if the _LeftHandSideExpression_ is
     _PrimaryExpression_ : ( _Expression_ ) and _Expression_ derived a
@@ -6035,7 +6036,7 @@ follows:
     _ArrayLiteral_ then
 
     a.  Let _AssignmentPattern_ be the parse of the source code
-        corresponding to _LeftHandSideExpesson_ using
+        corresponding to _LeftHandSideExpresson_ using
         _AssignmentPattern_ as the goal symbol
 
     b.  Let _vObj_ be ToObject(_v_).
@@ -6113,7 +6114,7 @@ _index_ as follows:
     _ArrayLiteral_ then
 
     a.  Let _AssignmentPattern_ be the parse of the source code
-        corresponding to _LeftHandSideExpesson_ using
+        corresponding to _LeftHandSideExpresson_ using
         _AssignmentPattern_ as the goal symbol
 
     b.  Let _vObj_ be ToObject(_v_).
@@ -6159,7 +6160,7 @@ _index_ as follows:
 2.  Let _lenVal_ be the result of calling the [[Get]] internal method of
     _obj_ with argument “LENGTH”.
 
-3.  Let _len_ be toUint32(_lenVal_).
+3.  Let _len_ be ToUint32(_lenVal_).
 
 4.  Let _A_ be a new array object created as if by the expression NEW
     ARRAY() where ARRAY is the standard built-in constructor with that
@@ -6396,14 +6397,14 @@ follows:
 The production _VariableDeclaration_ : _Identifier Initialiser_ is
 evaluated as follows:
 
-NOTE The String value of a _VariableDeclaration_ is used in the
+NOTE 1 The String value of a _VariableDeclaration_ is used in the
 evaluation of for-in statements (12.6.4).
 
-1.  If a _VariableDeclaration_ is nested within a with statement and the
-    Identifier in the _VariableDeclaration_ is the same as a property
-    name of the binding object of the with statement’s object
-    environment record, then step 4 will assign value to the property
-    instead of to the VariableEnvironment binding of the _Identifier_.
+NOTE 2 If a _VariableDeclaration_ is nested within a with statement and
+the _Identifier_ in the _VariableDeclaration_ is the same as a property
+name of the binding object of the with statement’s object environment
+record, then step 4 will assign value to the property instead of to the
+VariableEnvironment binding of the _Identifier_.
 
 The production _Initialiser_ : = _AssignmentExpression_ is evaluated as
 follows:
@@ -6969,13 +6970,13 @@ The ExpectedArgumentCount of the productions _FormalParameterList_ :
 _FormalsList_ and _FormalParameterList_ : _FormalsList ,_ … _Identifier
 is determined as follows:
 
-1.  Return the ExpectArgumentCount of _FormalsList_.
+1.  Return the ExpectedArgumentCount of _FormalsList_.
 
 NOTE The ExpectedArgumentCount of a _FormalParameterList_ is the number
 of _FormalParameters_ to the left of either the rest parameter or the
 first FormalParameter with an _Initialiser_.
 
-The ExpectedArgumentCount of the production _FormalsList_ :
+The ExpectededArgumentCount of the production _FormalsList_ :
 _FormalParameter_ is determined as follows:
 
 1.  If HasInitialiser of _FormalParameter_ is FALSE return 
@@ -6990,7 +6991,7 @@ determined as follows:
 The ExpectedArgumentCount of the production _FormalsList_ :
 _FormalsList,_ _FormalParameter_ is determined as follows:
 
-1.  Let _count_ be ExpectArgumentCount of _FormalsList.
+1.  Let _count_ be ExpectedArgumentCount of _FormalsList.
 
 2.  If HasInitialiser of _FormalsList_ is TRUE or HasInitialiser of
     _FormalParameter_ is TRUE, then return _count_.
@@ -7594,8 +7595,8 @@ Table 23 — Tags for Classified Native Objects
   [[IsNumber]]        "NUMBER"
   [[IsMath]]          "MATH"
   [[IsDate]]          "DATE"
-  [[IsRegExp]]        "FUNCTION"
-  [[IsError]]         "REGEXP"
+  [[IsRegExp]]        "REGEXP"
+  [[IsError]]         "ERROR"
   [[IsJSON]]          "JSON"
   [[IsArguments]]     "ARGUMENTS"
   [[]]                
@@ -9890,8 +9891,8 @@ THH:MM:SS.SSS
 
 All numbers must be base 10. If the MM or DD fields are absent “01” is
 used as the value. If the HH, MM, or SS fields are absent “00” is used
-as the value and the value of an absent SSS field is “000”. The value of
-an absent time zone offset is “Z”.
+as the value and the value of an absent SSS field is “000”. If the time
+zone offset is absent, the date-time is in interpreted as a local time.
 
 Illegal values (out-of-bounds as well as syntax errors) in a format
 string means that the format string is not a valid instance of this
@@ -11465,15 +11466,14 @@ object, lexically preceding values for the same key shall be
 overwritten.
 
 The STRINGIFY function returns a String in JSON format representing an
-ECMAScript value. It can take three parameters. The first parameter is
-required. The _value_ parameter is an ECMAScript value, which is usually
-an object or array, although it can also be a String, Boolean, Number or
-NULL. The optional _replacer_ parameter is either a function that alters
-the way objects and arrays are stringified, or an array of Strings and
-Numbers that acts as a white list for selecting the object properties
-that will be stringified. The optional _space_ parameter is a String or
-Number that allows the result to have white space injected into it to
-improve human readability.
+ECMAScript value. It can take three parameters. The _value_ parameter is
+an ECMAScript value, which is usually an object or array, although it
+can also be a String, Boolean, Number or NULL. The optional _replacer_
+parameter is either a function that alters the way objects and arrays
+are stringified, or an array of Strings and Numbers that acts as a white
+list for selecting the object properties that will be stringified. The
+optional _space_ parameter is a String or Number that allows the result
+to have white space injected into it to improve human readability.
 
 These are the steps in stringifying an object:
 
@@ -11495,16 +11495,15 @@ quotes and escapes characters within it.
   tab "T"
 
 The abstract operation _JO_(_value_) serializes an object. It has access
-to the _stack_, _indent_, _gap_, _PropertyList_, _ReplacerFunction_, and
-_space_ of the invocation of the stringify method.
+to the _stack_, _indent_, _gap_, and _PropertyList_ of the invocation of
+the stringify method.
 
 The abstract operation _JA_(_value_) serializes an array. It has access
-to the _stack_, _indent_, _gap_, and _space_ of the invocation of the
-stringify method. The representation of arrays includes only the
-elements between zero and ARRAY.LENGTH – 1 inclusive. Named properties
-are excluded from the stringification. An array is stringified as an
-open left bracket, elements separated by comma, and a closing right
-bracket.
+to the _stack_, _indent_, and _gap_ of the invocation of the stringify
+method. The representation of arrays includes only the elements between
+zero and ARRAY.LENGTH – 1 inclusive. Named properties are excluded from
+the stringification. An array is stringified as an open left bracket,
+elements separated by comma, and a closing right bracket.
 
 NOTE 1 JSON structures are allowed to be nested to any depth, but they
 must be acyclic. If _value_ is or contains a cyclic structure, then the
@@ -12773,9 +12772,10 @@ JSONElementList , JSONValue
 (normative)
 Additional ECMAScript Features for Web Browsers
 
-The ECMAScript language syntax and semantics defined in this annex is
-required when the ECMAScript host is a web browsers. It is normative but
-optionalif the host is not a web browser.
+The ECMAScript language syntax and semantics defined in this annex are
+required when the ECMAScript host is a web browser. The content of this
+annex is normative but optional if the ECMAScript host is not a web
+browser.
 
 
 Additional Syntax
